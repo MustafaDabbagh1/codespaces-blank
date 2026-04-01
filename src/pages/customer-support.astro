@@ -1,0 +1,711 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Customer Support | PPD Technology">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <div class="alert" role="status" aria-live="polite">
+    <div class="container inner">
+      <span class="dot"></span>
+      All systems normal. For urgent terminal issues, call <strong>313-466-7836</strong>.
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-life-ring"></i> Customer Support</span>
+          <h1>We’re here to help, fast.</h1>
+          <p>
+            Get 24/7 resources and business-hours assistance from our payments specialists.
+            Call us, submit a ticket, or browse the support center.
+          </p>
+
+          <div class="quick" aria-label="Quick support options">
+            <a class="qcard" href="#support-form">
+              <div class="qicon"><i class="fa-solid fa-ticket"></i></div>
+              <div>
+                <strong>Open a support ticket</strong><br />
+                <span class="muted">Typical reply in under 1 business hour</span>
+              </div>
+            </a>
+
+            <a class="qcard" href="#phone">
+              <div class="qicon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>Call customer support</strong><br />
+                <span class="muted">Immediate help during business hours</span>
+              </div>
+            </a>
+
+            <a class="qcard" href="#faq">
+              <div class="qicon"><i class="fa-solid fa-book"></i></div>
+              <div>
+                <strong>Support center</strong><br />
+                <span class="muted">Guides for setup, terminals, disputes</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel status-panel" role="region" aria-label="Current status">
+          <h2>Service Status</h2>
+          <p class="muted">
+            All systems operational. For live updates visit
+            <a href="#" class="link-blue">Status</a>.
+          </p>
+
+          <ul class="status-list">
+            <li><i class="fa-solid fa-circle ok"></i> Payments API</li>
+            <li><i class="fa-solid fa-circle ok"></i> Dashboard</li>
+            <li><i class="fa-solid fa-circle ok"></i> Terminals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="support-form">
+    <div class="container grid">
+      <div class="panel">
+        <h2>Open a Support Ticket</h2>
+        <p class="muted">
+          Provide details so we can route your case to the right specialist.
+        </p>
+
+        <form class="form-grid" action="#" method="post">
+          <div class="row2">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div>
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" inputmode="email" required />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" required />
+            </div>
+            <div>
+              <label for="mid">Merchant ID (if known)</label>
+              <input id="mid" name="mid" placeholder="e.g., MID1234" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="terminal">Terminal/Device ID (if applicable)</label>
+              <input id="terminal" name="terminal" placeholder="e.g., VP-800 SN" />
+            </div>
+            <div>
+              <label for="topic">Issue type</label>
+              <select id="topic" name="topic" required>
+                <option value="">Select…</option>
+                <option>Account & Billing</option>
+                <option>Terminals & POS</option>
+                <option>E-commerce / API</option>
+                <option>Deposits & Payouts</option>
+                <option>Chargebacks / Disputes</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="severity">Priority</label>
+              <select id="severity" name="severity" required>
+                <option value="">Select…</option>
+                <option>Low — general question</option>
+                <option>Normal — needs attention</option>
+                <option>High — blocking one location</option>
+                <option>Critical — processing outage</option>
+              </select>
+            </div>
+            <div>
+              <label for="callback">Preferred callback number</label>
+              <input id="callback" name="callback" inputmode="tel" placeholder="(###) ###-####" />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" required placeholder="Short summary of the issue" />
+          </div>
+
+          <div>
+            <label for="details">Details</label>
+            <textarea
+              id="details"
+              name="details"
+              required
+              placeholder="What happened? When did it start? Any error codes or screenshots?"
+            ></textarea>
+            <div class="help">Please omit full PANs or sensitive cardholder data.</div>
+          </div>
+
+          <div>
+            <label for="files">Attachments (optional)</label>
+            <input id="files" name="files" type="file" multiple />
+            <div class="help">Up to 10MB total; screenshots and logs helpful.</div>
+          </div>
+
+          <div class="submit">
+            <button class="btn btn-primary btn-wide" type="submit">
+              <i class="fa-solid fa-paper-plane"></i>&nbsp;Submit Ticket
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Popular Help Topics</h2>
+        <ul class="help-topics">
+          <li>
+            <a href="#" class="link-blue">
+              <i class="fa-solid fa-plug"></i> Set up VP-800 and take your first payment
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-blue">
+              <i class="fa-solid fa-credit-card"></i> Refunds, voids, and partial captures
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-blue">
+              <i class="fa-solid fa-sack-dollar"></i> Payout timing & deposit reports
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-blue">
+              <i class="fa-solid fa-shield-halved"></i> Disputes & evidence best practices
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-blue">
+              <i class="fa-solid fa-code"></i> API keys, webhooks, and test cards
+            </a>
+          </li>
+        </ul>
+
+        <div class="topics-footer">
+          <p class="muted">
+            Can’t find it? Browse the full
+            <a href="#" class="link-blue">Support Center</a>
+            or
+            <a href="#support-form" class="link-blue">open a ticket</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="phone" id="phone">
+    <div class="container">
+      <h2>Need help right now?</h2>
+      <p class="phone-copy">
+        Call our U.S.-based customer support team during business hours. We can
+        troubleshoot terminals, resolve funding questions, and guide your team.
+      </p>
+
+      <div class="number">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:3134667836">313-466-7836</a>
+      </div>
+
+      <div class="pillz">
+        <span class="pill"><i class="fa-solid fa-clock"></i> Mon–Thu 8:00a–8:00p ET</span>
+        <span class="pill"><i class="fa-solid fa-clock"></i> Fri 8:00a–6:00p ET</span>
+        <span class="pill"><i class="fa-solid fa-clock"></i> Sat 9:00a–2:00p ET</span>
+      </div>
+
+      <div class="phone-actions">
+        <a class="btn btn-primary" href="tel:3134667836">
+          <i class="fa-solid fa-phone"></i>&nbsp;Call Support
+        </a>
+        <a class="btn btn-outline phone-outline" href="#support-form">
+          <i class="fa-solid fa-ticket"></i>&nbsp;Open Ticket
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container faq-wrap">
+      <h2>Frequently Asked Questions</h2>
+      <p class="muted faq-sub">
+        Fast answers to common support topics.
+      </p>
+
+      <details class="faq-item">
+        <summary>My terminal won’t connect. What should I check?</summary>
+        <div class="faq-a">
+          Verify power, network (Wi-Fi/Ethernet), and that required ports are open.
+          Restart the device and router. If still offline, open a ticket with your
+          device serial and last 4 digits of a recent transaction.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>When will my deposits arrive?</summary>
+        <div class="faq-a">
+          Most deposits settle next business day for batches closed by cutoff. Holidays
+          and holds can affect timing. Check the Deposits report in your dashboard for
+          exact ETAs.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I respond to a chargeback?</summary>
+        <div class="faq-a">
+          Gather receipts, order details, shipment proof, and communications. Submit
+          evidence before the stated deadline in your dashboard’s Disputes section.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where can I find API logs or webhook retries?</summary>
+        <div class="faq-a">
+          Developers can review request/response logs and replay webhooks from the
+          dashboard under Developers → Logs and Webhooks.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <div class="reg-bar">
+    PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA. © 2025 PPD Technology.
+  </div>
+
+  <style is:global>
+    :root {
+      --primary: #0055ff;
+      --primary-dark: #0044cc;
+      --secondary: #0f1b35;
+      --accent: #00cc96;
+      --light: #f5f7fa;
+      --dark: #1a232e;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --ok: #10b981;
+      --warn: #f59e0b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .alert {
+      background: linear-gradient(90deg, #fef3c7, #ffedd5);
+      color: #7c2d12;
+      border-bottom: 1px solid #fde68a;
+    }
+
+    .alert .inner {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .alert .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--warn);
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 86px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.12;
+      margin: 12px 0 8px;
+      color: #fff;
+    }
+
+    .hero p {
+      opacity: 0.95;
+      max-width: 720px;
+      color: #e8eef9;
+    }
+
+    .quick {
+      padding: 20px 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .qcard {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: #0f172a;
+      text-decoration: none;
+    }
+
+    .qicon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #eef2ff;
+      color: #3730a3;
+      flex: 0 0 auto;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .panel {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #eaecef;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .panel h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+
+    .status-panel .status-list {
+      margin-top: 12px;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      padding: 0;
+    }
+
+    .ok {
+      color: var(--ok);
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
+    .link-blue {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #0f2244;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--light-gray);
+      border-radius: 10px;
+      background: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .submit {
+      margin-top: 8px;
+    }
+
+    .btn-wide {
+      width: 100%;
+    }
+
+    .help {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .help-topics {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .topics-footer {
+      margin-top: 18px;
+      border-top: 1px solid #eaecef;
+      padding-top: 14px;
+    }
+
+    .phone {
+      background: var(--secondary);
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .phone h2 {
+      color: #fff;
+    }
+
+    .phone-copy {
+      opacity: 0.9;
+      max-width: 760px;
+      margin: 6px auto 8px;
+    }
+
+    .number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 10px 0 16px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .number a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .pillz {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .phone-actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .phone-outline {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .phone-outline:hover {
+      background: #fff;
+      color: var(--secondary);
+    }
+
+    .faq-wrap h2,
+    .faq-sub {
+      text-align: center;
+    }
+
+    .faq-sub {
+      max-width: 760px;
+      margin: 6px auto 20px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #eaecef;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-a {
+      padding: 0 16px 16px;
+      color: #475569;
+    }
+
+    .reg-bar {
+      background: #0f1b35;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+    }
+
+    @media (min-width: 768px) {
+      .hero .wrap {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .quick {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .row2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>

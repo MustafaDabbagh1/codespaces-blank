@@ -1,0 +1,1274 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology — Deals & Fast Sign Up">
+  <Fragment slot="head">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </Fragment>
+
+  <section class="signup-page">
+    <main class="signup-wrap">
+      <section class="signup-hero" id="hero">
+        <div class="signup-hero-grid">
+          <div>
+            <span class="signup-eyebrow">Limited-time hardware credits</span>
+            <h1>Fast approvals. Simple pricing. Hardware that just works.</h1>
+            <p class="signup-lead">
+              Apply in minutes and get up to <b>100% hardware credits</b> toward terminals and POS.
+              Keep your current bank. Funding as fast as next day.
+            </p>
+
+            <div class="signup-hero-bullets">
+              <div class="signup-chip"><b>PCI Level 1</b> • encryption &amp; tokenization</div>
+              <div class="signup-chip"><b>Registered ISO</b> • Synovus Bank</div>
+              <div class="signup-chip"><b>Major cards</b> • Visa • MC • Amex • Disc</div>
+              <div class="signup-chip"><b>Live support</b> • US-based</div>
+            </div>
+
+            <div class="signup-hero-cta">
+              <a class="signup-btn signup-btn-primary" href="#signup">Start Instant Approval</a>
+              <a class="signup-btn" href="#deals">See current deals</a>
+            </div>
+          </div>
+
+          <div class="signup-carousel" aria-label="Featured hardware carousel">
+            <div class="signup-car-head">
+              <h3>Featured hardware</h3>
+              <small class="signup-muted">Swipe • arrows • dots</small>
+            </div>
+
+            <div class="signup-rail" id="rail">
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img src="https://mmdabbagh24.neocities.org/images/VP800-View-01.png" alt="Dejavoo VP800" />
+                  <div>
+                    <h4>Dejavoo VP800</h4>
+                    <p>Countertop EMV + Tap to Pay with robust security.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img src="https://mmdabbagh24.neocities.org/images/Pin-Pads-p12p17.png" alt="Pinpads P12 &amp; P17" />
+                  <div>
+                    <h4>Pinpads (P12 &amp; P17)</h4>
+                    <p>Sleek customer-facing EMV / contactless pinpads.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img src="https://mmdabbagh24.neocities.org/images/p18.png" alt="Dejavoo P18" />
+                  <div>
+                    <h4>Dejavoo P18</h4>
+                    <p>Modern touchscreen terminal for busy countertops.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img src="https://mmdabbagh24.neocities.org/images/nrs-pos1-min.png" alt="NRS POS" />
+                  <div>
+                    <h4>NRS POS</h4>
+                    <p>All-in-one POS with inventory &amp; CRM built-in.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img
+                    src="https://mmdabbagh24.neocities.org/images/clover-duo-printer-mini3-facing-customer.png"
+                    alt="Clover Duo"
+                  />
+                  <div>
+                    <h4>Clover Duo</h4>
+                    <p>Station with customer-facing screen &amp; printer.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="signup-slide">
+                <article class="signup-card">
+                  <img src="https://mmdabbagh24.neocities.org/images/Pos%20system.png" alt="PAYS POS" />
+                  <div>
+                    <h4>PAYS POS</h4>
+                    <p>Complete POS with payments, stock &amp; analytics.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="signup-ctrl">
+              <button class="signup-navbtn" id="prev" aria-label="Previous">‹</button>
+              <div class="signup-dotbar" id="dots" aria-label="Slide navigation"></div>
+              <button class="signup-navbtn" id="next" aria-label="Next">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="deals" class="signup-deals">
+        <h2>Deals that fit your business</h2>
+        <p>Choose your setup. Hardware credits apply after instant approval.</p>
+
+        <div class="signup-grid">
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img src="https://mmdabbagh24.neocities.org/images/VP800-View-01.png" alt="Dejavoo VP800" />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">Dejavoo VP800 Terminal</div>
+              <div class="signup-deal-text">EMV, tap, tip prompts &amp; receipt printing.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Up to 100% credit</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img src="https://mmdabbagh24.neocities.org/images/Pin-Pads-p12p17.png" alt="Pinpads" />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">Pinpads (P12 &amp; P17)</div>
+              <div class="signup-deal-text">Customer-facing, compact &amp; secure.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Save up to $500</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img src="https://mmdabbagh24.neocities.org/images/p18.png" alt="Dejavoo P18" />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">Dejavoo P18</div>
+              <div class="signup-deal-text">Large screen, quick prompts, easy to learn.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Save up to $750</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img src="https://mmdabbagh24.neocities.org/images/nrs-pos1-min.png" alt="NRS POS" />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">NRS POS System</div>
+              <div class="signup-deal-text">POS + payments + inventory &amp; loyalty.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Save up to $1,000</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img
+                src="https://mmdabbagh24.neocities.org/images/clover-duo-printer-mini3-facing-customer.png"
+                alt="Clover Duo"
+              />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">Clover Duo</div>
+              <div class="signup-deal-text">Customer-facing station with printer.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Save up to $1,500</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+
+          <article class="signup-deal">
+            <div class="signup-deal-visual">
+              <img src="https://mmdabbagh24.neocities.org/images/Pos%20system.png" alt="PAYS POS" />
+            </div>
+            <div class="signup-deal-body">
+              <div class="signup-deal-title">PAYS POS</div>
+              <div class="signup-deal-text">Complete POS for retail or quick-serve.</div>
+            </div>
+            <div class="signup-deal-foot">
+              <span class="signup-save">Save up to $2,500</span>
+              <a class="signup-btn" href="#signup">Get this deal</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="signup-steps">
+        <h3>How it works</h3>
+        <div class="signup-steps-grid">
+          <div class="signup-step">
+            <b>1) Apply in minutes</b>
+            <p>Instant decision in most cases. No impact to credit for checking eligibility.</p>
+          </div>
+          <div class="signup-step">
+            <b>2) Pick your hardware</b>
+            <p>Hardware credits apply automatically to eligible devices.</p>
+          </div>
+          <div class="signup-step">
+            <b>3) Ship &amp; go live</b>
+            <p>We configure your device and ship fast. Start taking payments right away.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="signup" class="signup-shell">
+        <form id="appForm" class="signup-card signup-panel" action="https://formspree.io/f/mvgwalay" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New PPD Instant Approval lead" />
+          <input type="hidden" name="_redirect" value="" />
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <div class="signup-form-steps" aria-label="progress">
+            <div class="signup-stepper-pill active" data-step-indicator="1">1 • Business</div>
+            <div class="signup-stepper-pill" data-step-indicator="2">2 • Owner</div>
+            <div class="signup-stepper-pill" data-step-indicator="3">3 • Plan</div>
+            <div class="signup-stepper-pill" data-step-indicator="4">4 • Equipment</div>
+          </div>
+
+          <div class="signup-step-pane" data-step="1">
+            <div class="signup-row">
+              <div>
+                <label>Legal Business Name</label>
+                <input required name="legal_name" placeholder="Legal Business LLC" />
+              </div>
+              <div>
+                <label>DBA (if any)</label>
+                <input name="dba" placeholder="Your DBA" />
+              </div>
+            </div>
+
+            <div class="signup-row">
+              <div>
+                <label>Business Type</label>
+                <select required name="type" id="bizType">
+                  <option value="">Select</option>
+                  <option>Restaurant</option>
+                  <option>Retail</option>
+                  <option>Service</option>
+                  <option>eCommerce</option>
+                  <option>Salon/MedSpa</option>
+                  <option>Grocery/EBT</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label>Monthly Card Volume (est.)</label>
+                <select required name="volume">
+                  <option value="">Select</option>
+                  <option>Under $25,000</option>
+                  <option>$25k–$75k</option>
+                  <option>$75k–$200k</option>
+                  <option>$200k+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="signup-row">
+              <div>
+                <label>Business Phone</label>
+                <input required name="biz_phone" placeholder="(555) 555-1234" />
+              </div>
+              <div>
+                <label>Business Email</label>
+                <input required type="email" name="biz_email" placeholder="owner@business.com" />
+              </div>
+            </div>
+
+            <div class="signup-actions">
+              <button class="signup-btn signup-btn-primary" data-next>Continue</button>
+              <a class="signup-btn" href="#pricing">View pricing</a>
+            </div>
+
+            <p class="signup-muted" style="margin-top:8px">
+              Encrypted application. Checking details won’t affect credit score.
+            </p>
+          </div>
+
+          <div class="signup-step-pane" data-step="2" hidden>
+            <div class="signup-row">
+              <div>
+                <label>Owner Full Name</label>
+                <input required name="owner_name" placeholder="First Last" />
+              </div>
+              <div>
+                <label>Ownership %</label>
+                <input required name="owner_pct" placeholder="100%" />
+              </div>
+            </div>
+
+            <div class="signup-row">
+              <div>
+                <label>Home Address</label>
+                <input required name="home_addr" placeholder="123 Main St" />
+              </div>
+              <div>
+                <label>SSN (last 4)</label>
+                <input
+                  required
+                  name="ssn4"
+                  placeholder="1234"
+                  inputmode="numeric"
+                  maxlength="4"
+                  pattern="^\d{4}$"
+                  title="Enter last 4 digits"
+                />
+              </div>
+            </div>
+
+            <div class="signup-row">
+              <div>
+                <label>Date of Birth</label>
+                <input required type="date" name="dob" />
+              </div>
+              <div>
+                <label>Funding Bank (Routing)</label>
+                <input required name="routing" placeholder="026009593" inputmode="numeric" pattern="[0-9]*" />
+              </div>
+            </div>
+
+            <div class="signup-row">
+              <div>
+                <label>Funding Bank (Account #)</label>
+                <input required name="account" placeholder="••••••••••" inputmode="numeric" pattern="[0-9]*" />
+              </div>
+              <div>
+                <label>Tax ID (EIN)</label>
+                <input required name="ein" placeholder="12-3456789" />
+              </div>
+            </div>
+
+            <div class="signup-actions">
+              <button class="signup-btn" data-prev>Back</button>
+              <button class="signup-btn signup-btn-primary" data-next>Continue</button>
+            </div>
+          </div>
+
+          <div class="signup-step-pane" data-step="3" hidden>
+            <div class="signup-row">
+              <div>
+                <label>Choose your plan</label>
+                <select required name="plan" id="planSel">
+                  <option value="">Select a plan</option>
+                  <option value="flat_basic">Flat Basic • 2.6% + 10¢ (in-person) • 2.9% + 25¢ (keyed/online) • 30% hardware credit up to $500 • $0/mo</option>
+                  <option value="flat_plus">Flat Plus • 2.3% + 10¢ (in-person) • 2.7% + 20¢ (keyed/online) • 75% hardware credit up to $1,000 • $49/mo</option>
+                  <option value="cash">Cash Discount • $0/mo • $0.00 per txn (dual pricing) • 100% hardware credit up to $2,500</option>
+                </select>
+              </div>
+              <div>
+                <label>ACH (optional)</label>
+                <select name="ach">
+                  <option value="off">Disable</option>
+                  <option value="on">Enable • 1% capped at $10</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="signup-muted">
+              Prefer $0 processing fees? <a href="#" id="openDual">How dual pricing works</a>
+            </p>
+
+            <div class="signup-actions">
+              <button class="signup-btn" data-prev>Back</button>
+              <button class="signup-btn signup-btn-primary" data-next>Choose device (credit applies)</button>
+            </div>
+          </div>
+
+          <div class="signup-step-pane" data-step="4" hidden>
+            <fieldset class="signup-fieldset">
+              <label class="signup-fieldset-title">Select your equipment (choose all that apply)</label>
+
+              <div class="signup-row signup-equip-grid">
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="Dejavoo VP800" data-qty="qty_vp800" /> Dejavoo VP800</label>
+                  <select name="qty_vp800" id="qty_vp800" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="Pinpad P12" data-qty="qty_p12" /> Pinpad P12</label>
+                  <select name="qty_p12" id="qty_p12" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="Pinpad P17" data-qty="qty_p17" /> Pinpad P17</label>
+                  <select name="qty_p17" id="qty_p17" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="Dejavoo P18" data-qty="qty_p18" /> Dejavoo P18</label>
+                  <select name="qty_p18" id="qty_p18" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="NRS POS" data-qty="qty_nrs" /> NRS POS</label>
+                  <select name="qty_nrs" id="qty_nrs" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="Clover Duo" data-qty="qty_clover" /> Clover Duo</label>
+                  <select name="qty_clover" id="qty_clover" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="signup-check-label"><input type="checkbox" name="hardware[]" value="PAYS POS" data-qty="qty_pays" /> PAYS POS</label>
+                  <select name="qty_pays" id="qty_pays" disabled>
+                    <option value="1">Qty 1</option><option value="2">Qty 2</option><option value="3">Qty 3</option><option value="4">Qty 4</option>
+                  </select>
+                </div>
+              </div>
+
+              <label style="margin-top:12px">Other equipment needs (optional)</label>
+              <textarea name="hardware_notes" placeholder="e.g., kitchen printer, barcode scanner, cash drawer, scales"></textarea>
+            </fieldset>
+
+            <div class="signup-actions">
+              <button class="signup-btn" data-prev>Back</button>
+              <button class="signup-btn signup-btn-primary" type="submit">Submit Application</button>
+            </div>
+
+            <p class="signup-muted" style="margin-top:10px">Hardware ships after underwriting &amp; e-signature.</p>
+          </div>
+        </form>
+
+        <div id="thankyouBlock" class="signup-card signup-panel" hidden style="text-align:center">
+          <div style="font-size:54px">✅</div>
+          <div class="signup-num" style="font-size:26px;margin-top:6px">Thank you for completing the application.</div>
+          <p class="signup-muted" style="margin-top:8px">
+            We’ve received your details. A specialist will reach out shortly.
+          </p>
+          <div class="signup-actions" style="justify-content:center;margin-top:10px">
+            <a class="signup-btn" href="#pricing">View pricing</a>
+            <button class="signup-btn signup-btn-primary" type="button" id="newAppBtn">Start a new application</button>
+          </div>
+        </div>
+
+        <p id="formStatus" class="signup-muted" style="margin-top:8px"></p>
+      </section>
+
+      <section id="pricing" class="signup-pricing">
+        <h3>Simple pricing</h3>
+
+        <div class="signup-price-grid">
+          <div class="signup-price">
+            <h4>Flat Basic</h4>
+            <div class="signup-num-lg">2.6% + 10¢ <span class="signup-sub">in-person</span></div>
+            <div class="signup-sub">2.9% + 25¢ keyed/online • $0/mo</div>
+            <ul class="signup-list">
+              <li>30% hardware credit (cap $500)</li>
+              <li>Fast funding</li>
+              <li>PCI tools &amp; chargeback alerts</li>
+            </ul>
+          </div>
+
+          <div class="signup-price">
+            <span class="signup-badge">Best value</span>
+            <h4>Flat Plus</h4>
+            <div class="signup-num-lg">2.3% + 10¢ <span class="signup-sub">in-person</span></div>
+            <div class="signup-sub">2.7% + 20¢ keyed/online • $49/mo</div>
+            <ul class="signup-list">
+              <li>75% hardware credit (cap $1,000)</li>
+              <li>Priority support</li>
+              <li>Advanced analytics</li>
+            </ul>
+          </div>
+
+          <div class="signup-price">
+            <h4>Cash Discount</h4>
+            <div class="signup-num-lg">$0.00 per txn</div>
+            <div class="signup-sub">$0/mo • dual pricing compliant</div>
+            <ul class="signup-list">
+              <li>100% hardware credit (cap $2,500)</li>
+              <li>Signage kit &amp; pre-configured terminal</li>
+              <li>Best for fee-sensitive storefronts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="signup-actions" style="margin-top:14px">
+          <a class="signup-btn signup-btn-primary" href="#signup">Start now</a>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="dualModal" class="signup-dialog">
+      <div class="signup-actions" style="justify-content:space-between;margin-bottom:8px">
+        <h3 style="margin:0;color:#0F172A">How dual pricing works</h3>
+        <button class="signup-btn" id="closeDual">Close</button>
+      </div>
+      <ol class="signup-muted" style="margin-top:0;padding-left:18px">
+        <li>Display a cash price and a card price. Customers paying cash receive an instant discount.</li>
+        <li>Compliant with card-brand rules when signage and receipts are clear.</li>
+        <li>Terminal/POS is pre-configured; you keep more of every sale with $0 processing fees.</li>
+      </ol>
+    </dialog>
+  </section>
+
+  <style>
+    :root{
+      --brand:#0BA360;
+      --brand-dark:#079154;
+      --ink:#0F172A;
+      --text:#334155;
+      --muted:#6B7280;
+      --bg:#F7F9FB;
+      --card:#FFFFFF;
+      --line:#E5E7EB;
+      --radius:18px;
+      --shadow-sm:0 8px 20px rgba(2,8,23,.06);
+      --shadow:0 22px 60px rgba(2,8,23,.10);
+      --t:.22s cubic-bezier(.2,.8,.2,1);
+      --space:clamp(14px,2.5vw,24px);
+      --wrap:1140px;
+    }
+
+    .signup-page{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .signup-page *{box-sizing:border-box}
+    .signup-page a{color:inherit;text-decoration:none}
+    .signup-page img{max-width:100%;height:auto;display:block}
+    .signup-wrap{max-width:var(--wrap);margin:0 auto;padding:var(--space) clamp(12px,3.5vw,16px)}
+    .signup-page [hidden]{display:none !important;}
+
+    .signup-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      transition:transform var(--t),box-shadow var(--t),border-color var(--t),background var(--t);
+      min-height:44px;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:15px;
+    }
+
+    .signup-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:var(--shadow-sm);
+      border-color:#d1d5db;
+    }
+
+    .signup-btn-primary{
+      background:var(--brand);
+      border-color:var(--brand);
+      color:#fff;
+    }
+
+    .signup-hero{padding:36px 0 6px;margin-bottom:40px}
+    .signup-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}
+    .signup-eyebrow{
+      display:inline-block;
+      background:#E7F7EF;
+      color:#065F46;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:12px;
+    }
+
+    .signup-hero h1{
+      color:var(--ink);
+      font-size:clamp(26px,5.4vw,40px);
+      line-height:1.12;
+      margin-bottom:12px;
+    }
+
+    .signup-lead{
+      color:var(--muted);
+      font-size:clamp(14px,3.6vw,16px);
+      margin-bottom:18px;
+    }
+
+    .signup-hero-bullets{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin:14px 0 18px;
+    }
+
+    .signup-chip{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+
+    .signup-chip b{color:var(--ink)}
+    .signup-hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    .signup-carousel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:14px;
+      box-shadow:var(--shadow-sm);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      height:100%;
+      min-height:420px;
+    }
+
+    .signup-car-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .signup-car-head h3{
+      margin:0;
+      font-size:18px;
+      color:var(--ink);
+    }
+
+    .signup-muted{color:var(--muted)}
+
+    .signup-rail{
+      display:flex;
+      gap:14px;
+      overflow:auto;
+      scroll-behavior:smooth;
+      flex:1;
+      min-height:0;
+      -webkit-overflow-scrolling:touch;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:none;
+    }
+
+    .signup-rail::-webkit-scrollbar{display:none}
+
+    .signup-slide{
+      flex:0 0 100%;
+      scroll-snap-align:start;
+    }
+
+    .signup-card{
+      height:100%;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      display:grid;
+      grid-template-rows:auto 1fr;
+      gap:10px;
+      transition:transform var(--t), box-shadow var(--t);
+    }
+
+    .signup-card:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
+    }
+
+    .signup-card img{
+      max-width:90%;
+      max-height:220px;
+      object-fit:contain;
+      margin:10px auto 0;
+    }
+
+    .signup-card h4{
+      font-size:16px;
+      color:var(--ink);
+    }
+
+    .signup-card p{
+      font-size:13px;
+      color:#4b5563;
+    }
+
+    .signup-ctrl{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+
+    .signup-dotbar{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .signup-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#cbd5e1;
+      border:none;
+      cursor:pointer;
+    }
+
+    .signup-dot[aria-current="true"]{
+      background:var(--brand);
+      transform:scale(1.2);
+    }
+
+    .signup-navbtn{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+      font-size:22px;
+    }
+
+    .signup-navbtn:disabled{
+      opacity:.4;
+      cursor:not-allowed;
+    }
+
+    .signup-deals{
+      padding:26px 0;
+      margin-top:44px;
+    }
+
+    .signup-deals h2{
+      color:var(--ink);
+      font-size:clamp(22px,4.8vw,28px);
+      margin-bottom:8px;
+    }
+
+    .signup-deals p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .signup-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    .signup-deal{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow-sm);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform var(--t), box-shadow var(--t);
+    }
+
+    .signup-deal:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
+    }
+
+    .signup-deal-visual{
+      height:clamp(150px,32vw,180px);
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#F8FAFC,#F1F5F9);
+    }
+
+    .signup-deal-visual img{
+      max-width:80%;
+      max-height:160px;
+      object-fit:contain;
+    }
+
+    .signup-deal-body{padding:14px}
+    .signup-deal-title{font-weight:700;color:var(--ink);margin-bottom:6px}
+    .signup-deal-text{font-size:14px;color:#4b5563}
+
+    .signup-deal-foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:12px 14px;
+      border-top:1px solid var(--line);
+    }
+
+    .signup-save{
+      background:#E7F7EF;
+      color:#065F46;
+      border-radius:999px;
+      padding:6px 10px;
+      font-weight:700;
+      font-size:12px;
+    }
+
+    .signup-steps{
+      padding:12px 0 6px;
+      margin-top:44px;
+    }
+
+    .signup-steps h3{
+      color:var(--ink);
+      font-size:clamp(20px,4.6vw,24px);
+      margin-bottom:12px;
+    }
+
+    .signup-steps-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .signup-step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .signup-step b{color:var(--ink)}
+    .signup-step p{font-size:14px;color:#4b5563;margin-top:6px}
+
+    .signup-shell{margin-top:44px}
+
+    .signup-panel{padding:18px}
+    .signup-card.signup-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .signup-card.signup-panel::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:22px;
+      background:radial-gradient(600px 80px at -10% 0%, rgba(11,163,96,.12), transparent 60%);
+      pointer-events:none;
+    }
+
+    .signup-form-steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .signup-stepper-pill{
+      background:#F8FAFC;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px 12px;
+      text-align:center;
+      font-size:12px;
+      color:#334155;
+      min-height:38px;
+      display:grid;
+      place-items:center;
+    }
+
+    .signup-stepper-pill.active{
+      background:#E7F7EF;
+      border-color:#A7F3D0;
+    }
+
+    .signup-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .signup-page label{
+      display:block;
+      font-size:13px;
+      color:#334155;
+      margin:10px 0 6px;
+      font-weight:600;
+    }
+
+    .signup-page input,
+    .signup-page select,
+    .signup-page textarea{
+      width:100%;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      min-height:46px;
+      padding:12px 14px;
+      font-size:15px;
+      transition:border var(--t),box-shadow var(--t);
+      font-family:inherit;
+    }
+
+    .signup-page textarea{min-height:90px}
+
+    .signup-page input:focus,
+    .signup-page select:focus,
+    .signup-page textarea:focus{
+      outline:none;
+      border-color:var(--brand);
+      box-shadow:0 0 0 3px rgba(11,163,96,.15);
+    }
+
+    .signup-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .signup-num{font-weight:800}
+    .signup-fieldset{border:none;padding:0;margin:0}
+    .signup-fieldset-title{
+      display:block;
+      margin:0 0 10px;
+      font-weight:700;
+      color:#0F172A;
+    }
+
+    .signup-check-label{margin:0 0 6px}
+    .signup-pricing{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:44px;
+      position:relative;
+    }
+
+    .signup-pricing::before{
+      content:"";
+      position:absolute;
+      inset:-12px;
+      border-radius:36px;
+      background:radial-gradient(900px 120px at 20% -10%, rgba(11,163,96,.10), transparent 60%);
+      z-index:-1;
+    }
+
+    .signup-pricing h3{
+      color:var(--ink);
+      font-size:clamp(20px,4.6vw,24px);
+      margin-bottom:12px;
+    }
+
+    .signup-price-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    .signup-price{
+      position:relative;
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,#FFFFFF,#FAFCFF);
+      box-shadow:0 1px 0 rgba(2,8,23,.02) inset, 0 10px 30px rgba(2,8,23,.06);
+      transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .signup-price:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 60px rgba(2,8,23,.12);
+      border-color:#dbe1ea;
+    }
+
+    .signup-price .signup-badge{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#E7F7EF;
+      color:#065F46;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .signup-price h4{
+      margin:0 0 8px;
+      color:#0F172A;
+    }
+
+    .signup-num-lg{
+      font-size:26px;
+      font-weight:800;
+      color:#0F172A;
+      margin-top:2px;
+    }
+
+    .signup-sub{
+      color:#475569;
+      margin-top:4px;
+    }
+
+    .signup-list{
+      margin:10px 0 0;
+      padding-left:0;
+      list-style:none;
+    }
+
+    .signup-list li{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      margin:8px 0;
+      color:#4b5563;
+    }
+
+    .signup-list li::before{
+      content:"✓";
+      color:#059669;
+      font-weight:800;
+    }
+
+    .signup-dialog{
+      border:none;
+      max-width:680px;
+      width:90%;
+      background:#fff;
+      color:#111827;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    .signup-page :focus-visible{
+      outline:3px solid rgba(11,163,96,.3);
+      outline-offset:2px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+      }
+    }
+
+    @media (min-width:760px){
+      .signup-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (min-width:860px){
+      .signup-slide{flex-basis:50%}
+    }
+
+    @media (min-width:900px){
+      .signup-steps-grid{grid-template-columns:repeat(3,1fr)}
+      .signup-price-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media (min-width:1060px){
+      .signup-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media (min-width:1120px){
+      .signup-slide{flex-basis:33.333%}
+    }
+
+    @media (max-width:920px){
+      .signup-hero-grid{grid-template-columns:1fr}
+      .signup-hero-bullets{grid-template-columns:1fr}
+      .signup-row{grid-template-columns:1fr}
+      .signup-carousel{min-height:360px}
+    }
+
+    @media (max-width:640px){
+      .signup-wrap{padding:16px 14px}
+      .signup-hero-cta .signup-btn{flex:1 1 100%}
+      .signup-card img{max-height:180px}
+      .signup-navbtn{width:40px;height:40px}
+      .signup-stepper-pill{font-size:11px;padding:8px 10px}
+    }
+
+    @media (max-width:480px){
+      .signup-btn{width:100%}
+      .signup-carousel{min-height:unset}
+      .signup-card{padding:12px}
+      .signup-deal-visual{height:150px}
+      .signup-deal-foot{justify-content:flex-start}
+    }
+  </style>
+
+  <script is:inline>
+    // @ts-nocheck
+    document.addEventListener('DOMContentLoaded', () => {
+      (() => {
+        const rail = document.getElementById('rail');
+        const slides = Array.from(rail.querySelectorAll('.signup-slide'));
+        const dotsWrap = document.getElementById('dots');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let i = 0;
+
+        slides.forEach((_, idx) => {
+          const d = document.createElement('button');
+          d.className = 'signup-dot';
+          d.type = 'button';
+          d.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+          d.addEventListener('click', () => go(idx));
+          dotsWrap.appendChild(d);
+        });
+
+        function width() {
+          return slides[0].getBoundingClientRect().width + 14;
+        }
+
+        function update() {
+          dotsWrap.querySelectorAll('.signup-dot').forEach((d, idx) =>
+            d.setAttribute('aria-current', idx === i ? 'true' : 'false')
+          );
+          prev.disabled = i === 0;
+          next.disabled = i >= slides.length - 1;
+        }
+
+        function go(n) {
+          i = Math.max(0, Math.min(slides.length - 1, n));
+          rail.scrollTo({ left: width() * i, behavior: 'smooth' });
+          update();
+        }
+
+        prev.addEventListener('click', () => go(i - 1));
+        next.addEventListener('click', () => go(i + 1));
+        window.addEventListener('resize', update);
+        update();
+      })();
+
+      (() => {
+        const dualModal = document.getElementById('dualModal');
+        document.getElementById('openDual')?.addEventListener('click', (e) => {
+          e.preventDefault();
+          dualModal.showModal();
+        });
+        document.getElementById('closeDual')?.addEventListener('click', () => dualModal.close());
+      })();
+
+      (() => {
+        const form = document.getElementById('appForm');
+        const panes = form.querySelectorAll('.signup-step-pane[data-step]');
+        const steps = document.querySelectorAll('.signup-form-steps .signup-stepper-pill');
+        const thankyou = document.getElementById('thankyouBlock');
+        const statusEl = document.getElementById('formStatus');
+        let idx = 0;
+
+        thankyou.hidden = true;
+        form.hidden = false;
+
+        function show(i) {
+          idx = Math.max(0, Math.min(panes.length - 1, i));
+          panes.forEach((p, j) => p.hidden = j !== idx);
+          steps.forEach((s, j) => s.classList.toggle('active', j === idx));
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        form.querySelectorAll('[data-next]').forEach((b) => b.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (idx < panes.length - 1) show(idx + 1);
+        }));
+
+        form.querySelectorAll('[data-prev]').forEach((b) => b.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (idx > 0) show(idx - 1);
+        }));
+
+        form.querySelectorAll('input[type="checkbox"][name="hardware[]"]').forEach((cb) => {
+          const qtyId = cb.getAttribute('data-qty');
+          const qtySel = qtyId ? document.getElementById(qtyId) : null;
+          const sync = () => {
+            if (qtySel) qtySel.disabled = !cb.checked;
+          };
+          cb.addEventListener('change', sync);
+          sync();
+        });
+
+        function hasHardwareSelection() {
+          return !!form.querySelector('input[name="hardware[]"]:checked');
+        }
+
+        form.addEventListener('submit', async (e) => {
+          if (!form.checkValidity()) {
+            return;
+          }
+
+          if (!hasHardwareSelection()) {
+            e.preventDefault();
+            alert('Please select at least one piece of equipment.');
+            return;
+          }
+
+          e.preventDefault();
+          statusEl.textContent = '';
+          const btn = form.querySelector('[type="submit"]');
+          if (btn) btn.disabled = true;
+
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+              form.reset();
+              form.querySelectorAll('select[id^="qty_"]').forEach((s) => s.disabled = true);
+              form.hidden = true;
+              thankyou.hidden = false;
+              window.scrollTo({
+                top: thankyou.getBoundingClientRect().top + window.scrollY - 40,
+                behavior: 'smooth'
+              });
+            } else {
+              statusEl.textContent = 'Something went wrong submitting your application. Please try again or email sales@ppdtechnology.com.';
+              if (btn) btn.disabled = false;
+            }
+          } catch (err) {
+            statusEl.textContent = 'Network error. Please try again.';
+            if (btn) btn.disabled = false;
+          }
+        });
+
+        document.getElementById('newAppBtn')?.addEventListener('click', () => {
+          thankyou.hidden = true;
+          form.hidden = false;
+          show(0);
+        });
+
+        show(0);
+      })();
+    });
+  </script>
+</BaseLayout>

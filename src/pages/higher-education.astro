@@ -1,0 +1,1011 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Higher Education Payments">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <div class="edu-page">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> Payments Built for Campuses</span>
+          <h1>Modernize Tuition, Fees & Campus Commerce</h1>
+          <p>
+            From tuition and housing to dining, events, and alumni giving, unlock a seamless,
+            student-friendly payment experience online and on campus. Reduce lines, shrink AR,
+            and keep data secure.
+          </p>
+
+          <div class="badges">
+            <span class="badge"><i class="fa-solid fa-user-shield"></i> FERPA-Aware Processes</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> PCI DSS Level 1</span>
+            <span class="badge"><i class="fa-solid fa-earth-americas"></i> International & FX</span>
+            <span class="badge"><i class="fa-solid fa-building-columns"></i> ACH & Payment Plans</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="page-btn hero-gold-btn" href="/signup">Start for Universities</a>
+            <a class="page-btn hero-outline-btn" href="#panel">Explore Campus Use Cases</a>
+          </div>
+        </div>
+
+        <div class="scene" aria-label="Student portal payment scene">
+          <div class="portal">
+            <div class="portal-hdr">
+              <div class="left">
+                <div class="dots">
+                  <span class="dot r"></span>
+                  <span class="dot y"></span>
+                  <span class="dot g"></span>
+                </div>
+                <strong>Student Portal — Secure Checkout</strong>
+              </div>
+              <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <div class="portal-body">
+              <div class="portal-row">
+                <div class="box"><strong>Student</strong><br />A. Khan</div>
+                <div class="box"><strong>Term</strong><br />Fall 2025</div>
+                <div class="box"><strong>Plan</strong><br />4-Installment</div>
+                <div class="box"><strong>Status</strong><br />Verified</div>
+              </div>
+
+              <div class="amt"><span>Amount Due</span><strong>$2,450.00</strong></div>
+              <a class="pay" href="/signup">Pay / Schedule</a>
+
+              <div class="skyline">
+                <span class="building b1"></span>
+                <span class="building b2"></span>
+                <span class="building b3"></span>
+                <span class="building b4"></span>
+                <span class="building b5"></span>
+                <span class="building b6"></span>
+                <span class="building b7"></span>
+                <span class="star s1"></span>
+                <span class="star s2"></span>
+                <span class="star s3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integrations">
+      <div class="container">
+        <div class="rowi" aria-label="Higher ed integrations">
+          <span class="pill"><i class="fa-solid fa-database"></i> SIS/ERP (Workday, Banner/Ellucian, PeopleSoft)</span>
+          <span class="pill"><i class="fa-solid fa-chalkboard-user"></i> LMS (Canvas, Blackboard)</span>
+          <span class="pill"><i class="fa-solid fa-passport"></i> International / FX</span>
+          <span class="pill"><i class="fa-solid fa-building-columns"></i> ACH / eCheck (NACHA)</span>
+          <span class="pill"><i class="fa-solid fa-clipboard-check"></i> Payment Plans & Dunning</span>
+          <span class="pill"><i class="fa-solid fa-gift"></i> Alumni & Advancement</span>
+        </div>
+        <div class="integrations-note">*via compatible integrations</div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel">
+      <div class="container wrap">
+        <div>
+          <h3>Everything on Campus, One Payment Layer</h3>
+          <p>
+            Tuition & fees, housing, dining, bookstore, athletics, events, consolidate payments
+            while giving students a clean, consistent experience across every touchpoint.
+          </p>
+
+          <div class="chips">
+            <span class="chip">Tuition & Fees</span>
+            <span class="chip">Housing & Meal Plans</span>
+            <span class="chip">Bookstore & POS</span>
+            <span class="chip">Athletics & Tickets</span>
+            <span class="chip">Continuing Ed</span>
+            <span class="chip">Donations & Alumni</span>
+          </div>
+        </div>
+
+        <div class="orbit" aria-hidden="true">
+          <span class="orb o1"></span>
+          <span class="orb o2"></span>
+          <span class="orb o3"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <h2>Student-First Features that Grow Collections</h2>
+        <p class="lead">Improve yield, reduce delinquencies, and deliver a delightful portal experience.</p>
+
+        <div class="grid">
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Installments & Auto-Pay</h3>
+            <p class="muted">Flexible schedules, auto-reminders, and dunning flows that nudge on time, no line at the bursar.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-earth-americas"></i></div>
+            <h3>International & FX</h3>
+            <p class="muted">Streamlined cross-border payments and compliant data handling for global programs and students.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-qrcode"></i></div>
+            <h3>Campus Commerce</h3>
+            <p class="muted">POS, mobile, and QR payments for dining, bookstore, events, and pop-ups with unified reporting.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Security Built-In</h3>
+            <p class="muted">PCI Level 1, tokenization, 3-D Secure, and TLS 1.2+ reduce risk and protect student trust.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Revenue & AR Analytics</h3>
+            <p class="muted">Track time-to-collect, payment plan health, and cohorts by program, campus, or term.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-link"></i></div>
+            <h3>ERP/SIS Friendly</h3>
+            <p class="muted">Integrate with SIS/ERP and LMS to sync balances, post back results, and centralize receipts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps" id="steps">
+      <div class="container">
+        <h2>How Universities Launch</h2>
+        <p class="lead">Go from sandbox to live in weeks, not semesters.</p>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="num">1</div>
+            <div><strong>Create your account</strong><br /><span class="muted">Instant sandbox, fast underwriting for live.</span></div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div><strong>Connect SIS/ERP</strong><br /><span class="muted">Use APIs or file drops; sync balances securely.</span></div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div><strong>Brand the portal</strong><br /><span class="muted">Add colors, logos, payment options, and plan rules.</span></div>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <div><strong>Go live</strong><br /><span class="muted">Monitor collection KPIs and improve yield.</span></div>
+          </div>
+        </div>
+
+        <div class="section-cta">
+          <a class="page-btn page-btn-primary" href="/signup">Get Started Today</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev" id="dev">
+      <div class="container dev-wrap">
+        <div>
+          <h2>Built for Campus IT</h2>
+          <p class="lead">
+            Hosted fields + webhooks keep PCI scope low while syncing payments back to SIS/ERP.
+          </p>
+
+          <div class="dev-list">
+            <div><i class="fa-solid fa-check"></i> REST APIs & webhooks for payments, refunds, disputes, plans</div>
+            <div><i class="fa-solid fa-check"></i> Tokenization & account updater for fewer declines</div>
+            <div><i class="fa-solid fa-check"></i> ACH/eCheck with NACHA compliance</div>
+            <div><i class="fa-solid fa-check"></i> Sandboxes & test cards for rapid QA</div>
+          </div>
+
+          <div class="dev-actions">
+            <a class="page-btn page-btn-primary" href="/signup">Get API Keys</a>
+            <button class="page-btn page-btn-outline" type="button">View Docs</button>
+          </div>
+        </div>
+
+        <div class="codepanel" aria-label="API example">
+          <div class="codebar">
+            <span class="dotbar dr"></span>
+            <span class="dotbar dy"></span>
+            <span class="dotbar dg"></span>
+          </div>
+<pre>// Create a tuition invoice
+POST /v1/education/invoices
+Authorization: Bearer &lt;YOUR_TEST_KEY&gt;
+Content-Type: application/json
+
+&#123;
+  "student_id": "stu_1045",
+  "term": "2025-FALL",
+  "amount": 245000,
+  "currency": "usd",
+  "plan": &#123;"installments": 4, "interval": "monthly", "auto_debit": true&#125;,
+  "due_date": "2025-10-01",
+  "deliver": ["email","sms"],
+  "metadata": &#123;"program":"MBA","campus":"Downtown"&#125;
+&#125;
+
+// Webhook: edu.invoice.paid
+&#123;
+  "type":"edu.invoice.paid",
+  "data": &#123;
+    "invoice_id":"inv_78ab",
+    "student_id":"stu_1045",
+    "amount":245000,
+    "method":"ach",
+    "posted_back": true
+  &#125;
+&#125;
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="compliance">
+      <div class="container">
+        <div class="chips center">
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> FERPA-Aware Processes</span>
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> PCI DSS Level 1</span>
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> Tokenization & Vault</span>
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> 3-D Secure 2.2</span>
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> TLS 1.2+</span>
+          <span class="chip"><i class="fa-solid fa-circle-check"></i> NACHA (ACH/eCheck)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Higher Ed FAQs</h2>
+        <p class="lead">Fast answers for bursars, student accounts, and campus IT.</p>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do you support installment plans and auto-debit? <i class="fa-solid fa-plus"></i></summary>
+          <div class="faq-a">Yes, set up flexible schedules, auto-debit, reminders, and dunning to reduce delinquencies.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How do you handle international students? <i class="fa-solid fa-plus"></i></summary>
+          <div class="faq-a">We support cross-border payments and can expose FX options for students paying from abroad.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Can we integrate with our SIS/ERP? <i class="fa-solid fa-plus"></i></summary>
+          <div class="faq-a">Yes, use APIs/webhooks or SFTP/file drops to sync balances and post payments back to SIS/ERP.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What’s the PCI impact for our team? <i class="fa-solid fa-plus"></i></summary>
+          <div class="faq-a">Hosted fields and tokenization keep sensitive data off your servers, helping reduce scope and audit effort.</div>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Bring Payments Up to Speed with Your Campus</h2>
+        <p>Modern, student-friendly payments for every program, department, and event, online and on campus.</p>
+        <a class="page-btn page-btn-primary" href="/signup">Launch Higher-Ed Payments</a>
+      </div>
+    </section>
+
+    <div class="reg-bar">
+      PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA. © 2025 PPD Technology.
+    </div>
+  </div>
+
+  <style>
+    .edu-page {
+      --primary: #0055ff;
+      --primary-dark: #0044cc;
+      --secondary: #0f1b35;
+      --accent: #00cc96;
+      --light: #f5f7fa;
+      --dark: #1a232e;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --eduA: #5b21b6;
+      --eduB: #a21caf;
+      --eduC: #fde68a;
+      --eduBg: #0b1020;
+      --glass: #ffffff33;
+      font-family: "Inter", sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: var(--light);
+    }
+
+    .edu-page .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .edu-page .page-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+
+    .edu-page .page-btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .edu-page .page-btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
+    }
+
+    .edu-page .page-btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .edu-page .page-btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, 0.2);
+    }
+
+    .edu-page .hero-gold-btn {
+      background: #fde68a;
+      border-color: #fde68a;
+      color: #2d1600;
+      font-weight: 800;
+    }
+
+    .edu-page .hero-outline-btn {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #fff;
+      background: transparent;
+    }
+
+    .edu-page .hero {
+      background:
+        radial-gradient(1100px 500px at 80% -10%, rgba(253, 232, 255, 0.35), transparent 60%),
+        radial-gradient(700px 400px at 10% 110%, rgba(219, 234, 254, 0.25), transparent 60%),
+        linear-gradient(120deg, #25144a, #6d28d9 45%, #be185d);
+      color: #fff;
+      padding: 86px 0 70px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .edu-page .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 14px 14px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .edu-page .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .edu-page .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(4px);
+      font-size: 12px;
+      color: #fdf4ff;
+    }
+
+    .edu-page .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.12;
+      margin: 12px 0 10px;
+      color: #fff7ff;
+    }
+
+    .edu-page .hero p {
+      opacity: 0.96;
+      margin-bottom: 22px;
+      color: #f8e9ff;
+      max-width: 640px;
+    }
+
+    .edu-page .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 26px;
+    }
+
+    .edu-page .badge {
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(4px);
+      color: #fff;
+    }
+
+    .edu-page .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .edu-page .scene {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .edu-page .portal {
+      background: linear-gradient(180deg, #1b1530aa, #120e26aa);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      color: #ede9fe;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .edu-page .portal-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .edu-page .portal-hdr .left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .edu-page .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .edu-page .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .edu-page .r { background: #ef4444; }
+    .edu-page .y { background: #f59e0b; }
+    .edu-page .g { background: #10b981; }
+
+    .edu-page .portal-body {
+      padding: 16px;
+    }
+
+    .edu-page .portal-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .edu-page .box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    .edu-page .amt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    .edu-page .pay {
+      margin-top: 14px;
+      width: 100%;
+      padding: 12px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 800;
+      background: linear-gradient(90deg, #fde68a, #f59e0b);
+      color: #2d1600;
+      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.35);
+      transition: 0.25s;
+      display: inline-flex;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .edu-page .pay:hover {
+      transform: translateY(-2px);
+    }
+
+    .edu-page .skyline {
+      position: relative;
+      height: 80px;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.15));
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .edu-page .building {
+      position: absolute;
+      bottom: 0;
+      width: 48px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(2px);
+    }
+
+    .edu-page .b1 { left: 8%; height: 42px; }
+    .edu-page .b2 { left: 18%; height: 60px; }
+    .edu-page .b3 { left: 29%; height: 50px; }
+    .edu-page .b4 { left: 41%; height: 70px; }
+    .edu-page .b5 { left: 54%; height: 46px; }
+    .edu-page .b6 { left: 66%; height: 58px; }
+    .edu-page .b7 { left: 78%; height: 48px; }
+
+    .edu-page .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    }
+
+    .edu-page .s1 { top: -12px; left: 8%; animation: float 8s infinite; }
+    .edu-page .s2 { top: 10px; left: 85%; animation: float 10s -1s infinite; }
+    .edu-page .s3 { top: 30px; left: 55%; animation: float 9s -2s infinite; }
+
+    .edu-page .integrations {
+      background: #fff;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .edu-page .rowi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .edu-page .pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .edu-page .pill i,
+    .edu-page .chip i,
+    .edu-page .dev-list i {
+      color: #7c3aed;
+    }
+
+    .edu-page .integrations-note {
+      text-align: center;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .edu-page .section {
+      padding: 72px 0;
+    }
+
+    .edu-page .section h2,
+    .edu-page .faq h2,
+    .edu-page .cta h2,
+    .edu-page .dev h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+
+    .edu-page .lead {
+      text-align: center;
+      color: var(--gray);
+      max-width: 780px;
+      margin: 0 auto 28px;
+    }
+
+    .edu-page .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .edu-page .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #eaecef;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+      transition: 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edu-page .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .edu-page .iconbox {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fde68a, #e9d5ff);
+      color: #5b21b6;
+      margin-bottom: 12px;
+      font-size: 22px;
+      border: 1px solid #fde68a;
+    }
+
+    .edu-page .muted {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .edu-page .panel {
+      background: radial-gradient(600px 280px at 10% -10%, rgba(255, 255, 255, 0.08), transparent 30%), var(--eduBg);
+      color: #e5e7eb;
+      padding: 68px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edu-page .panel .wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .edu-page .panel h3 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: #fde68a;
+    }
+
+    .edu-page .panel p {
+      color: #c9d2ff;
+    }
+
+    .edu-page .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .edu-page .chips.center {
+      justify-content: center;
+    }
+
+    .edu-page .chip {
+      border: 1px dashed #94a3b8;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 13px;
+    }
+
+    .edu-page .orbit {
+      position: relative;
+      min-height: 260px;
+      border: 1px solid #1f2942;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #0b1228, #0a1022);
+      overflow: hidden;
+    }
+
+    .edu-page .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(0.2px);
+      opacity: 0.7;
+      mix-blend-mode: screen;
+    }
+
+    .edu-page .o1 {
+      width: 160px;
+      height: 160px;
+      left: 10%;
+      top: 12%;
+      background: radial-gradient(circle at 30% 30%, #fffb, #0000 70%);
+      animation: float 10s infinite;
+    }
+
+    .edu-page .o2 {
+      width: 110px;
+      height: 110px;
+      right: 8%;
+      top: 22%;
+      background: radial-gradient(circle at 30% 30%, #a855f7bb, #0000 70%);
+      animation: float 12s -1s infinite;
+    }
+
+    .edu-page .o3 {
+      width: 90px;
+      height: 90px;
+      left: 40%;
+      bottom: 10%;
+      background: radial-gradient(circle at 30% 30%, #f59e0bbb, #0000 70%);
+      animation: float 9s -2s infinite;
+    }
+
+    .edu-page .steps {
+      background: #fff;
+    }
+
+    .edu-page .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .edu-page .step {
+      background: #fff;
+      border: 1px dashed #d6d3ff;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .edu-page .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ede9fe;
+      color: #5b21b6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      border: 1px solid #ddd6fe;
+      flex-shrink: 0;
+    }
+
+    .edu-page .section-cta {
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .edu-page .dev {
+      background: linear-gradient(180deg, #ffffff, #f6f9ff 60%, #eef5ff 100%);
+      padding: 70px 0;
+      border-top: 1px solid var(--light-gray);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .edu-page .dev-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .edu-page .dev-list {
+      display: grid;
+      gap: 10px;
+      color: #0f172a;
+    }
+
+    .edu-page .dev-actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .edu-page .codepanel {
+      background: #0b1120;
+      color: #e5e7eb;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(2, 6, 23, 0.4);
+    }
+
+    .edu-page .codebar {
+      display: flex;
+      gap: 6px;
+      padding: 10px 12px;
+      background: #0a0f1f;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .edu-page .dotbar {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .edu-page .dr { background: #ef4444; }
+    .edu-page .dy { background: #f59e0b; }
+    .edu-page .dg { background: #22c55e; }
+
+    .edu-page pre {
+      margin: 0;
+      padding: 16px;
+      overflow: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    .edu-page .compliance {
+      background: #fff;
+      border-top: 1px solid var(--light-gray);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 28px 0;
+    }
+
+    .edu-page .faq {
+      padding: 70px 0;
+    }
+
+    .edu-page .faq-item {
+      background: #fff;
+      border: 1px solid #eaecef;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .edu-page .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 16px 18px;
+      font-weight: 600;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    .edu-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .edu-page .faq-a {
+      padding: 0 18px 16px;
+      color: #475569;
+    }
+
+    .edu-page .cta {
+      color: #1e1b4b;
+      padding: 72px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(1000px 420px at 80% 0%, #ffffff, #fff7d6 65%, #fff0c2 100%);
+    }
+
+    .edu-page .cta p {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      color: #3f2e00;
+    }
+
+    .edu-page .reg-bar {
+      background: var(--secondary);
+      color: #fff;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .edu-page .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .edu-page .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+
+      .edu-page .panel .wrap {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .edu-page .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .edu-page .dev-wrap {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .edu-page .hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .edu-page .page-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</BaseLayout>

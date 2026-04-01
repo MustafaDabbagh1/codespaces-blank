@@ -1,0 +1,752 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | MX Build for Contractors">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <div class="mx-page">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow"><i class="fa-solid fa-building"></i> MX Build for Contractors</span>
+
+            <h1>Estimate, schedule, track, and bill — all in MX Build.</h1>
+
+            <p class="hero-text">
+              MX Build brings estimating, job scheduling, timecards, purchase orders,
+              documents, and progress billing into one system. With PPD payments built
+              in, you can invoice by email and let clients pay by card or ACH—faster cash
+              flow, less paperwork.
+            </p>
+
+            <div class="hero-badges">
+              <span class="badge"><i class="fa-solid fa-calculator"></i> Estimating & COs</span>
+              <span class="badge"><i class="fa-solid fa-diagram-project"></i> Schedules & Tasks</span>
+              <span class="badge"><i class="fa-solid fa-clock"></i> Timecards</span>
+              <span class="badge"><i class="fa-solid fa-file-invoice-dollar"></i> Progress Billing</span>
+              <span class="badge"><i class="fa-solid fa-credit-card"></i> ACH & Cards</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="page-btn page-btn-primary" href="#features">
+                <i class="fa-solid fa-bolt"></i> See MX Build Features
+              </a>
+              <a class="page-btn page-btn-outline" href="#payments">
+                <i class="fa-solid fa-credit-card"></i> Payments with PPD
+              </a>
+              <a class="page-btn book-btn" href="#demo-form">
+                <i class="fa-solid fa-video"></i> Book a Demo
+              </a>
+            </div>
+
+            <p class="hero-note">
+              <i class="fa-solid fa-shield-halved"></i> PCI Level 1 • End-to-end encryption • Next-day funding options
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <div class="hero-card">
+              <img
+                src="https://mmdabbagh24.neocities.org/images/Mx-Build/mxbuildphotomain.png"
+                alt="MX Build main dashboard"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-strip">
+      <div class="container">
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img
+              src="https://mmdabbagh24.neocities.org/images/Mx-Build/mxbuildphotomain.png"
+              alt="MX Build dashboard"
+            />
+          </div>
+          <div class="gallery-card">
+            <img
+              src="https://mmdabbagh24.neocities.org/images/Mx-Build/Mx%20build%20photo.png"
+              alt="MX Build screen one"
+            />
+          </div>
+          <div class="gallery-card">
+            <img
+              src="https://mmdabbagh24.neocities.org/images/Mx-Build/mx%20buildphoto2.png"
+              alt="MX Build screen two"
+            />
+          </div>
+          <div class="gallery-card">
+            <img
+              src="https://mmdabbagh24.neocities.org/images/Mx-Build/mxbuildphoto3.png"
+              alt="MX Build screen three"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Field-ready tools your team will actually use</h2>
+          <p>
+            Designed for GCs, subcontractors, and specialty trades—simple to roll out,
+            powerful when you grow.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3><i class="fa-solid fa-calculator"></i> Estimating & Change Orders</h3>
+            <p>Build itemized estimates, convert to projects in one click, and track approved COs so margin stays intact.</p>
+            <div class="chip-row">
+              <span class="chip"><i class="fa-solid fa-plus-minus"></i> Assemblies</span>
+              <span class="chip"><i class="fa-solid fa-percent"></i> Markups</span>
+              <span class="chip"><i class="fa-solid fa-file-signature"></i> e-Sign</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-diagram-project"></i> Scheduling & Tasks</h3>
+            <p>Drag-and-drop schedules with dependencies. Assign daily tasks so foremen and techs know what’s next.</p>
+            <div class="chip-row">
+              <span class="chip"><i class="fa-solid fa-timeline"></i> Gantt</span>
+              <span class="chip"><i class="fa-solid fa-users"></i> Crews</span>
+              <span class="chip"><i class="fa-solid fa-mobile-screen"></i> Mobile updates</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-clock"></i> Timecards & Job Costing</h3>
+            <p>Track labor by cost code from the field. Approvals roll into payroll and job costing automatically.</p>
+            <div class="chip-row">
+              <span class="chip"><i class="fa-solid fa-location-dot"></i> GPS stamps</span>
+              <span class="chip"><i class="fa-solid fa-list-check"></i> Cost codes</span>
+              <span class="chip"><i class="fa-solid fa-clipboard-check"></i> Approvals</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-file-invoice-dollar"></i> Progress Billing</h3>
+            <p>Invoice by percent complete or line item. Attach photos, COs, and lien waivers right to each draw.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-receipt"></i> Materials & Purchase Orders</h3>
+            <p>Issue POs, receive items on site, and keep material spend tied to the job for real-time cost visibility.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-cloud-arrow-up"></i> Documents & Photos</h3>
+            <p>Plans, RFIs, punch lists, and site photos—organized, searchable, and synced across devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section payments-section" id="payments">
+      <div class="container">
+        <div class="section-title">
+          <h2>PPD payments built into MX Build</h2>
+          <p>
+            Send invoices right from MX Build and give customers a secure ACH or card checkout.
+            Funds land quickly and reconcile automatically.
+          </p>
+        </div>
+
+        <div class="pay-block">
+          <div class="panel">
+            <h3><i class="fa-solid fa-credit-card"></i> Flexible options for every job</h3>
+            <p class="panel-text">
+              From deposits to progress draws, pick the mix that fits your workflow.
+            </p>
+
+            <div class="list">
+              <div class="li">ACH with next-day options</div>
+              <div class="li">Cards (Visa/MC/Amex/Discover)</div>
+              <div class="li">Surcharging / cash-discount</div>
+              <div class="li">Deposits & retainage</div>
+              <div class="li">QuickBooks sync</div>
+              <div class="li">Branded payment pages</div>
+            </div>
+
+            <div class="panel-actions">
+              <a class="page-btn page-btn-primary" href="/signup">
+                <i class="fa-solid fa-rocket"></i> Enable Payments
+              </a>
+              <a class="page-btn page-btn-outline" href="#demo-form">
+                <i class="fa-solid fa-video"></i> Book a Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="panel media-panel">
+            <img
+              src="https://mmdabbagh24.neocities.org/images/Mx-Build/Mx%20build%20photo.png"
+              alt="MX Build payments screen"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Built for the way you build</h2>
+          <p>
+            Great for general contractors, subs, and service-project hybrids in HVAC, electrical,
+            plumbing, concrete, roofing, landscaping, and more.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3><i class="fa-solid fa-helmet-safety"></i> General Contractors</h3>
+            <p>Plan work across subs, track COs, and keep documentation tight from bid to close-out.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-wrench"></i> Subcontractors</h3>
+            <p>Win bids, manage crews, and bill progress draws—without drowning in spreadsheets.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-bolt"></i> Specialty Trades</h3>
+            <p>Service & project workflows side by side. Mobile-first for foremen and techs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h3>See MX Build + PPD in action</h3>
+        <p>
+          We’ll walk your team through estimating, scheduling, and billing—then turn on
+          ACH & cards so you get paid faster.
+        </p>
+        <a class="page-btn cta-btn" href="#demo-form">
+          <i class="fa-solid fa-bolt"></i> Book a Demo
+        </a>
+      </div>
+    </section>
+
+    <section class="demo-section" id="demo-form">
+      <div class="container">
+        <div class="section-title">
+          <h2>Book a Demo</h2>
+          <p>Tell us about your use case and we’ll reach out.</p>
+        </div>
+
+        <div class="demo-card">
+          <form action="https://formspree.io/f/xblzyjrj" method="POST">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" type="text" name="name" required />
+              </div>
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" type="text" name="company" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Your email</label>
+                <input id="email" type="email" name="email" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" name="phone" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" placeholder="Briefly describe your use case"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="page-btn page-btn-primary" type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="reg-bar">
+      © 2025 PPD Technology, LLC · Registered ISO/MSP of Synovus Bank, Columbus, GA.
+    </div>
+  </div>
+
+  <style>
+    .mx-page {
+      --ink: #0f172a;
+      --ink-2: #334155;
+      --primary: #0055ff;
+      --primary-2: #3b82f6;
+      --paper: #ffffff;
+      --bg: #f6f8fb;
+      --line: #e7eaf0;
+      --shadow: 0 16px 48px rgba(2, 8, 23, 0.10);
+      --soft: 0 10px 28px rgba(2, 8, 23, 0.08);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .mx-page,
+    .mx-page * {
+      box-sizing: border-box;
+    }
+
+    .mx-page img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .mx-page .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-inline: clamp(22px, 7vw, 32px);
+    }
+
+    .mx-page .page-btn {
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .22s;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .mx-page .page-btn-primary {
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      border-color: var(--primary);
+      color: #ffffff !important;
+      box-shadow: 0 10px 24px rgba(0, 85, 255, .25);
+    }
+
+    .mx-page .page-btn-outline,
+    .mx-page .book-btn {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--ink) !important;
+    }
+
+    .mx-page .cta-btn {
+      background: #ffffff;
+      color: #0f172a !important;
+      border-color: #ffffff;
+      box-shadow: none;
+    }
+
+    .mx-page .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(1100px 600px at 110% -10%, rgba(255, 255, 255, .35), transparent 60%),
+        linear-gradient(160deg, #e9f2ff 0%, #eaf7ff 40%, #e9fff8 100%);
+    }
+
+    .mx-page .hero .container {
+      position: relative;
+      z-index: 2;
+      padding-block: 56px;
+    }
+
+    .mx-page .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .mx-page .hero-copy {
+      color: var(--ink);
+    }
+
+    .mx-page .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(0, 85, 255, .08);
+      border: 1px solid rgba(0, 85, 255, .25);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      color: #1e3a8a !important;
+    }
+
+    .mx-page h1 {
+      font-family: Spectral, serif;
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: 44px;
+      line-height: 1.12;
+      margin: 12px 0 10px;
+      color: #0f172a !important;
+    }
+
+    .mx-page .hero-text {
+      max-width: 640px;
+      color: #475569 !important;
+      font-size: 18px;
+    }
+
+    .mx-page .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 24px;
+    }
+
+    .mx-page .badge {
+      font-size: 12px;
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #0f172a !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mx-page .hero-actions,
+    .mx-page .panel-actions,
+    .mx-page .form-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mx-page .hero-note {
+      margin-top: 10px;
+      color: #475569 !important;
+      font-size: 14px;
+    }
+
+    .mx-page .hero-media {
+      display: flex;
+      justify-content: center;
+    }
+
+    .mx-page .hero-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(2, 8, 23, .18);
+      padding: 14px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .mx-page .hero-card img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .mx-page .section {
+      padding: 70px 0;
+    }
+
+    .mx-page .gallery-strip {
+      padding-top: 28px;
+      padding-bottom: 10px;
+    }
+
+    .mx-page .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .mx-page .gallery-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--soft);
+      padding: 10px;
+    }
+
+    .mx-page .gallery-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .mx-page .section-title {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .mx-page .section-title h2 {
+      font-family: Spectral, serif;
+      font-size: 34px;
+      color: #0f172a !important;
+    }
+
+    .mx-page .section-title p {
+      max-width: 760px;
+      margin: 8px auto 0;
+      color: #667085 !important;
+    }
+
+    .mx-page .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .mx-page .card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--soft);
+    }
+
+    .mx-page .card h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #0f172a !important;
+    }
+
+    .mx-page .card p {
+      color: #667085 !important;
+    }
+
+    .mx-page .chip-row {
+      margin-top: 8px;
+    }
+
+    .mx-page .chip {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: #0f172a !important;
+    }
+
+    .mx-page .payments-section {
+      background: #ffffff;
+    }
+
+    .mx-page .pay-block {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .mx-page .panel,
+    .mx-page .demo-card,
+    .mx-page .media-panel {
+      background: linear-gradient(180deg, #fff, #f9fbff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--soft);
+    }
+
+    .mx-page .panel h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #0f172a !important;
+    }
+
+    .mx-page .panel-text {
+      color: #667085 !important;
+    }
+
+    .mx-page .list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mx-page .li {
+      background: #ffffff;
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      font-weight: 700;
+      color: #0f172a !important;
+    }
+
+    .mx-page .media-panel img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .mx-page .cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #ffffff;
+      padding: 66px 0;
+      text-align: center;
+    }
+
+    .mx-page .cta h3 {
+      font-family: Spectral, serif;
+      font-size: 30px;
+      margin-bottom: 8px;
+      color: #ffffff !important;
+    }
+
+    .mx-page .cta p {
+      opacity: .95;
+      max-width: 720px;
+      margin: 0 auto 16px;
+      color: #eaf2ff !important;
+    }
+
+    .mx-page .demo-section {
+      padding: 64px 0 80px;
+    }
+
+    .mx-page .demo-card {
+      max-width: 820px;
+      margin: 26px auto 0;
+    }
+
+    .mx-page .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    .mx-page .field label {
+      font-weight: 700;
+      font-size: 12px;
+      color: #475569 !important;
+      margin-bottom: 6px;
+    }
+
+    .mx-page .field input,
+    .mx-page .field textarea {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 12px;
+      font: inherit;
+      background: #ffffff;
+      color: #0f172a !important;
+    }
+
+    .mx-page .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .mx-page .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mx-page .reg-bar {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      padding: 18px 16px;
+      text-align: center;
+      opacity: .86;
+      font-size: .92rem;
+      color: #475569 !important;
+    }
+
+    @media (max-width: 960px) {
+      .mx-page .hero-grid,
+      .mx-page .pay-block {
+        grid-template-columns: 1fr;
+      }
+
+      .mx-page .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .mx-page .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mx-page h1 {
+        font-size: 36px;
+      }
+
+      .mx-page .hero .container {
+        padding-block: 40px;
+      }
+
+      .mx-page .hero-actions {
+        flex-direction: column;
+      }
+
+      .mx-page .hero-actions .page-btn {
+        width: 100%;
+      }
+
+      .mx-page .list,
+      .mx-page .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .mx-page .grid-3,
+      .mx-page .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mx-page .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</BaseLayout>

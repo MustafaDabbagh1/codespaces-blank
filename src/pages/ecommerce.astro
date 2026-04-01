@@ -1,0 +1,1146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Ecommerce Payments">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <section class="ecm-page">
+    <div class="ecm-bg" aria-hidden="true"></div>
+
+    <section class="ecm-hero">
+      <div class="ecm-orb ecm-orb-a"></div>
+      <div class="ecm-orb ecm-orb-b"></div>
+      <div class="ecm-orb ecm-orb-c"></div>
+
+      <div class="ecm-wrap ecm-hero-grid">
+        <div class="ecm-reveal">
+          <span class="ecm-eyebrow">
+            <i class="fa-solid fa-cart-shopping"></i> Ecommerce
+          </span>
+
+          <h1>Checkout that converts.<br />Security that scales.</h1>
+
+          <p>
+            Accept cards, ACH, wallets, and subscriptions with tokenization, 3-D Secure,
+            and smart retries built-in. Designed for high auth rates and low friction,
+            globally.
+          </p>
+
+          <div class="ecm-badge-row">
+            <span class="ecm-badge"><i class="fa-solid fa-shield-halved"></i> PCI L1</span>
+            <span class="ecm-badge"><i class="fa-solid fa-lock"></i> 3-D Secure 2.2</span>
+            <span class="ecm-badge"><i class="fa-solid fa-bolt"></i> 99.99% uptime</span>
+            <span class="ecm-badge"><i class="fa-solid fa-earth-americas"></i> 135+ currencies</span>
+          </div>
+
+          <div class="ecm-actions">
+            <a class="ecm-btn ecm-btn-primary" href="/signup">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Start Online
+            </a>
+            <a class="ecm-btn ecm-btn-ghost" href="#ecm-dev">
+              <i class="fa-solid fa-code"></i> Explore APIs
+            </a>
+          </div>
+        </div>
+
+        <div class="ecm-demo ecm-reveal">
+          <div class="ecm-card3d" id="ecmTiltCard">
+            <div class="ecm-shine" aria-hidden="true"></div>
+
+            <div class="ecm-check-bubbles" aria-hidden="true">
+              <span class="ecm-bubble ecm-bubble-1"></span>
+              <span class="ecm-bubble ecm-bubble-2"></span>
+              <span class="ecm-bubble ecm-bubble-3"></span>
+              <span class="ecm-bubble ecm-bubble-4"></span>
+            </div>
+
+            <div class="ecm-checkout-bar">
+              <i class="fa-solid fa-lock"></i> Secure Checkout
+            </div>
+
+            <div class="ecm-cart-body">
+              <div class="ecm-cart-item">
+                <div class="ecm-item-name">Wireless Earbuds</div>
+                <div class="ecm-item-price">$79.00</div>
+              </div>
+
+              <div class="ecm-cart-item">
+                <div class="ecm-item-name">Protective Case</div>
+                <div class="ecm-item-price">$19.00</div>
+              </div>
+
+              <div class="ecm-pay-row">
+                <span>Subtotal</span>
+                <strong>$98.00</strong>
+              </div>
+
+              <div class="ecm-pay-row">
+                <span>Shipping</span>
+                <span>FREE</span>
+              </div>
+
+              <div class="ecm-pay-row ecm-pay-total">
+                <span>Total</span>
+                <span>$98.00</span>
+              </div>
+
+              <a class="ecm-pay-btn" href="/signup">Pay • Visa **** 4242</a>
+
+              <div class="ecm-mini-row">
+                <div class="ecm-mini ecm-mini-a"></div>
+                <div class="ecm-mini ecm-mini-b"></div>
+                <div class="ecm-mini ecm-mini-c"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-integrations">
+      <div class="ecm-wrap">
+        <div class="ecm-marquee" aria-label="Platform integrations">
+          <div class="ecm-marquee-track">
+            <span class="ecm-pill"><i class="fa-brands fa-wordpress"></i> WooCommerce</span>
+            <span class="ecm-pill"><i class="fa-solid fa-store"></i> BigCommerce</span>
+            <span class="ecm-pill"><i class="fa-solid fa-basket-shopping"></i> Magento</span>
+            <span class="ecm-pill"><i class="fa-solid fa-cart-shopping"></i> Shopify (via gateway)</span>
+            <span class="ecm-pill"><i class="fa-solid fa-globe"></i> Wix / Custom</span>
+            <span class="ecm-pill"><i class="fa-solid fa-code"></i> Headless</span>
+
+            <span class="ecm-pill"><i class="fa-brands fa-wordpress"></i> WooCommerce</span>
+            <span class="ecm-pill"><i class="fa-solid fa-store"></i> BigCommerce</span>
+            <span class="ecm-pill"><i class="fa-solid fa-basket-shopping"></i> Magento</span>
+            <span class="ecm-pill"><i class="fa-solid fa-cart-shopping"></i> Shopify (via gateway)</span>
+            <span class="ecm-pill"><i class="fa-solid fa-globe"></i> Wix / Custom</span>
+            <span class="ecm-pill"><i class="fa-solid fa-code"></i> Headless</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-section ecm-reveal" id="ecm-features">
+      <div class="ecm-wrap">
+        <h2>Ecommerce features that move the needle</h2>
+        <p class="ecm-lead">
+          Boost conversion, reduce fraud, and expand globally with a modern checkout stack.
+        </p>
+
+        <div class="ecm-feature-grid">
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-hand-pointer"></i></div>
+            <h3>Optimized Checkout</h3>
+            <p>
+              Hosted, embedded, or headless checkout. Autofill, network tokens, and account
+              updater minimize declines.
+            </p>
+          </div>
+
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>3-D Secure & Risk</h3>
+            <p>
+              Step-up auth, device fingerprinting, velocity rules, and allow/deny lists to
+              block fraud before it happens.
+            </p>
+          </div>
+
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <h3>Subscriptions & Billing</h3>
+            <p>
+              Plans, trials, coupons, proration, dunning, and webhooks for complete lifecycle
+              automation.
+            </p>
+          </div>
+
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-vault"></i></div>
+            <h3>Tokenization & Vault</h3>
+            <p>
+              Store payment methods securely for one-click repeat purchases and seamless refunds.
+            </p>
+          </div>
+
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-wallet"></i></div>
+            <h3>More Ways to Pay</h3>
+            <p>
+              Cards, ACH, wallets, and BNPL meet customers where they are, anywhere.
+            </p>
+          </div>
+
+          <div class="ecm-feature-card">
+            <div class="ecm-iconbox"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Revenue Analytics</h3>
+            <p>
+              Real-time dashboards for auth rates, chargebacks, cohorts, and funnel conversion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-section ecm-dev ecm-reveal" id="ecm-dev">
+      <div class="ecm-wrap ecm-dev-grid">
+        <div>
+          <h2>Built for developers</h2>
+          <p class="ecm-lead">
+            Clean REST APIs, webhooks, SDKs, and drop-in components get you live fast.
+          </p>
+
+          <div class="ecm-dev-checks">
+            <div class="ecm-dev-check"><i class="fa-solid fa-check"></i> Instant test keys — no calls required</div>
+            <div class="ecm-dev-check"><i class="fa-solid fa-check"></i> Webhooks for payment, refund, dispute, subscription</div>
+            <div class="ecm-dev-check"><i class="fa-solid fa-check"></i> PCI scope reduction via hosted fields & tokens</div>
+            <div class="ecm-dev-check"><i class="fa-solid fa-check"></i> SDKs: JS / Node / Python / PHP</div>
+          </div>
+
+          <div class="ecm-actions">
+            <a class="ecm-btn ecm-btn-primary" href="/signup">Get API Keys</a>
+            <a class="ecm-btn ecm-btn-ghost" href="#ecm-faq">View Docs</a>
+          </div>
+        </div>
+
+        <div class="ecm-codepanel">
+          <div class="ecm-codebar">
+            <span class="ecm-dot ecm-dot-r"></span>
+            <span class="ecm-dot ecm-dot-y"></span>
+            <span class="ecm-dot ecm-dot-g"></span>
+          </div>
+<pre class="ecm-pre">// <span class="ecm-hl">Create a checkout session</span>
+POST /v1/checkout/sessions
+Authorization: Bearer &lt;YOUR_TEST_KEY&gt;
+Content-Type: application/json
+
+&#123;
+  "mode": "payment",
+  "amount": 9800,
+  "currency": "usd",
+  "customer_email": "jane@example.com",
+  "line_items": [
+    &#123;"name":"Wireless Earbuds","amount":7900,"quantity":1&#125;,
+    &#123;"name":"Protective Case","amount":1900,"quantity":1&#125;
+  ],
+  "success_url": "https://yourstore.com/thank-you",
+  "cancel_url": "https://yourstore.com/cart",
+  "3ds": "auto",
+  "save_payment_method": true
+&#125;</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-section ecm-reveal">
+      <div class="ecm-wrap">
+        <h2>How it works</h2>
+        <p class="ecm-lead">Launch online payments in four simple steps.</p>
+
+        <div class="ecm-steps-grid">
+          <div class="ecm-step">
+            <div class="ecm-step-num">1</div>
+            <div><strong>Create your account</strong><br /><span>Instant sandbox, streamlined underwriting.</span></div>
+          </div>
+
+          <div class="ecm-step">
+            <div class="ecm-step-num">2</div>
+            <div><strong>Connect your site</strong><br /><span>Plugins, hosted checkout, or APIs.</span></div>
+          </div>
+
+          <div class="ecm-step">
+            <div class="ecm-step-num">3</div>
+            <div><strong>Customize checkout</strong><br /><span>Branding, fields, payment methods.</span></div>
+          </div>
+
+          <div class="ecm-step">
+            <div class="ecm-step-num">4</div>
+            <div><strong>Go live</strong><br /><span>Monitor auth rates, stop fraud, get paid.</span></div>
+          </div>
+        </div>
+
+        <div class="ecm-center-top">
+          <a class="ecm-btn ecm-btn-primary" href="/signup">Get Started Today</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-section ecm-reveal ecm-compliance">
+      <div class="ecm-wrap ecm-center-text">
+        <h2>Compliance & Security</h2>
+
+        <div class="ecm-chip-row">
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> PCI DSS Level 1</span>
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> 3-D Secure 2.2</span>
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> Tokenization</span>
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> TLS 1.2+</span>
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> Dispute Management</span>
+          <span class="ecm-chip"><i class="fa-solid fa-circle-check"></i> PII & GDPR Controls</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecm-section ecm-reveal" id="ecm-faq">
+      <div class="ecm-wrap">
+        <h2>Frequently asked questions</h2>
+        <p class="ecm-lead">Quick answers about pricing, integration, and features.</p>
+
+        <details class="ecm-faq-item">
+          <summary class="ecm-faq-q">Do you support subscriptions and trials?</summary>
+          <div class="ecm-faq-a">
+            Yes — plans, trials, coupons, proration, and automated dunning are built-in with
+            webhooks for lifecycle events.
+          </div>
+        </details>
+
+        <details class="ecm-faq-item">
+          <summary class="ecm-faq-q">How do you improve authorization rates?</summary>
+          <div class="ecm-faq-a">
+            Network tokenization, account updater, smart retries, and 3-D Secure step-up help
+            reduce soft declines and fraud.
+          </div>
+        </details>
+
+        <details class="ecm-faq-item">
+          <summary class="ecm-faq-q">What plugins are available?</summary>
+          <div class="ecm-faq-a">
+            WooCommerce, BigCommerce, Magento, and Shopify (via compatible gateways), plus a
+            drop-in checkout for custom sites.
+          </div>
+        </details>
+
+        <details class="ecm-faq-item">
+          <summary class="ecm-faq-q">How fast can we go live?</summary>
+          <div class="ecm-faq-a">
+            Developers can integrate in a day using hosted fields or the drop-in widget.
+            Underwriting is streamlined for quick approvals.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="ecm-cta ecm-reveal">
+      <div class="ecm-wrap">
+        <div class="ecm-cta-panel">
+          <h2>Launch ecommerce payments with PPD Technology</h2>
+          <p>
+            Modern checkout, lower fraud, better approvals. Everything you need to grow online revenue.
+          </p>
+          <a class="ecm-btn ecm-btn-primary" href="/signup">Start Processing</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <style>
+    .ecm-page{
+      --ecm-indigo:#3b82f6;
+      --ecm-blue:#2e90ff;
+      --ecm-cyan:#22d3ee;
+      --ecm-bg:#0b1530;
+      --ecm-line:rgba(255,255,255,.10);
+      --ecm-line-strong:rgba(255,255,255,.18);
+      --ecm-card:rgba(255,255,255,.07);
+      --ecm-text:#eaf4ff;
+      --ecm-muted:#b8d5f7;
+      --ecm-shadow-lg:0 20px 60px rgba(0,0,0,.35);
+      --ecm-shadow-md:0 10px 30px rgba(0,0,0,.25);
+      --ecm-shadow-sm:0 6px 16px rgba(0,0,0,.18);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ecm-text);
+      background:
+        radial-gradient(1100px 700px at 80% -10%, rgba(46,144,255,.28) 0%, transparent 60%),
+        var(--ecm-bg);
+      overflow-x:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .ecm-page *{box-sizing:border-box}
+    .ecm-page a{text-decoration:none;color:inherit}
+
+    .ecm-bg{
+      position:fixed;
+      inset:-20vh -20vw;
+      z-index:0;
+      pointer-events:none;
+      opacity:.92;
+      background:
+        radial-gradient(60vw 60vh at 18% 18%, rgba(34,211,238,.22), transparent 60%),
+        radial-gradient(55vw 55vh at 84% 24%, rgba(46,144,255,.20), transparent 60%),
+        radial-gradient(60vw 60vh at 56% 82%, rgba(96,165,250,.18), transparent 60%);
+      filter:blur(30px);
+      animation:ecm-pan 28s linear infinite alternate;
+    }
+
+    .ecm-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+      position:relative;
+      z-index:1;
+    }
+
+    .ecm-hero{
+      position:relative;
+      padding:90px 0 46px;
+      overflow:hidden;
+      isolation:isolate;
+      z-index:1;
+    }
+
+    .ecm-orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(34px);
+      opacity:.56;
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+
+    .ecm-orb-a{
+      width:640px;
+      height:640px;
+      left:-10%;
+      top:-12%;
+      background:radial-gradient(circle, rgba(46,144,255,.42), transparent 60%);
+    }
+
+    .ecm-orb-b{
+      width:560px;
+      height:560px;
+      right:-12%;
+      top:-10%;
+      background:radial-gradient(circle, rgba(34,211,238,.36), transparent 60%);
+    }
+
+    .ecm-orb-c{
+      width:520px;
+      height:520px;
+      left:40%;
+      bottom:-20%;
+      background:radial-gradient(circle, rgba(96,165,250,.28), transparent 60%);
+    }
+
+    .ecm-hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .ecm-eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid var(--ecm-line);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      color:#d7e9ff;
+      background:rgba(255,255,255,.04);
+      backdrop-filter:blur(10px) saturate(1.2);
+    }
+
+    .ecm-page h1{
+      font-size:48px;
+      line-height:1.08;
+      margin:12px 0 12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      background:linear-gradient(90deg,#ffffff 0%,#eaf4ff 40%,#c6e6ff 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .ecm-page h2{
+      font-size:34px;
+      margin:0 0 10px;
+      background:linear-gradient(90deg,#ffffff,#e8f4ff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .ecm-hero p{
+      max-width:640px;
+      color:#cfe3ff;
+      font-size:18px;
+      margin:0;
+    }
+
+    .ecm-badge-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:16px 0 24px;
+    }
+
+    .ecm-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--ecm-line);
+      background:rgba(255,255,255,.06);
+      color:#e9f2ff;
+      font-size:12px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .ecm-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .ecm-page .ecm-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 20px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      line-height:1;
+      white-space:nowrap;
+      min-width:180px;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .ecm-page .ecm-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .ecm-page .ecm-btn.ecm-btn-primary{
+      color:#0b1530 !important;
+      -webkit-text-fill-color:#0b1530 !important;
+      background:linear-gradient(90deg,#ffffff,#ebf3ff) !important;
+      border:1px solid rgba(255,255,255,.35) !important;
+      box-shadow:0 12px 30px rgba(46,144,255,.35);
+    }
+
+    .ecm-page .ecm-btn.ecm-btn-primary i,
+    .ecm-page .ecm-btn.ecm-btn-primary span{
+      color:#0b1530 !important;
+      -webkit-text-fill-color:#0b1530 !important;
+    }
+
+    .ecm-page .ecm-btn.ecm-btn-ghost{
+      color:#e6f1ff !important;
+      -webkit-text-fill-color:#e6f1ff !important;
+      background:transparent !important;
+      border:1px solid var(--ecm-line) !important;
+    }
+
+    .ecm-page .ecm-btn.ecm-btn-ghost i,
+    .ecm-page .ecm-btn.ecm-btn-ghost span{
+      color:#e6f1ff !important;
+      -webkit-text-fill-color:#e6f1ff !important;
+    }
+
+    .ecm-page .ecm-btn.ecm-btn-ghost:hover{
+      background:rgba(255,255,255,.06) !important;
+    }
+
+    .ecm-demo{
+      perspective:1200px;
+    }
+
+    .ecm-card3d{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--ecm-line);
+      background:rgba(255,255,255,.07);
+      box-shadow:var(--ecm-shadow-lg);
+      transform-style:preserve-3d;
+      transition:transform .14s ease-out;
+    }
+
+    .ecm-shine{
+      position:absolute;
+      inset:-40%;
+      background:conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,0), rgba(255,255,255,.12), rgba(255,255,255,0));
+      animation:ecm-spin 7.5s linear infinite;
+      mix-blend-mode:overlay;
+      pointer-events:none;
+    }
+
+    .ecm-check-bubbles{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .ecm-bubble{
+      position:absolute;
+      bottom:14px;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.72), rgba(96,165,250,.20) 70%, rgba(255,255,255,0) 100%);
+      opacity:0;
+      animation:ecm-bubble-rise 6s ease-in infinite;
+    }
+
+    .ecm-bubble-1{left:12%;width:12px;height:12px;animation-delay:.1s}
+    .ecm-bubble-2{left:34%;width:9px;height:9px;animation-delay:1.3s}
+    .ecm-bubble-3{left:68%;width:14px;height:14px;animation-delay:2.5s}
+    .ecm-bubble-4{left:84%;width:10px;height:10px;animation-delay:3.3s}
+
+    .ecm-checkout-bar{
+      position:relative;
+      z-index:1;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 14px;
+      font-weight:800;
+      color:#f3f8ff;
+      background:linear-gradient(90deg, rgba(46,144,255,.28), rgba(34,211,238,.28));
+      border-bottom:1px solid var(--ecm-line);
+      animation:ecm-pulse-bar 3.2s ease-in-out infinite;
+    }
+
+    .ecm-cart-body{
+      position:relative;
+      z-index:1;
+      padding:16px;
+      background:rgba(8,14,32,.55);
+    }
+
+    .ecm-cart-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+      padding:16px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--ecm-line);
+    }
+
+    .ecm-item-name{
+      color:#e7f3ff;
+      font-size:18px;
+      font-weight:500;
+    }
+
+    .ecm-item-price{
+      color:#bfe0ff;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .ecm-pay-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:10px;
+      color:#e1f1ff;
+      font-size:18px;
+    }
+
+    .ecm-pay-total{
+      font-weight:900;
+    }
+
+    .ecm-pay-btn{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      justify-content:center;
+      width:100%;
+      margin-top:18px;
+      padding:14px;
+      border-radius:999px;
+      font-weight:900;
+      color:#fff;
+      background:linear-gradient(90deg,#60a5fa,#3b82f6,#22d3ee);
+      box-shadow:0 12px 30px rgba(46,144,255,.35);
+    }
+
+    .ecm-pay-btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+      transform:translateX(-120%);
+      animation:ecm-pay-sweep 3s linear infinite;
+    }
+
+    .ecm-mini-row{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .ecm-mini{
+      position:relative;
+      flex:1;
+      height:36px;
+      border-radius:8px;
+      overflow:hidden;
+      border:1px solid var(--ecm-line);
+    }
+
+    .ecm-mini::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+      left:-100%;
+      animation:ecm-mini-sweep 3.2s infinite;
+    }
+
+    .ecm-mini-a{background:linear-gradient(45deg,#1a3a7a,#2e90ff)}
+    .ecm-mini-b{background:linear-gradient(45deg,#0b3c7a,#60a5fa)}
+    .ecm-mini-c{background:linear-gradient(45deg,#0b213e,#1f3f73)}
+
+    .ecm-integrations{
+      position:relative;
+      z-index:1;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(11,23,52,.55);
+      backdrop-filter:blur(2px);
+    }
+
+    .ecm-marquee{
+      overflow:hidden;
+      padding:18px 0;
+      mask-image:linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+      -webkit-mask-image:linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    }
+
+    .ecm-marquee-track{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      width:max-content;
+      animation:ecm-slide 28s linear infinite;
+    }
+
+    .ecm-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      color:#e5f0ff;
+      box-shadow:0 8px 18px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.04);
+      flex:0 0 auto;
+    }
+
+    .ecm-pill i{
+      color:#cfe6ff;
+    }
+
+    .ecm-section{
+      position:relative;
+      z-index:1;
+      padding:70px 0;
+    }
+
+    .ecm-lead{
+      color:var(--ecm-muted);
+      max-width:760px;
+      margin:8px 0 0;
+      font-size:18px;
+    }
+
+    .ecm-feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+
+    .ecm-feature-card{
+      background:var(--ecm-card);
+      border:1px solid var(--ecm-line);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:var(--ecm-shadow-sm);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .ecm-feature-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--ecm-shadow-md);
+    }
+
+    .ecm-feature-card h3{
+      margin:6px 0 6px;
+      font-size:18px;
+      color:#eff6ff;
+    }
+
+    .ecm-feature-card p{
+      color:#b8d5f7;
+      margin:0;
+    }
+
+    .ecm-iconbox{
+      width:56px;
+      height:56px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, rgba(46,144,255,.30), rgba(34,211,238,.28));
+      border:1px solid var(--ecm-line);
+      color:#e8f6ff;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .ecm-dev{
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.04));
+      border-top:1px solid var(--ecm-line);
+      border-bottom:1px solid var(--ecm-line);
+    }
+
+    .ecm-dev-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .ecm-dev-checks{
+      margin:12px 0 16px;
+    }
+
+    .ecm-dev-check{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:12px;
+      padding:16px 18px;
+      border-radius:14px;
+      background:var(--ecm-card);
+      border:1px solid var(--ecm-line);
+      color:#e9f4ff;
+      box-shadow:var(--ecm-shadow-sm);
+    }
+
+    .ecm-dev-check i{
+      color:#10b981;
+    }
+
+    .ecm-codepanel{
+      background:#0b1120;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--ecm-shadow-lg);
+    }
+
+    .ecm-codebar{
+      display:flex;
+      gap:6px;
+      padding:10px 12px;
+      background:#0a0f1f;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .ecm-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+    }
+
+    .ecm-dot-r{background:#ef4444}
+    .ecm-dot-y{background:#f59e0b}
+    .ecm-dot-g{background:#22c55e}
+
+    .ecm-pre{
+      margin:0;
+      padding:16px;
+      overflow:auto;
+      color:#e3f2ff;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:12.5px;
+      line-height:1.6;
+      white-space:pre-wrap;
+    }
+
+    .ecm-hl{
+      color:#93c5fd;
+    }
+
+    .ecm-steps-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .ecm-step{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius:14px;
+      background:var(--ecm-card);
+      border:1px solid var(--ecm-line);
+      color:#e9f4ff;
+    }
+
+    .ecm-step span{
+      color:#b8d5f7;
+    }
+
+    .ecm-step-num{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      background:linear-gradient(135deg,#60a5fa,#22d3ee);
+      color:#fff;
+      flex:0 0 34px;
+    }
+
+    .ecm-center-top{
+      text-align:center;
+      margin-top:22px;
+    }
+
+    .ecm-center-text{
+      text-align:center;
+    }
+
+    .ecm-compliance{
+      padding-top:10px;
+    }
+
+    .ecm-chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .ecm-chip{
+      border:1px dashed var(--ecm-line-strong);
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      font-size:13px;
+      color:#dce9ff;
+    }
+
+    .ecm-chip i{
+      color:#22c55e;
+      margin-right:8px;
+    }
+
+    .ecm-faq-item{
+      background:var(--ecm-card);
+      border:1px solid var(--ecm-line);
+      border-radius:12px;
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+
+    .ecm-faq-q{
+      width:100%;
+      display:block;
+      cursor:pointer;
+      padding:16px 18px;
+      font-weight:800;
+      color:#e9f4ff;
+      list-style:none;
+    }
+
+    .ecm-faq-q::-webkit-details-marker{
+      display:none;
+    }
+
+    .ecm-faq-a{
+      padding:0 18px 16px;
+      color:#cfe6ff;
+    }
+
+    .ecm-cta{
+      position:relative;
+      z-index:1;
+      padding:80px 0;
+    }
+
+    .ecm-cta-panel{
+      text-align:center;
+      border-radius:24px;
+      padding:64px 24px;
+      background:
+        linear-gradient(90deg, rgba(22,56,120,.55), rgba(49,103,196,.42)),
+        radial-gradient(600px 260px at 50% 0%, rgba(46,144,255,.18), transparent 70%);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 18px 50px rgba(0,0,0,.18);
+    }
+
+    .ecm-cta-panel h2{
+      margin-bottom:10px;
+    }
+
+    .ecm-cta-panel p{
+      color:#d3eaff;
+      margin-bottom:18px;
+      font-size:18px;
+    }
+
+    .ecm-reveal{
+      opacity:0;
+      transform:translateY(14px);
+      transition:.5s ease;
+    }
+
+    .ecm-reveal.ecm-show{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width:980px){
+      .ecm-hero-grid,
+      .ecm-dev-grid{
+        grid-template-columns:1fr;
+      }
+
+      .ecm-feature-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .ecm-steps-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      .ecm-feature-grid,
+      .ecm-steps-grid{
+        grid-template-columns:1fr;
+      }
+
+      .ecm-page h1,
+      .ecm-page h2{
+        font-size:34px;
+      }
+
+      .ecm-cta-panel{
+        padding:44px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .ecm-bg,
+      .ecm-marquee-track,
+      .ecm-shine,
+      .ecm-mini::after,
+      .ecm-bubble,
+      .ecm-checkout-bar,
+      .ecm-pay-btn::after{
+        animation:none !important;
+      }
+
+      .ecm-reveal{
+        transition:none;
+      }
+    }
+
+    @keyframes ecm-pan{
+      0%{transform:translate3d(0,0,0)}
+      100%{transform:translate3d(-4%,3%,0)}
+    }
+
+    @keyframes ecm-spin{
+      to{transform:rotate(360deg)}
+    }
+
+    @keyframes ecm-slide{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+
+    @keyframes ecm-mini-sweep{
+      0%{left:-100%}
+      60%{left:130%}
+      100%{left:130%}
+    }
+
+    @keyframes ecm-bubble-rise{
+      0%{transform:translateY(0) scale(.7);opacity:0}
+      15%{opacity:.55}
+      100%{transform:translateY(-220px) scale(1.3);opacity:0}
+    }
+
+    @keyframes ecm-pulse-bar{
+      0%,100%{box-shadow:inset 0 0 0 rgba(255,255,255,0)}
+      50%{box-shadow:inset 0 0 24px rgba(255,255,255,.06)}
+    }
+
+    @keyframes ecm-pay-sweep{
+      0%{transform:translateX(-120%)}
+      100%{transform:translateX(120%)}
+    }
+  </style>
+
+  <script is:inline>
+    // @ts-nocheck
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = document.querySelector('.ecm-page');
+      if (!root) return;
+
+      const tilt = root.querySelector('#ecmTiltCard');
+      if (tilt) {
+        const clamp = (v, m) => Math.max(-m, Math.min(m, v));
+        tilt.addEventListener('mousemove', (e) => {
+          const r = tilt.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          const rx = clamp((0.5 - y) * 10, 10);
+          const ry = clamp((x - 0.5) * 12, 12);
+          tilt.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        tilt.addEventListener('mouseleave', () => {
+          tilt.style.transform = 'rotateX(0) rotateY(0)';
+        });
+      }
+
+      const reveals = [...root.querySelectorAll('.ecm-reveal')];
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ecm-show');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach((el) => io.observe(el));
+    });
+  </script>
+</BaseLayout>

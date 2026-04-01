@@ -1,0 +1,707 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Refer a Merchant">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <section class="refer-page">
+    <div class="refer-bg"></div>
+
+    <div class="refer-wrap">
+      <div class="refer-hero">
+        <div class="refer-badge">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Partner Program</span>
+        </div>
+
+        <h1>Refer a Merchant. Pocket $200. That Simple.</h1>
+
+        <p>
+          You share a lead. We handle everything else, from demo to underwriting.
+          When the merchant signs up, you get paid.
+        </p>
+      </div>
+
+      <div class="refer-grid">
+        <div class="refer-card">
+          <div class="refer-card-head">
+            <div class="refer-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <strong>Refer A Merchant</strong>
+          </div>
+
+          <div class="refer-card-body">
+            <div class="refer-progress">
+              <div class="refer-progress-bar" id="progressBar"></div>
+            </div>
+            <div class="refer-progress-text" id="progressText">0% complete</div>
+
+            <form
+              id="refForm"
+              action="https://formspree.io/f/xrbykgad"
+              method="POST"
+              novalidate
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Merchant Referral • PPD Technology"
+              />
+
+              <div class="refer-form-grid">
+                <div class="refer-field">
+                  <label for="yourName">Your Name *</label>
+                  <input id="yourName" name="yourName" type="text" required />
+                </div>
+
+                <div class="refer-field">
+                  <label for="yourBusiness">Your Business *</label>
+                  <input id="yourBusiness" name="yourBusiness" type="text" required />
+                </div>
+
+                <div class="refer-field">
+                  <label for="yourEmail">Your Email *</label>
+                  <input id="yourEmail" name="email" type="email" required />
+                </div>
+
+                <div class="refer-field">
+                  <label for="refOwner">Owner’s Name *</label>
+                  <input id="refOwner" name="refOwner" type="text" required />
+                </div>
+
+                <div class="refer-field">
+                  <label for="refBusiness">Business to Refer *</label>
+                  <input id="refBusiness" name="refBusiness" type="text" required />
+                </div>
+
+                <div class="refer-field">
+                  <label for="refPhone">Owner’s Best Contact</label>
+                  <input id="refPhone" name="refPhone" type="text" />
+                </div>
+
+                <div class="refer-field">
+                  <label for="mid">MID (if known)</label>
+                  <input id="mid" name="mid" type="text" />
+                </div>
+
+                <div class="refer-field">
+                  <label for="bizType">Business Type</label>
+                  <input id="bizType" name="bizType" type="text" />
+                </div>
+
+                <div class="refer-field">
+                  <label for="payout">How would you like to get paid?</label>
+                  <select id="payout" name="payout">
+                    <option value="">Select one</option>
+                    <option value="Direct Deposit">Direct Deposit</option>
+                    <option value="Statement Credit">Statement Credit</option>
+                  </select>
+                </div>
+
+                <div class="refer-field refer-span-3">
+                  <label for="message">Message / Helpful context</label>
+                  <textarea id="message" name="message"></textarea>
+                </div>
+
+                <div class="refer-field refer-span-2">
+                  <label for="extra">Additional Info on Referral</label>
+                  <input id="extra" name="extra" type="text" />
+                </div>
+
+                <div class="refer-field">
+                  <label for="source">How did you hear about us?</label>
+                  <input id="source" name="source" type="text" />
+                </div>
+              </div>
+
+              <div class="refer-actions">
+                <button type="submit" class="refer-btn refer-btn-primary" id="sendBtn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Send</span>
+                </button>
+
+                <button type="button" class="refer-btn refer-btn-secondary" id="saveBtn">
+                  <i class="fa-solid fa-floppy-disk"></i>
+                  <span>Save Draft</span>
+                </button>
+
+                <div class="refer-status" id="statusText"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="refer-card">
+          <div class="refer-card-head">
+            <strong>What you get</strong>
+          </div>
+
+          <div class="refer-card-body refer-perks">
+            <div class="refer-perk">
+              <i class="fa-solid fa-gift"></i>
+              <div>
+                <strong>$200 per approved signup</strong>
+                <p>Paid fast and easy once the merchant is approved.</p>
+              </div>
+            </div>
+
+            <div class="refer-perk">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <div>
+                <strong>We do the heavy lifting</strong>
+                <p>Demos, docs, setup, and migration are handled by us.</p>
+              </div>
+            </div>
+
+            <div class="refer-perk">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Trusted &amp; secure</strong>
+                <p>Reliable payment solutions with ongoing support.</p>
+              </div>
+            </div>
+
+            <div class="refer-perk">
+              <i class="fa-solid fa-bolt"></i>
+              <div>
+                <strong>Fast decisions</strong>
+                <p>Quick underwriting and a streamlined go-live process.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="refer-toast" id="toast">Saved draft</div>
+
+    <div class="refer-success" id="successModal">
+      <div class="refer-success-panel">
+        <div class="refer-success-icon">🎉</div>
+        <h3>Thanks for the referral!</h3>
+        <p>We’ve received your submission. Our team will follow up soon.</p>
+        <button type="button" class="refer-btn refer-btn-secondary" id="closeSuccessBtn">
+          Close
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .refer-page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Inter, system-ui, sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.35), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.25), transparent 30%),
+        linear-gradient(180deg, #0b1530 0%, #10265f 100%);
+    }
+
+    .refer-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.06), transparent 40%),
+        linear-gradient(315deg, rgba(255,255,255,0.04), transparent 35%);
+    }
+
+    .refer-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .refer-hero {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .refer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .refer-hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.98;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
+
+    .refer-hero p {
+      margin: 0;
+      max-width: 650px;
+      font-size: 26px;
+      line-height: 1.45;
+      color: rgba(234, 241, 255, 0.86);
+    }
+
+    .refer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .refer-card {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      overflow: hidden;
+    }
+
+    .refer-card-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      font-size: 18px;
+    }
+
+    .refer-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .refer-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .refer-dots span:nth-child(1) { background: #ef4444; }
+    .refer-dots span:nth-child(2) { background: #f59e0b; }
+    .refer-dots span:nth-child(3) { background: #22c55e; }
+
+    .refer-card-body {
+      padding: 22px;
+    }
+
+    .refer-progress {
+      width: 100%;
+      height: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .refer-progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #7c3aed, #2563eb, #22d3ee);
+      transition: width 0.3s ease;
+    }
+
+    .refer-progress-text {
+      font-size: 14px;
+      color: rgba(234, 241, 255, 0.75);
+      margin-bottom: 18px;
+    }
+
+    .refer-form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .refer-span-2 { grid-column: span 2; }
+    .refer-span-3 { grid-column: 1 / -1; }
+
+    .refer-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .refer-field label {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .refer-field input,
+    .refer-field select,
+    .refer-field textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      color: #ffffff;
+      padding: 14px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    .refer-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .refer-field input:focus,
+    .refer-field select:focus,
+    .refer-field textarea:focus {
+      border-color: rgba(96, 165, 250, 0.9);
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.18);
+    }
+
+    .refer-field select option {
+      color: #111827;
+    }
+
+    .refer-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .refer-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .refer-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .refer-btn-primary {
+      color: #ffffff;
+      background: linear-gradient(90deg, #7c3aed, #2563eb, #22d3ee);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.32);
+    }
+
+    .refer-btn-secondary {
+      color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .refer-status {
+      font-size: 14px;
+      color: rgba(234, 241, 255, 0.8);
+    }
+
+    .refer-perks {
+      display: grid;
+      gap: 16px;
+    }
+
+    .refer-perk {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .refer-perk i {
+      font-size: 18px;
+      color: #ffd38f;
+      margin-top: 4px;
+    }
+
+    .refer-perk strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .refer-perk p {
+      margin: 0;
+      color: rgba(234, 241, 255, 0.78);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .refer-toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.92);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 40;
+    }
+
+    .refer-toast.show {
+      opacity: 1;
+    }
+
+    .refer-success {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(2, 6, 23, 0.72);
+      z-index: 50;
+    }
+
+    .refer-success.show {
+      display: flex;
+    }
+
+    .refer-success-panel {
+      width: min(520px, 100%);
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #10265f;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .refer-success-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .refer-success-panel h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .refer-success-panel p {
+      margin: 0 0 18px;
+      color: rgba(234, 241, 255, 0.8);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 980px) {
+      .refer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .refer-wrap {
+        padding: 56px 18px;
+      }
+
+      .refer-hero p {
+        font-size: 18px;
+      }
+
+      .refer-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .refer-span-2,
+      .refer-span-3 {
+        grid-column: auto;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    // @ts-nocheck
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("refForm");
+      const saveBtn = document.getElementById("saveBtn");
+      const sendBtn = document.getElementById("sendBtn");
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+      const toast = document.getElementById("toast");
+      const successModal = document.getElementById("successModal");
+      const closeSuccessBtn = document.getElementById("closeSuccessBtn");
+      const statusText = document.getElementById("statusText");
+
+      const requiredIds = [
+        "yourName",
+        "yourBusiness",
+        "yourEmail",
+        "refOwner",
+        "refBusiness"
+      ];
+
+      const storageKey = "ppd_referral_draft_v2";
+
+      function getFields() {
+        return Array.from(
+          document.querySelectorAll("#refForm input, #refForm textarea, #refForm select")
+        );
+      }
+
+      function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 1800);
+      }
+
+      function updateProgress() {
+        const fields = getFields();
+        let requiredFilled = 0;
+
+        requiredIds.forEach(function (id) {
+          const field = document.getElementById(id);
+          if (field && field.value && String(field.value).trim() !== "") {
+            requiredFilled += 1;
+          }
+        });
+
+        const percent = Math.round((requiredFilled / requiredIds.length) * 100);
+
+        if (progressBar) progressBar.style.width = percent + "%";
+        if (progressText) progressText.textContent = percent + "% complete";
+      }
+
+      function saveDraft() {
+        const data = {};
+        getFields().forEach(function (field) {
+          if (field.name) {
+            data[field.name] = field.value;
+          }
+        });
+        localStorage.setItem(storageKey, JSON.stringify(data));
+        showToast("Saved draft");
+      }
+
+      function loadDraft() {
+        try {
+          const raw = localStorage.getItem(storageKey);
+          if (!raw) return;
+          const data = JSON.parse(raw);
+
+          getFields().forEach(function (field) {
+            if (field.name && data[field.name] !== undefined) {
+              field.value = data[field.name];
+            }
+          });
+        } catch (err) {}
+      }
+
+      function showSuccess() {
+        if (successModal) {
+          successModal.classList.add("show");
+        }
+      }
+
+      loadDraft();
+      updateProgress();
+
+      getFields().forEach(function (field) {
+        field.addEventListener("input", updateProgress);
+        field.addEventListener("change", updateProgress);
+      });
+
+      if (saveBtn) {
+        saveBtn.addEventListener("click", saveDraft);
+      }
+
+      if (closeSuccessBtn) {
+        closeSuccessBtn.addEventListener("click", function () {
+          if (successModal) successModal.classList.remove("show");
+        });
+      }
+
+      if (form) {
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            showToast("Please complete required fields");
+            return;
+          }
+
+          if (sendBtn) {
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i><span>Sending...</span>';
+          }
+
+          if (statusText) {
+            statusText.textContent = "Sending...";
+          }
+
+          try {
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: data,
+              headers: {
+                Accept: "application/json"
+              }
+            });
+
+            if (response.ok) {
+              localStorage.removeItem(storageKey);
+              form.reset();
+              updateProgress();
+              showSuccess();
+              if (statusText) statusText.textContent = "";
+            } else {
+              showToast("Submission failed");
+              if (statusText) statusText.textContent = "Submission failed";
+            }
+          } catch (error) {
+            showToast("Network error");
+            if (statusText) statusText.textContent = "Network error";
+          } finally {
+            if (sendBtn) {
+              sendBtn.disabled = false;
+              sendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i><span>Send</span>';
+            }
+          }
+        });
+      }
+    });
+  </script>
+</BaseLayout>

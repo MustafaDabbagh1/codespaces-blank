@@ -1,0 +1,1524 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact Us | PPD Technology">
+  <div class="contact-page">
+    <section class="contact-hero">
+      <div class="container contact-hero-content">
+        <div class="contact-hero-text">
+          <h1>Get In Touch With PPD Technology</h1>
+          <p>
+            We’re here to help you find the right payment solution for your business.
+            Reach out today and let’s talk about how we can support your growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-form-container">
+            <div class="contact-form">
+              <h2>Send Us a Message</h2>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="contact-name">Full Name</label>
+                  <input type="text" id="contact-name" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" name="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-company">Company Name</label>
+                  <input type="text" id="contact-company" name="company" />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-industry">Industry</label>
+                  <select id="contact-industry" name="industry">
+                    <option value="">Select an industry</option>
+                    <option value="restaurant">Restaurant & Hospitality</option>
+                    <option value="retail">Retail</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="contractor">Contractor</option>
+                    <option value="nonprofit">Non-profit</option>
+                    <option value="education">Education</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject">Subject</label>
+                  <input type="text" id="contact-subject" name="subject" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message">Message</label>
+                  <textarea id="contact-message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="contact-info-container">
+            <div class="contact-info">
+              <h2>Contact Information</h2>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h3>Phone Number</h3>
+                  <p><a href="tel:2487260085">(248) 726-0085</a></p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h3>Email Address</h3>
+                  <p><a href="mailto:info@ppdtechnology.com">info@ppdtechnology.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h3>Business Hours</h3>
+                  <p>Monday - Friday: 8:00 AM - 8:00 PM EST</p>
+                </div>
+              </div>
+
+              <div class="business-hours">
+                <h3>Detailed Hours</h3>
+                <ul class="hours-list">
+                  <li><span class="day">Monday - Thursday</span><span class="time">8:00 AM - 8:00 PM</span></li>
+                  <li><span class="day">Friday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+                  <li><span class="day">Saturday</span><span class="time">9:00 AM - 2:00 PM</span></li>
+                  <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="phone-section">
+      <div class="container">
+        <div class="phone-content">
+          <h2>Need Immediate Assistance?</h2>
+          <p>
+            Our support team is ready to help with questions about terminals, pricing, integrations, and payment solutions.
+          </p>
+
+          <div class="phone-number">
+            <i class="fas fa-phone"></i>
+            <span>(248) 726-0085</span>
+          </div>
+
+          <div class="phone-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='tel:2487260085'">
+              <i class="fas fa-phone"></i> Call Now
+            </button>
+
+            <button
+              class="btn btn-outline call-outline"
+              id="openCallModal"
+              type="button"
+            >
+              <i class="fas fa-calendar-alt"></i> Schedule a Call
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="modal"
+      id="callModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="callTitle"
+    >
+      <div class="modal-panel" role="document">
+        <div class="modal-header">
+          <h3 class="modal-title" id="callTitle">Schedule a Call with PPD</h3>
+          <button class="modal-close" data-close-modal aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="stepper" aria-hidden="true">
+            <div class="step" data-step="1"><span class="dot">1</span>Details</div>
+            <div class="step" data-step="2"><span class="dot">2</span>Pick time</div>
+            <div class="step" data-step="3"><span class="dot">3</span>Confirm</div>
+          </div>
+
+          <div class="success" id="callSuccess" tabindex="-1" aria-live="polite">
+            <div class="icon"><i class="fa-solid fa-check"></i></div>
+            <h4>Thanks, your request is in.</h4>
+            <p>We’ll confirm shortly and send a calendar invite.</p>
+            <div class="actions center-actions">
+              <button class="btn secondary" data-close-modal type="button">Close</button>
+            </div>
+          </div>
+
+          <form id="callForm" class="step-wrap active" data-step-wrap="1" novalidate>
+            <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid modal-grid">
+              <div>
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" required />
+                <div class="error" data-error-for="firstName">Please enter your first name.</div>
+              </div>
+
+              <div>
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" required />
+                <div class="error" data-error-for="lastName">Please enter your last name.</div>
+              </div>
+
+              <div>
+                <label for="email2">Work email</label>
+                <input id="email2" name="email" inputmode="email" required />
+                <div class="error" data-error-for="email2">Enter a valid email address.</div>
+              </div>
+
+              <div>
+                <label for="phone2">Phone (optional)</label>
+                <input id="phone2" name="phone" inputmode="tel" />
+              </div>
+
+              <div>
+                <label for="company2">Company</label>
+                <input id="company2" name="company" required />
+                <div class="error" data-error-for="company2">Please enter your company.</div>
+              </div>
+
+              <div>
+                <label for="industry2">Industry</label>
+                <select id="industry2" name="industry" required>
+                  <option value="">Select...</option>
+                  <option>Restaurant</option>
+                  <option>Retail</option>
+                  <option>Grocery</option>
+                  <option>Services</option>
+                  <option>Healthcare</option>
+                  <option>Other</option>
+                </select>
+                <div class="error" data-error-for="industry2">Please choose an industry.</div>
+              </div>
+
+              <div class="full">
+                <label for="notes2">What would you like to discuss?</label>
+                <textarea
+                  id="notes2"
+                  name="notes"
+                  placeholder="Example: pricing, terminals, online checkout, migrating from current processor..."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn secondary" data-close-modal type="button">Cancel</button>
+              <button class="btn primary" id="toSchedule" type="button">
+                <i class="fa-solid fa-calendar-day"></i> Continue
+              </button>
+            </div>
+          </form>
+
+          <div class="step-wrap" data-step-wrap="2" id="scheduleStep" aria-hidden="true">
+            <div class="scheduler">
+              <div class="cal" aria-label="Choose a date">
+                <div class="cal-header">
+                  <div class="cal-month" id="calMonth">Month YYYY</div>
+                  <div class="cal-nav">
+                    <button type="button" id="prevMonth" aria-label="Previous month">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" id="nextMonth" aria-label="Next month">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cal-grid" id="calGrid"></div>
+              </div>
+
+              <div class="slots">
+                <div class="tz" id="tzLabel">Times shown in your time zone.</div>
+                <div class="slot-list" id="slotList"></div>
+                <div class="summary" id="slotSummary"></div>
+
+                <div class="actions">
+                  <button class="btn secondary" id="backToDetails" type="button">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                  </button>
+                  <button class="btn primary" id="toConfirm" type="button" disabled>
+                    <i class="fa-solid fa-circle-check"></i> Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-wrap" data-step-wrap="3" id="confirmStep" aria-hidden="true">
+            <div class="summary show" id="confirmSummary">Review your details and submit.</div>
+            <div class="actions top-gap">
+              <button class="btn secondary" id="backToSchedule" type="button">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button class="btn primary" id="finalSubmit" type="button">
+                <i class="fa-solid fa-paper-plane"></i> Request Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .contact-page {
+      --primary: #0055ff;
+      --primary-dark: #0044cc;
+      --secondary: #0f1b35;
+      --accent: #00cc96;
+      --light: #f5f7fa;
+      --dark: #1a232e;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --m-bg: #fff;
+      --m-line: #e7ecf6;
+      --m-ink: #0f1b35;
+      --m-ink-2: #2a3b55;
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .contact-page * {
+      box-sizing: border-box;
+    }
+
+    .contact-page .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .contact-page .contact-hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-page .contact-hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-page .contact-hero-text {
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .contact-page .contact-hero-text h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .contact-page .contact-hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-page .contact-content {
+      padding: 70px 0;
+      background: var(--light);
+    }
+
+    .contact-page .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .contact-page .contact-form-container,
+    .contact-page .contact-info-container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-page .contact-form h2,
+    .contact-page .contact-info h2 {
+      font-size: 1.8rem;
+      color: var(--secondary);
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .contact-page .contact-form h2::after,
+    .contact-page .contact-info h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .contact-page .form-group {
+      margin-bottom: 25px;
+    }
+
+    .contact-page .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+
+    .contact-page .form-group input,
+    .contact-page .form-group textarea,
+    .contact-page .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+      font-family: "Inter", sans-serif;
+      background: #fff;
+    }
+
+    .contact-page .form-group input:focus,
+    .contact-page .form-group textarea:focus,
+    .contact-page .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1);
+    }
+
+    .contact-page .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-page .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .contact-page .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 85, 255, 0.3);
+    }
+
+    .contact-page .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .contact-page .contact-info-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 85, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .contact-page .contact-info-icon i {
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .contact-page .contact-info-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: var(--secondary);
+    }
+
+    .contact-page .contact-info-text p {
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    .contact-page .contact-info-text a {
+      color: var(--primary);
+      transition: color 0.3s;
+    }
+
+    .contact-page .contact-info-text a:hover {
+      color: var(--primary-dark);
+    }
+
+    .contact-page .business-hours {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .contact-page .business-hours h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+
+    .contact-page .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-page .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      gap: 14px;
+    }
+
+    .contact-page .hours-list li:last-child {
+      border-bottom: none;
+    }
+
+    .contact-page .hours-list .day {
+      font-weight: 500;
+    }
+
+    .contact-page .hours-list .time {
+      color: var(--gray);
+      text-align: right;
+    }
+
+    .contact-page .phone-section {
+      background: var(--secondary);
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-page .phone-section::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      top: -100px;
+      left: -100px;
+      animation: pulseElement 15s infinite;
+    }
+
+    .contact-page .phone-section::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(0, 204, 150, 0.05);
+      border-radius: 50%;
+      bottom: -75px;
+      right: -75px;
+      animation: pulseElement 12s infinite 2s;
+    }
+
+    .contact-page .phone-content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-page .phone-content p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-page .phone-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-page .phone-number i {
+      font-size: 2rem;
+    }
+
+    .contact-page .phone-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact-page .btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      border: 2px solid transparent;
+      gap: 8px;
+    }
+
+    .contact-page .btn-outline {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .contact-page .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, 0.2);
+    }
+
+    .contact-page .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .contact-page .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
+    }
+
+    .contact-page .call-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .contact-page .call-outline:hover {
+      background: #fff;
+      color: var(--secondary);
+      border-color: #fff;
+    }
+
+    .contact-page .modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      z-index: 120;
+      background: rgba(15, 27, 53, 0.45);
+      backdrop-filter: blur(6px) saturate(120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-page .modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .contact-page .modal-panel {
+      width: min(900px, 94vw);
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 18px;
+      background: var(--m-bg);
+      border: 1px solid var(--m-line);
+      box-shadow: 0 30px 120px rgba(15, 27, 53, 0.25);
+      transform: translateY(10px);
+      transition: transform 0.2s ease;
+    }
+
+    .contact-page .modal.open .modal-panel {
+      transform: translateY(0);
+    }
+
+    .contact-page .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--m-line);
+      background: linear-gradient(180deg, #fafbff, #f4f7fd);
+    }
+
+    .contact-page .modal-title {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--m-ink);
+    }
+
+    .contact-page .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 8px;
+      border-radius: 10px;
+    }
+
+    .contact-page .modal-close:hover {
+      background: #eef3ff;
+    }
+
+    .contact-page .modal-body {
+      padding: 16px 18px;
+    }
+
+    .contact-page .stepper {
+      display: flex;
+      gap: 10px;
+      margin: 4px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-page .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #6b7b96;
+    }
+
+    .contact-page .step .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 2px solid #cfe0ff;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+    }
+
+    .contact-page .step.active {
+      color: var(--m-ink);
+    }
+
+    .contact-page .step.active .dot {
+      border-color: #8fb3ff;
+      color: #0f1b35;
+    }
+
+    .contact-page .step-wrap {
+      display: none;
+    }
+
+    .contact-page .step-wrap.active {
+      display: block;
+    }
+
+    .contact-page .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-page .modal-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    .contact-page .modal-grid label {
+      font-weight: 700;
+      font-size: 13px;
+      color: #20345e;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-page .modal-grid input,
+    .contact-page .modal-grid select,
+    .contact-page .modal-grid textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dbe6ff;
+      border-radius: 10px;
+      background: #fff;
+      color: #0f2244;
+      outline: none;
+      font-family: "Inter", sans-serif;
+    }
+
+    .contact-page .modal-grid input:focus,
+    .contact-page .modal-grid select:focus,
+    .contact-page .modal-grid textarea:focus {
+      border-color: #9fc1ff;
+      box-shadow: 0 0 0 3px rgba(159, 193, 255, 0.25);
+    }
+
+    .contact-page .modal-grid textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-page .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-page .center-actions {
+      justify-content: center;
+    }
+
+    .contact-page .top-gap {
+      margin-top: 12px;
+    }
+
+    .contact-page .btn.secondary {
+      background: #fff;
+      border: 2px solid var(--light-gray);
+      color: var(--m-ink);
+    }
+
+    .contact-page .btn.primary {
+      background: var(--primary);
+      border: 2px solid var(--primary);
+      color: #fff;
+    }
+
+    .contact-page .error {
+      color: #b42323;
+      font-size: 12px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .contact-page .visible {
+      display: block;
+    }
+
+    .contact-page .summary {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #f7fbff;
+      border: 1px solid #e2ebff;
+      color: #0f2244;
+      display: none;
+    }
+
+    .contact-page .summary.show {
+      display: block;
+    }
+
+    .contact-page .scheduler {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .contact-page .cal {
+      border: 1px solid #e2ebff;
+      border-radius: 14px;
+      padding: 12px;
+      background: #f9fbff;
+    }
+
+    .contact-page .cal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+
+    .contact-page .cal-month {
+      font-weight: 800;
+      color: #0f2244;
+    }
+
+    .contact-page .cal-nav button {
+      border: none;
+      background: #fff;
+      border: 1px solid #dbe6ff;
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .contact-page .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .contact-page .cal-grid .dow {
+      font-size: 12px;
+      color: #5b74a6;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .contact-page .cal-day {
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      border: 1px solid #e6efff;
+      background: #fff;
+      color: #0f2244;
+      cursor: pointer;
+    }
+
+    .contact-page .cal-day[aria-disabled="true"] {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .contact-page .cal-day.selected {
+      outline: 3px solid rgba(106, 168, 255, 0.35);
+      border-color: #9fc1ff;
+      background: #f2f7ff;
+    }
+
+    .contact-page .slots {
+      border: 1px solid #e2ebff;
+      border-radius: 14px;
+      padding: 12px;
+      background: #ffffff;
+    }
+
+    .contact-page .tz {
+      font-size: 12px;
+      color: #5c73a1;
+      margin-bottom: 8px;
+    }
+
+    .contact-page .slot-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 44px;
+    }
+
+    .contact-page .slot {
+      padding: 10px 12px;
+      border: 1px solid #dbe6ff;
+      border-radius: 10px;
+      background: #f7fbff;
+      cursor: pointer;
+    }
+
+    .contact-page .slot[disabled] {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .contact-page .slot.selected {
+      background: #0f2244;
+      color: #fff;
+      border-color: #0f2244;
+    }
+
+    .contact-page .success {
+      display: none;
+      text-align: center;
+      padding: 36px 18px 28px;
+    }
+
+    .contact-page .success .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      margin: 0 auto 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(160deg, #d5ffe8, #cbe1ff);
+      color: #1d7a4c;
+      border: 1px solid #cdebdc;
+    }
+
+    .contact-page .success h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #0f2244;
+    }
+
+    .contact-page .success p {
+      color: #456093;
+      max-width: 460px;
+      margin: 0 auto 8px;
+    }
+
+    .contact-page .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      top: auto !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    @media (min-width: 768px) {
+      .contact-page .contact-hero {
+        padding: 120px 0 80px;
+      }
+
+      .contact-page .contact-hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .contact-page .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-page .phone-number {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .contact-page .scheduler {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .contact-page .contact-form-container,
+      .contact-page .contact-info-container {
+        padding: 30px 25px;
+      }
+
+      .contact-page .phone-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-page .phone-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .contact-page .phone-number {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-page .modal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseElement {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.15;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    (() => {
+      const root = document.querySelector(".contact-page");
+      if (!root) return;
+
+      const contactForm = root.querySelector("#contactForm");
+      contactForm?.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Thank you for your message! We will get back to you soon.");
+        this.reset();
+      });
+
+      const callModal = root.querySelector("#callModal");
+      const openBtn = root.querySelector("#openCallModal");
+      const closeBtns = callModal?.querySelectorAll("[data-close-modal]") || [];
+      const success = root.querySelector("#callSuccess");
+
+      const CALL_FORM_ENDPOINT = null;
+      const AVAILABILITY_URL = null;
+      const DEFAULT_WEEKLY = {
+        0: [],
+        1: [{ start: "08:00", end: "20:00" }],
+        2: [{ start: "08:00", end: "20:00" }],
+        3: [{ start: "08:00", end: "20:00" }],
+        4: [{ start: "08:00", end: "20:00" }],
+        5: [{ start: "08:00", end: "18:00" }],
+        6: [{ start: "09:00", end: "14:00" }],
+      };
+      const SLOT_CFG = { durationMin: 30, daysAhead: 30, minLeadMinutes: 120 };
+
+      function getFocusable(el) {
+        return el.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+      }
+
+      function setStep(n) {
+        root.querySelectorAll(".step-wrap").forEach((w) => {
+          w.classList.toggle("active", w.dataset.stepWrap == n);
+          w.setAttribute("aria-hidden", w.dataset.stepWrap == n ? "false" : "true");
+        });
+
+        root.querySelectorAll(".stepper .step").forEach((s) => {
+          s.classList.toggle("active", s.dataset.step == n);
+        });
+      }
+
+      function openModal() {
+        if (!callModal) return;
+        callModal.classList.add("open");
+        callModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        const panel = callModal.querySelector(".modal-panel");
+        const focusables = getFocusable(panel);
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        function trap(e) {
+          if (e.key === "Tab") {
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          } else if (e.key === "Escape") {
+            closeModal();
+          }
+        }
+
+        callModal.addEventListener("keydown", trap);
+        callModal.addEventListener("click", (e) => {
+          if (e.target === callModal) closeModal();
+        });
+
+        (first || panel).focus();
+        setStep(1);
+        refreshAvailability().then(() => buildCalendar(true));
+      }
+
+      function closeModal() {
+        if (!callModal) return;
+        callModal.classList.remove("open");
+        callModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      openBtn?.addEventListener("click", openModal);
+      closeBtns.forEach((b) => b.addEventListener("click", closeModal));
+      callModal?.querySelector(".modal-close")?.addEventListener("click", closeModal);
+
+      const cform = root.querySelector("#callForm");
+
+      function showError(id, show) {
+        const el = root.querySelector(`[data-error-for="${id}"]`);
+        if (el) el.classList.toggle("visible", !!show);
+      }
+
+      function validEmail(v) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).toLowerCase());
+      }
+
+      root.querySelector("#toSchedule")?.addEventListener("click", () => {
+        if (cform.website && cform.website.value) return;
+        const data = new FormData(cform);
+        const req = [
+          ["firstName", "firstName"],
+          ["lastName", "lastName"],
+          ["email", "email2"],
+          ["company", "company2"],
+          ["industry", "industry2"],
+        ];
+        let ok = true;
+
+        req.forEach(([name, id]) => {
+          const val = (data.get(name) || "").toString().trim();
+          const good = val.length > 0 && (name !== "email" || validEmail(val));
+          showError(id, !good);
+          if (!good) ok = false;
+        });
+
+        if (!ok) return;
+        setStep(2);
+        buildCalendar(true);
+      });
+
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+      const tzLabel = root.querySelector("#tzLabel");
+      if (tzLabel) {
+        tzLabel.textContent = `Times shown in your time zone: ${tz}`;
+      }
+
+      let feed = { weekly: {}, overrides: {}, blackouts: [], slots_blocked: [] };
+      let viewYear;
+      let viewMonth;
+      let selectedISO = null;
+      let selectedLabel = "";
+
+      async function refreshAvailability() {
+        if (!AVAILABILITY_URL) {
+          feed = { weekly: {}, overrides: {}, blackouts: [], slots_blocked: [] };
+          return;
+        }
+
+        try {
+          const res = await fetch(AVAILABILITY_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error("feed error");
+          const json = await res.json();
+          feed.weekly = json.weekly || {};
+          feed.overrides = json.overrides || {};
+          feed.blackouts = json.blackouts || [];
+          feed.slots_blocked = (json.slots_blocked || []).map(String);
+        } catch {
+          feed = { weekly: {}, overrides: {}, blackouts: [], slots_blocked: [] };
+        }
+      }
+
+      function startOfDay(d) {
+        const x = new Date(d);
+        x.setHours(0, 0, 0, 0);
+        return x;
+      }
+
+      function addDays(d, n) {
+        const x = new Date(d);
+        x.setDate(x.getDate() + n);
+        return x;
+      }
+
+      function fmtDateISO(d) {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        return `${y}-${m}-${day}`;
+      }
+
+      function toISO_UTC(localDate) {
+        return new Date(localDate.getTime() - localDate.getTimezoneOffset() * 60000).toISOString();
+      }
+
+      function windowsFor(d) {
+        const ymd = fmtDateISO(d);
+        if (feed.blackouts.includes(ymd)) return [];
+        if (feed.overrides[ymd]) return feed.overrides[ymd];
+        const dow = d.getDay();
+        if (feed.weekly[String(dow)]) return feed.weekly[String(dow)];
+        return DEFAULT_WEEKLY[dow] || [];
+      }
+
+      const calMonth = root.querySelector("#calMonth");
+      const calGrid = root.querySelector("#calGrid");
+      const slotList = root.querySelector("#slotList");
+      const slotSummary = root.querySelector("#slotSummary");
+      const toConfirmBtn = root.querySelector("#toConfirm");
+      const confirmSummary = root.querySelector("#confirmSummary");
+
+      function buildCalendar(init = false) {
+        const today = new Date();
+        if (init || viewYear === undefined) {
+          viewYear = today.getFullYear();
+          viewMonth = today.getMonth();
+        }
+
+        calGrid.innerHTML = "";
+        const monthName = new Intl.DateTimeFormat(undefined, {
+          month: "long",
+          year: "numeric",
+        }).format(new Date(viewYear, viewMonth, 1));
+        calMonth.textContent = monthName;
+
+        const dow = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        dow.forEach((d) => {
+          const el = document.createElement("div");
+          el.className = "dow";
+          el.textContent = d;
+          calGrid.appendChild(el);
+        });
+
+        const first = new Date(viewYear, viewMonth, 1);
+        const startOffset = first.getDay();
+        const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+        const todayStart = startOfDay(today);
+        const lastAllowed = addDays(todayStart, SLOT_CFG.daysAhead);
+
+        for (let i = 0; i < startOffset; i++) {
+          calGrid.appendChild(document.createElement("div"));
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const d = new Date(viewYear, viewMonth, day);
+          const cell = document.createElement("button");
+          cell.type = "button";
+          cell.className = "cal-day";
+          cell.textContent = String(day);
+          cell.setAttribute(
+            "aria-label",
+            new Intl.DateTimeFormat(undefined, {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+            }).format(d)
+          );
+
+          const w = windowsFor(d);
+          const disabled = d < todayStart || d > lastAllowed || w.length === 0;
+          cell.setAttribute("aria-disabled", disabled ? "true" : "false");
+
+          if (!disabled) {
+            cell.addEventListener("click", () => {
+              root.querySelectorAll(".cal-day").forEach((b) => b.classList.remove("selected"));
+              cell.classList.add("selected");
+              renderSlots(d, w);
+            });
+          }
+
+          calGrid.appendChild(cell);
+        }
+      }
+
+      root.querySelector("#prevMonth")?.addEventListener("click", () => {
+        const t = new Date(viewYear, viewMonth, 1);
+        t.setMonth(t.getMonth() - 1);
+        viewYear = t.getFullYear();
+        viewMonth = t.getMonth();
+        buildCalendar();
+      });
+
+      root.querySelector("#nextMonth")?.addEventListener("click", () => {
+        const t = new Date(viewYear, viewMonth, 1);
+        t.setMonth(t.getMonth() + 1);
+        viewYear = t.getFullYear();
+        viewMonth = t.getMonth();
+        buildCalendar();
+      });
+
+      function renderSlots(d, windows) {
+        slotList.innerHTML = "";
+        slotSummary.classList.remove("show");
+        toConfirmBtn.disabled = true;
+
+        const now = new Date();
+        const minStart = new Date(now.getTime() + SLOT_CFG.minLeadMinutes * 60000);
+        const dateStr = new Intl.DateTimeFormat(undefined, {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+        }).format(d);
+
+        windows.forEach((w) => {
+          const [sh, sm] = w.start.split(":").map((n) => parseInt(n, 10));
+          const [eh, em] = w.end.split(":").map((n) => parseInt(n, 10));
+          const windowStart = new Date(d);
+          windowStart.setHours(sh, sm || 0, 0, 0);
+          const windowEnd = new Date(d);
+          windowEnd.setHours(eh, em || 0, 0, 0);
+
+          for (
+            let t = new Date(windowStart);
+            t < windowEnd;
+            t = new Date(t.getTime() + SLOT_CFG.durationMin * 60000)
+          ) {
+            const label = new Intl.DateTimeFormat(undefined, {
+              hour: "numeric",
+              minute: "2-digit",
+            }).format(t);
+            const isoUTC = toISO_UTC(t);
+            const isTooSoon =
+              t < minStart && startOfDay(t).getTime() === startOfDay(minStart).getTime();
+            const isBlocked = feed.slots_blocked?.includes?.(isoUTC);
+
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "slot";
+            btn.textContent = label;
+
+            if (isTooSoon || isBlocked) {
+              btn.disabled = true;
+              btn.setAttribute("aria-disabled", "true");
+            } else {
+              btn.addEventListener("click", () => {
+                root.querySelectorAll(".slot").forEach((s) => s.classList.remove("selected"));
+                btn.classList.add("selected");
+                selectedLabel = `${dateStr} at ${label} (${tz})`;
+                selectedISO = isoUTC;
+                slotSummary.textContent = `Selected: ${selectedLabel}`;
+                slotSummary.classList.add("show");
+                toConfirmBtn.disabled = false;
+              });
+            }
+
+            slotList.appendChild(btn);
+          }
+        });
+
+        if (!slotList.children.length) {
+          const msg = document.createElement("div");
+          msg.style.color = "#5b74a6";
+          msg.textContent = "No available times for this date.";
+          slotList.appendChild(msg);
+        }
+      }
+
+      root.querySelector("#backToDetails")?.addEventListener("click", () => {
+        setStep(1);
+      });
+
+      root.querySelector("#toConfirm")?.addEventListener("click", () => {
+        if (!selectedISO) return;
+        const data = new FormData(cform);
+        const name = `${data.get("firstName") || ""} ${data.get("lastName") || ""}`.trim();
+        const company = data.get("company") || "";
+
+        confirmSummary.innerHTML =
+          `<strong>When:</strong> ${selectedLabel}<br>` +
+          `<strong>Who:</strong> ${name || "(name pending)"} at ${company || "(company)"}<br>` +
+          `<strong>Where:</strong> Phone/Video, details sent to ${data.get("email") || ""}`;
+
+        setStep(3);
+      });
+
+      root.querySelector("#backToSchedule")?.addEventListener("click", () => {
+        setStep(2);
+      });
+
+      root.querySelector("#finalSubmit")?.addEventListener("click", async () => {
+        const data = new FormData(cform);
+        const req = [
+          ["firstName", "firstName"],
+          ["lastName", "lastName"],
+          ["email", "email2"],
+          ["company", "company2"],
+          ["industry", "industry2"],
+        ];
+        let ok = true;
+
+        req.forEach(([name, id]) => {
+          const val = (data.get(name) || "").toString().trim();
+          const good = val.length > 0 && (name !== "email" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+          showError(id, !good);
+          if (!good) ok = false;
+        });
+
+        if (!ok || !selectedISO) {
+          setStep(!ok ? 1 : 2);
+          return;
+        }
+
+        if (cform.website && cform.website.value) return;
+
+        const payload = Object.fromEntries(data.entries());
+        payload.timezone = tz;
+        payload.schedule_iso = selectedISO;
+        payload.schedule_label = selectedLabel;
+        payload.intent = "Contact - Schedule a Call";
+
+        try {
+          if (CALL_FORM_ENDPOINT) {
+            const res = await fetch(CALL_FORM_ENDPOINT, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            if (!res.ok) throw new Error("Network");
+          } else {
+            await new Promise((r) => setTimeout(r, 500));
+          }
+
+          root.querySelector('[data-step-wrap="1"]').style.display = "none";
+          root.querySelector('[data-step-wrap="2"]').style.display = "none";
+          root.querySelector('[data-step-wrap="3"]').style.display = "none";
+          success.style.display = "block";
+          success.focus();
+        } catch {
+          alert("Sorry, something went wrong submitting your request. You can email info@ppdtechnology.com and we’ll help right away.");
+        }
+      });
+    })();
+  </script>
+</BaseLayout>

@@ -1,17 +1,239 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="PPD Technology | Modern Payment Solutions">
+  <section class="hero" id="hero">
+    <div class="background-element circle-1"></div>
+    <div class="background-element circle-2"></div>
+    <div class="tech-animation binary-code" id="binaryLayer" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-kicker"><i class="fa-solid fa-bolt"></i> Faster approvals • Better rates • No long-term contracts</span>
+        <h1 class="split">Modern Payment Processing for Growing Businesses</h1>
+        <p>Secure, reliable, and scalable payment solutions designed to help your business accept payments anywhere, anytime.</p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-primary magnet" onclick="location.href='https://ppdtechnology.com/signup'">
+            Start Processing
+          </button>
+          <button
+            class="btn btn-outline magnet"
+            style="background:rgba(255,255,255,0.1);color:#fff;border-color:#fff;"
+            onclick="location.href='https://ppdtechnology.com/Contact'"
+          >
+            Contact Sales
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-animation" id="heroAnim">
+        <div class="payment-terminal" id="terminal">
+          <div class="terminal-screen" id="terminalScreen">Payment: Approved</div>
+          <div class="card-slot"></div>
+        </div>
+
+        <div class="payment-card" style="top:20%;left:5%;">VISA</div>
+        <div class="payment-card" style="top:50%;left:5%;animation-delay:2s;">MC</div>
+        <div class="payment-card" style="top:35%;right:5%;animation-delay:4s;">AMEX</div>
+        <div class="data-flow" style="top:15%;left:30%;"></div>
+        <div class="data-flow" style="top:40%;left:20%;animation-delay:1s;"></div>
+        <div class="data-flow" style="top:65%;left:25%;animation-delay:2s;"></div>
+        <div class="security-badge" style="top:15%;right:15%;"><i class="fas fa-shield-alt"></i></div>
+        <div class="approval-check" style="top:60%;right:20%;"><i class="fas fa-check"></i></div>
+        <div class="digital-currency" style="bottom:15%;left:15%;">$</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Trusted by">
+    <div class="container brands-viewport" id="brandsViewport">
+      <div class="brands-track">
+        <span class="brand-pill" data-brand="visa" aria-label="Visa"><i class="fa-brands fa-cc-visa"></i>Visa</span>
+        <span class="brand-pill" data-brand="mastercard" aria-label="Mastercard"><i class="fa-brands fa-cc-mastercard"></i>Mastercard</span>
+        <span class="brand-pill" data-brand="amex" aria-label="American Express"><i class="fa-brands fa-cc-amex"></i>AmEx</span>
+        <span class="brand-pill" data-brand="discover" aria-label="Discover"><i class="fa-brands fa-cc-discover"></i>Discover</span>
+        <span class="brand-pill" data-brand="applepay" aria-label="Apple Pay"><i class="fa-brands fa-apple-pay"></i>Apple Pay</span>
+        <span class="brand-pill" data-brand="googlepay" aria-label="Google Pay"><i class="fa-brands fa-google-pay"></i>Google Pay</span>
+
+        <span class="brand-pill" data-brand="visa" aria-hidden="true"><i class="fa-brands fa-cc-visa"></i>Visa</span>
+        <span class="brand-pill" data-brand="mastercard" aria-hidden="true"><i class="fa-brands fa-cc-mastercard"></i>Mastercard</span>
+        <span class="brand-pill" data-brand="amex" aria-hidden="true"><i class="fa-brands fa-cc-amex"></i>AmEx</span>
+        <span class="brand-pill" data-brand="discover" aria-hidden="true"><i class="fa-brands fa-cc-discover"></i>Discover</span>
+        <span class="brand-pill" data-brand="applepay" aria-hidden="true"><i class="fa-brands fa-apple-pay"></i>Apple Pay</span>
+        <span class="brand-pill" data-brand="googlepay" aria-hidden="true"><i class="fa-brands fa-google-pay"></i>Google Pay</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose PPD Technology</h2>
+        <p>We provide innovative payment solutions that help businesses of all sizes thrive in today's digital economy.</p>
+
+        <div class="metrics" id="metrics">
+          <div class="metric">
+            <div class="num" data-count="99.99">0</div>
+            <div class="label">Uptime</div>
+          </div>
+          <div class="metric">
+            <div class="num" data-count="24">0</div>
+            <div class="label">Hour Support</div>
+          </div>
+          <div class="metric">
+            <div class="num" data-count="1">0</div>
+            <div class="label">Day Funding</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Secure Transactions</h3>
+          <p>Bank-level security with end-to-end encryption and fraud prevention tools to keep your business and customers safe.</p>
+        </div>
+
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Fast Processing</h3>
+          <p>Lightning-fast payment processing with real-time authorization and next-day funding options.</p>
+        </div>
+
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Business Insights</h3>
+          <p>Comprehensive reporting and analytics to help you understand your sales data and customer behavior.</p>
+        </div>
+
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Omnichannel Payments</h3>
+          <p>Accept payments in-store, online, or on-the-go with our seamless integrated solutions.</p>
+        </div>
+
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees, no long-term contracts. Clear, competitive rates tailored to your business needs.</p>
+        </div>
+
+        <div class="feature-card tilt">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Dedicated customer support team available around the clock to help with any issues or questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solutions">
+    <div class="container">
+      <div class="section-title">
+        <h2>Industry-Specific Solutions</h2>
+        <p>Tailored payment processing solutions designed for your industry's unique needs.</p>
+      </div>
+
+      <div class="slider-shell">
+        <div class="slider-viewport" id="solutionsViewport" aria-label="Industry carousel">
+          <div class="slider-track" id="solutionsTrack">
+            <a class="slide" href="https://ppdtechnology.com/restaurants">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-restaurant"><i class="fa-solid fa-utensils"></i></div>
+                <div class="solution-content">
+                  <h3>Restaurants & Hospitality</h3>
+                  <p>Tableside ordering, tipping, QR pay, and POS integrations built for speed.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/retail">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-retail"><i class="fa-solid fa-store"></i></div>
+                <div class="solution-content">
+                  <h3>Retail</h3>
+                  <p>Inventory-friendly POS, receipts, exchanges, and unified in-store payments.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/ecommerce">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-ecom"><i class="fa-solid fa-laptop"></i></div>
+                <div class="solution-content">
+                  <h3>E-Commerce</h3>
+                  <p>Checkout, subscriptions, and cart integrations with strong fraud protection.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/healthcare">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-health"><i class="fa-solid fa-user-doctor"></i></div>
+                <div class="solution-content">
+                  <h3>Healthcare</h3>
+                  <p>Co-pays, invoicing, and card-on-file streamlined for clinics and practices.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/contractors">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-contract"><i class="fa-solid fa-helmet-safety"></i></div>
+                <div class="solution-content">
+                  <h3>Contractors</h3>
+                  <p>Field payments, estimates-to-invoice, and mobile terminals that go where you do.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/non-profits">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-nonprofit"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <div class="solution-content">
+                  <h3>Non-Profits</h3>
+                  <p>Donations, recurring gifts, and low-friction tax receipts.</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="slide" href="https://ppdtechnology.com/higher-education">
+              <div class="solution-card tilt">
+                <div class="solution-visual bg-edu"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="solution-content">
+                  <h3>Higher Education</h3>
+                  <p>Tuition, events, bookstores, and housing with centralized reconciliation included.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="slider-nav">
+          <button class="slider-btn" id="prevBtn" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="slider-btn" id="nextBtn" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="cta">
+    <span class="cta-orb orb-1"></span>
+    <span class="cta-orb orb-2"></span>
+    <span class="cta-orb orb-3"></span>
+
+    <div class="container">
+      <h2>Ready to Transform Your Payment Processing?</h2>
+      <p>Join thousands of businesses that trust PPD Technology with their payment processing needs.</p>
+      <button
+        class="btn btn-primary magnet"
+        style="background:#fff;color:var(--primary);font-weight:600"
+        onclick="location.href='https://ppdtechnology.com/signup'"
+      >
+        Get Started Today
+      </button>
+    </div>
+  </section>
+</BaseLayout>

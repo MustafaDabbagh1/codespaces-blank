@@ -1,0 +1,977 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Nonprofit Payments">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </Fragment>
+
+  <div class="np-page">
+    <section class="hero">
+      <div class="free-ribbon">FREE for Nonprofits</div>
+
+      <div class="floating-elements" aria-hidden="true">
+        <div class="floating f1"></div>
+        <div class="floating f2"></div>
+        <div class="floating f3"></div>
+      </div>
+
+      <div class="confetti" aria-hidden="true">
+        <span class="paper p1"></span>
+        <span class="paper p2"></span>
+        <span class="paper p3"></span>
+        <span class="paper p4"></span>
+        <span class="paper p5"></span>
+        <span class="paper p6"></span>
+        <span class="paper p7"></span>
+        <span class="paper p8"></span>
+        <span class="paper p9"></span>
+        <span class="paper p10"></span>
+        <span class="paper p11"></span>
+        <span class="paper p12"></span>
+
+        <span class="heart h1">❤</span>
+        <span class="heart h2">❤</span>
+        <span class="heart h3">❤</span>
+        <span class="heart h4">❤</span>
+        <span class="heart h5">❤</span>
+        <span class="heart h6">❤</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-heart"></i> Donor-Friendly • Event-Ready • Grant-Savvy</span>
+          <h1>Raise More. Spend Less. <br />Nonprofit Payments — Free.</h1>
+          <p>
+            Accept donations anywhere—website, events, QR codes, text-to-give—and streamline
+            recurring gifts and pledges. Built for volunteers, chapters, and growing organizations.
+          </p>
+
+          <div class="badges">
+            <span class="badge"><i class="fa-solid fa-circle-check"></i> $0 platform fees for eligible nonprofits</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> PCI DSS Level 1</span>
+            <span class="badge"><i class="fa-solid fa-mobile-screen-button"></i> Text & QR to Give</span>
+            <span class="badge"><i class="fa-solid fa-earth-americas"></i> Global & Multi-currency</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="page-btn start-btn" href="/signup">Start Free</a>
+            <a class="page-btn page-btn-outline" href="#features">View Features</a>
+          </div>
+
+          <div class="ticker">
+            <div class="tick"><i class="fa-solid fa-hand-holding-heart"></i> <strong>142</strong> new donors</div>
+            <div class="tick"><i class="fa-solid fa-gift"></i> <strong>63</strong> pledges created</div>
+            <div class="tick"><i class="fa-solid fa-calendar-check"></i> <strong>97</strong> recurring gifts</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="donation-viz" aria-label="Donation progress widget">
+            <div class="viz-header">
+              <span>Community Fundraiser</span>
+              <span>$8,250 / $12,000</span>
+            </div>
+
+            <div class="viz-body">
+              <div class="donation-goal">
+                <div class="donation-progress">
+                  <div class="progress-pulse"></div>
+                </div>
+              </div>
+
+              <div class="donation-stats">
+                <div class="stat">
+                  <div class="stat-value">142</div>
+                  <div class="stat-label">Donors</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">65%</div>
+                  <div class="stat-label">Funded</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">12</div>
+                  <div class="stat-label">Days Left</div>
+                </div>
+              </div>
+
+              <div class="donor-avatars">
+                <div class="avatar">JD</div>
+                <div class="avatar">MS</div>
+                <div class="avatar">AK</div>
+                <div class="avatar">TP</div>
+                <div class="avatar">+137</div>
+              </div>
+
+              <button class="donate-btn" type="button">Donate Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integrations">
+      <div class="container">
+        <div class="rowi" aria-label="Nonprofit integrations">
+          <span class="pill"><i class="fa-solid fa-hands-holding-child"></i> Donor CRM (Salesforce NPSP, Bloomerang)*</span>
+          <span class="pill"><i class="fa-solid fa-envelope-open-text"></i> Email & Marketing (Mailchimp, HubSpot)</span>
+          <span class="pill"><i class="fa-solid fa-qrcode"></i> QR & Event Pages</span>
+          <span class="pill"><i class="fa-solid fa-building-columns"></i> ACH / eCheck (NACHA)</span>
+          <span class="pill"><i class="fa-solid fa-sitemap"></i> Chapters & Sub-accounts</span>
+          <span class="pill"><i class="fa-solid fa-earth-americas"></i> Multi-currency & FX</span>
+        </div>
+        <div class="integrations-note">*via compatible integrations</div>
+      </div>
+    </section>
+
+    <section class="free-bar">
+      <div class="container inner">
+        <span class="free-tag"><i class="fa-solid fa-circle-check"></i> Free plan for eligible 501(c)(3)s — $0 monthly platform fees</span>
+        <span>Grow donations with donor-covered tips and recurring gifts.</span>
+      </div>
+    </section>
+
+    <section class="section" id="usecases">
+      <div class="container">
+        <h2>Run Every Fundraiser, Effortlessly</h2>
+        <p class="lead">
+          Museums, arts orgs, youth programs, shelters, community chapters—accept donations
+          anywhere and keep your reporting centralized.
+        </p>
+
+        <div class="photocards">
+          <div class="photo-card">
+            <div class="photo-img">
+              <img
+                alt="QR donations at event"
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop"
+              />
+            </div>
+            <div class="photo-body">
+              <div class="tag"><i class="fa-solid fa-qrcode"></i> Event QR</div>
+              <h3>Pop-Up & Gala Donations</h3>
+              <p class="muted">Create beautiful event pages with QR codes, live totals, and instant tax receipts.</p>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <div class="photo-img">
+              <img
+                alt="Volunteers texting"
+                src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1200&auto=format&fit=crop"
+              />
+            </div>
+            <div class="photo-body">
+              <div class="tag"><i class="fa-solid fa-mobile-screen-button"></i> Text-to-Give</div>
+              <h3>Give from Any Phone</h3>
+              <p class="muted">Assign a keyword, track campaigns, and nudge recurring support with one click.</p>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <div class="photo-img">
+              <img
+                alt="International community project"
+                src="https://mmdabbagh24.neocities.org/images/E.jpg"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div class="photo-body">
+              <div class="tag"><i class="fa-solid fa-earth-americas"></i> International</div>
+              <h3>Global Programs</h3>
+              <p class="muted">Accept cards, ACH, wallets, and multi-currency gifts with transparent receipts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <h2>Donor-First Features</h2>
+        <p class="lead">Increase conversion, grow recurring gifts, and keep data safe.</p>
+
+        <div class="grid">
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-heart-circle-plus"></i></div>
+            <h3>Recurring & Pledges</h3>
+            <p class="muted">Monthly, quarterly, or annual giving with smart reminders and easy updates.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-gift"></i></div>
+            <h3>Donor Covers Fees</h3>
+            <p class="muted">Let supporters opt-in to cover fees so more of every gift reaches your mission.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-receipt"></i></div>
+            <h3>Instant Tax Receipts</h3>
+            <p class="muted">Automatic emails with EIN and line items, plus annual summaries.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Campaign Analytics</h3>
+            <p class="muted">Track source, AOV, retention, and cohort trends across chapters.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Security Built-In</h3>
+            <p class="muted">PCI Level 1, tokenization, 3-D Secure, TLS 1.2+. Safer for staff and donors.</p>
+          </div>
+
+          <div class="card">
+            <div class="iconbox"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>Chapters & Sub-Accounts</h3>
+            <p class="muted">Separate deposits and dashboards for each chapter while keeping HQ visibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <span class="blob blob1"></span>
+      <span class="blob blob2"></span>
+      <div class="container">
+        <h2>Launch Nonprofit Payments — Free</h2>
+        <p>
+          Spin up donation pages, text-to-give, and event QR in minutes. Grow recurring support
+          and keep every chapter in sync.
+        </p>
+        <a class="page-btn page-btn-primary" href="/signup">Get Started Free</a>
+        <div class="cta-note"><strong>$0 monthly platform fees</strong> for eligible nonprofits.</div>
+      </div>
+    </section>
+
+    <div class="reg-bar">
+      PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA. © 2025 PPD Technology.
+    </div>
+  </div>
+
+  <style>
+    .np-page {
+      --primary: #0055ff;
+      --primary-dark: #0044cc;
+      --secondary: #0f1b35;
+      --accent: #00cc96;
+      --light: #f9fafb;
+      --dark: #1a232e;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --np-rose: #e11d48;
+      --np-coral: #fb7185;
+      --np-gold: #f59e0b;
+      --np-ink: #111827;
+      font-family: "Inter", sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: var(--light);
+      overflow-x: hidden;
+    }
+
+    .np-page * {
+      box-sizing: border-box;
+    }
+
+    .np-page .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .np-page img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .np-page .page-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: .3s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+
+    .np-page .page-btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .np-page .page-btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, .2);
+    }
+
+    .np-page .page-btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: 2px solid var(--primary);
+    }
+
+    .np-page .page-btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 85, 255, .3);
+    }
+
+    .np-page .start-btn {
+      background: #ffe08a;
+      border: 2px solid #f59e0b;
+      color: #3a1d00;
+      font-weight: 900;
+    }
+
+    .np-page .start-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(245, 158, 11, .25);
+    }
+
+    .np-page .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      padding: 86px 0 70px;
+      background:
+        radial-gradient(1200px 500px at 85% -10%, rgba(255, 247, 237, .5), transparent 60%),
+        radial-gradient(900px 450px at -5% 110%, rgba(251, 113, 133, .28), transparent 60%),
+        linear-gradient(120deg, #7f1d1d 0%, var(--np-rose) 48%, #c026d3 100%);
+      isolation: isolate;
+    }
+
+    .np-page .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .16) 1px, transparent 1px);
+      background-size: 14px 14px;
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .np-page .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .np-page .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255, 255, 255, .12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      backdrop-filter: blur(4px);
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .np-page .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.12;
+      margin: 12px 0 10px;
+      color: #fff7fa;
+    }
+
+    .np-page .hero p {
+      opacity: .96;
+      margin-bottom: 22px;
+      color: #ffeef2;
+      max-width: 640px;
+    }
+
+    .np-page .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 26px;
+    }
+
+    .np-page .badge {
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, .35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .np-page .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .np-page .ticker {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .np-page .tick {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff7fa;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .np-page .free-ribbon {
+      position: absolute;
+      top: 18px;
+      right: -36px;
+      transform: rotate(20deg);
+      background: linear-gradient(90deg, #ffedd5, #fde68a);
+      color: #581c87;
+      padding: 10px 60px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      border: 2px solid #f59e0b;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+      z-index: 3;
+    }
+
+    .np-page .confetti {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .np-page .paper {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      top: -12vh;
+      opacity: .95;
+      animation: fallSquare linear infinite;
+    }
+
+    .np-page .p1  { left: 6%;  background: #FDE68A; animation-duration: 8s;   animation-delay: -1s; }
+    .np-page .p2  { left: 14%; background: #FB7185; animation-duration: 10s;  animation-delay: -3s; }
+    .np-page .p3  { left: 23%; background: #FECACA; animation-duration: 7s;   animation-delay: -2s; }
+    .np-page .p4  { left: 31%; background: #FBCFE8; animation-duration: 11s;  animation-delay: -6s; }
+    .np-page .p5  { left: 40%; background: #FCD34D; animation-duration: 9s;   animation-delay: -4s; }
+    .np-page .p6  { left: 52%; background: #FB7185; animation-duration: 12s;  animation-delay: -7s; }
+    .np-page .p7  { left: 61%; background: #FDE68A; animation-duration: 8.5s; animation-delay: -2.5s; }
+    .np-page .p8  { left: 70%; background: #FBCFE8; animation-duration: 10.5s; animation-delay: -5s; }
+    .np-page .p9  { left: 79%; background: #FECACA; animation-duration: 7.5s; animation-delay: -1.5s; }
+    .np-page .p10 { left: 86%; background: #FCD34D; animation-duration: 9.5s; animation-delay: -6.5s; }
+    .np-page .p11 { left: 92%; background: #FB7185; animation-duration: 11.5s; animation-delay: -3.5s; }
+    .np-page .p12 { left: 97%; background: #FDE68A; animation-duration: 8.8s; animation-delay: -4.8s; }
+
+    .np-page .heart {
+      position: absolute;
+      font-size: 12px;
+      color: #ffcbd5;
+      opacity: .95;
+      animation: floatHeart ease-in-out infinite;
+    }
+
+    .np-page .h1 { left: 10%; top: 18%; animation-duration: 7s; animation-delay: -1s; }
+    .np-page .h2 { left: 22%; top: 8%;  animation-duration: 8.5s; animation-delay: -3s; }
+    .np-page .h3 { left: 48%; top: 20%; animation-duration: 6.5s; animation-delay: -2s; }
+    .np-page .h4 { left: 72%; top: 12%; animation-duration: 7.8s; animation-delay: -4s; }
+    .np-page .h5 { left: 84%; top: 24%; animation-duration: 9s; animation-delay: -1.5s; }
+    .np-page .h6 { left: 58%; top: 6%;  animation-duration: 8s; animation-delay: -5s; }
+
+    .np-page .integrations {
+      background: #fff;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .np-page .rowi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .np-page .pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .04);
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .np-page .pill i {
+      color: var(--np-rose);
+    }
+
+    .np-page .integrations-note {
+      text-align: center;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .np-page .free-bar {
+      background: linear-gradient(90deg, #fffbeb, #ffe4e6);
+      border-top: 1px solid #fde68a;
+      border-bottom: 1px solid #fecdd3;
+      padding: 12px 0;
+    }
+
+    .np-page .inner {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #7c2d12;
+      font-weight: 800;
+    }
+
+    .np-page .free-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 2px dashed #f59e0b;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .np-page .section {
+      padding: 70px 0;
+    }
+
+    .np-page .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+
+    .np-page .lead {
+      text-align: center;
+      color: var(--gray);
+      max-width: 780px;
+      margin: 0 auto 28px;
+    }
+
+    .np-page .photocards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .np-page .photo-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #eaecef;
+      background: #fff;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+      transition: .25s;
+    }
+
+    .np-page .photo-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .np-page .photo-img {
+      height: 200px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .np-page .photo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.06);
+      transition: transform .6s;
+    }
+
+    .np-page .photo-card:hover .photo-img img {
+      transform: scale(1.12);
+    }
+
+    .np-page .photo-body {
+      padding: 16px;
+    }
+
+    .np-page .tag {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .np-page .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .np-page .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #eaecef;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
+      transition: .25s;
+    }
+
+    .np-page .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, .08);
+    }
+
+    .np-page .iconbox {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffd1dc, #fff5cc);
+      color: #9f1239;
+      margin-bottom: 12px;
+      font-size: 22px;
+      border: 1px solid #fecaca;
+    }
+
+    .np-page .muted {
+      color: var(--gray);
+      font-size: .95rem;
+    }
+
+    .np-page .cta {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: var(--np-ink);
+      background: radial-gradient(900px 420px at 80% 0%, #ffffff, #fff7ed 65%, #ffedd5 100%);
+      padding: 72px 0;
+    }
+
+    .np-page .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      color: var(--secondary);
+    }
+
+    .np-page .cta p {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      color: #3f2e00;
+    }
+
+    .np-page .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .28;
+      pointer-events: none;
+    }
+
+    .np-page .blob1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle at 30% 30%, #fb7185, transparent 70%);
+      left: 6%;
+      top: 10%;
+      animation: floatBlob 12s infinite ease-in-out;
+    }
+
+    .np-page .blob2 {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle at 30% 30%, #f59e0b, transparent 70%);
+      right: 8%;
+      bottom: 6%;
+      animation: floatBlob 13s -2s infinite ease-in-out;
+    }
+
+    .np-page .cta-note {
+      margin-top: 10px;
+      color: #7c2d12;
+      font-size: 13px;
+    }
+
+    .np-page .reg-bar {
+      background: var(--secondary);
+      color: #fff;
+      padding: 18px 16px;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .np-page .donation-viz {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto 14px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(108, 99, 255, .15);
+    }
+
+    .np-page .viz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: linear-gradient(90deg, #6c63ff, #00c9a7);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .np-page .viz-body {
+      padding: 20px;
+    }
+
+    .np-page .donation-goal {
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .np-page .donation-progress {
+      height: 100%;
+      width: 65%;
+      background: linear-gradient(90deg, #ff6b95, #6c63ff);
+      border-radius: 6px;
+      position: relative;
+      animation: progressShift 4s ease-in-out infinite alternate;
+    }
+
+    .np-page .progress-pulse {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #fff;
+      animation: pulse 1.5s infinite;
+    }
+
+    .np-page .donation-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .np-page .stat {
+      text-align: center;
+    }
+
+    .np-page .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #6c63ff;
+    }
+
+    .np-page .stat-label {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .np-page .donor-avatars {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .np-page .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      margin-right: -10px;
+      border: 2px solid #fff;
+      animation: bounce 2s infinite;
+    }
+
+    .np-page .avatar:nth-child(1) { background: #118ab2; }
+    .np-page .avatar:nth-child(2) { background: #ff6b95; animation-delay: .2s; }
+    .np-page .avatar:nth-child(3) { background: #00c9a7; animation-delay: .4s; }
+    .np-page .avatar:nth-child(4) { background: #ffd166; color: #333; animation-delay: .6s; }
+    .np-page .avatar:nth-child(5) { background: #6c63ff; animation-delay: .8s; }
+
+    .np-page .donate-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, #00c9a7, #118ab2);
+      color: #fff;
+      font-weight: 700;
+      transition: .3s;
+      box-shadow: 0 10px 20px rgba(0, 201, 167, .3);
+    }
+
+    .np-page .donate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 201, 167, .4);
+    }
+
+    .np-page .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .np-page .floating {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .1;
+    }
+
+    .np-page .f1 {
+      width: 80px;
+      height: 80px;
+      background: #6c63ff;
+      top: 10%;
+      left: 5%;
+      animation: floatBlob 15s infinite ease-in-out;
+    }
+
+    .np-page .f2 {
+      width: 120px;
+      height: 120px;
+      background: #ff6b95;
+      top: 60%;
+      right: 5%;
+      animation: floatBlob 18s infinite ease-in-out reverse;
+    }
+
+    .np-page .f3 {
+      width: 60px;
+      height: 60px;
+      background: #00c9a7;
+      bottom: 20%;
+      left: 15%;
+      animation: floatBlob 12s infinite ease-in-out;
+    }
+
+    @media (min-width: 768px) {
+      .np-page .hero-grid {
+        grid-template-columns: 1.1fr .9fr;
+      }
+
+      .np-page .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .np-page .photocards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .np-page .hero h1 {
+        font-size: 3.1rem;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    @keyframes fallSquare {
+      0% {
+        transform: translateY(-12vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: .95;
+      }
+      100% {
+        transform: translateY(112vh) rotate(540deg);
+        opacity: .9;
+      }
+    }
+
+    @keyframes floatHeart {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-14px) scale(1.08);
+      }
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes progressShift {
+      0% { width: 65%; }
+      100% { width: 70%; }
+    }
+  </style>
+</BaseLayout>

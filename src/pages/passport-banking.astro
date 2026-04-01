@@ -1,0 +1,717 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Passport Banking">
+  <style>
+    .passport-page *{
+      box-sizing:border-box;
+    }
+
+    .passport-page a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .passport-shell{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .passport-hero{
+      position:relative;
+      isolation:isolate;
+      color:#fff;
+      min-height:78vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        radial-gradient(1200px 700px at 120% -20%, rgba(47,163,255,.18), transparent 60%),
+        linear-gradient(180deg, #0C1A3A 0%, #0F234F 100%);
+    }
+
+    .passport-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.25;
+      pointer-events:none;
+      background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0) 0 0/18px 18px;
+    }
+
+    .passport-hero .passport-shell{
+      position:relative;
+      z-index:2;
+      padding:70px 20px;
+    }
+
+    .passport-hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    @media (max-width:960px){
+      .passport-hero-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+      }
+    }
+
+    .passport-eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.18);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.4px;
+    }
+
+    .passport-hero h1{
+      font-family:Spectral, Georgia, serif;
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:44px;
+      line-height:1.12;
+      margin:12px 0 10px;
+      color:#fff;
+    }
+
+    .passport-hero p{
+      max-width:640px;
+      opacity:.92;
+      color:#fff;
+    }
+
+    .passport-badge-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:14px 0 24px;
+    }
+
+    .passport-badge{
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.22);
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      color:#fff;
+    }
+
+    .passport-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .passport-btn{
+      padding:10px 18px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:.2s;
+    }
+
+    .passport-btn-primary{
+      background:#2FA3FF;
+      border:1px solid #2FA3FF;
+      color:#fff;
+    }
+
+    .passport-btn-primary:hover{
+      filter:brightness(.96);
+    }
+
+    .passport-btn-light{
+      background:#fff;
+      border:1px solid #fff;
+      color:#0F234F;
+    }
+
+    .passport-btn-ghost{
+      border:1px solid rgba(255,255,255,.36);
+      color:#fff;
+      background:transparent;
+    }
+
+    .passport-btn-ghost:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .passport-desk{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .passport-panel{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(6px);
+      border-radius:14px;
+      padding:16px;
+    }
+
+    .passport-panel h4{
+      font-weight:800;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .passport-mini{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    @media (max-width:560px){
+      .passport-mini{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .passport-mini-card{
+      background:#0e204b;
+      border:1px solid #203467;
+      border-radius:12px;
+      padding:14px;
+      color:#e9f0ff;
+      box-shadow:0 10px 24px rgba(4,8,20,.25);
+    }
+
+    .passport-mini-label{
+      font-size:12px;
+      color:#a8b4d6;
+      margin-bottom:6px;
+    }
+
+    .passport-spark{
+      height:46px;
+      display:flex;
+      gap:2px;
+      align-items:flex-end;
+    }
+
+    .passport-spark span{
+      width:8px;
+      background:#3ea4ff;
+      border-radius:2px;
+      animation:passport-bars 1.6s ease-in-out infinite;
+    }
+
+    .passport-spark span:nth-child(odd){
+      opacity:.7;
+    }
+
+    .passport-spark span:nth-child(2){animation-delay:.15s}
+    .passport-spark span:nth-child(3){animation-delay:.3s}
+    .passport-spark span:nth-child(4){animation-delay:.45s}
+    .passport-spark span:nth-child(5){animation-delay:.6s}
+
+    .passport-ledger{
+      background:#0e204b;
+      border:1px solid #203467;
+      border-radius:12px;
+      padding:12px;
+    }
+
+    .passport-ledger-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      font-size:13px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      padding:8px 0;
+      color:#e9f0ff;
+    }
+
+    .passport-ledger-row:last-child{
+      border-bottom:none;
+    }
+
+    .passport-pos{
+      color:#79e6d3;
+    }
+
+    .passport-neg{
+      color:#ffb4b4;
+    }
+
+    .passport-compliance{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .passport-pill{
+      background:#0e204b;
+      border:1px solid #203467;
+      color:#dfe8ff;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+    }
+
+    .passport-metrics{
+      background:#fff;
+      border-top:1px solid #e9edf3;
+      border-bottom:1px solid #e9edf3;
+    }
+
+    .passport-metrics-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:16px;
+      padding:22px 0;
+      width:100%;
+    }
+
+    @media (max-width:720px){
+      .passport-metrics-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .passport-metric-card{
+      background:#fff;
+      border:1px solid #e9edf3;
+      border-radius:12px;
+      padding:22px 24px;
+      box-shadow:0 6px 18px rgba(9,14,35,.12);
+      display:flex;
+      align-items:center;
+      gap:16px;
+      min-width:0;
+      width:100%;
+    }
+
+    .passport-metric-icon{
+      flex:0 0 auto;
+      font-size:20px;
+      color:#0A1020;
+      width:auto;
+    }
+
+    .passport-metric-copy{
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .passport-metric-value{
+      display:block;
+      font-weight:800;
+      font-size:26px;
+      line-height:1.1;
+      white-space:nowrap;
+      background:linear-gradient(90deg,#0c57ff,#2fa3ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .passport-metric-label{
+      color:#6a7796;
+      font-weight:600;
+      font-size:14px;
+      margin-top:6px;
+    }
+
+    .passport-section{
+      padding:64px 0;
+      background:#F3F5F8;
+    }
+
+    .passport-section-title{
+      text-align:center;
+      margin-bottom:10px;
+    }
+
+    .passport-section-title h2{
+      font-family:Spectral, serif;
+      font-size:34px;
+      color:#0F234F;
+      line-height:1.15;
+    }
+
+    .passport-section-title p{
+      color:#5b6787;
+      max-width:720px;
+      margin:8px auto 0;
+    }
+
+    .passport-features-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+
+    @media (max-width:980px){
+      .passport-features-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:680px){
+      .passport-features-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .passport-feature-card{
+      background:#fff;
+      border:1px solid #e7ecf4;
+      border-radius:14px;
+      padding:22px;
+      box-shadow:0 10px 30px rgba(9,14,35,.18);
+      transition:.2s;
+    }
+
+    .passport-feature-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 16px 40px rgba(9,14,35,.14);
+    }
+
+    .passport-feature-icon{
+      width:46px;
+      height:46px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eef4ff;
+      color:#0c57ff;
+      margin-bottom:10px;
+    }
+
+    .passport-feature-card h3{
+      font-size:18px;
+      margin-bottom:6px;
+      color:#0A1020;
+    }
+
+    .passport-feature-card p{
+      color:#596689;
+    }
+
+    .passport-accordion{
+      max-width:900px;
+      margin:28px auto 0;
+    }
+
+    .passport-acc-item{
+      background:#fff;
+      border:1px solid #e7ecf4;
+      border-radius:12px;
+      margin-bottom:10px;
+      overflow:hidden;
+    }
+
+    .passport-acc-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 16px;
+      cursor:pointer;
+      font-weight:700;
+      gap:12px;
+    }
+
+    .passport-acc-body{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .25s ease;
+    }
+
+    .passport-acc-pad{
+      padding:0 16px 14px;
+      color:#596689;
+    }
+
+    .passport-cta{
+      background:#0f1f49;
+      color:#fff;
+      padding:64px 0;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .passport-cta::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.1;
+      background:
+        radial-gradient(circle at 40% 20%, #2fa3ff, transparent 40%),
+        radial-gradient(circle at 60% 80%, #00b49e, transparent 40%);
+    }
+
+    .passport-cta .passport-shell{
+      position:relative;
+      z-index:1;
+    }
+
+    .passport-cta h3{
+      font-family:Spectral, serif;
+      font-size:30px;
+      margin-bottom:8px;
+      color:#fff;
+    }
+
+    .passport-cta p{
+      opacity:.9;
+      max-width:720px;
+      margin:0 auto 16px;
+      color:#fff;
+    }
+
+    @keyframes passport-bars{
+      0%{transform:scaleY(.3)}
+      50%{transform:scaleY(1)}
+      100%{transform:scaleY(.3)}
+    }
+  </style>
+
+  <div class="passport-page">
+    <section class="passport-hero">
+      <div class="passport-shell">
+        <div class="passport-hero-grid">
+          <div>
+            <span class="passport-eyebrow"><i class="fa-solid fa-vault"></i> Passport Banking</span>
+            <h1>Enterprise-grade banking &amp; treasury, built for operators</h1>
+            <p>Consolidate cash management across accounts, automate reconciliation, and move money with confidence. A single platform for embedded accounts, payments, controls, and real-time BI.</p>
+
+            <div class="passport-badge-row">
+              <span class="passport-badge"><i class="fa-solid fa-bolt"></i> Same-day funding</span>
+              <span class="passport-badge"><i class="fa-solid fa-shield-halved"></i> PCI &amp; SOC controls</span>
+              <span class="passport-badge"><i class="fa-solid fa-diagram-project"></i> API-first</span>
+              <span class="passport-badge"><i class="fa-solid fa-chart-line"></i> Real-time insights</span>
+            </div>
+
+            <div class="passport-actions">
+              <a class="passport-btn passport-btn-light" href="/signup">Open Passport</a>
+              <button
+                class="passport-btn passport-btn-ghost"
+                type="button"
+                onclick="document.getElementById('passport-features')?.scrollIntoView({ behavior: 'smooth' })"
+              >
+                Platform Overview
+              </button>
+            </div>
+
+            <div class="passport-compliance">
+              <span class="passport-pill"><i class="fa-solid fa-lock"></i> Multi-factor Auth</span>
+              <span class="passport-pill"><i class="fa-solid fa-user-shield"></i> Role-based Permissions</span>
+              <span class="passport-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Audit Trails</span>
+            </div>
+          </div>
+
+          <div class="passport-desk">
+            <div class="passport-panel">
+              <h4>Consolidated balances</h4>
+              <div class="passport-mini">
+                <div class="passport-mini-card">
+                  <div class="passport-mini-label">Operating Account</div>
+                  <div style="font-weight:800;font-size:18px;margin-bottom:6px">$4,208,944.12</div>
+                  <div class="passport-spark">
+                    <span style="height:16px"></span>
+                    <span style="height:24px"></span>
+                    <span style="height:34px"></span>
+                    <span style="height:22px"></span>
+                    <span style="height:40px"></span>
+                    <span style="height:28px"></span>
+                  </div>
+                </div>
+
+                <div class="passport-mini-card">
+                  <div class="passport-mini-label">Cash Sweep</div>
+                  <div style="font-weight:800;font-size:18px;margin-bottom:6px">$1,120,500.00</div>
+                  <div class="passport-spark">
+                    <span style="height:22px"></span>
+                    <span style="height:16px"></span>
+                    <span style="height:28px"></span>
+                    <span style="height:40px"></span>
+                    <span style="height:24px"></span>
+                    <span style="height:34px"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="passport-panel">
+              <h4>Treasury ledger (live)</h4>
+              <div class="passport-ledger">
+                <div class="passport-ledger-row"><span>RTP - Disbursement Batch</span><span class="passport-neg">-$82,400</span></div>
+                <div class="passport-ledger-row"><span>Wire - Settlement</span><span class="passport-pos">+$120,000</span></div>
+                <div class="passport-ledger-row"><span>ACH - Customer Sweep</span><span class="passport-pos">+$56,210</span></div>
+                <div class="passport-ledger-row"><span>Card - Fees</span><span class="passport-neg">-$1,930</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="passport-metrics">
+      <div class="passport-shell">
+        <div class="passport-metrics-grid">
+          <div class="passport-metric-card">
+            <i class="fa-solid fa-building-columns passport-metric-icon"></i>
+            <div class="passport-metric-copy">
+              <span class="passport-metric-value">20+ Banks</span>
+              <div class="passport-metric-label">network connectivity</div>
+            </div>
+          </div>
+
+          <div class="passport-metric-card">
+            <i class="fa-solid fa-shield passport-metric-icon"></i>
+            <div class="passport-metric-copy">
+              <span class="passport-metric-value">SOC &amp; PCI</span>
+              <div class="passport-metric-label">enterprise controls</div>
+            </div>
+          </div>
+
+          <div class="passport-metric-card">
+            <i class="fa-solid fa-gauge-high passport-metric-icon"></i>
+            <div class="passport-metric-copy">
+              <span class="passport-metric-value">&lt; 1s</span>
+              <div class="passport-metric-label">balance freshness</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="passport-section" id="passport-features">
+      <div class="passport-shell">
+        <div class="passport-section-title">
+          <h2>Banking functions that operators actually use</h2>
+          <p>Centralize accounts and permissions, automate movement and reconciliation, and surface the right indicators in real time.</p>
+        </div>
+
+        <div class="passport-features-grid">
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>Embedded &amp; virtual accounts</h3>
+            <p>Spin up sub-accounts on demand for programs, customers, or locations with tagged flows and controls.</p>
+          </div>
+
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+            <h3>Programmable money movement</h3>
+            <p>ACH, wires, and RTP with rules, approvals, and automated sweeps between accounts.</p>
+          </div>
+
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-calculator"></i></div>
+            <h3>Cash forecasting</h3>
+            <p>Forecast balances and exposure with real-time inflow/outflow signals and configurable models.</p>
+          </div>
+
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3>Reconciliation at scale</h3>
+            <p>Auto-match transactions to sources with virtual account mapping and reference enrichment.</p>
+          </div>
+
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Granular controls</h3>
+            <p>Role-based permissions, 2FA, policy enforcement, and audit logs across teams and entities.</p>
+          </div>
+
+          <div class="passport-feature-card">
+            <div class="passport-feature-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Developer-first</h3>
+            <p>Clean REST APIs and webhooks to embed Passport Banking directly into your stack.</p>
+          </div>
+        </div>
+
+        <div class="passport-accordion">
+          <div class="passport-acc-item">
+            <div class="passport-acc-head">
+              <span>What payment rails are supported?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="passport-acc-body">
+              <div class="passport-acc-pad">ACH, wires, RTP, and card payouts. Rules and approvals can be applied across rails and accounts.</div>
+            </div>
+          </div>
+
+          <div class="passport-acc-item">
+            <div class="passport-acc-head">
+              <span>How are accounts structured?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="passport-acc-body">
+              <div class="passport-acc-pad">Create embedded accounts with on-demand virtual sub-accounts per customer, region, or program for precise tracking and reconciliation.</div>
+            </div>
+          </div>
+
+          <div class="passport-acc-item">
+            <div class="passport-acc-head">
+              <span>What security controls are available?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="passport-acc-body">
+              <div class="passport-acc-pad">Multi-factor auth, role-based permissions, policy workflows, and exportable audit trails. PCI and SOC-aligned controls are standard.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="passport-cta">
+      <div class="passport-shell">
+        <h3>Bring banking &amp; treasury under one roof</h3>
+        <p>Stand up Passport Banking, connect your accounts, and automate the work that slows finance teams down.</p>
+        <a class="passport-btn passport-btn-primary" href="/signup">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Get Passport
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".passport-acc-item");
+
+      items.forEach((item) => {
+        const head = item.querySelector(".passport-acc-head");
+        const body = item.querySelector(".passport-acc-body");
+
+        if (!(head instanceof HTMLElement) || !(body instanceof HTMLElement)) return;
+
+        head.addEventListener("click", () => {
+          const allBodies = document.querySelectorAll(".passport-acc-body");
+          const isOpen = body.style.maxHeight && body.style.maxHeight !== "0px";
+
+          allBodies.forEach((panel) => {
+            if (panel instanceof HTMLElement) {
+              panel.style.maxHeight = "";
+            }
+          });
+
+          if (!isOpen) {
+            body.style.maxHeight = `${body.scrollHeight}px`;
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

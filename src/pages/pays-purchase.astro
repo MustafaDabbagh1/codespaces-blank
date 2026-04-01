@@ -1,0 +1,675 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Pays POS — One-Page Checkout ($799)">
+  <style>
+    .pays-purchase-page{
+      --pp-bg:#faf7f3;
+      --pp-panel:#fff;
+      --pp-line:#ece6de;
+      --pp-ink:#171717;
+      --pp-muted:#6b7280;
+      --pp-brand:#ff6a00;
+      --pp-brand2:#ff8a1d;
+      --pp-ok:#12b886;
+      --pp-err:#b42318;
+      background:var(--pp-bg);
+      color:var(--pp-ink);
+      min-height:100vh;
+    }
+
+    .pays-purchase-page *{box-sizing:border-box}
+
+    .pp-shell{
+      max-width:980px;
+      margin:0 auto;
+      padding:clamp(18px,4vw,28px);
+    }
+
+    .pp-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:16px;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .pp-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+    }
+
+    .pp-chip{
+      width:28px;
+      height:28px;
+      border-radius:8px;
+      background:linear-gradient(135deg,var(--pp-brand),var(--pp-brand2));
+      display:grid;
+      place-items:center;
+      color:#fff;
+      box-shadow:0 8px 22px rgba(255,106,0,.25);
+    }
+
+    .pp-secure{
+      color:var(--pp-muted);
+      font-weight:700;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .pp-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+    }
+
+    @media (max-width:900px){
+      .pp-grid{grid-template-columns:1fr}
+    }
+
+    .pp-card{
+      background:var(--pp-panel);
+      border:1px solid var(--pp-line);
+      border-radius:16px;
+      box-shadow:0 10px 28px rgba(16,18,20,.06);
+      overflow:hidden;
+    }
+
+    .pp-card-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 18px;
+      border-bottom:1px solid var(--pp-line);
+    }
+
+    .pp-card-head b{font-size:18px}
+
+    .pp-price{
+      margin-left:auto;
+      font-weight:800;
+    }
+
+    .pp-card-body{padding:18px}
+
+    .pp-card-body h3{
+      margin:0 0 6px;
+      font-size:1.1rem;
+    }
+
+    .pp-label{
+      display:block;
+      font-weight:800;
+      font-size:.93rem;
+      margin:10px 0 6px;
+      color:#8a6a4a;
+    }
+
+    .pp-input,
+    .pp-select,
+    .pp-textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid var(--pp-line);
+      border-radius:12px;
+      font-weight:600;
+      background:#fff;
+      font:inherit;
+    }
+
+    .pp-input:focus,
+    .pp-select:focus,
+    .pp-textarea:focus{
+      outline:none;
+      border-color:#ffc487;
+      box-shadow:0 0 0 3px rgba(255,138,29,.15);
+    }
+
+    .pp-textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .pp-two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    @media (max-width:720px){
+      .pp-two{grid-template-columns:1fr}
+    }
+
+    .pp-stripe-field{
+      padding:12px;
+      border:1px solid var(--pp-line);
+      border-radius:12px;
+      background:#fff;
+    }
+
+    .pp-help{
+      color:var(--pp-muted);
+      font-size:.9rem;
+    }
+
+    .pp-btn{
+      border:0;
+      border-radius:12px;
+      padding:12px 16px;
+      font-weight:900;
+      cursor:pointer;
+      font:inherit;
+      transition:.2s ease;
+    }
+
+    .pp-btn-primary{
+      background:linear-gradient(90deg,var(--pp-brand),var(--pp-brand2));
+      color:#fff;
+    }
+
+    .pp-btn-primary:hover{filter:brightness(.98)}
+
+    .pp-btn-muted{
+      background:#fff;
+      border:1px solid var(--pp-line);
+      color:#3b3b3b;
+    }
+
+    .pp-row{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .pp-note{
+      margin-top:12px;
+      padding:12px;
+      border-radius:12px;
+      display:none;
+      font-weight:700;
+    }
+
+    .pp-note-ok{
+      background:#ecfdf5;
+      border:1px solid #d1fae5;
+      color:#065f46;
+    }
+
+    .pp-note-err{
+      background:#fff5f5;
+      border:1px solid #fed7d7;
+      color:var(--pp-err);
+    }
+
+    .pp-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--pp-muted);
+    }
+
+    .pp-total-row{
+      display:flex;
+      justify-content:space-between;
+      margin-top:10px;
+      font-weight:800;
+      gap:16px;
+    }
+
+    .pp-divider{
+      border:none;
+      border-top:1px dashed var(--pp-line);
+      margin:14px 0;
+    }
+
+    .pp-inline{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pp-bundle-list{
+      margin-top:10px;
+      padding-left:18px;
+    }
+
+    .pp-bundle-list li{
+      margin:6px 0;
+      font-weight:700;
+      color:#3f3427;
+    }
+
+    .pp-bundle-kicker{
+      margin-top:12px;
+      font-weight:800;
+      color:#8a6a4a;
+    }
+
+    .pp-summary-item{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+
+    .pp-summary-thumb{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border-radius:12px;
+      background:#fff6ee;
+      border:1px solid var(--pp-line);
+    }
+
+    .pp-footer{
+      margin-top:14px;
+      text-align:center;
+    }
+  </style>
+
+  <div class="pays-purchase-page">
+    <div class="pp-shell">
+      <header class="pp-header">
+        <div class="pp-brand">
+          <div class="pp-chip">💳</div>
+          <div>Pays POS</div>
+        </div>
+        <div class="pp-secure">🔒 256-bit SSL • PCI DSS</div>
+      </header>
+
+      <div class="pp-grid">
+        <section class="pp-card" aria-labelledby="ppCheckoutTitle">
+          <div class="pp-card-head">
+            <b id="ppCheckoutTitle">Secure Checkout</b>
+            <span class="pp-price">$799</span>
+          </div>
+
+          <div class="pp-card-body">
+            <form id="ppCheckoutForm" novalidate>
+              <input type="hidden" name="product" value="Pays POS – Complete Bundle" />
+              <input type="hidden" name="amount" value="79900" />
+              <input type="hidden" name="currency" value="usd" />
+
+              <h3>Business &amp; Contact</h3>
+
+              <div class="pp-two">
+                <div>
+                  <label class="pp-label" for="ppBusiness">Business / DBA</label>
+                  <input class="pp-input" id="ppBusiness" name="business" placeholder="Best Pizza Co." required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppContact">Contact Name</label>
+                  <input class="pp-input" id="ppContact" name="contact" placeholder="Jane Doe" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppEmail">Email</label>
+                  <input class="pp-input" id="ppEmail" name="email" type="email" placeholder="you@restaurant.com" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppPhone">Phone</label>
+                  <input class="pp-input" id="ppPhone" name="phone" type="tel" inputmode="tel" placeholder="(555) 555-5555" required />
+                </div>
+              </div>
+
+              <h3 style="margin-top:12px;">Business Address</h3>
+
+              <div class="pp-two">
+                <div>
+                  <label class="pp-label" for="ppAddress">Address</label>
+                  <input class="pp-input" id="ppAddress" name="address" placeholder="123 Main St" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppCity">City</label>
+                  <input class="pp-input" id="ppCity" name="city" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppState">State</label>
+                  <input class="pp-input" id="ppState" name="state" maxlength="2" placeholder="CA" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppZip">ZIP</label>
+                  <input class="pp-input" id="ppZip" name="zip" inputmode="numeric" pattern="[0-9]{5}" placeholder="94105" required />
+                </div>
+              </div>
+
+              <hr class="pp-divider" />
+
+              <div class="pp-inline">
+                <h3 style="margin:0;">Shipping Address</h3>
+                <label class="pp-inline" style="margin-left:auto;">
+                  <input type="checkbox" id="ppShipSame" checked />
+                  <span class="pp-help">Same as business address</span>
+                </label>
+              </div>
+
+              <div id="ppShipFields" class="pp-two" aria-live="polite">
+                <div>
+                  <label class="pp-label" for="ppShipName">Recipient Name</label>
+                  <input class="pp-input" id="ppShipName" name="ship_name" placeholder="Best Pizza Co. Receiving" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppShipPhone">Recipient Phone (optional)</label>
+                  <input class="pp-input" id="ppShipPhone" name="ship_phone" type="tel" inputmode="tel" placeholder="(555) 555-0000" />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppShipAddress">Address</label>
+                  <input class="pp-input" id="ppShipAddress" name="ship_address" placeholder="456 Warehouse Ave" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppShipCity">City</label>
+                  <input class="pp-input" id="ppShipCity" name="ship_city" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppShipState">State</label>
+                  <input class="pp-input" id="ppShipState" name="ship_state" maxlength="2" placeholder="CA" required />
+                </div>
+                <div>
+                  <label class="pp-label" for="ppShipZip">ZIP</label>
+                  <input class="pp-input" id="ppShipZip" name="ship_zip" inputmode="numeric" pattern="[0-9]{5}" placeholder="94107" required />
+                </div>
+              </div>
+
+              <label class="pp-label" for="ppNotes" style="margin-top:10px;">Notes (optional)</label>
+              <textarea class="pp-textarea" id="ppNotes" name="notes" placeholder="Dock instructions, hours, gate codes, etc."></textarea>
+
+              <hr class="pp-divider" />
+
+              <h3>Card Payment</h3>
+              <div id="ppCardElement" class="pp-stripe-field"></div>
+              <div id="ppCardErrors" class="pp-help" role="alert" style="color:#b42318;margin-top:6px;"></div>
+
+              <div class="pp-row">
+                <button id="ppPayBtn" class="pp-btn pp-btn-primary" type="submit">Pay $799.00</button>
+                <button id="ppResetBtn" class="pp-btn pp-btn-muted" type="button">Reset</button>
+                <span class="pp-help">Receipt will be emailed. You’ll set processing details after payment.</span>
+              </div>
+
+              <div id="ppOkMsg" class="pp-note pp-note-ok">Processing payment…</div>
+              <div id="ppErrMsg" class="pp-note pp-note-err">Something went wrong. Please try again.</div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="pp-card" aria-labelledby="ppSummaryTitle">
+          <div class="pp-card-head">
+            <b id="ppSummaryTitle">Order Summary</b>
+          </div>
+
+          <div class="pp-card-body">
+            <div class="pp-summary-item">
+              <img
+                class="pp-summary-thumb"
+                src="https://mmdabbagh24.neocities.org/images/Pos%20system.png"
+                alt="Pays POS bundle"
+                onerror="this.src='https://via.placeholder.com/120x120/fff3e7/995b24?text=Pays+POS'"
+              />
+              <div style="font-weight:800;">Pays POS – Complete Bundle</div>
+              <div style="margin-left:auto;font-weight:800;">$799</div>
+            </div>
+
+            <div class="pp-total-row"><span>Shipping</span><span>Free</span></div>
+            <div class="pp-total-row"><span>Tax</span><span>Calculated at payment</span></div>
+
+            <hr class="pp-divider" />
+
+            <div class="pp-total-row" style="font-size:18px;"><span>Total today</span><span>$799.00</span></div>
+
+            <hr class="pp-divider" />
+
+            <ul class="pp-list">
+              <li>Ships in 2–3 business days</li>
+              <li>30-day returns</li>
+              <li>2-year hardware warranty</li>
+            </ul>
+
+            <div class="pp-bundle-kicker">What’s in the Pays Bundle</div>
+            <ul class="pp-bundle-list">
+              <li>POS Station</li>
+              <li>Cash Register Drawer</li>
+              <li>Dejavoo P1 (Pinpad)</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <p class="pp-help pp-footer">© 2025 PPD Technology · Secure payments via Stripe</p>
+    </div>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const stripe = Stripe("pk_live_xxxYOURPUBLISHABLEKEYxxx");
+
+      const elements = stripe.elements({
+        appearance: {
+          variables: {
+            borderRadius: "12px",
+            colorPrimary: "#ff6a00",
+          },
+        },
+      });
+
+      const card = elements.create("card", { hidePostalCode: true });
+      card.mount("#ppCardElement");
+
+      const form = document.getElementById("ppCheckoutForm");
+      const payBtn = document.getElementById("ppPayBtn");
+      const resetBtn = document.getElementById("ppResetBtn");
+      const okMsg = document.getElementById("ppOkMsg");
+      const errMsg = document.getElementById("ppErrMsg");
+      const errInline = document.getElementById("ppCardErrors");
+      const shipSame = document.getElementById("ppShipSame");
+
+      const business = document.getElementById("ppBusiness");
+      const contact = document.getElementById("ppContact");
+      const email = document.getElementById("ppEmail");
+      const phone = document.getElementById("ppPhone");
+      const address = document.getElementById("ppAddress");
+      const city = document.getElementById("ppCity");
+      const state = document.getElementById("ppState");
+      const zip = document.getElementById("ppZip");
+
+      const shipName = document.getElementById("ppShipName");
+      const shipPhone = document.getElementById("ppShipPhone");
+      const shipAddress = document.getElementById("ppShipAddress");
+      const shipCity = document.getElementById("ppShipCity");
+      const shipState = document.getElementById("ppShipState");
+      const shipZip = document.getElementById("ppShipZip");
+      const notes = document.getElementById("ppNotes");
+
+      if (
+        !(form instanceof HTMLFormElement) ||
+        !(payBtn instanceof HTMLButtonElement) ||
+        !(resetBtn instanceof HTMLButtonElement) ||
+        !(okMsg instanceof HTMLElement) ||
+        !(errMsg instanceof HTMLElement) ||
+        !(errInline instanceof HTMLElement) ||
+        !(shipSame instanceof HTMLInputElement) ||
+        !(business instanceof HTMLInputElement) ||
+        !(contact instanceof HTMLInputElement) ||
+        !(email instanceof HTMLInputElement) ||
+        !(phone instanceof HTMLInputElement) ||
+        !(address instanceof HTMLInputElement) ||
+        !(city instanceof HTMLInputElement) ||
+        !(state instanceof HTMLInputElement) ||
+        !(zip instanceof HTMLInputElement) ||
+        !(shipName instanceof HTMLInputElement) ||
+        !(shipPhone instanceof HTMLInputElement) ||
+        !(shipAddress instanceof HTMLInputElement) ||
+        !(shipCity instanceof HTMLInputElement) ||
+        !(shipState instanceof HTMLInputElement) ||
+        !(shipZip instanceof HTMLInputElement) ||
+        !(notes instanceof HTMLTextAreaElement)
+      ) {
+        return;
+      }
+
+      const shipInputs = [shipName, shipPhone, shipAddress, shipCity, shipState, shipZip];
+
+      const syncShippingFields = () => {
+        const same = shipSame.checked;
+
+        if (same) {
+          shipName.value = business.value || contact.value;
+          shipPhone.value = phone.value;
+          shipAddress.value = address.value;
+          shipCity.value = city.value;
+          shipState.value = state.value;
+          shipZip.value = zip.value;
+        }
+
+        shipInputs.forEach((input) => {
+          if (input.id !== "ppShipPhone") {
+            input.required = !same;
+          }
+          input.disabled = same;
+        });
+      };
+
+      shipSame.addEventListener("change", syncShippingFields);
+      [business, contact, phone, address, city, state, zip].forEach((input) => {
+        input.addEventListener("input", () => {
+          if (shipSame.checked) {
+            syncShippingFields();
+          }
+        });
+      });
+
+      syncShippingFields();
+
+      const setBusy = (isBusy) => {
+        payBtn.disabled = isBusy;
+        payBtn.textContent = isBusy ? "Processing…" : "Pay $799.00";
+      };
+
+      const clearAlerts = () => {
+        okMsg.style.display = "none";
+        errMsg.style.display = "none";
+        errInline.textContent = "";
+      };
+
+      const firstInvalid = () => {
+        const bad = form.querySelector(":invalid");
+        if (bad instanceof HTMLElement) {
+          if (typeof bad.reportValidity === "function") {
+            bad.reportValidity();
+          }
+          bad.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
+
+      const getPayload = () => {
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        const required = ["business", "contact", "email", "phone", "address", "city", "state", "zip"];
+        for (const key of required) {
+          const value = data[key];
+          if (!value || String(value).trim() === "") {
+            return null;
+          }
+        }
+
+        if (shipSame.checked) {
+          data.ship_name = data.business || data.contact;
+          data.ship_phone = data.phone || "";
+          data.ship_address = data.address;
+          data.ship_city = data.city;
+          data.ship_state = data.state;
+          data.ship_zip = data.zip;
+        } else {
+          const requiredShip = ["ship_name", "ship_address", "ship_city", "ship_state", "ship_zip"];
+          for (const key of requiredShip) {
+            const value = data[key];
+            if (!value || String(value).trim() === "") {
+              return null;
+            }
+          }
+        }
+
+        return data;
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        clearAlerts();
+
+        const data = getPayload();
+        if (!data) {
+          firstInvalid();
+          return;
+        }
+
+        try {
+          setBusy(true);
+          okMsg.textContent = "Processing payment…";
+          okMsg.style.display = "block";
+
+          const response = await fetch("/create-payment-intent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to create payment intent");
+          }
+
+          const { clientSecret } = await response.json();
+
+          const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+              card,
+              billing_details: {
+                name: String(data.contact),
+                email: String(data.email),
+                phone: String(data.phone),
+                address: {
+                  line1: String(data.address),
+                  city: String(data.city),
+                  state: String(data.state),
+                  postal_code: String(data.zip),
+                  country: "US",
+                },
+              },
+            },
+            return_url: `${window.location.origin}/checkout/success`,
+          });
+
+          if (result.error) {
+            okMsg.style.display = "none";
+            errInline.textContent = result.error.message || "Payment failed. Please check your details.";
+            errMsg.style.display = "block";
+          } else {
+            okMsg.textContent = "Payment completed! Redirecting…";
+          }
+        } catch (_error) {
+          okMsg.style.display = "none";
+          errMsg.textContent = "Something went wrong. Please try again.";
+          errMsg.style.display = "block";
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      card.on("change", (event) => {
+        errInline.textContent = event.error ? event.error.message : "";
+      });
+
+      resetBtn.addEventListener("click", () => {
+        form.reset();
+        card.clear();
+        clearAlerts();
+        syncShippingFields();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+</BaseLayout>
