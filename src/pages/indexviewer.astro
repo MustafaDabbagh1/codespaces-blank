@@ -1,0 +1,1140 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PPD Technology | Modern Payment Solutions">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --black: #04060a;
+    --surface: #080d14;
+    --surface-2: #0d1520;
+    --border: rgba(255,255,255,0.07);
+    --border-glow: rgba(0,255,136,0.3);
+    --green: #00ff88;
+    --green-dim: #00cc6a;
+    --green-muted: rgba(0,255,136,0.08);
+    --text: #e8edf5;
+    --text-muted: #7a8898;
+    --text-dim: #3a4a5a;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── GRID OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(4,6,10,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--green);
+    color: var(--black);
+    border: none;
+    padding: 9px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .nav-cta:hover { background: #33ffaa; }
+  .nav-cta:active { transform: scale(0.97); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 48px 80px;
+  }
+
+  /* Corner brackets */
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    width: 80px; height: 80px;
+    border-color: rgba(0,255,136,0.25);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .hero::before { top: 90px; left: 40px; border-width: 1px 0 0 1px; }
+  .hero::after  { bottom: 40px; right: 40px; border-width: 0 1px 1px 0; }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    border: 1px solid var(--border-glow);
+    background: var(--green-muted);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  .hero-kicker::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: blink 1.4s step-end infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  h1 {
+    font-family: var(--sans);
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--green);
+    position: relative;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 460px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--green);
+    color: var(--black);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover { background: #33ffaa; transform: translateY(-1px); }
+
+  .btn-outline {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 14px 28px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: rgba(255,255,255,0.3); color: var(--text); }
+
+  /* ── HERO VISUAL ── */
+  .hero-visual {
+    position: relative;
+    height: 480px;
+  }
+
+  .terminal-window {
+    position: absolute;
+    top: 0; right: 0;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .t-dot.r { background: #ff5f57; }
+  .t-dot.y { background: #febc2e; }
+  .t-dot.g { background: #28c840; }
+
+  .terminal-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.08em;
+  }
+
+  .terminal-body {
+    padding: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 2;
+    min-height: 300px;
+  }
+
+  .t-line { display: flex; gap: 12px; }
+  .t-prompt { color: var(--green); }
+  .t-cmd { color: var(--text); }
+  .t-out { color: var(--text-muted); padding-left: 24px; }
+  .t-success { color: var(--green); padding-left: 24px; }
+  .t-cursor {
+    display: inline-block;
+    width: 8px; height: 14px;
+    background: var(--green);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+
+  /* Floating stat cards */
+  .stat-float {
+    position: absolute;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 18px;
+    z-index: 5;
+    animation: float-card 4s ease-in-out infinite;
+  }
+
+  .stat-float:nth-child(2) { animation-delay: 1.5s; }
+  .stat-float:nth-child(3) { animation-delay: 3s; }
+
+  @keyframes float-card {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .stat-float .val {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .stat-float .lbl {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .stat-float .delta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    margin-top: 4px;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  .marquee-label {
+    position: absolute;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    z-index: 2;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: marquee 22s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .brand-chip {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 20px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .brand-chip i { font-size: 18px; }
+  .brand-chip:hover { color: var(--text); border-color: var(--border-glow); }
+
+  /* ── METRICS STRIP ── */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+  }
+
+  .metric-item {
+    padding: 48px;
+    border-right: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric-item:last-child { border-right: none; }
+
+  .metric-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .metric-item:hover::before { opacity: 1; }
+
+  .metric-num {
+    font-family: var(--mono);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-num span { color: var(--green); }
+
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── FEATURES ── */
+  .section {
+    padding: 120px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--green);
+  }
+
+  .section-heading {
+    font-family: var(--sans);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 72px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .feature-cell {
+    background: var(--surface);
+    padding: 40px 36px;
+    position: relative;
+    transition: background 0.25s;
+    overflow: hidden;
+  }
+
+  .feature-cell::after {
+    content: attr(data-n);
+    position: absolute;
+    bottom: -8px; right: 16px;
+    font-family: var(--mono);
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--text-dim);
+    opacity: 0.4;
+    line-height: 1;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .feature-cell:hover { background: var(--surface-2); }
+  .feature-cell:hover::after { opacity: 0.7; }
+
+  .feature-icon-wrap {
+    width: 44px; height: 44px;
+    border: 1px solid var(--border-glow);
+    background: var(--green-muted);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--green);
+    font-size: 18px;
+    transition: background 0.2s;
+  }
+
+  .feature-cell:hover .feature-icon-wrap {
+    background: rgba(0,255,136,0.15);
+  }
+
+  .feature-title {
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── SOLUTIONS ── */
+  .solutions-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 120px 48px;
+  }
+
+  .solutions-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 72px;
+  }
+
+  .sol-card {
+    background: var(--surface);
+    padding: 36px 28px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sol-card:hover { background: var(--surface-2); }
+
+  .sol-card:hover .sol-icon { color: var(--green); }
+  .sol-card:hover .sol-arrow { opacity: 1; transform: translate(0,0); }
+
+  .sol-icon {
+    font-size: 28px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    transition: color 0.2s;
+    display: block;
+  }
+
+  .sol-name {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .sol-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .sol-arrow {
+    position: absolute;
+    top: 28px; right: 24px;
+    font-family: var(--mono);
+    font-size: 16px;
+    color: var(--green);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: all 0.2s;
+  }
+
+  /* ── DATA FLOW SECTION ── */
+  .data-section {
+    padding: 120px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .flow-diagram {
+    position: relative;
+    height: 380px;
+  }
+
+  .flow-node {
+    position: absolute;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 14px 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .flow-node.active {
+    border-color: var(--border-glow);
+    color: var(--green);
+    background: var(--green-muted);
+  }
+
+  .flow-line {
+    position: absolute;
+    background: linear-gradient(90deg, var(--green), transparent);
+    height: 1px;
+    opacity: 0.4;
+  }
+
+  .flow-dot {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: flow-travel 2.5s linear infinite;
+  }
+
+  @keyframes flow-travel {
+    0% { opacity: 0; transform: translateX(0); }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(200px); }
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 120px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    border: 1px solid var(--border-glow);
+    background: var(--green-muted);
+    padding: 6px 16px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+
+  .cta-heading {
+    font-family: var(--sans);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.0;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--green); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { height: 320px; }
+    .section { padding: 80px 24px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+    .solutions-section { padding: 80px 24px; }
+    .data-section { grid-template-columns: 1fr; padding: 80px 24px; }
+    .metrics-strip { grid-template-columns: 1fr; }
+    .metric-item { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 24px; }
+    .cta-section { padding: 80px 24px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    PPD Technology
+  </div>
+  <ul class="nav-links">
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/developers">Developers</a></li>
+    <li><a href="/company">Company</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='https://ppdtechnology.com/signup'">Start Free →</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-kicker">System status: all networks operational</div>
+      <h1>Modern payments.<br /><em>Ruthlessly</em><br />reliable.</h1>
+      <p class="hero-sub">Secure, scalable payment infrastructure for businesses that can't afford downtime. Faster approvals, better rates, no long-term contracts.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="location.href='https://ppdtechnology.com/signup'">
+          Start Processing <span style="font-size:16px;">→</span>
+        </button>
+        <button class="btn-outline" onclick="location.href='https://ppdtechnology.com/Contact'">
+          Talk to Sales
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <div class="t-dot r"></div>
+          <div class="t-dot y"></div>
+          <div class="t-dot g"></div>
+          <span class="terminal-title">ppd-payment-engine v4.2.1</span>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+      </div>
+
+      <div class="stat-float" style="position:absolute;bottom:-20px;left:-20px;z-index:6;">
+        <div class="val">99.99%</div>
+        <div class="lbl">Uptime SLA</div>
+        <div class="delta">▲ 0.01% this quarter</div>
+      </div>
+
+      <div class="stat-float" style="position:absolute;top:60px;right:-30px;z-index:6;">
+        <div class="val">1.2ms</div>
+        <div class="lbl">Avg Auth Time</div>
+        <div class="delta">▼ 0.3ms vs last month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-label">Accepted Networks</div>
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="brand-chip"><i class="fa-brands fa-cc-visa"></i> Visa</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-amex"></i> AmEx</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-discover"></i> Discover</div>
+    <div class="brand-chip"><i class="fa-brands fa-apple-pay"></i> Apple Pay</div>
+    <div class="brand-chip"><i class="fa-brands fa-google-pay"></i> Google Pay</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-visa"></i> Visa</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-amex"></i> AmEx</div>
+    <div class="brand-chip"><i class="fa-brands fa-cc-discover"></i> Discover</div>
+    <div class="brand-chip"><i class="fa-brands fa-apple-pay"></i> Apple Pay</div>
+    <div class="brand-chip"><i class="fa-brands fa-google-pay"></i> Google Pay</div>
+  </div>
+</div>
+
+<!-- METRICS STRIP -->
+<div class="metrics-strip">
+  <div class="metric-item fade-up">
+    <div class="metric-num"><span class="count-num" data-target="99.99" data-suffix="%">0</span></div>
+    <div class="metric-label">Guaranteed uptime</div>
+  </div>
+  <div class="metric-item fade-up" style="transition-delay:0.1s;">
+    <div class="metric-num"><span class="count-num" data-target="1" data-suffix="-day">0</span></div>
+    <div class="metric-label">Next-day funding</div>
+  </div>
+  <div class="metric-item fade-up" style="transition-delay:0.2s;">
+    <div class="metric-num"><span class="count-num" data-target="24" data-suffix="/7"  data-style="green">0</span></div>
+    <div class="metric-label">Live support coverage</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section fade-up">
+  <div class="section-label">Core capabilities</div>
+  <h2 class="section-heading">Built for<br />production scale.</h2>
+  <p class="section-sub">Every feature engineered to perform under real-world load, at real-world volume.</p>
+
+  <div class="features-grid">
+    <div class="feature-cell fade-up" data-n="01">
+      <div class="feature-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+      <div class="feature-title">End-to-end encryption</div>
+      <p class="feature-desc">Bank-grade security with real-time fraud detection layered at every transaction touchpoint.</p>
+    </div>
+    <div class="feature-cell fade-up" data-n="02" style="transition-delay:0.05s;">
+      <div class="feature-icon-wrap"><i class="fas fa-bolt"></i></div>
+      <div class="feature-title">Sub-2ms authorization</div>
+      <p class="feature-desc">Lightning-fast processing with real-time auth decisions that keep checkout lines moving.</p>
+    </div>
+    <div class="feature-cell fade-up" data-n="03" style="transition-delay:0.1s;">
+      <div class="feature-icon-wrap"><i class="fas fa-chart-line"></i></div>
+      <div class="feature-title">Live analytics</div>
+      <p class="feature-desc">Granular transaction reporting, cohort analysis, and anomaly alerts in a unified dashboard.</p>
+    </div>
+    <div class="feature-cell fade-up" data-n="04" style="transition-delay:0.15s;">
+      <div class="feature-icon-wrap"><i class="fas fa-mobile-alt"></i></div>
+      <div class="feature-title">Omnichannel ready</div>
+      <p class="feature-desc">In-store, online, and mobile — one unified API, one integration, one reconciliation view.</p>
+    </div>
+    <div class="feature-cell fade-up" data-n="05" style="transition-delay:0.2s;">
+      <div class="feature-icon-wrap"><i class="fas fa-hand-holding-usd"></i></div>
+      <div class="feature-title">Transparent pricing</div>
+      <p class="feature-desc">No hidden interchange. No long-term contracts. Interchange-plus pricing, always visible.</p>
+    </div>
+    <div class="feature-cell fade-up" data-n="06" style="transition-delay:0.25s;">
+      <div class="feature-icon-wrap"><i class="fas fa-headset"></i></div>
+      <div class="feature-title">24/7 human support</div>
+      <p class="feature-desc">Reach a real engineer any hour of the day. Average response time under 3 minutes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTIONS -->
+<div class="solutions-section">
+  <div class="solutions-inner">
+    <div class="section-label">Industry solutions</div>
+    <h2 class="section-heading">Your vertical,<br />purpose-built.</h2>
+    <p class="section-sub">Tailored processing flows designed around how your industry actually operates.</p>
+
+    <div class="solutions-grid">
+      <a class="sol-card" href="https://ppdtechnology.com/restaurants">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-utensils sol-icon"></i>
+        <div class="sol-name">Restaurants</div>
+        <p class="sol-desc">Tableside ordering, QR pay, tip flows, and POS sync built for speed of service.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/retail">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-store sol-icon"></i>
+        <div class="sol-name">Retail</div>
+        <p class="sol-desc">Inventory-aware POS, unified receipts, and seamless exchange handling.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/ecommerce">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-laptop sol-icon"></i>
+        <div class="sol-name">E-Commerce</div>
+        <p class="sol-desc">Checkout optimization, subscriptions, cart integrations, and fraud scoring.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/healthcare">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-user-doctor sol-icon"></i>
+        <div class="sol-name">Healthcare</div>
+        <p class="sol-desc">Co-pays, card-on-file, and HIPAA-aware invoicing for clinics and practices.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/contractors">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-helmet-safety sol-icon"></i>
+        <div class="sol-name">Contractors</div>
+        <p class="sol-desc">Field payment terminals, estimate-to-invoice, and mobile-first workflows.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/non-profits">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-hand-holding-heart sol-icon"></i>
+        <div class="sol-name">Non-Profits</div>
+        <p class="sol-desc">Donation flows, recurring giving, and automated tax receipt generation.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/higher-education">
+        <span class="sol-arrow">↗</span>
+        <i class="fa-solid fa-graduation-cap sol-icon"></i>
+        <div class="sol-name">Higher Education</div>
+        <p class="sol-desc">Tuition, events, bookstores — centralized reconciliation across every campus touchpoint.</p>
+      </a>
+      <a class="sol-card" href="https://ppdtechnology.com/signup" style="background:var(--green-muted);border-color:var(--border-glow);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Your Industry →</div>
+        <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">Don't see your vertical? Let's build something together.</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner fade-up">
+    <div class="cta-badge">Zero risk, no contracts</div>
+    <h2 class="cta-heading">Ready to upgrade your stack?</h2>
+    <p class="cta-sub">Join thousands of businesses running on PPD Technology. Setup takes minutes. Results show up on day one.</p>
+    <div class="cta-btns">
+      <button class="btn-primary" onclick="location.href='https://ppdtechnology.com/signup'">
+        Get Started Free →
+      </button>
+      <button class="btn-outline" onclick="location.href='https://ppdtechnology.com/Contact'">
+        Talk to Sales
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 PPD Technology · All systems operational</div>
+  <ul class="footer-links">
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/security">Security</a></li>
+    <li><a href="/status">Status</a></li>
+  </ul>
+</footer>
+
+<script>
+  // ── TERMINAL TYPEWRITER ──
+  const lines = [
+    { type: 'cmd', text: '$ ppd connect --env production' },
+    { type: 'out', text: 'Authenticating merchant credentials...' },
+    { type: 'success', text: '✓ Connected to PPD Payment Network' },
+    { type: 'cmd', text: '$ process --amount 142.50 --card visa' },
+    { type: 'out', text: 'Routing to optimal acquiring bank...' },
+    { type: 'out', text: 'Running fraud check [██████████] 100%' },
+    { type: 'success', text: '✓ APPROVED · Auth: 7F3K2 · 1.1ms' },
+    { type: 'cmd', text: '$ fund --schedule next-day' },
+    { type: 'success', text: '✓ Funding confirmed · ETA: 09:00 tomorrow' },
+    { type: 'cursor', text: '' }
+  ];
+
+  const body = document.getElementById('terminal-body');
+  let li = 0, ci = 0;
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  async function typeTerminal() {
+    for (const line of lines) {
+      const div = document.createElement('div');
+      div.className = 't-line';
+      if (line.type === 'cursor') {
+        div.innerHTML = '<span class="t-prompt">$</span><span class="t-cursor"></span>';
+        body.appendChild(div);
+        break;
+      }
+      const cls = line.type === 'cmd' ? 't-cmd' : line.type === 'success' ? 't-success' : 't-out';
+      const span = document.createElement('span');
+      span.className = cls;
+      if (line.type === 'cmd') {
+        const prompt = document.createElement('span');
+        prompt.className = 't-prompt';
+        prompt.textContent = '$ ';
+        div.appendChild(prompt);
+        span.textContent = line.text.slice(2);
+      } else {
+        span.textContent = '';
+      }
+      div.appendChild(span);
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+
+      if (line.type !== 'cmd') {
+        span.textContent = line.text;
+        await delay(220);
+      } else {
+        for (const ch of line.text.slice(2)) {
+          span.textContent += ch;
+          await delay(38);
+        }
+        await delay(300);
+      }
+    }
+  }
+
+  window.addEventListener('load', () => setTimeout(typeTerminal, 800));
+
+  // ── SCROLL FADE-IN ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── COUNT-UP NUMBERS ──
+  const numObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isFloat = target % 1 !== 0;
+      let start = null;
+      const duration = 1400;
+
+      function step(ts) {
+        if (!start) start = ts;
+        const prog = Math.min((ts - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - prog, 3);
+        const val = ease * target;
+        el.textContent = (isFloat ? val.toFixed(2) : Math.round(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+        else el.textContent = (isFloat ? target.toFixed(2) : target) + suffix;
+      }
+
+      requestAnimationFrame(step);
+      numObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.count-num').forEach(el => numObserver.observe(el));
+</script>
+
+</BaseLayout>
