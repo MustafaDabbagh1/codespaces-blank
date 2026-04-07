@@ -10,19 +10,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <div class="container hero-content">
       <div class="hero-text">
-        <span class="hero-kicker"><i class="fa-solid fa-bolt"></i> Faster approvals • Better rates • No long-term contracts</span>
-        <h1 class="split">Modern Payment Processing for Growing Businesses</h1>
-        <p>Secure, reliable, and scalable payment solutions designed to help your business accept payments anywhere, anytime.</p>
+        <span class="hero-kicker"><i class="fa-solid fa-bolt"></i> Faster approvals &bull; Better rates &bull; No long-term contracts</span>
+        <h1>Modern Payment Processing<br>for <span class="hl">Growing Businesses</span></h1>
+        <p>Secure, reliable, and scalable payment solutions designed to help your business accept payments anywhere, anytime — with next-day funding and 24/7 support.</p>
 
         <div class="hero-buttons">
-          <button class="btn btn-primary magnet" onclick="location.href='https://ppdtechnology.com/signup'">
-            Start Processing
+          <button class="btn btn-primary" onclick="location.href='/signup'">
+            <i class="fa-solid fa-rocket"></i> Start Processing
           </button>
-          <button
-            class="btn btn-outline magnet"
-            style="background:rgba(255,255,255,0.1);color:#fff;border-color:#fff;"
-            onclick="location.href='https://ppdtechnology.com/Contact'"
-          >
+          <button class="btn btn-outline" onclick="location.href='/contact'">
             Contact Sales
           </button>
         </div>
@@ -50,13 +46,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="marquee" aria-label="Trusted by">
     <div class="container brands-viewport" id="brandsViewport">
       <div class="brands-track">
-        <span class="brand-pill" data-brand="visa" aria-label="Visa"><i class="fa-brands fa-cc-visa"></i>Visa</span>
-        <span class="brand-pill" data-brand="mastercard" aria-label="Mastercard"><i class="fa-brands fa-cc-mastercard"></i>Mastercard</span>
-        <span class="brand-pill" data-brand="amex" aria-label="American Express"><i class="fa-brands fa-cc-amex"></i>AmEx</span>
-        <span class="brand-pill" data-brand="discover" aria-label="Discover"><i class="fa-brands fa-cc-discover"></i>Discover</span>
-        <span class="brand-pill" data-brand="applepay" aria-label="Apple Pay"><i class="fa-brands fa-apple-pay"></i>Apple Pay</span>
-        <span class="brand-pill" data-brand="googlepay" aria-label="Google Pay"><i class="fa-brands fa-google-pay"></i>Google Pay</span>
-
+        <span class="brand-pill" data-brand="visa"><i class="fa-brands fa-cc-visa"></i>Visa</span>
+        <span class="brand-pill" data-brand="mastercard"><i class="fa-brands fa-cc-mastercard"></i>Mastercard</span>
+        <span class="brand-pill" data-brand="amex"><i class="fa-brands fa-cc-amex"></i>AmEx</span>
+        <span class="brand-pill" data-brand="discover"><i class="fa-brands fa-cc-discover"></i>Discover</span>
+        <span class="brand-pill" data-brand="applepay"><i class="fa-brands fa-apple-pay"></i>Apple Pay</span>
+        <span class="brand-pill" data-brand="googlepay"><i class="fa-brands fa-google-pay"></i>Google Pay</span>
         <span class="brand-pill" data-brand="visa" aria-hidden="true"><i class="fa-brands fa-cc-visa"></i>Visa</span>
         <span class="brand-pill" data-brand="mastercard" aria-hidden="true"><i class="fa-brands fa-cc-mastercard"></i>Mastercard</span>
         <span class="brand-pill" data-brand="amex" aria-hidden="true"><i class="fa-brands fa-cc-amex"></i>AmEx</span>
@@ -70,8 +65,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Why Choose PPD Technology</h2>
-        <p>We provide innovative payment solutions that help businesses of all sizes thrive in today's digital economy.</p>
+        <span class="section-eyebrow"><i class="fa-solid fa-star"></i> Why Choose Us</span>
+        <h2>Built for businesses that move fast</h2>
+        <p>Everything you need to accept payments securely, scale effortlessly, and get funded faster than the competition.</p>
 
         <div class="metrics" id="metrics">
           <div class="metric">
@@ -99,31 +95,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="feature-card tilt">
           <div class="feature-icon"><i class="fas fa-bolt"></i></div>
           <h3>Fast Processing</h3>
-          <p>Lightning-fast payment processing with real-time authorization and next-day funding options.</p>
+          <p>Lightning-fast payment processing with real-time authorization and next-day funding options for your business.</p>
         </div>
 
         <div class="feature-card tilt">
           <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
           <h3>Business Insights</h3>
-          <p>Comprehensive reporting and analytics to help you understand your sales data and customer behavior.</p>
+          <p>Comprehensive reporting and analytics to help you understand your sales data and customer behavior in real time.</p>
         </div>
 
         <div class="feature-card tilt">
           <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
           <h3>Omnichannel Payments</h3>
-          <p>Accept payments in-store, online, or on-the-go with our seamless integrated solutions.</p>
+          <p>Accept payments in-store, online, or on-the-go with our seamlessly integrated solutions that work everywhere.</p>
         </div>
 
         <div class="feature-card tilt">
           <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
           <h3>Transparent Pricing</h3>
-          <p>No hidden fees, no long-term contracts. Clear, competitive rates tailored to your business needs.</p>
+          <p>No hidden fees, no long-term contracts. Clear, competitive rates tailored specifically to your business needs.</p>
         </div>
 
         <div class="feature-card tilt">
           <div class="feature-icon"><i class="fas fa-headset"></i></div>
           <h3>24/7 Support</h3>
-          <p>Dedicated customer support team available around the clock to help with any issues or questions.</p>
+          <p>Dedicated U.S.-based customer support team available around the clock to help with any issues or questions.</p>
         </div>
       </div>
     </div>
@@ -132,24 +128,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="solutions">
     <div class="container">
       <div class="section-title">
+        <span class="section-eyebrow"><i class="fa-solid fa-grid-2"></i> Industries</span>
         <h2>Industry-Specific Solutions</h2>
-        <p>Tailored payment processing solutions designed for your industry's unique needs.</p>
+        <p>Tailored payment processing solutions designed for your industry's unique needs and workflow.</p>
       </div>
 
       <div class="slider-shell">
         <div class="slider-viewport" id="solutionsViewport" aria-label="Industry carousel">
           <div class="slider-track" id="solutionsTrack">
-            <a class="slide" href="https://ppdtechnology.com/restaurants">
+            <a class="slide" href="/restaurants">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-restaurant"><i class="fa-solid fa-utensils"></i></div>
                 <div class="solution-content">
-                  <h3>Restaurants & Hospitality</h3>
+                  <h3>Restaurants &amp; Hospitality</h3>
                   <p>Tableside ordering, tipping, QR pay, and POS integrations built for speed.</p>
                 </div>
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/retail">
+            <a class="slide" href="/retail">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-retail"><i class="fa-solid fa-store"></i></div>
                 <div class="solution-content">
@@ -159,7 +156,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/ecommerce">
+            <a class="slide" href="/ecommerce">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-ecom"><i class="fa-solid fa-laptop"></i></div>
                 <div class="solution-content">
@@ -169,7 +166,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/healthcare">
+            <a class="slide" href="/healthcare">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-health"><i class="fa-solid fa-user-doctor"></i></div>
                 <div class="solution-content">
@@ -179,7 +176,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/contractors">
+            <a class="slide" href="/contractors">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-contract"><i class="fa-solid fa-helmet-safety"></i></div>
                 <div class="solution-content">
@@ -189,22 +186,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/non-profits">
+            <a class="slide" href="/non-profits">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-nonprofit"><i class="fa-solid fa-hand-holding-heart"></i></div>
                 <div class="solution-content">
                   <h3>Non-Profits</h3>
-                  <p>Donations, recurring gifts, and low-friction tax receipts.</p>
+                  <p>Donations, recurring gifts, and low-friction tax receipts built in.</p>
                 </div>
               </div>
             </a>
 
-            <a class="slide" href="https://ppdtechnology.com/higher-education">
+            <a class="slide" href="/higher-education">
               <div class="solution-card tilt">
                 <div class="solution-visual bg-edu"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div class="solution-content">
                   <h3>Higher Education</h3>
-                  <p>Tuition, events, bookstores, and housing with centralized reconciliation included.</p>
+                  <p>Tuition, events, bookstores, and housing with centralized reconciliation.</p>
                 </div>
               </div>
             </a>
@@ -224,15 +221,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <span class="cta-orb orb-2"></span>
     <span class="cta-orb orb-3"></span>
 
-    <div class="container">
+    <div class="container" style="position:relative;z-index:2">
       <h2>Ready to Transform Your Payment Processing?</h2>
-      <p>Join thousands of businesses that trust PPD Technology with their payment processing needs.</p>
-      <button
-        class="btn btn-primary magnet"
-        style="background:#fff;color:var(--primary);font-weight:600"
-        onclick="location.href='https://ppdtechnology.com/signup'"
-      >
-        Get Started Today
+      <p>Join thousands of businesses that trust PPD Technology with their payment processing needs and never look back.</p>
+      <button class="btn btn-white" onclick="location.href='/signup'">
+        Get Started Today <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
   </section>

@@ -423,14 +423,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <style>
     .clover-page{
-      --primary:#0055FF;
-      --primary-dark:#0044CC;
-      --secondary:#0F1B35;
-      --accent:#00CC96;
-      --light:#F5F7FA;
-      --dark:#1A232E;
-      --gray:#64748B;
-      --light-gray:#E2E8F0;
+      --primary:#1549FF;
+      --primary-dark:#0F38CC;
+      --secondary:#060E21;
+      --accent:#00E5A0;
+      --light:#F5F8FF;
+      --dark:#060E21;
+      --gray:#7B93B0;
+      --light-gray:#E2E8F4;
       --clover:#00C389;
       background:var(--light);
       color:var(--dark);
@@ -448,11 +448,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .clover-page .crumbs .sep{opacity:.5}
 
     .clover-page .hero{
-      background:#fff;
-      color:var(--secondary);
-      padding:72px 0 48px;
+      background:
+        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
+      color:#fff;
+      padding:80px 0 56px;
       position:relative;
       overflow:hidden;
+    }
+    .clover-page .hero::before{
+      content:"";position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;opacity:.3;
     }
     .clover-page .hero-grid{display:grid;gap:30px;align-items:center}
     @media (min-width:900px){
@@ -461,15 +468,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .clover-page .kicker{
       display:inline-flex;align-items:center;gap:8px;
-      background:rgba(0,195,137,.10);
-      border:1px solid rgba(0,195,137,.25);
+      background:rgba(0,195,137,.12);
+      border:1px solid rgba(0,195,137,.3);
       padding:6px 12px;border-radius:999px;
       margin-bottom:14px;font-size:12px;
       color:var(--clover);
-      font-weight:700;
+      font-weight:700;letter-spacing:.03em;text-transform:uppercase;
     }
-    .clover-page .hero h1{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.12;margin-bottom:12px}
-    .clover-page .hero p{font-size:1.05rem;opacity:.95;margin-bottom:20px;max-width:58ch;color:#334155}
+    .clover-page .hero h1{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.12;margin-bottom:14px;font-weight:800;letter-spacing:-.02em;color:#fff}
+    .clover-page .hero p{font-size:1.05rem;opacity:.85;margin-bottom:20px;max-width:58ch;color:rgba(255,255,255,.85)}
     .clover-page .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 
     .clover-page .solo-anim{position:relative;min-height:360px;display:flex;align-items:center;justify-content:center;will-change:transform;transition:transform .08s ease-out}
@@ -588,10 +595,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);transform:translateX(-150%)
     }
     .clover-page .btn:hover::after{animation:btnSweep .8s ease}
-    .clover-page .btn-outline{border-color:var(--primary);color:var(--primary);background:transparent}
-    .clover-page .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,85,255,.2)}
-    .clover-page .btn-primary{background:var(--clover);color:#fff;border-color:var(--clover)}
-    .clover-page .btn-primary:hover{background:#00a876;border-color:#00a876;transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,195,137,.3)}
+    .clover-page .btn-outline{border:1.5px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.06)}
+    .clover-page .btn-outline:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .clover-page .btn-primary{background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;border:none;box-shadow:0 8px 28px rgba(21,73,255,.35)}
+    .clover-page .btn-primary:hover{background:linear-gradient(135deg,#1549FF,#0F38CC);transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
 
     .clover-page .reveal{opacity:0;transform:translateY(22px);transition:all .7s ease}
     .clover-page .reveal.show{opacity:1;transform:translateY(0)}

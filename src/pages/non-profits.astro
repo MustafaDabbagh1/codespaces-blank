@@ -327,16 +327,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .np-page .page-btn-primary {
-      background: var(--primary);
+      background: linear-gradient(135deg, #2D60FF, var(--primary));
       color: #fff;
-      border: 2px solid var(--primary);
+      border: none;
+      box-shadow: 0 8px 28px rgba(21,73,255,.35);
     }
 
     .np-page .page-btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 85, 255, .3);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(21,73,255,.45);
     }
 
     .np-page .start-btn {

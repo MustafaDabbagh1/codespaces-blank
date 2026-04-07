@@ -585,9 +585,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .signup-btn-primary{
-      background:var(--brand);
+      background:linear-gradient(135deg,#0ec874,var(--brand));
       border-color:var(--brand);
       color:#fff;
+      box-shadow:0 8px 24px rgba(11,163,96,.3);
+    }
+    .signup-btn-primary:hover{
+      background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+      transform:translateY(-2px);
+      box-shadow:0 12px 28px rgba(11,163,96,.4);
     }
 
     .signup-hero{padding:36px 0 6px;margin-bottom:40px}

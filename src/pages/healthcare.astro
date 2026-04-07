@@ -398,17 +398,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <style>
     .healthcare-page {
-      --primary: #0055ff;
-      --primary-dark: #0044cc;
-      --secondary: #0f1b35;
-      --accent: #00cc96;
-      --healthcare-teal: #00a3a3;
-      --healthcare-light: #e0f7fa;
-      --light: #f5f7fa;
-      --dark: #1a232e;
-      --gray: #64748b;
-      --light-gray: #e2e8f0;
-      --line: #e2e8f0;
+      --primary: #1549FF;
+      --primary-dark: #0F38CC;
+      --secondary: #060E21;
+      --accent: #00E5A0;
+      --healthcare-teal: #06B6D4;
+      --healthcare-light: #EFF8FF;
+      --light: #F5F8FF;
+      --dark: #060E21;
+      --gray: #7B93B0;
+      --light-gray: #E2E8F4;
+      --line: #E2E8F4;
       font-family: "Inter", sans-serif;
       color: var(--dark);
       line-height: 1.6;
@@ -438,27 +438,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .healthcare-page .btn-healthcare {
-      background: var(--healthcare-teal);
+      background: linear-gradient(135deg, #2D60FF, var(--primary));
       color: #fff;
-      border-color: var(--healthcare-teal);
+      border: none;
+      box-shadow: 0 8px 28px rgba(21,73,255,.35);
     }
 
     .healthcare-page .btn-healthcare:hover {
-      background: #008b8b;
-      border-color: #008b8b;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 163, 163, 0.3);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(21,73,255,.45);
     }
 
     .healthcare-page .hero-outline {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border-color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255,255,255,.9);
+      border: 1.5px solid rgba(255,255,255,.28);
     }
 
     .healthcare-page .hero-outline:hover {
-      background: rgba(255, 255, 255, 0.18);
-      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255,255,255,.5);
     }
 
     .healthcare-page .cta-white-btn {
@@ -468,14 +468,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .healthcare-page .hero-healthcare {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--healthcare-teal) 100%);
+      background:
+        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(6,182,212,.3) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at -10% 100%, rgba(21,73,255,.15) 0%, transparent 50%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
       color: #fff;
-      padding: 60px 0;
+      padding: 80px 0;
       position: relative;
       overflow: hidden;
       min-height: auto;
       display: flex;
       align-items: center;
+    }
+    .healthcare-page .hero-healthcare::before{
+      content:"";position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;opacity:.3;
     }
 
     .healthcare-page .healthcare-hero-content {

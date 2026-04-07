@@ -298,18 +298,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <style>
     .contact-page {
-      --primary: #0055ff;
-      --primary-dark: #0044cc;
-      --secondary: #0f1b35;
-      --accent: #00cc96;
-      --light: #f5f7fa;
-      --dark: #1a232e;
-      --gray: #64748b;
-      --light-gray: #e2e8f0;
+      --primary: #1549FF;
+      --primary-dark: #0F38CC;
+      --secondary: #060E21;
+      --accent: #00E5A0;
+      --light: #F5F8FF;
+      --dark: #060E21;
+      --gray: #7B93B0;
+      --light-gray: #E2E8F4;
       --m-bg: #fff;
-      --m-line: #e7ecf6;
-      --m-ink: #0f1b35;
-      --m-ink-2: #2a3b55;
+      --m-line: #E2E8F4;
+      --m-ink: #060E21;
+      --m-ink-2: #2C4268;
       background: var(--light);
       color: var(--dark);
     }
@@ -326,13 +326,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .contact-page .contact-hero {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-dark) 100%);
+      background:
+        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at -10% 100%, rgba(0,207,255,.12) 0%, transparent 50%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
       color: #fff;
       padding: 100px 0 60px;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
+    }
+    .contact-page .contact-hero::before{
+      content:"";position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;opacity:.3;
     }
 
     .contact-page .contact-hero-content {
@@ -646,16 +654,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .contact-page .btn-primary {
-      background: var(--primary);
+      background: linear-gradient(135deg, #2D60FF, var(--primary));
       color: #fff;
-      border-color: var(--primary);
+      border: none;
+      box-shadow: 0 8px 28px rgba(21,73,255,.35);
     }
 
     .contact-page .btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(21,73,255,.45);
     }
 
     .contact-page .call-outline {

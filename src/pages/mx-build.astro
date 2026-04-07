@@ -298,13 +298,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <style>
     .mx-page {
-      --ink: #0f172a;
-      --ink-2: #334155;
-      --primary: #0055ff;
-      --primary-2: #3b82f6;
+      --ink: #060E21;
+      --ink-2: #3D5A80;
+      --primary: #1549FF;
+      --primary-2: #2D60FF;
       --paper: #ffffff;
-      --bg: #f6f8fb;
-      --line: #e7eaf0;
+      --bg: #F5F8FF;
+      --line: #E2E8F4;
       --shadow: 0 16px 48px rgba(2, 8, 23, 0.10);
       --soft: 0 10px 28px rgba(2, 8, 23, 0.08);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -348,10 +348,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .mx-page .page-btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--primary-2));
-      border-color: var(--primary);
+      background: linear-gradient(135deg, var(--primary-2), var(--primary));
+      border-color: transparent;
       color: #ffffff !important;
-      box-shadow: 0 10px 24px rgba(0, 85, 255, .25);
+      box-shadow: 0 8px 28px rgba(21,73,255,.35);
+    }
+    .mx-page .page-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(21,73,255,.45);
     }
 
     .mx-page .page-btn-outline,
@@ -373,8 +377,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       isolation: isolate;
       overflow: hidden;
       background:
-        radial-gradient(1100px 600px at 110% -10%, rgba(255, 255, 255, .35), transparent 60%),
-        linear-gradient(160deg, #e9f2ff 0%, #eaf7ff 40%, #e9fff8 100%);
+        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at -10% 100%, rgba(0,207,255,.12) 0%, transparent 50%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
+      color: #fff;
+    }
+    .mx-page .hero::after{
+      content:"";position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;opacity:.3;
     }
 
     .mx-page .hero .container {
@@ -398,13 +409,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       display: inline-flex;
       gap: 8px;
       align-items: center;
-      background: rgba(0, 85, 255, .08);
-      border: 1px solid rgba(0, 85, 255, .25);
+      background: rgba(168,200,255,.08);
+      border: 1px solid rgba(168,200,255,.25);
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 900;
-      color: #1e3a8a !important;
+      color: #a8c8ff !important;
     }
 
     .mx-page h1 {
@@ -414,12 +425,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       font-size: 44px;
       line-height: 1.12;
       margin: 12px 0 10px;
-      color: #0f172a !important;
+      color: #fff !important;
     }
 
     .mx-page .hero-text {
       max-width: 640px;
-      color: #475569 !important;
+      color: rgba(255,255,255,.72) !important;
       font-size: 18px;
     }
 
@@ -432,11 +443,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .mx-page .badge {
       font-size: 12px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.22);
       padding: 6px 10px;
       border-radius: 999px;
-      background: #ffffff;
-      color: #0f172a !important;
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.9) !important;
       display: inline-flex;
       align-items: center;
       gap: 6px;

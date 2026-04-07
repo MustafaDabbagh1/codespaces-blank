@@ -375,14 +375,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <style is:global>
     :root {
-      --primary: #0c1c33;
-      --primary-2: #122949;
-      --primary-3: #1c3a68;
+      --primary: #060E21;
+      --primary-2: #0C1A38;
+      --primary-3: #12224A;
       --accent: #ffc83a;
       --accent-2: #f5b300;
-      --muted: #64748b;
-      --panel-2: #172b4d;
-      --line: #e6edf6;
+      --muted: #7B93B0;
+      --panel-2: #0C1A38;
+      --line: #E2E8F4;
     }
 
     html {
@@ -477,15 +477,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #1a1a1a;
-      border: 2px solid var(--accent);
+      background: linear-gradient(135deg, #ffd55a, var(--accent));
+      color: #1a1200;
+      border: none;
+      box-shadow: 0 8px 24px rgba(255,200,58,.35);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(255,200,58,.4);
     }
 
     .hero-outline {
-      border: 2px solid #2c4170;
-      color: #e8eef9;
-      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.28);
+      color: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.06);
+    }
+    .hero-outline:hover {
+      border-color: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.1);
     }
 
     .shots {

@@ -28,8 +28,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       align-items:center;
       overflow:hidden;
       background:
-        radial-gradient(1200px 700px at 120% -20%, rgba(47,163,255,.18), transparent 60%),
-        linear-gradient(180deg, #0C1A3A 0%, #0F234F 100%);
+        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at -10% 100%, rgba(0,207,255,.12) 0%, transparent 50%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
     }
 
     .passport-hero::before{
@@ -38,7 +39,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       inset:0;
       opacity:.25;
       pointer-events:none;
-      background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0) 0 0/18px 18px;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .passport-hero .passport-shell{
@@ -124,13 +125,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .passport-btn-primary{
-      background:#2FA3FF;
-      border:1px solid #2FA3FF;
+      background:linear-gradient(135deg,#2D60FF,#1549FF);
+      border:none;
       color:#fff;
+      box-shadow:0 8px 28px rgba(21,73,255,.35);
     }
 
     .passport-btn-primary:hover{
-      filter:brightness(.96);
+      transform:translateY(-2px);
+      box-shadow:0 12px 32px rgba(21,73,255,.45);
     }
 
     .passport-btn-light{
