@@ -392,10 +392,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .hero {
       background:
         radial-gradient(1200px 400px at -10% -20%, rgba(255, 200, 58, 0.15) 0%, transparent 60%),
-        linear-gradient(135deg, var(--primary-2), var(--primary-3));
+        radial-gradient(ellipse 80% 60% at 90% 10%, rgba(21,73,255,.15) 0%, transparent 50%),
+        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
       color: #fff;
       padding: 90px 0 70px;
       overflow: hidden;
+      position: relative;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;opacity:.3;
     }
 
     .hero .grid {
@@ -507,7 +514,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       position: absolute;
       border-radius: 14px;
       overflow: hidden;
-      background: #0f1b35;
+      background: #060E21;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -624,7 +631,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .band {
-      background: linear-gradient(135deg, #0f1b35, #1c2f59);
+      background: linear-gradient(135deg, #060E21, #0C1A38);
       color: #fff;
     }
 
@@ -661,7 +668,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .tile .img {
       height: 180px;
       overflow: hidden;
-      background: #0f1b35;
+      background: #060E21;
     }
 
     .tile .img img {
@@ -849,7 +856,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .reg-bar {
-      background: #0f1b35;
+      background: #060E21;
       color: #fff;
       text-align: center;
       padding: 10px 16px;
