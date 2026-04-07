@@ -1,0 +1,63 @@
+I only want you to redesign and improve the homepage for now. Do not edit any other pages yet.
+
+Please revamp the homepage so it feels like a premium, modern, software-driven payment technology company instead of a basic payment processor. The goal is to make the brand feel more advanced, more polished, more tech-forward, and more like a serious fintech/software platform.
+
+Focus on these homepage improvements:
+
+- Create a much stronger hero section that feels software-first and high-end
+- Add a modern product/dashboard style visual in the hero area so the company looks like it has real software, reporting, and platform capabilities
+- Include floating UI elements or visual cards that suggest analytics, approvals, payouts, payment activity, integrations, reporting, and performance insights
+- Improve the headline and supporting text so it feels sharper, more premium, and more like a real fintech SaaS brand
+- Keep the hero conversion-focused with strong CTA buttons
+
+- Fix the credibility issue in the stats/proof section
+- Remove any weak or broken-looking stats, especially anything showing zero
+- Replace them with more professional trust-building proof points if needed
+- Make that section feel polished, intentional, and credible
+
+- Add or redesign a homepage section that presents the company more like a software platform
+- Make it feel like the business offers a full payment ecosystem, not just card processing
+- Show key platform capabilities in a more visual and modern way, such as reporting, omnichannel payments, hardware + software compatibility, business management tools, and operational visibility
+- Use premium cards or feature modules with consistent styling
+
+- Add a “how it works” or platform flow section on the homepage
+- Make it simple, clean, and visual
+- Show a smooth journey such as getting started, accepting payments, tracking activity, and scaling with the platform
+- This should help the homepage feel more productized and easier to understand
+
+- Add a stronger ecosystem or integrations-style section
+- Show that the company works across in-store, mobile, online, POS, and business tools
+- Make this section feel modern and software-focused, not generic
+- It should visually communicate that the company supports a full connected payments ecosystem
+
+- Improve the industry solutions section so it looks more premium and visually impressive
+- Keep the content, but redesign the presentation so it feels more modern and polished
+- Make the industry cards more consistent, more sleek, and more software-brand in style
+- Add better visual hierarchy, cleaner icons or imagery, smoother hover states, and more refined layouts
+
+- Redesign the final CTA section so it feels more premium and high-converting
+- Make it stronger visually and more compelling
+- Add a more modern layout, better copy structure, and stronger CTA presentation
+- It should feel like the ending section of a serious fintech/software homepage
+
+- Clean up anything on the homepage that makes the brand feel unfinished, outdated, inconsistent, or less trustworthy
+- Make the whole homepage feel cohesive from top to bottom
+- Make all sections feel like they belong to the same modern design system
+
+Design direction:
+- Premium fintech / SaaS / payment software aesthetic
+- Sleek, modern, polished, and tech-forward
+- Strong visual hierarchy
+- Clean typography
+- Consistent spacing and section rhythm
+- Refined gradients, glow accents, glassy surfaces, layered backgrounds, and smooth motion
+- Tasteful scroll animations and hover effects
+- Business-ready, professional, and conversion-focused
+- Responsive on desktop and mobile
+
+Important:
+- Homepage only for now
+- Do not redesign other pages yet
+- Do not break existing functionality
+- Keep the code clean and reusable
+- Make the final homepage feel like a serious high-end software payment company with a modern, cohesive identity

@@ -683,25 +683,7 @@ footer::before{
       }, {threshold:.12});
       document.querySelectorAll('.feature-card,.footer-column,.footer-bottom,.cta,.metric').forEach(el => observer.observe(el));
 
-      // Counter animation for metrics
-      document.querySelectorAll('.metric .num[data-count]').forEach(el => {
-        const target = parseFloat(el.dataset.count);
-        const obs = new IntersectionObserver(entries => {
-          if(entries[0].isIntersecting){
-            let start = 0, dur = 1600, step = 16;
-            const timer = setInterval(() => {
-              start += step;
-              const val = Math.min(start/dur * target, target);
-              el.textContent = target < 2 ? val.toFixed(2)+'%' : Math.round(val)+(target>=100?'' : target===1?' Day':' Hrs');
-              if(start >= dur) clearInterval(timer);
-            }, step);
-            obs.disconnect();
-          }
-        }, {threshold:.5});
-        obs.observe(el);
-      });
-
-      // Slider
+      // Slider (used by retail and other pages)
       const viewport = document.getElementById('solutionsViewport');
       const prevBtn  = document.getElementById('prevBtn');
       const nextBtn  = document.getElementById('nextBtn');
@@ -710,24 +692,6 @@ footer::before{
         nextBtn.addEventListener('click', () => viewport.scrollBy({left:getSlideW(),behavior:'smooth'}));
         prevBtn.addEventListener('click', () => viewport.scrollBy({left:-getSlideW(),behavior:'smooth'}));
       }
-
-      // Binary rain (background effect)
-      const bin = document.getElementById('binaryLayer');
-      if(bin && window.innerWidth > 768){
-        for(let i = 0; i < 12; i++){
-          const col = document.createElement('div');
-          col.className = 'column';
-          col.style.cssText = `left:${Math.random()*100}%;animation-delay:${Math.random()*6}s;animation-duration:${6+Math.random()*6}s`;
-          col.textContent = Array.from({length:24},()=>Math.round(Math.random())).join('\n');
-          bin.appendChild(col);
-        }
-      }
-
-      // Terminal screen cycling
-      const msgs = ['Payment: Approved','Secure Connect','Verify: 3D Auth','Rate: 2.3%+10¢','PCI Level 1'];
-      let mi = 0;
-      const ts = document.getElementById('terminalScreen');
-      if(ts) setInterval(()=>{ mi=(mi+1)%msgs.length; ts.textContent=msgs[mi]; },3200);
     </script>
   </body>
 </html>
