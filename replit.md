@@ -70,6 +70,7 @@ public/
 - `non-profits.astro` - Non-profit solutions (rose accent)
 - `higher-education.astro` - Education payments (purple accent)
 - `contractors.astro` - Contractor solutions (uses `is:global` styles, yellow accent)
+- `repair.astro` - Repair shop management SaaS landing page (`rp-*` CSS prefix). Interactive 4-tab demo (Tickets, POS, Inventory, Employees), dashboard hero visual, 8 industry cards, comparison table, $30/month pricing card, and lead capture modal form (client-side only). Green accent (`#10B981`).
 
 ### Product Pages
 - `clover.astro` - Clover devices
