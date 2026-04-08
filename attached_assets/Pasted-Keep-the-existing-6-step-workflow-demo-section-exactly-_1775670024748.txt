@@ -1,0 +1,99 @@
+Keep the existing 6-step workflow demo section exactly as it is. That section already covers Repair Tickets well, so do not include Repair Tickets again in the “Everything Inside PPDrepair” section.
+
+I want you to redesign the “Everything Inside PPDrepair” section into a premium interactive slider / carousel, but remove Repair Tickets from that section entirely.
+
+The goal is for this section to showcase the other major modules of the software with mini demo-style previews inside each slide.
+
+Replace the current static grid/cards with a horizontal slider that includes these slides:
+
+1. Point of Sale
+2. Inventory
+3. Team & Stores
+4. Reports & Analytics
+5. Customers / CRM
+6. Payments / Terminal Integration
+
+Each slide should include:
+- module name
+- strong short headline
+- 1 to 2 sentence benefit-focused copy
+- small bullet points
+- a mini demo-style UI panel
+- polished visual hierarchy
+- motion / transitions / hover states
+
+Very important:
+Each slide should include a believable mini product preview, not just text and icons.
+
+Slide requirements:
+
+1. Point of Sale
+Mini demo ideas:
+- cart with repair service + accessory
+- subtotal / tax / total
+- payment buttons
+- receipt or invoice preview
+- fast checkout feel
+
+2. Inventory
+Mini demo ideas:
+- low stock alerts
+- serialized items
+- stock counts
+- reorder or PO indicators
+- transfer between stores
+- compact inventory table/widgets
+
+3. Team & Stores
+Mini demo ideas:
+- employee roles
+- permission badges
+- active shifts
+- assigned jobs
+- store switcher
+- staff productivity summary
+
+4. Reports & Analytics
+Mini demo ideas:
+- revenue chart
+- repair volume chart
+- top services
+- top accessories sold
+- technician performance stats
+- margin or trend cards
+This slide should feel like a real owner dashboard.
+
+5. Customers / CRM
+Mini demo ideas:
+- customer profile card
+- repair history
+- recent transactions
+- saved devices
+- contact info
+- lifetime value / repeat visit indicators
+
+6. Payments / Terminal Integration
+Mini demo ideas:
+- terminal connected status
+- payment type options
+- split payment or dual pricing example
+- receipt delivery options
+- card / cash / wallet indicators
+- clean payment success state
+
+Design direction:
+- keep the page branding consistent
+- make this section much more premium and interactive
+- make it feel like a software product showcase
+- use a polished slider/carousel with arrows and pagination
+- desktop should feel spacious and high-end
+- mobile should be swipeable
+- use reusable components where possible
+
+Important:
+Do not remove the existing 6-step workflow section further down the page.
+That section stays.
+This new slider should focus on the other modules so the page feels more complete and does not repeat itself.
+
+Please make the copy stronger and more sales-focused.
+The section should help a repair shop owner quickly understand that this software covers sales, inventory, operations, reporting, customers, and payments all in one platform.
