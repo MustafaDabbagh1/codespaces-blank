@@ -1,0 +1,232 @@
+The page is improved, but there are still 4 major problems I need you to fix in a substantial way.
+
+Do not make small cosmetic edits. I want you to redesign the key selling sections so this page feels like a premium SaaS product page with a true guided demo experience.
+
+Also important:
+- Make sure the software is clearly called PPDrepair throughout the page
+- Do not use a generic product name
+- Make the branding feel intentional and consistent
+- Move the “Industries / One Platform, Every Repair Business” section higher on the page so visitors see earlier that this software supports many repair industries, not just phone repair
+
+The 4 main issues are:
+
+1. The product tour does not yet feel like a mini live app
+Right now it shows sample states and data, but it still feels too static. I need it to feel more like visitors are stepping through the software itself.
+
+2. The hero software preview is too lightweight
+The hero needs a much stronger software visual that immediately communicates this is a serious repair shop platform.
+
+3. There is no guided workflow story
+The page needs a clear narrative showing how a repair job moves through the system from intake to payment.
+
+4. The CTA is not premium or urgent enough
+The final conversion areas need to feel stronger, more polished, and more compelling.
+
+What I want you to build instead:
+
+1. Replace the current product tour with a guided interactive workflow demo
+This should be the centerpiece of the page.
+
+I want a large section that feels like a mini-app walkthrough, not just tabs with static panels.
+
+Build a guided demo sequence that shows this workflow:
+
+Step 1: Check in device
+- customer name
+- device model
+- issue summary
+- intake notes
+- initial estimate
+- create repair ticket button
+
+Step 2: Assign technician
+- choose technician
+- set priority
+- estimated completion time
+- job status changes from New to In Progress
+
+Step 3: Add parts / inventory usage
+- show part added to ticket
+- inventory count decreases
+- low stock alert if needed
+- cost / margin visibility
+
+Step 4: Take deposit
+- partial payment collected
+- invoice summary
+- updated ticket/payment status
+
+Step 5: Notify customer
+- show customer message/notification state
+- repair ready or update sent
+
+Step 6: Collect final payment
+- checkout / POS view
+- remaining balance
+- accessories upsell
+- paid / completed status
+
+This section should feel like a real guided product story.
+Use:
+- a horizontal or vertical stepper
+- animated transitions between steps
+- realistic UI states
+- software panels that update as the user moves through each step
+- progress bars, badges, status labels, sample receipts, sample tickets, and sample customer cards
+
+Most important:
+When the user clicks each step, the central software preview should visibly change.
+I want this to feel like a live product walkthrough.
+
+2. Upgrade the hero section heavily
+The hero should no longer rely on a simple lightweight preview.
+
+I want the hero to include:
+- a much stronger software mockup
+- layered dashboard panels
+- ticket list + order details + payment card + inventory alert card
+- motion/animation that feels polished and premium
+- more depth and visual hierarchy
+
+Make the software the star of the hero.
+
+Hero goals:
+- immediately communicate “all-in-one repair shop software”
+- show POS + repair workflow + operations in one visual system
+- make the page feel more valuable and more serious
+- clearly present the product name as PPDrepair
+
+Add stronger copy too.
+
+Direction:
+Run Your Repair Shop from Check-In to Checkout with PPDrepair
+Repair tickets, POS, inventory, and customer management in one streamlined system for phone repair and service businesses. Starting at just $30/month.
+
+Primary CTA:
+Request a Demo
+
+Secondary CTA:
+See the Repair Workflow
+
+3. Add a “how it works” narrative section tied to the software
+Right after the hero or integrated with the guided demo, add a strong section that explains the software in a simple business story.
+
+For example:
+- Check in the device
+- Assign the job
+- Track parts and labor
+- Keep the customer updated
+- Collect payment fast
+
+This should not be generic text only.
+Each step should connect visually to the software UI.
+Think of it like a product storytelling section that makes the workflow instantly easy to understand.
+
+4. Move the industries section higher
+Move the “Industries / One Platform, Every Repair Business” section much higher on the page.
+
+I want it placed near the top of the page, ideally after the hero or after a short intro / before the deeper feature sections.
+
+Reason:
+Visitors should quickly understand that PPDrepair works for more than just one kind of store.
+
+Keep these industries:
+- Cell Phone Repair
+- Computer Repair
+- Jewelry Repair
+- Watch Repair
+- Bicycle Repair
+- Power Tools Repair
+- Camera Repair
+- Small Engine Repair
+
+Make this section look premium and polished, not generic.
+It should support the phone repair focus while still showing broad repair business support.
+
+5. Upgrade the CTA sections so they feel premium and urgent
+The current CTA is functional, but not strong enough.
+
+I want:
+- a more premium modal or slide-in callback/demo form
+- stronger copy
+- better visual design
+- more urgency and trust
+
+Use CTA copy more like:
+See how your repair shop could run smoother
+Book a quick walkthrough and we’ll show you how PPDrepair can fit your workflow, improve turnaround time, and simplify checkout.
+
+Or:
+Get a personalized demo
+See how to manage tickets, inventory, technicians, and payments in one system with PPDrepair for only $30/month.
+
+Make the CTA feel more valuable and more specific.
+
+Form fields:
+- Name
+- Business Name
+- Phone Number
+- Email
+- Repair Shop Type
+- Optional Message
+
+Also improve the CTA buttons sitewide:
+- Request a Demo
+- Get a Call Back
+- See the Workflow
+- Start My Walkthrough
+
+6. Make the page feel less like a marketing template and more like a software product page
+This is very important.
+
+I want:
+- richer software visuals
+- more interactive states
+- clearer workflow storytelling
+- less generic card stacking
+- more intentional layouts
+- stronger hierarchy and spacing
+- more premium SaaS detail
+
+Use the actual software files I attached as inspiration for UI patterns and flows:
+- dashboard
+- POS
+- tickets
+- ticket detail
+- inventory
+- customers
+- merchant layout
+- schema
+
+7. Keep the page structure, but upgrade the key sections
+You do not need to throw away everything.
+But I do want major improvements to:
+- Hero
+- Product tour / demo area
+- How it works section
+- Industries section placement
+- CTA section
+
+8. Design direction
+Push the design further:
+- modern SaaS
+- high-tech
+- polished animations
+- premium software aesthetic
+- stronger contrast
+- more layered UI
+- more immersive product visuals
+- responsive on mobile too
+
+What I want from this revision:
+When a repair shop owner lands on this page, they should immediately understand:
+- this is PPDrepair
+- this is real software
+- this software matches their workflow
+- this can help them run the whole shop
+- the guided demo shows exactly how it works
+- it supports multiple repair industries
+- $30/month is a strong value
+- they should request a demo now
+
+Please revise the page substantially around these goals, especially the hero, industries placement, guided interactive workflow demo, and CTA.

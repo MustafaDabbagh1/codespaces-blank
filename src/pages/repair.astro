@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="PPD Technology | All-in-One Repair Shop Management Software">
+<BaseLayout title="PPDrepair | All-in-One Repair Shop Management Software">
 
   <!-- ══════════════ MEMBER BAR ══════════════ -->
   <div class="rp-member-bar">
@@ -21,17 +21,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container rp-hero__inner">
       <div class="rp-hero__text">
         <span class="rp-pill"><i class="fa-solid fa-microchip"></i> All-in-One Repair Shop Software</span>
-        <h1>Run Your Entire<br>Repair Shop on<br><span class="rp-grad">One Powerful System</span></h1>
-        <p>POS, repair tickets, inventory, customers, and employee management — built specifically for phone repair and service businesses. Stop juggling spreadsheets and disconnected tools.</p>
-        <div class="rp-hero__price">
-          <span class="rp-hero__price-tag">Starting at just</span>
-          <span class="rp-hero__price-val">$30<span>/mo</span></span>
-          <span class="rp-hero__price-note">per location · no contracts</span>
-        </div>
+        <h1>Run Your Repair Shop<br>from Check-In to Checkout<br>with <span class="rp-grad">PPDrepair</span></h1>
+        <p>Repair tickets, POS, inventory, and customer management in one streamlined system for phone repair and service businesses. Starting at just <strong>$30/month</strong>.</p>
         <div class="rp-hero__actions">
-          <button class="btn btn-primary btn-lg rp-cta-open"><i class="fa-solid fa-phone"></i> Request a Demo</button>
-          <button class="btn btn-outline btn-lg rp-cta-open"><i class="fa-solid fa-headset"></i> Get a Call Back</button>
-          <a class="btn btn-ghost btn-lg" href="#demo"><i class="fa-solid fa-play"></i> Explore Live Demo</a>
+          <button class="btn btn-primary btn-lg rp-cta-open"><i class="fa-solid fa-calendar-check"></i> Request a Demo</button>
+          <a class="btn btn-ghost btn-lg" href="#workflow"><i class="fa-solid fa-play"></i> See the Repair Workflow</a>
         </div>
         <div class="rp-hero__trust">
           <span><i class="fa-solid fa-shield-halved"></i> PCI Compliant</span>
@@ -42,219 +36,351 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="rp-hero__visual">
-        <div class="rp-dash">
-          <div class="rp-dash__bar">
-            <span class="rp-dash__dot" style="background:#ff5f57"></span>
-            <span class="rp-dash__dot" style="background:#febc2e"></span>
-            <span class="rp-dash__dot" style="background:#28c840"></span>
-            <span class="rp-dash__bar-title">PPD Repair — Dashboard</span>
+        <!-- Main Dashboard -->
+        <div class="rp-hero-app">
+          <div class="rp-hero-app__bar">
+            <div class="rp-hero-app__dots"><span></span><span></span><span></span></div>
+            <span class="rp-hero-app__title">PPDrepair — Dashboard</span>
           </div>
-          <div class="rp-dash__body">
-            <div class="rp-dash__sidebar">
-              <div class="rp-dash__nav active"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-cash-register"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-ticket"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-boxes-stacked"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-users"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-chart-bar"></i></div>
-              <div class="rp-dash__nav"><i class="fa-solid fa-gear"></i></div>
+          <div class="rp-hero-app__body">
+            <div class="rp-hero-app__sidebar">
+              <div class="rp-hero-app__nav active"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="rp-hero-app__nav"><i class="fa-solid fa-ticket"></i></div>
+              <div class="rp-hero-app__nav"><i class="fa-solid fa-cash-register"></i></div>
+              <div class="rp-hero-app__nav"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div class="rp-hero-app__nav"><i class="fa-solid fa-users"></i></div>
+              <div class="rp-hero-app__nav"><i class="fa-solid fa-gear"></i></div>
             </div>
-            <div class="rp-dash__main">
-              <div class="rp-dash__greeting">
-                <div>
-                  <strong style="font-size:13px">Good morning, Mike</strong>
-                  <span style="font-size:10px;opacity:.5;display:block">Quick Fix Wireless — Main St</span>
-                </div>
-                <div class="rp-dash__presets">
-                  <span class="rp-dash__preset active">Today</span>
-                  <span class="rp-dash__preset">7 Days</span>
-                  <span class="rp-dash__preset">Month</span>
-                </div>
+            <div class="rp-hero-app__main">
+              <div class="rp-hero-app__topbar">
+                <div><strong>Good morning, Mike</strong><span>Quick Fix Wireless — Main St</span></div>
+                <div class="rp-hero-app__presets"><span class="active">Today</span><span>7d</span><span>30d</span></div>
               </div>
-              <div class="rp-dash__kpi-row">
-                <div class="rp-dash__kpi">
-                  <span class="rp-dash__kpi-label">Gross Sales</span>
-                  <span class="rp-dash__kpi-val">$4,287</span>
-                  <span class="rp-dash__tag green"><i class="fa-solid fa-arrow-up"></i> 18%</span>
-                </div>
-                <div class="rp-dash__kpi">
-                  <span class="rp-dash__kpi-label">Open Tickets</span>
-                  <span class="rp-dash__kpi-val">23</span>
-                  <span class="rp-dash__tag orange">5 urgent</span>
-                </div>
-                <div class="rp-dash__kpi">
-                  <span class="rp-dash__kpi-label">Avg Ticket</span>
-                  <span class="rp-dash__kpi-val">$142</span>
-                  <span class="rp-dash__tag green"><i class="fa-solid fa-arrow-up"></i> 6%</span>
-                </div>
+              <div class="rp-hero-app__kpis">
+                <div class="rp-hero-kpi"><span class="rp-hero-kpi__label">Gross Sales</span><span class="rp-hero-kpi__val">$4,287</span><span class="rp-hero-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 18%</span></div>
+                <div class="rp-hero-kpi"><span class="rp-hero-kpi__label">Open Tickets</span><span class="rp-hero-kpi__val">23</span><span class="rp-hero-kpi__tag orange">5 urgent</span></div>
+                <div class="rp-hero-kpi"><span class="rp-hero-kpi__label">Avg Repair</span><span class="rp-hero-kpi__val">$142</span><span class="rp-hero-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 6%</span></div>
+                <div class="rp-hero-kpi"><span class="rp-hero-kpi__label">Completed</span><span class="rp-hero-kpi__val">47</span><span class="rp-hero-kpi__tag green">this week</span></div>
               </div>
-              <div class="rp-dash__chart-area">
-                <div class="rp-dash__chart-bars">
-                  <div class="rp-dash__chart-bar" style="height:40%"></div>
-                  <div class="rp-dash__chart-bar" style="height:55%"></div>
-                  <div class="rp-dash__chart-bar" style="height:35%"></div>
-                  <div class="rp-dash__chart-bar" style="height:70%"></div>
-                  <div class="rp-dash__chart-bar" style="height:85%"></div>
-                  <div class="rp-dash__chart-bar active" style="height:75%"></div>
-                  <div class="rp-dash__chart-bar" style="height:45%"></div>
-                </div>
-                <div class="rp-dash__chart-labels">
-                  <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-                </div>
+              <div class="rp-hero-app__tickets">
+                <div class="rp-hero-app__tickets-hdr"><strong>Recent Tickets</strong><span>View All</span></div>
+                <div class="rp-hero-tkt"><span class="rp-hero-tkt__badge amber">In Progress</span><span class="rp-hero-tkt__device">iPhone 15 Pro — Screen</span><span class="rp-hero-tkt__tech">Mike R.</span><span class="rp-hero-tkt__price">$189</span></div>
+                <div class="rp-hero-tkt"><span class="rp-hero-tkt__badge green">Ready</span><span class="rp-hero-tkt__device">Galaxy S24 — Port</span><span class="rp-hero-tkt__tech">Lisa T.</span><span class="rp-hero-tkt__price">$89</span></div>
+                <div class="rp-hero-tkt"><span class="rp-hero-tkt__badge blue">New</span><span class="rp-hero-tkt__device">MacBook Pro — Liquid</span><span class="rp-hero-tkt__tech">—</span><span class="rp-hero-tkt__price">TBD</span></div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="rp-float rp-float--alert">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Low Stock Alert</strong><span>iPhone 15 OLED screens: 2 left</span></div>
+        <!-- Floating POS Card -->
+        <div class="rp-hero-card rp-hero-card--pos">
+          <div class="rp-hero-card__hdr"><i class="fa-solid fa-cash-register"></i> POS — Checkout</div>
+          <div class="rp-hero-card__line"><span>Screen Replacement</span><span>$189.00</span></div>
+          <div class="rp-hero-card__line"><span>Glass Protector</span><span>$24.99</span></div>
+          <div class="rp-hero-card__line total"><span>Total</span><span>$227.48</span></div>
+          <div class="rp-hero-card__btn"><i class="fa-solid fa-lock"></i> Charge $227.48</div>
         </div>
-        <div class="rp-float rp-float--done">
+
+        <!-- Floating Inventory Alert -->
+        <div class="rp-hero-card rp-hero-card--inv">
+          <div class="rp-hero-card__hdr"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock</div>
+          <div class="rp-hero-card__alert">iPhone 15 OLED — <strong>2 left</strong></div>
+          <div class="rp-hero-card__alert">iPad Digitizer — <strong>0 left</strong></div>
+        </div>
+
+        <!-- Floating Customer Card -->
+        <div class="rp-hero-card rp-hero-card--cust">
+          <div class="rp-hero-card__hdr"><i class="fa-solid fa-user"></i> John Mitchell</div>
+          <div class="rp-hero-card__stat"><span>12 repairs</span><span>$2,847 lifetime</span></div>
+        </div>
+
+        <!-- Floating Payment Card -->
+        <div class="rp-hero-card rp-hero-card--pay">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>Ticket #1041 Complete</strong><span>Ready for pickup · $189.00</span></div>
-        </div>
-        <div class="rp-float rp-float--pay">
-          <i class="fa-solid fa-credit-card"></i>
-          <div><strong>Payment Received</strong><span>Card •••• 4242 · $274.93</span></div>
+          <div><strong>Payment Received</strong><span>Card •••• 4242 · $227.48</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ INTERACTIVE DEMO ══════════════ -->
-  <section class="rp-demo" id="demo">
+  <!-- ══════════════ INDUSTRIES (MOVED UP) ══════════════ -->
+  <section class="rp-industries" id="industries">
     <div class="container">
       <div class="rp-section-hdr">
-        <span class="rp-pill rp-pill--light"><i class="fa-solid fa-laptop-code"></i> Product Tour</span>
-        <h2>See the Software in Action</h2>
-        <p>Click through each module to explore how the platform manages every part of your repair business — from check-in to checkout.</p>
+        <span class="rp-pill rp-pill--light"><i class="fa-solid fa-wrench"></i> Built for Every Repair Business</span>
+        <h2>One Platform.<br><span class="rp-grad">Every Repair Industry.</span></h2>
+        <p>PPDrepair is purpose-built for phone repair shops — and adapts to any service-based repair business.</p>
       </div>
 
-      <div class="rp-demo__tabs" role="tablist" aria-label="Product demo modules">
-        <button class="rp-demo__tab active" data-tab="tickets" role="tab" aria-selected="true" aria-controls="panel-tickets" id="tab-tickets"><i class="fa-solid fa-ticket"></i> Repair Tickets</button>
-        <button class="rp-demo__tab" data-tab="pos" role="tab" aria-selected="false" aria-controls="panel-pos" id="tab-pos"><i class="fa-solid fa-cash-register"></i> Point of Sale</button>
-        <button class="rp-demo__tab" data-tab="inventory" role="tab" aria-selected="false" aria-controls="panel-inventory" id="tab-inventory"><i class="fa-solid fa-boxes-stacked"></i> Inventory</button>
-        <button class="rp-demo__tab" data-tab="customers" role="tab" aria-selected="false" aria-controls="panel-customers" id="tab-customers"><i class="fa-solid fa-users"></i> Customers</button>
-        <button class="rp-demo__tab" data-tab="operations" role="tab" aria-selected="false" aria-controls="panel-operations" id="tab-operations"><i class="fa-solid fa-building"></i> Operations</button>
+      <div class="rp-ind-grid">
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h4>Cell Phone Repair</h4><span>Screens, batteries, ports, water damage</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-laptop"></i></div><h4>Computer Repair</h4><span>Laptops, desktops, logic boards, SSDs</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-gem"></i></div><h4>Jewelry Repair</h4><span>Resizing, stone setting, polishing</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-clock"></i></div><h4>Watch Repair</h4><span>Movement, crystal, band repair</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-bicycle"></i></div><h4>Bicycle Repair</h4><span>Tune-ups, parts replacement, builds</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h4>Power Tools</h4><span>Motor, switch, blade repair</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-camera"></i></div><h4>Camera Repair</h4><span>Lens, sensor, body service</span></div>
+        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-gear"></i></div><h4>Small Engine</h4><span>Mowers, blowers, trimmers, saws</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ GUIDED WORKFLOW DEMO ══════════════ -->
+  <section class="rp-workflow" id="workflow">
+    <div class="container">
+      <div class="rp-section-hdr">
+        <span class="rp-pill rp-pill--dark"><i class="fa-solid fa-route"></i> Interactive Walkthrough</span>
+        <h2>See How a Repair Job<br>Moves Through <span class="rp-grad">PPDrepair</span></h2>
+        <p>Click through each step to see exactly how the system handles a repair — from device check-in to final payment.</p>
       </div>
 
-      <div class="rp-demo__panels">
-        <!-- ─── TICKETS PANEL ─── -->
-        <div class="rp-demo__panel active" data-panel="tickets" role="tabpanel" id="panel-tickets" aria-labelledby="tab-tickets">
-          <div class="rp-demo__screen">
-            <div class="rp-demo__screen-bar">
-              <span><i class="fa-solid fa-ticket"></i> Repair Tickets</span>
-              <div class="rp-demo__bar-right">
-                <span class="rp-demo__count">12 tickets</span>
-                <button class="rp-demo__add-btn"><i class="fa-solid fa-plus"></i> New Ticket</button>
-              </div>
+      <!-- Stepper -->
+      <div class="rp-stepper" role="tablist" aria-label="Repair workflow steps">
+        <button class="rp-step active" data-step="1" role="tab" aria-selected="true" aria-controls="wf-1" id="wf-tab-1" tabindex="0">
+          <span class="rp-step__num">1</span>
+          <span class="rp-step__label">Check In Device</span>
+        </button>
+        <div class="rp-step__connector"><div class="rp-step__connector-fill" data-fill="1"></div></div>
+        <button class="rp-step" data-step="2" role="tab" aria-selected="false" aria-controls="wf-2" id="wf-tab-2" tabindex="-1">
+          <span class="rp-step__num">2</span>
+          <span class="rp-step__label">Assign Tech</span>
+        </button>
+        <div class="rp-step__connector"><div class="rp-step__connector-fill" data-fill="2"></div></div>
+        <button class="rp-step" data-step="3" role="tab" aria-selected="false" aria-controls="wf-3" id="wf-tab-3" tabindex="-1">
+          <span class="rp-step__num">3</span>
+          <span class="rp-step__label">Add Parts</span>
+        </button>
+        <div class="rp-step__connector"><div class="rp-step__connector-fill" data-fill="3"></div></div>
+        <button class="rp-step" data-step="4" role="tab" aria-selected="false" aria-controls="wf-4" id="wf-tab-4" tabindex="-1">
+          <span class="rp-step__num">4</span>
+          <span class="rp-step__label">Take Deposit</span>
+        </button>
+        <div class="rp-step__connector"><div class="rp-step__connector-fill" data-fill="4"></div></div>
+        <button class="rp-step" data-step="5" role="tab" aria-selected="false" aria-controls="wf-5" id="wf-tab-5" tabindex="-1">
+          <span class="rp-step__num">5</span>
+          <span class="rp-step__label">Notify Customer</span>
+        </button>
+        <div class="rp-step__connector"><div class="rp-step__connector-fill" data-fill="5"></div></div>
+        <button class="rp-step" data-step="6" role="tab" aria-selected="false" aria-controls="wf-6" id="wf-tab-6" tabindex="-1">
+          <span class="rp-step__num">6</span>
+          <span class="rp-step__label">Final Payment</span>
+        </button>
+      </div>
+
+      <!-- Workflow Panels -->
+      <div class="rp-wf-panels">
+        <!-- STEP 1: Check In Device -->
+        <div class="rp-wf-panel active" data-wf="1" role="tabpanel" id="wf-1" aria-labelledby="wf-tab-1">
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-clipboard-list"></i> PPDrepair — New Repair Ticket</span>
+              <span class="rp-wf-screen__badge blue">Step 1 of 6</span>
             </div>
-            <div class="rp-demo__screen-body">
-              <div class="rp-demo__filter-row">
-                <div class="rp-demo__search-box"><i class="fa-solid fa-search"></i><span>Search tickets, customers, devices...</span></div>
-                <div class="rp-demo__status-pills">
-                  <span class="rp-status-pill active">All</span>
-                  <span class="rp-status-pill">New <span class="rp-status-count">3</span></span>
-                  <span class="rp-status-pill">In Progress <span class="rp-status-count">5</span></span>
-                  <span class="rp-status-pill">Ready <span class="rp-status-count">2</span></span>
-                  <span class="rp-status-pill">Picked Up</span>
-                </div>
-              </div>
-
-              <div class="rp-demo__ticket-list">
-                <div class="rp-demo-ticket">
-                  <div class="rp-demo-ticket__left">
-                    <span class="rp-badge rp-badge--amber">In Progress</span>
-                    <h4>iPhone 15 Pro Max — Screen + Battery</h4>
-                    <div class="rp-demo-ticket__meta">
-                      <span><i class="fa-solid fa-user"></i> John Mitchell</span>
-                      <span><i class="fa-solid fa-user-gear"></i> Tech: Mike R.</span>
-                      <span><i class="fa-solid fa-phone"></i> (555) 234-5678</span>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Device Check-In</h4>
+                  <div class="rp-wf-form-grid">
+                    <div class="rp-wf-field">
+                      <label>Customer Name</label>
+                      <div class="rp-wf-input filled">John Mitchell</div>
                     </div>
-                    <div class="rp-demo-ticket__details">
-                      <span><i class="fa-solid fa-hashtag"></i> TK-1042</span>
-                      <span><i class="fa-solid fa-mobile-screen"></i> Phone</span>
-                      <span><i class="fa-solid fa-calendar"></i> Due: Today</span>
-                      <span><i class="fa-solid fa-dollar-sign"></i> $268.00</span>
+                    <div class="rp-wf-field">
+                      <label>Phone Number</label>
+                      <div class="rp-wf-input filled">(555) 234-5678</div>
+                    </div>
+                    <div class="rp-wf-field">
+                      <label>Device Model</label>
+                      <div class="rp-wf-input filled">iPhone 15 Pro Max</div>
+                    </div>
+                    <div class="rp-wf-field">
+                      <label>Issue Type</label>
+                      <div class="rp-wf-input filled">Cracked Screen + Battery Drain</div>
+                    </div>
+                    <div class="rp-wf-field full">
+                      <label>Intake Notes</label>
+                      <div class="rp-wf-textarea filled">Customer dropped device. Screen shattered across bottom half. Battery draining within 2 hours. Wants screen replacement + battery swap. No water damage. Face ID functional.</div>
+                    </div>
+                    <div class="rp-wf-field">
+                      <label>Initial Estimate</label>
+                      <div class="rp-wf-input filled"><strong>$268.00</strong></div>
+                    </div>
+                    <div class="rp-wf-field">
+                      <label>Estimated Completion</label>
+                      <div class="rp-wf-input filled">Today, 4:00 PM</div>
                     </div>
                   </div>
-                  <div class="rp-demo-ticket__right">
-                    <div class="rp-demo-ticket__progress-wrap">
-                      <div class="rp-progress-bar"><div class="rp-progress-fill" style="width:65%"></div></div>
-                      <span>65%</span>
+                  <div class="rp-wf-intake-checks">
+                    <span class="rp-wf-check checked"><i class="fa-solid fa-square-check"></i> Pre-repair photos taken</span>
+                    <span class="rp-wf-check checked"><i class="fa-solid fa-square-check"></i> Customer signature captured</span>
+                    <span class="rp-wf-check checked"><i class="fa-solid fa-square-check"></i> Device condition documented</span>
+                  </div>
+                  <button class="rp-wf-cta-btn"><i class="fa-solid fa-ticket"></i> Create Repair Ticket — TK-1042</button>
+                </div>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview">
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--blue">New</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
                     </div>
-                    <div class="rp-demo-ticket__checklist">
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Intake</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Diagnostics</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Parts Sourced</span>
-                      <span class="rp-check active"><i class="fa-solid fa-wrench"></i> Repairing</span>
-                      <span class="rp-check"><i class="fa-solid fa-clipboard-check"></i> QA Test</span>
-                      <span class="rp-check"><i class="fa-solid fa-signature"></i> Signature</span>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <p>Cracked Screen + Battery Drain</p>
+                    <div class="rp-wf-ticket-meta">
+                      <span><i class="fa-solid fa-user"></i> John Mitchell</span>
+                      <span><i class="fa-solid fa-dollar-sign"></i> Est: $268.00</span>
+                      <span><i class="fa-solid fa-clock"></i> Today 4 PM</span>
                     </div>
-                    <div class="rp-demo-ticket__parts">
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill" style="width:8%"></div></div>
+                      <span>Intake Complete</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Assign Technician -->
+        <div class="rp-wf-panel" data-wf="2" role="tabpanel" id="wf-2" aria-labelledby="wf-tab-2" hidden>
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-user-gear"></i> PPDrepair — Assign Technician</span>
+              <span class="rp-wf-screen__badge amber">Step 2 of 6</span>
+            </div>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Assign to Technician</h4>
+                  <div class="rp-wf-tech-list">
+                    <div class="rp-wf-tech selected">
+                      <div class="rp-wf-tech__avatar" style="background:#2D60FF">MR</div>
+                      <div class="rp-wf-tech__info">
+                        <strong>Mike Rodriguez</strong>
+                        <span>Lead Tech · 3 active jobs</span>
+                      </div>
+                      <span class="rp-wf-tech__check"><i class="fa-solid fa-circle-check"></i></span>
+                    </div>
+                    <div class="rp-wf-tech">
+                      <div class="rp-wf-tech__avatar" style="background:#00CFFF">LT</div>
+                      <div class="rp-wf-tech__info">
+                        <strong>Lisa Thompson</strong>
+                        <span>Technician · 5 active jobs</span>
+                      </div>
+                    </div>
+                    <div class="rp-wf-tech">
+                      <div class="rp-wf-tech__avatar" style="background:#00E5A0">JC</div>
+                      <div class="rp-wf-tech__info">
+                        <strong>James Chen</strong>
+                        <span>Junior Tech · 2 active jobs</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rp-wf-assign-fields">
+                    <div class="rp-wf-field">
+                      <label>Priority</label>
+                      <div class="rp-wf-priority-pills">
+                        <span>Low</span>
+                        <span class="active">Normal</span>
+                        <span>High</span>
+                        <span>Urgent</span>
+                      </div>
+                    </div>
+                    <div class="rp-wf-field">
+                      <label>Estimated Time</label>
+                      <div class="rp-wf-input filled">1.5 hours</div>
+                    </div>
+                  </div>
+                  <button class="rp-wf-cta-btn"><i class="fa-solid fa-user-check"></i> Assign to Mike R. &amp; Start Job</button>
+                </div>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview">
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--amber">In Progress</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
+                    </div>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <p>Cracked Screen + Battery Drain</p>
+                    <div class="rp-wf-ticket-meta">
+                      <span><i class="fa-solid fa-user-gear"></i> Mike Rodriguez</span>
+                      <span><i class="fa-solid fa-flag"></i> Normal Priority</span>
+                      <span><i class="fa-solid fa-clock"></i> ~1.5 hrs</span>
+                    </div>
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill" style="width:25%"></div></div>
+                      <span>Technician Assigned</span>
+                    </div>
+                    <div class="rp-wf-status-change">
+                      <span class="from">New</span>
+                      <i class="fa-solid fa-arrow-right"></i>
+                      <span class="to">In Progress</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Add Parts -->
+        <div class="rp-wf-panel" data-wf="3" role="tabpanel" id="wf-3" aria-labelledby="wf-tab-3" hidden>
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-boxes-stacked"></i> PPDrepair — Parts &amp; Inventory</span>
+              <span class="rp-wf-screen__badge purple">Step 3 of 6</span>
+            </div>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Parts Used on TK-1042</h4>
+                  <div class="rp-wf-parts-table">
+                    <div class="rp-wf-part-row header"><span>Part</span><span>SKU</span><span>Cost</span><span>Price</span><span>Stock</span></div>
+                    <div class="rp-wf-part-row">
+                      <span><strong>iPhone 15 Pro OLED Screen</strong></span>
+                      <span class="sku">SCR-IP15P</span>
+                      <span>$85.00</span>
+                      <span>$189.00</span>
+                      <span class="rp-wf-stock low">2 → <strong>1</strong></span>
+                    </div>
+                    <div class="rp-wf-part-row">
+                      <span><strong>iPhone 15 Pro Battery</strong></span>
+                      <span class="sku">BAT-IP15P</span>
+                      <span>$22.00</span>
+                      <span>$79.00</span>
+                      <span class="rp-wf-stock ok">8 → <strong>7</strong></span>
+                    </div>
+                  </div>
+                  <div class="rp-wf-margin-box">
+                    <div class="rp-wf-margin-line"><span>Parts Cost</span><span>$107.00</span></div>
+                    <div class="rp-wf-margin-line"><span>Parts Revenue</span><span>$268.00</span></div>
+                    <div class="rp-wf-margin-line profit"><span>Gross Margin</span><span>$161.00 (60%)</span></div>
+                  </div>
+                  <div class="rp-wf-low-stock-alert">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                      <strong>Low Stock Warning</strong>
+                      <span>iPhone 15 Pro OLED Screen now at 1 unit — below minimum of 3. Reorder recommended.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview">
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--amber">In Progress</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
+                    </div>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <div class="rp-wf-parts-added">
                       <span class="rp-part-tag"><i class="fa-solid fa-microchip"></i> OLED Screen ×1</span>
                       <span class="rp-part-tag"><i class="fa-solid fa-battery-full"></i> Battery ×1</span>
                     </div>
-                  </div>
-                </div>
-
-                <div class="rp-demo-ticket">
-                  <div class="rp-demo-ticket__left">
-                    <span class="rp-badge rp-badge--green">Ready for Pickup</span>
-                    <h4>Samsung Galaxy S24 Ultra — Charging Port</h4>
-                    <div class="rp-demo-ticket__meta">
-                      <span><i class="fa-solid fa-user"></i> Sarah Kim</span>
-                      <span><i class="fa-solid fa-user-gear"></i> Tech: Lisa T.</span>
-                      <span><i class="fa-solid fa-phone"></i> (555) 876-5432</span>
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill" style="width:50%"></div></div>
+                      <span>Parts Allocated</span>
                     </div>
-                    <div class="rp-demo-ticket__details">
-                      <span><i class="fa-solid fa-hashtag"></i> TK-1043</span>
-                      <span><i class="fa-solid fa-mobile-screen"></i> Phone</span>
-                      <span><i class="fa-solid fa-dollar-sign"></i> $89.00</span>
-                      <span class="rp-deposit-tag"><i class="fa-solid fa-lock"></i> $50 deposit</span>
-                    </div>
-                  </div>
-                  <div class="rp-demo-ticket__right">
-                    <div class="rp-demo-ticket__progress-wrap">
-                      <div class="rp-progress-bar"><div class="rp-progress-fill full" style="width:100%"></div></div>
-                      <span>100%</span>
-                    </div>
-                    <div class="rp-demo-ticket__checklist">
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Intake</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Diagnostics</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Repaired</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> QA Passed</span>
-                      <span class="rp-check done"><i class="fa-solid fa-check"></i> Customer Notified</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="rp-demo-ticket">
-                  <div class="rp-demo-ticket__left">
-                    <span class="rp-badge rp-badge--blue">New</span>
-                    <h4>MacBook Pro 14" — Liquid Damage Assessment</h4>
-                    <div class="rp-demo-ticket__meta">
-                      <span><i class="fa-solid fa-user"></i> Alex Park</span>
-                      <span><i class="fa-solid fa-user-gear"></i> Unassigned</span>
-                    </div>
-                    <div class="rp-demo-ticket__details">
-                      <span><i class="fa-solid fa-hashtag"></i> TK-1044</span>
-                      <span><i class="fa-solid fa-laptop"></i> Laptop</span>
-                      <span><i class="fa-solid fa-calendar"></i> Est: Pending</span>
-                      <span class="rp-estimate-tag"><i class="fa-solid fa-file-invoice-dollar"></i> Estimate TBD</span>
-                    </div>
-                  </div>
-                  <div class="rp-demo-ticket__right">
-                    <div class="rp-demo-ticket__progress-wrap">
-                      <div class="rp-progress-bar"><div class="rp-progress-fill" style="width:10%"></div></div>
-                      <span>10%</span>
-                    </div>
-                    <div class="rp-demo-ticket__checklist">
-                      <span class="rp-check active"><i class="fa-solid fa-clipboard-list"></i> Intake</span>
-                      <span class="rp-check"><i class="fa-solid fa-magnifying-glass"></i> Diagnostics</span>
-                      <span class="rp-check"><i class="fa-solid fa-wrench"></i> Repair</span>
-                      <span class="rp-check"><i class="fa-solid fa-clipboard-check"></i> QA</span>
+                    <div class="rp-wf-ticket-meta">
+                      <span><i class="fa-solid fa-dollar-sign"></i> Total: $268.00</span>
+                      <span><i class="fa-solid fa-chart-line"></i> Margin: 60%</span>
                     </div>
                   </div>
                 </div>
@@ -263,355 +389,194 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </div>
 
-        <!-- ─── POS PANEL ─── -->
-        <div class="rp-demo__panel" data-panel="pos" role="tabpanel" id="panel-pos" aria-labelledby="tab-pos">
-          <div class="rp-demo__screen">
-            <div class="rp-demo__screen-bar">
-              <span><i class="fa-solid fa-cash-register"></i> Point of Sale</span>
-              <div class="rp-demo__bar-right">
-                <span class="rp-demo__station"><i class="fa-solid fa-desktop"></i> Station 1 — Main Counter</span>
-              </div>
+        <!-- STEP 4: Take Deposit -->
+        <div class="rp-wf-panel" data-wf="4" role="tabpanel" id="wf-4" aria-labelledby="wf-tab-4" hidden>
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-credit-card"></i> PPDrepair — Take Deposit</span>
+              <span class="rp-wf-screen__badge green">Step 4 of 6</span>
             </div>
-            <div class="rp-demo__screen-body">
-              <div class="rp-pos-layout">
-                <div class="rp-pos-left">
-                  <div class="rp-pos-customer">
-                    <div class="rp-pos-customer__avatar">JM</div>
-                    <div>
-                      <strong>John Mitchell</strong>
-                      <span>john@email.com · (555) 234-5678</span>
-                    </div>
-                    <button class="rp-pos-customer__change"><i class="fa-solid fa-pen"></i></button>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Collect Deposit Payment</h4>
+                  <div class="rp-wf-invoice">
+                    <div class="rp-wf-invoice-line"><span>Screen Replacement (iPhone 15 Pro)</span><span>$189.00</span></div>
+                    <div class="rp-wf-invoice-line"><span>Battery Replacement</span><span>$79.00</span></div>
+                    <div class="rp-wf-invoice-line sub"><span>Subtotal</span><span>$268.00</span></div>
+                    <div class="rp-wf-invoice-line sub"><span>Tax (8.25%)</span><span>$22.11</span></div>
+                    <div class="rp-wf-invoice-line total"><span>Total</span><span>$290.11</span></div>
                   </div>
-                  <div class="rp-pos-cart">
-                    <div class="rp-pos-cart__header">
-                      <span>Cart Items</span>
-                      <span>3 items</span>
+                  <div class="rp-wf-deposit-section">
+                    <div class="rp-wf-deposit-amount">
+                      <label>Deposit Amount</label>
+                      <div class="rp-wf-input filled"><strong>$100.00</strong></div>
                     </div>
-                    <div class="rp-pos-item">
-                      <div class="rp-pos-item__info">
-                        <span class="rp-pos-item__cat">Repair Service</span>
-                        <strong>Screen Replacement — iPhone 15 Pro</strong>
-                        <span class="rp-pos-item__sku">TK-1042</span>
-                      </div>
-                      <div class="rp-pos-item__controls">
-                        <span class="rp-pos-qty">×1</span>
-                        <span class="rp-pos-item__price">$189.00</span>
-                      </div>
+                    <div class="rp-wf-pay-methods">
+                      <button class="rp-wf-pay active"><i class="fa-solid fa-credit-card"></i> Card</button>
+                      <button class="rp-wf-pay"><i class="fa-solid fa-money-bill"></i> Cash</button>
                     </div>
-                    <div class="rp-pos-item">
-                      <div class="rp-pos-item__info">
-                        <span class="rp-pos-item__cat">Accessory</span>
-                        <strong>Tempered Glass Protector</strong>
-                        <span class="rp-pos-item__sku">ACC-TG-IP15</span>
-                      </div>
-                      <div class="rp-pos-item__controls">
-                        <span class="rp-pos-qty">×1</span>
-                        <span class="rp-pos-item__price">$24.99</span>
-                      </div>
+                    <div class="rp-wf-terminal-status"><i class="fa-solid fa-wifi"></i> Terminal: Dejavoo Z11 — Connected</div>
+                  </div>
+                  <button class="rp-wf-cta-btn"><i class="fa-solid fa-lock"></i> Process $100.00 Deposit</button>
+                </div>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview">
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--amber">In Progress</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
                     </div>
-                    <div class="rp-pos-item">
-                      <div class="rp-pos-item__info">
-                        <span class="rp-pos-item__cat">Accessory</span>
-                        <strong>Premium Silicone Case</strong>
-                        <span class="rp-pos-item__sku">ACC-CS-IP15P</span>
-                      </div>
-                      <div class="rp-pos-item__controls">
-                        <span class="rp-pos-qty">×1</span>
-                        <span class="rp-pos-item__price">$34.99</span>
-                      </div>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <div class="rp-wf-payment-summary">
+                      <div class="rp-wf-pay-line"><span>Total</span><span>$290.11</span></div>
+                      <div class="rp-wf-pay-line deposit"><span>Deposit Paid</span><span>-$100.00</span></div>
+                      <div class="rp-wf-pay-line remaining"><span>Remaining</span><span>$190.11</span></div>
+                    </div>
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill" style="width:65%"></div></div>
+                      <span>Deposit Collected</span>
+                    </div>
+                    <div class="rp-wf-receipt-mini">
+                      <i class="fa-solid fa-receipt"></i> Receipt emailed to john.mitchell@email.com
                     </div>
                   </div>
                 </div>
-                <div class="rp-pos-right">
-                  <div class="rp-pos-summary">
-                    <div class="rp-pos-line"><span>Subtotal</span><span>$248.98</span></div>
-                    <div class="rp-pos-line"><span>Discount (10%)</span><span class="rp-pos-discount">-$24.90</span></div>
-                    <div class="rp-pos-line"><span>Tax (8.25%)</span><span>$18.49</span></div>
-                    <div class="rp-pos-line rp-pos-total"><span>Total</span><span>$242.57</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: Notify Customer -->
+        <div class="rp-wf-panel" data-wf="5" role="tabpanel" id="wf-5" aria-labelledby="wf-tab-5" hidden>
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-bell"></i> PPDrepair — Customer Notifications</span>
+              <span class="rp-wf-screen__badge cyan">Step 5 of 6</span>
+            </div>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Repair Complete — Notify Customer</h4>
+                  <div class="rp-wf-notif-timeline">
+                    <div class="rp-wf-notif sent">
+                      <div class="rp-wf-notif__icon"><i class="fa-solid fa-check"></i></div>
+                      <div class="rp-wf-notif__content">
+                        <strong>Intake Confirmation Sent</strong>
+                        <span>10:23 AM — SMS + Email</span>
+                        <p>"Hi John, we received your iPhone 15 Pro Max for repair. Ticket #TK-1042. Est: $268.00. We'll update you soon."</p>
+                      </div>
+                    </div>
+                    <div class="rp-wf-notif sent">
+                      <div class="rp-wf-notif__icon"><i class="fa-solid fa-check"></i></div>
+                      <div class="rp-wf-notif__content">
+                        <strong>Repair In Progress</strong>
+                        <span>10:45 AM — SMS</span>
+                        <p>"Your device repair has started. Technician: Mike R. Estimated completion: Today 4 PM."</p>
+                      </div>
+                    </div>
+                    <div class="rp-wf-notif sent">
+                      <div class="rp-wf-notif__icon"><i class="fa-solid fa-check"></i></div>
+                      <div class="rp-wf-notif__content">
+                        <strong>Deposit Received</strong>
+                        <span>10:48 AM — Email</span>
+                        <p>"Deposit of $100.00 received for TK-1042. Remaining balance: $190.11."</p>
+                      </div>
+                    </div>
+                    <div class="rp-wf-notif current">
+                      <div class="rp-wf-notif__icon pulse"><i class="fa-solid fa-bell"></i></div>
+                      <div class="rp-wf-notif__content">
+                        <strong>Ready for Pickup</strong>
+                        <span>3:42 PM — Sending SMS + Email</span>
+                        <p>"Great news, John! Your iPhone 15 Pro Max is ready. Remaining balance: $190.11. Visit us at Main St to pick up."</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="rp-pos-pay-methods">
-                    <button class="rp-pay-btn active"><i class="fa-solid fa-credit-card"></i> Card</button>
-                    <button class="rp-pay-btn"><i class="fa-solid fa-money-bill"></i> Cash</button>
-                    <button class="rp-pay-btn"><i class="fa-brands fa-apple-pay"></i></button>
+                  <button class="rp-wf-cta-btn"><i class="fa-solid fa-paper-plane"></i> Send Pickup Notification</button>
+                </div>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview">
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--green">Ready for Pickup</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
+                    </div>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill rp-fill-green" style="width:85%"></div></div>
+                      <span>Ready for Pickup</span>
+                    </div>
+                    <div class="rp-wf-notif-badges">
+                      <span class="rp-notif-sent"><i class="fa-solid fa-comment-sms"></i> SMS Sent</span>
+                      <span class="rp-notif-sent"><i class="fa-solid fa-envelope"></i> Email Sent</span>
+                    </div>
+                    <div class="rp-wf-status-change">
+                      <span class="from">In Progress</span>
+                      <i class="fa-solid fa-arrow-right"></i>
+                      <span class="to green">Ready for Pickup</span>
+                    </div>
                   </div>
-                  <div class="rp-pos-terminal">
-                    <i class="fa-solid fa-wifi"></i>
-                    <span>Terminal: Dejavoo Z11 — Connected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 6: Final Payment -->
+        <div class="rp-wf-panel" data-wf="6" role="tabpanel" id="wf-6" aria-labelledby="wf-tab-6" hidden>
+          <div class="rp-wf-screen">
+            <div class="rp-wf-screen__bar">
+              <span><i class="fa-solid fa-cash-register"></i> PPDrepair — Checkout</span>
+              <span class="rp-wf-screen__badge green">Step 6 of 6</span>
+            </div>
+            <div class="rp-wf-screen__body">
+              <div class="rp-wf-split">
+                <div class="rp-wf-form-area">
+                  <h4 class="rp-wf-form-title">Final Checkout — TK-1042</h4>
+                  <div class="rp-wf-checkout-items">
+                    <div class="rp-wf-checkout-item"><span class="rp-wf-checkout-cat">Repair</span><strong>Screen Replacement — iPhone 15 Pro</strong><span class="rp-wf-checkout-price">$189.00</span></div>
+                    <div class="rp-wf-checkout-item"><span class="rp-wf-checkout-cat">Repair</span><strong>Battery Replacement</strong><span class="rp-wf-checkout-price">$79.00</span></div>
+                    <div class="rp-wf-checkout-item upsell"><span class="rp-wf-checkout-cat">Accessory</span><strong>Tempered Glass Protector</strong><span class="rp-wf-checkout-price">$24.99</span><span class="rp-wf-upsell-tag"><i class="fa-solid fa-sparkles"></i> Suggested</span></div>
                   </div>
-                  <button class="rp-pos-charge"><i class="fa-solid fa-lock"></i> Charge $242.57</button>
-                  <div class="rp-pos-extras">
+                  <div class="rp-wf-checkout-summary">
+                    <div class="rp-wf-checkout-line"><span>Subtotal</span><span>$292.99</span></div>
+                    <div class="rp-wf-checkout-line"><span>Tax (8.25%)</span><span>$24.17</span></div>
+                    <div class="rp-wf-checkout-line"><span>Total</span><span>$317.16</span></div>
+                    <div class="rp-wf-checkout-line deposit"><span>Deposit Applied</span><span>-$100.00</span></div>
+                    <div class="rp-wf-checkout-line due"><span>Amount Due</span><span>$217.16</span></div>
+                  </div>
+                  <div class="rp-wf-pay-methods">
+                    <button class="rp-wf-pay active"><i class="fa-solid fa-credit-card"></i> Card</button>
+                    <button class="rp-wf-pay"><i class="fa-solid fa-money-bill"></i> Cash</button>
+                    <button class="rp-wf-pay"><i class="fa-brands fa-apple-pay"></i></button>
+                  </div>
+                  <button class="rp-wf-cta-btn rp-wf-cta-btn--success"><i class="fa-solid fa-circle-check"></i> Charge $217.16 — Complete Repair</button>
+                  <div class="rp-wf-receipt-actions">
                     <button><i class="fa-solid fa-print"></i> Print Receipt</button>
                     <button><i class="fa-solid fa-envelope"></i> Email Receipt</button>
+                    <button><i class="fa-solid fa-comment-sms"></i> SMS Receipt</button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── INVENTORY PANEL ─── -->
-        <div class="rp-demo__panel" data-panel="inventory" role="tabpanel" id="panel-inventory" aria-labelledby="tab-inventory">
-          <div class="rp-demo__screen">
-            <div class="rp-demo__screen-bar">
-              <span><i class="fa-solid fa-boxes-stacked"></i> Inventory Management</span>
-              <div class="rp-demo__bar-right">
-                <button class="rp-demo__add-btn"><i class="fa-solid fa-plus"></i> Add Product</button>
-                <button class="rp-demo__add-btn rp-demo__add-btn--outline"><i class="fa-solid fa-truck"></i> Receive Unit</button>
-              </div>
-            </div>
-            <div class="rp-demo__screen-body">
-              <div class="rp-inv-alerts">
-                <div class="rp-inv-alert rp-inv-alert--critical">
-                  <i class="fa-solid fa-circle-exclamation"></i>
-                  <div>
-                    <strong>2 items out of stock</strong>
-                    <span>iPad Pro 12.9" Digitizer, iPhone 14 Back Glass</span>
-                  </div>
-                  <button class="rp-inv-alert__btn rp-inv-alert__btn--red">Reorder Now</button>
-                </div>
-                <div class="rp-inv-alert">
-                  <i class="fa-solid fa-triangle-exclamation"></i>
-                  <div>
-                    <strong>3 items below minimum stock</strong>
-                    <span>Auto-reorder suggestions ready to review</span>
-                  </div>
-                  <button class="rp-inv-alert__btn">Review</button>
-                </div>
-              </div>
-
-              <div class="rp-inv-tabs">
-                <span class="rp-inv-tab active">Products (48)</span>
-                <span class="rp-inv-tab">Serialized Units (23)</span>
-                <span class="rp-inv-tab">Categories</span>
-                <span class="rp-inv-tab">Vendors</span>
-                <span class="rp-inv-tab">Transfers</span>
-              </div>
-
-              <table class="rp-inv-table">
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>SKU</th>
-                    <th>Category</th>
-                    <th>Stock</th>
-                    <th>Cost</th>
-                    <th>Cash Price</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>iPhone 15 Pro OLED Screen</strong></td>
-                    <td>SCR-IP15P</td>
-                    <td>Screens</td>
-                    <td class="rp-stock-critical">2</td>
-                    <td>$85.00</td>
-                    <td>$189.00</td>
-                    <td><span class="rp-badge rp-badge--red">Low Stock</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Samsung S24 Battery</strong></td>
-                    <td>BAT-SS24</td>
-                    <td>Batteries</td>
-                    <td>8</td>
-                    <td>$22.00</td>
-                    <td>$79.00</td>
-                    <td><span class="rp-badge rp-badge--green">In Stock</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>USB-C Charging Port (Universal)</strong><span class="rp-serialized-tag"><i class="fa-solid fa-fingerprint"></i> Serialized</span></td>
-                    <td>PRT-USBC</td>
-                    <td>Ports</td>
-                    <td>15</td>
-                    <td>$3.50</td>
-                    <td>$49.00</td>
-                    <td><span class="rp-badge rp-badge--green">In Stock</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Tempered Glass — Universal</strong></td>
-                    <td>ACC-TG-U</td>
-                    <td>Accessories</td>
-                    <td>42</td>
-                    <td>$1.20</td>
-                    <td>$24.99</td>
-                    <td><span class="rp-badge rp-badge--green">In Stock</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>iPad Pro 12.9" Digitizer</strong></td>
-                    <td>DIG-IPP12</td>
-                    <td>Screens</td>
-                    <td class="rp-stock-zero">0</td>
-                    <td>$95.00</td>
-                    <td>$249.00</td>
-                    <td><span class="rp-badge rp-badge--red">Out of Stock</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── CUSTOMERS PANEL ─── -->
-        <div class="rp-demo__panel" data-panel="customers" role="tabpanel" id="panel-customers" aria-labelledby="tab-customers">
-          <div class="rp-demo__screen">
-            <div class="rp-demo__screen-bar">
-              <span><i class="fa-solid fa-users"></i> Customer Management</span>
-              <div class="rp-demo__bar-right">
-                <span class="rp-demo__count">247 customers</span>
-                <button class="rp-demo__add-btn"><i class="fa-solid fa-user-plus"></i> Add Customer</button>
-              </div>
-            </div>
-            <div class="rp-demo__screen-body">
-              <div class="rp-cust-profile">
-                <div class="rp-cust-header">
-                  <div class="rp-cust-avatar">JM</div>
-                  <div class="rp-cust-info">
-                    <h4>John Mitchell</h4>
-                    <div class="rp-cust-contact">
-                      <span><i class="fa-solid fa-envelope"></i> john.mitchell@email.com</span>
-                      <span><i class="fa-solid fa-phone"></i> (555) 234-5678</span>
-                      <span><i class="fa-solid fa-location-dot"></i> Austin, TX 78701</span>
+                <div class="rp-wf-preview-area">
+                  <div class="rp-wf-ticket-preview rp-wf-ticket-preview--done">
+                    <div class="rp-wf-complete-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="rp-wf-ticket-preview__hdr">
+                      <span class="rp-badge rp-badge--green">Completed</span>
+                      <span class="rp-wf-ticket-id">TK-1042</span>
                     </div>
-                  </div>
-                  <div class="rp-cust-badges">
-                    <span class="rp-cust-badge"><i class="fa-solid fa-star"></i> VIP Customer</span>
-                    <span class="rp-cust-badge"><i class="fa-solid fa-bell"></i> Email Receipts: On</span>
-                    <span class="rp-cust-badge"><i class="fa-solid fa-bell"></i> Ticket Updates: On</span>
-                  </div>
-                </div>
-
-                <div class="rp-cust-stats">
-                  <div class="rp-cust-stat">
-                    <span class="rp-cust-stat__val">12</span>
-                    <span class="rp-cust-stat__label">Total Repairs</span>
-                  </div>
-                  <div class="rp-cust-stat">
-                    <span class="rp-cust-stat__val">$2,847</span>
-                    <span class="rp-cust-stat__label">Lifetime Spend</span>
-                  </div>
-                  <div class="rp-cust-stat">
-                    <span class="rp-cust-stat__val">3</span>
-                    <span class="rp-cust-stat__label">Devices</span>
-                  </div>
-                  <div class="rp-cust-stat">
-                    <span class="rp-cust-stat__val">Jan 2024</span>
-                    <span class="rp-cust-stat__label">Customer Since</span>
-                  </div>
-                </div>
-
-                <div class="rp-cust-history">
-                  <h5>Recent Repair History</h5>
-                  <div class="rp-cust-history__item">
-                    <span class="rp-badge rp-badge--amber">In Progress</span>
-                    <div><strong>TK-1042 · iPhone 15 Pro — Screen + Battery</strong><span>Opened today · Assigned to Mike R.</span></div>
-                    <span class="rp-cust-history__amount">$268.00</span>
-                  </div>
-                  <div class="rp-cust-history__item">
-                    <span class="rp-badge rp-badge--slate">Picked Up</span>
-                    <div><strong>TK-1038 · iPhone 15 Pro — Back Glass</strong><span>Completed Mar 15 · Tech: Mike R.</span></div>
-                    <span class="rp-cust-history__amount">$149.00</span>
-                  </div>
-                  <div class="rp-cust-history__item">
-                    <span class="rp-badge rp-badge--slate">Picked Up</span>
-                    <div><strong>TK-1021 · iPad Air — Screen Replacement</strong><span>Completed Feb 28 · Tech: Lisa T.</span></div>
-                    <span class="rp-cust-history__amount">$229.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── OPERATIONS PANEL ─── -->
-        <div class="rp-demo__panel" data-panel="operations" role="tabpanel" id="panel-operations" aria-labelledby="tab-operations">
-          <div class="rp-demo__screen">
-            <div class="rp-demo__screen-bar">
-              <span><i class="fa-solid fa-building"></i> Store & Employee Operations</span>
-              <div class="rp-demo__bar-right">
-                <span class="rp-demo__station"><i class="fa-solid fa-store"></i> Quick Fix Wireless — 2 locations</span>
-              </div>
-            </div>
-            <div class="rp-demo__screen-body">
-              <div class="rp-ops-grid">
-                <div class="rp-ops-section">
-                  <h5><i class="fa-solid fa-users-gear"></i> Team — 4 Active Today</h5>
-                  <div class="rp-emp-list">
-                    <div class="rp-emp-row">
-                      <div class="rp-emp-avatar" style="background:#2D60FF">MR</div>
-                      <div class="rp-emp-details">
-                        <strong>Mike Rodriguez</strong>
-                        <span>Lead Technician · Owner</span>
-                      </div>
-                      <div class="rp-emp-kpis">
-                        <span><strong>7</strong> tickets</span>
-                        <span><strong>$1,420</strong> sales</span>
-                      </div>
-                      <span class="rp-badge rp-badge--green">Clocked In</span>
+                    <h5>iPhone 15 Pro Max</h5>
+                    <div class="rp-wf-progress-mini">
+                      <div class="rp-wf-progress-bar"><div class="rp-wf-progress-fill rp-fill-green" style="width:100%"></div></div>
+                      <span>Complete</span>
                     </div>
-                    <div class="rp-emp-row">
-                      <div class="rp-emp-avatar" style="background:#00CFFF">LT</div>
-                      <div class="rp-emp-details">
-                        <strong>Lisa Thompson</strong>
-                        <span>Technician</span>
-                      </div>
-                      <div class="rp-emp-kpis">
-                        <span><strong>5</strong> tickets</span>
-                        <span><strong>$890</strong> sales</span>
-                      </div>
-                      <span class="rp-badge rp-badge--green">Clocked In</span>
+                    <div class="rp-wf-final-summary">
+                      <div><span>Total Paid</span><strong>$317.16</strong></div>
+                      <div><span>Payment</span><strong>Card •••• 4242</strong></div>
+                      <div><span>Tech</span><strong>Mike R.</strong></div>
+                      <div><span>Duration</span><strong>1h 22m</strong></div>
                     </div>
-                    <div class="rp-emp-row">
-                      <div class="rp-emp-avatar" style="background:#00E5A0">JC</div>
-                      <div class="rp-emp-details">
-                        <strong>James Chen</strong>
-                        <span>Cashier</span>
-                      </div>
-                      <div class="rp-emp-kpis">
-                        <span><strong>2</strong> tickets</span>
-                        <span><strong>$537</strong> sales</span>
-                      </div>
-                      <span class="rp-badge rp-badge--green">Clocked In</span>
-                    </div>
-                    <div class="rp-emp-row">
-                      <div class="rp-emp-avatar" style="background:#7C3AED">AP</div>
-                      <div class="rp-emp-details">
-                        <strong>Amanda Patel</strong>
-                        <span>Cashier</span>
-                      </div>
-                      <div class="rp-emp-kpis">
-                        <span><strong>0</strong> tickets</span>
-                        <span><strong>$210</strong> sales</span>
-                      </div>
-                      <span class="rp-badge rp-badge--orange">Break</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="rp-ops-section">
-                  <h5><i class="fa-solid fa-chart-pie"></i> Today's Breakdown</h5>
-                  <div class="rp-ops-widgets">
-                    <div class="rp-ops-widget">
-                      <span class="rp-ops-widget__label">Payment Split</span>
-                      <div class="rp-ops-widget__bar">
-                        <div class="rp-ops-bar-fill rp-ops-bar-cash" style="width:35%">35% Cash</div>
-                        <div class="rp-ops-bar-fill rp-ops-bar-card" style="width:65%">65% Card</div>
-                      </div>
-                    </div>
-                    <div class="rp-ops-widget">
-                      <span class="rp-ops-widget__label">Roles & Permissions</span>
-                      <div class="rp-ops-roles">
-                        <span class="rp-role-tag"><i class="fa-solid fa-crown"></i> Owner — Full access</span>
-                        <span class="rp-role-tag"><i class="fa-solid fa-user-shield"></i> Manager — Reports, inventory</span>
-                        <span class="rp-role-tag"><i class="fa-solid fa-wrench"></i> Technician — Tickets only</span>
-                        <span class="rp-role-tag"><i class="fa-solid fa-cash-register"></i> Cashier — POS & sales</span>
-                      </div>
-                    </div>
-                    <div class="rp-ops-widget">
-                      <span class="rp-ops-widget__label">Multi-Store</span>
-                      <div class="rp-ops-stores">
-                        <div class="rp-ops-store"><i class="fa-solid fa-store"></i> Main St Location <span class="rp-badge rp-badge--green">Active</span></div>
-                        <div class="rp-ops-store"><i class="fa-solid fa-store"></i> Westside Mall <span class="rp-badge rp-badge--green">Active</span></div>
-                      </div>
+                    <div class="rp-wf-status-change">
+                      <span class="from">Ready</span>
+                      <i class="fa-solid fa-arrow-right"></i>
+                      <span class="to green">Picked Up</span>
                     </div>
                   </div>
                 </div>
@@ -619,6 +584,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Next/Prev nav -->
+      <div class="rp-wf-nav">
+        <button class="rp-wf-nav-btn" id="wfPrev" disabled><i class="fa-solid fa-arrow-left"></i> Previous Step</button>
+        <span class="rp-wf-nav-counter" id="wfCounter">Step 1 of 6</span>
+        <button class="rp-wf-nav-btn rp-wf-nav-btn--primary" id="wfNext">Next Step <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </section>
@@ -627,65 +599,54 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="rp-features" id="features">
     <div class="container">
       <div class="rp-section-hdr">
-        <span class="rp-pill rp-pill--light"><i class="fa-solid fa-cubes"></i> Core Features</span>
-        <h2>Built for How<br><span class="rp-grad">Repair Shops Actually Work</span></h2>
-        <p>Every feature is designed around the daily workflows of a real repair business — not bolted onto a generic POS.</p>
+        <span class="rp-pill rp-pill--light"><i class="fa-solid fa-cubes"></i> Core Modules</span>
+        <h2>Everything Inside <span class="rp-grad">PPDrepair</span></h2>
+        <p>Purpose-built modules that work together to run your entire repair operation.</p>
       </div>
 
       <div class="rp-feat-grid">
         <div class="rp-feat" data-anim>
           <div class="rp-feat__icon"><i class="fa-solid fa-ticket"></i></div>
-          <h3>Repair Ticket Management</h3>
-          <p class="rp-feat__why">Track every repair from check-in to pickup. Never lose track of a single job.</p>
-          <p>Create tickets with device details, assign technicians, log parts used, run pre/post-repair checklists, capture customer signatures, and send automated status updates — all tracked in real time.</p>
+          <h3>Repair Tickets</h3>
+          <p>Track every repair from intake to pickup with custom workflows, checklists, technician assignment, digital signatures, and automated status updates.</p>
           <ul class="rp-feat__list">
-            <li><i class="fa-solid fa-check"></i> Custom multi-step repair workflows</li>
-            <li><i class="fa-solid fa-check"></i> Digital intake checklists & signatures</li>
-            <li><i class="fa-solid fa-check"></i> Automated SMS & email status updates</li>
-            <li><i class="fa-solid fa-check"></i> Technician assignment & progress tracking</li>
-            <li><i class="fa-solid fa-check"></i> Deposits, estimates, and final invoicing</li>
+            <li><i class="fa-solid fa-check"></i> Multi-step repair workflows</li>
+            <li><i class="fa-solid fa-check"></i> Digital intake &amp; signatures</li>
+            <li><i class="fa-solid fa-check"></i> Automated SMS/email updates</li>
+            <li><i class="fa-solid fa-check"></i> Deposits &amp; estimates</li>
           </ul>
         </div>
-
         <div class="rp-feat" data-anim>
           <div class="rp-feat__icon"><i class="fa-solid fa-cash-register"></i></div>
           <h3>Point of Sale</h3>
-          <p class="rp-feat__why">Generate more revenue and provide a great checkout experience.</p>
-          <p>Sell repair services, accessories, and gadgets from one screen. Add cart items, apply discounts, process card or cash payments, print or email receipts, and manage the entire checkout in seconds.</p>
+          <p>Sell repairs, accessories, and devices from one screen. Process card, cash, or digital wallet payments with integrated terminal support.</p>
           <ul class="rp-feat__list">
-            <li><i class="fa-solid fa-check"></i> Card, cash, and digital wallet payments</li>
-            <li><i class="fa-solid fa-check"></i> Integrated terminal support (Dejavoo, etc.)</li>
-            <li><i class="fa-solid fa-check"></i> Dual pricing / cash discount mode</li>
-            <li><i class="fa-solid fa-check"></i> Inline discounts per item or cart-wide</li>
-            <li><i class="fa-solid fa-check"></i> Instant receipt via print, email, or SMS</li>
+            <li><i class="fa-solid fa-check"></i> Card, cash, digital wallets</li>
+            <li><i class="fa-solid fa-check"></i> Dual pricing / cash discount</li>
+            <li><i class="fa-solid fa-check"></i> Dejavoo terminal integration</li>
+            <li><i class="fa-solid fa-check"></i> Print, email, or SMS receipts</li>
           </ul>
         </div>
-
         <div class="rp-feat" data-anim>
           <div class="rp-feat__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-          <h3>Inventory Management</h3>
-          <p class="rp-feat__why">Know exactly what you have, where it is, and when to reorder.</p>
-          <p>Track standard and serialized parts across multiple locations, manage vendors, create purchase orders, get automatic low-stock alerts, and transfer inventory between stores with full audit trails.</p>
+          <h3>Inventory</h3>
+          <p>Track standard and serialized parts across locations with low-stock alerts, vendor management, and cost/margin visibility on every repair.</p>
           <ul class="rp-feat__list">
-            <li><i class="fa-solid fa-check"></i> Serialized unit tracking (IMEI, serial #)</li>
-            <li><i class="fa-solid fa-check"></i> Multi-location inventory transfers</li>
-            <li><i class="fa-solid fa-check"></i> Low-stock & out-of-stock alerts</li>
-            <li><i class="fa-solid fa-check"></i> Category, vendor, and cost management</li>
-            <li><i class="fa-solid fa-check"></i> Stock adjustment with audit history</li>
+            <li><i class="fa-solid fa-check"></i> Serialized tracking (IMEI, SN)</li>
+            <li><i class="fa-solid fa-check"></i> Multi-location transfers</li>
+            <li><i class="fa-solid fa-check"></i> Auto low-stock alerts</li>
+            <li><i class="fa-solid fa-check"></i> Cost &amp; margin reporting</li>
           </ul>
         </div>
-
         <div class="rp-feat" data-anim>
           <div class="rp-feat__icon"><i class="fa-solid fa-users-gear"></i></div>
-          <h3>Employee & Store Management</h3>
-          <p class="rp-feat__why">See who's doing what, set permissions, and scale to multiple locations.</p>
-          <p>Assign tasks, set role-based permissions (Owner, Manager, Technician, Cashier), track shift times, monitor per-employee sales and ticket performance, and manage multi-store operations from one account.</p>
+          <h3>Team &amp; Stores</h3>
+          <p>Role-based permissions, shift tracking, per-employee performance, and multi-store operations — all managed from one PPDrepair account.</p>
           <ul class="rp-feat__list">
-            <li><i class="fa-solid fa-check"></i> Role-based access (Owner → Cashier)</li>
-            <li><i class="fa-solid fa-check"></i> Time clock with shift tracking</li>
-            <li><i class="fa-solid fa-check"></i> Per-employee sales & ticket reports</li>
-            <li><i class="fa-solid fa-check"></i> Multi-store with store-level settings</li>
-            <li><i class="fa-solid fa-check"></i> Station management per store</li>
+            <li><i class="fa-solid fa-check"></i> Owner → Cashier roles</li>
+            <li><i class="fa-solid fa-check"></i> Time clock &amp; shifts</li>
+            <li><i class="fa-solid fa-check"></i> Per-employee reports</li>
+            <li><i class="fa-solid fa-check"></i> Multi-store management</li>
           </ul>
         </div>
       </div>
@@ -698,59 +659,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="rp-section-hdr">
         <span class="rp-pill rp-pill--dark"><i class="fa-solid fa-arrow-right-arrow-left"></i> Why Switch</span>
         <h2 class="rp-compare__h2">Stop Losing Money to<br><span class="rp-grad">Disconnected Tools</span></h2>
-        <p class="rp-compare__sub">See what changes when your entire shop runs on one system.</p>
+        <p class="rp-compare__sub">See what changes when your entire shop runs on PPDrepair.</p>
       </div>
-
       <div class="rp-compare__grid">
         <div class="rp-compare__col rp-compare__col--old">
           <h4><i class="fa-solid fa-xmark"></i> The Old Way</h4>
           <ul>
             <li><i class="fa-solid fa-xmark"></i> Paper tickets and sticky notes get lost</li>
             <li><i class="fa-solid fa-xmark"></i> Spreadsheets for inventory — always wrong</li>
-            <li><i class="fa-solid fa-xmark"></i> Separate POS system that doesn't connect</li>
+            <li><i class="fa-solid fa-xmark"></i> Separate POS that doesn't connect to tickets</li>
             <li><i class="fa-solid fa-xmark"></i> Calling customers manually for updates</li>
             <li><i class="fa-solid fa-xmark"></i> No way to track employee productivity</li>
             <li><i class="fa-solid fa-xmark"></i> End-of-day scramble to calculate revenue</li>
-            <li><i class="fa-solid fa-xmark"></i> Parts running out with no warning</li>
           </ul>
         </div>
-        <div class="rp-compare__divider">
-          <span>VS</span>
-        </div>
+        <div class="rp-compare__divider"><span>VS</span></div>
         <div class="rp-compare__col rp-compare__col--new">
-          <h4><i class="fa-solid fa-check"></i> With PPD Repair</h4>
+          <h4><i class="fa-solid fa-check"></i> With PPDrepair</h4>
           <ul>
             <li><i class="fa-solid fa-check"></i> Digital tickets with full repair workflows</li>
             <li><i class="fa-solid fa-check"></i> Real-time inventory with auto alerts</li>
             <li><i class="fa-solid fa-check"></i> Built-in POS connected to every ticket</li>
-            <li><i class="fa-solid fa-check"></i> Automated SMS & email notifications</li>
+            <li><i class="fa-solid fa-check"></i> Automated SMS &amp; email notifications</li>
             <li><i class="fa-solid fa-check"></i> Per-employee sales and task tracking</li>
             <li><i class="fa-solid fa-check"></i> Real-time dashboards and reporting</li>
-            <li><i class="fa-solid fa-check"></i> Low-stock alerts + reorder suggestions</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════ INDUSTRIES ══════════════ -->
-  <section class="rp-industries" id="industries">
-    <div class="container">
-      <div class="rp-section-hdr">
-        <span class="rp-pill rp-pill--light"><i class="fa-solid fa-wrench"></i> Industries</span>
-        <h2>One Platform,<br><span class="rp-grad">Every Repair Business</span></h2>
-        <p>Whether you fix phones or power tools — the platform adapts to your workflow.</p>
-      </div>
-
-      <div class="rp-ind-grid">
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h4>Cell Phone Repair</h4><span>Screens, batteries, ports, diagnostics</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-laptop"></i></div><h4>Computer Repair</h4><span>Laptops, desktops, logic boards</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-gem"></i></div><h4>Jewelry Repair</h4><span>Resizing, stone setting, cleaning</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-clock"></i></div><h4>Watch Repair</h4><span>Movement, crystal, band repair</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-bicycle"></i></div><h4>Bicycle Repair</h4><span>Tune-ups, part replacement, builds</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h4>Power Tools</h4><span>Motor, switch, blade repair</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-camera"></i></div><h4>Camera Repair</h4><span>Lens, sensor, body repair</span></div>
-        <div class="rp-ind" data-anim><div class="rp-ind__icon"><i class="fa-solid fa-gear"></i></div><h4>Small Engine</h4><span>Mowers, blowers, trimmers</span></div>
       </div>
     </div>
   </section>
@@ -763,9 +697,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Everything Your Shop Needs.<br><span class="rp-grad">$30/month.</span></h2>
         <p>No tiers, no hidden fees, no annual contracts. One plan that covers your entire operation.</p>
       </div>
-
       <div class="rp-pricing__card" data-anim>
-        <div class="rp-pricing__badge">All-In-One Plan</div>
+        <div class="rp-pricing__badge">PPDrepair All-In-One</div>
         <div class="rp-pricing__price">
           <span class="rp-pricing__dollar">$</span>
           <span class="rp-pricing__amount">30</span>
@@ -783,7 +716,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <li><i class="fa-solid fa-check"></i> Customer database</li>
             <li><i class="fa-solid fa-check"></i> Automated notifications</li>
             <li><i class="fa-solid fa-check"></i> Multi-location support</li>
-            <li><i class="fa-solid fa-check"></i> Reporting & analytics</li>
+            <li><i class="fa-solid fa-check"></i> Reporting &amp; analytics</li>
           </ul>
         </div>
         <button class="btn btn-primary btn-lg rp-cta-open" style="width:100%"><i class="fa-solid fa-rocket"></i> Start Free Trial</button>
@@ -799,10 +732,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <span class="rp-cta__orb rp-cta__orb--2"></span>
     <div class="container rp-cta__inner">
       <span class="rp-pill rp-pill--dark"><i class="fa-solid fa-phone"></i> Let's Talk</span>
-      <h2>See How Your Repair Shop<br>Can Run <span class="rp-grad">Smoother</span></h2>
-      <p>Book a quick walkthrough and we'll show you exactly how the system fits your workflow. No pressure, no commitment — just a conversation.</p>
+      <h2>See How Your Repair Shop<br>Could Run <span class="rp-grad">Smoother</span></h2>
+      <p>Book a quick walkthrough and we'll show you how PPDrepair can fit your workflow, improve turnaround time, and simplify checkout — all for $30/month.</p>
       <div class="rp-cta__actions">
-        <button class="btn btn-white btn-lg rp-cta-open"><i class="fa-solid fa-calendar-check"></i> Book My Demo</button>
+        <button class="btn btn-white btn-lg rp-cta-open"><i class="fa-solid fa-calendar-check"></i> Get a Personalized Demo</button>
         <button class="btn btn-outline-light btn-lg rp-cta-open"><i class="fa-solid fa-phone"></i> Get a Call Back</button>
       </div>
       <div class="rp-cta__badges">
@@ -819,8 +752,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="rp-modal" role="dialog" aria-modal="true" aria-labelledby="rpModalTitle">
       <button class="rp-modal__close" id="rpModalClose" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
       <div class="rp-modal__header">
-        <h3 id="rpModalTitle">Book Your Free Demo</h3>
-        <p>Fill in the details below and a specialist will reach out within 24 hours.</p>
+        <div class="rp-modal__logo">PPD<span>repair</span></div>
+        <h3 id="rpModalTitle">Get a Personalized Demo</h3>
+        <p>See how PPDrepair manages tickets, inventory, technicians, and payments — all in one system for only $30/month.</p>
       </div>
       <form class="rp-modal__form" id="rpLeadForm">
         <div class="rp-form-row">
@@ -862,12 +796,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <label for="rp-message">Message (optional)</label>
           <textarea id="rp-message" name="message" rows="3" placeholder="Tell us about your shop and what you're looking for..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%"><i class="fa-solid fa-paper-plane"></i> Request Demo</button>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%"><i class="fa-solid fa-paper-plane"></i> Request My Demo</button>
+        <p class="rp-modal__footer-note"><i class="fa-solid fa-lock"></i> Your info stays private. A specialist will reach out within 24 hours.</p>
       </form>
       <div class="rp-modal__success" id="rpFormSuccess" style="display:none">
         <div class="rp-success-icon"><i class="fa-solid fa-circle-check"></i></div>
-        <h3>We'll Be in Touch!</h3>
-        <p>A specialist will contact you within 24 hours to schedule your personalized demo.</p>
+        <h3>You're All Set!</h3>
+        <p>A PPDrepair specialist will contact you within 24 hours to schedule your personalized walkthrough.</p>
         <button class="btn btn-primary" id="rpSuccessClose">Close</button>
       </div>
     </div>
@@ -877,9 +812,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
 /* ═══════════════════════════════════════════════════════════════
-   REPAIR PAGE — FULL REWRITE
+   PPDrepair — PREMIUM SaaS PRODUCT PAGE
    ═══════════════════════════════════════════════════════════════ */
 
+/* ── SHARED ── */
 .rp-member-bar{background:linear-gradient(90deg,#0C1A38,#060E21);border-bottom:1px solid rgba(255,255,255,.06);padding:10px 0;position:relative;z-index:5}
 .rp-member-bar__inner{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)}
 .rp-member-bar__link{display:inline-flex;align-items:center;gap:6px;color:#00CFFF;font-weight:700;text-decoration:none;padding:5px 14px;border-radius:9999px;border:1px solid rgba(0,207,255,.25);background:rgba(0,207,255,.06);transition:all .25s;font-size:13px}
@@ -896,208 +832,247 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .btn-outline-light{border:1px solid rgba(255,255,255,.25);color:#fff;background:transparent}.btn-outline-light:hover{background:rgba(255,255,255,.1)}
 .rp-section-hdr{text-align:center;margin-bottom:56px}.rp-section-hdr h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.18;margin:16px 0 14px;color:var(--text-1)}.rp-section-hdr p{font-size:1.05rem;color:var(--text-2);max-width:600px;margin:0 auto;line-height:1.7}
 
-/* ── HERO ── */
+/* Badges */
+.rp-badge{padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.rp-badge--green{background:rgba(0,229,160,.1);color:#059669}.rp-badge--blue{background:rgba(21,73,255,.1);color:#1549FF}
+.rp-badge--amber{background:rgba(217,119,6,.1);color:#B45309}.rp-badge--orange{background:rgba(249,115,22,.1);color:#EA580C}
+.rp-badge--red{background:rgba(239,68,68,.1);color:#DC2626}.rp-badge--slate{background:rgba(100,116,139,.1);color:#475569}
+.rp-part-tag{font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(124,58,237,.06);color:#7C3AED;display:inline-flex;align-items:center;gap:3px;font-weight:500}
+
+/* ═══════════════ HERO ═══════════════ */
 .rp-hero{background:linear-gradient(160deg,#060E21 0%,#0C1A38 55%,#0a1c42 100%);color:#fff;position:relative;overflow:hidden;padding:clamp(100px,12vw,140px) 0 clamp(60px,8vw,100px)}
 .rp-hero__grid-bg{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .rp-hero__orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.18;pointer-events:none}
 .rp-hero__orb--1{width:600px;height:600px;background:#1549FF;top:-300px;right:-200px;animation:rpOrb 20s ease-in-out infinite}
 .rp-hero__orb--2{width:400px;height:400px;background:#00CFFF;bottom:-200px;left:-100px;animation:rpOrb 25s ease-in-out infinite reverse}
-@keyframes rpOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(.97)}}
+@keyframes rpOrb{0%,100%{transform:translate(0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(.97)}}
 .rp-hero__inner{display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:2;align-items:center}
 .rp-hero__text{max-width:600px}
-.rp-hero__text h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;font-weight:800;letter-spacing:-.03em;margin:20px 0}
-.rp-hero__text>p{font-size:clamp(.95rem,1.6vw,1.05rem);opacity:.75;line-height:1.7;margin-bottom:20px;max-width:50ch}
-.rp-hero__price{display:flex;align-items:center;gap:12px;margin-bottom:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 20px;backdrop-filter:blur(8px)}
-.rp-hero__price-tag{font-size:12px;text-transform:uppercase;letter-spacing:.04em;opacity:.6;font-weight:500}
-.rp-hero__price-val{font-size:32px;font-weight:900;letter-spacing:-.02em;color:#00CFFF}.rp-hero__price-val span{font-size:16px;font-weight:500;opacity:.7}
-.rp-hero__price-note{font-size:12px;opacity:.5}
+.rp-hero__text h1{font-size:clamp(2rem,4.5vw,3rem);line-height:1.12;font-weight:800;letter-spacing:-.03em;margin:20px 0}
+.rp-hero__text>p{font-size:clamp(.95rem,1.6vw,1.05rem);opacity:.75;line-height:1.7;margin-bottom:28px;max-width:50ch}
 .rp-hero__actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
 .rp-hero__trust{display:flex;flex-wrap:wrap;gap:16px}.rp-hero__trust span{display:inline-flex;align-items:center;gap:6px;font-size:12px;opacity:.5;font-weight:500}.rp-hero__trust span i{color:#00CFFF;opacity:.7}
 
-/* Hero Dashboard */
+/* Hero App Mockup */
 .rp-hero__visual{position:relative;perspective:1200px}
-.rp-dash{background:rgba(12,26,56,.85);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.05);backdrop-filter:blur(20px);transform:rotateY(-4deg) rotateX(2deg);animation:rpDashFloat 8s ease-in-out infinite}
-.rp-dash:hover{transform:rotateY(0) rotateX(0)}
-@keyframes rpDashFloat{0%,100%{transform:rotateY(-4deg) rotateX(2deg)}50%{transform:rotateY(-2deg) rotateX(1deg) translateY(-6px)}}
-.rp-dash__bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
-.rp-dash__dot{width:10px;height:10px;border-radius:50%}
-.rp-dash__bar-title{margin-left:auto;font-size:11px;opacity:.4;font-weight:500}
-.rp-dash__body{display:flex;min-height:260px}
-.rp-dash__sidebar{width:44px;background:rgba(0,0,0,.15);border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 0}
-.rp-dash__nav{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:12px;cursor:pointer;transition:all .2s}
-.rp-dash__nav.active{background:rgba(21,73,255,.3);color:#00CFFF}
-.rp-dash__main{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px}
-.rp-dash__greeting{display:flex;justify-content:space-between;align-items:flex-start}
-.rp-dash__presets{display:flex;gap:4px}
-.rp-dash__preset{padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;color:rgba(255,255,255,.4);cursor:pointer}
-.rp-dash__preset.active{background:rgba(21,73,255,.3);color:#00CFFF}
-.rp-dash__kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.rp-dash__kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:8px 10px}
-.rp-dash__kpi-label{display:block;font-size:8px;opacity:.5;text-transform:uppercase;letter-spacing:.04em}
-.rp-dash__kpi-val{display:block;font-size:16px;font-weight:800;letter-spacing:-.02em;margin:1px 0}
-.rp-dash__tag{font-size:8px;font-weight:600;padding:2px 6px;border-radius:9999px}
-.rp-dash__tag.orange{background:rgba(249,115,22,.15);color:#F97316}.rp-dash__tag.green{background:rgba(0,229,160,.15);color:#00E5A0}
-.rp-dash__chart-area{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
-.rp-dash__chart-bars{display:flex;align-items:flex-end;gap:6px;height:60px}
-.rp-dash__chart-bar{flex:1;background:rgba(21,73,255,.25);border-radius:3px 3px 0 0;transition:all .3s}
-.rp-dash__chart-bar.active{background:#1549FF}
-.rp-dash__chart-labels{display:flex;gap:6px}.rp-dash__chart-labels span{flex:1;text-align:center;font-size:7px;opacity:.3}
+.rp-hero-app{background:rgba(12,26,56,.9);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);backdrop-filter:blur(20px);transform:rotateY(-3deg) rotateX(2deg);animation:rpAppFloat 10s ease-in-out infinite;position:relative;z-index:2}
+.rp-hero-app:hover{transform:rotateY(0) rotateX(0)}
+@keyframes rpAppFloat{0%,100%{transform:rotateY(-3deg) rotateX(2deg)}50%{transform:rotateY(-1deg) rotateX(1deg) translateY(-5px)}}
+.rp-hero-app__bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.06)}
+.rp-hero-app__dots{display:flex;gap:5px}.rp-hero-app__dots span{width:10px;height:10px;border-radius:50%}.rp-hero-app__dots span:nth-child(1){background:#ff5f57}.rp-hero-app__dots span:nth-child(2){background:#febc2e}.rp-hero-app__dots span:nth-child(3){background:#28c840}
+.rp-hero-app__title{margin-left:auto;font-size:11px;opacity:.4;font-weight:500}
+.rp-hero-app__body{display:flex;min-height:280px}
+.rp-hero-app__sidebar{width:44px;background:rgba(0,0,0,.18);border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 0}
+.rp-hero-app__nav{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-size:12px}
+.rp-hero-app__nav.active{background:rgba(21,73,255,.3);color:#00CFFF}
+.rp-hero-app__main{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px}
+.rp-hero-app__topbar{display:flex;justify-content:space-between;align-items:flex-start}
+.rp-hero-app__topbar strong{font-size:13px;display:block}.rp-hero-app__topbar span{font-size:9px;opacity:.4}
+.rp-hero-app__presets{display:flex;gap:3px}.rp-hero-app__presets span{padding:3px 7px;border-radius:5px;font-size:9px;font-weight:600;color:rgba(255,255,255,.35)}.rp-hero-app__presets span.active{background:rgba(21,73,255,.3);color:#00CFFF}
+.rp-hero-app__kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.rp-hero-kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px 8px}
+.rp-hero-kpi__label{display:block;font-size:7px;opacity:.45;text-transform:uppercase;letter-spacing:.04em}
+.rp-hero-kpi__val{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em}
+.rp-hero-kpi__tag{font-size:7px;font-weight:600;padding:1px 5px;border-radius:9999px}
+.rp-hero-kpi__tag.green{background:rgba(0,229,160,.15);color:#00E5A0}.rp-hero-kpi__tag.orange{background:rgba(249,115,22,.15);color:#F97316}
+.rp-hero-app__tickets{flex:1;display:flex;flex-direction:column;gap:3px}
+.rp-hero-app__tickets-hdr{display:flex;justify-content:space-between;font-size:10px;font-weight:600;opacity:.6;margin-bottom:2px}
+.rp-hero-app__tickets-hdr span{color:#00CFFF;font-size:9px;cursor:pointer}
+.rp-hero-tkt{display:flex;align-items:center;gap:6px;padding:5px 7px;border-radius:6px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.02);font-size:10px}
+.rp-hero-tkt__badge{padding:2px 6px;border-radius:9999px;font-size:8px;font-weight:700;flex-shrink:0}
+.rp-hero-tkt__badge.amber{background:rgba(217,119,6,.15);color:#F59E0B}.rp-hero-tkt__badge.green{background:rgba(0,229,160,.15);color:#00E5A0}.rp-hero-tkt__badge.blue{background:rgba(21,73,255,.15);color:#60A5FA}
+.rp-hero-tkt__device{flex:1;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:rgba(255,255,255,.8)}
+.rp-hero-tkt__tech{font-size:9px;opacity:.4;width:40px;text-align:right}
+.rp-hero-tkt__price{font-weight:700;font-size:10px;width:32px;text-align:right}
 
-/* Floating cards */
-.rp-float{position:absolute;background:rgba(12,26,56,.92);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 14px;backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;font-size:12px;z-index:5;opacity:0;animation:rpFloatIn .8s ease forwards}
-.rp-float i{font-size:16px}.rp-float strong{display:block;font-size:11px;font-weight:600}.rp-float span{opacity:.55;font-size:10px}
-.rp-float--alert{bottom:20%;left:-10px;animation-delay:.6s}.rp-float--alert i{color:#F97316}
-.rp-float--done{top:15%;right:-10px;animation-delay:.9s}.rp-float--done i{color:#00E5A0}
-.rp-float--pay{bottom:5%;right:10%;animation-delay:1.2s}.rp-float--pay i{color:#00CFFF}
-@keyframes rpFloatIn{from{opacity:0;transform:translateY(16px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* Floating Hero Cards */
+.rp-hero-card{position:absolute;background:rgba(12,26,56,.94);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;backdrop-filter:blur(16px);box-shadow:0 16px 48px rgba(0,0,0,.5);font-size:12px;z-index:5;opacity:0;animation:rpCardIn .7s ease forwards}
+.rp-hero-card__hdr{font-weight:700;font-size:11px;margin-bottom:8px;display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.8)}.rp-hero-card__hdr i{font-size:13px}
+.rp-hero-card--pos{bottom:30%;right:-20px;animation-delay:.5s;min-width:180px}
+.rp-hero-card--pos .rp-hero-card__hdr i{color:#1549FF}
+.rp-hero-card__line{display:flex;justify-content:space-between;font-size:10px;padding:2px 0;color:rgba(255,255,255,.55)}
+.rp-hero-card__line.total{font-weight:800;color:#fff;border-top:1px solid rgba(255,255,255,.1);padding-top:6px;margin-top:4px;font-size:13px}
+.rp-hero-card__btn{margin-top:8px;padding:7px;border-radius:8px;background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;text-align:center;font-size:10px;font-weight:700}
+.rp-hero-card--inv{top:10%;right:-15px;animation-delay:.8s;min-width:200px}
+.rp-hero-card--inv .rp-hero-card__hdr i{color:#F97316}
+.rp-hero-card__alert{font-size:10px;color:rgba(255,255,255,.6);padding:2px 0}.rp-hero-card__alert strong{color:#F97316}
+.rp-hero-card--cust{bottom:5%;left:-15px;animation-delay:1.1s}
+.rp-hero-card--cust .rp-hero-card__hdr i{color:#00CFFF}
+.rp-hero-card__stat{display:flex;gap:12px;font-size:10px;color:rgba(255,255,255,.5)}
+.rp-hero-card--pay{top:40%;left:-25px;animation-delay:1.4s;display:flex;align-items:center;gap:10px}
+.rp-hero-card--pay i{font-size:18px;color:#00E5A0}
+.rp-hero-card--pay strong{display:block;font-size:11px;color:rgba(255,255,255,.9)}.rp-hero-card--pay span{font-size:10px;color:rgba(255,255,255,.45)}
+@keyframes rpCardIn{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
 
-/* ── DEMO SECTION ── */
-.rp-demo{padding:var(--section-py) 0;background:var(--surface)}
-.rp-demo__tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:32px}
-.rp-demo__tab{padding:12px 22px;border-radius:9999px;border:1px solid var(--border);background:#fff;color:var(--text-2);font-weight:600;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .25s;font-family:'Inter',sans-serif}
-.rp-demo__tab:hover{border-color:rgba(21,73,255,.3);color:#1549FF}
-.rp-demo__tab.active{background:#1549FF;color:#fff;border-color:#1549FF;box-shadow:0 8px 28px rgba(21,73,255,.35)}
-.rp-demo__panel{display:none}.rp-demo__panel.active{display:block;animation:rpFadeIn .4s ease}
-@keyframes rpFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.rp-demo__screen{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.08);overflow:hidden;max-width:1000px;margin:0 auto}
-.rp-demo__screen-bar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-weight:600;font-size:14px;color:var(--text-1)}
-.rp-demo__screen-bar i{margin-right:6px;opacity:.6}
-.rp-demo__bar-right{display:flex;align-items:center;gap:10px}
-.rp-demo__count{font-size:12px;color:var(--text-3);font-weight:500}
-.rp-demo__station{font-size:12px;color:var(--text-3);font-weight:500}.rp-demo__station i{margin-right:4px}
-.rp-demo__add-btn{padding:7px 14px;border-radius:8px;border:none;background:#1549FF;color:#fff;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif}
-.rp-demo__add-btn--outline{background:transparent;border:1px solid var(--border);color:var(--text-2)}
-.rp-demo__screen-body{padding:20px}
+/* ═══════════════ INDUSTRIES ═══════════════ */
+.rp-industries{padding:var(--section-py) 0;background:var(--surface)}
+.rp-ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:900px;margin:0 auto}
+.rp-ind{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;transition:all .35s;opacity:0;transform:translateY(16px)}
+.rp-ind.animated{opacity:1;transform:translateY(0)}
+.rp-ind:hover{border-color:rgba(21,73,255,.3);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.rp-ind__icon{width:52px;height:52px;margin:0 auto 12px;background:rgba(21,73,255,.07);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.rp-ind__icon i{font-size:22px;color:#1549FF;transition:all .3s}
+.rp-ind:hover .rp-ind__icon{background:#1549FF;box-shadow:0 0 30px rgba(21,73,255,.25)}.rp-ind:hover .rp-ind__icon i{color:#fff}
+.rp-ind h4{font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:3px}
+.rp-ind span{font-size:11px;color:var(--text-3);line-height:1.4}
 
-/* Demo filter/search */
-.rp-demo__filter-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center}
-.rp-demo__search-box{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--border);border-radius:10px;font-size:13px;color:var(--text-3);flex:1;min-width:200px}
-.rp-demo__search-box i{opacity:.4;font-size:12px}
-.rp-demo__status-pills{display:flex;flex-wrap:wrap;gap:6px}
-.rp-status-pill{padding:5px 12px;border-radius:9999px;font-size:11px;font-weight:600;border:1px solid var(--border);color:var(--text-3);cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all .2s}
-.rp-status-pill.active{background:#1549FF;color:#fff;border-color:#1549FF}
-.rp-status-count{background:rgba(0,0,0,.06);padding:1px 6px;border-radius:9999px;font-size:10px}
+/* ═══════════════ WORKFLOW DEMO ═══════════════ */
+.rp-workflow{padding:clamp(80px,10vw,120px) 0;color:#fff;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(21,73,255,.12),transparent 50%),linear-gradient(160deg,#060E21,#0C1A38 60%,#0a1840)}
+.rp-workflow .rp-section-hdr h2,.rp-workflow .rp-section-hdr p{color:rgba(255,255,255,.9) !important}
 
-/* Demo tickets */
-.rp-demo__ticket-list{display:flex;flex-direction:column;gap:14px}
-.rp-demo-ticket{border:1px solid var(--border);border-radius:12px;padding:18px;display:grid;grid-template-columns:1fr;gap:16px;transition:all .2s}
-.rp-demo-ticket:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
-.rp-demo-ticket__left{}
-.rp-demo-ticket h4{font-size:15px;font-weight:700;margin:6px 0 8px;color:var(--text-1)}
-.rp-demo-ticket__meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text-3);margin-bottom:8px}.rp-demo-ticket__meta i{margin-right:3px;opacity:.5}
-.rp-demo-ticket__details{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text-3)}.rp-demo-ticket__details span{display:inline-flex;align-items:center;gap:3px}
-.rp-deposit-tag{background:rgba(21,73,255,.08);color:#1549FF;padding:2px 8px;border-radius:6px;font-weight:600}
-.rp-estimate-tag{background:rgba(249,115,22,.08);color:#EA580C;padding:2px 8px;border-radius:6px;font-weight:600}
-.rp-demo-ticket__right{}
-.rp-demo-ticket__progress-wrap{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.rp-demo-ticket__progress-wrap span{font-size:12px;font-weight:700;color:var(--text-2);min-width:35px}
-.rp-progress-bar{flex:1;height:6px;background:var(--surface-2,#eef1f6);border-radius:9999px;overflow:hidden}
-.rp-progress-fill{height:100%;background:linear-gradient(90deg,#1549FF,#00CFFF);border-radius:9999px;transition:width 1s ease}
-.rp-progress-fill.full{background:linear-gradient(90deg,#059669,#00E5A0)}
-.rp-demo-ticket__checklist{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.rp-check{font-size:10px;padding:3px 8px;border-radius:9999px;border:1px solid var(--border);color:var(--text-3);display:inline-flex;align-items:center;gap:3px}
-.rp-check.done{background:rgba(0,229,160,.08);border-color:rgba(0,229,160,.2);color:#059669}
-.rp-check.active{background:rgba(21,73,255,.08);border-color:rgba(21,73,255,.2);color:#1549FF}
-.rp-demo-ticket__parts{display:flex;flex-wrap:wrap;gap:6px}
-.rp-part-tag{font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(124,58,237,.06);color:#7C3AED;display:inline-flex;align-items:center;gap:3px;font-weight:500}
+/* Stepper */
+.rp-stepper{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:36px;flex-wrap:wrap}
+.rp-step{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif;color:rgba(255,255,255,.5);font-size:13px;font-weight:600}
+.rp-step:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+.rp-step.active{background:rgba(21,73,255,.2);border-color:#1549FF;color:#fff;box-shadow:0 0 30px rgba(21,73,255,.2)}
+.rp-step.done{background:rgba(0,229,160,.1);border-color:rgba(0,229,160,.3);color:#00E5A0}
+.rp-step__num{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;transition:all .3s}
+.rp-step.active .rp-step__num{background:#1549FF;color:#fff}
+.rp-step.done .rp-step__num{background:#00E5A0;color:#060E21}
+.rp-step__label{white-space:nowrap}
+.rp-step__connector{width:24px;height:2px;background:rgba(255,255,255,.1);position:relative;flex-shrink:0;overflow:hidden;border-radius:2px}
+.rp-step__connector-fill{height:100%;width:0;background:#00E5A0;border-radius:2px;transition:width .5s ease}
+.rp-step__connector-fill.filled{width:100%}
 
-/* Badges */
-.rp-badge{padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:4px}
-.rp-badge--green{background:rgba(0,229,160,.1);color:#059669}
-.rp-badge--blue{background:rgba(21,73,255,.1);color:#1549FF}
-.rp-badge--amber{background:rgba(217,119,6,.1);color:#B45309}
-.rp-badge--orange{background:rgba(249,115,22,.1);color:#EA580C}
-.rp-badge--red{background:rgba(239,68,68,.1);color:#DC2626}
-.rp-badge--slate{background:rgba(100,116,139,.1);color:#475569}
+/* Workflow Panels */
+.rp-wf-panel{display:none;animation:rpWfIn .45s ease}.rp-wf-panel.active{display:block}
+@keyframes rpWfIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.rp-wf-screen{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);max-width:1000px;margin:0 auto}
+.rp-wf-screen__bar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.06);font-weight:600;font-size:14px;color:rgba(255,255,255,.85)}
+.rp-wf-screen__bar i{margin-right:6px;opacity:.6}
+.rp-wf-screen__badge{padding:4px 10px;border-radius:9999px;font-size:10px;font-weight:700}
+.rp-wf-screen__badge.blue{background:rgba(21,73,255,.15);color:#60A5FA}
+.rp-wf-screen__badge.amber{background:rgba(217,119,6,.15);color:#F59E0B}
+.rp-wf-screen__badge.purple{background:rgba(124,58,237,.15);color:#A78BFA}
+.rp-wf-screen__badge.green{background:rgba(0,229,160,.15);color:#00E5A0}
+.rp-wf-screen__badge.cyan{background:rgba(0,207,255,.15);color:#00CFFF}
+.rp-wf-screen__body{padding:24px}
+.rp-wf-split{display:grid;grid-template-columns:1fr;gap:24px}
 
-/* Demo POS */
-.rp-pos-layout{display:grid;grid-template-columns:1fr;gap:24px}
-.rp-pos-customer{display:flex;align-items:center;gap:12px;padding:12px;background:var(--surface);border-radius:10px;margin-bottom:12px}
-.rp-pos-customer__avatar{width:40px;height:40px;border-radius:10px;background:#1549FF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
-.rp-pos-customer div{flex:1}.rp-pos-customer strong{display:block;font-size:14px;color:var(--text-1)}.rp-pos-customer span{font-size:11px;color:var(--text-3)}
-.rp-pos-customer__change{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:11px}
-.rp-pos-cart__header{display:flex;justify-content:space-between;padding:8px 0;font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;border-bottom:1px solid var(--border);margin-bottom:8px}
-.rp-pos-item{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
-.rp-pos-item__info{flex:1}
-.rp-pos-item__cat{display:block;font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;font-weight:600;margin-bottom:2px}
-.rp-pos-item__info strong{font-size:13px;color:var(--text-1)}
-.rp-pos-item__sku{display:block;font-size:10px;color:var(--text-3);margin-top:2px}
-.rp-pos-item__controls{display:flex;align-items:center;gap:10px}
-.rp-pos-qty{font-size:12px;color:var(--text-3);font-weight:500}
-.rp-pos-item__price{font-weight:700;font-size:14px;color:var(--text-1)}
-.rp-pos-right{display:flex;flex-direction:column;gap:12px}
-.rp-pos-summary{background:var(--surface);border-radius:10px;padding:14px}
-.rp-pos-line{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;color:var(--text-2)}
-.rp-pos-discount{color:#DC2626}
-.rp-pos-total{font-size:18px;font-weight:800;color:var(--text-1);border-top:2px solid var(--border);padding-top:10px;margin-top:6px}
-.rp-pos-pay-methods{display:flex;gap:8px}
-.rp-pay-btn{flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);background:#fff;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-family:'Inter',sans-serif;color:var(--text-2)}
-.rp-pay-btn.active{background:#1549FF;color:#fff;border-color:#1549FF}
-.rp-pos-terminal{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15);font-size:12px;color:#059669;font-weight:500}
-.rp-pos-terminal i{color:#00E5A0}
-.rp-pos-charge{padding:16px;border-radius:12px;border:none;background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(21,73,255,.35);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
-.rp-pos-charge:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(21,73,255,.45)}
-.rp-pos-extras{display:flex;gap:8px}
-.rp-pos-extras button{flex:1;padding:8px;border-radius:8px;border:1px solid var(--border);background:#fff;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;color:var(--text-3);font-family:'Inter',sans-serif;transition:all .2s}
-.rp-pos-extras button:hover{border-color:#1549FF;color:#1549FF}
+/* Workflow Form */
+.rp-wf-form-title{font-size:16px;font-weight:700;margin-bottom:16px;color:#fff}
+.rp-wf-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.rp-wf-field{display:flex;flex-direction:column;gap:4px}
+.rp-wf-field.full{grid-column:1/-1}
+.rp-wf-field label{font-size:10px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.04em}
+.rp-wf-input{padding:9px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:13px;color:rgba(255,255,255,.8)}
+.rp-wf-input.filled{background:rgba(255,255,255,.06);border-color:rgba(21,73,255,.3)}
+.rp-wf-textarea{padding:9px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:12px;color:rgba(255,255,255,.7);line-height:1.5}
+.rp-wf-textarea.filled{background:rgba(255,255,255,.06);border-color:rgba(21,73,255,.3)}
+.rp-wf-intake-checks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.rp-wf-check{font-size:11px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:4px}
+.rp-wf-check.checked{color:#00E5A0}.rp-wf-check.checked i{color:#00E5A0}
+.rp-wf-cta-btn{width:100%;padding:14px;border-radius:10px;border:none;background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 8px 28px rgba(21,73,255,.35);display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.rp-wf-cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(21,73,255,.45)}
+.rp-wf-cta-btn--success{background:linear-gradient(135deg,#059669,#00E5A0);box-shadow:0 8px 28px rgba(0,229,160,.3)}.rp-wf-cta-btn--success:hover{box-shadow:0 14px 40px rgba(0,229,160,.4)}
 
-/* Demo Inventory */
-.rp-inv-alerts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.rp-inv-alert{display:flex;align-items:center;gap:12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.15);border-radius:12px;padding:12px 16px}.rp-inv-alert i{font-size:18px;color:#F97316}.rp-inv-alert div{flex:1}.rp-inv-alert strong{display:block;font-size:13px;color:var(--text-1)}.rp-inv-alert span{font-size:11px;color:var(--text-3)}
-.rp-inv-alert--critical{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.15)}.rp-inv-alert--critical i{color:#DC2626}
-.rp-inv-alert__btn{padding:7px 14px;border-radius:8px;border:1px solid rgba(249,115,22,.3);background:rgba(249,115,22,.08);color:#EA580C;font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;white-space:nowrap}
-.rp-inv-alert__btn:hover{background:#F97316;color:#fff;border-color:#F97316}
-.rp-inv-alert__btn--red{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.08);color:#DC2626}.rp-inv-alert__btn--red:hover{background:#DC2626;color:#fff;border-color:#DC2626}
-.rp-inv-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:14px}
-.rp-inv-tab{padding:8px 16px;font-size:12px;font-weight:600;color:var(--text-3);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
-.rp-inv-tab.active{color:#1549FF;border-bottom-color:#1549FF}
-.rp-inv-table{width:100%;border-collapse:collapse;font-size:12px}
-.rp-inv-table th{text-align:left;padding:8px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-3);border-bottom:1px solid var(--border);font-weight:600}
-.rp-inv-table td{padding:10px;border-bottom:1px solid var(--border);color:var(--text-2)}
-.rp-inv-table td strong{color:var(--text-1);font-weight:600}
-.rp-inv-table tr:hover{background:var(--surface)}
-.rp-stock-critical{color:#DC2626;font-weight:700}.rp-stock-zero{color:#DC2626;font-weight:700}
-.rp-serialized-tag{display:inline-flex;align-items:center;gap:3px;font-size:9px;color:#7C3AED;background:rgba(124,58,237,.06);padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:600}
+/* Ticket Preview */
+.rp-wf-preview-area{}
+.rp-wf-ticket-preview{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;position:sticky;top:20px}
+.rp-wf-ticket-preview__hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.rp-wf-ticket-id{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);font-family:monospace;letter-spacing:.05em}
+.rp-wf-ticket-preview h5{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.rp-wf-ticket-preview p{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:10px}
+.rp-wf-ticket-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:11px;color:rgba(255,255,255,.5);margin-top:10px}.rp-wf-ticket-meta i{margin-right:3px;opacity:.5}
+.rp-wf-progress-mini{margin:10px 0}
+.rp-wf-progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:9999px;overflow:hidden;margin-bottom:4px}
+.rp-wf-progress-fill{height:100%;background:linear-gradient(90deg,#1549FF,#00CFFF);border-radius:9999px;transition:width .8s ease}
+.rp-wf-progress-fill.rp-fill-green{background:linear-gradient(90deg,#059669,#00E5A0)}
+.rp-wf-progress-mini span{font-size:10px;color:rgba(255,255,255,.45);font-weight:500}
+.rp-wf-status-change{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:11px}
+.rp-wf-status-change .from{padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4)}
+.rp-wf-status-change i{color:rgba(255,255,255,.2);font-size:10px}
+.rp-wf-status-change .to{padding:3px 8px;border-radius:6px;background:rgba(21,73,255,.15);color:#60A5FA;font-weight:600}
+.rp-wf-status-change .to.green{background:rgba(0,229,160,.12);color:#00E5A0}
+.rp-wf-parts-added{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.rp-wf-ticket-preview--done{text-align:center;border-color:rgba(0,229,160,.2)}
+.rp-wf-complete-icon{font-size:48px;color:#00E5A0;margin-bottom:12px}
+.rp-wf-final-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+.rp-wf-final-summary div span{display:block;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.03em}
+.rp-wf-final-summary div strong{font-size:13px;color:rgba(255,255,255,.9)}
 
-/* Demo Customers */
-.rp-cust-profile{}
-.rp-cust-header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;margin-bottom:20px}
-.rp-cust-avatar{width:56px;height:56px;border-radius:14px;background:rgba(21,73,255,.1);color:#1549FF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;flex-shrink:0}
-.rp-cust-info{flex:1;min-width:200px}.rp-cust-info h4{font-size:18px;font-weight:700;color:var(--text-1);margin-bottom:6px}
-.rp-cust-contact{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text-3)}.rp-cust-contact i{margin-right:3px;opacity:.5}
-.rp-cust-badges{display:flex;flex-wrap:wrap;gap:6px}
-.rp-cust-badge{font-size:10px;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-3);display:inline-flex;align-items:center;gap:4px;font-weight:500}
-.rp-cust-badge i{color:#1549FF;font-size:9px}
-.rp-cust-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.rp-cust-stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
-.rp-cust-stat__val{display:block;font-size:20px;font-weight:800;color:var(--text-1);letter-spacing:-.02em}
-.rp-cust-stat__label{display:block;font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
-.rp-cust-history h5{font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:10px}
-.rp-cust-history__item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
-.rp-cust-history__item div{flex:1}.rp-cust-history__item strong{display:block;font-size:13px;color:var(--text-1)}.rp-cust-history__item span{font-size:11px;color:var(--text-3)}
-.rp-cust-history__amount{font-weight:700;font-size:14px;color:var(--text-1)}
+/* Tech List */
+.rp-wf-tech-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.rp-wf-tech{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);cursor:pointer;transition:all .2s}
+.rp-wf-tech:hover{background:rgba(255,255,255,.06)}
+.rp-wf-tech.selected{border-color:rgba(21,73,255,.4);background:rgba(21,73,255,.08)}
+.rp-wf-tech__avatar{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
+.rp-wf-tech__info{flex:1}.rp-wf-tech__info strong{display:block;font-size:13px;color:rgba(255,255,255,.9)}.rp-wf-tech__info span{font-size:11px;color:rgba(255,255,255,.4)}
+.rp-wf-tech__check{color:#1549FF;font-size:18px}
+.rp-wf-assign-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.rp-wf-priority-pills{display:flex;gap:6px}
+.rp-wf-priority-pills span{padding:6px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:12px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;font-weight:600}
+.rp-wf-priority-pills span.active{background:rgba(21,73,255,.15);border-color:#1549FF;color:#60A5FA}
 
-/* Demo Operations */
-.rp-ops-grid{display:grid;grid-template-columns:1fr;gap:20px}
-.rp-ops-section h5{font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:12px;display:flex;align-items:center;gap:8px}.rp-ops-section h5 i{color:#1549FF;font-size:13px}
-.rp-emp-list{display:flex;flex-direction:column;gap:8px}
-.rp-emp-row{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;transition:all .2s}
-.rp-emp-row:hover{box-shadow:0 4px 16px rgba(0,0,0,.04)}
-.rp-emp-avatar{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
-.rp-emp-details{flex:1;min-width:0}.rp-emp-details strong{display:block;font-size:13px;color:var(--text-1)}.rp-emp-details span{font-size:11px;color:var(--text-3)}
-.rp-emp-kpis{display:flex;gap:14px;font-size:12px;color:var(--text-2)}.rp-emp-kpis strong{color:var(--text-1)}
-.rp-ops-widgets{display:flex;flex-direction:column;gap:14px}
-.rp-ops-widget{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px}
-.rp-ops-widget__label{display:block;font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
-.rp-ops-widget__bar{display:flex;border-radius:8px;overflow:hidden;height:28px;font-size:10px;font-weight:700}
-.rp-ops-bar-fill{display:flex;align-items:center;justify-content:center;color:#fff}
-.rp-ops-bar-cash{background:#059669}.rp-ops-bar-card{background:#1549FF}
-.rp-ops-roles{display:flex;flex-wrap:wrap;gap:6px}
-.rp-role-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:#fff;border:1px solid var(--border);color:var(--text-2);display:inline-flex;align-items:center;gap:5px;font-weight:500}.rp-role-tag i{color:#1549FF;font-size:10px}
-.rp-ops-stores{display:flex;flex-direction:column;gap:6px}
-.rp-ops-store{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2);font-weight:500}.rp-ops-store i{color:#1549FF;font-size:11px}
+/* Parts Table */
+.rp-wf-parts-table{margin-bottom:14px}
+.rp-wf-part-row{display:grid;grid-template-columns:1.5fr .7fr .6fr .6fr .7fr;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px;align-items:center;color:rgba(255,255,255,.65)}
+.rp-wf-part-row.header{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.1)}
+.rp-wf-part-row strong{color:rgba(255,255,255,.9);font-weight:600}
+.rp-wf-part-row .sku{font-family:monospace;font-size:10px;color:rgba(255,255,255,.35)}
+.rp-wf-stock{font-weight:600}.rp-wf-stock.low{color:#F97316}.rp-wf-stock.ok{color:#00E5A0}
+.rp-wf-margin-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;margin-bottom:14px}
+.rp-wf-margin-line{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.55);padding:3px 0}
+.rp-wf-margin-line.profit{font-weight:700;color:#00E5A0;border-top:1px solid rgba(255,255,255,.08);padding-top:8px;margin-top:4px;font-size:14px}
+.rp-wf-low-stock-alert{display:flex;align-items:flex-start;gap:10px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:10px;padding:12px;margin-bottom:14px}
+.rp-wf-low-stock-alert i{color:#F97316;font-size:16px;margin-top:2px;flex-shrink:0}
+.rp-wf-low-stock-alert strong{display:block;font-size:12px;color:rgba(255,255,255,.85)}.rp-wf-low-stock-alert span{font-size:11px;color:rgba(255,255,255,.5)}
 
-/* ── FEATURES ── */
+/* Invoice/Deposit */
+.rp-wf-invoice{border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-bottom:14px}
+.rp-wf-invoice-line{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.6);padding:4px 0}
+.rp-wf-invoice-line.sub{font-size:11px;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.06);padding-top:8px;margin-top:4px}
+.rp-wf-invoice-line.total{font-weight:800;font-size:16px;color:#fff;border-top:1px solid rgba(255,255,255,.1);padding-top:8px;margin-top:4px}
+.rp-wf-deposit-section{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.rp-wf-deposit-amount{display:flex;flex-direction:column;gap:4px}
+.rp-wf-deposit-amount label{font-size:10px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.04em}
+.rp-wf-pay-methods{display:flex;gap:8px;margin-bottom:10px}
+.rp-wf-pay{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-family:'Inter',sans-serif}
+.rp-wf-pay.active{background:rgba(21,73,255,.15);border-color:#1549FF;color:#60A5FA}
+.rp-wf-terminal-status{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15);font-size:11px;color:#00E5A0;font-weight:500}
+.rp-wf-payment-summary{margin:8px 0}
+.rp-wf-pay-line{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.55);padding:3px 0}
+.rp-wf-pay-line.deposit{color:#1549FF}.rp-wf-pay-line.remaining{font-weight:700;color:#fff;border-top:1px solid rgba(255,255,255,.08);padding-top:6px;margin-top:4px}
+.rp-wf-receipt-mini{font-size:10px;color:rgba(255,255,255,.4);margin-top:8px;display:flex;align-items:center;gap:5px}.rp-wf-receipt-mini i{color:#00E5A0}
+
+/* Notifications */
+.rp-wf-notif-timeline{display:flex;flex-direction:column;gap:0;margin-bottom:14px;position:relative;padding-left:32px}
+.rp-wf-notif-timeline::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:rgba(255,255,255,.08)}
+.rp-wf-notif{position:relative;padding:10px 0}
+.rp-wf-notif__icon{position:absolute;left:-32px;top:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.3);z-index:2}
+.rp-wf-notif.sent .rp-wf-notif__icon{background:rgba(0,229,160,.12);color:#00E5A0}
+.rp-wf-notif.current .rp-wf-notif__icon{background:rgba(21,73,255,.2);color:#60A5FA}
+.rp-wf-notif__icon.pulse{animation:rpPulse 2s ease-in-out infinite}
+@keyframes rpPulse{0%,100%{box-shadow:0 0 0 0 rgba(21,73,255,.3)}50%{box-shadow:0 0 0 8px rgba(21,73,255,0)}}
+.rp-wf-notif__content strong{display:block;font-size:13px;color:rgba(255,255,255,.85)}.rp-wf-notif__content span{font-size:10px;color:rgba(255,255,255,.35)}.rp-wf-notif__content p{font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.5;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.rp-wf-notif-badges{display:flex;gap:8px;margin:8px 0}
+.rp-notif-sent{font-size:10px;padding:4px 10px;border-radius:6px;background:rgba(0,229,160,.08);color:#00E5A0;display:inline-flex;align-items:center;gap:4px;font-weight:600}
+
+/* Checkout */
+.rp-wf-checkout-items{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.rp-wf-checkout-item{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);flex-wrap:wrap}
+.rp-wf-checkout-cat{font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.3);font-weight:600;width:50px}
+.rp-wf-checkout-item strong{flex:1;font-size:13px;color:rgba(255,255,255,.85)}
+.rp-wf-checkout-price{font-weight:700;font-size:14px;color:rgba(255,255,255,.9)}
+.rp-wf-checkout-item.upsell{border-color:rgba(0,207,255,.2);background:rgba(0,207,255,.04)}
+.rp-wf-upsell-tag{font-size:9px;padding:2px 8px;border-radius:9999px;background:rgba(0,207,255,.12);color:#00CFFF;font-weight:700;display:inline-flex;align-items:center;gap:3px}
+.rp-wf-checkout-summary{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-bottom:14px}
+.rp-wf-checkout-line{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.55);padding:3px 0}
+.rp-wf-checkout-line.deposit{color:#1549FF}.rp-wf-checkout-line.due{font-weight:800;font-size:16px;color:#fff;border-top:1px solid rgba(255,255,255,.1);padding-top:8px;margin-top:4px}
+.rp-wf-receipt-actions{display:flex;gap:8px;margin-top:10px}
+.rp-wf-receipt-actions button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:11px;color:rgba(255,255,255,.5);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;font-family:'Inter',sans-serif;transition:all .2s}
+.rp-wf-receipt-actions button:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+
+/* Workflow Nav */
+.rp-wf-nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px}
+.rp-wf-nav-btn{padding:12px 24px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;font-family:'Inter',sans-serif}
+.rp-wf-nav-btn:hover:not(:disabled){background:rgba(255,255,255,.1);color:#fff}
+.rp-wf-nav-btn:disabled{opacity:.3;cursor:not-allowed}
+.rp-wf-nav-btn--primary{background:linear-gradient(135deg,#2D60FF,#1549FF);border-color:#1549FF;color:#fff;box-shadow:0 6px 20px rgba(21,73,255,.25)}
+.rp-wf-nav-btn--primary:hover:not(:disabled){box-shadow:0 10px 30px rgba(21,73,255,.4);transform:translateY(-2px)}
+.rp-wf-nav-counter{font-size:13px;color:rgba(255,255,255,.4);font-weight:500;min-width:90px;text-align:center}
+
+/* ═══════════════ FEATURES ═══════════════ */
 .rp-features{padding:var(--section-py) 0;background:#fff}
 .rp-feat-grid{display:grid;grid-template-columns:1fr;gap:24px}
 .rp-feat{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:all .5s ease}
@@ -1106,49 +1081,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .rp-feat__icon{width:52px;height:52px;border-radius:12px;background:rgba(21,73,255,.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .3s}
 .rp-feat__icon i{font-size:22px;color:#1549FF;transition:all .3s}
 .rp-feat:hover .rp-feat__icon{background:#1549FF;box-shadow:0 8px 28px rgba(21,73,255,.35)}.rp-feat:hover .rp-feat__icon i{color:#fff}
-.rp-feat h3{font-size:1.15rem;font-weight:700;margin-bottom:6px;color:var(--text-1)}
-.rp-feat__why{font-size:.95rem;font-weight:600;color:#1549FF;margin-bottom:8px;line-height:1.4}
+.rp-feat h3{font-size:1.15rem;font-weight:700;margin-bottom:8px;color:var(--text-1)}
 .rp-feat p{font-size:.88rem;color:var(--text-2);line-height:1.65;margin-bottom:14px}
 .rp-feat__list{list-style:none;display:flex;flex-direction:column;gap:5px}
 .rp-feat__list li{font-size:12px;color:var(--text-2);display:flex;align-items:center;gap:8px}
 .rp-feat__list li i{color:#00E5A0;font-size:10px}
 
-/* ── COMPARE ── */
-.rp-compare{padding:var(--section-py) 0;color:#fff;position:relative;overflow:hidden;background:radial-gradient(ellipse 100% 60% at 50% 0%,rgba(21,73,255,.18),transparent 60%),linear-gradient(160deg,#060E21,#0C1A38 60%,#0a1c42)}
-.rp-compare::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.rp-compare__h2,.rp-compare__sub{color:#fff !important}
+/* ═══════════════ COMPARE ═══════════════ */
+.rp-compare{padding:var(--section-py) 0;color:#fff;position:relative;overflow:hidden;background:var(--surface)}
+.rp-compare__h2,.rp-compare__sub{color:var(--text-1) !important}
 .rp-compare__grid{display:grid;grid-template-columns:1fr;gap:0;max-width:900px;margin:0 auto;position:relative;z-index:2}
-.rp-compare__col{padding:32px;border-radius:16px}
+.rp-compare__col{padding:28px;border-radius:16px}
 .rp-compare__col h4{font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .rp-compare__col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .rp-compare__col ul li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
 .rp-compare__col ul li i{margin-top:3px;font-size:12px;flex-shrink:0}
-.rp-compare__col--old{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15)}
-.rp-compare__col--old h4{color:#f87171}.rp-compare__col--old h4 i{color:#EF4444}
-.rp-compare__col--old li{color:rgba(255,255,255,.7)}.rp-compare__col--old li i{color:#EF4444}
-.rp-compare__col--new{background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15)}
-.rp-compare__col--new h4{color:#34D399}.rp-compare__col--new h4 i{color:#00E5A0}
-.rp-compare__col--new li{color:rgba(255,255,255,.9)}.rp-compare__col--new li i{color:#00E5A0}
+.rp-compare__col--old{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.12)}
+.rp-compare__col--old h4{color:#DC2626}.rp-compare__col--old h4 i{color:#EF4444}
+.rp-compare__col--old li{color:var(--text-2)}.rp-compare__col--old li i{color:#EF4444}
+.rp-compare__col--new{background:rgba(0,229,160,.04);border:1px solid rgba(0,229,160,.12)}
+.rp-compare__col--new h4{color:#059669}.rp-compare__col--new h4 i{color:#00E5A0}
+.rp-compare__col--new li{color:var(--text-1)}.rp-compare__col--new li i{color:#00E5A0}
 .rp-compare__divider{display:flex;align-items:center;justify-content:center;padding:16px 0}
-.rp-compare__divider span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px 20px;border-radius:9999px;font-weight:800;font-size:14px;color:rgba(255,255,255,.5);letter-spacing:.04em}
+.rp-compare__divider span{background:var(--surface);border:1px solid var(--border);padding:8px 20px;border-radius:9999px;font-weight:800;font-size:14px;color:var(--text-3);letter-spacing:.04em}
 
-/* ── INDUSTRIES ── */
-.rp-industries{padding:var(--section-py) 0;background:var(--surface)}
-.rp-ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:800px;margin:0 auto}
-.rp-ind{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:all .3s;opacity:0;transform:translateY(16px)}
-.rp-ind.animated{opacity:1;transform:translateY(0);transition:all .5s ease}
-.rp-ind:hover{border-color:rgba(21,73,255,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
-.rp-ind__icon{width:48px;height:48px;margin:0 auto 10px;background:rgba(21,73,255,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.rp-ind__icon i{font-size:20px;color:#1549FF;transition:all .3s}
-.rp-ind:hover .rp-ind__icon{background:#1549FF;box-shadow:0 0 30px rgba(21,73,255,.25)}.rp-ind:hover .rp-ind__icon i{color:#fff}
-.rp-ind h4{font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:3px}
-.rp-ind span{font-size:11px;color:var(--text-3)}
-
-/* ── PRICING ── */
+/* ═══════════════ PRICING ═══════════════ */
 .rp-pricing{padding:var(--section-py) 0;background:#fff}
 .rp-pricing__card{max-width:520px;margin:0 auto;background:#fff;border:2px solid rgba(21,73,255,.15);border-radius:20px;padding:40px;text-align:center;position:relative;box-shadow:0 20px 60px rgba(21,73,255,.08);opacity:0;transform:translateY(24px);transition:all .6s ease}
 .rp-pricing__card.animated{opacity:1;transform:translateY(0)}
-.rp-pricing__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;padding:6px 20px;border-radius:9999px;font-size:12px;font-weight:700;box-shadow:0 8px 20px rgba(21,73,255,.3)}
+.rp-pricing__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;padding:6px 20px;border-radius:9999px;font-size:12px;font-weight:700;box-shadow:0 8px 20px rgba(21,73,255,.3);white-space:nowrap}
 .rp-pricing__price{display:flex;align-items:flex-start;justify-content:center;gap:2px;margin:24px 0 8px}
 .rp-pricing__dollar{font-size:28px;font-weight:800;color:var(--text-1);margin-top:8px}
 .rp-pricing__amount{font-size:72px;font-weight:900;line-height:1;letter-spacing:-.04em;color:var(--text-1)}
@@ -1160,7 +1121,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .rp-pricing__list li i{color:#00E5A0;font-size:12px;width:16px;text-align:center}
 .rp-pricing__guarantee{font-size:12px;color:var(--text-3);margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}.rp-pricing__guarantee i{color:#1549FF}
 
-/* ── FINAL CTA ── */
+/* ═══════════════ FINAL CTA ═══════════════ */
 .rp-cta{padding:clamp(80px,10vw,120px) 0;text-align:center;color:#fff;position:relative;overflow:hidden;background:radial-gradient(ellipse 100% 80% at 50% -10%,rgba(0,207,255,.18),transparent 60%),radial-gradient(ellipse 60% 60% at 100% 100%,rgba(21,73,255,.15),transparent 50%),linear-gradient(160deg,#060E21,#0C1A38 50%,#0a1840)}
 .rp-cta__grid-bg{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .rp-cta__orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.12;pointer-events:none}
@@ -1171,19 +1132,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .rp-cta__inner>p{font-size:clamp(1rem,1.8vw,1.1rem);opacity:.75;line-height:1.7;margin-bottom:32px}
 .rp-cta__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:36px}
 .rp-cta__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.rp-cta__badges span{display:inline-flex;align-items:center;gap:6px;font-size:12px;opacity:.5;font-weight:500}
-.rp-cta__badges span i{color:#00CFFF;opacity:.7}
+.rp-cta__badges span{display:inline-flex;align-items:center;gap:6px;font-size:12px;opacity:.5;font-weight:500}.rp-cta__badges span i{color:#00CFFF;opacity:.7}
 
-/* ── MODAL ── */
-.rp-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s}
+/* ═══════════════ MODAL ═══════════════ */
+.rp-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s}
 .rp-modal-overlay.active{display:flex;opacity:1}
-.rp-modal{background:#fff;border-radius:20px;max-width:560px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:translateY(20px);transition:transform .3s}
+.rp-modal{background:#fff;border-radius:20px;max-width:560px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 40px 100px rgba(0,0,0,.4);transform:translateY(20px);transition:transform .3s}
 .rp-modal-overlay.active .rp-modal{transform:translateY(0)}
-.rp-modal__close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:16px;transition:all .2s}
+.rp-modal__close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:16px;transition:all .2s;z-index:2}
 .rp-modal__close:hover{background:var(--surface);color:var(--text-1)}
 .rp-modal__header{text-align:center;margin-bottom:24px}
+.rp-modal__logo{font-size:24px;font-weight:900;color:var(--text-1);margin-bottom:8px;letter-spacing:-.02em}.rp-modal__logo span{color:#1549FF}
 .rp-modal__header h3{font-size:1.5rem;font-weight:800;color:var(--text-1);margin-bottom:6px}
-.rp-modal__header p{font-size:14px;color:var(--text-3)}
+.rp-modal__header p{font-size:13px;color:var(--text-3);line-height:1.6}
 .rp-modal__form{display:flex;flex-direction:column;gap:14px}
 .rp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .rp-form-group{display:flex;flex-direction:column;gap:4px}
@@ -1191,79 +1152,105 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .rp-form-group input,.rp-form-group select,.rp-form-group textarea{padding:12px 14px;border-radius:10px;border:1px solid var(--border);font-size:14px;font-family:'Inter',sans-serif;color:var(--text-1);transition:border-color .2s,box-shadow .2s;background:#fff}
 .rp-form-group input:focus,.rp-form-group select:focus,.rp-form-group textarea:focus{outline:none;border-color:#1549FF;box-shadow:0 0 0 3px rgba(21,73,255,.1)}
 .rp-form-group textarea{resize:vertical}
+.rp-modal__footer-note{font-size:11px;color:var(--text-3);text-align:center;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:5px}.rp-modal__footer-note i{color:#1549FF;font-size:10px}
 .rp-modal__success{text-align:center;padding:20px 0}
 .rp-success-icon{font-size:56px;color:#00E5A0;margin-bottom:16px}
 .rp-modal__success h3{font-size:1.4rem;font-weight:800;margin-bottom:8px;color:var(--text-1)}
 .rp-modal__success p{font-size:14px;color:var(--text-3);margin-bottom:24px}
 
-/* ── RESPONSIVE ── */
+/* ═══════════════ RESPONSIVE ═══════════════ */
 @media(min-width:768px){
-  .rp-hero__inner{grid-template-columns:1fr 1.1fr;gap:40px}
+  .rp-hero__inner{grid-template-columns:1fr 1.15fr;gap:40px}
   .rp-feat-grid{grid-template-columns:repeat(2,1fr)}
   .rp-ind-grid{grid-template-columns:repeat(4,1fr)}
-  .rp-demo-ticket{grid-template-columns:1.2fr 1fr}
-  .rp-pos-layout{grid-template-columns:1.3fr .7fr}
   .rp-compare__grid{grid-template-columns:1fr auto 1fr}
   .rp-compare__divider{padding:0 16px}
-  .rp-ops-grid{grid-template-columns:1.2fr .8fr}
-  .rp-cust-stats{grid-template-columns:repeat(4,1fr)}
+  .rp-wf-split{grid-template-columns:1.4fr .6fr}
 }
 @media(max-width:767px){
   .rp-hero__visual{display:none}
   .rp-hero__text{text-align:center}
   .rp-hero__actions{justify-content:center}
   .rp-hero__trust{justify-content:center}
-  .rp-hero__price{justify-content:center;flex-wrap:wrap}
   .rp-form-row{grid-template-columns:1fr}
   .rp-ind-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .rp-demo__bar-right{display:none}
-  .rp-demo__filter-row{flex-direction:column}
-  .rp-demo__status-pills{display:none}
-  .rp-cust-stats{grid-template-columns:repeat(2,1fr)}
-  .rp-emp-kpis{display:none}
+  .rp-stepper{gap:4px}
+  .rp-step__label{display:none}
+  .rp-step__connector{width:12px}
+  .rp-wf-form-grid{grid-template-columns:1fr}
+  .rp-wf-part-row{grid-template-columns:1fr .6fr .6fr;font-size:11px}
+  .rp-wf-part-row .sku,.rp-wf-part-row:not(.header) > span:nth-child(5){display:none}
+  .rp-wf-part-row.header > span:nth-child(2),.rp-wf-part-row.header > span:nth-child(5){display:none}
   .rp-pricing__cols{grid-template-columns:1fr}
   .rp-compare__divider span{font-size:12px}
-  .rp-inv-tabs{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-  .rp-inv-table{font-size:11px}
-  .rp-inv-table th:nth-child(n+5),.rp-inv-table td:nth-child(n+5){display:none}
+  .rp-wf-preview-area{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .rp-hero__orb,.rp-cta__orb{animation:none}
-  .rp-dash{animation:none;transform:none}
-  .rp-float{animation:none;opacity:1;transform:none}
+  .rp-hero-app{animation:none;transform:none}
+  .rp-hero-card{animation:none;opacity:1;transform:none}
   .rp-feat,.rp-ind,.rp-pricing__card{opacity:1;transform:none;transition:none}
 }
 </style>
 
 <script>
-  // Tab switching with ARIA + roving tabindex
-  const tabs = document.querySelectorAll('.rp-demo__tab');
-  const panels = document.querySelectorAll('.rp-demo__panel');
-  function activateTab(tab) {
-    const target = tab.dataset.tab;
-    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
-    panels.forEach(p => { p.classList.remove('active'); p.setAttribute('hidden', ''); });
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    tab.setAttribute('tabindex', '0');
-    const panel = document.querySelector(`[data-panel="${target}"]`);
-    if (panel) { panel.classList.add('active'); panel.removeAttribute('hidden'); }
+  // ── Workflow Stepper ──
+  const steps = document.querySelectorAll('.rp-step[data-step]');
+  const panels = document.querySelectorAll('.rp-wf-panel');
+  const connectors = document.querySelectorAll('.rp-step__connector-fill');
+  const prevBtn = document.getElementById('wfPrev');
+  const nextBtn = document.getElementById('wfNext');
+  const counter = document.getElementById('wfCounter');
+  let currentStep = 1;
+  const totalSteps = 6;
+
+  function goToStep(n) {
+    if (n < 1 || n > totalSteps) return;
+    currentStep = n;
+
+    steps.forEach(s => {
+      const sn = parseInt(s.dataset.step);
+      s.classList.remove('active', 'done');
+      s.setAttribute('aria-selected', 'false');
+      s.setAttribute('tabindex', '-1');
+      if (sn < n) s.classList.add('done');
+      if (sn === n) { s.classList.add('active'); s.setAttribute('aria-selected', 'true'); s.setAttribute('tabindex', '0'); }
+    });
+
+    connectors.forEach(c => {
+      const cn = parseInt(c.dataset.fill);
+      c.classList.toggle('filled', cn < n);
+    });
+
+    panels.forEach(p => {
+      const pn = parseInt(p.dataset.wf);
+      if (pn === n) { p.classList.add('active'); p.removeAttribute('hidden'); }
+      else { p.classList.remove('active'); p.setAttribute('hidden', ''); }
+    });
+
+    if (prevBtn) prevBtn.disabled = n === 1;
+    if (nextBtn) {
+      if (n === totalSteps) { nextBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Restart'; }
+      else { nextBtn.innerHTML = 'Next Step <i class="fa-solid fa-arrow-right"></i>'; }
+    }
+    if (counter) counter.textContent = `Step ${n} of ${totalSteps}`;
   }
-  tabs.forEach((tab, i) => {
-    tab.setAttribute('tabindex', i === 0 ? '0' : '-1');
-    tab.addEventListener('click', () => activateTab(tab));
-    tab.addEventListener('keydown', (e) => {
-      const arr = Array.from(tabs);
-      const idx = arr.indexOf(tab);
-      let next = -1;
-      if (e.key === 'ArrowRight') next = (idx + 1) % arr.length;
-      else if (e.key === 'ArrowLeft') next = (idx - 1 + arr.length) % arr.length;
-      if (next >= 0) { e.preventDefault(); arr[next].focus(); activateTab(arr[next]); }
+
+  steps.forEach(s => {
+    s.addEventListener('click', () => goToStep(parseInt(s.dataset.step)));
+    s.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goToStep(Math.min(currentStep + 1, totalSteps)); steps.forEach(st => { if (parseInt(st.dataset.step) === currentStep) st.focus(); }); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goToStep(Math.max(currentStep - 1, 1)); steps.forEach(st => { if (parseInt(st.dataset.step) === currentStep) st.focus(); }); }
     });
   });
-  panels.forEach((p, i) => { if (i > 0) p.setAttribute('hidden', ''); });
 
-  // Modal with focus trap + focus restore
+  prevBtn?.addEventListener('click', () => goToStep(currentStep - 1));
+  nextBtn?.addEventListener('click', () => {
+    if (currentStep === totalSteps) goToStep(1);
+    else goToStep(currentStep + 1);
+  });
+
+  // ── Modal ──
   const modal = document.getElementById('rpModal');
   const modalDialog = modal?.querySelector('.rp-modal');
   const form = document.getElementById('rpLeadForm');
@@ -1279,10 +1266,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     lastFocusedEl = document.activeElement;
     modal?.classList.add('active');
     document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      const first = modalDialog?.querySelector('input, button');
-      first?.focus();
-    }, 100);
+    setTimeout(() => { modalDialog?.querySelector('input, button')?.focus(); }, 100);
   }
   function closeModal() {
     modal?.classList.remove('active');
@@ -1302,8 +1286,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     if (e.key === 'Tab' && modal?.classList.contains('active')) {
       const focusable = getFocusable();
       if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+      const first = focusable[0], last = focusable[focusable.length - 1];
       if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
       else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
     }
@@ -1315,7 +1298,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     if (success) success.style.display = 'block';
   });
 
-  // Animations
+  // ── Scroll Animations ──
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animated'); });
   }, { threshold: .15 });

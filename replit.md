@@ -70,7 +70,7 @@ public/
 - `non-profits.astro` - Non-profit solutions (rose accent)
 - `higher-education.astro` - Education payments (purple accent)
 - `contractors.astro` - Contractor solutions (uses `is:global` styles, yellow accent)
-- `repair.astro` - Repair shop management SaaS landing page (`rp-*` CSS prefix). Interactive 5-tab product tour demo (Repair Tickets, Point of Sale, Inventory, Customers, Operations) with rich realistic UI mockups. Dashboard hero with KPIs and chart, 3 floating notification cards. 4 core feature cards with checklists, side-by-side "Why Switch" comparison, 8 industry cards, $30/month pricing card, final CTA, and lead capture modal with focus trap/restore (client-side only). Full ARIA tablist + roving tabindex + keyboard nav. Scoped `<style>` and `<script>` (no `is:global`).
+- `repair.astro` - PPDrepair SaaS product landing page (`rp-*` CSS prefix). Branded as "PPDrepair" throughout. Hero with layered dashboard mockup + 4 floating cards (POS, inventory, customer, payment). Industries section placed early (8 repair types). Centerpiece: 6-step guided interactive workflow demo (Check In → Assign Tech → Add Parts → Take Deposit → Notify Customer → Final Payment) with stepper, prev/next nav, animated transitions, and realistic software UI panels. 4 core feature module cards, side-by-side "Why Switch" comparison, $30/month pricing card, premium CTA, and lead capture modal with PPDrepair logo, focus trap/restore, Esc-to-close (client-side only). Full ARIA tablist + roving tabindex + keyboard nav. Scoped `<style>` and `<script>` (no `is:global`).
 
 ### Product Pages
 - `clover.astro` - Clover devices
