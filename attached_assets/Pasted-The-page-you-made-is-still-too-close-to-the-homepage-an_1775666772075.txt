@@ -1,0 +1,234 @@
+The page you made is still too close to the homepage and it does not sell the software strongly enough.
+
+I need you to significantly upgrade this new Industries page so it feels like a true product landing page for repair shop software, not a slightly modified homepage.
+
+Important:
+- This page must stay as a separate page under the Industries tab
+- It should still match my website branding/header/footer
+- But the body of the page should feel much more like a premium SaaS product page
+- Right now it is too generic, not interactive enough, and not convincing enough
+
+Main problems to fix:
+1. It does not showcase the software deeply enough
+2. The demo sections feel weak or too static
+3. The page does not clearly sell the actual workflows and business value
+4. It looks too similar to the homepage instead of a dedicated industry/product page
+5. The call to action is not strong enough
+
+What I want instead:
+Build this page more like a software sales page + interactive product preview for repair shops.
+
+The page should make a repair shop owner immediately understand:
+- what the software does
+- how it helps them run the shop
+- why it is better than disconnected tools
+- why $30/month is a great deal
+- why they should request a call back right now
+
+Use the files I attached to understand the real software structure and workflows.
+Specifically pull inspiration from:
+- dashboard
+- POS
+- tickets
+- ticket detail
+- inventory
+- customers
+- merchant layout
+- schema/data structure
+
+Major changes I want:
+
+1. New hero section
+Make the hero much stronger and more software-focused.
+I want:
+- a stronger headline
+- a subheadline that clearly explains the value
+- a visible $30/month mention
+- a stronger visual of the software
+- better CTA buttons
+
+Hero direction example:
+Run Your Repair Shop on One Powerful System
+POS, repair tickets, inventory, and customer management built for phone repair and service businesses. Starting at just $30/month.
+
+CTA buttons:
+- Request a Demo
+- Get a Call Back
+- Explore Live Demo
+
+2. Add a true interactive demo section
+This is the biggest issue.
+The page must include a much richer simulated demo using the actual workflows from the software files.
+
+I want a large section with clickable tabs such as:
+- Repair Tickets
+- POS Checkout
+- Inventory
+- Customers
+- Employee / Store Operations
+
+Each tab should reveal a polished software-style panel that feels like a live mini-app, not just static cards.
+
+Examples:
+Repair Tickets tab:
+- ticket list
+- priority badges
+- status progression
+- assigned technician
+- device issue summary
+- checklist / signature / parts used
+- progress states like New, In Progress, Ready for Pickup
+
+POS Checkout tab:
+- cart area
+- repair service + accessories
+- subtotal / tax / total
+- payment buttons
+- invoice / receipt feel
+- quick checkout flow
+
+Inventory tab:
+- stock table
+- low stock warnings
+- serialized item examples
+- transfer / reorder / PO indicators
+- clean dashboard widgets
+
+Customers tab:
+- customer profile summary
+- repair history
+- recent transactions
+- device notes
+- contact info
+
+Employee / Operations tab:
+- shift status
+- assigned jobs
+- role permissions
+- productivity indicators
+- performance summary
+
+This section should feel like a real product tour.
+Use:
+- tabs
+- transitions
+- hover states
+- counters
+- badges
+- progress indicators
+- charts/widgets where helpful
+- polished UI styling
+
+3. Better feature selling sections
+Do not just list features.
+Each major feature should be sold with a business benefit and a visual software preview.
+
+I want 4 strong feature blocks:
+- Point of Sale
+- Repair Ticket Management
+- Inventory Management
+- Employee Management
+
+For each one:
+- clear headline
+- short persuasive copy
+- “why it matters” angle
+- mini UI preview or workflow visual
+- stronger wording focused on shop owners
+
+Example tone:
+Track every repair from check-in to pickup
+Create tickets, assign technicians, log parts, capture signatures, and keep customers informed without losing track of a single job.
+
+4. Stronger “why switch” section
+Add a clear comparison section.
+Show the difference between:
+- spreadsheets / paper / generic POS
+vs
+- this all-in-one repair shop software
+
+Ideas:
+Old way:
+- scattered notes
+- missed repairs
+- poor inventory visibility
+- slow checkout
+- no accountability
+
+With our software:
+- organized workflows
+- faster service
+- better inventory control
+- cleaner checkout
+- better customer communication
+- all in one place
+
+5. Better pricing section
+Make $30/month stand out much more.
+It should feel like an amazing value.
+
+Possible direction:
+Everything your repair shop needs for only $30/month
+
+Include:
+- one clear plan card
+- software highlights
+- CTA button
+- short trust-building line
+
+6. Much stronger final CTA
+The page needs a better close.
+Add a strong call-to-action section that makes users want to contact us.
+
+Use a modal, slide-in, or popup contact form.
+The CTA should feel high-converting.
+
+Include copy like:
+See how your repair shop can run smoother
+Book a quick walkthrough and we’ll show you how the system fits your workflow.
+
+Form fields:
+- Name
+- Business Name
+- Phone
+- Email
+- Repair Shop Type
+- Message
+
+7. Industries support section
+Keep the section showing other repair industries we support, but make it cleaner and more premium.
+It should support the main phone repair angle, not distract from it.
+
+Include:
+- Cell Phone Repair
+- Computer Repair
+- Jewelry Repair
+- Watch Repair
+- Bicycle Repair
+- Power Tools Repair
+- Camera Repair
+- Small Engine Repair
+
+8. Visual/design direction
+Please push the design much further.
+I want:
+- more premium SaaS styling
+- more contrast and hierarchy
+- more software UI visuals
+- more polished spacing and layout
+- stronger interactions
+- less resemblance to the homepage
+- a more dedicated product-page feel
+
+Do not make this page look like recycled homepage sections.
+It needs its own structure and stronger conversion strategy.
+
+What I want you to do now:
+- rewrite the section structure
+- strengthen the copy
+- create a much richer interactive demo area
+- make the software itself the star of the page
+- improve the CTA and pricing
+- make the page feel like a serious landing page for selling this repair software
+
+Please revise the page substantially, not just small cosmetic edits.
