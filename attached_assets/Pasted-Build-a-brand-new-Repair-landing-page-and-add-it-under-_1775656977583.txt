@@ -1,0 +1,86 @@
+Build a brand new “Repair” landing page and add it under the “Industries” section of the website navigation.
+
+This page should be broad enough to work for general repair businesses, but the messaging and visual style should feel especially relevant to wireless stores, phone repair shops, and tech repair businesses.
+
+The goal is to make PPD Technology look like a modern, premium, software-driven payment and business solutions company for the repair industry.
+
+Main requirements:
+
+Add a new “Repair” item under Industries
+Create a dedicated landing page for the Repair industry
+Keep the positioning broad for repair businesses in general, not only phone repair stores
+Still market it in a way that strongly appeals to wireless stores, device repair stores, and modern tech-focused repair businesses
+Make the primary call to action go to: https://www.ppdrepair.com/
+Use the screenshots I attach of the software throughout the page in a polished, premium way
+You can take inspiration from https://www.repairdesk.co/
+ for overall direction, but do not copy it. Make this design much more modern, more premium, more high-tech, and more visually impressive
+
+Design direction:
+
+Super clean, futuristic, high-tech, software-company feel
+Strong visual hierarchy
+Smooth scrolling animations
+Premium card sections
+Sleek gradients, glows, glassmorphism, subtle grid backgrounds, floating UI elements
+Mobile responsive
+Consistent with the rest of the site but upgraded to feel more advanced and refined
+Very user friendly, not cluttered
+
+Page goals:
+
+Clearly show that PPD Technology understands repair businesses
+Make the content broad enough for repair shops in general
+But visually and strategically make it especially attractive to wireless stores, phone repair businesses, and tech service retailers
+Show how the solution helps repair businesses run faster, smarter, and more profitably
+Push users strongly toward clicking through to ppdrepair.com
+Make the page feel conversion-focused, not just informational
+
+Suggested page structure:
+
+Hero section
+Strong headline focused on helping repair businesses grow
+Supporting text that speaks to repair operations, customer service, workflow, and payments
+Very strong CTA button linking to https://www.ppdrepair.com/
+Secondary CTA if needed
+Include software screenshot mockup or dashboard visual
+Add high-end animations and visual effects
+Built for modern repair businesses
+Speak generally to repair stores
+But include examples that resonate with wireless and device-focused businesses
+Mention things like ticket management, repair workflow, customer updates, accessories, inventory, payments, reporting, and store efficiency
+Use modern icon cards or feature blocks
+Software showcase section
+Use the screenshots I provide
+Present them in an attractive, premium layout
+Could be alternating image/text sections, layered UI cards, floating mockups, or software-style panels
+Add short benefit-driven copy next to each screenshot
+Benefits section
+Faster customer check-ins
+Better repair tracking
+Easier inventory and accessory management
+Better store organization
+Streamlined payments
+Improved customer experience
+Smarter reporting and workflow visibility
+Industry-focused messaging
+Make the copy feel relevant for repair businesses overall
+But subtly lean toward wireless retail, mobile device repair, electronics repair, and tech service environments
+Avoid making the page feel too narrow or exclusive to only phone repair
+Strong CTA section
+Bold closing section with a premium, high-converting feel
+Make the CTA impossible to miss
+CTA should link to https://www.ppdrepair.com/
+
+Important:
+
+Write compelling, polished copy directly into the page
+Do not make it generic in a boring way
+Keep it broad enough for repair businesses overall
+But make it feel especially appealing to wireless and device-repair businesses
+Make the visuals and spacing feel modern and premium
+Keep the page fast, clean, and professional
+Make this one of the best-looking pages on the site
+
+When I attach screenshots, incorporate them naturally into the design and make them feel like part of a premium software presentation.
+
+If you want, I can make this even stronger and more “Replit-ready” so it tells it exactly what sections, copy tone, and animations to build.
