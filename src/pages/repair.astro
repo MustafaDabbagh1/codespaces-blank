@@ -4,6 +4,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="PPD Technology | All-in-One Repair Shop Management Software">
 
+  <!-- ══════════════ MEMBER BAR ══════════════ -->
+  <div class="rp-member-bar">
+    <div class="container rp-member-bar__inner">
+      <span>Already a member?</span>
+      <a href="https://www.ppdrepair.com/" target="_blank" rel="noopener noreferrer" class="rp-member-bar__link"><i class="fa-solid fa-right-to-bracket"></i> Login Now</a>
+    </div>
+  </div>
+
   <!-- ══════════════ HERO ══════════════ -->
   <section class="rp-hero">
     <div class="rp-hero__grid-bg"></div>
@@ -871,6 +879,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 /* ═══════════════════════════════════════════════════════════════
    REPAIR PAGE — FULL REWRITE
    ═══════════════════════════════════════════════════════════════ */
+
+.rp-member-bar{background:linear-gradient(90deg,#0C1A38,#060E21);border-bottom:1px solid rgba(255,255,255,.06);padding:10px 0;position:relative;z-index:5}
+.rp-member-bar__inner{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)}
+.rp-member-bar__link{display:inline-flex;align-items:center;gap:6px;color:#00CFFF;font-weight:700;text-decoration:none;padding:5px 14px;border-radius:9999px;border:1px solid rgba(0,207,255,.25);background:rgba(0,207,255,.06);transition:all .25s;font-size:13px}
+.rp-member-bar__link:hover{background:rgba(0,207,255,.15);border-color:rgba(0,207,255,.5);color:#fff}
 
 .rp-grad{background:linear-gradient(135deg,#00CFFF,#2D60FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .rp-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:7px 16px;border-radius:9999px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(8px);color:rgba(255,255,255,.9)}
