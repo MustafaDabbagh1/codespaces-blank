@@ -596,13 +596,13 @@ import "../styles/repair-slider.css";
     </div>
   </section>
 
-  <!-- ══════════════ MODULE SLIDER ══════════════ -->
+  <!-- ══════════════ MODULE SHOWCASE ══════════════ -->
   <section class="rp-modules" id="features">
     <div class="container">
       <div class="rp-section-hdr">
         <span class="rp-pill rp-pill--light"><i class="fa-solid fa-cubes"></i> Core Modules</span>
         <h2>Everything Inside <span class="rp-grad">PPDrepair</span></h2>
-        <p>Sales, inventory, operations, reporting, customers, and payments — six integrated modules that power your entire repair business.</p>
+        <p>Checkout, inventory, operations, reporting, customers, and payments — six integrated modules that run your entire repair business from one platform.</p>
       </div>
 
       <div class="rp-slider-wrap">
@@ -612,150 +612,203 @@ import "../styles/repair-slider.css";
         <div class="rp-slider-viewport" id="sliderViewport">
           <div class="rp-slider-track" id="sliderTrack">
 
-            <!-- SLIDE 1: Point of Sale -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 1: Point of Sale ────── -->
+            <div class="rp-slide rp-slide--pos">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-cash-register"></i></div>
                   <h3>Point of Sale</h3>
                   <p class="rp-slide__headline">Turn Every Repair Into a Bigger Sale</p>
                   <p class="rp-slide__desc">Ring up repairs, accessories, and devices from one fast checkout screen. Upsell at the counter, apply discounts, and process any payment type in seconds.</p>
                   <ul class="rp-slide__list">
-                    <li><i class="fa-solid fa-check"></i> Card, cash &amp; digital wallets</li>
+                    <li><i class="fa-solid fa-check"></i> Card, cash &amp; digital wallet payments</li>
                     <li><i class="fa-solid fa-check"></i> Inline discounts &amp; dual pricing</li>
-                    <li><i class="fa-solid fa-check"></i> Print, email, or SMS receipts</li>
-                    <li><i class="fa-solid fa-check"></i> Accessory upsell prompts</li>
+                    <li><i class="fa-solid fa-check"></i> Print, email, or SMS receipts instantly</li>
+                    <li><i class="fa-solid fa-check"></i> Smart accessory upsell prompts</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--pos">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-cash-register"></i> POS — Checkout</span><span class="rp-mini__station">Station 1</span></div>
+                  <div class="rp-mini" data-demo="pos">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-cash-register"></i> POS — Checkout</span><span class="rp-mini__badge">Station 1</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-cart">
-                        <div class="rp-mini-item"><span class="rp-mini-cat">Repair</span><strong>Screen Replacement — iPhone 15</strong><span class="rp-mini-price">$189.00</span></div>
-                        <div class="rp-mini-item"><span class="rp-mini-cat">Accessory</span><strong>Tempered Glass Protector</strong><span class="rp-mini-price">$24.99</span></div>
-                        <div class="rp-mini-item upsell"><span class="rp-mini-cat">Suggested</span><strong>Premium Case</strong><span class="rp-mini-price">$34.99</span></div>
+                      <div class="rp-pos-cart">
+                        <div class="rp-pos-item"><span class="rp-pos-cat">Repair</span><strong>Screen Replacement — iPhone 15</strong><span class="rp-pos-price">$189.00</span></div>
+                        <div class="rp-pos-item"><span class="rp-pos-cat">Accessory</span><strong>Tempered Glass Protector</strong><span class="rp-pos-price">$24.99</span></div>
+                        <div class="rp-pos-item upsell"><span class="rp-pos-cat">Upsell</span><strong>Premium Silicone Case</strong><span class="rp-pos-price">$34.99</span></div>
                       </div>
-                      <div class="rp-mini-totals">
-                        <div class="rp-mini-tline"><span>Subtotal</span><span>$248.98</span></div>
-                        <div class="rp-mini-tline"><span>Discount (10%)</span><span class="rp-mini-disc">-$24.90</span></div>
-                        <div class="rp-mini-tline"><span>Tax</span><span>$18.49</span></div>
-                        <div class="rp-mini-tline total"><span>Total</span><span>$242.57</span></div>
+                      <div class="rp-pos-totals">
+                        <div class="rp-pos-line"><span>Subtotal</span><span>$248.98</span></div>
+                        <div class="rp-pos-line"><span>Discount (10%)</span><span class="rp-pos-disc">−$24.90</span></div>
+                        <div class="rp-pos-line"><span>Tax (8.25%)</span><span>$18.49</span></div>
+                        <div class="rp-pos-line total"><span>Total</span><span>$242.57</span></div>
                       </div>
-                      <div class="rp-mini-pays"><span class="active"><i class="fa-solid fa-credit-card"></i> Card</span><span><i class="fa-solid fa-money-bill"></i> Cash</span><span><i class="fa-brands fa-apple-pay"></i></span></div>
-                      <div class="rp-mini-charge"><i class="fa-solid fa-lock"></i> Charge $242.57</div>
+                      <div class="rp-pos-pays" data-toggle="pos-pay">
+                        <button class="rp-pos-pay active" data-pay="card"><i class="fa-solid fa-credit-card"></i> Card</button>
+                        <button class="rp-pos-pay" data-pay="cash"><i class="fa-solid fa-money-bill"></i> Cash</button>
+                        <button class="rp-pos-pay" data-pay="wallet"><i class="fa-brands fa-apple-pay"></i> Wallet</button>
+                      </div>
+                      <div class="rp-pos-charge"><i class="fa-solid fa-lock"></i> Charge $242.57</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SLIDE 2: Inventory -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 2: Inventory ────── -->
+            <div class="rp-slide rp-slide--inv">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                  <h3>Inventory Management</h3>
-                  <p class="rp-slide__headline">Never Run Out of the Parts You Need</p>
-                  <p class="rp-slide__desc">Track every screen, battery, and accessory across all locations. Get automatic alerts before you run out, and manage serialized units with full audit trails.</p>
+                  <h3>Inventory</h3>
+                  <p class="rp-slide__headline">Never Run Out of the Parts That Matter</p>
+                  <p class="rp-slide__desc">Track every screen, battery, and accessory across all locations. Automatic alerts, serialized unit tracking, and one-click reordering keep your shelves stocked.</p>
                   <ul class="rp-slide__list">
-                    <li><i class="fa-solid fa-check"></i> Serialized tracking (IMEI, SN)</li>
+                    <li><i class="fa-solid fa-check"></i> Serialized tracking (IMEI / serial #)</li>
                     <li><i class="fa-solid fa-check"></i> Multi-location stock transfers</li>
-                    <li><i class="fa-solid fa-check"></i> Auto low-stock alerts</li>
-                    <li><i class="fa-solid fa-check"></i> Cost &amp; margin per repair</li>
+                    <li><i class="fa-solid fa-check"></i> Auto low-stock &amp; out-of-stock alerts</li>
+                    <li><i class="fa-solid fa-check"></i> Cost, margin &amp; supplier tracking</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--inv">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-boxes-stacked"></i> Inventory</span><span class="rp-mini__station">48 products</span></div>
+                  <div class="rp-mini" data-demo="inv">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-boxes-stacked"></i> Inventory</span><span class="rp-mini__badge">48 parts</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-alert critical"><i class="fa-solid fa-circle-exclamation"></i><div><strong>Out of Stock</strong><span>iPad Pro Digitizer</span></div><span class="rp-mini-reorder">Reorder</span></div>
-                      <div class="rp-mini-alert warn"><i class="fa-solid fa-triangle-exclamation"></i><div><strong>Low Stock</strong><span>iPhone 15 OLED — 2 left</span></div><span class="rp-mini-reorder">Review</span></div>
-                      <div class="rp-mini-inv-table">
-                        <div class="rp-mini-inv-row header"><span>Part</span><span>Stock</span><span>Cost</span><span>Price</span></div>
-                        <div class="rp-mini-inv-row"><span>iPhone 15 OLED Screen</span><span class="low">2</span><span>$85</span><span>$189</span></div>
-                        <div class="rp-mini-inv-row"><span>Samsung S24 Battery</span><span class="ok">8</span><span>$22</span><span>$79</span></div>
-                        <div class="rp-mini-inv-row"><span>USB-C Port (Universal)</span><span class="ok">15</span><span>$3.50</span><span>$49</span></div>
-                        <div class="rp-mini-inv-row"><span>Tempered Glass</span><span class="ok">42</span><span>$1.20</span><span>$25</span></div>
+                      <div class="rp-demo-tabs" data-tabs="inv">
+                        <button class="rp-demo-tab active" data-tab="stock">Stock</button>
+                        <button class="rp-demo-tab" data-tab="alerts">Alerts <span class="rp-badge-sm rp-badge-sm--red">2</span></button>
+                        <button class="rp-demo-tab" data-tab="transfers">Transfers</button>
                       </div>
-                      <div class="rp-mini-inv-transfer"><i class="fa-solid fa-truck"></i> Transfer: 5× OLED Screen from Westside → Main St</div>
+                      <div class="rp-demo-panel active" data-panel="stock">
+                        <div class="rp-inv-table">
+                          <div class="rp-inv-row header"><span>Part</span><span>Qty</span><span>Cost</span><span>Price</span></div>
+                          <div class="rp-inv-row"><span>iPhone 15 OLED</span><span class="low">2</span><span>$85</span><span>$189</span></div>
+                          <div class="rp-inv-row"><span>Samsung S24 Battery</span><span class="ok">8</span><span>$22</span><span>$79</span></div>
+                          <div class="rp-inv-row"><span>USB-C Port (Univ.)</span><span class="ok">15</span><span>$3.50</span><span>$49</span></div>
+                          <div class="rp-inv-row"><span>Tempered Glass</span><span class="ok">42</span><span>$1.20</span><span>$25</span></div>
+                          <div class="rp-inv-row"><span>iPad Pro 12.9 Digi</span><span class="low">0</span><span>$110</span><span>$249</span></div>
+                        </div>
+                        <div style="font-size:9px;color:#94A3B8;margin-top:4px">SN: <span style="font-family:monospace;font-size:9px">352845110509726</span> · iPhone 15 OLED</div>
+                      </div>
+                      <div class="rp-demo-panel" data-panel="alerts">
+                        <div class="rp-inv-alert critical"><i class="fa-solid fa-circle-exclamation"></i><div><strong>Out of Stock</strong><span>iPad Pro 12.9 Digitizer</span></div><button class="rp-inv-action">Reorder</button></div>
+                        <div class="rp-inv-alert warn"><i class="fa-solid fa-triangle-exclamation"></i><div><strong>Low Stock (2 left)</strong><span>iPhone 15 OLED Screen</span></div><button class="rp-inv-action">Review</button></div>
+                        <div style="font-size:10px;color:#94A3B8;margin-top:8px;display:flex;align-items:center;gap:5px"><i class="fa-solid fa-bell" style="color:#F97316"></i> 2 alerts require attention</div>
+                      </div>
+                      <div class="rp-demo-panel" data-panel="transfers">
+                        <div class="rp-inv-transfer"><i class="fa-solid fa-truck"></i> 5× iPhone 15 OLED from <strong style="margin:0 3px">Westside</strong> → <strong style="margin:0 3px">Main St</strong></div>
+                        <div class="rp-inv-transfer" style="margin-top:6px"><i class="fa-solid fa-rotate"></i> 10× Tempered Glass from <strong style="margin:0 3px">Warehouse</strong> → <strong style="margin:0 3px">Westside</strong></div>
+                        <div style="font-size:10px;color:#94A3B8;margin-top:8px;display:flex;align-items:center;gap:5px"><i class="fa-solid fa-clock" style="color:#1549FF"></i> 2 transfers in progress</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SLIDE 3: Team & Stores -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 3: Team & Stores ────── -->
+            <div class="rp-slide rp-slide--team">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-users-gear"></i></div>
                   <h3>Team &amp; Stores</h3>
                   <p class="rp-slide__headline">See Who's Doing What, Everywhere</p>
-                  <p class="rp-slide__desc">Manage employees across multiple locations with role-based access, time clocks, and real-time productivity tracking — from owner to cashier.</p>
+                  <p class="rp-slide__desc">Manage employees across locations with role-based access, shift tracking, and real-time performance — from owner to front-desk cashier.</p>
                   <ul class="rp-slide__list">
                     <li><i class="fa-solid fa-check"></i> Owner → Cashier role hierarchy</li>
-                    <li><i class="fa-solid fa-check"></i> Shift clock-in/out tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Shift clock-in/out with time tracking</li>
                     <li><i class="fa-solid fa-check"></i> Per-employee KPI dashboards</li>
-                    <li><i class="fa-solid fa-check"></i> Multi-store with store-level settings</li>
+                    <li><i class="fa-solid fa-check"></i> Multi-store switching &amp; settings</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--team">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-users-gear"></i> Team</span><span class="rp-mini__station">4 active today</span></div>
+                  <div class="rp-mini" data-demo="team">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-users-gear"></i> Team</span><span class="rp-mini__badge">4 active</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-emp"><div class="rp-mini-emp__av" style="background:#2D60FF">MR</div><div class="rp-mini-emp__info"><strong>Mike R.</strong><span>Lead Tech · Owner</span></div><div class="rp-mini-emp__kpi"><span>7 tickets</span><span>$1,420</span></div><span class="rp-badge rp-badge--green">In</span></div>
-                      <div class="rp-mini-emp"><div class="rp-mini-emp__av" style="background:#00CFFF">LT</div><div class="rp-mini-emp__info"><strong>Lisa T.</strong><span>Technician</span></div><div class="rp-mini-emp__kpi"><span>5 tickets</span><span>$890</span></div><span class="rp-badge rp-badge--green">In</span></div>
-                      <div class="rp-mini-emp"><div class="rp-mini-emp__av" style="background:#00E5A0">JC</div><div class="rp-mini-emp__info"><strong>James C.</strong><span>Cashier</span></div><div class="rp-mini-emp__kpi"><span>2 tickets</span><span>$537</span></div><span class="rp-badge rp-badge--green">In</span></div>
-                      <div class="rp-mini-emp"><div class="rp-mini-emp__av" style="background:#7C3AED">AP</div><div class="rp-mini-emp__info"><strong>Amanda P.</strong><span>Cashier</span></div><div class="rp-mini-emp__kpi"><span>0 tickets</span><span>$210</span></div><span class="rp-badge rp-badge--orange">Break</span></div>
-                      <div class="rp-mini-roles">
-                        <span><i class="fa-solid fa-crown"></i> Owner</span>
-                        <span><i class="fa-solid fa-user-shield"></i> Manager</span>
-                        <span><i class="fa-solid fa-wrench"></i> Technician</span>
-                        <span><i class="fa-solid fa-cash-register"></i> Cashier</span>
+                      <div class="rp-demo-tabs" data-tabs="team">
+                        <button class="rp-demo-tab active" data-tab="roster">Roster</button>
+                        <button class="rp-demo-tab" data-tab="roles">Roles</button>
+                        <button class="rp-demo-tab" data-tab="stores">Stores</button>
                       </div>
-                      <div class="rp-mini-store-switch"><i class="fa-solid fa-store"></i> Main St <span class="rp-badge rp-badge--green">Active</span><i class="fa-solid fa-arrow-right-arrow-left"></i><i class="fa-solid fa-store"></i> Westside Mall <span class="rp-badge rp-badge--green">Active</span></div>
+                      <div class="rp-demo-panel active" data-panel="roster">
+                        <div class="rp-team-emp"><div class="rp-team-av" style="background:#2D60FF">MR</div><div class="rp-team-info"><strong>Mike R.</strong><span>Lead Tech · Owner</span></div><div class="rp-team-kpi"><span>7 jobs</span><span>$1,420</span></div><span class="rp-badge-sm rp-badge-sm--green">In</span></div>
+                        <div class="rp-team-emp"><div class="rp-team-av" style="background:#06B6D4">LT</div><div class="rp-team-info"><strong>Lisa T.</strong><span>Technician</span></div><div class="rp-team-kpi"><span>5 jobs</span><span>$890</span></div><span class="rp-badge-sm rp-badge-sm--green">In</span></div>
+                        <div class="rp-team-emp"><div class="rp-team-av" style="background:#059669">JC</div><div class="rp-team-info"><strong>James C.</strong><span>Cashier</span></div><div class="rp-team-kpi"><span>2 jobs</span><span>$537</span></div><span class="rp-badge-sm rp-badge-sm--green">In</span></div>
+                        <div class="rp-team-emp"><div class="rp-team-av" style="background:#7C3AED">AP</div><div class="rp-team-info"><strong>Amanda P.</strong><span>Cashier · Westside</span></div><div class="rp-team-kpi"><span>—</span><span>$210</span></div><span class="rp-badge-sm rp-badge-sm--amber">Break</span></div>
+                      </div>
+                      <div class="rp-demo-panel" data-panel="roles">
+                        <div class="rp-team-roles">
+                          <span><i class="fa-solid fa-crown" style="color:#F59E0B"></i> Owner</span>
+                          <span><i class="fa-solid fa-user-shield" style="color:#1549FF"></i> Manager</span>
+                          <span><i class="fa-solid fa-wrench" style="color:#7C3AED"></i> Technician</span>
+                          <span><i class="fa-solid fa-cash-register" style="color:#06B6D4"></i> Cashier</span>
+                        </div>
+                        <div style="font-size:10px;color:#64748B;line-height:1.6;margin-top:6px">Each role controls access to POS, inventory, reports, and settings. Owners see everything; cashiers only see checkout.</div>
+                      </div>
+                      <div class="rp-demo-panel" data-panel="stores">
+                        <div class="rp-team-stores" style="margin-bottom:6px"><i class="fa-solid fa-store" style="color:#1549FF"></i> <strong>Main St</strong> <span class="rp-badge-sm rp-badge-sm--green">Active</span> <span style="margin-left:auto;font-size:9px;color:#94A3B8">3 staff on shift</span></div>
+                        <div class="rp-team-stores"><i class="fa-solid fa-store" style="color:#7C3AED"></i> <strong>Westside Mall</strong> <span class="rp-badge-sm rp-badge-sm--green">Active</span> <span style="margin-left:auto;font-size:9px;color:#94A3B8">1 staff on shift</span></div>
+                        <div style="font-size:10px;color:#94A3B8;margin-top:8px;display:flex;align-items:center;gap:5px"><i class="fa-solid fa-arrow-right-arrow-left" style="color:#1549FF"></i> Switch stores to view separate inventory &amp; reports</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SLIDE 4: Reports & Analytics -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 4: Reports & Analytics ────── -->
+            <div class="rp-slide rp-slide--reports">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-chart-line"></i></div>
                   <h3>Reports &amp; Analytics</h3>
                   <p class="rp-slide__headline">Know Your Numbers Without the Guesswork</p>
-                  <p class="rp-slide__desc">Real-time dashboards that show revenue trends, repair volume, technician performance, and top-selling services — so you always know where you stand.</p>
+                  <p class="rp-slide__desc">Real-time dashboards show revenue, repair trends, technician stats, and top-sellers — so you always know exactly where your business stands.</p>
                   <ul class="rp-slide__list">
-                    <li><i class="fa-solid fa-check"></i> Revenue &amp; margin trends</li>
+                    <li><i class="fa-solid fa-check"></i> Revenue &amp; margin trend lines</li>
                     <li><i class="fa-solid fa-check"></i> Repair volume by category</li>
                     <li><i class="fa-solid fa-check"></i> Technician performance rankings</li>
-                    <li><i class="fa-solid fa-check"></i> Top services &amp; accessories</li>
+                    <li><i class="fa-solid fa-check"></i> Top services &amp; accessory sales</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--reports">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-chart-line"></i> Analytics</span><span class="rp-mini__station">Last 7 Days</span></div>
+                  <div class="rp-mini" data-demo="reports">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-chart-line"></i> Analytics Dashboard</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-kpis">
-                        <div class="rp-mini-kpi"><span class="rp-mini-kpi__v">$12,840</span><span class="rp-mini-kpi__l">Revenue</span><span class="rp-mini-kpi__t green">↑ 14%</span></div>
-                        <div class="rp-mini-kpi"><span class="rp-mini-kpi__v">47</span><span class="rp-mini-kpi__l">Repairs</span><span class="rp-mini-kpi__t green">↑ 8%</span></div>
-                        <div class="rp-mini-kpi"><span class="rp-mini-kpi__v">$273</span><span class="rp-mini-kpi__l">Avg Ticket</span><span class="rp-mini-kpi__t green">↑ 3%</span></div>
+                      <div class="rp-rpt-filters" data-toggle="rpt-filter">
+                        <button class="rp-rpt-filter" data-filter="today">Today</button>
+                        <button class="rp-rpt-filter active" data-filter="week">This Week</button>
+                        <button class="rp-rpt-filter" data-filter="month">Month</button>
                       </div>
-                      <div class="rp-mini-chart">
-                        <div class="rp-mini-chart__bars">
-                          <div style="height:40%"></div><div style="height:55%"></div><div style="height:45%"></div><div style="height:70%"></div><div style="height:85%"></div><div class="active" style="height:78%"></div><div style="height:50%"></div>
+                      <div class="rp-rpt-kpis">
+                        <div class="rp-rpt-kpi"><span class="rp-rpt-kpi__v">$12,840</span><span class="rp-rpt-kpi__l">Revenue</span><span class="rp-rpt-kpi__t up">↑ 14%</span></div>
+                        <div class="rp-rpt-kpi"><span class="rp-rpt-kpi__v">47</span><span class="rp-rpt-kpi__l">Repairs</span><span class="rp-rpt-kpi__t up">↑ 8%</span></div>
+                        <div class="rp-rpt-kpi"><span class="rp-rpt-kpi__v">62%</span><span class="rp-rpt-kpi__l">Margin</span><span class="rp-rpt-kpi__t up">↑ 3%</span></div>
+                      </div>
+                      <div class="rp-rpt-chart">
+                        <div class="rp-rpt-chart__bars">
+                          <div class="bar-default" style="height:40%"></div>
+                          <div class="bar-default" style="height:55%"></div>
+                          <div class="bar-default" style="height:45%"></div>
+                          <div class="bar-default" style="height:70%"></div>
+                          <div class="bar-active" style="height:88%"></div>
+                          <div class="bar-active" style="height:78%"></div>
+                          <div class="bar-default" style="height:35%"></div>
                         </div>
-                        <div class="rp-mini-chart__labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+                        <div class="rp-rpt-chart__labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
                       </div>
-                      <div class="rp-mini-top-services">
-                        <span class="rp-mini-top-hdr">Top Services</span>
-                        <div class="rp-mini-rank"><span class="rp-mini-rank__n">1</span><span>Screen Replacement</span><span class="rp-mini-rank__v">$4,210</span></div>
-                        <div class="rp-mini-rank"><span class="rp-mini-rank__n">2</span><span>Battery Swap</span><span class="rp-mini-rank__v">$2,133</span></div>
-                        <div class="rp-mini-rank"><span class="rp-mini-rank__n">3</span><span>Charging Port</span><span class="rp-mini-rank__v">$1,470</span></div>
+                      <div class="rp-rpt-ranks" style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+                        <div>
+                          <span class="rp-rpt-ranks__hdr">Top Services</span>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n">1</span><span>Screen Replacement</span><span class="rp-rpt-rank__v">$4,210</span></div>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n">2</span><span>Battery Swap</span><span class="rp-rpt-rank__v">$2,133</span></div>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n">3</span><span>Charging Port</span><span class="rp-rpt-rank__v">$1,470</span></div>
+                        </div>
+                        <div>
+                          <span class="rp-rpt-ranks__hdr">Tech Performance</span>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n" style="background:rgba(45,96,255,.08)">MR</span><span>Mike R.</span><span class="rp-rpt-rank__v">$1,420</span></div>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n" style="background:rgba(6,182,212,.08)">LT</span><span>Lisa T.</span><span class="rp-rpt-rank__v">$890</span></div>
+                          <div class="rp-rpt-rank"><span class="rp-rpt-rank__n" style="background:rgba(5,150,105,.08)">JC</span><span>James C.</span><span class="rp-rpt-rank__v">$537</span></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -763,43 +816,62 @@ import "../styles/repair-slider.css";
               </div>
             </div>
 
-            <!-- SLIDE 5: Customers / CRM -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 5: Customers / CRM ────── -->
+            <div class="rp-slide rp-slide--crm">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-address-book"></i></div>
                   <h3>Customers &amp; CRM</h3>
                   <p class="rp-slide__headline">Build Relationships That Drive Repeat Business</p>
-                  <p class="rp-slide__desc">Every customer gets a profile with full repair history, saved devices, lifetime spend, and communication preferences — so you can personalize every visit.</p>
+                  <p class="rp-slide__desc">Every customer gets a full profile — repair history, saved devices, lifetime spend, and notes — so you can personalize every visit and keep them coming back.</p>
                   <ul class="rp-slide__list">
-                    <li><i class="fa-solid fa-check"></i> Full repair &amp; purchase history</li>
+                    <li><i class="fa-solid fa-check"></i> Complete repair &amp; purchase history</li>
                     <li><i class="fa-solid fa-check"></i> Saved devices per customer</li>
-                    <li><i class="fa-solid fa-check"></i> Lifetime value tracking</li>
-                    <li><i class="fa-solid fa-check"></i> Notification preferences</li>
+                    <li><i class="fa-solid fa-check"></i> Lifetime value &amp; VIP tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Notes &amp; communication log</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--crm">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-address-book"></i> Customer Profile</span></div>
+                  <div class="rp-mini" data-demo="crm">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-address-book"></i> Customer Record</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-cust-header">
-                        <div class="rp-mini-cust-av">JM</div>
-                        <div><strong>John Mitchell</strong><span>john@email.com · (555) 234-5678</span></div>
-                        <span class="rp-mini-vip"><i class="fa-solid fa-star"></i> VIP</span>
+                      <div class="rp-demo-tabs" data-tabs="crm">
+                        <button class="rp-demo-tab active" data-tab="profile">Profile</button>
+                        <button class="rp-demo-tab" data-tab="devices">Devices</button>
+                        <button class="rp-demo-tab" data-tab="history">History</button>
                       </div>
-                      <div class="rp-mini-cust-stats">
-                        <div><span class="rp-mini-cust-sv">12</span><span class="rp-mini-cust-sl">Repairs</span></div>
-                        <div><span class="rp-mini-cust-sv">$2,847</span><span class="rp-mini-cust-sl">Lifetime</span></div>
-                        <div><span class="rp-mini-cust-sv">3</span><span class="rp-mini-cust-sl">Devices</span></div>
+                      <div class="rp-demo-panel active" data-panel="profile">
+                        <div class="rp-crm-header">
+                          <div class="rp-crm-av">JM</div>
+                          <div><strong>John Mitchell</strong><span>john@email.com · (555) 234-5678</span></div>
+                          <span class="rp-crm-vip"><i class="fa-solid fa-star"></i> VIP</span>
+                        </div>
+                        <div class="rp-crm-stats">
+                          <div><span class="rp-crm-sv">12</span><span class="rp-crm-sl">Repairs</span></div>
+                          <div><span class="rp-crm-sv">$2,847</span><span class="rp-crm-sl">Lifetime</span></div>
+                          <div><span class="rp-crm-sv">Mar 28</span><span class="rp-crm-sl">Last Visit</span></div>
+                        </div>
+                        <div class="rp-crm-notes"><i class="fa-solid fa-sticky-note"></i> Prefers email receipts. Always asks about screen protectors — upsell opportunity.</div>
+                        <div style="display:flex;gap:6px;margin-top:8px">
+                          <button style="flex:1;padding:6px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;font-size:10px;color:#64748B;display:flex;align-items:center;justify-content:center;gap:4px;cursor:pointer"><i class="fa-solid fa-phone" style="color:#EC4899"></i> Call</button>
+                          <button style="flex:1;padding:6px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;font-size:10px;color:#64748B;display:flex;align-items:center;justify-content:center;gap:4px;cursor:pointer"><i class="fa-solid fa-envelope" style="color:#EC4899"></i> Email</button>
+                          <button style="flex:1;padding:6px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;font-size:10px;color:#64748B;display:flex;align-items:center;justify-content:center;gap:4px;cursor:pointer"><i class="fa-solid fa-comment-sms" style="color:#EC4899"></i> SMS</button>
+                        </div>
                       </div>
-                      <div class="rp-mini-cust-devices">
-                        <span><i class="fa-solid fa-mobile"></i> iPhone 15 Pro</span>
-                        <span><i class="fa-solid fa-tablet"></i> iPad Air</span>
-                        <span><i class="fa-solid fa-laptop"></i> MacBook Pro</span>
+                      <div class="rp-demo-panel" data-panel="devices">
+                        <div class="rp-crm-devices" style="flex-direction:column;gap:8px">
+                          <span style="padding:8px 12px"><i class="fa-solid fa-mobile"></i> iPhone 15 Pro <span class="rp-badge-sm rp-badge-sm--blue" style="margin-left:auto">3 repairs</span></span>
+                          <span style="padding:8px 12px"><i class="fa-solid fa-tablet"></i> iPad Air 5th Gen <span class="rp-badge-sm rp-badge-sm--slate" style="margin-left:auto">1 repair</span></span>
+                          <span style="padding:8px 12px"><i class="fa-solid fa-laptop"></i> MacBook Pro 14" <span class="rp-badge-sm rp-badge-sm--slate" style="margin-left:auto">2 repairs</span></span>
+                        </div>
                       </div>
-                      <div class="rp-mini-cust-history">
-                        <div><span class="rp-badge rp-badge--amber">Active</span><strong>TK-1042</strong><span>Screen + Battery</span><span>$268</span></div>
-                        <div><span class="rp-badge rp-badge--slate">Done</span><strong>TK-1038</strong><span>Back Glass</span><span>$149</span></div>
+                      <div class="rp-demo-panel" data-panel="history">
+                        <div class="rp-crm-history">
+                          <div class="rp-crm-hrow"><span class="rp-badge-sm rp-badge-sm--amber">Active</span><strong>TK-1042</strong><span>Screen + Battery</span><span>$268</span></div>
+                          <div class="rp-crm-hrow"><span class="rp-badge-sm rp-badge-sm--green">Done</span><strong>TK-1038</strong><span>Back Glass</span><span>$149</span></div>
+                          <div class="rp-crm-hrow"><span class="rp-badge-sm rp-badge-sm--green">Done</span><strong>TK-1019</strong><span>Battery</span><span>$79</span></div>
+                          <div class="rp-crm-hrow"><span class="rp-badge-sm rp-badge-sm--green">Done</span><strong>TK-0987</strong><span>Charging Port</span><span>$49</span></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -807,41 +879,42 @@ import "../styles/repair-slider.css";
               </div>
             </div>
 
-            <!-- SLIDE 6: Payments / Terminal -->
-            <div class="rp-slide">
-              <div class="rp-slide__content">
+            <!-- ────── SLIDE 6: Payments / Terminal ────── -->
+            <div class="rp-slide rp-slide--pay">
+              <div class="rp-slide__card">
                 <div class="rp-slide__text">
                   <div class="rp-slide__icon"><i class="fa-solid fa-credit-card"></i></div>
-                  <h3>Payments &amp; Terminals</h3>
+                  <h3>Payments &amp; Terminal</h3>
                   <p class="rp-slide__headline">Accept Every Payment, Every Time</p>
-                  <p class="rp-slide__desc">Integrated terminal support, dual pricing, split payments, and instant receipt delivery — so checkout is fast, flexible, and never a bottleneck.</p>
+                  <p class="rp-slide__desc">Integrated terminal support, dual pricing, split payments, and instant receipt delivery — checkout is fast, flexible, and never a bottleneck.</p>
                   <ul class="rp-slide__list">
                     <li><i class="fa-solid fa-check"></i> Dejavoo terminal integration</li>
                     <li><i class="fa-solid fa-check"></i> Dual pricing / cash discount</li>
                     <li><i class="fa-solid fa-check"></i> Split payments &amp; deposits</li>
-                    <li><i class="fa-solid fa-check"></i> Card, cash, tap, wallet</li>
+                    <li><i class="fa-solid fa-check"></i> Card, cash, contactless, wallet</li>
                   </ul>
                 </div>
                 <div class="rp-slide__demo">
-                  <div class="rp-mini rp-mini--pay">
-                    <div class="rp-mini__bar"><span><i class="fa-solid fa-credit-card"></i> Payment</span><span class="rp-mini__station">TK-1042</span></div>
+                  <div class="rp-mini" data-demo="pay">
+                    <div class="rp-mini__bar"><span><i class="fa-solid fa-credit-card"></i> Payment Terminal</span><span class="rp-mini__badge">TK-1042</span></div>
                     <div class="rp-mini__body">
-                      <div class="rp-mini-terminal-status"><div class="rp-mini-terminal-dot"></div><span>Dejavoo Z11 — Connected</span></div>
-                      <div class="rp-mini-pay-types">
-                        <div class="rp-mini-ptype active"><i class="fa-solid fa-credit-card"></i><span>Card</span></div>
-                        <div class="rp-mini-ptype"><i class="fa-solid fa-money-bill"></i><span>Cash</span></div>
-                        <div class="rp-mini-ptype"><i class="fa-solid fa-mobile-screen"></i><span>Tap</span></div>
-                        <div class="rp-mini-ptype"><i class="fa-brands fa-apple-pay"></i><span>Wallet</span></div>
+                      <div class="rp-pay-terminal"><div class="rp-pay-dot"></div><span>Dejavoo Z11 — Connected &amp; Ready</span></div>
+                      <div class="rp-pay-types" data-toggle="pay-type">
+                        <button class="rp-pay-type active" data-ptype="card"><i class="fa-solid fa-credit-card"></i><span>Card</span></button>
+                        <button class="rp-pay-type" data-ptype="cash"><i class="fa-solid fa-money-bill"></i><span>Cash</span></button>
+                        <button class="rp-pay-type" data-ptype="tap"><i class="fa-solid fa-mobile-screen"></i><span>Tap</span></button>
+                        <button class="rp-pay-type" data-ptype="wallet"><i class="fa-brands fa-apple-pay"></i><span>Wallet</span></button>
                       </div>
-                      <div class="rp-mini-pay-split">
-                        <span class="rp-mini-pay-split__label">Dual Pricing</span>
-                        <div class="rp-mini-pay-dual"><span>Cash: <strong>$242.57</strong></span><span>Card: <strong>$252.28</strong></span></div>
+                      <div class="rp-pay-split">
+                        <span class="rp-pay-split__label">Dual Pricing</span>
+                        <div class="rp-pay-dual"><span>Cash: <strong>$242.57</strong></span><span>Card: <strong>$252.28</strong></span></div>
                       </div>
-                      <div class="rp-mini-pay-success">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <div><strong>Payment Approved</strong><span>Card •••• 4242 · $242.57</span></div>
+                      <div class="rp-pay-success"><i class="fa-solid fa-circle-check"></i><div><strong>Payment Approved</strong><span>Card •••• 4242 · $242.57</span></div></div>
+                      <div class="rp-pay-receipts">
+                        <button class="rp-pay-receipt"><i class="fa-solid fa-print"></i> Print</button>
+                        <button class="rp-pay-receipt"><i class="fa-solid fa-envelope"></i> Email</button>
+                        <button class="rp-pay-receipt"><i class="fa-solid fa-comment-sms"></i> SMS</button>
                       </div>
-                      <div class="rp-mini-receipt-opts"><span><i class="fa-solid fa-print"></i> Print</span><span><i class="fa-solid fa-envelope"></i> Email</span><span><i class="fa-solid fa-comment-sms"></i> SMS</span></div>
                     </div>
                   </div>
                 </div>
@@ -851,13 +924,14 @@ import "../styles/repair-slider.css";
           </div>
         </div>
 
+        <div class="rp-slider-counter" id="sliderCounter">1 / 6</div>
         <div class="rp-slider-dots" id="sliderDots">
-          <button class="rp-slider-dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="rp-slider-dot" data-slide="1" aria-label="Slide 2"></button>
-          <button class="rp-slider-dot" data-slide="2" aria-label="Slide 3"></button>
-          <button class="rp-slider-dot" data-slide="3" aria-label="Slide 4"></button>
-          <button class="rp-slider-dot" data-slide="4" aria-label="Slide 5"></button>
-          <button class="rp-slider-dot" data-slide="5" aria-label="Slide 6"></button>
+          <button class="rp-slider-dot active" data-slide="0" aria-label="Point of Sale"></button>
+          <button class="rp-slider-dot" data-slide="1" aria-label="Inventory"></button>
+          <button class="rp-slider-dot" data-slide="2" aria-label="Team & Stores"></button>
+          <button class="rp-slider-dot" data-slide="3" aria-label="Reports & Analytics"></button>
+          <button class="rp-slider-dot" data-slide="4" aria-label="Customers & CRM"></button>
+          <button class="rp-slider-dot" data-slide="5" aria-label="Payments & Terminal"></button>
         </div>
       </div>
     </div>
@@ -1498,6 +1572,7 @@ import "../styles/repair-slider.css";
     const dots = document.querySelectorAll('.rp-slider-dot');
     const prevArrow = document.getElementById('sliderPrev');
     const nextArrow = document.getElementById('sliderNext');
+    const counterEl = document.getElementById('sliderCounter');
     if (!track) return;
     const slideCount = 6;
     let current = 0;
@@ -1509,6 +1584,7 @@ import "../styles/repair-slider.css";
       dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
       if (prevArrow) prevArrow.style.opacity = current === 0 ? '.35' : '1';
       if (nextArrow) nextArrow.style.opacity = current === slideCount - 1 ? '.35' : '1';
+      if (counterEl) counterEl.textContent = `${current + 1} / ${slideCount}`;
     }
 
     prevArrow?.addEventListener('click', () => goSlide(current - 1));
@@ -1534,6 +1610,55 @@ import "../styles/repair-slider.css";
     });
 
     goSlide(0);
+  })();
+
+  // ── Demo Micro-Interactions ──
+  (function() {
+    document.querySelectorAll('.rp-demo-tabs').forEach(tabBar => {
+      tabBar.setAttribute('role', 'tablist');
+      const tabs = tabBar.querySelectorAll('.rp-demo-tab');
+      const body = tabBar.closest('.rp-mini__body');
+      tabs.forEach(tab => {
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-selected', tab.classList.contains('active') ? 'true' : 'false');
+        const panel = body.querySelector(`[data-panel="${tab.dataset.tab}"]`);
+        if (panel) panel.setAttribute('role', 'tabpanel');
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          body.querySelectorAll('.rp-demo-panel').forEach(p => p.classList.remove('active'));
+          if (panel) panel.classList.add('active');
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-toggle="pos-pay"]').forEach(group => {
+      group.querySelectorAll('.rp-pos-pay').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.rp-pos-pay').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-toggle="rpt-filter"]').forEach(group => {
+      group.querySelectorAll('.rp-rpt-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.rp-rpt-filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-toggle="pay-type"]').forEach(group => {
+      group.querySelectorAll('.rp-pay-type').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.rp-pay-type').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
   })();
 
   // ── Scroll Animations ──
