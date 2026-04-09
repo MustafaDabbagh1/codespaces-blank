@@ -73,90 +73,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="pp-section" id="compare">
       <div class="pp-container">
         <div class="pp-section-head reveal">
-          <span class="pp-chip"><i class="fa-solid fa-scale-balanced"></i> Quick Compare</span>
-          <h2>Side-by-side in 2 minutes</h2>
+          <span class="pp-chip"><i class="fa-solid fa-arrow-right-arrow-left"></i> Why PPD</span>
+          <h2>Why partners switch to PPD</h2>
           <p class="pp-sub">
-            Fill in your current program or bring it to a quick call. We'll confirm exact comp based on your volume and vertical.
+            The things that actually matter when you're evaluating a new program.
           </p>
         </div>
 
-        <div class="pp-compare-layout reveal">
-          <table class="pp-compare-table" aria-label="Side-by-side compare table">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Your Current Program</th>
-                <th class="ppd-col">PPD Technology</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Rev share</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your rev share details" data-ph="Your split, bonus, tiers..."></div></td>
-                <td><div class="pp-ppd-cell">Higher rev share options based on volume, vertical, and support needs.</div></td>
-              </tr>
-              <tr>
-                <td>Statement transparency</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your statement transparency" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Transparent statements and clean partner reporting.</div></td>
-              </tr>
-              <tr>
-                <td>Support desk</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your support desk details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Real ISO support desk (24/7) with escalation paths.</div></td>
-              </tr>
-              <tr>
-                <td>Underwriting</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your underwriting details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Risk-aware underwriting with clearer next steps.</div></td>
-              </tr>
-              <tr>
-                <td>Lead flow</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your lead flow details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Free, pre-qualified leads for partners.</div></td>
-              </tr>
-              <tr>
-                <td>Partner portal / CRM</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your partner portal details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">CRM, onboarding visibility, case tracking, portfolio reporting.</div></td>
-              </tr>
-              <tr>
-                <td>Portfolio ownership</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your portfolio ownership details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">You keep your book. Clear ownership terms.</div></td>
-              </tr>
-              <tr>
-                <td>Payout cadence</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your payout cadence details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Monthly residuals with transparent reporting.</div></td>
-              </tr>
-              <tr>
-                <td>Equipment + logistics</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your equipment details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Hardware options, shipping, and deployment support.</div></td>
-              </tr>
-              <tr>
-                <td>Compliance + risk</td>
-                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your compliance details" data-ph="Type here..."></div></td>
-                <td><div class="pp-ppd-cell">Structured monitoring and case visibility.</div></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="pp-compare-actions">
-            <div class="pp-compare-tip">
-              <i class="fa-solid fa-lightbulb"></i>
-              Bring your current deal sheet (redacted is fine) and we'll mark it up side-by-side.
-            </div>
-            <div class="pp-compare-btns">
-              <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
-                Book a Call <i class="fa-regular fa-calendar"></i>
-              </button>
-              <button class="pp-btn pp-btn-ghost" type="button" id="printCompare">
-                Print Compare <i class="fa-solid fa-print"></i>
-              </button>
-            </div>
+        <div class="pp-switch-grid reveal">
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h3>Cleaner Statements</h3>
+            <p>Reporting you can actually reconcile. No hidden fees buried in confusing line items — just clear numbers that match what you were told.</p>
           </div>
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3>Support That Picks Up</h3>
+            <p>Real people on a real support desk. When your merchant has an issue, you get answers — not a ticket number and silence.</p>
+          </div>
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Faster Underwriting</h3>
+            <p>Visible steps, clear next actions, and approvals that move in days. You'll always know where an app stands without chasing updates.</p>
+          </div>
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-suitcase"></i></div>
+            <h3>Your Book, Your Terms</h3>
+            <p>Portfolio ownership options you review before signing. No surprises down the line, no vague language about what happens if you leave.</p>
+          </div>
+        </div>
+
+        <div class="pp-switch-cta reveal">
+          <p>Bring your current deal sheet (redacted is fine) and we'll walk through it with you.</p>
+          <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+            Book a Compare Call <i class="fa-regular fa-calendar"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -209,9 +160,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="pp-section" id="tiers">
       <div class="pp-container">
         <div class="pp-section-head reveal">
-          <span class="pp-chip"><i class="fa-solid fa-stairs"></i> Program Tiers</span>
-          <h2>Choose your partnership level</h2>
-          <p class="pp-sub">Start simple, then scale into deeper tools and higher earning tiers as your portfolio grows.</p>
+          <span class="pp-chip"><i class="fa-solid fa-handshake-simple"></i> Ways to Partner</span>
+          <h2>Find the right fit for how you work</h2>
+          <p class="pp-sub">Whether you send a few referrals or manage a full book, there's a partnership model that matches your business. No fees, no buy-in — just different levels of involvement and support.</p>
         </div>
 
         <div class="pp-tiers reveal">
@@ -219,20 +170,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="pp-tier-head">
               <div>
                 <div class="pp-tier-name">Referral Partner</div>
-                <div class="pp-tier-desc">Easy entry, low lift</div>
+                <div class="pp-tier-desc">Send leads, earn commissions</div>
               </div>
-              <div class="pp-tier-price">$0 Startup</div>
             </div>
             <div class="pp-tier-body">
+              <p class="pp-tier-summary">You know someone who needs processing. You make an introduction, we handle the rest. Simple and low-touch.</p>
               <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Referral commissions</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Basic marketing materials</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Online training</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Dedicated support</li>
-                <li class="pp-muted-li"><i class="fa-solid fa-xmark pp-bad"></i> Residual income</li>
-                <li class="pp-muted-li"><i class="fa-solid fa-xmark pp-bad"></i> Advanced tools</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Per-deal referral commissions</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Marketing materials provided</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Online training and resources</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Dedicated partner contact</li>
               </ul>
-              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
             </div>
           </div>
 
@@ -240,23 +189,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="pp-tier-head">
               <div>
                 <div class="pp-tier-name">Sales Partner</div>
-                <div class="pp-tier-desc">Full tools, residual income</div>
+                <div class="pp-tier-desc">Build a book, earn residuals</div>
               </div>
-              <div class="pp-tier-price-wrap">
-                <div class="pp-tier-badge">Most Popular</div>
-                <div class="pp-tier-price">$0 Startup</div>
-              </div>
+              <div class="pp-tier-badge">Most Common</div>
             </div>
             <div class="pp-tier-body">
+              <p class="pp-tier-summary">You're actively selling and managing merchant relationships. You get the tools, leads, and ongoing residual income to grow.</p>
               <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Residual income on active accounts</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Partner CRM & reporting</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Co-branded materials</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Sales coaching & training</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Pre-qualified leads</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Priority support</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Monthly residual income</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Partner CRM and reporting</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Co-branded sales materials</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Coaching and sales support</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Pre-qualified lead access</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Priority support line</li>
               </ul>
-              <button class="pp-btn pp-btn-primary pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+              <button class="pp-btn pp-btn-primary pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
             </div>
           </div>
 
@@ -264,20 +211,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="pp-tier-head">
               <div>
                 <div class="pp-tier-name">ISO Partner</div>
-                <div class="pp-tier-desc">Max control and scale</div>
+                <div class="pp-tier-desc">Full control, max scale</div>
               </div>
-              <div class="pp-tier-price">$0 Startup</div>
             </div>
             <div class="pp-tier-body">
+              <p class="pp-tier-summary">You run your own operation with sub-agents and a growing portfolio. You need infrastructure, not hand-holding.</p>
               <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Highest commission tiers</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Highest earning structure</li>
                 <li><i class="fa-solid fa-check pp-good"></i> Portfolio ownership options</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Sub-agent management</li>
-                <li><i class="fa-solid fa-check pp-good"></i> White-label solutions</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Dedicated ISO support</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Custom onboarding</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Sub-agent management tools</li>
+                <li><i class="fa-solid fa-check pp-good"></i> White-label capabilities</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Dedicated ISO support team</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Custom onboarding flow</li>
               </ul>
-              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
             </div>
           </div>
         </div>
@@ -338,7 +285,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="pp-quote">
             <div class="pp-quote-body">
               <i class="fa-solid fa-quote-left pp-quote-mark"></i>
-              <p>"The residual model is predictable and the reporting is actually clean. I moved 40 merchants in 3 months and haven't looked back."</p>
+              <p>"I was tired of chasing my old processor for answers every time a merchant had an issue. With PPD, I call the support desk and someone actually picks up. That alone made the switch worth it — my merchants stopped complaining and I stopped putting out fires."</p>
             </div>
             <div class="pp-quote-footer">
               <div class="pp-quote-avatar">MJ</div>
@@ -351,7 +298,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="pp-quote">
             <div class="pp-quote-body">
               <i class="fa-solid fa-quote-left pp-quote-mark"></i>
-              <p>"Commission structure is the cleanest I've seen. The biggest difference is speed — underwriting doesn't stall and support actually picks up."</p>
+              <p>"We moved about 60 accounts over six months. The part that surprised me was underwriting — apps that used to sit for two weeks were getting approved in a couple days. My agents noticed it too. Less follow-up, less hand-holding, more time selling."</p>
             </div>
             <div class="pp-quote-footer">
               <div class="pp-quote-avatar">SR</div>
@@ -364,7 +311,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="pp-quote">
             <div class="pp-quote-body">
               <i class="fa-solid fa-quote-left pp-quote-mark"></i>
-              <p>"As a referral partner, I generated supplemental income with minimal lift. Simple process, straightforward payouts, no games."</p>
+              <p>"I'm not a full-time payments guy — I do IT work and my clients always ask who I recommend for processing. I just send them to PPD and get a check when they sign up. It's been a nice side income without having to learn a whole new industry."</p>
             </div>
             <div class="pp-quote-footer">
               <div class="pp-quote-avatar">JP</div>
@@ -407,8 +354,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p>Many categories: retail, restaurants, e-commerce, services, and more. We'll help position the right stack based on merchant needs.</p>
           </details>
           <details>
-            <summary>How does the quick compare work? <i class="fa-solid fa-plus"></i></summary>
-            <p>Use the compare table on this page or download the PDF. Then book a call so we can confirm exact comp based on your business.</p>
+            <summary>How does the compare call work? <i class="fa-solid fa-plus"></i></summary>
+            <p>Bring your current deal sheet (redacted is fine) and we'll walk through it with you on a quick call. We'll confirm exact comp based on your volume, vertical, and support needs.</p>
           </details>
         </div>
       </div>
@@ -690,42 +637,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-dash-bar-track{height:8px;border-radius:99px;background:rgba(255,255,255,.1)}
     .pp-dash-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--pp-primary),var(--pp-cyan))}
 
-    .pp-compare-layout{margin-top:24px;display:flex;flex-direction:column;gap:16px}
-    .pp-compare-table{
-      width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;
-      border-radius:var(--pp-radius);border:1px solid var(--pp-border);
-      background:#fff;box-shadow:var(--pp-shadow);
+    .pp-switch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+    .pp-switch-card{
+      background:#fff;border:1px solid var(--pp-border);border-radius:var(--pp-radius);
+      padding:28px;box-shadow:var(--pp-shadow);transition:transform .2s,box-shadow .2s;
     }
-    .pp-compare-table th,.pp-compare-table td{padding:14px;border-bottom:1px solid var(--pp-border);vertical-align:top}
-    .pp-compare-table tr:last-child td{border-bottom:none}
-    .pp-compare-table th{
-      text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-      color:var(--pp-muted);background:linear-gradient(180deg,#fff,#fbfdff);
+    .pp-switch-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(2,6,23,.12)}
+    .pp-switch-icon{
+      width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);color:var(--pp-primary);font-size:18px;margin-bottom:16px;
     }
-    .pp-compare-table th.ppd-col{color:var(--pp-primary);background:rgba(21,73,255,.04)}
-    .pp-compare-table td:first-child{font-weight:800;color:var(--pp-navy);width:22%}
-    .pp-compare-table td:nth-child(2){width:36%}
-    .pp-compare-table td:nth-child(3){width:42%;background:rgba(21,73,255,.02)}
-    .pp-editable{
-      outline:none;border-radius:10px;padding:10px;min-height:40px;
-      background:rgba(100,116,139,.05);border:1px dashed rgba(100,116,139,.2);
-      color:var(--pp-navy);font-size:14px;
+    .pp-switch-card h3{font-size:17px;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+    .pp-switch-card p{font-size:14px;color:var(--pp-muted);line-height:1.6}
+    .pp-switch-cta{
+      display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+      margin-top:28px;padding:20px 24px;border-radius:var(--pp-radius);
+      background:rgba(21,73,255,.04);border:1px solid rgba(21,73,255,.1);
     }
-    .pp-editable:empty::before{content:attr(data-ph);color:var(--pp-muted);font-weight:400;font-style:italic}
-    .pp-ppd-cell{
-      background:rgba(21,73,255,.05);border:1px solid rgba(21,73,255,.12);
-      border-radius:10px;padding:10px;color:var(--pp-navy);font-weight:600;font-size:14px;
-    }
-    .pp-compare-actions{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-    }
-    .pp-compare-tip{
-      display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;
-      background:rgba(21,73,255,.05);border:1px solid rgba(21,73,255,.1);
-      color:var(--pp-muted);font-weight:600;font-size:14px;flex:1;min-width:280px;
-    }
-    .pp-compare-tip i{color:var(--pp-primary)}
-    .pp-compare-btns{display:flex;gap:10px}
+    .pp-switch-cta p{font-size:14px;color:var(--pp-muted);font-weight:600;margin:0}
 
     .pp-value-grid{
       display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;
@@ -768,6 +697,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-tier-desc{opacity:.85;font-size:13px;font-weight:600;margin-top:3px}
     .pp-tier-price{font-weight:900;opacity:.95}
     .pp-tier-body{padding:20px}
+    .pp-tier-summary{font-size:13px;color:var(--pp-muted);line-height:1.6;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--pp-border)}
     .pp-tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
     .pp-tier li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:14px;color:var(--pp-text)}
     .pp-tier li i{margin-top:3px}
@@ -906,18 +836,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       .pp-kit-row{grid-template-columns:1fr}
       .pp-cta-split{grid-template-columns:1fr}
       .pp-form-grid{grid-template-columns:1fr}
-      .pp-compare-actions{flex-direction:column;align-items:stretch}
+      .pp-switch-grid{grid-template-columns:1fr}
     }
     @media (min-width:640px) and (max-width:980px){
       .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:repeat(2,1fr)}
-    }
-
-    @media print{
-      header,footer,.pp-hero,.pp-section:not(#compare),.pp-section-dark{display:none !important}
-      #compare{padding:0 !important}
-      .pp-compare-actions{display:none !important}
-      .partner-page{background:#fff !important}
-      .pp-container{max-width:100% !important;padding:0 !important}
     }
   </style>
 
@@ -940,13 +862,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         });
       });
 
-      root.querySelectorAll(".pp-editable").forEach((el) => {
-        const ph = el.getAttribute("data-ph") || "Type here...";
-        if (!el.textContent.trim()) el.setAttribute("data-ph", ph);
-      });
-
-      const printBtn = root.querySelector("#printCompare");
-      if (printBtn) printBtn.addEventListener("click", () => window.print());
     })();
   </script>
 </BaseLayout>
