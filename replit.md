@@ -60,7 +60,7 @@ public/
 - `signup.astro` - Merchant signup form
 - `customer-support.astro` - Support center (uses `is:global` styles)
 - `refer.astro` - Referral program
-- `become-a-partner.astro` - Partner application
+- `become-a-partner.astro` - Partner program landing page (redesigned). Streamlined 8-section architecture: Hero with dashboard preview panel, interactive Quick Compare table (contenteditable cells), "Why Partners Switch" value cards (dark section), 3-tier Program Tiers (Referral/Sales/ISO with "Most Popular" badge), Tools & Support grid, Testimonials, FAQ (expandable), Partner Kit downloads, Calendar booking embed, and application form. Uses `pp-*` CSS prefix, scoped styles. All sections use `reveal` intersection observer animation. Print styles for compare table.
 
 ### Industry Pages
 - `retail.astro` - Retail solutions

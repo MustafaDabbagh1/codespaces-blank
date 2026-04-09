@@ -4,1508 +4,920 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Agents & ISOs Partner Program | PPD Technology">
   <div class="partner-page">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <span class="eyebrow"><i class="fa-solid fa-handshake"></i> Agents & ISOs</span>
-          <h1>Keep your book. Get a cleaner deal and faster support.</h1>
-          <p class="lead">
-            If you already know payments, you do not need more noise. You need clean reporting, responsive support, and a program you can scale.
-            Start with a 2 minute side-by-side compare.
-          </p>
 
-          <div class="hero-cta">
-            <button class="btn btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+    <section class="pp-hero">
+      <div class="pp-container pp-hero-grid">
+        <div class="reveal">
+          <span class="pp-eyebrow"><i class="fa-solid fa-handshake"></i> Agents & ISOs</span>
+          <h1>Keep your book.<br/>Get a cleaner deal.</h1>
+          <p class="pp-sub">
+            If you already know payments, you don't need more noise. You need clean reporting, responsive support, and a program you can scale.
+          </p>
+          <div class="pp-hero-ctas">
+            <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
               Book a Quick Compare Call <i class="fa-regular fa-calendar"></i>
             </button>
-            <a class="btn btn-outline" href="#compare">
-              View the Compare Table <i class="fa-solid fa-table"></i>
-            </a>
-            <a class="btn btn-outline" href="#partner-kit">
-              Download the Partner Kit <i class="fa-solid fa-download"></i>
+            <a class="pp-btn pp-btn-outline" href="#partner-kit">
+              Download Partner Kit <i class="fa-solid fa-download"></i>
             </a>
           </div>
-
-          <div class="logo-strip" aria-label="Highlights">
-            <span class="logo-pill"><i class="fa-solid fa-bolt"></i> Fast onboarding</span>
-            <span class="logo-pill"><i class="fa-solid fa-chart-line"></i> Residuals & reporting</span>
-            <span class="logo-pill"><i class="fa-solid fa-headset"></i> 24/7 support desk</span>
-            <span class="logo-pill"><i class="fa-solid fa-shield-halved"></i> Risk-aware underwriting</span>
+          <div class="pp-trust-row">
+            <span class="pp-trust-pill"><i class="fa-solid fa-bolt"></i> Fast onboarding</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-chart-line"></i> Transparent reporting</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-headset"></i> 24/7 support desk</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-shield-halved"></i> Risk-aware underwriting</span>
           </div>
         </div>
 
-        <div class="team-card-stack reveal" aria-label="Talk to our team">
-          <div class="person-card">
-            <div class="person-left">
-              <div class="avatar">PD</div>
-              <div class="pmeta">
-                <div class="name">Partner Development</div>
-                <div class="role">Program, comp, and onboarding</div>
+        <div class="pp-dashboard reveal" aria-label="Partner program preview">
+          <div class="pp-dash-header">
+            <div class="pp-dash-dots"><span></span><span></span><span></span></div>
+            <span class="pp-dash-title">Partner Dashboard</span>
+          </div>
+          <div class="pp-dash-body">
+            <div class="pp-dash-row">
+              <div class="pp-dash-stat">
+                <div class="pp-dash-label">Active Merchants</div>
+                <div class="pp-dash-value">127</div>
+                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-up"></i> 12 this month</div>
+              </div>
+              <div class="pp-dash-stat">
+                <div class="pp-dash-label">Monthly Residuals</div>
+                <div class="pp-dash-value">$8,420</div>
+                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-up"></i> 18.2%</div>
               </div>
             </div>
-            <a class="mini-btn" href="#book"><i class="fa-regular fa-calendar"></i> Book</a>
-          </div>
-
-          <div class="person-card">
-            <div class="person-left">
-              <div class="avatar">UW</div>
-              <div class="pmeta">
-                <div class="name">Underwriting Desk</div>
-                <div class="role">Faster, clearer approvals</div>
+            <div class="pp-dash-row">
+              <div class="pp-dash-stat">
+                <div class="pp-dash-label">Avg. Approval Time</div>
+                <div class="pp-dash-value">1.8 days</div>
+                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-down"></i> Faster</div>
+              </div>
+              <div class="pp-dash-stat">
+                <div class="pp-dash-label">Portfolio Retention</div>
+                <div class="pp-dash-value">96.4%</div>
+                <div class="pp-dash-change positive"><i class="fa-solid fa-circle-check"></i> Healthy</div>
               </div>
             </div>
-            <a class="mini-btn" href="#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
-          </div>
-
-          <div class="person-card">
-            <div class="person-left">
-              <div class="avatar">CS</div>
-              <div class="pmeta">
-                <div class="name">Merchant Support</div>
-                <div class="role">Retention and escalations</div>
+            <div class="pp-dash-bar">
+              <div class="pp-dash-bar-label">Revenue Growth (6mo)</div>
+              <div class="pp-dash-bar-track">
+                <div class="pp-dash-bar-fill" style="width:72%"></div>
               </div>
-            </div>
-            <a class="mini-btn" href="#crm"><i class="fa-solid fa-grid-2"></i> Tools</a>
-          </div>
-
-          <div class="person-card person-card-accent">
-            <div class="person-left">
-              <div class="avatar avatar-accent">$$</div>
-              <div class="pmeta">
-                <div class="name">Residual-Friendly Program</div>
-                <div class="role">Build long-term income</div>
-              </div>
-            </div>
-            <a class="mini-btn mini-btn-accent" href="#commission">
-              <i class="fa-solid fa-sack-dollar"></i> Earnings
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="compare">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-scale-balanced"></i> Quick Compare</span>
-          <h2 class="h2">Side-by-side in 2 minutes</h2>
-          <p class="lead">
-            Fill in your current program (middle column) or bring it to a quick call. We will confirm the exact comp we can offer based on your volume and vertical,
-            then map it next to what you have today.
-          </p>
-        </div>
-
-        <div class="compare-wrap reveal">
-          <div>
-            <div class="card card-xl">
-              <div class="icon"><i class="fa-solid fa-file-arrow-down"></i></div>
-              <h3>Download the compare sheet</h3>
-              <p class="muted space-bottom">
-                Use the PDF for a clean one-pager, or use the on-page table and print it.
-              </p>
-
-              <div class="dl" aria-label="Downloads">
-                <a href="COMPARE_PDF_URL_HERE" target="_blank" rel="noopener">
-                  <span class="left"><i class="fa-solid fa-file-pdf pdf-icon"></i> Partner Deal Sheet (Quick Compare)</span>
-                  <span class="tag">PDF</span>
-                </a>
-                <a href="STATEMENT_BREAKDOWN_URL_HERE" target="_blank" rel="noopener">
-                  <span class="left"><i class="fa-solid fa-receipt primary-icon"></i> Statement Breakdown (Example)</span>
-                  <span class="tag">PDF</span>
-                </a>
-                <a href="ONBOARDING_CHECKLIST_URL_HERE" target="_blank" rel="noopener">
-                  <span class="left"><i class="fa-solid fa-list-check accent-icon"></i> Fast Onboarding Checklist</span>
-                  <span class="tag">PDF</span>
-                </a>
-              </div>
-
-              <div class="compare-note margin-top">
-                Tip: if you have a current deal sheet, you can redact sensitive info and still compare splits, fees, support, and reporting.
-              </div>
-
-              <div class="compare-tools">
-                <button class="btn btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
-                  Book a Call <i class="fa-regular fa-calendar"></i>
-                </button>
-                <button class="btn btn-ghost" type="button" id="printCompare">
-                  Print Compare <i class="fa-solid fa-print"></i>
-                </button>
-              </div>
-
-              <div class="compare-badge"><i class="fa-solid fa-shield-halved"></i> You keep your book. We help you grow it.</div>
-            </div>
-          </div>
-
-          <div>
-            <table class="compare-table" aria-label="Side-by-side compare table">
-              <thead>
-                <tr>
-                  <th>Category</th>
-                  <th>Your Current Program (type here)</th>
-                  <th>PPD Technology</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Rev share</td>
-                  <td><div class="editable" contenteditable="true" data-ph="Your split, bonus, tiers, etc."></div></td>
-                  <td><div class="ppd-cell">Higher rev share options available based on volume, vertical, and support needs.</div></td>
-                </tr>
-                <tr>
-                  <td>Statement transparency</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Transparent statements and clean partner reporting.</div></td>
-                </tr>
-                <tr>
-                  <td>Support desk</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Real ISO support desk (24/7) with escalation paths and defined workflows.</div></td>
-                </tr>
-                <tr>
-                  <td>Underwriting</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Risk-aware underwriting with clearer next steps and fewer stalls.</div></td>
-                </tr>
-                <tr>
-                  <td>Lead flow</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Free, pre-qualified leads included for partners (availability may vary by market).</div></td>
-                </tr>
-                <tr>
-                  <td>Partner portal / CRM</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Partner CRM, onboarding visibility, case tracking, and portfolio reporting.</div></td>
-                </tr>
-                <tr>
-                  <td>Portfolio ownership</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">You keep your book. Ownership options depend on partner model and agreement.</div></td>
-                </tr>
-                <tr>
-                  <td>Payout cadence</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Monthly residuals with transparent reporting and clear payout timing.</div></td>
-                </tr>
-                <tr>
-                  <td>Equipment + logistics</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Hardware options, shipping workflows, and partner support for deployments.</div></td>
-                </tr>
-                <tr>
-                  <td>Compliance + risk support</td>
-                  <td><div class="editable" contenteditable="true"></div></td>
-                  <td><div class="ppd-cell">Structured monitoring and case visibility to protect your portfolio.</div></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="compare-note compare-note-after">
-              Want us to pre-fill this? Bring your current deal sheet to the call (redacted is fine) and we will mark it up.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-white" id="partner-kit">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-toolbox"></i> Partner Kit</span>
-          <h2 class="h2">Everything you need to evaluate the program</h2>
-          <p class="lead">
-            A simple kit built for agents and ISOs who want clarity. Download the assets, then book a quick call to confirm the exact comp and fit.
+    <section class="pp-section" id="compare">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-chip"><i class="fa-solid fa-scale-balanced"></i> Quick Compare</span>
+          <h2>Side-by-side in 2 minutes</h2>
+          <p class="pp-sub">
+            Fill in your current program or bring it to a quick call. We'll confirm exact comp based on your volume and vertical.
           </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#book"><i class="fa-regular fa-calendar"></i> Book a Call</a>
-            <a class="btn btn-ghost" href="#compare"><i class="fa-solid fa-scale-balanced"></i> View Compare</a>
-          </div>
         </div>
 
-        <div class="grid-3 reveal margin-top-lg">
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
-            <h3>Quick Compare Sheet</h3>
-            <p>Side-by-side format for comp, support, reporting, and ownership terms.</p>
-            <div class="card-action">
-              <a class="btn btn-soft full-width" href="COMPARE_PDF_URL_HERE" target="_blank" rel="noopener">Download PDF <i class="fa-solid fa-download"></i></a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-receipt"></i></div>
-            <h3>Statement Breakdown Example</h3>
-            <p>A plain-English example of what agents look for on statements and reports.</p>
-            <div class="card-action">
-              <a class="btn btn-soft full-width" href="STATEMENT_BREAKDOWN_URL_HERE" target="_blank" rel="noopener">View Example <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-list-check"></i></div>
-            <h3>Fast Start Checklist</h3>
-            <p>A simple onboarding checklist to help you submit clean apps and move faster.</p>
-            <div class="card-action">
-              <a class="btn btn-soft full-width" href="ONBOARDING_CHECKLIST_URL_HERE" target="_blank" rel="noopener">Download <i class="fa-solid fa-download"></i></a>
-            </div>
-          </div>
-        </div>
+        <div class="pp-compare-layout reveal">
+          <table class="pp-compare-table" aria-label="Side-by-side compare table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Your Current Program</th>
+                <th class="ppd-col">PPD Technology</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rev share</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your rev share details" data-ph="Your split, bonus, tiers..."></div></td>
+                <td><div class="pp-ppd-cell">Higher rev share options based on volume, vertical, and support needs.</div></td>
+              </tr>
+              <tr>
+                <td>Statement transparency</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your statement transparency" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Transparent statements and clean partner reporting.</div></td>
+              </tr>
+              <tr>
+                <td>Support desk</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your support desk details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Real ISO support desk (24/7) with escalation paths.</div></td>
+              </tr>
+              <tr>
+                <td>Underwriting</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your underwriting details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Risk-aware underwriting with clearer next steps.</div></td>
+              </tr>
+              <tr>
+                <td>Lead flow</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your lead flow details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Free, pre-qualified leads for partners.</div></td>
+              </tr>
+              <tr>
+                <td>Partner portal / CRM</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your partner portal details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">CRM, onboarding visibility, case tracking, portfolio reporting.</div></td>
+              </tr>
+              <tr>
+                <td>Portfolio ownership</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your portfolio ownership details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">You keep your book. Clear ownership terms.</div></td>
+              </tr>
+              <tr>
+                <td>Payout cadence</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your payout cadence details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Monthly residuals with transparent reporting.</div></td>
+              </tr>
+              <tr>
+                <td>Equipment + logistics</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your equipment details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Hardware options, shipping, and deployment support.</div></td>
+              </tr>
+              <tr>
+                <td>Compliance + risk</td>
+                <td><div class="pp-editable" contenteditable="true" role="textbox" aria-label="Your compliance details" data-ph="Type here..."></div></td>
+                <td><div class="pp-ppd-cell">Structured monitoring and case visibility.</div></td>
+              </tr>
+            </tbody>
+          </table>
 
-        <div class="grid-2 reveal margin-top-lg">
-          <div class="card card-xl">
-            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Support promise</h3>
-            <p class="muted space-bottom">
-              Your merchants stay longer when support is real. We built the program around responsiveness and clear escalation paths.
-            </p>
-            <div class="feature-list">
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>24/7 ISO desk</strong> with structured case handling.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>SLA-backed response expectations</strong> for partner escalations (details provided on call).</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Underwriting visibility</strong> so deals do not die in email chains.</div>
-              </div>
+          <div class="pp-compare-actions">
+            <div class="pp-compare-tip">
+              <i class="fa-solid fa-lightbulb"></i>
+              Bring your current deal sheet (redacted is fine) and we'll mark it up side-by-side.
             </div>
-          </div>
-
-          <div class="card card-xl">
-            <div class="icon"><i class="fa-solid fa-handshake"></i></div>
-            <h3>Book ownership clarity</h3>
-            <p class="muted space-bottom">
-              We keep the language simple. No games. Ownership and residual terms depend on partner model and agreement.
-            </p>
-            <div class="feature-list">
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>You keep your book</strong> under the agreed partner structure.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Transparent reporting</strong> so you can reconcile payouts and portfolio performance.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Clean deal review</strong> so you know what you are signing before you sign.</div>
-              </div>
-            </div>
-
-            <div class="form-actions margin-top">
-              <a class="btn btn-primary" href="#book">Book a Call <i class="fa-regular fa-calendar"></i></a>
-              <a class="btn btn-ghost" href="#partner-form">Apply <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="pp-compare-btns">
+              <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+                Book a Call <i class="fa-regular fa-calendar"></i>
+              </button>
+              <button class="pp-btn pp-btn-ghost" type="button" id="printCompare">
+                Print Compare <i class="fa-solid fa-print"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section band" id="payouts">
-      <div class="container split">
-        <div class="section-head reveal">
-          <span class="chip"><i class="fa-solid fa-money-check-dollar"></i> How payouts work</span>
-          <h2 class="h2">Simple, predictable, and visible</h2>
-          <p class="lead">
-            We will confirm exact payout cadence and reporting during the call. The goal is simple: clear reporting, clean payouts, and fewer surprises.
+    <section class="pp-section pp-section-dark" id="why-switch">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-eyebrow"><i class="fa-solid fa-arrow-right-arrow-left"></i> Why Partners Switch</span>
+          <h2>What makes PPD different</h2>
+          <p class="pp-sub-light">
+            One program. No overlap. Here's what partners actually care about.
           </p>
-
-          <div class="actions">
-            <a class="btn btn-primary" href="#book"><i class="fa-regular fa-calendar"></i> Book a Call</a>
-            <a class="btn btn-ghost" href="#compare"><i class="fa-solid fa-scale-balanced"></i> Compare First</a>
-          </div>
         </div>
 
-        <div class="reveal">
-          <div class="steps">
-            <div class="step">
-              <div class="top">
-                <div class="num">1</div>
-                <div class="title">Onboard</div>
-              </div>
-              <div class="desc">Submit apps and docs through the partner workflow. We keep underwriting steps visible.</div>
-            </div>
-            <div class="step">
-              <div class="top">
-                <div class="num">2</div>
-                <div class="title">Fund and activate</div>
-              </div>
-              <div class="desc">Once processing starts, the account is tracked in reporting and becomes part of your portfolio.</div>
-            </div>
-            <div class="step">
-              <div class="top">
-                <div class="num">3</div>
-                <div class="title">Monthly residuals</div>
-              </div>
-              <div class="desc">Residuals are paid monthly on active accounts. Exact timing and structure are confirmed by partner agreement.</div>
-            </div>
+        <div class="pp-value-grid reveal">
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Keep Your Book</h3>
+            <p>Portfolio ownership options with clear terms you review before signing.</p>
           </div>
-
-          <div class="compare-note margin-top">
-            If you want, bring a screenshot of your current statement or residual report and we will explain what matters and what does not.
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Transparent Reporting</h3>
+            <p>Clean statements and partner reporting you can actually reconcile.</p>
+          </div>
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Fast Underwriting</h3>
+            <p>Risk-aware approvals with visible next steps. Fewer stalls, fewer surprises.</p>
+          </div>
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Real Support Desk</h3>
+            <p>24/7 ISO desk with structured case handling and defined escalation paths.</p>
+          </div>
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Flexible Solutions</h3>
+            <p>In-store, online, mobile. POS, terminals, gateways. Build the right stack per merchant.</p>
+          </div>
+          <div class="pp-value-card">
+            <div class="pp-value-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+            <h3>Monthly Residuals</h3>
+            <p>Recurring income on active accounts with clear payout timing and no hard caps.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="crm">
-      <div class="container split">
-        <div class="section-head sticky reveal">
-          <span class="chip"><i class="fa-solid fa-layer-group"></i> All-in-One Partner CRM</span>
-          <h2 class="h2">Tools that help you sell faster and manage your book cleanly</h2>
-          <p class="lead">
-            Keep applications, documents, equipment requests, and account status in one place so you spend more time selling and less time chasing updates.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#book"><i class="fa-regular fa-calendar"></i> Book a Call</a>
-            <a class="btn btn-ghost" href="#compare"><i class="fa-solid fa-scale-balanced"></i> Quick Compare</a>
-          </div>
+    <section class="pp-section" id="tiers">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-chip"><i class="fa-solid fa-stairs"></i> Program Tiers</span>
+          <h2>Choose your partnership level</h2>
+          <p class="pp-sub">Start simple, then scale into deeper tools and higher earning tiers as your portfolio grows.</p>
         </div>
 
-        <div class="grid-3 reveal">
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h3>Residuals & Reporting</h3>
-            <p>Track portfolio performance with clean reporting and predictable monthly payouts.</p>
+        <div class="pp-tiers reveal">
+          <div class="pp-tier">
+            <div class="pp-tier-head">
+              <div>
+                <div class="pp-tier-name">Referral Partner</div>
+                <div class="pp-tier-desc">Easy entry, low lift</div>
+              </div>
+              <div class="pp-tier-price">$0 Startup</div>
+            </div>
+            <div class="pp-tier-body">
+              <ul>
+                <li><i class="fa-solid fa-check pp-good"></i> Referral commissions</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Basic marketing materials</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Online training</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Dedicated support</li>
+                <li class="pp-muted-li"><i class="fa-solid fa-xmark pp-bad"></i> Residual income</li>
+                <li class="pp-muted-li"><i class="fa-solid fa-xmark pp-bad"></i> Advanced tools</li>
+              </ul>
+              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+            </div>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-gauge-high"></i></div>
-            <h3>Real-Time Dashboards</h3>
-            <p>See account activity and sales progress in a way that’s easy to explain to your team.</p>
+
+          <div class="pp-tier pp-tier-featured">
+            <div class="pp-tier-head">
+              <div>
+                <div class="pp-tier-name">Sales Partner</div>
+                <div class="pp-tier-desc">Full tools, residual income</div>
+              </div>
+              <div class="pp-tier-price-wrap">
+                <div class="pp-tier-badge">Most Popular</div>
+                <div class="pp-tier-price">$0 Startup</div>
+              </div>
+            </div>
+            <div class="pp-tier-body">
+              <ul>
+                <li><i class="fa-solid fa-check pp-good"></i> Residual income on active accounts</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Partner CRM & reporting</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Co-branded materials</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Sales coaching & training</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Pre-qualified leads</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Priority support</li>
+              </ul>
+              <button class="pp-btn pp-btn-primary pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+            </div>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
+
+          <div class="pp-tier">
+            <div class="pp-tier-head">
+              <div>
+                <div class="pp-tier-name">ISO Partner</div>
+                <div class="pp-tier-desc">Max control and scale</div>
+              </div>
+              <div class="pp-tier-price">$0 Startup</div>
+            </div>
+            <div class="pp-tier-body">
+              <ul>
+                <li><i class="fa-solid fa-check pp-good"></i> Highest commission tiers</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Portfolio ownership options</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Sub-agent management</li>
+                <li><i class="fa-solid fa-check pp-good"></i> White-label solutions</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Dedicated ISO support</li>
+                <li><i class="fa-solid fa-check pp-good"></i> Custom onboarding</li>
+              </ul>
+              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-section pp-section-alt" id="tools">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-chip"><i class="fa-solid fa-grid-2"></i> Enablement Platform</span>
+          <h2>Tools and support that help you scale</h2>
+          <p class="pp-sub">One unified system: CRM, onboarding, training, marketing, and sales support.</p>
+        </div>
+
+        <div class="pp-tools-grid reveal">
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Residuals & Dashboards</h3>
+            <p>Track portfolio performance with real-time reporting and clear payout visibility.</p>
+          </div>
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-file-signature"></i>
             <h3>Digital Onboarding</h3>
-            <p>Send apps, upload docs, and keep underwriting moving without endless email threads.</p>
+            <p>Submit apps, upload docs, and keep underwriting moving without email chains.</p>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Friction-Reduced Underwriting</h3>
-            <p>Clear next steps and better visibility through the approval lifecycle.</p>
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Risk Monitoring</h3>
+            <p>Structured workflows and case visibility to protect your portfolio.</p>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>Risk-Aware Monitoring</h3>
-            <p>Support that protects your portfolio with structured workflows and case visibility.</p>
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Training & Coaching</h3>
+            <p>Playbooks, webinars, certification, and one-on-one sales strategy sessions.</p>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-headset"></i></div>
-            <h3>Merchant Support 360</h3>
-            <p>Keep merchants happy with responsive support so you keep accounts longer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-white" id="invest">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-seedling"></i> We Invest in You</span>
-          <h2 class="h2">Support, training, and assets built for growth</h2>
-          <p class="lead">A hands-on partner program with real people, real enablement, and sales tools you can actually use.</p>
-        </div>
-
-        <div class="grid-3 reveal margin-top-lg">
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-user-group"></i></div>
-            <h3>Human Support</h3>
-            <p>Dedicated partner assistance to help you onboard, pitch, and retain merchants.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
-            <h3>Direct Contact</h3>
-            <p>Fewer handoffs, faster answers so deals do not stall.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-bullhorn"></i>
             <h3>Marketing Support</h3>
-            <p>Co-branded materials and sales-ready assets to help you close more confidently.</p>
+            <p>Co-branded materials and sales-ready assets to help you close with confidence.</p>
           </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3>Training Library</h3>
-            <p>Practical training and playbooks for new agents and seasoned ISOs.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-brain"></i></div>
-            <h3>Sales Coaching</h3>
-            <p>Skill-building sessions and strategy support to improve performance over time.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-gears"></i></div>
-            <h3>Technology-Driven</h3>
-            <p>Modern tools, streamlined workflows, and flexible solutions across industries.</p>
+          <div class="pp-tool-card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Merchant Support 360</h3>
+            <p>Responsive merchant support so you retain accounts and grow your book.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section guarantee">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-badge-check"></i> Partner Experience</span>
-          <h2 class="h2">PPD Guarantees</h2>
-          <p class="lead">A partner program that stays responsive so you can stay in motion.</p>
+    <section class="pp-section" id="testimonials">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-chip"><i class="fa-solid fa-star"></i> Partner Stories</span>
+          <h2>Partners who built momentum with PPD</h2>
         </div>
 
-        <div class="grid-4 reveal margin-top-lg">
-          <div class="metric">
-            <div class="top">
-              <div class="label">Accessibility</div>
-              <span class="badge"><i class="fa-solid fa-user"></i> Real humans</span>
+        <div class="pp-testimonials reveal">
+          <div class="pp-quote">
+            <div class="pp-quote-body">
+              <i class="fa-solid fa-quote-left pp-quote-mark"></i>
+              <p>"The residual model is predictable and the reporting is actually clean. I moved 40 merchants in 3 months and haven't looked back."</p>
             </div>
-            <div class="desc">Talk to real people by phone or email when you need help.</div>
-          </div>
-          <div class="metric">
-            <div class="top">
-              <div class="label">Speed</div>
-              <span class="badge"><i class="fa-solid fa-bolt"></i> Fast replies</span>
-            </div>
-            <div class="desc">Quick response times designed to keep deals from stalling.</div>
-          </div>
-          <div class="metric">
-            <div class="top">
-              <div class="label">Expertise</div>
-              <span class="badge"><i class="fa-solid fa-chalkboard-user"></i> Know-how</span>
-            </div>
-            <div class="desc">Partner teams that understand pricing, risk, and merchant success.</div>
-          </div>
-          <div class="metric">
-            <div class="top">
-              <div class="label">Transparency</div>
-              <span class="badge"><i class="fa-solid fa-eye"></i> Clear terms</span>
-            </div>
-            <div class="desc">Clear program expectations and straightforward communication.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="solutions">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-store"></i> Powering Your Sales Success</span>
-          <h2 class="h2">Solutions you can confidently take to market</h2>
-          <p class="lead">
-            Sell across business types from retail and restaurants to e-commerce and service businesses with a flexible stack and strong support.
-          </p>
-        </div>
-
-        <div class="grid-3 reveal margin-top-lg">
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
-            <h3>Full Service Provider</h3>
-            <p>In-store, online, and mobile acceptance with one ecosystem and multiple entry points.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-cash-register"></i></div>
-            <h3>POS & Hardware Options</h3>
-            <p>Terminals, POS systems, and accessories depending on the merchant’s workflow.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3>E-commerce & Gateway</h3>
-            <p>Online checkout, invoicing, and integrations built for modern selling.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-sliders"></i></div>
-            <h3>Flexible Approach</h3>
-            <p>Serve a wide range of business sizes and risk profiles with guidance.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3>Tailored Solutions</h3>
-            <p>Build the right stack for the merchant instead of forcing a one-size bundle.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-tags"></i></div>
-            <h3>Fee-Offset Programs</h3>
-            <p>Offer cash discount or surcharge options where appropriate and compliant.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section band" id="commission">
-      <div class="container split">
-        <div class="section-head reveal">
-          <span class="chip"><i class="fa-solid fa-sack-dollar"></i> Earnings</span>
-          <h2 class="h2">A commission model designed for long-term income</h2>
-          <p class="lead">
-            Earn ongoing residuals while building a portfolio you’re proud to keep.
-          </p>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="num">Monthly residuals</div>
-              <div class="lab">Recurring income on active accounts</div>
-            </div>
-            <div class="stat">
-              <div class="num">Transparent reporting</div>
-              <div class="lab">Clear visibility into performance</div>
-            </div>
-            <div class="stat">
-              <div class="num">Scale your portfolio</div>
-              <div class="lab">Grow over time with support</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal">
-          <div class="card card-xl">
-            <div class="icon"><i class="fa-solid fa-check-circle"></i></div>
-            <h3>How you earn</h3>
-            <p class="muted space-bottom">Clear incentives that reward good deals and strong retention.</p>
-
-            <div class="feature-list">
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Residual income</strong> paid monthly for the life of the account.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Volume-based opportunities</strong> as your portfolio grows.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Retention-focused support</strong> to help keep accounts long-term.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>No hard caps</strong> grow as much as you can sell and support.</div>
-              </div>
-            </div>
-
-            <div class="form-actions margin-top">
-              <a class="btn btn-primary" href="#book">Book a Call <i class="fa-regular fa-calendar"></i></a>
-              <a class="btn btn-ghost" href="#faq">See FAQ <i class="fa-solid fa-circle-question"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-white" id="growth">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-rocket"></i> Growth Programs</span>
-          <h2 class="h2">More than a deal. A system to help you scale.</h2>
-          <p class="lead">Optional programs that drive consistency: webinars, certification, and partner referrals.</p>
-        </div>
-
-        <div class="grid-3 reveal margin-top-lg">
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-video"></i></div>
-            <h3>Monthly Agent Webinar</h3>
-            <p>Practical topics: selling surcharging, statement teardown, and closing scripts. Get invited and receive the deck.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-award"></i></div>
-            <h3>Partner Certification</h3>
-            <p>A short, practical training path. Get playbooks, scripts, and a badge you can use on LinkedIn.</p>
-          </div>
-          <div class="card">
-            <div class="icon"><i class="fa-solid fa-people-group"></i></div>
-            <h3>Agent Roundtables</h3>
-            <p>Small group sessions focused on tactics and Q&amp;A. No fluff, just what works.</p>
-          </div>
-        </div>
-
-        <div class="grid-2 reveal margin-top-lg">
-          <div class="card card-xl">
-            <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
-            <h3>Partner referral accelerator</h3>
-            <p class="muted space-bottom">
-              Already have agent friends? We can structure a simple referral path for agents who bring agents.
-            </p>
-            <div class="feature-list">
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Simple tracking</strong> one form, one link, clear attribution.</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Referral incentives</strong> structured by agreement (override or activation bonus models).</div>
-              </div>
-              <div class="feature-row">
-                <i class="fa-solid fa-circle-check accent-icon list-icon"></i>
-                <div><strong>Fast start support</strong> so your referral succeeds and stays.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card card-xl">
-            <div class="icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-            <h3>Get invites + updates</h3>
-            <p class="muted space-bottom">Want the next webinar invite, the deck, and new partner kit resources? Drop your email.</p>
-
-            <form action="https://formspree.io/f/meorkjln" method="POST">
-              <div class="form-grid single-col">
-                <div class="fg">
-                  <label for="growthEmail">Email Address</label>
-                  <input type="email" id="growthEmail" name="growthEmail" placeholder="you@domain.com" required />
-                </div>
-                <div class="fg">
-                  <label for="growthRole">Role</label>
-                  <select id="growthRole" name="growthRole" required>
-                    <option value="">Select one</option>
-                    <option value="agent">Agent</option>
-                    <option value="iso">ISO</option>
-                    <option value="referral">Referral Partner</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-actions margin-top">
-                <button class="btn btn-primary" type="submit">Send me invites <i class="fa-solid fa-arrow-right"></i></button>
-                <a class="btn btn-ghost" href="#book">Book a Call <i class="fa-regular fa-calendar"></i></a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-stairs"></i> Program Tiers</span>
-          <h2 class="h2">Choose the partnership level that fits your model</h2>
-          <p class="lead">Start simple, then scale into deeper tools and higher earning tiers as your portfolio grows.</p>
-        </div>
-
-        <div class="tier-wrap reveal margin-top-lg">
-          <div class="tier">
-            <div class="tier-top">
+            <div class="pp-quote-footer">
+              <div class="pp-quote-avatar">MJ</div>
               <div>
-                <div class="tname">Referral Partner</div>
-                <div class="tier-sub">Easy entry, low lift</div>
+                <div class="pp-quote-name">Michael J.</div>
+                <div class="pp-quote-role">Sales Partner &middot; 3 years</div>
               </div>
-              <div class="tprice">$0 Startup</div>
-            </div>
-            <div class="tier-body">
-              <ul>
-                <li><i class="fa-solid fa-check good"></i> Referral commissions</li>
-                <li><i class="fa-solid fa-check good"></i> Basic marketing materials</li>
-                <li><i class="fa-solid fa-check good"></i> Online training</li>
-                <li><i class="fa-solid fa-check good"></i> Dedicated support</li>
-                <li><i class="fa-solid fa-xmark bad"></i> Residual income</li>
-                <li><i class="fa-solid fa-xmark bad"></i> Advanced tools</li>
-              </ul>
-              <a class="btn btn-ghost full-width" href="#book">Book a Call</a>
             </div>
           </div>
-
-          <div class="tier">
-            <div class="tier-top">
+          <div class="pp-quote">
+            <div class="pp-quote-body">
+              <i class="fa-solid fa-quote-left pp-quote-mark"></i>
+              <p>"Commission structure is the cleanest I've seen. The biggest difference is speed — underwriting doesn't stall and support actually picks up."</p>
+            </div>
+            <div class="pp-quote-footer">
+              <div class="pp-quote-avatar">SR</div>
               <div>
-                <div class="tname">ISO Partner</div>
-                <div class="tier-sub">Max control and scale</div>
+                <div class="pp-quote-name">Sarah R.</div>
+                <div class="pp-quote-role">ISO Partner &middot; 5 years</div>
               </div>
-              <div class="tprice">$0 Startup</div>
             </div>
-            <div class="tier-body">
-              <ul>
-                <li><i class="fa-solid fa-check good"></i> Sales Partner benefits</li>
-                <li><i class="fa-solid fa-check good"></i> Highest commission tiers</li>
-                <li><i class="fa-solid fa-check good"></i> Portfolio ownership options</li>
-                <li><i class="fa-solid fa-check good"></i> Sub-agent management</li>
-                <li><i class="fa-solid fa-check good"></i> White-label solutions</li>
-                <li><i class="fa-solid fa-check good"></i> Dedicated ISO support</li>
-              </ul>
-              <a class="btn btn-ghost full-width" href="#book">Book a Call</a>
+          </div>
+          <div class="pp-quote">
+            <div class="pp-quote-body">
+              <i class="fa-solid fa-quote-left pp-quote-mark"></i>
+              <p>"As a referral partner, I generated supplemental income with minimal lift. Simple process, straightforward payouts, no games."</p>
+            </div>
+            <div class="pp-quote-footer">
+              <div class="pp-quote-avatar">JP</div>
+              <div>
+                <div class="pp-quote-name">John P.</div>
+                <div class="pp-quote-role">Referral Partner &middot; 1 year</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-white">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-star"></i> Success Stories</span>
-          <h2 class="h2">Partners who built momentum with PPD</h2>
-          <p class="lead">Real stories from agents and partners who wanted better tools, better support, and better outcomes.</p>
+    <section class="pp-section pp-section-alt" id="faq">
+      <div class="pp-container">
+        <div class="pp-section-head reveal">
+          <span class="pp-chip"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+          <h2>Quick answers for agents & ISOs</h2>
         </div>
 
-        <div class="slider reveal margin-top-lg">
-          <div class="track" id="track">
-            <div class="slide">
-              <div class="quote">
-                <p>“Partnering with PPD Technology has transformed my business. The residual income model provides stability, and their support team is always available when I need them.”</p>
-                <div class="qmeta">
-                  <div class="qavatar">MJ</div>
-                  <div>
-                    <div class="who">Michael J.</div>
-                    <div class="what">Sales Partner</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="pp-faq reveal">
+          <details>
+            <summary>Do I keep my book? <i class="fa-solid fa-plus"></i></summary>
+            <p>Portfolio ownership options depend on partner model and agreement. We keep terms clear and review them side-by-side with what you have today.</p>
+          </details>
+          <details>
+            <summary>How do commissions work? <i class="fa-solid fa-plus"></i></summary>
+            <p>Partners typically earn residuals paid monthly as long as the account remains active. Exact structures vary by partner type, volume, and portfolio size.</p>
+          </details>
+          <details>
+            <summary>How fast is onboarding? <i class="fa-solid fa-plus"></i></summary>
+            <p>Submit apps through the partner workflow with visible underwriting steps. Most approvals move within days, not weeks.</p>
+          </details>
+          <details>
+            <summary>What support do I get? <i class="fa-solid fa-plus"></i></summary>
+            <p>24/7 ISO support desk with structured case handling, defined escalation paths, and SLA-backed response expectations.</p>
+          </details>
+          <details>
+            <summary>What business types can I bring? <i class="fa-solid fa-plus"></i></summary>
+            <p>Many categories: retail, restaurants, e-commerce, services, and more. We'll help position the right stack based on merchant needs.</p>
+          </details>
+          <details>
+            <summary>How does the quick compare work? <i class="fa-solid fa-plus"></i></summary>
+            <p>Use the compare table on this page or download the PDF. Then book a call so we can confirm exact comp based on your business.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-            <div class="slide">
-              <div class="quote">
-                <p>“The platform is excellent, and the commission structure is the cleanest I’ve seen. The biggest difference is speed and clarity.”</p>
-                <div class="qmeta">
-                  <div class="qavatar">SR</div>
-                  <div>
-                    <div class="who">Sarah R.</div>
-                    <div class="what">ISO Partner</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="slide">
-              <div class="quote">
-                <p>“As a referral partner, I’ve generated supplemental income with minimal lift. The process was simple and straightforward.”</p>
-                <div class="qmeta">
-                  <div class="qavatar">DP</div>
-                  <div>
-                    <div class="who">John P.</div>
-                    <div class="what">Referral Partner</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section class="pp-section" id="partner-kit">
+      <div class="pp-container">
+        <div class="pp-kit-row reveal">
+          <div class="pp-kit-info">
+            <span class="pp-chip"><i class="fa-solid fa-toolbox"></i> Partner Kit</span>
+            <h2>Download everything you need</h2>
+            <p class="pp-sub">A simple kit built for agents and ISOs who want clarity before the call.</p>
           </div>
-
-          <div class="slider-nav">
-            <button class="navbtn" id="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="navbtn" id="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="pp-kit-cards">
+            <a class="pp-kit-card" href="COMPARE_PDF_URL_HERE" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-signature"></i>
+              <div>
+                <strong>Quick Compare Sheet</strong>
+                <span>Side-by-side comp, support, reporting</span>
+              </div>
+              <span class="pp-kit-tag">PDF</span>
+            </a>
+            <a class="pp-kit-card" href="STATEMENT_BREAKDOWN_URL_HERE" target="_blank" rel="noopener">
+              <i class="fa-solid fa-receipt"></i>
+              <div>
+                <strong>Statement Breakdown</strong>
+                <span>What matters on statements</span>
+              </div>
+              <span class="pp-kit-tag">PDF</span>
+            </a>
+            <a class="pp-kit-card" href="ONBOARDING_CHECKLIST_URL_HERE" target="_blank" rel="noopener">
+              <i class="fa-solid fa-list-check"></i>
+              <div>
+                <strong>Fast Start Checklist</strong>
+                <span>Clean apps, faster onboarding</span>
+              </div>
+              <span class="pp-kit-tag">PDF</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head reveal compare-head">
-          <span class="chip"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</span>
-          <h2 class="h2">Quick answers for agents & ISOs</h2>
-          <p class="lead">If you have a question that isn’t here, book a call and we’ll walk it.</p>
-        </div>
-
-        <div class="faq reveal margin-top-lg">
-          <details>
-            <summary>
-              What is the PPD partner program?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              It’s a program for independent agents, sales teams, and ISOs to sell payment solutions and earn ongoing residual income, supported by partner tooling,
-              training, and a responsive team.
+    <section class="pp-section pp-section-dark pp-section-tight" id="book">
+      <div class="pp-container">
+        <div class="pp-cta-split reveal">
+          <div class="pp-cta-left">
+            <h2>Ready to compare?</h2>
+            <p class="pp-sub-light">
+              Pick a time that works. Bring your current deal sheet (redacted is fine) and we'll compare side-by-side.
             </p>
-          </details>
-
-          <details>
-            <summary>
-              How do I become a partner?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              Book a quick call to review comp and fit, then apply using the form. We’ll follow up to confirm fit and help you get set up.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              How do commissions work?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              Partners typically earn residuals that pay monthly as long as the account remains active. Exact structures vary by partner type, volume, and portfolio.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              Do you really have a quick compare?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              Yes. Use the compare section on this page or download the one-page PDF, then book a call so we can confirm exact comp based on your business.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              Do I keep my book?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              Portfolio ownership options depend on partner model and agreement. We keep terms clear and review them side-by-side with what you have today.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              What business types can I bring?
-              <i class="fa-solid fa-plus"></i>
-            </summary>
-            <p>
-              Many business categories including retail, restaurants, e-commerce, services, and more. We’ll help position the right stack based on merchant needs and risk.
-            </p>
-          </details>
-        </div>
-
-        <div class="reveal faq-actions">
-          <a class="btn btn-primary" href="#book">Book a Call <i class="fa-regular fa-calendar"></i></a>
-          <a class="btn btn-ghost" href="#compare">Quick Compare <i class="fa-solid fa-scale-balanced"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tight" id="book">
-      <div class="container">
-        <div class="calendar-shell reveal">
-          <div class="calendar-head">
-            <span class="eyebrow eyebrow-fit"><i class="fa-regular fa-calendar"></i> Book</span>
-            <h3>Book a quick compare call</h3>
-            <div class="calendar-sub">
-              Pick a time that works. Bring your current deal sheet (redacted is fine) and we’ll compare side-by-side.
+            <div class="pp-cta-btns">
+              <a class="pp-btn pp-btn-primary" href="#partner-form">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="pp-btn pp-btn-outline" href="#compare">View Compare Table <i class="fa-solid fa-table"></i></a>
             </div>
           </div>
-
-          <div class="calendar-body">
-            <iframe
-              class="calendar-iframe"
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ34gwW6Fs4yYTWT4Y5PwFVZ9BDuuR_F9sdeCnIx3YhHz_pNa9FnkX-zimGF1LU92MD149NRVVMo?gv=true"
-              title="Schedule a meeting"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div class="pp-cta-right">
+            <div class="pp-calendar-shell">
+              <div class="pp-calendar-head">
+                <i class="fa-regular fa-calendar"></i> Book a Quick Compare Call
+              </div>
+              <iframe
+                class="pp-calendar-iframe"
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ34gwW6Fs4yYTWT4Y5PwFVZ9BDuuR_F9sdeCnIx3YhHz_pNa9FnkX-zimGF1LU92MD149NRVVMo?gv=true"
+                title="Schedule a meeting"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section tight" id="partner-form">
-      <div class="container">
-        <div class="form-shell reveal">
-          <div class="form-head">
-            <span class="eyebrow eyebrow-fit"><i class="fa-solid fa-rocket"></i> Apply</span>
+    <section class="pp-section pp-section-tight" id="partner-form">
+      <div class="pp-container">
+        <div class="pp-form-shell reveal">
+          <div class="pp-form-head">
+            <span class="pp-eyebrow pp-eyebrow-fit"><i class="fa-solid fa-rocket"></i> Apply</span>
             <h3>Become a Partner</h3>
-            <div class="calendar-sub">
-              Fill out the form and our partnership team will contact you.
-            </div>
+            <p>Fill out the form and our partnership team will contact you.</p>
           </div>
-
-          <div class="form-body">
+          <div class="pp-form-body">
             <form action="https://formspree.io/f/meorkjln" method="POST">
-              <div class="form-grid">
-                <div class="fg">
+              <div class="pp-form-grid">
+                <div class="pp-fg">
                   <label for="firstName">First Name</label>
                   <input type="text" id="firstName" name="firstName" required />
                 </div>
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="lastName">Last Name</label>
                   <input type="text" id="lastName" name="lastName" required />
                 </div>
-
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="email">Email Address</label>
                   <input type="email" id="email" name="email" required />
                 </div>
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="phone">Phone Number</label>
                   <input type="tel" id="phone" name="phone" required />
                 </div>
-
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="company">Company Name</label>
                   <input type="text" id="company" name="company" />
                 </div>
-                <div class="fg">
-                  <label for="experience">Years in Payments Industry</label>
+                <div class="pp-fg">
+                  <label for="experience">Years in Payments</label>
                   <select id="experience" name="experience" required>
-                    <option value="">Select Experience</option>
+                    <option value="">Select</option>
                     <option value="0-1">0-1 years</option>
                     <option value="1-3">1-3 years</option>
                     <option value="3-5">3-5 years</option>
                     <option value="5+">5+ years</option>
                   </select>
                 </div>
-
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="partnerType">Partner Type</label>
                   <select id="partnerType" name="partnerType" required>
-                    <option value="">Select Partner Type</option>
+                    <option value="">Select</option>
                     <option value="referral">Referral Partner</option>
+                    <option value="sales">Sales Partner</option>
                     <option value="iso">ISO Partner</option>
-                    <option value="unsure">Not Sure</option>
                   </select>
                 </div>
-                <div class="fg">
+                <div class="pp-fg">
                   <label for="volume">Monthly Processing Volume</label>
                   <select id="volume" name="volume" required>
-                    <option value="">Select Volume</option>
-                    <option value="0-50k">$0 - $100,000</option>
-                    <option value="50k-250k">$100,000 - $500,000</option>
-                    <option value="250k-1m">$500,000 - $5,000,000</option>
-                    <option value="1m+">$5,000,000+</option>
+                    <option value="">Select</option>
+                    <option value="0-100k">$0 - $100,000</option>
+                    <option value="100k-500k">$100,000 - $500,000</option>
+                    <option value="500k-5m">$500,000 - $5,000,000</option>
+                    <option value="5m+">$5,000,000+</option>
                   </select>
                 </div>
-
-                <div class="fg full">
+                <div class="pp-fg pp-full">
                   <label for="message">Additional Information</label>
-                  <textarea id="message" name="message" rows="4" placeholder="Tell us about your business and partnership goals..."></textarea>
+                  <textarea id="message" name="message" rows="3" placeholder="Tell us about your business and partnership goals..."></textarea>
                 </div>
               </div>
-
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">Submit Application <i class="fa-solid fa-arrow-right"></i></button>
-                <a class="btn btn-ghost" href="#book">Book a Call <i class="fa-regular fa-calendar"></i></a>
+              <div class="pp-form-actions">
+                <button class="pp-btn pp-btn-primary" type="submit">Submit Application <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="pp-btn pp-btn-ghost" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book a Call Instead <i class="fa-regular fa-calendar"></i></button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
+
   </div>
 
   <style>
     .partner-page{
-      --primary:#1549FF;
-      --primary-dark:#0F38CC;
-      --secondary:#060E21;
-      --accent:#00E5A0;
-      --bg:#F5F8FF;
-      --card:#FFFFFF;
-      --text:#060E21;
-      --muted:#7B93B0;
-      --border:#E2E8F4;
-      --shadow:0 10px 30px rgba(2, 6, 23, .08);
-      --shadow-soft:0 8px 20px rgba(2, 6, 23, .06);
-      --radius-xl:24px;
-      --radius-lg:16px;
-      --radius-md:12px;
-      --container:1180px;
-      background:var(--bg);
-      color:var(--text);
+      --pp-primary:#1549FF;
+      --pp-primary-dark:#0F38CC;
+      --pp-navy:#060E21;
+      --pp-navy-2:#0C1A38;
+      --pp-accent:#00E5A0;
+      --pp-cyan:#00CFFF;
+      --pp-surface:#F5F8FF;
+      --pp-card:#FFFFFF;
+      --pp-text:#060E21;
+      --pp-muted:#5E7A9A;
+      --pp-border:#E2E8F4;
+      --pp-shadow:0 10px 30px rgba(2,6,23,.08);
+      --pp-shadow-lg:0 20px 50px rgba(2,6,23,.12);
+      --pp-radius:16px;
+      --pp-container:1140px;
+      background:var(--pp-surface);
+      color:var(--pp-text);
     }
-
-    .partner-page *{box-sizing:border-box;margin:0;padding:0}
+    .partner-page *{box-sizing:border-box}
     .partner-page a{color:inherit;text-decoration:none}
-    .partner-page img{max-width:100%;display:block}
-    .partner-page .container{max-width:var(--container);margin:0 auto;padding:0 20px}
-    .partner-page .section{padding:84px 0}
-    .partner-page .section.tight{padding:64px 0}
-    .partner-page .section-white{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .partner-page .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
-      color:rgba(255,255,255,.85);
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);
-      padding:8px 12px;border-radius:999px;
+    .pp-container{max-width:var(--pp-container);margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+    .pp-section{padding:80px 0}
+    .pp-section-tight{padding:56px 0}
+    .pp-section-alt{background:#fff;border-top:1px solid var(--pp-border);border-bottom:1px solid var(--pp-border)}
+    .pp-section-dark{
+      background:linear-gradient(135deg,var(--pp-navy) 0%,#0A2B74 55%,var(--pp-primary-dark) 100%);
+      color:#fff;
+    }
+    .pp-section-head{display:flex;flex-direction:column;gap:10px;max-width:680px}
+    .pp-section-head h2{
+      font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.02em;
+    }
+    .pp-section-dark .pp-section-head h2{color:#fff}
+    .pp-sub{color:var(--pp-muted);font-size:clamp(15px,1.2vw,17px);max-width:60ch}
+    .pp-sub-light{color:rgba(255,255,255,.8);font-size:clamp(15px,1.2vw,17px);max-width:60ch}
+
+    .pp-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
+      font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+      color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;
       backdrop-filter:blur(10px);
     }
-    .partner-page .eyebrow-fit{width:fit-content}
-    .partner-page .chip{
-      display:inline-flex;align-items:center;gap:10px;
+    .pp-eyebrow-fit{width:fit-content}
+    .pp-chip{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
       font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
-      color:var(--secondary);
-      background:rgba(0,85,255,.08);
-      border:1px solid rgba(0,85,255,.12);
-      padding:8px 12px;border-radius:999px;
-    }
-    .partner-page .muted{color:var(--muted)}
-    .partner-page .h2{
-      font-size:clamp(26px, 3vw, 38px);
-      line-height:1.15;
-      color:var(--secondary);
-      letter-spacing:-.02em;
-    }
-    .partner-page .lead{
-      font-size:clamp(16px, 1.25vw, 18px);
-      color:var(--muted);
-      max-width:70ch;
+      color:var(--pp-navy);background:rgba(21,73,255,.08);
+      border:1px solid rgba(21,73,255,.12);padding:8px 14px;border-radius:999px;
     }
 
-    .partner-page .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 18px;border-radius:999px;
-      font-weight:700;font-size:14px;
-      border:1px solid transparent;
-      cursor:pointer;
-      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
-      user-select:none;
-      white-space:nowrap;
+    .pp-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 20px;border-radius:999px;font-weight:700;font-size:14px;
+      border:1px solid transparent;cursor:pointer;white-space:nowrap;
+      transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
     }
-    .partner-page .btn:active{transform:translateY(1px)}
-    .partner-page .btn-primary{
-      background:linear-gradient(135deg,#2D60FF,var(--primary));
-      color:#fff;
+    .pp-btn:active{transform:translateY(1px)}
+    .pp-btn-primary{
+      background:linear-gradient(135deg,#2D60FF,var(--pp-primary));color:#fff;
       box-shadow:0 8px 28px rgba(21,73,255,.35);
     }
-    .partner-page .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
-    .partner-page .btn-outline{
-      background:transparent;border-color:rgba(255,255,255,.35);color:#fff;
-    }
-    .partner-page .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
-    .partner-page .btn-ghost{
-      background:transparent;border-color:var(--border);color:var(--secondary);
-    }
-    .partner-page .btn-ghost:hover{background:#fff;transform:translateY(-2px);box-shadow:var(--shadow-soft)}
-    .partner-page .btn-soft{
-      background:rgba(0,85,255,.08);border-color:rgba(0,85,255,.12);color:var(--secondary);
-    }
-    .partner-page .btn-soft:hover{background:rgba(0,85,255,.12);transform:translateY(-2px)}
+    .pp-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
+    .pp-btn-outline{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+    .pp-btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .pp-btn-ghost{background:transparent;border-color:var(--pp-border);color:var(--pp-navy)}
+    .pp-btn-ghost:hover{background:#fff;transform:translateY(-2px);box-shadow:var(--pp-shadow)}
+    .pp-full{width:100%}
 
-    .partner-page .hero{
+    .pp-hero{
       background:
-        radial-gradient(900px 480px at 15% 10%, rgba(0,204,150,.18), transparent 55%),
-        radial-gradient(760px 420px at 85% 15%, rgba(0,85,255,.28), transparent 55%),
-        linear-gradient(135deg, var(--secondary) 0%, #0A2B74 55%, var(--primary-dark) 100%);
-      color:#fff;
-      padding:84px 0 56px;
-      position:relative;
-      overflow:hidden;
+        radial-gradient(900px 480px at 15% 10%,rgba(0,204,150,.15),transparent 55%),
+        radial-gradient(760px 420px at 85% 15%,rgba(21,73,255,.25),transparent 55%),
+        linear-gradient(135deg,var(--pp-navy) 0%,#0A2B74 55%,var(--pp-primary-dark) 100%);
+      color:#fff;padding:80px 0 64px;position:relative;overflow:hidden;
     }
-    .partner-page .hero::after{
-      content:"";position:absolute;inset:auto -20% -60% -20%;
-      height:520px;border-radius:50%;
-      background:radial-gradient(circle, rgba(255,255,255,.12), transparent 60%);
-      transform:rotate(-8deg);
-      pointer-events:none;
+    .pp-hero::after{
+      content:"";position:absolute;inset:auto -20% -60% -20%;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,255,255,.08),transparent 60%);
+      transform:rotate(-8deg);pointer-events:none;
     }
-    .partner-page .hero-grid{
-      display:grid;
-      grid-template-columns:1.25fr .85fr;
-      gap:34px;
-      align-items:start;
-      position:relative;
-      z-index:2;
+    .pp-hero-grid{
+      display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;
+      position:relative;z-index:2;
     }
-    .partner-page .hero h1{
-      font-size:clamp(34px, 4.2vw, 54px);
-      line-height:1.05;
-      letter-spacing:-.03em;
-      margin:18px 0 14px;
+    .pp-hero h1{
+      font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.03em;margin:16px 0 12px;
     }
-    .partner-page .hero p{color:rgba(255,255,255,.82);max-width:62ch}
-    .partner-page .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-
-    .partner-page .team-card-stack{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-self:center;
-      justify-self:stretch;
-      padding-top:14px;
-    }
-    .partner-page .person-card{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:18px;
-      padding:14px;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      backdrop-filter:blur(10px);
-    }
-    .partner-page .person-card-accent{background:rgba(0,204,150,.14);border-color:rgba(0,204,150,.22)}
-    .partner-page .person-left{display:flex;align-items:center;gap:12px;min-width:0}
-    .partner-page .avatar{
-      width:42px;height:42px;border-radius:14px;
-      background:linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,.08));
-      display:flex;align-items:center;justify-content:center;
-      font-weight:900;
-    }
-    .partner-page .avatar-accent{background:rgba(0,204,150,.18)}
-    .partner-page .pmeta{min-width:0}
-    .partner-page .pmeta .name{font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .partner-page .pmeta .role{font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .partner-page .mini-btn{
-      padding:10px 12px;border-radius:999px;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.22);
-      font-weight:800;font-size:13px;color:#fff;
-      display:inline-flex;align-items:center;gap:8px;
-      transition:.2s;
-    }
-    .partner-page .mini-btn:hover{background:rgba(255,255,255,.20);transform:translateY(-1px)}
-    .partner-page .mini-btn-accent{background:rgba(0,204,150,.22);border-color:rgba(0,204,150,.25)}
-
-    .partner-page .logo-strip{
-      margin-top:30px;
-      display:flex;flex-wrap:wrap;gap:10px;align-items:center;
-      opacity:.92;
-    }
-    .partner-page .logo-pill{
-      padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.08);
-      font-weight:800;font-size:13px;
-      display:inline-flex;align-items:center;gap:10px;
-    }
-    .partner-page .logo-pill i{opacity:.95}
-
-    .partner-page .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .partner-page .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .partner-page .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .partner-page .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-soft);
-      padding:18px;
-      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-    }
-    .partner-page .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(0,85,255,.18)}
-    .partner-page .card h3{color:var(--secondary);font-size:16px;letter-spacing:-.01em;margin-bottom:6px}
-    .partner-page .card-xl{border-radius:24px;padding:22px}
-    .partner-page .icon{
-      width:44px;height:44px;border-radius:16px;
-      background:rgba(0,85,255,.08);
-      border:1px solid rgba(0,85,255,.12);
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:12px;
-      color:var(--primary);
-      font-size:18px;
-    }
-    .partner-page .card p{color:var(--muted);font-size:14px}
-
-    .partner-page .split{
-      display:grid;
-      grid-template-columns:1fr 1.25fr;
-      gap:28px;
-      align-items:start;
-    }
-    .partner-page .split .sticky{
-      position:sticky;top:100px;
-      align-self:start;
-    }
-    .partner-page .section-head{display:flex;flex-direction:column;gap:12px}
-    .partner-page .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .partner-page .compare-head{max-width:920px}
-
-    .partner-page .guarantee{background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)}
-    .partner-page .metric{
-      padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-soft);
-      display:flex;flex-direction:column;gap:8px;
-    }
-    .partner-page .metric .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .partner-page .metric .label{font-weight:800;color:var(--secondary);letter-spacing:-.01em}
-    .partner-page .metric .desc{color:var(--muted);font-size:14px}
-    .partner-page .metric .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 10px;border-radius:999px;
-      background:rgba(0,204,150,.10);
-      border:1px solid rgba(0,204,150,.18);
-      color:#065f46;font-weight:850;font-size:12px;
+    .pp-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .pp-trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+    .pp-trust-pill{
+      padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);font-weight:700;font-size:12px;
+      display:inline-flex;align-items:center;gap:7px;
     }
 
-    .partner-page .band{
-      background:
-        radial-gradient(700px 380px at 20% 10%, rgba(0,85,255,.10), transparent 55%),
-        radial-gradient(560px 320px at 85% 20%, rgba(0,204,150,.10), transparent 55%),
-        #ffffff;
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
+    .pp-dashboard{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);
     }
-    .partner-page .stats{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px
+    .pp-dash-header{
+      display:flex;align-items:center;gap:10px;padding:12px 16px;
+      border-bottom:1px solid rgba(255,255,255,.1);
     }
-    .partner-page .stat{
-      border-radius:18px;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-soft);
-      padding:18px;display:flex;flex-direction:column;gap:6px
+    .pp-dash-dots{display:flex;gap:5px}
+    .pp-dash-dots span{width:8px;height:8px;border-radius:50%}
+    .pp-dash-dots span:nth-child(1){background:#FF5F57}
+    .pp-dash-dots span:nth-child(2){background:#FEBC2E}
+    .pp-dash-dots span:nth-child(3){background:#28C840}
+    .pp-dash-title{font-weight:700;font-size:13px;color:rgba(255,255,255,.7)}
+    .pp-dash-body{padding:16px;display:flex;flex-direction:column;gap:12px}
+    .pp-dash-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pp-dash-stat{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;padding:14px;
     }
-    .partner-page .stat .num{font-weight:900;font-size:18px;color:var(--secondary)}
-    .partner-page .stat .lab{color:var(--muted);font-size:14px}
+    .pp-dash-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);font-weight:600}
+    .pp-dash-value{font-size:22px;font-weight:900;margin:4px 0 2px;letter-spacing:-.02em}
+    .pp-dash-change{font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px}
+    .pp-dash-change.positive{color:var(--pp-accent)}
+    .pp-dash-bar{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;padding:14px;
+    }
+    .pp-dash-bar-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:8px}
+    .pp-dash-bar-track{height:8px;border-radius:99px;background:rgba(255,255,255,.1)}
+    .pp-dash-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--pp-primary),var(--pp-cyan))}
 
-    .partner-page .tier-wrap{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-      margin-top:18px
+    .pp-compare-layout{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+    .pp-compare-table{
+      width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;
+      border-radius:var(--pp-radius);border:1px solid var(--pp-border);
+      background:#fff;box-shadow:var(--pp-shadow);
     }
-    .partner-page .tier{
-      border-radius:22px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-soft);
-      transition:.22s;
+    .pp-compare-table th,.pp-compare-table td{padding:14px;border-bottom:1px solid var(--pp-border);vertical-align:top}
+    .pp-compare-table tr:last-child td{border-bottom:none}
+    .pp-compare-table th{
+      text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--pp-muted);background:linear-gradient(180deg,#fff,#fbfdff);
     }
-    .partner-page .tier:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(0,85,255,.18)}
-    .partner-page .tier-top{
-      padding:18px;
-      color:#fff;
-      background:linear-gradient(135deg,var(--primary) 0%, var(--primary-dark) 100%);
+    .pp-compare-table th.ppd-col{color:var(--pp-primary);background:rgba(21,73,255,.04)}
+    .pp-compare-table td:first-child{font-weight:800;color:var(--pp-navy);width:22%}
+    .pp-compare-table td:nth-child(2){width:36%}
+    .pp-compare-table td:nth-child(3){width:42%;background:rgba(21,73,255,.02)}
+    .pp-editable{
+      outline:none;border-radius:10px;padding:10px;min-height:40px;
+      background:rgba(100,116,139,.05);border:1px dashed rgba(100,116,139,.2);
+      color:var(--pp-navy);font-size:14px;
+    }
+    .pp-editable:empty::before{content:attr(data-ph);color:var(--pp-muted);font-weight:400;font-style:italic}
+    .pp-ppd-cell{
+      background:rgba(21,73,255,.05);border:1px solid rgba(21,73,255,.12);
+      border-radius:10px;padding:10px;color:var(--pp-navy);font-weight:600;font-size:14px;
+    }
+    .pp-compare-actions{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    }
+    .pp-compare-tip{
+      display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;
+      background:rgba(21,73,255,.05);border:1px solid rgba(21,73,255,.1);
+      color:var(--pp-muted);font-weight:600;font-size:14px;flex:1;min-width:280px;
+    }
+    .pp-compare-tip i{color:var(--pp-primary)}
+    .pp-compare-btns{display:flex;gap:10px}
+
+    .pp-value-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;
+    }
+    .pp-value-card{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--pp-radius);padding:24px;
+      transition:transform .2s,border-color .2s;
+    }
+    .pp-value-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+    .pp-value-icon{
+      width:44px;height:44px;border-radius:12px;margin-bottom:14px;
+      background:rgba(21,73,255,.2);border:1px solid rgba(21,73,255,.3);
+      display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--pp-cyan);
+    }
+    .pp-value-card h3{font-size:16px;font-weight:800;margin-bottom:6px}
+    .pp-value-card p{color:rgba(255,255,255,.65);font-size:14px;line-height:1.5}
+
+    .pp-tiers{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;
+    }
+    .pp-tier{
+      border-radius:20px;overflow:hidden;border:1px solid var(--pp-border);
+      background:#fff;box-shadow:var(--pp-shadow);position:relative;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .pp-tier:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
+    .pp-tier-featured{border-color:var(--pp-primary);box-shadow:0 8px 32px rgba(21,73,255,.15)}
+    .pp-tier-price-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+    .pp-tier-badge{
+      padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800;
+      background:var(--pp-accent);color:var(--pp-navy);letter-spacing:.04em;text-transform:uppercase;
+    }
+    .pp-tier-head{
+      padding:20px;color:#fff;
+      background:linear-gradient(135deg,var(--pp-primary),var(--pp-primary-dark));
       display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
     }
-    .partner-page .tier-top .tname{font-weight:900;font-size:18px;letter-spacing:-.02em}
-    .partner-page .tier-top .tprice{font-weight:900;opacity:.95}
-    .partner-page .tier-sub{opacity:.85;font-weight:650;font-size:13px;margin-top:4px}
-    .partner-page .tier-body{padding:18px}
-    .partner-page .tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:14px 0 18px}
-    .partner-page .tier li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-weight:600;font-size:14px}
-    .partner-page .tier li i{margin-top:3px}
-    .partner-page .tier .good{color:var(--accent)}
-    .partner-page .tier .bad{color:#E11D48}
+    .pp-tier-name{font-weight:900;font-size:18px;letter-spacing:-.02em}
+    .pp-tier-desc{opacity:.85;font-size:13px;font-weight:600;margin-top:3px}
+    .pp-tier-price{font-weight:900;opacity:.95}
+    .pp-tier-body{padding:20px}
+    .pp-tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+    .pp-tier li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:14px;color:var(--pp-text)}
+    .pp-tier li i{margin-top:3px}
+    .pp-good{color:var(--pp-accent)}
+    .pp-bad{color:#E11D48}
+    .pp-muted-li{opacity:.45}
 
-    .partner-page .slider{overflow:hidden;position:relative}
-    .partner-page .track{display:flex;gap:14px;transition:transform .4s ease}
-    .partner-page .slide{flex:0 0 100%}
-    @media (min-width:820px){ .partner-page .slide{flex:0 0 calc(50% - 7px)} }
-    @media (min-width:1100px){ .partner-page .slide{flex:0 0 calc(33.333% - 10px)} }
-    .partner-page .quote{
-      border-radius:22px;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-soft);
-      padding:18px;height:100%;
-      display:flex;flex-direction:column;gap:12px;
+    .pp-tools-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;
     }
-    .partner-page .quote p{color:var(--muted);font-weight:550}
-    .partner-page .qmeta{display:flex;align-items:center;gap:12px;margin-top:auto}
-    .partner-page .qavatar{
-      width:44px;height:44px;border-radius:16px;
-      background:rgba(0,85,255,.08);border:1px solid rgba(0,85,255,.12);
-      display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--primary);
+    .pp-tool-card{
+      background:var(--pp-surface);border:1px solid var(--pp-border);border-radius:var(--pp-radius);
+      padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;
     }
-    .partner-page .qmeta .who{font-weight:900;color:var(--secondary)}
-    .partner-page .qmeta .what{font-size:13px;color:var(--muted)}
-    .partner-page .slider-nav{display:flex;gap:10px;justify-content:center;margin-top:18px}
-    .partner-page .navbtn{
-      width:44px;height:44px;border-radius:999px;
-      background:#fff;border:1px solid var(--border);
-      box-shadow:var(--shadow-soft);
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;transition:.2s;
+    .pp-tool-card:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow);border-color:rgba(21,73,255,.15)}
+    .pp-tool-card>i{
+      font-size:20px;color:var(--pp-primary);margin-bottom:14px;
+      width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);border-radius:12px;
     }
-    .partner-page .navbtn:hover{transform:translateY(-2px)}
-    .partner-page .navbtn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .pp-tool-card h3{font-size:15px;font-weight:800;margin-bottom:6px;color:var(--pp-navy)}
+    .pp-tool-card p{color:var(--pp-muted);font-size:14px;line-height:1.5}
 
-    .partner-page .faq{
-      display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px
+    .pp-testimonials{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;
+    }
+    .pp-quote{
+      background:#fff;border:1px solid var(--pp-border);border-radius:var(--pp-radius);
+      box-shadow:var(--pp-shadow);padding:24px;
+      display:flex;flex-direction:column;justify-content:space-between;gap:18px;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .pp-quote:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
+    .pp-quote-mark{color:var(--pp-primary);opacity:.25;font-size:20px;margin-bottom:4px}
+    .pp-quote-body p{color:var(--pp-text);font-weight:550;font-size:15px;line-height:1.6}
+    .pp-quote-footer{display:flex;align-items:center;gap:12px}
+    .pp-quote-avatar{
+      width:42px;height:42px;border-radius:12px;flex-shrink:0;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);
+      display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--pp-primary);
+    }
+    .pp-quote-name{font-weight:800;color:var(--pp-navy);font-size:14px}
+    .pp-quote-role{font-size:12px;color:var(--pp-muted)}
+
+    .pp-faq{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;
     }
     .partner-page details{
-      background:#fff;border:1px solid var(--border);border-radius:18px;
-      box-shadow:var(--shadow-soft);
-      padding:14px 14px;
-      transition:.2s;
+      background:var(--pp-surface);border:1px solid var(--pp-border);border-radius:14px;
+      box-shadow:0 4px 12px rgba(2,6,23,.04);padding:16px;transition:.2s;
     }
-    .partner-page details[open]{border-color:rgba(0,85,255,.18);box-shadow:var(--shadow)}
+    .partner-page details[open]{border-color:rgba(21,73,255,.18);box-shadow:var(--pp-shadow)}
     .partner-page summary{
-      cursor:pointer;list-style:none;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      font-weight:850;color:var(--secondary);
+      cursor:pointer;list-style:none;display:flex;align-items:center;
+      justify-content:space-between;gap:12px;font-weight:800;color:var(--pp-navy);font-size:15px;
     }
     .partner-page summary::-webkit-details-marker{display:none}
-    .partner-page .faq p{margin-top:10px;color:var(--muted);font-weight:550}
+    .partner-page details p{margin-top:10px;color:var(--pp-muted);font-weight:500;font-size:14px;line-height:1.6}
 
-    .partner-page .form-shell{
-      background:#fff;border:1px solid var(--border);
-      border-radius:24px;box-shadow:var(--shadow);
-      overflow:hidden;
+    .pp-kit-row{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start;
     }
-    .partner-page .form-head{
-      padding:22px;
-      background:linear-gradient(135deg,var(--primary) 0%, var(--primary-dark) 100%);
-      color:#fff;
-      display:flex;flex-direction:column;gap:8px;
+    .pp-kit-info{display:flex;flex-direction:column;gap:10px}
+    .pp-kit-info h2{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.02em}
+    .pp-kit-cards{display:flex;flex-direction:column;gap:10px}
+    .pp-kit-card{
+      display:flex;align-items:center;gap:14px;padding:16px;border-radius:14px;
+      background:#fff;border:1px solid var(--pp-border);box-shadow:var(--pp-shadow);
+      transition:transform .2s,box-shadow .2s;
     }
-    .partner-page .form-head h3{font-size:22px;letter-spacing:-.02em}
-    .partner-page .form-body{padding:22px}
-    .partner-page .form-grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media (min-width:860px){
-      .partner-page .form-grid{grid-template-columns:1fr 1fr}
+    .pp-kit-card:hover{transform:translateY(-2px);box-shadow:var(--pp-shadow-lg)}
+    .pp-kit-card>i{
+      font-size:18px;color:var(--pp-primary);flex-shrink:0;
+      width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);border-radius:10px;
     }
-    .partner-page .single-col{grid-template-columns:1fr !important}
-    .partner-page .fg{display:flex;flex-direction:column;gap:7px}
-    .partner-page .fg label{font-weight:750;color:var(--secondary);font-size:14px}
-    .partner-page .fg input,
-    .partner-page .fg select,
-    .partner-page .fg textarea{
-      padding:12px 12px;border-radius:12px;border:1px solid var(--border);
-      font:inherit;outline:none;transition:.2s;background:#fff;
-    }
-    .partner-page .fg input:focus,
-    .partner-page .fg select:focus,
-    .partner-page .fg textarea:focus{
-      border-color:rgba(0,85,255,.35);
-      box-shadow:0 0 0 4px rgba(0,85,255,.10);
-    }
-    .partner-page .full{grid-column:1/-1}
-    .partner-page .form-actions{display:flex;justify-content:flex-start;gap:10px;flex-wrap:wrap;margin-top:12px}
-
-    .partner-page .compare-wrap{
-      display:grid;
-      grid-template-columns:1fr 1.25fr;
-      gap:18px;
-      align-items:start;
-      margin-top:18px;
-    }
-    .partner-page .compare-tools{
-      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
-    }
-    .partner-page .compare-note{
-      padding:12px 14px;border-radius:16px;
-      border:1px solid var(--border);
-      background:#fff;
-      box-shadow:var(--shadow-soft);
-      color:var(--muted);
-      font-weight:600;
-      font-size:14px;
-    }
-    .partner-page .compare-note-after{margin-top:12px}
-    .partner-page .compare-table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      overflow:hidden;
-      border-radius:18px;
-      border:1px solid var(--border);
-      background:#fff;
-      box-shadow:var(--shadow-soft);
-    }
-    .partner-page .compare-table th,
-    .partner-page .compare-table td{
-      padding:14px 12px;
-      border-bottom:1px solid var(--border);
-      vertical-align:top;
-    }
-    .partner-page .compare-table tr:last-child td{border-bottom:none}
-    .partner-page .compare-table th{
-      text-align:left;
-      font-size:13px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--muted);
-      background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-    }
-    .partner-page .compare-table td:first-child{font-weight:850;color:var(--secondary);width:30%}
-    .partner-page .compare-table td:nth-child(2){width:35%}
-    .partner-page .compare-table td:nth-child(3){width:35%}
-    .partner-page .editable{
-      outline:none;
-      border-radius:12px;
-      padding:10px 10px;
-      background:rgba(100,116,139,.06);
-      border:1px dashed rgba(100,116,139,.25);
-      color:var(--secondary);
-      min-height:42px;
-    }
-    .partner-page .ppd-cell{
-      background:rgba(0,85,255,.06);
-      border:1px solid rgba(0,85,255,.14);
-      border-radius:12px;
-      padding:10px 10px;
-      color:var(--secondary);
-      font-weight:650;
-    }
-    .partner-page .compare-badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      background:rgba(0,204,150,.10);
-      border:1px solid rgba(0,204,150,.18);
-      color:#065f46;font-weight:900;font-size:12px;
-      margin-top:10px;
+    .pp-kit-card div{flex:1;min-width:0}
+    .pp-kit-card strong{display:block;font-size:14px;color:var(--pp-navy)}
+    .pp-kit-card span{font-size:13px;color:var(--pp-muted)}
+    .pp-kit-tag{
+      font-size:11px;font-weight:800;color:var(--pp-muted);
+      border:1px solid var(--pp-border);padding:5px 10px;border-radius:999px;
+      background:#fff;flex-shrink:0;
     }
 
-    .partner-page .dl{
-      display:flex;flex-direction:column;gap:10px;margin-top:14px
+    .pp-cta-split{
+      display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start;
     }
-    .partner-page .dl a{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      padding:12px 12px;border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
-      box-shadow:var(--shadow-soft);
-      font-weight:800;color:var(--secondary);
-      transition:.2s;
+    .pp-cta-left{display:flex;flex-direction:column;gap:12px;padding-top:20px}
+    .pp-cta-left h2{font-size:clamp(26px,3vw,38px);letter-spacing:-.02em}
+    .pp-cta-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .pp-calendar-shell{
+      border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
     }
-    .partner-page .dl a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-    .partner-page .dl .left{display:flex;align-items:center;gap:10px}
-    .partner-page .dl .tag{
-      font-size:12px;font-weight:900;color:var(--muted);
-      border:1px solid var(--border);
-      padding:6px 10px;border-radius:999px;background:#fff
+    .pp-calendar-head{
+      padding:14px 18px;font-weight:700;font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+      display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);
     }
+    .pp-calendar-iframe{width:100%;height:600px;border:0;display:block;background:#fff}
 
-    .partner-page .steps{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px
+    .pp-form-shell{
+      max-width:720px;margin:0 auto;
+      background:#fff;border:1px solid var(--pp-border);border-radius:20px;
+      box-shadow:var(--pp-shadow-lg);overflow:hidden;
     }
-    .partner-page .step{
-      border-radius:18px;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-soft);
-      padding:18px;display:flex;flex-direction:column;gap:10px
+    .pp-form-head{
+      padding:24px;
+      background:linear-gradient(135deg,var(--pp-navy) 0%,#0A2B74 55%,var(--pp-primary-dark) 100%);
+      color:#fff;display:flex;flex-direction:column;gap:6px;
     }
-    .partner-page .step .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .partner-page .step .num{
-      width:34px;height:34px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(0,85,255,.08);
-      border:1px solid rgba(0,85,255,.12);
-      color:var(--primary);
-      font-weight:900;
+    .pp-form-head h3{font-size:22px;letter-spacing:-.02em}
+    .pp-form-head p{color:rgba(255,255,255,.8);font-size:14px}
+    .pp-form-body{padding:24px}
+    .pp-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .pp-fg{display:flex;flex-direction:column;gap:6px}
+    .pp-fg label{font-weight:700;color:var(--pp-navy);font-size:14px}
+    .pp-fg input,.pp-fg select,.pp-fg textarea{
+      padding:11px 12px;border-radius:10px;border:1px solid var(--pp-border);
+      font:inherit;outline:none;transition:.2s;background:#fff;font-size:14px;
     }
-    .partner-page .step .title{font-weight:900;color:var(--secondary)}
-    .partner-page .step .desc{color:var(--muted);font-weight:600;font-size:14px}
+    .pp-fg input:focus,.pp-fg select:focus,.pp-fg textarea:focus{
+      border-color:rgba(21,73,255,.35);box-shadow:0 0 0 3px rgba(21,73,255,.08);
+    }
+    .pp-full{grid-column:1/-1}
+    .pp-form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 
-    .partner-page .calendar-shell{
-      background:#fff;border:1px solid var(--border);
-      border-radius:24px;box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .partner-page .calendar-head{
-      padding:20px;
-      background:linear-gradient(135deg,var(--secondary) 0%, #0A2B74 55%, var(--primary-dark) 100%);
-      color:#fff;
-      display:flex;flex-direction:column;gap:8px;
-    }
-    .partner-page .calendar-head h3{font-size:22px;letter-spacing:-.02em}
-    .partner-page .calendar-sub{color:rgba(255,255,255,.85);font-weight:550}
-    .partner-page .calendar-body{padding:0}
-    .partner-page .calendar-iframe{
-      width:100%;
-      height:760px;
-      border:0;
-      display:block;
-      background:#fff;
-    }
-
-    .partner-page .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
+    .partner-page .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
     .partner-page .reveal.show{opacity:1;transform:translateY(0)}
 
-    .partner-page .space-bottom{margin-bottom:12px}
-    .partner-page .margin-top{margin-top:14px}
-    .partner-page .margin-top-lg{margin-top:18px}
-    .partner-page .card-action{margin-top:12px}
-    .partner-page .full-width{width:100%}
-    .partner-page .feature-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-    .partner-page .feature-row{display:flex;gap:10px;align-items:flex-start}
-    .partner-page .list-icon{margin-top:3px}
-    .partner-page .pdf-icon{color:#E11D48}
-    .partner-page .primary-icon{color:var(--primary)}
-    .partner-page .accent-icon{color:var(--accent)}
-    .partner-page .faq-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-
     @media (max-width:980px){
-      .partner-page .hero-grid{grid-template-columns:1fr;gap:18px}
-      .partner-page .team-card-stack{align-self:stretch;padding-top:0}
-      .partner-page .split{grid-template-columns:1fr}
-      .partner-page .split .sticky{position:static}
-      .partner-page .grid-4{grid-template-columns:repeat(2,1fr)}
-      .partner-page .grid-3{grid-template-columns:1fr}
-      .partner-page .grid-2{grid-template-columns:1fr}
-      .partner-page .tier-wrap{grid-template-columns:1fr}
-      .partner-page .stats{grid-template-columns:1fr}
-      .partner-page .faq{grid-template-columns:1fr}
-      .partner-page .compare-wrap{grid-template-columns:1fr}
-      .partner-page .steps{grid-template-columns:1fr}
+      .pp-hero-grid{grid-template-columns:1fr !important;gap:24px}
+      .pp-value-grid,.pp-tiers,.pp-tools-grid,.pp-testimonials{grid-template-columns:1fr}
+      .pp-faq{grid-template-columns:1fr}
+      .pp-kit-row{grid-template-columns:1fr}
+      .pp-cta-split{grid-template-columns:1fr}
+      .pp-form-grid{grid-template-columns:1fr}
+      .pp-compare-actions{flex-direction:column;align-items:stretch}
+    }
+    @media (min-width:640px) and (max-width:980px){
+      .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:repeat(2,1fr)}
     }
 
     @media print{
-      header,
-      footer,
-      .partner-page .hero,
-      .partner-page .section:not(#compare),
-      .partner-page #partner-form,
-      .partner-page #book{
-        display:none !important;
-      }
-      .partner-page #compare{padding:0 !important}
-      .partner-page .compare-tools,
-      .partner-page .compare-note,
-      .partner-page .dl{
-        display:none !important;
-      }
-      .partner-page .compare-table{box-shadow:none !important}
+      header,footer,.pp-hero,.pp-section:not(#compare),.pp-section-dark{display:none !important}
+      #compare{padding:0 !important}
+      .pp-compare-actions{display:none !important}
       .partner-page{background:#fff !important}
-      .partner-page .container{max-width:100% !important;padding:0 !important}
+      .pp-container{max-width:100% !important;padding:0 !important}
     }
   </style>
 
@@ -1515,94 +927,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       if (!root) return;
 
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            io.unobserve(entry.target);
-          }
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }
         });
-      }, { threshold: 0.15 });
-
+      }, { threshold: 0.12 });
       root.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-      const track = root.querySelector("#track");
-      const prev = root.querySelector("#prev");
-      const next = root.querySelector("#next");
-
-      if (track && prev && next) {
-        let index = 0;
-
-        function slidesPerView() {
-          const w = window.innerWidth;
-          if (w >= 1100) return 3;
-          if (w >= 820) return 2;
-          return 1;
-        }
-
-        function update() {
-          const spv = slidesPerView();
-          const slides = Array.from(track.children);
-          const maxIndex = Math.max(0, slides.length - spv);
-
-          index = Math.min(index, maxIndex);
-
-          const slide = slides[0];
-          const gap = 14;
-          if (!slide) return;
-          const slideW = slide.getBoundingClientRect().width;
-          const x = index * (slideW + gap);
-
-          track.style.transform = `translateX(-${x}px)`;
-          prev.disabled = index <= 0;
-          next.disabled = index >= maxIndex;
-        }
-
-        prev.addEventListener("click", () => {
-          index = Math.max(0, index - 1);
-          update();
-        });
-
-        next.addEventListener("click", () => {
-          index = index + 1;
-          update();
-        });
-
-        window.addEventListener("resize", update, { passive: true });
-        update();
-      }
-
-      root.querySelectorAll("details").forEach((details) => {
-        details.addEventListener("toggle", () => {
-          const icon = details.querySelector("summary i");
-          if (!icon) return;
-          icon.className = details.open ? "fa-solid fa-minus" : "fa-solid fa-plus";
+      root.querySelectorAll("details").forEach((d) => {
+        d.addEventListener("toggle", () => {
+          const icon = d.querySelector("summary i");
+          if (icon) icon.className = d.open ? "fa-solid fa-minus" : "fa-solid fa-plus";
         });
       });
 
-      root.querySelectorAll(".editable").forEach((el) => {
+      root.querySelectorAll(".pp-editable").forEach((el) => {
         const ph = el.getAttribute("data-ph") || "Type here...";
-        if (!el.textContent.trim()) {
-          el.dataset.empty = "true";
-          el.innerHTML = `<span style="color:#94A3B8;font-weight:700">${ph}</span>`;
-        }
-
-        el.addEventListener("focus", () => {
-          if (el.dataset.empty === "true") {
-            el.textContent = "";
-            el.dataset.empty = "false";
-          }
-        });
-
-        el.addEventListener("blur", () => {
-          if (!el.textContent.trim()) {
-            el.dataset.empty = "true";
-            el.innerHTML = `<span style="color:#94A3B8;font-weight:700">${ph}</span>`;
-          }
-        });
+        if (!el.textContent.trim()) el.setAttribute("data-ph", ph);
       });
 
       const printBtn = root.querySelector("#printCompare");
-      printBtn?.addEventListener("click", () => window.print());
+      if (printBtn) printBtn.addEventListener("click", () => window.print());
     })();
   </script>
 </BaseLayout>

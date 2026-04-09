@@ -1,0 +1,82 @@
+Please redesign the /become-a-partner page to make it shorter, stronger, cleaner, and more conversion-focused for agents, ISOs, and referral partners.
+
+The current page has good content, but it is too long and repetitive. Multiple sections repeat the same ideas: support, residuals, reporting, underwriting, transparency, growth, and training. I want the page streamlined and visually stronger, not just restyled.
+
+Main goals:
+- shorten the page significantly
+- remove repetition
+- improve visual hierarchy
+- make the page feel more premium and modern
+- keep the partner-program messaging sharp and credible
+- improve conversion flow
+
+Keep the general audience and tone:
+- agents
+- ISOs
+- referral partners
+- experienced payments people who want a cleaner deal, faster support, and better visibility
+
+New page structure:
+
+1. Hero section
+- Keep the headline focused on book ownership, cleaner deals, and faster support
+- Reduce clutter in the hero
+- Use only 2 main CTAs:
+  - Book a Quick Compare Call
+  - Download Partner Kit
+- Add a strong visual panel or dashboard-style partner program preview instead of scattered small cards
+- Keep a short row of trust points like fast onboarding, transparent reporting, 24/7 support, risk-aware underwriting
+
+2. Quick Compare section
+- Make this the main proof section of the page
+- Use a clean side-by-side comparison table
+- Make it easier to scan
+- Highlight the PPD Technology column visually
+- Make “Your Current Program” feel interactive or worksheet-like
+- Keep downloadable assets tied to this section
+
+3. Why Partners Switch to PPD
+- Combine overlapping content from support, ownership, payouts, guarantees, and solutions into one strong section
+- Use 5 to 6 concise value cards only:
+  - keep your book
+  - transparent reporting
+  - fast underwriting visibility
+  - real support desk
+  - flexible solutions and hardware
+  - monthly residual model
+
+4. Tools and Support That Help You Scale
+- Combine CRM, onboarding, training, sales coaching, marketing support, and workflows into one section
+- Make it feel like one unified enablement system
+- Use cards or a visual grid instead of too much text
+
+5. Program Tiers
+- Move this section higher on the page
+- Make it cleaner and easier to compare
+- Keep Referral Partner and ISO Partner
+- Optionally add a middle tier if it helps the layout
+- Make the cards feel premium and easy to understand
+
+6. Testimonials / proof
+- Improve the testimonial section so it feels more believable and specific
+- Use cleaner quote cards
+- Focus on concrete outcomes, not generic praise
+
+7. FAQ
+- Keep it concise and expandable
+- Focus on ownership, payouts, support, underwriting, and onboarding
+
+8. Final CTA
+- Strong clean close with one primary CTA and one secondary CTA
+
+Important design notes:
+- Make the page feel more like a premium B2B software / partner program landing page
+- Reduce text density
+- Use stronger spacing and section contrast
+- Avoid too many similar sections in a row
+- Desktop first, but mobile responsive
+- Keep the best existing messaging, but rewrite and reorganize where needed for clarity and brevity
+
+Important:
+Do not just tweak styling.
+I want the page architecture simplified and consolidated so it feels intentional, modern, and easier to convert from.
