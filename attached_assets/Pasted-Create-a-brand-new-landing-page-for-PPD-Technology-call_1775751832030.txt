@@ -1,0 +1,200 @@
+Create a brand new landing page for PPD Technology called “PPD Merchant” and add it under the **Products** dropdown in the website navigation.
+
+Important navigation requirement:
+- Add a new menu item called **PPD Merchant** under the **Products** tab dropdown
+- Do not place it under Industries
+- Keep all existing navigation items unless needed for consistency
+- Make sure the new Products dropdown item works on both desktop and mobile navigation
+- Link it to the new PPD Merchant page you create
+
+Build this page using the same high-end structure and design quality as the PPD Repair landing page.
+
+This page should feel like a premium software + payments product page with compact interactive demo sections, not a generic merchant services page.
+
+Important:
+Use the uploaded PPD Merchant Center code files and screenshots as the direct visual reference for the software UI style, layout, tables, cards, charts, dashboards, and modules shown on this page.
+
+Main goal:
+Position PPD Merchant as a modern merchant platform for businesses that need:
+- keyed and online payment processing
+- a payment gateway
+- ACH capabilities
+- customer management
+- sales agent management
+- recurring billing
+- shop / order management
+- custom agreements and e-signatures
+- device connectivity through SPIn integration
+
+Audience:
+- B2B merchants
+- service businesses
+- businesses taking keyed transactions
+- merchants who need online invoicing or payment links
+- companies that want ACH
+- companies that want a combined payments + CRM + operations platform
+- businesses and organizations with internal users, agents, or account managers
+
+Core message:
+PPD Merchant is more than a gateway. It is a merchant operating platform for payments, billing, customer management, agent visibility, and digital agreements.
+
+Design direction:
+- sleek
+- high-end SaaS / fintech
+- software-heavy
+- premium product marketing page
+- modern spacing and cards
+- subtle motion
+- very polished
+- should visually match the level of quality used on the PPD Repair page
+
+Page structure:
+
+1. Hero section
+Create a strong hero introducing PPD Merchant as a modern payments and merchant management platform.
+
+Headline ideas:
+- “Your Gateway, CRM, Billing, and Merchant Portal in One”
+- “Run Payments, Billing, Customers, and Agreements from One Platform”
+- “A Modern Merchant Platform for Keyed, Online, ACH, and Agent-Driven Payments”
+
+Subheadline should explain that PPD Merchant helps businesses manage payments, online transactions, recurring billing, customer records, sales agents, shop orders, and digital agreements in one place.
+
+Hero CTAs:
+- Primary CTA: “Book a Demo”
+- Secondary CTA: “Explore the Platform”
+
+Hero visual:
+- Use a polished software product preview inspired by the uploaded Merchant Center dashboard
+- Show a layered product mockup or command-center style interface
+- Make it feel like a real software platform, not abstract shapes
+
+2. Value proposition section
+Create a section that explains who this platform is for and why it matters.
+
+Key points:
+- take keyed and online transactions
+- manage ACH and recurring payments
+- run customer and agent workflows
+- track orders and payment activity
+- connect devices through SPIn
+- create and send digital agreements for signature
+
+This should be concise and visually clean.
+
+3. Interactive demo showcase section
+This is the most important section on the page.
+
+Build a premium interactive module showcase similar in spirit to the improved PPD Repair demo section, but tailored to PPD Merchant.
+
+Important:
+- Do not use a clunky carousel
+- Do not use giant stacked screenshots
+- Use a clean tabbed showcase or compact interactive module system
+- Clicking a tab should update the module preview
+- Use the uploaded Merchant Center pages/screenshots as direct visual inspiration
+
+Create tabs or module cards for these 5 demos:
+
+A. Dashboard
+Showcase:
+- total volume
+- transactions
+- approval rate
+- open invoice balance
+- failed payments
+- pending ACH
+- recurring health
+- charts for transaction volume and daily transactions
+- recent transactions table
+This should feel like the main command center.
+
+B. Shop Orders
+Showcase:
+- order table
+- customer details
+- source
+- total
+- fulfillment/tracking
+- order statuses
+- searchable shop/order workflow
+This should feel like operational control for merchants handling order flow.
+
+C. Recurring Billing
+Showcase:
+- recurring contracts
+- amount
+- frequency
+- progress
+- next payment
+- liability / needs attention
+- billing summary cards
+- searchable recurring list
+This should highlight subscription and recurring revenue management.
+
+D. Customers + Sales Agents
+Combine these into one smart demo module with toggle states or split views.
+Showcase:
+- customer management
+- customer/contact data
+- internal ownership
+- sales agent list
+- portal access
+- active/inactive status
+- management visibility
+This should communicate that the platform helps manage both merchant-side relationships and sales teams.
+
+E. Agreements + E-Sign
+Showcase:
+- agreement list
+- signer
+- work status
+- signed date
+- send for signature
+- track signed agreements
+- internal DocuSign-style workflow
+Message:
+PPD Merchant includes in-house agreement and signature workflows so users can create, send, and track documents without relying on outside tools.
+
+4. Device + gateway section
+Create a strong section showing that PPD Merchant can work as a payment gateway and connect to devices through SPIn.
+
+Talk about:
+- keyed transactions
+- online transactions
+- ACH
+- device connectivity
+- flexible payment flows
+- modern payment infrastructure
+
+Make this section feel technical, clean, and credible.
+Could include a visual showing platform + device connection.
+
+5. Why businesses choose PPD Merchant
+Create a clean benefits section with 5 to 6 value cards.
+
+Examples:
+- one platform instead of disconnected tools
+- easier payment operations
+- recurring revenue visibility
+- customer and agent oversight
+- built-in agreements and e-signatures
+- flexible gateway + ACH + SPIn device support
+
+6. Final CTA
+Strong close with:
+- Book a Demo
+- Talk to Sales
+
+Design requirements:
+- make the page software-first
+- visually showcase the uploaded Merchant Center UI style
+- use charts, cards, tables, tags, dashboard previews, and workflow elements inspired by the uploaded code and screenshots
+- keep the page modern and premium
+- prioritize compact, believable product demos
+- desktop first, but responsive on mobile
+- match the quality and polish of the PPD Repair landing page
+
+Important:
+This page should not feel like a generic payment gateway page.
+It should feel like a modern merchant operating system with payments, billing, CRM-style management, agent visibility, orders, agreements, and ACH/device capabilities all in one.
