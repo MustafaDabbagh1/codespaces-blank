@@ -1,0 +1,175 @@
+Create a brand new landing page for PPD Technology that sits in the navigation between the Partner Program page and the Customer Support page. This page should be directly targeted toward ISOs.
+
+Main goal:
+Position PPD Technology as the company that helps ISOs evolve from generic payment resellers into modern, software-driven, AI-powered payment companies.
+
+Core message:
+Help ISOs stop looking like every other cookie-cutter ISO and start becoming a differentiated, future-focused payments company with custom software, CRM tools, AI features, and industry-specific solutions.
+
+Possible headline direction:
+“Stop Being a Cookie-Cutter ISO”
+or
+“Turn Your ISO Into a Software-Driven Payments Company”
+or
+“Go From Generic ISO to AI-Powered Payments Platform”
+
+Tone:
+- bold
+- modern
+- software-heavy
+- premium
+- ambitious
+- future-focused
+- B2B
+- should feel like a high-end SaaS / fintech / payments company page
+
+Audience:
+- ISOs
+- payment companies
+- merchant services organizations
+- payment sales organizations that want to grow beyond generic hardware + rates
+- companies frustrated with looking the same as every other ISO
+
+Pain points to address:
+- They look like every other ISO and sell the same products and pricing as everyone else
+- It feels like an uphill battle to differentiate
+- They constantly see other companies innovating while they remain stagnant
+- They are too reliant on third-party software and generic platforms like iPOS, Valor, Pax, and other outside systems
+- Their business lacks proprietary technology
+- They rely too much on recruiting agents instead of building direct merchant demand
+- They have no unique software ecosystem to help them win verticals
+
+What PPD Technology will do:
+- Build custom vertical software for the industries they target most
+- Example verticals:
+  - repair stores
+  - gyms
+  - restaurants
+  - salons
+  - retail
+  - medical
+  - service businesses
+- Build a custom CRM for the ISO to manage:
+  - merchants
+  - agents
+  - onboarding
+  - support
+  - underwriting / risk visibility
+  - portfolio oversight
+- Build custom websites and landing pages so the ISO can market directly to merchants instead of only chasing agents
+- Help them position themselves like a modern software + payments company, not a generic processor
+
+Very important:
+This page must feel software-heavy.
+It should visually show what kinds of platforms, dashboards, CRMs, and AI features we can build for ISOs.
+I want realistic demo-style sections that feel premium and futuristic.
+
+Page structure:
+
+1. Hero section
+- Strong headline about transforming an ISO into a software-driven AI-powered payments company
+- Strong subheadline explaining that PPD Technology helps ISOs build proprietary software, CRM systems, AI tools, and vertical-specific payment platforms
+- Primary CTA: “Book a Strategy Call”
+- Secondary CTA: “See Platform Demos”
+- Hero visual should feel like a premium software/product ecosystem, not just abstract graphics
+- Show layered software panels or a command-center style preview
+
+2. The problem section
+Headline example:
+“Most ISOs Still Look the Same”
+- Explain how most ISOs are stuck reselling the same terminals, the same platforms, and the same story
+- Show the pain of being dependent on third-party systems and lacking unique software
+- Make this section emotionally strong and visually sharp
+- Could use comparison cards:
+  - Generic ISO
+  - Future-Ready ISO
+
+3. What we build for ISOs
+Create a strong section showing the 3 main things we build:
+- Custom vertical software
+- Custom ISO CRM
+- Custom websites / merchant acquisition funnels
+
+Each should be presented as a premium product card with short explanation and visual software previews.
+
+4. Demo showcase section
+This is very important.
+Build a premium interactive software demo section that shows the kinds of tools we can build for ISOs.
+
+Show demo/mockup concepts for:
+- Vertical business software for repair stores
+- Restaurant management / POS workflow
+- Retail dashboard
+- ISO CRM dashboard
+- Merchant onboarding and risk panel
+- Agent management portal
+- AI-powered sales assistant or AI insights panel
+
+Important demo notes:
+- Make this section visually rich and premium
+- No clunky sliders
+- Use tabs or a polished showcase layout
+- Each demo should feel like a believable SaaS product
+- Include charts, tables, alerts, merchant profiles, onboarding statuses, risk scores, and workflow views
+- Make it look like real custom software the ISO could own
+
+5. AI features section
+Create a futuristic section focused on AI tools we can build for ISOs.
+
+Examples:
+- AI sales assistant for merchants
+- AI-powered lead routing
+- smart underwriting/risk summaries
+- churn risk alerts
+- merchant opportunity scoring
+- smart CRM recommendations
+- automated follow-up workflows
+- AI-driven support assistance
+
+This section should feel cutting-edge and make the page stand out.
+
+6. Vertical expansion section
+Show how ISOs can dominate specific industries by having their own tailored technology.
+Include examples like:
+- repair
+- gyms
+- salons
+- restaurants
+- retail
+- medical
+
+Frame it as:
+“Win verticals with software built for the businesses you want most.”
+
+7. Why this matters section
+Explain the business benefits:
+- differentiate from every other ISO
+- own the customer experience
+- reduce dependence on third-party platforms
+- build direct merchant demand
+- create a stronger long-term brand
+- increase retention
+- give agents better tools
+- grow like a real fintech company
+
+8. Final CTA section
+Strong closing section with:
+- Book a Strategy Call
+- Talk to PPD About Building Your Platform
+
+Design direction:
+- very modern
+- high-end fintech / SaaS look
+- software-first
+- sleek dark/light premium design
+- subtle motion
+- dashboards, CRM panels, analytics cards, AI callouts
+- should feel much more advanced than a typical merchant services page
+- make it look like the future of payment companies
+
+Important:
+Do not make this feel like a generic partner page.
+This page is specifically for ISOs that want custom software, custom infrastructure, AI tools, and a better way to compete.
+
+Also:
+Please make the visuals and demos a major part of the page. I want this page to feel like PPD Technology is showing ISOs what their future company could look like if we build it for them.
