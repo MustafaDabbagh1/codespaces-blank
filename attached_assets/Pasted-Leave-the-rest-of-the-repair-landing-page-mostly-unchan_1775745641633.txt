@@ -1,0 +1,96 @@
+Leave the rest of the /repair landing page mostly unchanged. The main section that needs to be redesigned is the “Everything Inside PPDrepair” / core modules section.
+
+The current version feels too empty, too wide, and too much like a broken carousel. It does not feel like a premium software demo section.
+
+Please fully redesign ONLY this section.
+
+What to change:
+- Remove the left/right carousel arrows
+- Remove the pagination dots
+- Remove the oversized blank white slider layout
+- Do not use a traditional slider or carousel
+
+Replace it with a modern interactive tabbed product showcase.
+
+Section structure:
+- Keep the heading “Everything Inside PPDrepair”
+- Keep a short supporting sentence under the heading
+- Add a clean horizontal tab row for these modules:
+  - Point of Sale
+  - Inventory
+  - Team & Stores
+  - Devices
+  - Reporting
+
+Behavior:
+- Clicking a tab updates the content in the showcase below
+- Use smooth fade or slide transitions
+- No carousel behavior
+- No auto-rotation
+- No overlapping content
+- No cut-off layouts
+
+Design for the showcase area:
+- Make it more compact and visually rich
+- Use a premium SaaS/product UI style
+- The showcase should feel like a real software demo, not a big empty content box
+- Use a framed app window or dashboard preview on the left
+- On the right, show:
+  - module title
+  - one short strong value statement
+  - 3 to 4 concise bullets
+  - one small stat, badge, or micro-highlight
+  - optional CTA like “Explore Module”
+
+Demo content by tab:
+
+Point of Sale:
+- customer cart
+- repair ticket added to cart
+- accessory item
+- discount applied
+- card terminal connected
+- checkout complete
+
+Inventory:
+- low stock alert
+- reorder suggestions
+- serialized device tracking
+- transfer between stores
+- vendor/restock panel
+
+Team & Stores:
+- employee roles
+- permissions
+- clock-in status
+- switch between locations
+- per-store performance snapshot
+
+Devices:
+- connected payment terminal
+- barcode scanner
+- receipt printer
+- cash drawer
+- hardware status indicators
+
+Reporting:
+- sales summary
+- repair volume
+- employee performance
+- store comparison
+- trend graph
+
+Visual requirements:
+- tighter spacing
+- stronger contrast
+- more realistic UI density
+- less empty white space
+- polished hover states for tabs
+- subtle motion only
+- must look high-end and modern
+- desktop first, but responsive on mobile
+
+Important:
+This section should become the main software showcase of the page.
+Do not drastically change the other sections unless needed for consistency.
+Focus on making this one section look premium, interactive, compact, and believable.
