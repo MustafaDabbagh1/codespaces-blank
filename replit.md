@@ -58,7 +58,7 @@ public/
 - `index.astro` - Homepage with animated terminal, marquee, features, solutions
 - `contact.astro` - Contact form with scheduling
 - `signup.astro` - Merchant signup form
-- `customer-support.astro` - Support center (uses `is:global` styles)
+- `customer-support.astro` - Support center (redesigned, uses `is:global` styles scoped under `.cs-page`). Premium layout: hero with 3 clickable support option cards + "All systems operational" indicator, Service Health status dashboard (3 status cards), ticket form (2-column layout) with Popular Help Topics sidebar (5 clickable topic cards) and Call Support card (dark navy panel with phone/hours), expandable FAQ accordion, and "Still need help?" CTA bar. Uses `cs-*` CSS prefix.
 - `refer.astro` - Referral program
 - `become-a-partner.astro` - Partner program landing page (redesigned). Streamlined 8-section architecture: Hero with dashboard preview panel, interactive Quick Compare table (contenteditable cells), "Why Partners Switch" value cards (dark section), 3-tier Program Tiers (Referral/Sales/ISO with "Most Popular" badge), Tools & Support grid, Testimonials, FAQ (expandable), Partner Kit downloads, Calendar booking embed, and application form. Uses `pp-*` CSS prefix, scoped styles. All sections use `reveal` intersection observer animation. Print styles for compare table.
 

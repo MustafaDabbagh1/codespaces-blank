@@ -1,0 +1,71 @@
+Please redesign the /customer-support page to make it feel more premium, modern, and easier to use, while keeping the same overall content and support options.
+
+The current page has the right information, but it feels too plain and form-heavy. I want it to feel like a polished payments support experience, not a basic contact form page.
+
+Main goals:
+- improve visual hierarchy
+- make the page feel more modern and trustworthy
+- make support options easier to scan
+- keep the page clear and practical
+- do not make it overly flashy
+
+Keep these main sections, but redesign them:
+
+1. Hero section
+- Keep the “We’re here to help, fast.” style messaging
+- Add a cleaner, more premium hero layout
+- Make the 3 support options much more visual:
+  - Open a support ticket
+  - Call customer support
+  - Support center
+- Turn these into strong clickable cards with icons, short descriptions, and clear CTAs
+- Add a subtle trust/status element in the hero, like “All systems operational” with a green indicator
+
+2. Service Status section
+- Redesign this to feel like a mini status dashboard
+- Show Payments API, Dashboard, and Terminals as individual status cards
+- Use clean operational indicators
+- Make it look more real and useful, not just plain text
+- Keep it compact
+
+3. Support Ticket section
+- Keep the existing fields, but redesign the form to look cleaner and more premium
+- Improve spacing, labels, dropdown styling, and field grouping
+- Make the form easier to scan
+- Consider a 2-column layout on desktop where appropriate
+- Add a small note about response time and safe data handling
+- Make the submit button stronger and more polished
+
+4. Popular Help Topics
+- Replace the plain bullet list with a grid of clickable help cards
+- Topics should feel like support shortcuts, not just text links
+- Add icons or subtle visual cues
+- Keep the same topics:
+  - VP-800 setup
+  - refunds / voids / partial captures
+  - payout timing
+  - disputes
+  - API keys / webhooks / test cards
+
+5. Call Support section
+- Make this section more visually important
+- Highlight the phone number and business hours clearly
+- Use a cleaner support card or panel
+- Add a reassuring line about U.S.-based help and terminal/deposit troubleshooting
+
+6. FAQ section
+- Keep the same questions, but convert this into a modern accordion
+- Make it compact, clean, and easier to browse
+
+Design notes:
+- keep the page professional, sleek, and conversion-friendly
+- use the existing PPD Technology visual style
+- improve contrast, spacing, and card design
+- use subtle shadows, borders, and hover states
+- desktop first, but responsive on mobile
+- avoid making the page too long
+- keep the content practical and support-focused
+
+Important:
+Do not completely rewrite the page.
+Keep the current support structure and messaging, but make the design much stronger, cleaner, and more premium.

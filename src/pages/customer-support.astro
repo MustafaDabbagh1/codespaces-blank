@@ -3,718 +3,579 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Customer Support | PPD Technology">
-  <Fragment slot="head">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </Fragment>
+  <div class="cs-page">
 
-  <div class="alert" role="status" aria-live="polite">
-    <div class="container inner">
-      <span class="dot"></span>
-      All systems normal. For urgent terminal issues, call <strong>313-466-7836</strong>.
-    </div>
-  </div>
+    <section class="cs-hero">
+      <div class="cs-container cs-hero-inner">
+        <div class="cs-hero-text">
+          <span class="cs-eyebrow"><i class="fa-solid fa-life-ring"></i> Customer Support</span>
+          <h1>We're here to help, fast.</h1>
+          <p class="cs-hero-sub">
+            Get 24/7 resources and business-hours assistance from our payments specialists. Call us, submit a ticket, or browse the support center.
+          </p>
+          <div class="cs-status-inline">
+            <span class="cs-status-dot"></span>
+            <span>All systems operational</span>
+          </div>
+        </div>
 
-  <section class="hero">
-    <div class="container">
-      <div class="wrap">
+        <div class="cs-hero-cards">
+          <a class="cs-hero-card" href="#support-form">
+            <div class="cs-hero-card-icon cs-icon-ticket"><i class="fa-solid fa-ticket"></i></div>
+            <strong>Open a Support Ticket</strong>
+            <span>Typical reply in under 1 business hour</span>
+            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="cs-hero-card" href="#phone">
+            <div class="cs-hero-card-icon cs-icon-phone"><i class="fa-solid fa-phone"></i></div>
+            <strong>Call Customer Support</strong>
+            <span>Immediate help during business hours</span>
+            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a class="cs-hero-card" href="#help-topics">
+            <div class="cs-hero-card-icon cs-icon-book"><i class="fa-solid fa-book"></i></div>
+            <strong>Support Center</strong>
+            <span>Guides for setup, terminals, disputes</span>
+            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section-alt" id="status">
+      <div class="cs-container">
+        <div class="cs-status-head">
+          <div>
+            <span class="cs-chip"><i class="fa-solid fa-signal"></i> System Status</span>
+            <h2>Service Health</h2>
+          </div>
+          <p class="cs-muted">Real-time status of PPD Technology services. For urgent terminal issues, call <a href="tel:3134667836" class="cs-link">313-466-7836</a>.</p>
+        </div>
+        <div class="cs-status-grid">
+          <div class="cs-status-card">
+            <div class="cs-status-card-top">
+              <div class="cs-status-card-icon"><i class="fa-solid fa-code"></i></div>
+              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
+            </div>
+            <strong>Payments API</strong>
+            <span class="cs-muted">Processing, auth, capture, refunds</span>
+          </div>
+          <div class="cs-status-card">
+            <div class="cs-status-card-top">
+              <div class="cs-status-card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
+            </div>
+            <strong>Dashboard</strong>
+            <span class="cs-muted">Reporting, analytics, account management</span>
+          </div>
+          <div class="cs-status-card">
+            <div class="cs-status-card-top">
+              <div class="cs-status-card-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
+            </div>
+            <strong>Terminals</strong>
+            <span class="cs-muted">POS devices, connectivity, batching</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="support-form">
+      <div class="cs-container cs-form-layout">
+        <div class="cs-form-panel">
+          <div class="cs-form-header">
+            <span class="cs-chip"><i class="fa-solid fa-ticket"></i> Support Ticket</span>
+            <h2>Open a Support Ticket</h2>
+            <p class="cs-muted">Provide details so we can route your case to the right specialist.</p>
+          </div>
+
+          <form class="cs-form" action="#" method="post">
+            <div class="cs-form-row">
+              <div class="cs-fg">
+                <label for="name">Your name</label>
+                <input id="name" name="name" required />
+              </div>
+              <div class="cs-fg">
+                <label for="email">Work email</label>
+                <input id="email" name="email" type="email" inputmode="email" required />
+              </div>
+            </div>
+
+            <div class="cs-form-row">
+              <div class="cs-fg">
+                <label for="company">Company</label>
+                <input id="company" name="company" required />
+              </div>
+              <div class="cs-fg">
+                <label for="mid">Merchant ID (if known)</label>
+                <input id="mid" name="mid" placeholder="e.g., MID1234" />
+              </div>
+            </div>
+
+            <div class="cs-form-row">
+              <div class="cs-fg">
+                <label for="terminal">Terminal/Device ID</label>
+                <input id="terminal" name="terminal" placeholder="e.g., VP-800 SN" />
+              </div>
+              <div class="cs-fg">
+                <label for="topic">Issue type</label>
+                <select id="topic" name="topic" required>
+                  <option value="">Select...</option>
+                  <option>Account & Billing</option>
+                  <option>Terminals & POS</option>
+                  <option>E-commerce / API</option>
+                  <option>Deposits & Payouts</option>
+                  <option>Chargebacks / Disputes</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cs-form-row">
+              <div class="cs-fg">
+                <label for="severity">Priority</label>
+                <select id="severity" name="severity" required>
+                  <option value="">Select...</option>
+                  <option>Low - general question</option>
+                  <option>Normal - needs attention</option>
+                  <option>High - blocking one location</option>
+                  <option>Critical - processing outage</option>
+                </select>
+              </div>
+              <div class="cs-fg">
+                <label for="callback">Preferred callback number</label>
+                <input id="callback" name="callback" inputmode="tel" placeholder="(###) ###-####" />
+              </div>
+            </div>
+
+            <div class="cs-fg">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" required placeholder="Short summary of the issue" />
+            </div>
+
+            <div class="cs-fg">
+              <label for="details">Details</label>
+              <textarea id="details" name="details" required placeholder="What happened? When did it start? Any error codes or screenshots?"></textarea>
+              <div class="cs-help">Please omit full PANs or sensitive cardholder data.</div>
+            </div>
+
+            <div class="cs-fg">
+              <label for="files">Attachments (optional)</label>
+              <input id="files" name="files" type="file" multiple />
+              <div class="cs-help">Up to 10 MB total; screenshots and logs are helpful.</div>
+            </div>
+
+            <div class="cs-form-footer">
+              <button class="cs-btn cs-btn-primary" type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Submit Ticket
+              </button>
+              <div class="cs-form-note">
+                <i class="fa-solid fa-lock"></i>
+                Typical response within 1 business hour. Your data is transmitted securely.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="cs-sidebar">
+          <div class="cs-sidebar-card" id="help-topics">
+            <h3><i class="fa-solid fa-compass"></i> Popular Help Topics</h3>
+            <div class="cs-topics-grid">
+              <a class="cs-topic" href="#">
+                <div class="cs-topic-icon"><i class="fa-solid fa-plug"></i></div>
+                <div>
+                  <strong>VP-800 Setup</strong>
+                  <span>First payment walkthrough</span>
+                </div>
+              </a>
+              <a class="cs-topic" href="#">
+                <div class="cs-topic-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <div>
+                  <strong>Refunds & Voids</strong>
+                  <span>Refunds, voids, partial captures</span>
+                </div>
+              </a>
+              <a class="cs-topic" href="#">
+                <div class="cs-topic-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div>
+                  <strong>Payout Timing</strong>
+                  <span>Deposit reports & schedules</span>
+                </div>
+              </a>
+              <a class="cs-topic" href="#">
+                <div class="cs-topic-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                  <strong>Disputes</strong>
+                  <span>Evidence & best practices</span>
+                </div>
+              </a>
+              <a class="cs-topic" href="#">
+                <div class="cs-topic-icon"><i class="fa-solid fa-code"></i></div>
+                <div>
+                  <strong>API & Webhooks</strong>
+                  <span>Keys, test cards, retries</span>
+                </div>
+              </a>
+            </div>
+            <div class="cs-topics-footer">
+              Can't find it? Browse the full <a href="#" class="cs-link">Support Center</a>.
+            </div>
+          </div>
+
+          <div class="cs-sidebar-card cs-phone-card" id="phone">
+            <h3><i class="fa-solid fa-phone"></i> Call Support</h3>
+            <div class="cs-phone-number">
+              <a href="tel:3134667836">313-466-7836</a>
+            </div>
+            <div class="cs-phone-hours">
+              <span><i class="fa-solid fa-clock"></i> Mon-Thu 8:00a-8:00p ET</span>
+              <span><i class="fa-solid fa-clock"></i> Fri 8:00a-6:00p ET</span>
+              <span><i class="fa-solid fa-clock"></i> Sat 9:00a-2:00p ET</span>
+            </div>
+            <p class="cs-phone-note">
+              U.S.-based team. We troubleshoot terminals, resolve deposit questions, and guide your staff.
+            </p>
+            <a class="cs-btn cs-btn-call" href="tel:3134667836">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section-alt" id="faq">
+      <div class="cs-container cs-faq-container">
+        <div class="cs-section-head-center">
+          <span class="cs-chip"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+          <p class="cs-muted">Fast answers to common support topics.</p>
+        </div>
+
+        <div class="cs-faq-grid">
+          <details class="cs-faq-item">
+            <summary>My terminal won't connect. What should I check? <i class="fa-solid fa-plus"></i></summary>
+            <div class="cs-faq-answer">
+              Verify power, network (Wi-Fi/Ethernet), and that required ports are open. Restart the device and router. If still offline, open a ticket with your device serial and last 4 digits of a recent transaction.
+            </div>
+          </details>
+
+          <details class="cs-faq-item">
+            <summary>When will my deposits arrive? <i class="fa-solid fa-plus"></i></summary>
+            <div class="cs-faq-answer">
+              Most deposits settle next business day for batches closed by cutoff. Holidays and holds can affect timing. Check the Deposits report in your dashboard for exact ETAs.
+            </div>
+          </details>
+
+          <details class="cs-faq-item">
+            <summary>How do I respond to a chargeback? <i class="fa-solid fa-plus"></i></summary>
+            <div class="cs-faq-answer">
+              Gather receipts, order details, shipment proof, and communications. Submit evidence before the stated deadline in your dashboard's Disputes section.
+            </div>
+          </details>
+
+          <details class="cs-faq-item">
+            <summary>Where can I find API logs or webhook retries? <i class="fa-solid fa-plus"></i></summary>
+            <div class="cs-faq-answer">
+              Developers can review request/response logs and replay webhooks from the dashboard under Developers, then Logs and Webhooks.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-cta-bar">
+      <div class="cs-container cs-cta-inner">
         <div>
-          <span class="eyebrow"><i class="fa-solid fa-life-ring"></i> Customer Support</span>
-          <h1>We’re here to help, fast.</h1>
-          <p>
-            Get 24/7 resources and business-hours assistance from our payments specialists.
-            Call us, submit a ticket, or browse the support center.
-          </p>
-
-          <div class="quick" aria-label="Quick support options">
-            <a class="qcard" href="#support-form">
-              <div class="qicon"><i class="fa-solid fa-ticket"></i></div>
-              <div>
-                <strong>Open a support ticket</strong><br />
-                <span class="muted">Typical reply in under 1 business hour</span>
-              </div>
-            </a>
-
-            <a class="qcard" href="#phone">
-              <div class="qicon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <strong>Call customer support</strong><br />
-                <span class="muted">Immediate help during business hours</span>
-              </div>
-            </a>
-
-            <a class="qcard" href="#faq">
-              <div class="qicon"><i class="fa-solid fa-book"></i></div>
-              <div>
-                <strong>Support center</strong><br />
-                <span class="muted">Guides for setup, terminals, disputes</span>
-              </div>
-            </a>
-          </div>
+          <h2>Still need help?</h2>
+          <p>Our payments specialists are ready to assist you.</p>
         </div>
-
-        <div class="panel status-panel" role="region" aria-label="Current status">
-          <h2>Service Status</h2>
-          <p class="muted">
-            All systems operational. For live updates visit
-            <a href="#" class="link-blue">Status</a>.
-          </p>
-
-          <ul class="status-list">
-            <li><i class="fa-solid fa-circle ok"></i> Payments API</li>
-            <li><i class="fa-solid fa-circle ok"></i> Dashboard</li>
-            <li><i class="fa-solid fa-circle ok"></i> Terminals</li>
-          </ul>
+        <div class="cs-cta-btns">
+          <a class="cs-btn cs-btn-primary" href="#support-form"><i class="fa-solid fa-ticket"></i> Open a Ticket</a>
+          <a class="cs-btn cs-btn-outline" href="tel:3134667836"><i class="fa-solid fa-phone"></i> Call Support</a>
         </div>
       </div>
+    </section>
+
+    <div class="cs-reg-bar">
+      PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA.
     </div>
-  </section>
-
-  <section class="section" id="support-form">
-    <div class="container grid">
-      <div class="panel">
-        <h2>Open a Support Ticket</h2>
-        <p class="muted">
-          Provide details so we can route your case to the right specialist.
-        </p>
-
-        <form class="form-grid" action="#" method="post">
-          <div class="row2">
-            <div>
-              <label for="name">Your name</label>
-              <input id="name" name="name" required />
-            </div>
-            <div>
-              <label for="email">Work email</label>
-              <input id="email" name="email" type="email" inputmode="email" required />
-            </div>
-          </div>
-
-          <div class="row2">
-            <div>
-              <label for="company">Company</label>
-              <input id="company" name="company" required />
-            </div>
-            <div>
-              <label for="mid">Merchant ID (if known)</label>
-              <input id="mid" name="mid" placeholder="e.g., MID1234" />
-            </div>
-          </div>
-
-          <div class="row2">
-            <div>
-              <label for="terminal">Terminal/Device ID (if applicable)</label>
-              <input id="terminal" name="terminal" placeholder="e.g., VP-800 SN" />
-            </div>
-            <div>
-              <label for="topic">Issue type</label>
-              <select id="topic" name="topic" required>
-                <option value="">Select…</option>
-                <option>Account & Billing</option>
-                <option>Terminals & POS</option>
-                <option>E-commerce / API</option>
-                <option>Deposits & Payouts</option>
-                <option>Chargebacks / Disputes</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="row2">
-            <div>
-              <label for="severity">Priority</label>
-              <select id="severity" name="severity" required>
-                <option value="">Select…</option>
-                <option>Low — general question</option>
-                <option>Normal — needs attention</option>
-                <option>High — blocking one location</option>
-                <option>Critical — processing outage</option>
-              </select>
-            </div>
-            <div>
-              <label for="callback">Preferred callback number</label>
-              <input id="callback" name="callback" inputmode="tel" placeholder="(###) ###-####" />
-            </div>
-          </div>
-
-          <div>
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" required placeholder="Short summary of the issue" />
-          </div>
-
-          <div>
-            <label for="details">Details</label>
-            <textarea
-              id="details"
-              name="details"
-              required
-              placeholder="What happened? When did it start? Any error codes or screenshots?"
-            ></textarea>
-            <div class="help">Please omit full PANs or sensitive cardholder data.</div>
-          </div>
-
-          <div>
-            <label for="files">Attachments (optional)</label>
-            <input id="files" name="files" type="file" multiple />
-            <div class="help">Up to 10MB total; screenshots and logs helpful.</div>
-          </div>
-
-          <div class="submit">
-            <button class="btn btn-primary btn-wide" type="submit">
-              <i class="fa-solid fa-paper-plane"></i>&nbsp;Submit Ticket
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div class="panel">
-        <h2>Popular Help Topics</h2>
-        <ul class="help-topics">
-          <li>
-            <a href="#" class="link-blue">
-              <i class="fa-solid fa-plug"></i> Set up VP-800 and take your first payment
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link-blue">
-              <i class="fa-solid fa-credit-card"></i> Refunds, voids, and partial captures
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link-blue">
-              <i class="fa-solid fa-sack-dollar"></i> Payout timing & deposit reports
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link-blue">
-              <i class="fa-solid fa-shield-halved"></i> Disputes & evidence best practices
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link-blue">
-              <i class="fa-solid fa-code"></i> API keys, webhooks, and test cards
-            </a>
-          </li>
-        </ul>
-
-        <div class="topics-footer">
-          <p class="muted">
-            Can’t find it? Browse the full
-            <a href="#" class="link-blue">Support Center</a>
-            or
-            <a href="#support-form" class="link-blue">open a ticket</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="phone" id="phone">
-    <div class="container">
-      <h2>Need help right now?</h2>
-      <p class="phone-copy">
-        Call our U.S.-based customer support team during business hours. We can
-        troubleshoot terminals, resolve funding questions, and guide your team.
-      </p>
-
-      <div class="number">
-        <i class="fa-solid fa-phone"></i>
-        <a href="tel:3134667836">313-466-7836</a>
-      </div>
-
-      <div class="pillz">
-        <span class="pill"><i class="fa-solid fa-clock"></i> Mon–Thu 8:00a–8:00p ET</span>
-        <span class="pill"><i class="fa-solid fa-clock"></i> Fri 8:00a–6:00p ET</span>
-        <span class="pill"><i class="fa-solid fa-clock"></i> Sat 9:00a–2:00p ET</span>
-      </div>
-
-      <div class="phone-actions">
-        <a class="btn btn-primary" href="tel:3134667836">
-          <i class="fa-solid fa-phone"></i>&nbsp;Call Support
-        </a>
-        <a class="btn btn-outline phone-outline" href="#support-form">
-          <i class="fa-solid fa-ticket"></i>&nbsp;Open Ticket
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="container faq-wrap">
-      <h2>Frequently Asked Questions</h2>
-      <p class="muted faq-sub">
-        Fast answers to common support topics.
-      </p>
-
-      <details class="faq-item">
-        <summary>My terminal won’t connect. What should I check?</summary>
-        <div class="faq-a">
-          Verify power, network (Wi-Fi/Ethernet), and that required ports are open.
-          Restart the device and router. If still offline, open a ticket with your
-          device serial and last 4 digits of a recent transaction.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>When will my deposits arrive?</summary>
-        <div class="faq-a">
-          Most deposits settle next business day for batches closed by cutoff. Holidays
-          and holds can affect timing. Check the Deposits report in your dashboard for
-          exact ETAs.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>How do I respond to a chargeback?</summary>
-        <div class="faq-a">
-          Gather receipts, order details, shipment proof, and communications. Submit
-          evidence before the stated deadline in your dashboard’s Disputes section.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Where can I find API logs or webhook retries?</summary>
-        <div class="faq-a">
-          Developers can review request/response logs and replay webhooks from the
-          dashboard under Developers → Logs and Webhooks.
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <div class="reg-bar">
-    PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA. © 2025 PPD Technology.
   </div>
 
   <style is:global>
-    :root {
-      --primary: #1549FF;
-      --primary-dark: #0F38CC;
-      --secondary: #060E21;
-      --accent: #00E5A0;
-      --light: #F5F8FF;
-      --dark: #060E21;
-      --gray: #7B93B0;
-      --light-gray: #E2E8F4;
-      --ok: #10b981;
-      --warn: #f59e0b;
+    .cs-page {
+      --cs-primary: #1549FF;
+      --cs-primary-dark: #0F38CC;
+      --cs-navy: #060E21;
+      --cs-navy-2: #0C1A38;
+      --cs-accent: #00E5A0;
+      --cs-cyan: #00CFFF;
+      --cs-ok: #10b981;
+      --cs-surface: #F5F8FF;
+      --cs-card: #FFFFFF;
+      --cs-text: #060E21;
+      --cs-muted: #5E7A9A;
+      --cs-border: #E2E8F4;
+      --cs-shadow: 0 10px 30px rgba(2, 6, 23, .08);
+      --cs-shadow-lg: 0 20px 50px rgba(2, 6, 23, .12);
+      --cs-radius: 16px;
+      background: var(--cs-surface);
+      color: var(--cs-text);
     }
+    .cs-page *{box-sizing:border-box}
+    .cs-page a{color:inherit;text-decoration:none}
+    .cs-container{max-width:1160px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+    .cs-section{padding:72px 0}
+    .cs-section-alt{background:#fff;border-top:1px solid var(--cs-border);border-bottom:1px solid var(--cs-border)}
 
-    html {
-      scroll-behavior: smooth;
+    .cs-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
+      font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+      color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:999px;
     }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      overflow-x: hidden;
+    .cs-chip{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
+      font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--cs-navy);background:rgba(21,73,255,.08);
+      border:1px solid rgba(21,73,255,.12);padding:7px 14px;border-radius:999px;
     }
+    .cs-muted{color:var(--cs-muted);font-size:15px}
+    .cs-link{color:var(--cs-primary);font-weight:600}
+    .cs-link:hover{text-decoration:underline}
 
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .cs-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 22px;border-radius:999px;font-weight:700;font-size:14px;
+      border:1px solid transparent;cursor:pointer;white-space:nowrap;
+      transition:transform .2s,box-shadow .2s,background .2s;
+      text-decoration:none;
     }
-
-    .btn {
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      text-decoration: none;
-      border: 2px solid transparent;
-      cursor: pointer;
+    .cs-btn:active{transform:translateY(1px)}
+    .cs-btn-primary{
+      background:linear-gradient(135deg,#2D60FF,var(--cs-primary));color:#fff;
+      box-shadow:0 8px 28px rgba(21,73,255,.35);
     }
-
-    .btn-primary {
-      background: linear-gradient(135deg,#2D60FF,var(--primary));
-      color: #fff;
-      border: none;
-      box-shadow: 0 8px 28px rgba(21,73,255,.35);
+    .cs-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
+    .cs-btn-outline{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+    .cs-btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .cs-btn-call{
+      width:100%;background:linear-gradient(135deg,#2D60FF,var(--cs-primary));color:#fff;
+      box-shadow:0 6px 20px rgba(21,73,255,.3);
     }
+    .cs-btn-call:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(21,73,255,.4)}
 
-    .btn-primary:hover {
-      background: linear-gradient(135deg,var(--primary),var(--primary-dark));
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(21,73,255,.45);
-    }
-
-    .btn-outline {
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .alert {
-      background: linear-gradient(90deg, #fef3c7, #ffedd5);
-      color: #7c2d12;
-      border-bottom: 1px solid #fde68a;
-    }
-
-    .alert .inner {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .alert .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--warn);
-      flex: 0 0 auto;
-    }
-
-    .hero {
+    .cs-hero{
       background:
-        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
-        linear-gradient(160deg, #060E21 0%, #0C1A38 60%, #0a1c42 100%);
-      color: #fff;
-      padding: 86px 0 60px;
-      position: relative;
-      overflow: hidden;
+        radial-gradient(900px 480px at 15% 10%,rgba(0,204,150,.12),transparent 55%),
+        radial-gradient(760px 420px at 85% 15%,rgba(21,73,255,.22),transparent 55%),
+        linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 55%,var(--cs-primary-dark) 100%);
+      color:#fff;padding:80px 0 64px;position:relative;overflow:hidden;
     }
-    .hero::before{
+    .cs-hero::before{
       content:"";position:absolute;inset:0;
       background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       pointer-events:none;opacity:.3;
     }
+    .cs-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
+    .cs-hero-text{max-width:600px}
+    .cs-hero h1{
+      font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.03em;margin:16px 0 12px;
+    }
+    .cs-hero-sub{color:rgba(255,255,255,.8);font-size:clamp(15px,1.2vw,17px);max-width:55ch}
+    .cs-status-inline{
+      display:inline-flex;align-items:center;gap:8px;margin-top:20px;
+      padding:8px 16px;border-radius:999px;
+      background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);
+      font-weight:700;font-size:13px;color:var(--cs-accent);
+    }
+    .cs-status-dot{width:8px;height:8px;border-radius:50%;background:var(--cs-ok);animation:cs-pulse 2s infinite}
+    @keyframes cs-pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-    .hero .wrap {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
+    .cs-hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .cs-hero-card{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;
+      backdrop-filter:blur(10px);transition:transform .2s,border-color .2s,background .2s;
+      position:relative;
+    }
+    .cs-hero-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22)}
+    .cs-hero-card-icon{
+      width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      font-size:17px;margin-bottom:4px;
+    }
+    .cs-icon-ticket{background:rgba(21,73,255,.25);color:var(--cs-cyan)}
+    .cs-icon-phone{background:rgba(0,229,160,.2);color:var(--cs-accent)}
+    .cs-icon-book{background:rgba(255,255,255,.12);color:#fff}
+    .cs-hero-card strong{font-size:15px;font-weight:800}
+    .cs-hero-card>span:not(.cs-hero-card-arrow){font-size:13px;color:rgba(255,255,255,.6)}
+    .cs-hero-card-arrow{
+      position:absolute;top:20px;right:18px;opacity:.3;transition:opacity .2s,transform .2s;
+    }
+    .cs-hero-card:hover .cs-hero-card-arrow{opacity:.7;transform:translateX(3px)}
+
+    .cs-status-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+    .cs-status-head>div{display:flex;flex-direction:column;gap:8px}
+    .cs-status-head h2{font-size:clamp(22px,2.5vw,30px);letter-spacing:-.02em}
+    .cs-status-head>p{max-width:400px;text-align:right}
+    .cs-status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .cs-status-card{
+      background:var(--cs-surface);border:1px solid var(--cs-border);border-radius:14px;
+      padding:20px;display:flex;flex-direction:column;gap:6px;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .cs-status-card:hover{transform:translateY(-3px);box-shadow:var(--cs-shadow)}
+    .cs-status-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+    .cs-status-card-icon{
+      width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);color:var(--cs-primary);font-size:14px;
+    }
+    .cs-badge-ok{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;
+      background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:var(--cs-ok);
+    }
+    .cs-status-card strong{font-size:15px;color:var(--cs-navy)}
+    .cs-status-card .cs-muted{font-size:13px}
+
+    .cs-form-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:start}
+    .cs-form-panel{
+      background:#fff;border:1px solid var(--cs-border);border-radius:var(--cs-radius);
+      box-shadow:var(--cs-shadow);overflow:hidden;
+    }
+    .cs-form-header{
+      padding:24px 28px;border-bottom:1px solid var(--cs-border);
+      display:flex;flex-direction:column;gap:6px;
+    }
+    .cs-form-header h2{font-size:clamp(22px,2.5vw,28px);letter-spacing:-.02em;margin-top:4px}
+    .cs-form{padding:24px 28px;display:flex;flex-direction:column;gap:16px}
+    .cs-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .cs-fg{display:flex;flex-direction:column;gap:5px}
+    .cs-fg label{font-weight:700;font-size:13px;color:var(--cs-navy)}
+    .cs-fg input,.cs-fg select,.cs-fg textarea{
+      width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--cs-border);
+      font-family:inherit;font-size:14px;outline:none;transition:.2s;background:#fff;
+    }
+    .cs-fg input:focus,.cs-fg select:focus,.cs-fg textarea:focus{
+      border-color:rgba(21,73,255,.4);box-shadow:0 0 0 3px rgba(21,73,255,.08);
+    }
+    .cs-fg textarea{min-height:110px;resize:vertical}
+    .cs-fg input[type="file"]{padding:10px 12px;font-size:13px}
+    .cs-help{font-size:12px;color:var(--cs-muted);margin-top:3px}
+    .cs-form-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+    .cs-form-note{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cs-muted)}
+    .cs-form-note i{color:var(--cs-ok)}
+
+    .cs-sidebar{display:flex;flex-direction:column;gap:18px}
+    .cs-sidebar-card{
+      background:#fff;border:1px solid var(--cs-border);border-radius:var(--cs-radius);
+      box-shadow:var(--cs-shadow);padding:22px;
+    }
+    .cs-sidebar-card h3{
+      font-size:16px;font-weight:800;color:var(--cs-navy);margin-bottom:16px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .cs-sidebar-card h3 i{color:var(--cs-primary)}
+
+    .cs-topics-grid{display:flex;flex-direction:column;gap:8px}
+    .cs-topic{
+      display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;
+      border:1px solid var(--cs-border);transition:transform .2s,box-shadow .2s,border-color .2s;
+    }
+    .cs-topic:hover{transform:translateY(-2px);box-shadow:var(--cs-shadow);border-color:rgba(21,73,255,.15)}
+    .cs-topic-icon{
+      width:36px;height:36px;border-radius:10px;flex-shrink:0;
+      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);
+      display:flex;align-items:center;justify-content:center;color:var(--cs-primary);font-size:14px;
+    }
+    .cs-topic div{min-width:0}
+    .cs-topic strong{display:block;font-size:14px;color:var(--cs-navy)}
+    .cs-topic span{font-size:12px;color:var(--cs-muted)}
+    .cs-topics-footer{
+      margin-top:14px;padding-top:12px;border-top:1px solid var(--cs-border);
+      font-size:13px;color:var(--cs-muted);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      font-size: 12px;
+    .cs-phone-card{
+      background:linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 100%);
+      color:#fff;border-color:transparent;
+    }
+    .cs-phone-card h3{color:#fff}
+    .cs-phone-card h3 i{color:var(--cs-accent)}
+    .cs-phone-number{margin-bottom:12px}
+    .cs-phone-number a{
+      font-size:28px;font-weight:900;color:var(--cs-accent);
+      text-decoration:none;letter-spacing:-.01em;
+    }
+    .cs-phone-number a:hover{text-decoration:underline}
+    .cs-phone-hours{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
+    .cs-phone-hours span{
+      font-size:13px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;
+    }
+    .cs-phone-hours i{font-size:11px;opacity:.5}
+    .cs-phone-note{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px;line-height:1.5}
+
+    .cs-section-head-center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:28px}
+    .cs-section-head-center h2{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.02em}
+    .cs-faq-container{max-width:800px}
+    .cs-faq-grid{display:flex;flex-direction:column;gap:10px}
+    .cs-faq-item{
+      background:var(--cs-surface);border:1px solid var(--cs-border);border-radius:14px;
+      padding:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;
+    }
+    .cs-faq-item[open]{border-color:rgba(21,73,255,.18);box-shadow:var(--cs-shadow)}
+    .cs-faq-item summary{
+      list-style:none;cursor:pointer;padding:16px 20px;
+      font-weight:750;font-size:15px;color:var(--cs-navy);
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .cs-faq-item summary::-webkit-details-marker{display:none}
+    .cs-faq-item summary i{color:var(--cs-muted);font-size:13px;flex-shrink:0}
+    .cs-faq-answer{padding:0 20px 18px;color:var(--cs-muted);font-size:14px;line-height:1.7}
+
+    .cs-cta-bar{
+      background:linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 55%,var(--cs-primary-dark) 100%);
+      color:#fff;padding:48px 0;
+    }
+    .cs-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .cs-cta-inner h2{font-size:clamp(22px,2.5vw,30px);letter-spacing:-.02em;margin-bottom:4px}
+    .cs-cta-inner p{color:rgba(255,255,255,.7);font-size:15px}
+    .cs-cta-btns{display:flex;gap:10px}
+
+    .cs-reg-bar{
+      background:var(--cs-navy);color:rgba(255,255,255,.5);text-align:center;
+      padding:14px 16px;font-size:12px;
     }
 
-    .hero h1 {
-      font-size: 2.6rem;
-      line-height: 1.12;
-      margin: 12px 0 8px;
-      color: #fff;
+    @media (min-width:900px){
+      .cs-hero-inner{grid-template-columns:1fr}
     }
-
-    .hero p {
-      opacity: 0.95;
-      max-width: 720px;
-      color: #e8eef9;
+    @media (max-width:900px){
+      .cs-hero-cards{grid-template-columns:1fr}
+      .cs-status-grid{grid-template-columns:1fr}
+      .cs-form-layout{grid-template-columns:1fr}
+      .cs-form-row{grid-template-columns:1fr}
+      .cs-cta-inner{flex-direction:column;text-align:center}
+      .cs-cta-btns{flex-direction:column;width:100%}
+      .cs-status-head{flex-direction:column}
+      .cs-status-head>p{text-align:left}
     }
-
-    .quick {
-      padding: 20px 0 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .qcard {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      color: #0f172a;
-      text-decoration: none;
-    }
-
-    .qicon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: #eef2ff;
-      color: #3730a3;
-      flex: 0 0 auto;
-    }
-
-    .section {
-      padding: 70px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .panel {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid #eaecef;
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-    }
-
-    .panel h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      color: var(--secondary);
-    }
-
-    .status-panel .status-list {
-      margin-top: 12px;
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      padding: 0;
-    }
-
-    .ok {
-      color: var(--ok);
-    }
-
-    .muted {
-      color: var(--gray);
-    }
-
-    .link-blue {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .form-grid {
-      display: grid;
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    label {
-      font-weight: 600;
-      font-size: 14px;
-      color: #0f2244;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--light-gray);
-      border-radius: 10px;
-      background: #fff;
-      font-family: "Inter", sans-serif;
-      font-size: 15px;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .row2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .submit {
-      margin-top: 8px;
-    }
-
-    .btn-wide {
-      width: 100%;
-    }
-
-    .help {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: 4px;
-    }
-
-    .help-topics {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-top: 10px;
-      padding: 0;
-    }
-
-    .topics-footer {
-      margin-top: 18px;
-      border-top: 1px solid #eaecef;
-      padding-top: 14px;
-    }
-
-    .phone {
-      background: var(--secondary);
-      color: #fff;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .phone h2 {
-      color: #fff;
-    }
-
-    .phone-copy {
-      opacity: 0.9;
-      max-width: 760px;
-      margin: 6px auto 8px;
-    }
-
-    .number {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--accent);
-      margin: 10px 0 16px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .number a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    .pillz {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .pill {
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-    }
-
-    .phone-actions {
-      margin-top: 16px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .phone-outline {
-      border-color: #fff;
-      color: #fff;
-    }
-
-    .phone-outline:hover {
-      background: #fff;
-      color: var(--secondary);
-    }
-
-    .faq-wrap h2,
-    .faq-sub {
-      text-align: center;
-    }
-
-    .faq-sub {
-      max-width: 760px;
-      margin: 6px auto 20px;
-    }
-
-    .faq-item {
-      background: #fff;
-      border: 1px solid #eaecef;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-a {
-      padding: 0 16px 16px;
-      color: #475569;
-    }
-
-    .reg-bar {
-      background: #060E21;
-      color: #fff;
-      text-align: center;
-      padding: 10px 16px;
-    }
-
-    @media (min-width: 768px) {
-      .hero .wrap {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-
-      .grid {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-
-      .quick {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .row2 {
-        grid-template-columns: 1fr;
-      }
+    @media (min-width:640px) and (max-width:900px){
+      .cs-hero-cards{grid-template-columns:repeat(3,1fr)}
+      .cs-status-grid{grid-template-columns:repeat(3,1fr)}
     }
   </style>
+
+  <script is:inline>
+    (() => {
+      const root = document.querySelector('.cs-page');
+      if (!root) return;
+
+      root.querySelectorAll('.cs-faq-item').forEach(d => {
+        d.addEventListener('toggle', () => {
+          const icon = d.querySelector('summary i');
+          if (icon) icon.className = d.open ? 'fa-solid fa-minus' : 'fa-solid fa-plus';
+        });
+      });
+    })();
+  </script>
 </BaseLayout>
