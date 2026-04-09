@@ -150,32 +150,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div class="rest-features">
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div class="rest-feat__img"><img src="/images/online ordering.png" alt="Online Ordering" /></div>
             <h3>Online Ordering & Pickup</h3>
             <p>Branded web ordering with throttling, curbside pickup, DoorDash Drive hand-offs, and smart upsells per item.</p>
           </div>
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-qrcode"></i></div>
+            <div class="rest-feat__img"><img src="/images/countertopQR Code.png" alt="QR Menu" /></div>
             <h3>QR Menus & Pay at Table</h3>
             <p>Guests scan, order, split, and tip without waiting. Servers focus on hospitality, not hand terminals.</p>
           </div>
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-display"></i></div>
+            <div class="rest-feat__img"><img src="/images/Kitchen-Display-System.png" alt="Kitchen Display System" /></div>
             <h3>Kitchen Display (KDS)</h3>
             <p>Route tickets by station with hold & fire and make-time tracking. Color states keep the line moving.</p>
           </div>
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-percent"></i></div>
+            <div class="rest-feat__img"><img src="/images/cash diuscount pro.png" alt="Cash Discount Pro" /></div>
             <h3>Cash Discount Pro</h3>
             <p>Offer a cash discount to save on credit card fees. Automatically adjust pricing and stay compliant.</p>
           </div>
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div class="rest-feat__img"><img src="/images/inventorypos.png" alt="Inventory Management" /></div>
             <h3>Inventory & Recipes</h3>
             <p>Recipe costs, theoretical vs. actual usage, low-stock alerts, and invoice scanning to sync COGS.</p>
           </div>
           <div class="rest-feat">
-            <div class="rest-feat__icon"><i class="fa-solid fa-plug"></i></div>
+            <div class="rest-feat__img"><img src="/images/doordashlogo.png" alt="Third Party Integrations" /></div>
             <h3>Third-Party Integrations</h3>
             <p>DoorDash, Uber Eats, and other delivery services — all orders managed in one place.</p>
           </div>
@@ -333,32 +333,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div class="rest-hw-grid">
           <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-desktop"></i></div>
-            <h3>Clover Duo</h3>
-            <p>All-in-one POS with customer-facing display and integrated payment processing.</p>
-          </div>
-          <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
+            <div class="rest-hw__img"><img src="/images/payskiosk.png" alt="Self Order Kiosk" /></div>
             <h3>Self-Order Kiosk</h3>
             <p>Reduce wait times with intuitive self-service ordering for guests.</p>
           </div>
           <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-cash-register"></i></div>
+            <div class="rest-hw__img"><img src="/images/Pos system.png" alt="POS Terminal" /></div>
             <h3>POS Terminal</h3>
             <p>Reliable countertop system with fast payment processing and order management.</p>
           </div>
           <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div class="rest-hw__img"><img src="/images/handheld pos.png" alt="Handheld POS" /></div>
             <h3>Handheld POS</h3>
             <p>Mobile order and pay for tableside service and busy environments.</p>
           </div>
           <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-vault"></i></div>
+            <div class="rest-hw__img"><img src="/images/cash_drawer.png" alt="Cash Drawer" /></div>
             <h3>Cash Drawer</h3>
             <p>Secure cash management with durable construction and seamless POS integration.</p>
           </div>
           <div class="rest-hw">
-            <div class="rest-hw__icon"><i class="fa-solid fa-print"></i></div>
+            <div class="rest-hw__img"><img src="/images/Kitchen-printer.png" alt="Kitchen Printer" /></div>
             <h3>Kitchen Printer</h3>
             <p>High-speed thermal printer for reliable kitchen order tickets.</p>
           </div>
@@ -837,13 +832,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .rest-feat:hover{border-color:rgba(21,73,255,.2);transform:translateY(-4px)}
     .rest-feat:hover::before{opacity:1}
 
-    .rest-feat__icon{
-      width:48px;height:48px;border-radius:12px;
-      background:rgba(21,73,255,.1);
-      display:flex;align-items:center;justify-content:center;
+    .rest-feat__img{
+      width:100%;height:160px;border-radius:12px;overflow:hidden;
       margin-bottom:16px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.04);
     }
-    .rest-feat__icon i{color:#2D60FF;font-size:20px}
+    .rest-feat__img img{
+      width:100%;height:100%;object-fit:cover;
+      transition:transform .3s;
+    }
+    .rest-feat:hover .rest-feat__img img{transform:scale(1.05)}
 
     .rest-feat h3{font-size:17px;font-weight:700;color:#fff;margin:0 0 8px}
     .rest-feat p{color:#94A3B8;font-size:14px;margin:0;line-height:1.6}
@@ -976,21 +975,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .rest-hw{
       background:rgba(255,255,255,.03);
       border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;padding:28px;text-align:center;
+      border-radius:16px;overflow:hidden;text-align:center;
       transition:all .25s;
     }
     .rest-hw:hover{border-color:rgba(21,73,255,.2);transform:translateY(-4px)}
 
-    .rest-hw__icon{
-      width:56px;height:56px;border-radius:14px;
-      background:rgba(21,73,255,.1);
+    .rest-hw__img{
+      height:180px;width:100%;
       display:flex;align-items:center;justify-content:center;
-      margin:0 auto 14px;
+      background:rgba(255,255,255,.04);padding:20px;
     }
-    .rest-hw__icon i{color:#2D60FF;font-size:22px}
+    .rest-hw__img img{
+      max-height:140px;max-width:100%;object-fit:contain;
+      transition:transform .3s;
+    }
+    .rest-hw:hover .rest-hw__img img{transform:scale(1.05)}
 
-    .rest-hw h3{font-size:16px;font-weight:700;color:#fff;margin:0 0 6px}
-    .rest-hw p{color:#94A3B8;font-size:13px;margin:0;line-height:1.6}
+    .rest-hw h3{font-size:16px;font-weight:700;color:#fff;margin:0 0 6px;padding:0 20px}
+    .rest-hw p{color:#94A3B8;font-size:13px;margin:0;line-height:1.6;padding:0 20px 24px}
+
+    .rest-hw-grid{justify-items:center}
+    @media(min-width:901px){
+      .rest-hw-grid{
+        display:flex;flex-wrap:wrap;justify-content:center;
+      }
+      .rest-hw{width:calc(33.333% - 14px)}
+    }
 
     .rest-testi-section{background:rgba(255,255,255,.01)}
 
