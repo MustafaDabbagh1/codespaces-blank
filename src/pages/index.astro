@@ -119,18 +119,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <div class="hp-marquee__track" id="brandsViewport">
         <div class="hp-marquee__inner">
-          <span class="hp-marquee__pill"><i class="fa-brands fa-cc-visa"></i> Visa</span>
-          <span class="hp-marquee__pill"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
-          <span class="hp-marquee__pill"><i class="fa-brands fa-cc-amex"></i> Amex</span>
-          <span class="hp-marquee__pill"><i class="fa-brands fa-cc-discover"></i> Discover</span>
-          <span class="hp-marquee__pill"><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
-          <span class="hp-marquee__pill"><i class="fa-brands fa-google-pay"></i> Google Pay</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-cc-visa"></i> Visa</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-cc-amex"></i> Amex</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-cc-discover"></i> Discover</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
-          <span class="hp-marquee__pill" aria-hidden="true"><i class="fa-brands fa-google-pay"></i> Google Pay</span>
+          <span class="hp-marquee__pill" data-brand="visa"><i class="fa-brands fa-cc-visa"></i> Visa</span>
+          <span class="hp-marquee__pill" data-brand="mastercard"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+          <span class="hp-marquee__pill" data-brand="amex"><i class="fa-brands fa-cc-amex"></i> Amex</span>
+          <span class="hp-marquee__pill" data-brand="discover"><i class="fa-brands fa-cc-discover"></i> Discover</span>
+          <span class="hp-marquee__pill" data-brand="apple"><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
+          <span class="hp-marquee__pill" data-brand="google"><i class="fa-brands fa-google-pay"></i> Google Pay</span>
+          <span class="hp-marquee__pill" data-brand="visa" aria-hidden="true"><i class="fa-brands fa-cc-visa"></i> Visa</span>
+          <span class="hp-marquee__pill" data-brand="mastercard" aria-hidden="true"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+          <span class="hp-marquee__pill" data-brand="amex" aria-hidden="true"><i class="fa-brands fa-cc-amex"></i> Amex</span>
+          <span class="hp-marquee__pill" data-brand="discover" aria-hidden="true"><i class="fa-brands fa-cc-discover"></i> Discover</span>
+          <span class="hp-marquee__pill" data-brand="apple" aria-hidden="true"><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
+          <span class="hp-marquee__pill" data-brand="google" aria-hidden="true"><i class="fa-brands fa-google-pay"></i> Google Pay</span>
         </div>
       </div>
     </div>
@@ -644,7 +644,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   border:1px solid var(--border);font-weight:500;font-size:14px;color:var(--text-2);
   white-space:nowrap;flex:0 0 auto;
 }
-.hp-marquee__pill i{font-size:20px;color:var(--text-3)}
+.hp-marquee__pill i{font-size:20px;color:var(--text-3);transition:color .25s ease}
+.hp-marquee__pill{transition:border-color .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease}
+
+.hp-marquee__pill[data-brand="visa"]:hover{border-color:#1a1f71;background:rgba(26,31,113,.06)}
+.hp-marquee__pill[data-brand="visa"]:hover i{color:#1a1f71}
+.hp-marquee__pill[data-brand="visa"]:hover{color:#1a1f71}
+
+.hp-marquee__pill[data-brand="mastercard"]:hover{border-color:#eb001b;background:rgba(235,0,27,.05)}
+.hp-marquee__pill[data-brand="mastercard"]:hover i{color:#eb001b}
+.hp-marquee__pill[data-brand="mastercard"]:hover{color:#f79e1b}
+
+.hp-marquee__pill[data-brand="amex"]:hover{border-color:#006fcf;background:rgba(0,111,207,.05)}
+.hp-marquee__pill[data-brand="amex"]:hover i{color:#006fcf}
+.hp-marquee__pill[data-brand="amex"]:hover{color:#006fcf}
+
+.hp-marquee__pill[data-brand="discover"]:hover{border-color:#ff6000;background:rgba(255,96,0,.05)}
+.hp-marquee__pill[data-brand="discover"]:hover i{color:#ff6000}
+.hp-marquee__pill[data-brand="discover"]:hover{color:#ff6000}
+
+.hp-marquee__pill[data-brand="apple"]:hover{border-color:#000;background:rgba(0,0,0,.04)}
+.hp-marquee__pill[data-brand="apple"]:hover i{color:#000}
+.hp-marquee__pill[data-brand="apple"]:hover{color:#000}
+
+.hp-marquee__pill[data-brand="google"]:hover{border-color:#4285f4;background:rgba(66,133,244,.05)}
+.hp-marquee__pill[data-brand="google"]:hover i{color:#4285f4}
+.hp-marquee__pill[data-brand="google"]:hover{color:#4285f4}
+
+.hp-marquee__inner:hover{animation-play-state:paused}
+.hp-marquee__pill:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── STATS ── */
