@@ -65,7 +65,7 @@ public/
 
 ### Industry Pages
 - `retail.astro` - Retail solutions
-- `restaurants.astro` - Restaurant POS (warm orange brand)
+- `restaurants.astro` - Restaurant POS & Online Ordering (redesigned, dark navy/blue/cyan design system). Premium SaaS layout: Hero with "PPD Restaurant — Dashboard" mockup (revenue/orders/tips KPIs, live orders, floating QR Pay and Online Order cards), metrics bar (4 stat cards), 6 icon-based feature cards (no external images), interactive menu experience (3 food items with real-time modifier pricing using semantic `<button>` elements with `aria-pressed`), live KDS simulation (tickets auto-advance New→Prep→Expo→Ready with color-coded columns), 6 hardware cards (icon-based), testimonials, CTA band, and demo modal (Formspree, focus trap, accessible form labels). Uses `rest-` CSS prefix, scoped styles. No neocities.org links.
 - `healthcare.astro` - Healthcare payments
 - `ecommerce.astro` - E-commerce payments (dark theme throughout)
 - `non-profits.astro` - Non-profit solutions (rose accent)
@@ -86,7 +86,7 @@ public/
 
 - `contractors.astro` and `customer-support.astro` use `<style is:global>` which sets `:root` CSS variables — these must stay aligned with the design system to avoid conflicts
 - All hero sections use the consistent dark navy gradient pattern
-- Brand-specific pages (restaurants, korona, pays-pos) keep their warm orange accents
+- Brand-specific pages (korona, pays-pos) keep their warm orange accents
 
 ## Development
 

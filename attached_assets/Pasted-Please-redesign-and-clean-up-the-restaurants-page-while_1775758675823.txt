@@ -1,0 +1,72 @@
+Please redesign and clean up the /restaurants page while keeping the overall restaurant-focused positioning.
+
+Main goal:
+Make the Restaurants page feel more modern, polished, software-heavy, and conversion-focused, similar in quality to the newer PPD Repair page.
+
+Important fixes first:
+1. Replace any old navigation or footer links that still point to mmdabbagh24.neocities.org with the correct live site links on ppdtechnology.com
+2. Remove the old footer disclaimer text:
+   “PPD Technology, LLC is a Registered ISO/MSP of Synovus Bank, Columbus, GA”
+3. Keep only the correct footer disclaimer sitewide:
+   “PPD Technology, LLC is a Registered ISO of Pinnacle Bank, a Tennessee Bank, dba Synovus Bank”
+
+Design/content improvements:
+1. Keep the hero section, but make it stronger and cleaner
+- Keep the restaurant-specific message
+- Surface the biggest value props faster:
+  - Online Ordering
+  - QR Pay
+  - Kitchen Display System
+  - Hardware
+  - Next-day funding
+- Make the hero feel more premium and tech-forward
+- Tighten spacing and improve hierarchy
+- Keep strong CTAs like “Get a Demo”
+
+2. Improve the “Everything restaurants need” section
+- Keep the feature set, but make the cards more polished and visually consistent
+- Reduce any feeling of repetition
+- Make the section feel tighter and easier to scan
+- Add stronger icons / visuals / hover states if needed
+
+3. Upgrade the Interactive Menu Experience section
+- Keep the concept, but make it feel more like a premium live product demo
+- Improve the layout, spacing, and styling so it looks less basic
+- Make customization states clearer and more visually exciting
+- It should feel like modern restaurant ordering software, not just a simple mockup
+
+4. Upgrade the Kitchen Display System section
+- Keep the KDS concept, but make it look more realistic and software-like
+- Improve visual hierarchy for New / Prep / Expo / Ready
+- Make the workflow feel smoother and more premium
+- Add stronger live-demo energy without making it too large
+
+5. Improve the Hardware section
+- Keep the hardware lineup, but make it cleaner and more premium
+- Better spacing, card design, consistency, and alignment
+- Make it feel like part of the same software ecosystem, not a separate generic hardware gallery
+
+6. Refresh the testimonial section
+- Keep it short
+- Make it feel a little more alive and believable
+- Improve styling so it feels more premium and less like plain quotes
+
+7. Tighten the bottom CTA area
+- Keep the restaurant demo CTA
+- Make the close of the page feel stronger and cleaner
+- The demo request form / modal flow should feel more polished and intentional
+
+General direction:
+- Do not completely rewrite the page
+- Keep the strongest restaurant messaging
+- Make it feel more like a premium SaaS + payments page
+- Improve spacing, consistency, hierarchy, and polish
+- Reduce any outdated or slightly cluttered feeling
+- Match the quality level of the newer pages on the site
+
+Important:
+Focus especially on:
+- fixing old links
+- fixing the footer disclaimer
+- making the interactive menu + KDS sections feel much better
+- making the whole page feel more premium and up to date
