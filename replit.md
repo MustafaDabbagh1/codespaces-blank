@@ -46,10 +46,11 @@ A high-performance marketing website for PPD Technology, a payment processing so
 ```
 src/
   components/   - Reusable UI components (Header, Footer)
-  layouts/      - Base layout (BaseLayout.astro) with full design system
-  pages/        - Route pages (.astro files)
+  layouts/      - Base layout (BaseLayout.astro) with full design system, OG/Twitter social meta tags (title, description, ogImage, ogType props)
+  pages/        - Route pages (.astro files), each with custom title + description for social sharing
 public/
   images/       - Product and marketing images
+  images/og-default.png - Default Open Graph preview image (1200x630, dark navy brand card)
 ```
 
 ## Pages
