@@ -20,45 +20,59 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <a href="#faq" class="su-btn su-btn--outline"><i class="fa-solid fa-circle-question"></i> Questions Before Applying?</a>
           </div>
         </div>
-        <div class="su-hero__mockup">
-          <div class="su-mockup-card">
-            <div class="su-mockup__bar">
-              <span class="su-dot su-dot--r"></span><span class="su-dot su-dot--y"></span><span class="su-dot su-dot--g"></span>
-              <span class="su-mockup__title">PPD Application Portal</span>
-            </div>
-            <div class="su-mockup__body">
-              <div class="su-mockup__row">
-                <div class="su-mockup__stat">
-                  <small>Application Status</small>
-                  <strong class="su-green">Under Review</strong>
-                </div>
-                <div class="su-mockup__stat">
-                  <small>Avg. Approval Time</small>
-                  <strong>24–48 hrs</strong>
-                </div>
-              </div>
-              <div class="su-mockup__progress">
-                <div class="su-mockup__pbar"><div class="su-mockup__pfill" style="width:65%"></div></div>
-                <small>Step 3 of 6 — Processing Profile</small>
-              </div>
-              <div class="su-mockup__checklist">
-                <div class="su-check su-check--done"><i class="fa-solid fa-circle-check"></i> Business Information</div>
-                <div class="su-check su-check--done"><i class="fa-solid fa-circle-check"></i> Owner Verification</div>
-                <div class="su-check su-check--active"><i class="fa-solid fa-spinner fa-spin"></i> Processing Profile</div>
-                <div class="su-check"><i class="fa-regular fa-circle"></i> Bank & Funding</div>
-                <div class="su-check"><i class="fa-regular fa-circle"></i> Equipment Selection</div>
-                <div class="su-check"><i class="fa-regular fa-circle"></i> Review & Submit</div>
+        <div class="su-hero__journey" aria-hidden="true">
+          <div class="su-journey">
+            <div class="su-journey__line"></div>
+            <div class="su-journey__node su-journey__node--done" style="--delay:0s">
+              <div class="su-journey__dot"><i class="fa-solid fa-check"></i></div>
+              <div class="su-journey__card">
+                <div class="su-journey__icon"><i class="fa-solid fa-industry"></i></div>
+                <strong>Industry Selected</strong>
+                <small>Restaurant</small>
               </div>
             </div>
+            <div class="su-journey__node su-journey__node--done" style="--delay:.15s">
+              <div class="su-journey__dot"><i class="fa-solid fa-check"></i></div>
+              <div class="su-journey__card">
+                <div class="su-journey__icon"><i class="fa-solid fa-cash-register"></i></div>
+                <strong>Product Selected</strong>
+                <small>KORONA POS</small>
+              </div>
+            </div>
+            <div class="su-journey__node su-journey__node--done" style="--delay:.3s">
+              <div class="su-journey__dot"><i class="fa-solid fa-check"></i></div>
+              <div class="su-journey__card">
+                <div class="su-journey__icon"><i class="fa-solid fa-building"></i></div>
+                <strong>Business Verified</strong>
+                <small>EIN confirmed</small>
+              </div>
+            </div>
+            <div class="su-journey__node su-journey__node--active" style="--delay:.45s">
+              <div class="su-journey__dot"><i class="fa-solid fa-lock"></i></div>
+              <div class="su-journey__card su-journey__card--glow">
+                <div class="su-journey__icon"><i class="fa-solid fa-building-columns"></i></div>
+                <strong>Bank Secured</strong>
+                <small>256-bit encrypted</small>
+              </div>
+            </div>
+            <div class="su-journey__node" style="--delay:.6s">
+              <div class="su-journey__dot"><i class="fa-solid fa-paper-plane"></i></div>
+              <div class="su-journey__card">
+                <div class="su-journey__icon"><i class="fa-solid fa-file-signature"></i></div>
+                <strong>Application Submitted</strong>
+                <small>Ready for review</small>
+              </div>
+            </div>
+            <div class="su-journey__node" style="--delay:.75s">
+              <div class="su-journey__dot"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <div class="su-journey__card">
+                <div class="su-journey__icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <strong>Underwriting Review</strong>
+                <small>24–48 hrs typical</small>
+              </div>
+            </div>
           </div>
-          <div class="su-float su-float--1">
-            <i class="fa-solid fa-lock"></i>
-            <div><strong>256-bit Encryption</strong><small>Bank-grade security</small></div>
-          </div>
-          <div class="su-float su-float--2">
-            <i class="fa-solid fa-bolt"></i>
-            <div><strong>Next-Day Funding</strong><small>For eligible accounts</small></div>
-          </div>
+          <div class="su-journey__glow"></div>
         </div>
       </div>
     </section>
@@ -74,43 +88,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="su-prepare">
-      <div class="su-prepare__inner">
-        <div class="su-prepare__head">
-          <span class="su-badge su-badge--sm"><i class="fa-solid fa-clipboard-list"></i> Before You Begin</span>
-          <h2>What You'll Need to Apply</h2>
-          <p>Having these items ready will help you complete the application quickly and avoid delays.</p>
-        </div>
-        <div class="su-prepare__grid">
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-building"></i></div>
-            <h4>Legal Business Info</h4>
-            <p>Business name, DBA, entity type, EIN, address, and state of incorporation</p>
+    <section class="su-process">
+      <div class="su-process__inner">
+        <h2>How the Application Works</h2>
+        <div class="su-process__grid">
+          <div class="su-process__card">
+            <div class="su-process__num">1</div>
+            <h4>Choose Your Industry &amp; Solution</h4>
+            <p>Select your business type and the processing solution or hardware that fits your needs.</p>
           </div>
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-user-tie"></i></div>
-            <h4>Owner Details</h4>
-            <p>Full legal name, ownership percentage, date of birth, SSN, and home address</p>
+          <div class="su-process__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="su-process__card">
+            <div class="su-process__num">2</div>
+            <h4>Enter Business &amp; Owner Details</h4>
+            <p>Provide your business information, ownership details, and processing profile for underwriting.</p>
           </div>
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h4>Processing Estimates</h4>
-            <p>Monthly card volume, average ticket size, and card-present vs. card-not-present breakdown</p>
-          </div>
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-building-columns"></i></div>
-            <h4>Bank Information</h4>
-            <p>Bank name, routing number, and account number for deposit setup</p>
-          </div>
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-file-invoice"></i></div>
-            <h4>Processing History</h4>
-            <p>Current processor, chargeback history, and refund policy details if applicable</p>
-          </div>
-          <div class="su-prep-card">
-            <div class="su-prep-card__icon"><i class="fa-solid fa-laptop"></i></div>
-            <h4>Equipment Needs</h4>
-            <p>POS, terminal, gateway, virtual terminal, or mobile reader requirements</p>
+          <div class="su-process__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="su-process__card">
+            <div class="su-process__num">3</div>
+            <h4>Submit Securely for Review</h4>
+            <p>Your encrypted application is reviewed by our team. A specialist follows up within 1-2 business days.</p>
           </div>
         </div>
       </div>
@@ -133,146 +130,79 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div class="su-stepper__fill" id="stepperFill"></div>
             </div>
             <div class="su-stepper__labels">
-              <button type="button" class="su-stepper__step active" data-step-btn="1" aria-current="step"><span class="su-stepper__num">1</span><span class="su-stepper__label">Business</span></button>
-              <button type="button" class="su-stepper__step" data-step-btn="2"><span class="su-stepper__num">2</span><span class="su-stepper__label">Owner</span></button>
-              <button type="button" class="su-stepper__step" data-step-btn="3"><span class="su-stepper__num">3</span><span class="su-stepper__label">Processing</span></button>
-              <button type="button" class="su-stepper__step" data-step-btn="4"><span class="su-stepper__num">4</span><span class="su-stepper__label">Banking</span></button>
-              <button type="button" class="su-stepper__step" data-step-btn="5"><span class="su-stepper__num">5</span><span class="su-stepper__label">Equipment</span></button>
+              <button type="button" class="su-stepper__step active" data-step-btn="1" aria-current="step"><span class="su-stepper__num">1</span><span class="su-stepper__label">Solution</span></button>
+              <button type="button" class="su-stepper__step" data-step-btn="2"><span class="su-stepper__num">2</span><span class="su-stepper__label">Business</span></button>
+              <button type="button" class="su-stepper__step" data-step-btn="3"><span class="su-stepper__num">3</span><span class="su-stepper__label">Owner</span></button>
+              <button type="button" class="su-stepper__step" data-step-btn="4"><span class="su-stepper__num">4</span><span class="su-stepper__label">Processing</span></button>
+              <button type="button" class="su-stepper__step" data-step-btn="5"><span class="su-stepper__num">5</span><span class="su-stepper__label">Banking</span></button>
               <button type="button" class="su-stepper__step" data-step-btn="6"><span class="su-stepper__num">6</span><span class="su-stepper__label">Review</span></button>
             </div>
           </div>
 
-          <!-- Step 1: Business Information -->
           <div class="su-pane" data-step="1">
             <div class="su-pane__header">
-              <i class="fa-solid fa-building"></i>
+              <i class="fa-solid fa-compass"></i>
               <div>
-                <h3>Business Information</h3>
-                <p>Tell us about your business so we can tailor the best processing solution.</p>
-              </div>
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="legal_name">Legal Business Name <span class="su-req">*</span></label>
-                <input required id="legal_name" name="legal_name" placeholder="e.g., Acme Enterprises LLC" />
-              </div>
-              <div class="su-field">
-                <label for="dba">DBA (Doing Business As)</label>
-                <input id="dba" name="dba" placeholder="e.g., Acme Coffee Shop" />
-              </div>
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="entity_type">Business Entity Type <span class="su-req">*</span></label>
-                <select required id="entity_type" name="entity_type">
-                  <option value="">Select entity type</option>
-                  <option>Sole Proprietorship</option>
-                  <option>LLC</option>
-                  <option>Corporation</option>
-                  <option>Partnership</option>
-                  <option>Non-Profit</option>
-                  <option>Government</option>
-                </select>
-              </div>
-              <div class="su-field">
-                <label for="industry">Industry / Business Type <span class="su-req">*</span></label>
-                <select required id="industry" name="industry">
-                  <option value="">Select industry</option>
-                  <option>Restaurant / Food Service</option>
-                  <option>Retail</option>
-                  <option>Professional Services</option>
-                  <option>Healthcare</option>
-                  <option>E-commerce</option>
-                  <option>Salon / Spa / MedSpa</option>
-                  <option>Grocery / Convenience / EBT</option>
-                  <option>Repair / Service</option>
-                  <option>Contractors</option>
-                  <option>Non-Profit</option>
-                  <option>Education</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="years_in_biz">Years in Business <span class="su-req">*</span></label>
-                <select required id="years_in_biz" name="years_in_business">
-                  <option value="">Select</option>
-                  <option>Less than 1 year</option>
-                  <option>1–3 years</option>
-                  <option>3–5 years</option>
-                  <option>5–10 years</option>
-                  <option>10+ years</option>
-                </select>
-              </div>
-              <div class="su-field">
-                <label for="biz_start_date">Business Start Date</label>
-                <input id="biz_start_date" name="business_start_date" type="date" />
-              </div>
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="ein">EIN / Tax ID <span class="su-req">*</span></label>
-                <input required id="ein" name="ein" placeholder="XX-XXXXXXX" />
-              </div>
-              <div class="su-field">
-                <label for="state_inc">State of Incorporation <span class="su-req">*</span></label>
-                <input required id="state_inc" name="state_of_incorporation" placeholder="e.g., California" />
-              </div>
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="biz_phone">Business Phone <span class="su-req">*</span></label>
-                <input required id="biz_phone" name="business_phone" type="tel" placeholder="(555) 555-1234" />
-              </div>
-              <div class="su-field">
-                <label for="biz_email">Business Email <span class="su-req">*</span></label>
-                <input required id="biz_email" name="business_email" type="email" placeholder="owner@business.com" />
+                <h3>Industry &amp; Solution Selection</h3>
+                <p>Tell us about your industry and choose the processing solution that fits your business.</p>
               </div>
             </div>
 
             <div class="su-field">
-              <label for="website">Business Website</label>
-              <input id="website" name="website" type="url" placeholder="https://www.yourbusiness.com" />
+              <label for="industry">What industry is your business in? <span class="su-req">*</span></label>
+              <select required id="industry" name="industry">
+                <option value="">Select your industry</option>
+                <option value="Restaurant / Food Service">Restaurant / Food Service</option>
+                <option value="Retail">Retail</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Salon / Spa / MedSpa">Salon / Spa / MedSpa</option>
+                <option value="Grocery / Convenience / EBT">Grocery / Convenience / EBT</option>
+                <option value="Repair / Service">Repair / Service</option>
+                <option value="Contractors">Contractors</option>
+                <option value="Non-Profit">Non-Profit</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
-            <div class="su-field">
-              <label for="biz_address">Business Address <span class="su-req">*</span></label>
-              <input required id="biz_address" name="business_address" placeholder="123 Main St, Suite 100, City, State ZIP" />
-            </div>
-
-            <div class="su-field">
-              <label for="mail_address">Mailing Address (if different)</label>
-              <input id="mail_address" name="mailing_address" placeholder="PO Box or alternate address" />
-            </div>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="num_locations">Number of Locations</label>
-                <input id="num_locations" name="number_of_locations" type="number" min="1" placeholder="1" />
+            <div class="su-prod-section">
+              <label class="su-prod-label">Select your solution <span class="su-req">*</span></label>
+              <div class="su-prod-filter" id="prodFilter">
+                <button type="button" class="su-filter-btn active" data-cat="all">All</button>
+                <button type="button" class="su-filter-btn" data-cat="pos">POS Systems</button>
+                <button type="button" class="su-filter-btn" data-cat="terminal">Terminals &amp; Pinpads</button>
+                <button type="button" class="su-filter-btn" data-cat="software">Software</button>
+                <button type="button" class="su-filter-btn" data-cat="gateway">Gateway &amp; Virtual</button>
               </div>
-              <div class="su-field">
-                <label for="sales_channels">Sales Channels <span class="su-req">*</span></label>
-                <select required id="sales_channels" name="sales_channels">
-                  <option value="">Select primary channel</option>
-                  <option>In-store</option>
-                  <option>Online</option>
-                  <option>Mobile</option>
-                  <option>Invoice / Recurring</option>
-                  <option>MOTO (Mail/Telephone)</option>
-                  <option>Multiple channels</option>
-                </select>
+              <div class="su-prod-grid" id="prodGrid">
+                <label class="su-prod-card" data-cat="pos"><input type="radio" name="selected_product" value="KORONA POS" required /><div class="su-prod-card__inner"><img src="/images/Korona/Hardware-Group-with-KORONA-POS-Software.png" alt="KORONA POS" loading="lazy" /><strong>KORONA POS</strong><small>Cloud POS for retail, QSR, and ticketing with real-time inventory</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="pos"><input type="radio" name="selected_product" value="Pays POS" /><div class="su-prod-card__inner"><img src="/images/Pos system.png" alt="Pays POS" loading="lazy" /><strong>Pays POS</strong><small>Full POS with payments, inventory, analytics, and dual pricing</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="pos"><input type="radio" name="selected_product" value="NRS POS" /><div class="su-prod-card__inner"><img src="/images/nrs-pos1-min.png" alt="NRS POS" loading="lazy" /><strong>NRS POS</strong><small>All-in-one POS with inventory, CRM, loyalty, and EBT support</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="pos"><input type="radio" name="selected_product" value="Clover POS" /><div class="su-prod-card__inner"><img src="/images/clover-duo-printer-mini3-facing-customer.png" alt="Clover POS" loading="lazy" /><strong>Clover POS</strong><small>Versatile POS ecosystem with Duo, Flex, Mini, and Solo options</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="terminal"><input type="radio" name="selected_product" value="Dejavoo VP800" /><div class="su-prod-card__inner"><img src="/images/VP800-View-01.png" alt="Dejavoo VP800" loading="lazy" /><strong>Dejavoo VP800</strong><small>Countertop EMV terminal with tap-to-pay, tip prompts, and receipts</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="terminal"><input type="radio" name="selected_product" value="Dejavoo P18" /><div class="su-prod-card__inner"><img src="/images/p18.png" alt="Dejavoo P18" loading="lazy" /><strong>Dejavoo P18</strong><small>Modern touchscreen terminal for busy countertops with full EMV</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="terminal"><input type="radio" name="selected_product" value="Pinpads (P12 & P17)" /><div class="su-prod-card__inner"><img src="/images/Pin-Pads-p12p17.png" alt="Pinpads P12 & P17" loading="lazy" /><strong>Pinpads P12 &amp; P17</strong><small>Compact customer-facing EMV and contactless pin pads</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="software"><input type="radio" name="selected_product" value="PPD Repair" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-screwdriver-wrench"></i></div><strong>PPD Repair</strong><small>Repair shop SaaS with POS, ticketing, inventory, and payments</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="software"><input type="radio" name="selected_product" value="PPD Merchant" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-chart-pie"></i></div><strong>PPD Merchant</strong><small>Merchant analytics dashboard with reporting, risk, and portfolio tools</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="software"><input type="radio" name="selected_product" value="MX-Build" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-layer-group"></i></div><strong>MX-Build</strong><small>Digital experience builder for merchant onboarding and portals</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="software"><input type="radio" name="selected_product" value="Passport Banking" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-passport"></i></div><strong>Passport Banking</strong><small>Banking-as-a-service platform for embedded financial solutions</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="gateway"><input type="radio" name="selected_product" value="eCommerce Gateway" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-globe"></i></div><strong>eCommerce Gateway</strong><small>Online payment gateway for web stores and checkout integrations</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="gateway"><input type="radio" name="selected_product" value="Virtual Terminal" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-laptop"></i></div><strong>Virtual Terminal</strong><small>Browser-based terminal for keyed-in and MOTO transactions</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
+                <label class="su-prod-card" data-cat="gateway"><input type="radio" name="selected_product" value="Mobile Reader" /><div class="su-prod-card__inner"><div class="su-prod-card__iconbox"><i class="fa-solid fa-mobile-screen-button"></i></div><strong>Mobile Reader</strong><small>Bluetooth card reader paired with smartphone for on-the-go payments</small></div><div class="su-prod-card__check"><i class="fa-solid fa-circle-check"></i></div></label>
               </div>
-            </div>
 
-            <div class="su-field">
-              <label for="products_desc">Describe Products / Services Sold <span class="su-req">*</span></label>
-              <textarea required id="products_desc" name="products_services" rows="3" placeholder="Brief description of what your business sells or the services you provide..."></textarea>
+              <div class="su-selected-summary" id="selectedSummary" hidden>
+                <div class="su-selected-summary__inner">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <div>
+                    <strong id="selectedName">—</strong>
+                    <small>Selected solution</small>
+                  </div>
+                  <button type="button" class="su-selected-summary__clear" id="clearSelection">Change</button>
+                </div>
+              </div>
             </div>
 
             <div class="su-pane__actions">
@@ -281,8 +211,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <!-- Step 2: Owner / Principal Information -->
           <div class="su-pane" data-step="2" hidden>
+            <div class="su-pane__header">
+              <i class="fa-solid fa-building"></i>
+              <div>
+                <h3>Business Information</h3>
+                <p>Tell us about your business so we can tailor the best processing solution.</p>
+              </div>
+            </div>
+            <div class="su-grid-2">
+              <div class="su-field"><label for="legal_name">Legal Business Name <span class="su-req">*</span></label><input required id="legal_name" name="legal_name" placeholder="e.g., Acme Enterprises LLC" /></div>
+              <div class="su-field"><label for="dba">DBA (Doing Business As)</label><input id="dba" name="dba" placeholder="e.g., Acme Coffee Shop" /></div>
+            </div>
+            <div class="su-grid-2">
+              <div class="su-field"><label for="entity_type">Business Entity Type <span class="su-req">*</span></label><select required id="entity_type" name="entity_type"><option value="">Select entity type</option><option>Sole Proprietorship</option><option>LLC</option><option>Corporation</option><option>Partnership</option><option>Non-Profit</option><option>Government</option></select></div>
+              <div class="su-field"><label for="years_in_biz">Years in Business <span class="su-req">*</span></label><select required id="years_in_biz" name="years_in_business"><option value="">Select</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>5-10 years</option><option>10+ years</option></select></div>
+            </div>
+            <div class="su-grid-2">
+              <div class="su-field"><label for="ein">EIN / Tax ID <span class="su-req">*</span></label><input required id="ein" name="ein" placeholder="XX-XXXXXXX" /></div>
+              <div class="su-field"><label for="state_inc">State of Incorporation <span class="su-req">*</span></label><input required id="state_inc" name="state_of_incorporation" placeholder="e.g., California" /></div>
+            </div>
+            <div class="su-grid-2">
+              <div class="su-field"><label for="biz_phone">Business Phone <span class="su-req">*</span></label><input required id="biz_phone" name="business_phone" type="tel" placeholder="(555) 555-1234" /></div>
+              <div class="su-field"><label for="biz_email">Business Email <span class="su-req">*</span></label><input required id="biz_email" name="business_email" type="email" placeholder="owner@business.com" /></div>
+            </div>
+            <div class="su-field"><label for="website">Business Website</label><input id="website" name="website" type="url" placeholder="https://www.yourbusiness.com" /></div>
+            <div class="su-field"><label for="biz_address">Business Address <span class="su-req">*</span></label><input required id="biz_address" name="business_address" placeholder="123 Main St, Suite 100, City, State ZIP" /></div>
+            <div class="su-field"><label for="mail_address">Mailing Address (if different)</label><input id="mail_address" name="mailing_address" placeholder="PO Box or alternate address" /></div>
+            <div class="su-grid-2">
+              <div class="su-field"><label for="num_locations">Number of Locations</label><input id="num_locations" name="number_of_locations" type="number" min="1" placeholder="1" /></div>
+              <div class="su-field"><label for="sales_channels">Sales Channels <span class="su-req">*</span></label><select required id="sales_channels" name="sales_channels"><option value="">Select primary channel</option><option>In-store</option><option>Online</option><option>Mobile</option><option>Invoice / Recurring</option><option>MOTO (Mail/Telephone)</option><option>Multiple channels</option></select></div>
+            </div>
+            <div class="su-field"><label for="products_desc">Describe Products / Services Sold <span class="su-req">*</span></label><textarea required id="products_desc" name="products_services" rows="3" placeholder="Brief description of what your business sells or the services you provide..."></textarea></div>
+            <div class="su-pane__actions">
+              <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button type="button" class="su-btn su-btn--primary" data-next>Continue <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="su-pane" data-step="3" hidden>
             <div class="su-pane__header">
               <i class="fa-solid fa-user-tie"></i>
               <div>
@@ -290,94 +257,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <p>Required for underwriting review. Information is encrypted and handled securely.</p>
               </div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="owner_name">Full Legal Name <span class="su-req">*</span></label>
-                <input required id="owner_name" name="owner_name" placeholder="First Middle Last" />
-              </div>
-              <div class="su-field">
-                <label for="owner_title">Title / Role <span class="su-req">*</span></label>
-                <input required id="owner_title" name="owner_title" placeholder="e.g., Owner, CEO, Managing Partner" />
-              </div>
+              <div class="su-field"><label for="owner_name">Full Legal Name <span class="su-req">*</span></label><input required id="owner_name" name="owner_name" placeholder="First Middle Last" /></div>
+              <div class="su-field"><label for="owner_title">Title / Role <span class="su-req">*</span></label><input required id="owner_title" name="owner_title" placeholder="e.g., Owner, CEO, Managing Partner" /></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="owner_pct">Ownership % <span class="su-req">*</span></label>
-                <input required id="owner_pct" name="ownership_pct" placeholder="e.g., 100%" />
-              </div>
-              <div class="su-field">
-                <label for="owner_dob">Date of Birth <span class="su-req">*</span></label>
-                <input required id="owner_dob" name="owner_dob" type="date" />
-              </div>
+              <div class="su-field"><label for="owner_pct">Ownership % <span class="su-req">*</span></label><input required id="owner_pct" name="ownership_pct" placeholder="e.g., 100%" /></div>
+              <div class="su-field"><label for="owner_dob">Date of Birth <span class="su-req">*</span></label><input required id="owner_dob" name="owner_dob" type="date" /></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="owner_ssn">SSN (Last 4 Digits) <span class="su-req">*</span></label>
-                <div class="su-input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input required id="owner_ssn" name="owner_ssn_last4" placeholder="••••" inputmode="numeric" maxlength="4" pattern="^\d{4}$" title="Enter last 4 digits of SSN" />
-                </div>
-              </div>
-              <div class="su-field">
-                <label for="owner_mobile">Mobile Phone <span class="su-req">*</span></label>
-                <input required id="owner_mobile" name="owner_mobile" type="tel" placeholder="(555) 555-1234" />
-              </div>
+              <div class="su-field"><label for="owner_ssn">SSN (Last 4 Digits) <span class="su-req">*</span></label><div class="su-input-icon"><i class="fa-solid fa-lock"></i><input required id="owner_ssn" name="owner_ssn_last4" placeholder="••••" inputmode="numeric" maxlength="4" pattern="^\d{4}$" title="Enter last 4 digits of SSN" /></div></div>
+              <div class="su-field"><label for="owner_mobile">Mobile Phone <span class="su-req">*</span></label><input required id="owner_mobile" name="owner_mobile" type="tel" placeholder="(555) 555-1234" /></div>
             </div>
-
-            <div class="su-field">
-              <label for="owner_email">Owner Email <span class="su-req">*</span></label>
-              <input required id="owner_email" name="owner_email" type="email" placeholder="owner@email.com" />
-            </div>
-
-            <div class="su-field">
-              <label for="owner_address">Home Address <span class="su-req">*</span></label>
-              <input required id="owner_address" name="owner_home_address" placeholder="123 Oak Ave, City, State ZIP" />
-            </div>
-
+            <div class="su-field"><label for="owner_email">Owner Email <span class="su-req">*</span></label><input required id="owner_email" name="owner_email" type="email" placeholder="owner@email.com" /></div>
+            <div class="su-field"><label for="owner_address">Home Address <span class="su-req">*</span></label><input required id="owner_address" name="owner_home_address" placeholder="123 Oak Ave, City, State ZIP" /></div>
             <div class="su-disclosure">
-              <button type="button" class="su-disclosure__toggle" id="addOwnerToggle" aria-expanded="false" aria-controls="addOwnerBody">
-                <i class="fa-solid fa-user-plus"></i> Add Additional Owner / Principal
-                <i class="fa-solid fa-chevron-down su-disclosure__chevron"></i>
-              </button>
+              <button type="button" class="su-disclosure__toggle" id="addOwnerToggle" aria-expanded="false" aria-controls="addOwnerBody"><i class="fa-solid fa-user-plus"></i> Add Additional Owner / Principal<i class="fa-solid fa-chevron-down su-disclosure__chevron"></i></button>
               <div class="su-disclosure__body" id="addOwnerBody" hidden>
                 <div class="su-grid-2">
-                  <div class="su-field">
-                    <label for="owner2_name">Full Legal Name</label>
-                    <input id="owner2_name" name="owner2_name" placeholder="First Last" />
-                  </div>
-                  <div class="su-field">
-                    <label for="owner2_pct">Ownership %</label>
-                    <input id="owner2_pct" name="owner2_pct" placeholder="e.g., 50%" />
-                  </div>
+                  <div class="su-field"><label for="owner2_name">Full Legal Name</label><input id="owner2_name" name="owner2_name" placeholder="First Last" /></div>
+                  <div class="su-field"><label for="owner2_pct">Ownership %</label><input id="owner2_pct" name="owner2_pct" placeholder="e.g., 50%" /></div>
                 </div>
                 <div class="su-grid-2">
-                  <div class="su-field">
-                    <label for="owner2_title">Title</label>
-                    <input id="owner2_title" name="owner2_title" placeholder="e.g., Partner, VP" />
-                  </div>
-                  <div class="su-field">
-                    <label for="owner2_ssn">SSN (Last 4)</label>
-                    <input id="owner2_ssn" name="owner2_ssn_last4" placeholder="••••" inputmode="numeric" maxlength="4" />
-                  </div>
+                  <div class="su-field"><label for="owner2_title">Title</label><input id="owner2_title" name="owner2_title" placeholder="e.g., Partner, VP" /></div>
+                  <div class="su-field"><label for="owner2_ssn">SSN (Last 4)</label><input id="owner2_ssn" name="owner2_ssn_last4" placeholder="••••" inputmode="numeric" maxlength="4" /></div>
                 </div>
-                <div class="su-field">
-                  <label for="owner2_email">Email</label>
-                  <input id="owner2_email" name="owner2_email" type="email" placeholder="partner@email.com" />
-                </div>
+                <div class="su-field"><label for="owner2_email">Email</label><input id="owner2_email" name="owner2_email" type="email" placeholder="partner@email.com" /></div>
               </div>
             </div>
-
             <div class="su-pane__actions">
               <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
               <button type="button" class="su-btn su-btn--primary" data-next>Continue <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
 
-          <!-- Step 3: Processing Profile -->
-          <div class="su-pane" data-step="3" hidden>
+          <div class="su-pane" data-step="4" hidden>
             <div class="su-pane__header">
               <i class="fa-solid fa-chart-line"></i>
               <div>
@@ -385,88 +299,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <p>Help us understand your transaction volume and processing needs.</p>
               </div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="monthly_volume">Estimated Monthly Card Volume <span class="su-req">*</span></label>
-                <select required id="monthly_volume" name="monthly_card_volume">
-                  <option value="">Select range</option>
-                  <option>Under $10,000</option>
-                  <option>$10,000 – $25,000</option>
-                  <option>$25,000 – $75,000</option>
-                  <option>$75,000 – $200,000</option>
-                  <option>$200,000 – $500,000</option>
-                  <option>$500,000+</option>
-                </select>
-              </div>
-              <div class="su-field">
-                <label for="avg_ticket">Average Ticket Size <span class="su-req">*</span></label>
-                <input required id="avg_ticket" name="average_ticket" placeholder="e.g., $45.00" />
-              </div>
+              <div class="su-field"><label for="monthly_volume">Estimated Monthly Card Volume <span class="su-req">*</span></label><select required id="monthly_volume" name="monthly_card_volume"><option value="">Select range</option><option>Under $10,000</option><option>$10,000 - $25,000</option><option>$25,000 - $75,000</option><option>$75,000 - $200,000</option><option>$200,000 - $500,000</option><option>$500,000+</option></select></div>
+              <div class="su-field"><label for="avg_ticket">Average Ticket Size <span class="su-req">*</span></label><input required id="avg_ticket" name="average_ticket" placeholder="e.g., $45.00" /></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="high_ticket">Highest Ticket Size</label>
-                <input id="high_ticket" name="highest_ticket" placeholder="e.g., $2,500.00" />
-              </div>
-              <div class="su-field">
-                <label for="cp_pct">Card Present % <span class="su-req">*</span></label>
-                <select required id="cp_pct" name="card_present_pct">
-                  <option value="">Select</option>
-                  <option>100% Card Present</option>
-                  <option>75% Present / 25% Not Present</option>
-                  <option>50% / 50%</option>
-                  <option>25% Present / 75% Not Present</option>
-                  <option>100% Card Not Present</option>
-                </select>
-              </div>
+              <div class="su-field"><label for="high_ticket">Highest Ticket Size</label><input id="high_ticket" name="highest_ticket" placeholder="e.g., $2,500.00" /></div>
+              <div class="su-field"><label for="cp_pct">Card Present % <span class="su-req">*</span></label><select required id="cp_pct" name="card_present_pct"><option value="">Select</option><option>100% Card Present</option><option>75% Present / 25% Not Present</option><option>50% / 50%</option><option>25% Present / 75% Not Present</option><option>100% Card Not Present</option></select></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="processed_before">Have You Processed Cards Before? <span class="su-req">*</span></label>
-                <select required id="processed_before" name="processed_before">
-                  <option value="">Select</option>
-                  <option>Yes</option>
-                  <option>No — New to card processing</option>
-                </select>
-              </div>
-              <div class="su-field">
-                <label for="current_processor">Current Processor</label>
-                <input id="current_processor" name="current_processor" placeholder="e.g., Square, Stripe, Clover, etc." />
-              </div>
+              <div class="su-field"><label for="processed_before">Have You Processed Cards Before? <span class="su-req">*</span></label><select required id="processed_before" name="processed_before"><option value="">Select</option><option>Yes</option><option>No - New to card processing</option></select></div>
+              <div class="su-field"><label for="current_processor">Current Processor</label><input id="current_processor" name="current_processor" placeholder="e.g., Square, Stripe, Clover, etc." /></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="chargeback_history">Chargeback History</label>
-                <select id="chargeback_history" name="chargeback_history">
-                  <option value="">Select</option>
-                  <option>None</option>
-                  <option>Minimal (1–3 per year)</option>
-                  <option>Moderate (4–10 per year)</option>
-                  <option>Significant (10+)</option>
-                </select>
-              </div>
-              <div class="su-field">
-                <label for="fulfillment_days">Days Between Sale & Fulfillment</label>
-                <select id="fulfillment_days" name="fulfillment_days">
-                  <option value="">Select</option>
-                  <option>Same day</option>
-                  <option>1–7 days</option>
-                  <option>7–14 days</option>
-                  <option>14–30 days</option>
-                  <option>30+ days</option>
-                </select>
-              </div>
+              <div class="su-field"><label for="chargeback_history">Chargeback History</label><select id="chargeback_history" name="chargeback_history"><option value="">Select</option><option>None</option><option>Minimal (1-3 per year)</option><option>Moderate (4-10 per year)</option><option>Significant (10+)</option></select></div>
+              <div class="su-field"><label for="fulfillment_days">Days Between Sale &amp; Fulfillment</label><select id="fulfillment_days" name="fulfillment_days"><option value="">Select</option><option>Same day</option><option>1-7 days</option><option>7-14 days</option><option>14-30 days</option><option>30+ days</option></select></div>
             </div>
-
-            <div class="su-field">
-              <label for="refund_policy">Refund / Return Policy</label>
-              <textarea id="refund_policy" name="refund_policy" rows="2" placeholder="Briefly describe your refund or return policy..."></textarea>
-            </div>
-
+            <div class="su-field"><label for="refund_policy">Refund / Return Policy</label><textarea id="refund_policy" name="refund_policy" rows="2" placeholder="Briefly describe your refund or return policy..."></textarea></div>
             <fieldset class="su-fieldset">
               <legend>Additional Services Needed</legend>
               <div class="su-check-grid">
@@ -478,196 +327,76 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <label class="su-checkbox"><input type="checkbox" name="needs_recurring" value="yes" /> Recurring Billing</label>
               </div>
             </fieldset>
-
             <div class="su-pane__actions">
               <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
               <button type="button" class="su-btn su-btn--primary" data-next>Continue <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
 
-          <!-- Step 4: Bank / Funding Information -->
-          <div class="su-pane" data-step="4" hidden>
+          <div class="su-pane" data-step="5" hidden>
             <div class="su-pane__header su-pane__header--secure">
               <i class="fa-solid fa-building-columns"></i>
               <div>
-                <h3>Bank & Funding Information</h3>
-                <p>Your bank details are encrypted and used exclusively for deposit setup. We never store sensitive credentials beyond what is required for funding.</p>
+                <h3>Bank &amp; Funding Information</h3>
+                <p>Your bank details are encrypted and used exclusively for deposit setup.</p>
               </div>
             </div>
-
-            <div class="su-secure-banner">
-              <i class="fa-solid fa-shield-halved"></i>
-              <span>This section is protected with 256-bit SSL encryption. Your information is transmitted securely.</span>
-            </div>
-
+            <div class="su-secure-banner"><i class="fa-solid fa-shield-halved"></i><span>This section is protected with 256-bit SSL encryption. Your information is transmitted securely.</span></div>
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="bank_name">Bank Name <span class="su-req">*</span></label>
-                <input required id="bank_name" name="bank_name" placeholder="e.g., Chase, Wells Fargo, Bank of America" />
-              </div>
-              <div class="su-field">
-                <label for="account_name">Name on Bank Account <span class="su-req">*</span></label>
-                <input required id="account_name" name="bank_account_name" placeholder="As it appears on the account" />
-              </div>
+              <div class="su-field"><label for="bank_name">Bank Name <span class="su-req">*</span></label><input required id="bank_name" name="bank_name" placeholder="e.g., Chase, Wells Fargo, Bank of America" /></div>
+              <div class="su-field"><label for="account_name">Name on Bank Account <span class="su-req">*</span></label><input required id="account_name" name="bank_account_name" placeholder="As it appears on the account" /></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="routing">Routing Number <span class="su-req">*</span></label>
-                <div class="su-input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input required id="routing" name="routing_number" placeholder="•••••••••" inputmode="numeric" pattern="[0-9]{9}" title="Enter 9-digit routing number" maxlength="9" />
-                </div>
-              </div>
-              <div class="su-field">
-                <label for="account_type">Account Type <span class="su-req">*</span></label>
-                <select required id="account_type" name="account_type">
-                  <option value="">Select</option>
-                  <option>Checking</option>
-                  <option>Savings</option>
-                </select>
-              </div>
+              <div class="su-field"><label for="routing">Routing Number <span class="su-req">*</span></label><div class="su-input-icon"><i class="fa-solid fa-lock"></i><input required id="routing" name="routing_number" placeholder="•••••••••" inputmode="numeric" pattern="[0-9]{9}" title="Enter 9-digit routing number" maxlength="9" /></div></div>
+              <div class="su-field"><label for="account_type">Account Type <span class="su-req">*</span></label><select required id="account_type" name="account_type"><option value="">Select</option><option>Checking</option><option>Savings</option></select></div>
             </div>
-
             <div class="su-grid-2">
-              <div class="su-field">
-                <label for="account_num">Account Number <span class="su-req">*</span></label>
-                <div class="su-input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input required id="account_num" name="account_number" placeholder="•••••••••••••" inputmode="numeric" />
-                </div>
-              </div>
-              <div class="su-field">
-                <label for="account_confirm">Confirm Account Number <span class="su-req">*</span></label>
-                <div class="su-input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input required id="account_confirm" name="account_number_confirm" placeholder="Re-enter account number" inputmode="numeric" />
-                </div>
-              </div>
+              <div class="su-field"><label for="account_num">Account Number <span class="su-req">*</span></label><div class="su-input-icon"><i class="fa-solid fa-lock"></i><input required id="account_num" name="account_number" placeholder="•••••••••••••" inputmode="numeric" /></div></div>
+              <div class="su-field"><label for="account_confirm">Confirm Account Number <span class="su-req">*</span></label><div class="su-input-icon"><i class="fa-solid fa-lock"></i><input required id="account_confirm" name="account_number_confirm" placeholder="Re-enter account number" inputmode="numeric" /></div></div>
             </div>
-
-            <div class="su-pane__actions">
-              <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
-              <button type="button" class="su-btn su-btn--primary" data-next>Continue <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-
-          <!-- Step 5: Equipment / Solution Needs -->
-          <div class="su-pane" data-step="5" hidden>
-            <div class="su-pane__header">
-              <i class="fa-solid fa-cash-register"></i>
-              <div>
-                <h3>Equipment & Solution Needs</h3>
-                <p>Select the hardware and solutions your business requires. A specialist can help finalize your setup after approval.</p>
-              </div>
-            </div>
-
-            <fieldset class="su-fieldset">
-              <legend>What equipment do you need? (Select all that apply)</legend>
-              <div class="su-equip-grid">
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Terminal" /><i class="fa-solid fa-credit-card"></i><span>Terminal</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="POS System" /><i class="fa-solid fa-cash-register"></i><span>POS System</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Mobile Reader" /><i class="fa-solid fa-mobile-screen"></i><span>Mobile Reader</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Wireless Terminal" /><i class="fa-solid fa-wifi"></i><span>Wireless Terminal</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Pin Pad" /><i class="fa-solid fa-tablet-screen-button"></i><span>Pin Pad</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="eCommerce Gateway" /><i class="fa-solid fa-globe"></i><span>eCommerce Gateway</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Virtual Terminal" /><i class="fa-solid fa-laptop"></i><span>Virtual Terminal</span></label>
-                <label class="su-equip-card"><input type="checkbox" name="equipment[]" value="Other" /><i class="fa-solid fa-ellipsis"></i><span>Other</span></label>
-              </div>
-            </fieldset>
-
-            <div class="su-grid-2">
-              <div class="su-field">
-                <label for="equip_qty">Total Quantity Needed</label>
-                <input id="equip_qty" name="equipment_quantity" type="number" min="1" placeholder="e.g., 2" />
-              </div>
-              <div class="su-field">
-                <label for="equip_notes_short">Special Requirements</label>
-                <input id="equip_notes_short" name="equipment_notes" placeholder="e.g., kitchen printer, barcode scanner" />
-              </div>
-            </div>
-
             <div class="su-pane__actions">
               <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
               <button type="button" class="su-btn su-btn--primary" data-next>Review Application <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
 
-          <!-- Step 6: Review & Submit -->
           <div class="su-pane" data-step="6" hidden>
             <div class="su-pane__header">
               <i class="fa-solid fa-clipboard-check"></i>
               <div>
-                <h3>Review & Submit</h3>
+                <h3>Review &amp; Submit</h3>
                 <p>Please review the information below before submitting your application.</p>
               </div>
             </div>
-
             <div class="su-review" id="reviewSummary"></div>
-
             <fieldset class="su-fieldset su-fieldset--consent">
-              <label class="su-checkbox">
-                <input type="checkbox" required name="consent_accurate" value="yes" />
-                I certify that all information provided is accurate and complete to the best of my knowledge.
-              </label>
-              <label class="su-checkbox">
-                <input type="checkbox" required name="consent_terms" value="yes" />
-                I authorize PPD Technology to verify the information provided for the purpose of merchant account underwriting and setup.
-              </label>
-              <label class="su-checkbox">
-                <input type="checkbox" name="consent_contact" value="yes" />
-                I agree to be contacted by a PPD Technology specialist regarding my application.
-              </label>
+              <label class="su-checkbox"><input type="checkbox" required name="consent_accurate" value="yes" /> I certify that all information provided is accurate and complete to the best of my knowledge.</label>
+              <label class="su-checkbox"><input type="checkbox" required name="consent_terms" value="yes" /> I authorize PPD Technology to verify the information provided and to initiate the merchant account setup process.</label>
+              <label class="su-checkbox"><input type="checkbox" name="consent_contact" value="yes" /> I agree to be contacted by a PPD Technology specialist regarding my application.</label>
             </fieldset>
-
-            <div class="su-secure-banner su-secure-banner--sm">
-              <i class="fa-solid fa-lock"></i>
-              <span>Your application is encrypted and submitted securely. A specialist may follow up for any final documentation.</span>
-            </div>
-
             <div class="su-pane__actions">
               <button type="button" class="su-btn su-btn--ghost" data-prev><i class="fa-solid fa-arrow-left"></i> Back</button>
-              <button type="submit" class="su-btn su-btn--primary su-btn--lg"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
+              <button type="submit" class="su-btn su-btn--submit" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
             </div>
           </div>
+
+          <div aria-live="polite" class="su-sr-only" id="formStatus"></div>
         </form>
 
-        <div id="successBlock" class="su-success" hidden>
+        <div class="su-success" id="successState" hidden>
           <div class="su-success__icon"><i class="fa-solid fa-circle-check"></i></div>
-          <h2>Application Received</h2>
-          <p class="su-success__msg">Thank you for submitting your merchant processing application. Our underwriting team has received your information and will begin their review.</p>
+          <h3>Application Submitted Successfully</h3>
+          <p>Thank you for applying. Our team will review your application and a specialist will reach out within 1-2 business days.</p>
           <div class="su-success__steps">
-            <div class="su-success__step">
-              <div class="su-success__step-num">1</div>
-              <div>
-                <strong>Application Review</strong>
-                <p>Our team will review your business details and processing profile within 1–2 business days.</p>
-              </div>
-            </div>
-            <div class="su-success__step">
-              <div class="su-success__step-num">2</div>
-              <div>
-                <strong>Specialist Follow-Up</strong>
-                <p>A dedicated specialist will contact you to discuss your account, answer questions, and finalize setup.</p>
-              </div>
-            </div>
-            <div class="su-success__step">
-              <div class="su-success__step-num">3</div>
-              <div>
-                <strong>Account Activation</strong>
-                <p>Once approved, your merchant account will be set up, equipment shipped, and you can begin processing.</p>
-              </div>
-            </div>
+            <div class="su-success__step"><span class="su-success__num">1</span><div><strong>Application Received</strong><small>Your data has been securely transmitted</small></div></div>
+            <div class="su-success__step"><span class="su-success__num">2</span><div><strong>Underwriting Review</strong><small>Our team reviews your business profile</small></div></div>
+            <div class="su-success__step"><span class="su-success__num">3</span><div><strong>Specialist Contact</strong><small>A dedicated rep follows up with next steps</small></div></div>
           </div>
-          <p class="su-success__tip"><i class="fa-solid fa-lightbulb"></i> Have your voided check or bank letter ready — our specialist may request it during the review.</p>
           <div class="su-success__ctas">
-            <a href="tel:+18005551234" class="su-btn su-btn--outline"><i class="fa-solid fa-phone"></i> Call Support</a>
-            <a href="mailto:support@ppdtechnology.com" class="su-btn su-btn--outline"><i class="fa-solid fa-envelope"></i> Email Support</a>
-            <button type="button" class="su-btn su-btn--primary" id="newAppBtn">Start New Application</button>
+            <a href="/" class="su-btn su-btn--primary"><i class="fa-solid fa-house"></i> Return Home</a>
+            <a href="/customer-support" class="su-btn su-btn--outline"><i class="fa-solid fa-headset"></i> Contact Support</a>
           </div>
         </div>
-
-        <p id="formStatus" class="su-status-msg"></p>
       </div>
     </section>
 
@@ -675,36 +404,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="su-why__inner">
         <h2>Why Businesses Apply with PPD Technology</h2>
         <div class="su-why__grid">
-          <div class="su-why__card">
-            <i class="fa-solid fa-headset"></i>
-            <h4>Personalized Support</h4>
-            <p>A dedicated specialist guides you from application through onboarding and beyond.</p>
-          </div>
-          <div class="su-why__card">
-            <i class="fa-solid fa-sliders"></i>
-            <h4>Tailored Solutions</h4>
-            <p>Payment processing, POS, and gateway solutions configured for your specific business type.</p>
-          </div>
-          <div class="su-why__card">
-            <i class="fa-solid fa-cash-register"></i>
-            <h4>POS & Terminal Options</h4>
-            <p>Choose from leading hardware brands — Dejavoo, NRS, KORONA, Clover, and more.</p>
-          </div>
-          <div class="su-why__card">
-            <i class="fa-solid fa-gauge-high"></i>
-            <h4>Fast Underwriting</h4>
-            <p>Streamlined review process with most applications processed within 1–2 business days.</p>
-          </div>
-          <div class="su-why__card">
-            <i class="fa-solid fa-bolt"></i>
-            <h4>Next-Day Funding</h4>
-            <p>Eligible businesses receive deposits as fast as the next business day.</p>
-          </div>
-          <div class="su-why__card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h4>Enterprise Security</h4>
-            <p>PCI Level 1 compliance, encryption, tokenization, and chargeback monitoring built in.</p>
-          </div>
+          <div class="su-why__card"><i class="fa-solid fa-shield-halved"></i><h4>Secure Application</h4><p>Bank-grade encryption protects every field from submission to underwriting review.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-sliders"></i><h4>Tailored Solutions</h4><p>We match your business with the right POS, terminal, or gateway from day one.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-bolt"></i><h4>Fast Underwriting</h4><p>Most applications are reviewed and approved within 24-48 hours.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-money-bill-transfer"></i><h4>Next-Day Funding</h4><p>Eligible merchants receive deposits as early as the next business day.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-headset"></i><h4>Dedicated Specialist</h4><p>Every applicant is assigned a real person who guides them through setup.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-handshake"></i><h4>No Hidden Fees</h4><p>Transparent pricing with no surprise charges or long-term contracts required.</p></div>
         </div>
       </div>
     </section>
@@ -713,648 +418,420 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="su-faq__inner">
         <h2>Frequently Asked Questions</h2>
         <div class="su-faq__list">
-          <details class="su-faq__item">
-            <summary>What information is required to apply?</summary>
-            <p>You'll need your legal business information (name, EIN, address), owner details (name, SSN last 4, DOB), processing volume estimates, and bank routing and account numbers for deposit setup.</p>
-          </details>
-          <details class="su-faq__item">
-            <summary>Why do you need my routing and account number?</summary>
-            <p>Your bank information is required to set up your deposit account so that processed funds can be deposited directly into your business bank account. This information is transmitted securely and used exclusively for funding setup.</p>
-          </details>
-          <details class="su-faq__item">
-            <summary>How secure is my information?</summary>
-            <p>All data submitted through this application is protected with 256-bit SSL encryption. We are a PCI Level 1 compliant organization and follow strict data handling protocols. Your information is used solely for merchant account underwriting and setup.</p>
-          </details>
-          <details class="su-faq__item">
-            <summary>What happens after I apply?</summary>
-            <p>After you submit your application, our underwriting team reviews your information. A dedicated specialist will contact you within 1–2 business days to discuss your account, finalize details, and complete the onboarding process.</p>
-          </details>
-          <details class="su-faq__item">
-            <summary>Will someone contact me if something is missing?</summary>
-            <p>Yes. If any information is incomplete or additional documentation is needed (such as a voided check or business license), a specialist will reach out to you directly to collect the required items.</p>
-          </details>
-          <details class="su-faq__item">
-            <summary>How long does approval take?</summary>
-            <p>Most applications are reviewed within 1–2 business days. Some complex business types may require additional review, but your specialist will keep you informed throughout the process.</p>
-          </details>
+          <details class="su-faq__item"><summary>How long does the application take?</summary><p>Most applicants complete the form in 5-10 minutes. Have your EIN, bank details, and owner information ready for the fastest experience.</p></details>
+          <details class="su-faq__item"><summary>Is my information secure?</summary><p>Absolutely. All data is encrypted with 256-bit SSL and transmitted securely. We never store sensitive credentials beyond what is required for account setup.</p></details>
+          <details class="su-faq__item"><summary>What happens after I submit?</summary><p>Our underwriting team reviews your application, typically within 24-48 hours. A dedicated specialist will contact you with approval details and next steps.</p></details>
+          <details class="su-faq__item"><summary>Can I change my product selection later?</summary><p>Yes. Your specialist can help you adjust your equipment or solution during the setup process after approval.</p></details>
+          <details class="su-faq__item"><summary>Do I need a business bank account?</summary><p>A business checking account is required for deposit setup. If you only have a personal account, contact us to discuss options.</p></details>
+          <details class="su-faq__item"><summary>Is there a contract or cancellation fee?</summary><p>PPD Technology offers flexible terms. Your specialist will go over all pricing and terms before your account is activated.</p></details>
         </div>
       </div>
     </section>
 
-    <section class="su-cta-band">
-      <div class="su-cta-band__inner">
-        <h2>Ready to Get Started?</h2>
-        <p>Complete your application today and a specialist will be in touch shortly.</p>
-        <a href="#application" class="su-btn su-btn--primary su-btn--lg"><i class="fa-solid fa-rocket"></i> Start Your Application</a>
-      </div>
-    </section>
-
-    <div class="su-sticky-cta" id="stickyCta">
-      <a href="#application" class="su-btn su-btn--primary su-btn--sticky"><i class="fa-solid fa-pen-to-square"></i> Apply Now</a>
-    </div>
-
   </section>
 
+  <div class="su-mobile-sticky" id="mobileCta">
+    <a href="#application" class="su-btn su-btn--primary su-btn--full"><i class="fa-solid fa-rocket"></i> Apply Now</a>
+  </div>
+
   <style>
-    .su-page{
-      --navy:#060E21;--navy-2:#0C1A38;--blue:#1549FF;--blue-mid:#2D60FF;
-      --cyan:#00CFFF;--green:#00E5A0;--surface:#F5F8FF;
-      --card-bg:rgba(255,255,255,.04);--card-border:rgba(255,255,255,.08);
-      --text-primary:rgba(255,255,255,.92);--text-secondary:rgba(255,255,255,.6);
-      --radius:16px;--t:.22s cubic-bezier(.2,.8,.2,1);
-      font-family:Inter,system-ui,-apple-system,sans-serif;
-      background:var(--navy);color:var(--text-primary);
-      line-height:1.6;-webkit-font-smoothing:antialiased;
-    }
-    .su-page *{box-sizing:border-box}
-    .su-page [hidden]{display:none!important}
+    :root{--su-navy:#060E21;--su-navy2:#0C1A38;--su-blue:#1549FF;--su-blue-mid:#2D60FF;--su-cyan:#00CFFF;--su-green:#00E5A0;--su-surface:#F5F8FF;--su-radius:12px;--su-font:'Inter',system-ui,sans-serif}
+    .su-page{font-family:var(--su-font);color:#fff;background:var(--su-navy)}
+    .su-page *,.su-page *::before,.su-page *::after{box-sizing:border-box}
+    .su-grad{background:linear-gradient(135deg,var(--su-cyan),var(--su-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .su-badge{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:6px 16px;border-radius:99px;background:rgba(0,207,255,.08);color:var(--su-cyan);border:1px solid rgba(0,207,255,.2)}
+    .su-req{color:#ff4d6a}
+    .su-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-    .su-grad{background:linear-gradient(135deg,var(--cyan),var(--blue-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .su-green{color:var(--green)!important}
+    .su-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--su-font);font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:var(--su-radius);border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+    .su-btn--primary{background:linear-gradient(135deg,var(--su-blue),var(--su-blue-mid));color:#fff}
+    .su-btn--primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(21,73,255,.35)}
+    .su-btn--outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
+    .su-btn--outline:hover{border-color:var(--su-cyan);color:var(--su-cyan)}
+    .su-btn--ghost{background:transparent;color:rgba(255,255,255,.6);padding:14px 20px}
+    .su-btn--ghost:hover{color:#fff}
+    .su-btn--submit{background:linear-gradient(135deg,var(--su-green),#00c98a);color:var(--su-navy);font-size:1.05rem;padding:16px 32px}
+    .su-btn--submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,160,.35)}
+    .su-btn--full{width:100%;justify-content:center}
 
-    .su-badge{
-      display:inline-flex;align-items:center;gap:8px;
-      background:rgba(0,207,255,.08);border:1px solid rgba(0,207,255,.2);
-      color:var(--cyan);border-radius:999px;padding:8px 18px;
-      font-size:13px;font-weight:600;letter-spacing:.02em;
-    }
-    .su-badge--sm{font-size:12px;padding:6px 14px}
-    .su-req{color:#ef4444;font-weight:700}
+    .su-hero{padding:80px 24px 60px;background:linear-gradient(170deg,var(--su-navy) 0%,var(--su-navy2) 100%);overflow:hidden;position:relative}
+    .su-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,207,255,.06) 0%,transparent 70%);pointer-events:none}
+    .su-hero__inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .su-hero__text h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;margin:16px 0 20px}
+    .su-hero__sub{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin-bottom:32px}
+    .su-hero__ctas{display:flex;gap:16px;flex-wrap:wrap}
 
-    .su-btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;
-      cursor:pointer;border:none;font-family:inherit;
-      transition:transform var(--t),box-shadow var(--t),background var(--t);
-      min-height:48px;text-decoration:none;
-    }
-    .su-btn--primary{
-      background:linear-gradient(135deg,var(--blue-mid),var(--blue));color:#fff;
-      box-shadow:0 8px 28px rgba(21,73,255,.35);
-    }
-    .su-btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(21,73,255,.45)}
-    .su-btn--outline{
-      background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text-primary);
-    }
-    .su-btn--outline:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04)}
-    .su-btn--ghost{
-      background:rgba(255,255,255,.06);color:var(--text-primary);
-      border:1px solid rgba(255,255,255,.1);
-    }
-    .su-btn--ghost:hover{background:rgba(255,255,255,.1)}
-    .su-btn--lg{padding:16px 36px;font-size:16px}
+    .su-journey{position:relative;display:flex;flex-direction:column;gap:8px;padding:20px 0}
+    .su-journey__line{position:absolute;left:22px;top:32px;bottom:32px;width:2px;background:linear-gradient(180deg,var(--su-green),var(--su-cyan),rgba(255,255,255,.1));border-radius:2px}
+    .su-journey__node{display:flex;align-items:center;gap:16px;opacity:0;animation:nodeIn .5s ease forwards;animation-delay:var(--delay)}
+    @keyframes nodeIn{to{opacity:1;transform:translateX(0)}}
+    .su-journey__node{transform:translateX(20px)}
+    .su-journey__dot{width:44px;height:44px;min-width:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;background:var(--su-navy2);border:2px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);position:relative;z-index:2;transition:all .3s}
+    .su-journey__node--done .su-journey__dot{background:linear-gradient(135deg,var(--su-green),#00c98a);border-color:var(--su-green);color:var(--su-navy)}
+    .su-journey__node--active .su-journey__dot{background:linear-gradient(135deg,var(--su-cyan),var(--su-blue));border-color:var(--su-cyan);color:#fff;box-shadow:0 0 20px rgba(0,207,255,.4)}
+    .su-journey__card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:14px 18px;display:flex;align-items:center;gap:14px;flex:1;transition:all .3s}
+    .su-journey__card--glow{background:rgba(0,207,255,.06);border-color:rgba(0,207,255,.2);box-shadow:0 0 30px rgba(0,207,255,.08)}
+    .su-journey__icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;background:rgba(255,255,255,.06);color:var(--su-cyan)}
+    .su-journey__node--done .su-journey__icon{background:rgba(0,229,160,.1);color:var(--su-green)}
+    .su-journey__card strong{display:block;font-size:.85rem;font-weight:600;color:#fff}
+    .su-journey__card small{font-size:.75rem;color:rgba(255,255,255,.4)}
+    .su-journey__glow{position:absolute;top:50%;left:50%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,207,255,.08),transparent 70%);transform:translate(-50%,-50%);pointer-events:none;border-radius:50%}
 
-    /* Hero */
-    .su-hero{
-      padding:80px 0 40px;
-      background:radial-gradient(ellipse 80% 50% at 70% 20%,rgba(21,73,255,.15),transparent 60%),
-                  radial-gradient(ellipse 60% 40% at 20% 80%,rgba(0,207,255,.08),transparent 50%);
-      position:relative;overflow:hidden;
-    }
-    .su-hero::before{
-      content:"";position:absolute;inset:0;
-      background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);
-      background-size:32px 32px;pointer-events:none;
-    }
-    .su-hero__inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    .su-hero__text h1{font-size:clamp(28px,4.5vw,44px);line-height:1.15;margin:16px 0;font-weight:800}
-    .su-hero__sub{color:var(--text-secondary);font-size:clamp(15px,2vw,18px);margin-bottom:28px;max-width:520px}
-    .su-hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .su-trust{background:var(--su-navy2);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);padding:20px 24px}
+    .su-trust__inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+    .su-trust__item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.5);white-space:nowrap}
+    .su-trust__item i{color:var(--su-cyan);font-size:.9rem}
 
-    .su-hero__mockup{position:relative}
-    .su-mockup-card{
-      background:rgba(12,26,56,.8);border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;overflow:hidden;backdrop-filter:blur(20px);
-    }
-    .su-mockup__bar{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .su-dot{width:10px;height:10px;border-radius:50%}
-    .su-dot--r{background:#ff5f57}.su-dot--y{background:#ffbd2e}.su-dot--g{background:#28ca42}
-    .su-mockup__title{margin-left:auto;font-size:12px;color:var(--text-secondary);font-weight:500}
-    .su-mockup__body{padding:24px}
-    .su-mockup__row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
-    .su-mockup__stat{
-      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
-      border-radius:12px;padding:14px 16px;
-    }
-    .su-mockup__stat small{color:var(--text-secondary);font-size:11px;display:block;margin-bottom:4px}
-    .su-mockup__stat strong{font-size:16px}
-    .su-mockup__progress{margin-bottom:20px}
-    .su-mockup__pbar{height:6px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin-bottom:8px}
-    .su-mockup__pfill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px}
-    .su-mockup__progress small{color:var(--text-secondary);font-size:12px}
-    .su-mockup__checklist{display:flex;flex-direction:column;gap:10px}
-    .su-check{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.35)}
-    .su-check i{font-size:15px}
-    .su-check--done{color:var(--green)}
-    .su-check--done i{color:var(--green)}
-    .su-check--active{color:var(--cyan)}
-    .su-check--active i{color:var(--cyan)}
+    .su-process{padding:80px 24px;background:var(--su-navy)}
+    .su-process__inner{max-width:1000px;margin:0 auto;text-align:center}
+    .su-process__inner h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:48px}
+    .su-process__grid{display:flex;align-items:center;gap:24px;justify-content:center}
+    .su-process__card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:32px 28px;flex:1;text-align:left}
+    .su-process__num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--su-blue),var(--su-blue-mid));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;margin-bottom:16px}
+    .su-process__card h4{font-size:1rem;font-weight:700;margin:0 0 8px}
+    .su-process__card p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.6;margin:0}
+    .su-process__arrow{color:rgba(255,255,255,.15);font-size:1.2rem;flex-shrink:0}
 
-    .su-float{
-      position:absolute;display:flex;align-items:center;gap:12px;
-      background:rgba(12,26,56,.9);border:1px solid rgba(255,255,255,.1);
-      border-radius:14px;padding:14px 18px;backdrop-filter:blur(12px);
-      animation:su-bob 4s ease-in-out infinite;
-    }
-    .su-float i{color:var(--cyan);font-size:20px}
-    .su-float strong{display:block;font-size:13px}
-    .su-float small{display:block;font-size:11px;color:var(--text-secondary)}
-    .su-float--1{bottom:-10px;left:-20px;animation-delay:0s}
-    .su-float--2{top:10px;right:-20px;animation-delay:2s}
-    @keyframes su-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-
-    /* Trust Strip */
-    .su-trust{
-      background:var(--navy-2);border-top:1px solid rgba(255,255,255,.04);
-      border-bottom:1px solid rgba(255,255,255,.04);padding:20px 0;
-    }
-    .su-trust__inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 32px}
-    .su-trust__item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-secondary)}
-    .su-trust__item i{color:var(--cyan);font-size:16px}
-
-    /* Prepare Section */
-    .su-prepare{padding:80px 0;background:var(--navy)}
-    .su-prepare__inner{max-width:1200px;margin:0 auto;padding:0 24px}
-    .su-prepare__head{text-align:center;margin-bottom:48px}
-    .su-prepare__head h2{font-size:clamp(24px,4vw,36px);margin:16px 0 8px}
-    .su-prepare__head p{color:var(--text-secondary);font-size:16px;max-width:560px;margin:0 auto}
-    .su-prepare__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .su-prep-card{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);padding:28px 24px;
-      transition:transform var(--t),border-color var(--t);
-    }
-    .su-prep-card:hover{transform:translateY(-4px);border-color:rgba(0,207,255,.2)}
-    .su-prep-card__icon{
-      width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
-      background:rgba(21,73,255,.12);margin-bottom:16px;font-size:20px;color:var(--cyan);
-    }
-    .su-prep-card h4{font-size:16px;margin-bottom:6px}
-    .su-prep-card p{font-size:14px;color:var(--text-secondary);line-height:1.5}
-
-    /* Form Section */
-    .su-form-section{
-      padding:80px 0;
-      background:radial-gradient(ellipse 60% 30% at 50% 0%,rgba(21,73,255,.08),transparent 50%);
-    }
-    .su-form-section__inner{max-width:820px;margin:0 auto;padding:0 24px}
+    .su-form-section{padding:80px 24px;background:linear-gradient(180deg,var(--su-navy) 0%,var(--su-navy2) 100%)}
+    .su-form-section__inner{max-width:780px;margin:0 auto}
     .su-form-section__head{text-align:center;margin-bottom:40px}
-    .su-form-section__head h2{font-size:clamp(24px,4vw,34px);margin-bottom:8px}
-    .su-form-section__head p{color:var(--text-secondary);font-size:15px;max-width:520px;margin:0 auto}
+    .su-form-section__head h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:12px}
+    .su-form-section__head p{color:rgba(255,255,255,.5);font-size:.95rem}
 
-    /* Stepper */
-    .su-stepper{margin-bottom:36px;position:relative}
-    .su-stepper__track{height:4px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin-bottom:16px}
-    .su-stepper__fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px;transition:width .4s ease}
+    .su-stepper{margin-bottom:32px}
+    .su-stepper__track{height:4px;background:rgba(255,255,255,.06);border-radius:4px;margin-bottom:16px;overflow:hidden}
+    .su-stepper__fill{height:100%;background:linear-gradient(90deg,var(--su-blue),var(--su-cyan));border-radius:4px;transition:width .4s;width:0%}
     .su-stepper__labels{display:flex;justify-content:space-between}
-    .su-stepper__step{
-      display:flex;flex-direction:column;align-items:center;gap:6px;
-      background:none;border:none;cursor:pointer;font-family:inherit;color:rgba(255,255,255,.3);
-      transition:color var(--t);padding:0;
-    }
-    .su-stepper__step.active{color:var(--cyan)}
-    .su-stepper__step.completed{color:var(--green)}
-    .su-stepper__num{
-      width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
-      font-size:13px;font-weight:700;
-      background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.1);
-      transition:all var(--t);
-    }
-    .su-stepper__step.active .su-stepper__num{background:rgba(0,207,255,.15);border-color:var(--cyan);color:var(--cyan)}
-    .su-stepper__step.completed .su-stepper__num{background:rgba(0,229,160,.15);border-color:var(--green);color:var(--green)}
-    .su-stepper__label{font-size:11px;font-weight:600;letter-spacing:.03em}
+    .su-stepper__step{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:var(--su-font);transition:all .2s;padding:4px}
+    .su-stepper__num{width:28px;height:28px;border-radius:50%;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:rgba(255,255,255,.3);transition:all .2s}
+    .su-stepper__label{font-size:.7rem;color:rgba(255,255,255,.3);font-weight:500;transition:all .2s}
+    .su-stepper__step.active .su-stepper__num{background:linear-gradient(135deg,var(--su-blue),var(--su-blue-mid));color:#fff}
+    .su-stepper__step.active .su-stepper__label{color:#fff}
+    .su-stepper__step.done .su-stepper__num{background:var(--su-green);color:var(--su-navy)}
+    .su-stepper__step.done .su-stepper__label{color:var(--su-green)}
 
-    /* Form Panes */
-    .su-form{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;padding:32px;position:relative;
-    }
-    .su-form::before{
-      content:"";position:absolute;inset:-1px;border-radius:20px;
-      background:linear-gradient(180deg,rgba(21,73,255,.15),transparent 40%);
-      z-index:-1;pointer-events:none;
-    }
-    .su-pane__header{
-      display:flex;align-items:flex-start;gap:16px;
-      margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .su-pane__header>i{
-      flex-shrink:0;width:44px;height:44px;display:grid;place-items:center;
-      background:rgba(21,73,255,.12);border-radius:12px;font-size:18px;color:var(--cyan);
-    }
-    .su-pane__header h3{font-size:20px;margin-bottom:4px}
-    .su-pane__header p{font-size:14px;color:var(--text-secondary);margin:0}
-    .su-pane__header--secure>i{background:rgba(0,229,160,.12);color:var(--green)}
+    .su-form{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;position:relative}
+    .su-pane__header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .su-pane__header>i{font-size:1.5rem;color:var(--su-cyan);margin-top:2px}
+    .su-pane__header h3{font-size:1.2rem;font-weight:700;margin:0 0 4px}
+    .su-pane__header p{font-size:.88rem;color:rgba(255,255,255,.45);margin:0}
+    .su-pane__header--secure{background:rgba(0,229,160,.04);border-radius:var(--su-radius);padding:16px;border-bottom:none;margin-bottom:20px}
+    .su-pane__header--secure>i{color:var(--su-green)}
 
+    .su-field{margin-bottom:20px}
+    .su-field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,.8)}
+    .su-field input,.su-field select,.su-field textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;font-family:var(--su-font);font-size:.92rem;transition:border-color .2s,box-shadow .2s}
+    .su-field input:focus,.su-field select:focus,.su-field textarea:focus{outline:none;border-color:var(--su-cyan);box-shadow:0 0 0 3px rgba(0,207,255,.1)}
+    .su-field input.su-invalid,.su-field select.su-invalid,.su-field textarea.su-invalid{border-color:#ff4d6a;box-shadow:0 0 0 3px rgba(255,77,106,.1)}
+    .su-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,.4)' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+    .su-field select option{background:var(--su-navy2);color:#fff}
     .su-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-
-    .su-field{margin-bottom:16px}
-    .su-field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-primary)}
-    .su-page input,.su-page select,.su-page textarea{
-      width:100%;background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);border-radius:10px;
-      padding:12px 16px;font-size:15px;color:#fff;
-      font-family:inherit;min-height:48px;
-      transition:border-color var(--t),box-shadow var(--t);
-    }
-    .su-page textarea{min-height:80px;resize:vertical}
-    .su-page select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-    .su-page select option{background:var(--navy-2);color:#fff}
-    .su-page input::placeholder,.su-page textarea::placeholder{color:rgba(255,255,255,.25)}
-    .su-page input:focus,.su-page select:focus,.su-page textarea:focus{
-      outline:none;border-color:var(--cyan);
-      box-shadow:0 0 0 3px rgba(0,207,255,.12);
-    }
-    .su-page input.su-invalid,.su-page select.su-invalid{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.12)}
-
     .su-input-icon{position:relative}
-    .su-input-icon i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:rgba(255,255,255,.3)}
-    .su-input-icon input{padding-left:38px}
+    .su-input-icon i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.3);font-size:.85rem}
+    .su-input-icon input{padding-left:36px}
 
-    .su-secure-banner{
-      display:flex;align-items:center;gap:12px;
-      background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15);
-      border-radius:12px;padding:14px 18px;margin-bottom:24px;
-      font-size:13px;color:var(--green);
-    }
-    .su-secure-banner i{font-size:18px;flex-shrink:0}
-    .su-secure-banner--sm{margin-top:16px;margin-bottom:0;font-size:12px;padding:12px 16px}
+    .su-secure-banner{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:var(--su-radius);background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15);margin-bottom:24px;font-size:.85rem;color:var(--su-green)}
+    .su-secure-banner i{font-size:1.1rem}
 
-    .su-fieldset{border:none;padding:0;margin:0 0 20px}
-    .su-fieldset legend{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text-primary)}
-    .su-fieldset--consent{margin-top:20px}
-
+    .su-fieldset{border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:20px;margin:0 0 20px}
+    .su-fieldset legend{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.7);padding:0 8px}
     .su-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .su-checkbox{
-      display:flex;align-items:flex-start;gap:10px;
-      font-size:14px;color:var(--text-secondary);cursor:pointer;
-      padding:10px 12px;border-radius:10px;
-      transition:background var(--t);
-    }
-    .su-checkbox:hover{background:rgba(255,255,255,.03)}
-    .su-checkbox input[type="checkbox"]{
-      width:18px;height:18px;min-height:18px;
-      accent-color:var(--cyan);flex-shrink:0;margin-top:1px;
-    }
-
-    .su-equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .su-equip-card{
-      display:flex;flex-direction:column;align-items:center;gap:8px;
-      padding:20px 12px;border-radius:14px;cursor:pointer;
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-      text-align:center;transition:all var(--t);font-size:13px;font-weight:500;
-    }
-    .su-equip-card:hover{border-color:rgba(0,207,255,.25);background:rgba(0,207,255,.04)}
-    .su-equip-card:has(input:checked){border-color:var(--cyan);background:rgba(0,207,255,.08)}
-    .su-equip-card input{display:none}
-    .su-equip-card i{font-size:24px;color:var(--cyan)}
+    .su-checkbox{display:flex;align-items:center;gap:8px;font-size:.88rem;color:rgba(255,255,255,.7);cursor:pointer;padding:6px 0}
+    .su-checkbox input[type="checkbox"]{accent-color:var(--su-cyan);width:16px;height:16px}
 
     .su-disclosure{margin:20px 0}
-    .su-disclosure__toggle{
-      display:flex;align-items:center;gap:8px;background:none;border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;padding:14px 18px;color:var(--cyan);font-size:14px;font-weight:600;
-      cursor:pointer;width:100%;font-family:inherit;transition:background var(--t);
-    }
-    .su-disclosure__toggle:hover{background:rgba(255,255,255,.03)}
-    .su-disclosure__chevron{margin-left:auto;transition:transform .3s}
-    .su-disclosure__toggle.open .su-disclosure__chevron{transform:rotate(180deg)}
-    .su-disclosure__body{padding:16px 0 0}
+    .su-disclosure__toggle{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--su-radius);padding:14px 18px;color:var(--su-cyan);font-family:var(--su-font);font-size:.9rem;font-weight:600;cursor:pointer;width:100%;transition:all .2s}
+    .su-disclosure__toggle:hover{background:rgba(255,255,255,.06)}
+    .su-disclosure__chevron{margin-left:auto;transition:transform .2s;font-size:.75rem}
+    .su-disclosure__toggle[aria-expanded="true"] .su-disclosure__chevron{transform:rotate(180deg)}
+    .su-disclosure__body{padding:20px 0 0}
 
-    .su-pane__actions{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+    .su-fieldset--consent{border-color:rgba(255,255,255,.08)}
+    .su-fieldset--consent .su-checkbox{padding:8px 0;line-height:1.5}
 
-    /* Review Summary */
-    .su-review{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:14px;padding:24px;margin-bottom:20px;
-    }
-    .su-review__section{margin-bottom:20px}
-    .su-review__section:last-child{margin-bottom:0}
-    .su-review__section h4{font-size:14px;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-    .su-review__section h4 i{font-size:14px}
-    .su-review__row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
-    .su-review__row:last-child{border-bottom:none}
-    .su-review__label{color:var(--text-secondary)}
-    .su-review__value{color:var(--text-primary);font-weight:500;text-align:right;max-width:60%}
+    .su-pane__actions{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
 
-    /* Success */
-    .su-success{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;padding:48px 32px;text-align:center;
-    }
-    .su-success__icon{font-size:64px;color:var(--green);margin-bottom:16px}
-    .su-success h2{font-size:28px;margin-bottom:12px}
-    .su-success__msg{color:var(--text-secondary);max-width:520px;margin:0 auto 32px;font-size:16px}
-    .su-success__steps{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-      text-align:left;margin-bottom:32px;
-    }
-    .su-success__step{
-      display:flex;gap:14px;
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:14px;padding:20px;
-    }
-    .su-success__step-num{
-      width:32px;height:32px;min-width:32px;border-radius:50%;
-      display:grid;place-items:center;font-size:14px;font-weight:700;
-      background:rgba(0,229,160,.12);color:var(--green);
-    }
-    .su-success__step strong{display:block;margin-bottom:4px;font-size:14px}
-    .su-success__step p{font-size:13px;color:var(--text-secondary);margin:0}
-    .su-success__tip{
-      display:inline-flex;align-items:center;gap:8px;
-      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.15);
-      border-radius:12px;padding:12px 20px;font-size:13px;margin-bottom:24px;
-      color:var(--text-secondary);
-    }
-    .su-success__tip i{color:var(--cyan)}
-    .su-success__ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .su-prod-section{margin-bottom:20px}
+    .su-prod-label{display:block;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:12px}
+    .su-prod-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .su-filter-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;padding:8px 18px;font-family:var(--su-font);font-size:.82rem;font-weight:500;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+    .su-filter-btn.active,.su-filter-btn:hover{background:rgba(21,73,255,.15);border-color:var(--su-blue);color:#fff}
+    .su-prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:16px}
+    .su-prod-card{position:relative;cursor:pointer;display:block}
+    .su-prod-card input[type="radio"]{position:absolute;opacity:0;width:0;height:0}
+    .su-prod-card__inner{background:rgba(255,255,255,.03);border:2px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:16px;text-align:center;transition:all .25s;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%}
+    .su-prod-card__inner img{width:100%;max-width:140px;height:90px;object-fit:contain;border-radius:8px;margin-bottom:4px}
+    .su-prod-card__inner strong{font-size:.88rem;color:#fff;display:block}
+    .su-prod-card__inner small{font-size:.76rem;color:rgba(255,255,255,.4);line-height:1.4;display:block}
+    .su-prod-card__iconbox{width:60px;height:60px;border-radius:12px;background:linear-gradient(135deg,rgba(21,73,255,.15),rgba(0,207,255,.1));display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--su-cyan);margin-bottom:4px}
+    .su-prod-card__check{position:absolute;top:10px;right:10px;opacity:0;font-size:1.1rem;color:var(--su-green);transition:opacity .2s}
+    .su-prod-card:hover .su-prod-card__inner{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.05)}
+    .su-prod-card input:checked ~ .su-prod-card__inner{border-color:var(--su-cyan);background:rgba(0,207,255,.06);box-shadow:0 0 20px rgba(0,207,255,.1)}
+    .su-prod-card input:checked ~ .su-prod-card__check{opacity:1}
+    .su-prod-card[hidden]{display:none}
 
-    .su-status-msg{text-align:center;color:#ef4444;margin-top:12px;font-size:14px}
+    .su-selected-summary{margin-top:4px}
+    .su-selected-summary__inner{display:flex;align-items:center;gap:12px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.15);border-radius:var(--su-radius);padding:14px 18px}
+    .su-selected-summary__inner>i{color:var(--su-green);font-size:1.2rem}
+    .su-selected-summary__inner strong{color:#fff;font-size:.92rem;display:block}
+    .su-selected-summary__inner small{color:rgba(255,255,255,.4);font-size:.78rem}
+    .su-selected-summary__clear{margin-left:auto;background:none;border:1px solid rgba(255,255,255,.15);border-radius:6px;color:rgba(255,255,255,.6);padding:6px 14px;font-size:.8rem;font-family:var(--su-font);cursor:pointer;transition:all .2s}
+    .su-selected-summary__clear:hover{border-color:var(--su-cyan);color:var(--su-cyan)}
 
-    /* Why Section */
-    .su-why{padding:80px 0;background:var(--navy-2)}
-    .su-why__inner{max-width:1200px;margin:0 auto;padding:0 24px}
-    .su-why__inner h2{text-align:center;font-size:clamp(24px,4vw,34px);margin-bottom:40px}
-    .su-why__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .su-why__card{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);padding:28px 24px;
-      transition:transform var(--t),border-color var(--t);
-    }
-    .su-why__card:hover{transform:translateY(-4px);border-color:rgba(0,207,255,.2)}
-    .su-why__card i{font-size:24px;color:var(--cyan);margin-bottom:14px;display:block}
-    .su-why__card h4{font-size:16px;margin-bottom:6px}
-    .su-why__card p{font-size:14px;color:var(--text-secondary)}
+    .su-review{margin-bottom:24px}
+    .su-review__group{margin-bottom:16px}
+    .su-review__group h4{font-size:.9rem;font-weight:700;color:var(--su-cyan);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+    .su-review__row{display:grid;grid-template-columns:180px 1fr;gap:4px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.85rem}
+    .su-review__row dt{color:rgba(255,255,255,.45)}
+    .su-review__row dd{color:#fff;margin:0}
 
-    /* FAQ */
-    .su-faq{padding:80px 0;background:var(--navy)}
-    .su-faq__inner{max-width:740px;margin:0 auto;padding:0 24px}
-    .su-faq__inner h2{text-align:center;font-size:clamp(24px,4vw,34px);margin-bottom:36px}
-    .su-faq__item{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:14px;margin-bottom:12px;overflow:hidden;
-      transition:border-color var(--t);
-    }
-    .su-faq__item:hover{border-color:rgba(255,255,255,.12)}
-    .su-faq__item[open]{border-color:rgba(0,207,255,.2)}
-    .su-faq__item summary{
-      padding:18px 24px;cursor:pointer;font-weight:600;font-size:15px;
-      list-style:none;display:flex;justify-content:space-between;align-items:center;
-    }
+    .su-success{text-align:center;padding:60px 20px}
+    .su-success__icon{font-size:3.5rem;color:var(--su-green);margin-bottom:20px}
+    .su-success h3{font-size:1.6rem;font-weight:800;margin:0 0 12px}
+    .su-success p{color:rgba(255,255,255,.5);font-size:1rem;max-width:520px;margin:0 auto 36px}
+    .su-success__steps{display:flex;gap:20px;justify-content:center;margin-bottom:36px;flex-wrap:wrap}
+    .su-success__step{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:16px 20px}
+    .su-success__num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--su-blue),var(--su-blue-mid));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+    .su-success__step strong{font-size:.88rem;display:block}
+    .su-success__step small{font-size:.78rem;color:rgba(255,255,255,.4)}
+    .su-success__ctas{display:flex;gap:16px;justify-content:center}
+
+    .su-why{padding:80px 24px;background:var(--su-navy2)}
+    .su-why__inner{max-width:1100px;margin:0 auto;text-align:center}
+    .su-why__inner h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:48px}
+    .su-why__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .su-why__card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);padding:32px 24px;text-align:left;transition:all .3s}
+    .su-why__card:hover{border-color:rgba(0,207,255,.2);transform:translateY(-4px)}
+    .su-why__card i{font-size:1.4rem;color:var(--su-cyan);margin-bottom:16px;display:block}
+    .su-why__card h4{font-size:1rem;font-weight:700;margin:0 0 8px}
+    .su-why__card p{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0}
+
+    .su-faq{padding:80px 24px;background:var(--su-navy)}
+    .su-faq__inner{max-width:780px;margin:0 auto}
+    .su-faq__inner h2{text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:40px}
+    .su-faq__item{border:1px solid rgba(255,255,255,.06);border-radius:var(--su-radius);margin-bottom:12px;overflow:hidden}
+    .su-faq__item summary{padding:18px 20px;font-weight:600;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
     .su-faq__item summary::-webkit-details-marker{display:none}
-    .su-faq__item summary::after{content:"+";font-size:20px;color:var(--cyan);font-weight:300;transition:transform .3s}
-    .su-faq__item[open] summary::after{content:"−"}
-    .su-faq__item p{padding:0 24px 18px;font-size:14px;color:var(--text-secondary);margin:0;line-height:1.6}
+    .su-faq__item summary::after{content:'+';font-size:1.2rem;color:var(--su-cyan);transition:transform .2s}
+    .su-faq__item[open] summary::after{content:'-'}
+    .su-faq__item summary:hover{background:rgba(255,255,255,.03)}
+    .su-faq__item p{padding:0 20px 18px;margin:0;font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.7}
 
-    /* CTA Band */
-    .su-cta-band{
-      padding:80px 0;text-align:center;
-      background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(21,73,255,.12),transparent);
-    }
-    .su-cta-band__inner{max-width:600px;margin:0 auto;padding:0 24px}
-    .su-cta-band__inner h2{font-size:clamp(24px,4vw,34px);margin-bottom:12px}
-    .su-cta-band__inner p{color:var(--text-secondary);margin-bottom:28px;font-size:16px}
+    .su-mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(6,14,33,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.06);z-index:100}
 
-    /* Sticky CTA (mobile) */
-    .su-sticky-cta{
-      position:fixed;bottom:0;left:0;right:0;z-index:90;
-      padding:12px 16px;background:rgba(6,14,33,.95);backdrop-filter:blur(12px);
-      border-top:1px solid rgba(255,255,255,.06);display:none;
-    }
-    .su-btn--sticky{width:100%;font-size:16px;padding:16px}
-
-    /* Responsive */
-    @media(max-width:1024px){
-      .su-hero__inner{grid-template-columns:1fr;gap:36px}
-      .su-hero__mockup{max-width:560px}
-      .su-float--1{left:0;bottom:-5px}.su-float--2{right:0}
-    }
     @media(max-width:900px){
-      .su-prepare__grid{grid-template-columns:repeat(2,1fr)}
-      .su-why__grid{grid-template-columns:repeat(2,1fr)}
-      .su-equip-grid{grid-template-columns:repeat(3,1fr)}
-      .su-success__steps{grid-template-columns:1fr}
-    }
-    @media(max-width:640px){
-      .su-hero{padding:60px 0 30px}
-      .su-prepare,.su-form-section,.su-why,.su-faq,.su-cta-band{padding:56px 0}
-      .su-hero__ctas{flex-direction:column}
-      .su-hero__ctas .su-btn{width:100%}
-      .su-prepare__grid{grid-template-columns:1fr}
-      .su-why__grid{grid-template-columns:1fr}
+      .su-hero__inner{grid-template-columns:1fr;gap:40px}
+      .su-hero__journey{max-width:420px}
+      .su-process__grid{flex-direction:column}
+      .su-process__arrow{transform:rotate(90deg)}
+      .su-why__grid{grid-template-columns:1fr 1fr}
       .su-grid-2{grid-template-columns:1fr}
-      .su-equip-grid{grid-template-columns:repeat(2,1fr)}
       .su-check-grid{grid-template-columns:1fr}
+      .su-prod-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+    }
+    @media(max-width:600px){
+      .su-hero{padding:60px 16px 40px}
+      .su-hero__text h1{font-size:1.8rem}
+      .su-hero__ctas{flex-direction:column}
+      .su-hero__ctas .su-btn{justify-content:center}
       .su-form{padding:20px 16px}
+      .su-why__grid{grid-template-columns:1fr}
+      .su-success__steps{flex-direction:column;align-items:center}
+      .su-mobile-sticky{display:block}
       .su-stepper__label{display:none}
-      .su-stepper__labels{justify-content:space-around}
-      .su-pane__actions{flex-direction:column-reverse}
-      .su-pane__actions .su-btn{width:100%}
-      .su-sticky-cta{display:block}
-      .su-trust__inner{justify-content:flex-start;gap:8px 20px}
-      .su-trust__item{font-size:12px}
-      .su-success__steps{grid-template-columns:1fr}
-      .su-float{display:none}
-    }
-    @media(max-width:480px){
-      .su-equip-grid{grid-template-columns:1fr 1fr}
-    }
-    @media(prefers-reduced-motion:reduce){
-      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .su-prod-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .su-prod-card__inner{padding:12px}
+      .su-prod-card__inner img{max-width:100px;height:65px}
+      .su-prod-filter{gap:6px}
+      .su-filter-btn{padding:6px 12px;font-size:.78rem}
     }
   </style>
 
-  <script is:inline>
-  document.addEventListener('DOMContentLoaded',()=>{
-    const form=document.getElementById('appForm');
-    const panes=form.querySelectorAll('.su-pane[data-step]');
-    const stepBtns=document.querySelectorAll('[data-step-btn]');
-    const fill=document.getElementById('stepperFill');
-    const success=document.getElementById('successBlock');
-    const statusEl=document.getElementById('formStatus');
-    let cur=0;
-    const total=panes.length;
-    let initialized=false;
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const form=document.getElementById('appForm');
+      const panes=[...form.querySelectorAll('.su-pane')];
+      const total=panes.length;
+      let cur=0;
+      const fill=document.getElementById('stepperFill');
+      const stepBtns=[...form.querySelectorAll('[data-step-btn]')];
+      const statusEl=document.getElementById('formStatus');
+      const successEl=document.getElementById('successState');
+      let initialized=false;
 
-    function showStep(n,scroll){
-      cur=Math.max(0,Math.min(total-1,n));
-      panes.forEach((p,i)=>p.hidden=i!==cur);
-      stepBtns.forEach((s,i)=>{
-        s.classList.remove('active','completed');
-        s.removeAttribute('aria-current');
-        if(i<cur)s.classList.add('completed');
-        if(i===cur){s.classList.add('active');s.setAttribute('aria-current','step');}
-      });
-      fill.style.width=((cur/(total-1))*100)+'%';
-      if(cur===total-1)buildReview();
-      if(scroll&&initialized)form.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-
-    function validatePane(idx){
-      const pane=panes[idx];
-      const fields=pane.querySelectorAll('[required]');
-      let valid=true;
-      fields.forEach(f=>{
-        f.classList.remove('su-invalid');
-        f.removeAttribute('aria-invalid');
-        if(!f.value.trim()||(f.type==='email'&&!f.checkValidity())||(f.pattern&&!new RegExp(f.pattern).test(f.value))){
-          f.classList.add('su-invalid');
-          f.setAttribute('aria-invalid','true');
-          valid=false;
-        }
-      });
-      if(!valid){
-        const first=pane.querySelector('.su-invalid');
-        if(first)first.focus();
-        statusEl.textContent='Please fill in all required fields before continuing.';
-        statusEl.setAttribute('role','alert');
-      }else{
-        statusEl.textContent='';
-        statusEl.removeAttribute('role');
-      }
-      return valid;
-    }
-
-    form.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',e=>{
-      e.preventDefault();
-      if(validatePane(cur)&&cur<total-1)showStep(cur+1,true);
-    }));
-    form.querySelectorAll('[data-prev]').forEach(b=>b.addEventListener('click',e=>{
-      e.preventDefault();
-      if(cur>0)showStep(cur-1,true);
-    }));
-
-    stepBtns.forEach((s,i)=>s.addEventListener('click',()=>{
-      if(i<cur)showStep(i,true);
-    }));
-
-    // Account number confirmation
-    const accNum=document.getElementById('account_num');
-    const accConf=document.getElementById('account_confirm');
-    if(accConf){
-      accConf.addEventListener('blur',()=>{
-        if(accNum.value&&accConf.value&&accNum.value!==accConf.value){
-          accConf.classList.add('su-invalid');
-        }else{
-          accConf.classList.remove('su-invalid');
-        }
-      });
-    }
-
-    // Additional owner toggle
-    const ownerToggle=document.getElementById('addOwnerToggle');
-    const ownerBody=document.getElementById('addOwnerBody');
-    if(ownerToggle){
-      ownerToggle.addEventListener('click',()=>{
-        const open=ownerBody.hidden;
-        ownerBody.hidden=!open;
-        ownerToggle.classList.toggle('open',open);
-        ownerToggle.setAttribute('aria-expanded',String(open));
-      });
-    }
-
-    // Build review summary
-    function buildReview(){
-      const review=document.getElementById('reviewSummary');
-      const sections=[
-        {title:'Business Information',icon:'fa-building',fields:[
-          ['Legal Name','legal_name'],['DBA','dba'],['Entity Type','entity_type'],
-          ['Industry','industry'],['EIN','ein'],['Business Phone','business_phone'],
-          ['Business Email','business_email'],['Address','business_address'],
-          ['Sales Channels','sales_channels']
-        ]},
-        {title:'Owner Information',icon:'fa-user-tie',fields:[
-          ['Full Name','owner_name'],['Title','owner_title'],['Ownership %','ownership_pct'],
-          ['Mobile','owner_mobile'],['Email','owner_email']
-        ]},
-        {title:'Processing Profile',icon:'fa-chart-line',fields:[
-          ['Monthly Volume','monthly_card_volume'],['Average Ticket','average_ticket'],
-          ['Card Present %','card_present_pct'],['Processed Before','processed_before'],
-          ['Current Processor','current_processor']
-        ]},
-        {title:'Banking',icon:'fa-building-columns',fields:[
-          ['Bank Name','bank_name'],['Account Name','bank_account_name'],
-          ['Account Type','account_type']
-        ]},
-        {title:'Equipment',icon:'fa-cash-register',fields:[]}
-      ];
-
-      let html='';
-      sections.forEach(sec=>{
-        let rows='';
-        sec.fields.forEach(([label,name])=>{
-          const el=form.querySelector('[name="'+name+'"]');
-          const val=el?el.value.trim():'';
-          if(val)rows+=`<div class="su-review__row"><span class="su-review__label">${label}</span><span class="su-review__value">${val}</span></div>`;
+      function showStep(idx,scroll){
+        cur=idx;
+        panes.forEach((p,i)=>{p.hidden=i!==cur;});
+        fill.style.width=((cur/(total-1))*100)+'%';
+        stepBtns.forEach((b,i)=>{
+          b.classList.remove('active','done');
+          b.removeAttribute('aria-current');
+          if(i<cur)b.classList.add('done');
+          if(i===cur){b.classList.add('active');b.setAttribute('aria-current','step');}
         });
-        if(sec.title==='Equipment'){
-          const checked=form.querySelectorAll('input[name="equipment[]"]:checked');
-          checked.forEach(cb=>{
-            rows+=`<div class="su-review__row"><span class="su-review__label">Equipment</span><span class="su-review__value">${cb.value}</span></div>`;
+        if(cur===total-1)buildReview();
+        if(scroll&&initialized){
+          form.scrollIntoView({behavior:'smooth',block:'start'});
+          const heading=panes[cur].querySelector('h3');
+          if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
+        }
+      }
+
+      function validatePane(idx){
+        const pane=panes[idx];
+        let valid=true;
+
+        if(idx===0){
+          const ind=pane.querySelector('#industry');
+          ind.classList.remove('su-invalid');ind.removeAttribute('aria-invalid');
+          if(!ind.value){ind.classList.add('su-invalid');ind.setAttribute('aria-invalid','true');valid=false;}
+          const radios=pane.querySelectorAll('input[name="selected_product"]');
+          let productSelected=false;
+          radios.forEach(r=>{if(r.checked)productSelected=true;});
+          if(!productSelected){
+            valid=false;
+            const grid=pane.querySelector('#prodGrid');
+            if(grid&&!pane.querySelector('.su-invalid'))grid.classList.add('su-invalid');
+          } else {
+            const grid=pane.querySelector('#prodGrid');
+            if(grid)grid.classList.remove('su-invalid');
+          }
+        } else {
+          const fields=pane.querySelectorAll('[required]');
+          fields.forEach(f=>{
+            f.classList.remove('su-invalid');f.removeAttribute('aria-invalid');
+            if(f.type==='checkbox'){
+              if(!f.checked){f.classList.add('su-invalid');f.setAttribute('aria-invalid','true');valid=false;}
+            } else if(!f.value.trim()||(f.type==='email'&&!f.checkValidity())||(f.pattern&&!new RegExp(f.pattern).test(f.value))){
+              f.classList.add('su-invalid');f.setAttribute('aria-invalid','true');valid=false;
+            }
           });
         }
-        if(rows){
-          html+=`<div class="su-review__section"><h4><i class="fa-solid ${sec.icon}"></i> ${sec.title}</h4>${rows}</div>`;
+
+        if(idx===4){
+          const acct=pane.querySelector('#account_num');
+          const confirm=pane.querySelector('#account_confirm');
+          if(acct&&confirm&&acct.value&&confirm.value&&acct.value!==confirm.value){
+            confirm.classList.add('su-invalid');confirm.setAttribute('aria-invalid','true');
+            valid=false;
+            statusEl.textContent='Account numbers do not match.';
+            statusEl.setAttribute('role','alert');
+            confirm.focus();
+            return false;
+          }
+        }
+
+        if(!valid){
+          const first=panes[idx].querySelector('.su-invalid');
+          if(first)first.focus();
+          statusEl.textContent='Please fill in all required fields before continuing.';
+          statusEl.setAttribute('role','alert');
+        }else{
+          statusEl.textContent='';statusEl.removeAttribute('role');
+        }
+        return valid;
+      }
+
+      form.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',e=>{
+        e.preventDefault();
+        if(validatePane(cur)&&cur<total-1)showStep(cur+1,true);
+      }));
+      form.querySelectorAll('[data-prev]').forEach(b=>b.addEventListener('click',e=>{
+        e.preventDefault();
+        if(cur>0)showStep(cur-1,true);
+      }));
+      stepBtns.forEach(b=>b.addEventListener('click',()=>{
+        const target=parseInt(b.dataset.stepBtn)-1;
+        if(target<cur)showStep(target,true);
+      }));
+
+      const filterBtns=[...document.querySelectorAll('.su-filter-btn')];
+      const prodCards=[...document.querySelectorAll('.su-prod-card')];
+      filterBtns.forEach(b=>b.setAttribute('aria-pressed',b.classList.contains('active')?'true':'false'));
+      filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+        filterBtns.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+        btn.classList.add('active');btn.setAttribute('aria-pressed','true');
+        const cat=btn.dataset.cat;
+        prodCards.forEach(c=>{
+          if(cat==='all'||c.dataset.cat===cat){c.hidden=false;}else{c.hidden=true;}
+        });
+      }));
+
+      const summaryEl=document.getElementById('selectedSummary');
+      const nameEl=document.getElementById('selectedName');
+      const clearBtn=document.getElementById('clearSelection');
+      const prodRadios=[...form.querySelectorAll('input[name="selected_product"]')];
+
+      prodRadios.forEach(r=>r.addEventListener('change',()=>{
+        nameEl.textContent=r.value;
+        summaryEl.hidden=false;
+      }));
+      clearBtn.addEventListener('click',()=>{
+        prodRadios.forEach(r=>{r.checked=false;});
+        summaryEl.hidden=true;
+        nameEl.textContent='';
+      });
+
+      const addOwnerToggle=document.getElementById('addOwnerToggle');
+      const addOwnerBody=document.getElementById('addOwnerBody');
+      if(addOwnerToggle){
+        addOwnerToggle.addEventListener('click',()=>{
+          const expanded=addOwnerToggle.getAttribute('aria-expanded')==='true';
+          addOwnerToggle.setAttribute('aria-expanded',String(!expanded));
+          addOwnerBody.hidden=expanded;
+        });
+      }
+
+      function buildReview(){
+        const data=new FormData(form);
+        const groups=[
+          {title:'Solution',icon:'fa-compass',fields:[['Industry','industry'],['Selected Product','selected_product']]},
+          {title:'Business',icon:'fa-building',fields:[['Legal Name','legal_name'],['DBA','dba'],['Entity Type','entity_type'],['Years in Business','years_in_business'],['EIN','ein'],['State of Inc.','state_of_incorporation'],['Phone','business_phone'],['Email','business_email'],['Website','website'],['Address','business_address'],['Mailing Address','mailing_address'],['Locations','number_of_locations'],['Sales Channels','sales_channels'],['Products/Services','products_services']]},
+          {title:'Owner',icon:'fa-user-tie',fields:[['Name','owner_name'],['Title','owner_title'],['Ownership %','ownership_pct'],['DOB','owner_dob'],['SSN Last 4','owner_ssn_last4'],['Mobile','owner_mobile'],['Email','owner_email'],['Address','owner_home_address']]},
+          {title:'Processing',icon:'fa-chart-line',fields:[['Monthly Volume','monthly_card_volume'],['Avg Ticket','average_ticket'],['High Ticket','highest_ticket'],['Card Present %','card_present_pct'],['Processed Before','processed_before'],['Current Processor','current_processor'],['Chargeback History','chargeback_history'],['Fulfillment Days','fulfillment_days'],['Refund Policy','refund_policy']]},
+          {title:'Banking',icon:'fa-building-columns',fields:[['Bank Name','bank_name'],['Account Name','bank_account_name'],['Routing','routing_number'],['Account Type','account_type'],['Account #','account_number']]}
+        ];
+        let html='';
+        groups.forEach(g=>{
+          let rows='';
+          g.fields.forEach(([label,name])=>{
+            const val=data.get(name);
+            if(val)rows+=`<div class="su-review__row"><dt>${label}</dt><dd>${val.replace(/</g,'&lt;')}</dd></div>`;
+          });
+          if(rows)html+=`<div class="su-review__group"><h4><i class="fa-solid ${g.icon}"></i> ${g.title}</h4><dl>${rows}</dl></div>`;
+        });
+        document.getElementById('reviewSummary').innerHTML=html;
+      }
+
+      form.addEventListener('submit',async(e)=>{
+        e.preventDefault();
+        if(!validatePane(cur))return;
+        const btn=document.getElementById('submitBtn');
+        btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+        try{
+          const resp=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+          if(resp.ok){
+            form.hidden=true;
+            document.querySelector('.su-stepper').hidden=true;
+            successEl.hidden=false;
+            successEl.scrollIntoView({behavior:'smooth',block:'start'});
+          }else{throw new Error();}
+        }catch(err){
+          btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Submit Application';
+          statusEl.textContent='Something went wrong. Please try again.';statusEl.setAttribute('role','alert');
         }
       });
-      review.innerHTML=html||'<p style="color:var(--text-secondary)">No data entered yet.</p>';
-    }
 
-    // Submit
-    form.addEventListener('submit',async e=>{
-      e.preventDefault();
-      const consentBoxes=form.querySelectorAll('.su-fieldset--consent input[required]');
-      let allChecked=true;
-      consentBoxes.forEach(cb=>{if(!cb.checked)allChecked=false});
-      if(!allChecked){
-        statusEl.textContent='Please check the required consent boxes before submitting.';
-        return;
-      }
+      showStep(0,false);
+      initialized=true;
 
-      if(accNum&&accConf&&accNum.value!==accConf.value){
-        statusEl.textContent='Account numbers do not match. Please go back and correct.';
-        return;
-      }
-
-      statusEl.textContent='';
-      const btn=form.querySelector('[type="submit"]');
-      if(btn){btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';}
-
-      try{
-        const res=await fetch(form.action,{
-          method:'POST',body:new FormData(form),
-          headers:{'Accept':'application/json'}
-        });
-        if(res.ok){
-          form.reset();form.hidden=true;
-          success.hidden=false;
-          success.scrollIntoView({behavior:'smooth',block:'start'});
-        }else{
-          statusEl.textContent='Something went wrong. Please try again or email support@ppdtechnology.com.';
-          if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Submit Application';}
-        }
-      }catch{
-        statusEl.textContent='Network error. Please check your connection and try again.';
-        if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Submit Application';}
+      const mobileCta=document.getElementById('mobileCta');
+      if(mobileCta&&window.innerWidth<=600){
+        const formSection=document.getElementById('application');
+        const obs=new IntersectionObserver(([e])=>{mobileCta.style.display=e.isIntersecting?'none':'block';},{threshold:0.1});
+        obs.observe(formSection);
       }
     });
-
-    document.getElementById('newAppBtn')?.addEventListener('click',()=>{
-      success.hidden=true;form.hidden=false;showStep(0,true);
-    });
-
-    // Sticky CTA visibility (mobile only)
-    const stickyCta=document.getElementById('stickyCta');
-    const formSection=document.getElementById('application');
-    if(stickyCta&&formSection&&window.innerWidth<=640){
-      const obs=new IntersectionObserver(([e])=>{
-        stickyCta.style.display=e.isIntersecting?'none':'block';
-      },{threshold:0.1});
-      obs.observe(formSection);
-    }
-
-    showStep(0,false);
-    initialized=true;
-  });
   </script>
+
 </BaseLayout>

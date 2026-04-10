@@ -1,0 +1,122 @@
+Please revise the `/signup` page again because it is still reading too much like a product sales page instead of a serious merchant processing application page.
+
+Main changes I need:
+
+1. Hero section
+
+* The right side should NOT be the current browser-style animation with fake application progress
+* It feels too generic and too much like a product page
+* Replace it with something more creative, premium, and application-focused
+
+For the right side of the hero, build ONE strong visual concept like this:
+
+* A layered “merchant onboarding journey” visual showing:
+
+  * Industry selected
+  * Product selected
+  * Business info verified
+  * Bank details secured
+  * Application submitted
+  * Underwriting review
+* Make it feel dynamic and modern with subtle motion, glowing connection lines, floating cards, or step transitions
+* It should look custom and high-end, not like a fake software screenshot
+* The focus should be onboarding, approval, security, and setup
+* Do not use cheesy stock-style graphics
+* Do not make it look like a hardware catalog
+
+Alternative direction for the right side if needed:
+Build an interactive “solution matching” visual where a business selects:
+Industry → Product → Processing Setup → Funding
+and the cards animate together in a polished way.
+This should feel more like a secure fintech onboarding experience than a product ad.
+
+2. Application flow changes
+   The FIRST step of the application should no longer be Business Information.
+
+Change the step order to this:
+Step 1: Industry & Product Selection
+Step 2: Business Information
+Step 3: Owner Information
+Step 4: Processing Profile
+Step 5: Bank / Funding Information
+Step 6: Review & Submit
+
+3. New Step 1 requirements
+   The first step must ask the user to:
+
+* Choose their industry first
+* Then choose their product / solution
+
+For the product selection:
+
+* Pull in ALL products from the Products tab on the website
+* Also include the products that were on the original signup page, especially:
+
+  * Pinpads (P12 & P17)
+  * Dejavoo P18
+* Make sure these are clearly included even if they are not currently showing in the products tab
+* Present products in a clean, selectable format such as cards, tiles, or segmented categories
+* Let the UI feel guided and smart, not cluttered
+
+Suggested layout for Step 1:
+
+* Industry dropdown or visual industry cards
+* Product category filter
+* Product cards with image + short description + select button
+* Selected product summary box before continuing
+
+4. Page tone
+   This page should feel like:
+
+* a serious processing application
+* secure onboarding
+* merchant account setup
+* underwriting intake
+
+It should NOT feel like:
+
+* a product shopping page
+* a terminal deals page
+* a general promo page
+
+5. Remove this section
+   Remove the “What you’ll need to apply” section completely.
+
+Replace it with something better and more useful, such as ONE of these:
+Option A:
+“How the Application Works”
+
+* Choose your industry and solution
+* Enter your business and owner details
+* Submit securely for review
+
+Option B:
+“Why Businesses Apply with PPD Technology”
+
+* Secure application process
+* Tailored payment solutions
+* Fast underwriting review
+* Support from a real specialist
+
+Keep this replacement section short, clean, and valuable.
+
+6. Product presentation
+   Please make sure the product selection inside the application is visually better than the original page.
+
+* Keep it modern and polished
+* No bulky promo cards with “Get this deal”
+* No retail/ecommerce product page feeling
+* Product cards should support selection for application, not shopping
+
+7. Design direction
+
+* Keep site-wide consistency, but prioritize conversion and trust on this page
+* Use a more custom hero visual
+* Strong hierarchy
+* Premium fintech UI
+* Better use of whitespace
+* Sleek dark styling is fine, but make the page feel more intentional and less generic
+* Smooth mobile layout is very important
+
+Please rebuild the hero and restructure the form flow based on this.
+The main goal is to make this page feel like a true merchant application and onboarding experience, not a hardware landing page.
