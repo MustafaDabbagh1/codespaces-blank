@@ -4,1209 +4,532 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="PPD Technology | Retail Payment Solutions">
   <Fragment slot="head">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   </Fragment>
 
-  <section class="retail-page">
-    <section class="retail-hero">
-      <div class="retail-container retail-hero-grid">
-        <div>
-          <h1>Retail Payments that Sell Smarter</h1>
-          <p>
-            From boutique to big box, PPD Technology unifies checkout, tap-to-pay,
-            inventory, and e-commerce, so every transaction is fast, secure, and
-            connected across channels.
-          </p>
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="rt-hero">
+    <div class="rt-hero__grid-bg"></div>
+    <div class="rt-hero__orb rt-hero__orb--1"></div>
+    <div class="rt-hero__orb rt-hero__orb--2"></div>
 
-          <div class="retail-badges">
-            <span class="retail-badge"><i class="fas fa-barcode"></i> Barcode &amp; SKU</span>
-            <span class="retail-badge"><i class="fas fa-mobile-screen-button"></i> Tap to Pay</span>
-            <span class="retail-badge"><i class="fas fa-bag-shopping"></i> Self-Checkout</span>
-            <span class="retail-badge"><i class="fas fa-rotate"></i> Returns &amp; Exchanges</span>
+    <div class="rt-container rt-hero__inner">
+      <div class="rt-hero__text">
+        <span class="rt-pill"><i class="fa-solid fa-store"></i> Unified Retail Commerce Platform</span>
+        <h1>Retail Payments<br>that Sell <span class="rt-grad">Smarter</span></h1>
+        <p>From boutique to big box, PPD Technology unifies checkout, tap-to-pay, inventory, and e-commerce — so every transaction is fast, secure, and connected across channels.</p>
+        <div class="rt-hero__actions">
+          <a class="rt-btn rt-btn--primary rt-btn--lg" href="/signup"><i class="fa-solid fa-rocket"></i> Start Processing</a>
+          <a class="rt-btn rt-btn--ghost rt-btn--lg" href="/contact"><i class="fa-solid fa-phone"></i> Contact Sales</a>
+        </div>
+        <div class="rt-hero__trust">
+          <span><i class="fa-solid fa-barcode"></i> Barcode &amp; SKU</span>
+          <span><i class="fa-solid fa-mobile-screen-button"></i> Tap to Pay</span>
+          <span><i class="fa-solid fa-bag-shopping"></i> Self-Checkout</span>
+          <span><i class="fa-solid fa-rotate"></i> Returns &amp; Exchanges</span>
+        </div>
+      </div>
+
+      <div class="rt-hero__visual">
+        <div class="rt-hero-app">
+          <div class="rt-hero-app__bar">
+            <div class="rt-hero-app__dots"><span></span><span></span><span></span></div>
+            <span class="rt-hero-app__title">PPD Retail — Dashboard</span>
           </div>
-
-          <div class="retail-btns">
-            <button
-              class="retail-btn retail-btn-primary"
-              type="button"
-              onclick="location.href='/signup'"
-            >
-              Start Processing
-            </button>
-            <button
-              class="retail-btn retail-btn-outline retail-btn-hero-outline"
-              type="button"
-              onclick="location.href='/contact'"
-            >
-              Contact Sales
-            </button>
+          <div class="rt-hero-app__body">
+            <div class="rt-hero-app__sidebar">
+              <div class="rt-hero-app__nav active"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="rt-hero-app__nav"><i class="fa-solid fa-cash-register"></i></div>
+              <div class="rt-hero-app__nav"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div class="rt-hero-app__nav"><i class="fa-solid fa-users"></i></div>
+              <div class="rt-hero-app__nav"><i class="fa-solid fa-tags"></i></div>
+              <div class="rt-hero-app__nav"><i class="fa-solid fa-gear"></i></div>
+            </div>
+            <div class="rt-hero-app__main">
+              <div class="rt-hero-app__topbar">
+                <div><strong>Good morning, Sarah</strong><span>Metro Fashion — Downtown</span></div>
+                <div class="rt-hero-app__presets"><span class="active">Today</span><span>7d</span><span>30d</span></div>
+              </div>
+              <div class="rt-hero-app__kpis">
+                <div class="rt-hero-kpi"><span class="rt-hero-kpi__label">Today's Revenue</span><span class="rt-hero-kpi__val">$8,432</span><span class="rt-hero-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 14%</span></div>
+                <div class="rt-hero-kpi"><span class="rt-hero-kpi__label">Transactions</span><span class="rt-hero-kpi__val">186</span><span class="rt-hero-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 9%</span></div>
+                <div class="rt-hero-kpi"><span class="rt-hero-kpi__label">Avg Basket</span><span class="rt-hero-kpi__val">$45.33</span><span class="rt-hero-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 3%</span></div>
+                <div class="rt-hero-kpi"><span class="rt-hero-kpi__label">Returns</span><span class="rt-hero-kpi__val">4</span><span class="rt-hero-kpi__tag neutral">today</span></div>
+              </div>
+              <div class="rt-hero-app__chart">
+                <svg viewBox="0 0 400 80" preserveAspectRatio="none" class="rt-spark">
+                  <defs>
+                    <linearGradient id="rtSparkGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(0,207,255,.3)"/>
+                      <stop offset="100%" stop-color="rgba(0,207,255,0)"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 70 Q30 60 60 55 T120 40 T180 35 T240 25 T300 20 T360 12 L400 8 L400 80 L0 80Z" fill="url(#rtSparkGrad)"/>
+                  <path d="M0 70 Q30 60 60 55 T120 40 T180 35 T240 25 T300 20 T360 12 L400 8" fill="none" stroke="#00CFFF" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="retail-scene" aria-hidden="true">
-          <div class="retail-counter"></div>
+        <div class="rt-hero-card rt-hero-card--pos">
+          <div class="rt-hero-card__hdr"><i class="fa-solid fa-cash-register"></i> POS — Checkout</div>
+          <div class="rt-hero-card__line"><span>Denim Jacket</span><span>$89.00</span></div>
+          <div class="rt-hero-card__line"><span>White Sneakers</span><span>$64.99</span></div>
+          <div class="rt-hero-card__line rt-hero-card__line--total"><span>Total</span><span>$153.99</span></div>
+          <div class="rt-hero-card__badge"><i class="fa-solid fa-check-circle"></i> Tap to Pay</div>
+        </div>
 
-          <div class="retail-pos">
-            <div class="title">CART</div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
+        <div class="rt-hero-card rt-hero-card--inv">
+          <div class="rt-hero-card__hdr"><i class="fa-solid fa-boxes-stacked"></i> Inventory Alert</div>
+          <div class="rt-hero-card__line"><span>Blue Denim — S</span><span class="rt-low">2 left</span></div>
+          <div class="rt-hero-card__line"><span>Canvas Tote</span><span class="rt-low">Reorder</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="retail-printer">
-            <div class="retail-paper"></div>
-          </div>
+  <!-- ══════════════ METRICS BAR ══════════════ -->
+  <section class="rt-metrics">
+    <div class="rt-container">
+      <div class="rt-metrics__grid">
+        <div class="rt-metrics__item"><span class="rt-metrics__num">99.9%</span><span class="rt-metrics__label">Uptime</span></div>
+        <div class="rt-metrics__item"><span class="rt-metrics__num">&lt;2s</span><span class="rt-metrics__label">Checkout Speed</span></div>
+        <div class="rt-metrics__item"><span class="rt-metrics__num">500+</span><span class="rt-metrics__label">Retail Locations</span></div>
+        <div class="rt-metrics__item"><span class="rt-metrics__num">24/7</span><span class="rt-metrics__label">Support</span></div>
+      </div>
+    </div>
+  </section>
 
-          <div class="retail-pinpad" role="img" aria-label="Pinpad with tap-to-pay and tip selection">
-            <div class="retail-pinpad-screen">
-              <div class="amount">Total • $128.40</div>
-              <div class="tap"><i class="fas fa-wave-square"></i></div>
-            </div>
+  <!-- ══════════════ FEATURES ══════════════ -->
+  <section class="rt-section" id="features">
+    <div class="rt-container">
+      <div class="rt-section__header">
+        <span class="rt-pill rt-pill--sm"><i class="fa-solid fa-cubes"></i> Platform Capabilities</span>
+        <h2>Everything to Move Lines<br>and Move Inventory</h2>
+        <p>Unified in-store and online checkout with inventory, pricing, and customer data in one platform.</p>
+      </div>
 
-            <div class="retail-tips">
-              <span class="retail-pill">No Tip</span>
-              <span class="retail-pill active">Round Up</span>
-              <span class="retail-pill">Custom</span>
-              <span class="retail-pill">Receipt</span>
-            </div>
+      <div class="rt-features__grid">
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Omnichannel Checkout</h3>
+          <p>In-store POS, self-checkout, and e-commerce with a single merchant account — unified reporting across every channel.</p>
+        </div>
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <h3>Real-Time Inventory</h3>
+          <p>Track stock across locations and channels with low-stock alerts, automatic reorder points, and variant management.</p>
+        </div>
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-id-card-clip"></i></div>
+          <h3>Loyalty &amp; CRM</h3>
+          <p>Capture customer profiles at checkout, launch targeted promotions, and issue digital receipts automatically.</p>
+        </div>
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>BOPIS &amp; Ship-from-Store</h3>
+          <p>Buy online, pick up in store with curbside handoff, label printing, and real-time fulfillment tracking.</p>
+        </div>
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3>Returns &amp; Exchanges</h3>
+          <p>Receiptless returns with ID verification, automatic restocking rules, and instant refund processing.</p>
+        </div>
+        <div class="rt-feature">
+          <div class="rt-feature__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Security &amp; Compliance</h3>
+          <p>P2PE encryption, tokenization, and fraud detection tools with built-in dispute workflows and PCI compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="retail-keypad">
-              <span class="key"></span>
-              <span class="key"></span>
-              <span class="key"></span>
-              <span class="key ok"></span>
-            </div>
-          </div>
+  <!-- ══════════════ RETAIL SOFTWARE SHOWCASE ══════════════ -->
+  <section class="rt-showcase" id="demo">
+    <div class="rt-container">
+      <div class="rt-section__header">
+        <span class="rt-pill rt-pill--sm"><i class="fa-solid fa-laptop-code"></i> Software-Driven Retail</span>
+        <h2>Built for How Retail<br>Actually Works</h2>
+        <p>See how PPD Technology powers every touchpoint in the modern retail workflow.</p>
+      </div>
 
-          <div class="retail-product">
-            <div class="retail-barcode"></div>
-          </div>
-
-          <div class="retail-scanner">
-            <div class="retail-beam"></div>
-          </div>
-
-          <div class="retail-kiosk">
-            <div class="retail-kiosk-screen">
-              <div class="retail-kiosk-title">SCAN &amp; PAY</div>
-              <div class="retail-kiosk-grid">
-                <span class="card"></span>
-                <span class="card"></span>
-                <span class="card"></span>
-                <span class="card"></span>
+      <div class="rt-showcase__grid">
+        <div class="rt-showcase__card">
+          <div class="rt-showcase__mock">
+            <div class="rt-mock-bar"><span></span><span></span><span></span></div>
+            <div class="rt-mock-body">
+              <div class="rt-mock-kpi"><span class="rt-mock-kpi__val">$12,847</span><span class="rt-mock-kpi__label">Today's Sales</span></div>
+              <div class="rt-mock-chart">
+                <div class="rt-mock-chart__bar" style="height:40%"></div>
+                <div class="rt-mock-chart__bar" style="height:55%"></div>
+                <div class="rt-mock-chart__bar" style="height:70%"></div>
+                <div class="rt-mock-chart__bar" style="height:85%"></div>
+                <div class="rt-mock-chart__bar rt-mock-chart__bar--active" style="height:95%"></div>
               </div>
-              <div class="retail-kiosk-cta">Checkout ▸</div>
             </div>
+          </div>
+          <h3>POS &amp; Smart Checkout</h3>
+          <p>Ring up sales instantly with barcode scanning, quick-keys, split payments, and contactless acceptance.</p>
+        </div>
+
+        <div class="rt-showcase__card">
+          <div class="rt-showcase__mock">
+            <div class="rt-mock-bar"><span></span><span></span><span></span></div>
+            <div class="rt-mock-body">
+              <div class="rt-mock-inv">
+                <div class="rt-mock-inv__row"><span class="rt-mock-inv__dot green"></span><span>Denim Jacket</span><span>124 units</span></div>
+                <div class="rt-mock-inv__row"><span class="rt-mock-inv__dot amber"></span><span>White Sneakers</span><span>8 units</span></div>
+                <div class="rt-mock-inv__row"><span class="rt-mock-inv__dot red"></span><span>Canvas Tote</span><span>2 units</span></div>
+              </div>
+            </div>
+          </div>
+          <h3>Inventory Visibility</h3>
+          <p>Real-time stock levels across all locations with automated alerts and purchase order generation.</p>
+        </div>
+
+        <div class="rt-showcase__card">
+          <div class="rt-showcase__mock">
+            <div class="rt-mock-bar"><span></span><span></span><span></span></div>
+            <div class="rt-mock-body">
+              <div class="rt-mock-kiosk">
+                <div class="rt-mock-kiosk__title">SELF CHECKOUT</div>
+                <div class="rt-mock-kiosk__grid">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="rt-mock-kiosk__btn">Pay Now</div>
+              </div>
+            </div>
+          </div>
+          <h3>Self-Checkout &amp; Kiosks</h3>
+          <p>Customer-facing kiosks with scan-and-go, express lanes, and QR-based mobile self-checkout.</p>
+        </div>
+
+        <div class="rt-showcase__card">
+          <div class="rt-showcase__mock">
+            <div class="rt-mock-bar"><span></span><span></span><span></span></div>
+            <div class="rt-mock-body">
+              <div class="rt-mock-sync">
+                <div class="rt-mock-sync__col">
+                  <i class="fa-solid fa-store"></i>
+                  <span>In-Store</span>
+                </div>
+                <div class="rt-mock-sync__arrow"><i class="fa-solid fa-arrows-left-right"></i></div>
+                <div class="rt-mock-sync__col">
+                  <i class="fa-solid fa-globe"></i>
+                  <span>Online</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Online + In-Store Sync</h3>
+          <p>One catalog, one inventory — synced pricing, promotions, and customer profiles across all selling channels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ HARDWARE ══════════════ -->
+  <section class="rt-section rt-section--dark" id="hardware">
+    <div class="rt-container">
+      <div class="rt-section__header rt-section__header--light">
+        <span class="rt-pill rt-pill--sm"><i class="fa-solid fa-microchip"></i> Certified Hardware</span>
+        <h2>Retail Hardware &amp; Software<br>That Click</h2>
+        <p>Modular devices and APIs that fit your footprint — from pop-up to enterprise.</p>
+      </div>
+
+      <div class="rt-hw__grid">
+        <div class="rt-hw-card">
+          <div class="rt-hw-card__media">
+            <img src="/images/VP800-View-01.png" alt="VP800 thermal receipt printer" loading="lazy" />
+          </div>
+          <div class="rt-hw-card__body">
+            <span class="rt-hw-card__tag">VP800</span>
+            <h3>VP800 Printer</h3>
+            <p>High-speed thermal printing for receipts and labels with crisp, durable output.</p>
+          </div>
+        </div>
+
+        <div class="rt-hw-card">
+          <div class="rt-hw-card__media">
+            <img src="/images/Pin-Pads-p12p17.png" alt="EMV/NFC pin pads P12 and P17" loading="lazy" />
+          </div>
+          <div class="rt-hw-card__body">
+            <span class="rt-hw-card__tag">P12 / P17</span>
+            <h3>EMV/NFC Pinpads</h3>
+            <p>Secure chip, swipe, and contactless acceptance with robust device management.</p>
+          </div>
+        </div>
+
+        <div class="rt-hw-card">
+          <div class="rt-hw-card__media">
+            <img src="/images/p18.png" alt="P18 smart payment terminal" loading="lazy" />
+          </div>
+          <div class="rt-hw-card__body">
+            <span class="rt-hw-card__tag">P18</span>
+            <h3>P18 Smart Terminal</h3>
+            <p>All-in-one handheld with tap to pay, barcode scanning, and long battery life.</p>
+          </div>
+        </div>
+
+        <div class="rt-hw-card">
+          <div class="rt-hw-card__media">
+            <img src="/images/nrs-pos1-min.png" alt="NRS POS countertop register" loading="lazy" />
+          </div>
+          <div class="rt-hw-card__body">
+            <span class="rt-hw-card__tag">Counter POS</span>
+            <h3>NRS POS</h3>
+            <p>Countertop POS with cash drawer, scanner, and receipt printer — all connected.</p>
+          </div>
+        </div>
+
+        <div class="rt-hw-card">
+          <div class="rt-hw-card__media">
+            <img src="/images/Pos system.png" alt="Pays POS system" loading="lazy" />
+          </div>
+          <div class="rt-hw-card__body">
+            <span class="rt-hw-card__tag">Suite</span>
+            <h3>Pays POS</h3>
+            <p>Modern POS suite with inventory, staff, and customer tools built-in.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="retail-section">
-      <div class="retail-container">
-        <div class="retail-section-title">
-          <h2>Everything to Move Lines and Move Inventory</h2>
-          <p>
-            Unified in-store and online checkout with inventory, pricing, and
-            customer data in one platform.
-          </p>
-        </div>
-
-        <div class="retail-features-grid">
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-store"></i></div>
-            <h3>Omnichannel Checkout</h3>
-            <p>In-store POS, self-checkout, and e-commerce with a single merchant account.</p>
-          </div>
-
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-boxes-stacked"></i></div>
-            <h3>Real-Time Inventory</h3>
-            <p>Track stock across locations and channels with low-stock alerts.</p>
-          </div>
-
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-id-card-clip"></i></div>
-            <h3>Loyalty &amp; CRM</h3>
-            <p>Capture profiles at checkout, launch promotions, and issue digital receipts.</p>
-          </div>
-
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-truck-fast"></i></div>
-            <h3>BOPIS &amp; Ship-from-Store</h3>
-            <p>Buy online, pick up in store with curbside handoff and label printing.</p>
-          </div>
-
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-clipboard-check"></i></div>
-            <h3>Returns &amp; Exchanges</h3>
-            <p>Receiptless returns, verification, and automatic restock with rules.</p>
-          </div>
-
-          <div class="retail-feature-card">
-            <div class="retail-feature-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Security &amp; Compliance</h3>
-            <p>P2PE, tokenization, and fraud tools with dispute workflows.</p>
-          </div>
-        </div>
+  <!-- ══════════════ CTA ══════════════ -->
+  <section class="rt-cta" id="cta">
+    <div class="rt-cta__glow"></div>
+    <div class="rt-container rt-cta__inner">
+      <span class="rt-pill rt-pill--sm"><i class="fa-solid fa-bolt"></i> Get Started</span>
+      <h2>Ready to Ring Up<br>More Sales?</h2>
+      <p>Join retailers who trust PPD Technology for faster lines, smarter data, and happier customers — in store and online.</p>
+      <div class="rt-cta__actions">
+        <a class="rt-btn rt-btn--primary rt-btn--lg" href="/signup"><i class="fa-solid fa-rocket"></i> Get Started Today</a>
+        <a class="rt-btn rt-btn--ghost rt-btn--lg" href="/contact"><i class="fa-solid fa-calendar-check"></i> Book a Demo</a>
       </div>
-    </section>
-
-    <section class="retail-section" aria-labelledby="hw-title">
-      <div class="retail-container">
-        <div class="retail-section-title">
-          <h2 id="hw-title">Retail Hardware &amp; Software That Click</h2>
-          <p>Modular devices and APIs that fit your footprint, from pop-up to enterprise.</p>
-        </div>
-
-        <div class="retail-slider-shell" id="hardware-slider">
-          <div
-            class="retail-slider-viewport"
-            id="sliderViewport"
-            tabindex="0"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="Hardware carousel"
-            aria-live="polite"
-          >
-            <div class="retail-slider-track" id="sliderTrack">
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/VP800-View-01.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/VP800-View-01.png" alt="VP800 thermal receipt printer" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>VP800 Printer</h3>
-                    <p>High-speed thermal printing for receipts and labels with crisp, durable output.</p>
-                    <span class="retail-tag">VP800</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/Pin-Pads-p12p17.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/Pin-Pads-p12p17.png" alt="Assorted EMV/NFC pin pads" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>EMV/NFC Pinpads</h3>
-                    <p>Secure chip, swipe, and contactless acceptance with robust device management.</p>
-                    <span class="retail-tag">P12 / P17</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/p18.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/p18.png" alt="P18 payment terminal" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>P18 Smart Terminal</h3>
-                    <p>All-in-one handheld with tap to pay, barcode scanning, and long battery life.</p>
-                    <span class="retail-tag">P18</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/nrs-pos1-min.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/nrs-pos1-min.png" alt="NRS POS register" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>NRS POS</h3>
-                    <p>Countertop POS with cash drawer, scanner, and receipt printer — all connected.</p>
-                    <span class="retail-tag">Counter POS</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/clover-duo-printer-mini3-facing-customer.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/clover-duo-printer-mini3-facing-customer.png" alt="Clover Duo with customer-facing display" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>Clover Duo</h3>
-                    <p>Dual-screen experience to speed checkout, tips, and digital receipts.</p>
-                    <span class="retail-tag">Duo</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="retail-slide">
-                <a class="retail-hw-card" href="https://mmdabbagh24.neocities.org/images/Pos%20system.png" target="_blank" rel="noopener">
-                  <div class="retail-hw-media">
-                    <img src="https://mmdabbagh24.neocities.org/images/Pos%20system.png" alt="Pays POS system" />
-                  </div>
-                  <div class="retail-hw-content">
-                    <h3>Pays POS</h3>
-                    <p>Modern POS suite with inventory, staff, and customer tools built-in.</p>
-                    <span class="retail-tag">Suite</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="retail-slider-nav">
-            <button class="retail-slider-btn" id="prevBtn" aria-label="Previous">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="retail-slider-btn" id="nextBtn" aria-label="Next">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <div class="retail-slider-dots" id="sliderDots" aria-label="Slide navigation"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="retail-cta" id="cta">
-      <div class="retail-container">
-        <h2>Ready to Ring Up More Sales?</h2>
-        <p>
-          Join retailers who trust PPD Technology for faster lines, smarter data,
-          and happier customers, in store and online.
-        </p>
-        <button
-          class="retail-btn retail-btn-primary retail-cta-btn"
-          type="button"
-          onclick="location.href='/signup'"
-        >
-          Get Started Today
-        </button>
-      </div>
-    </section>
+    </div>
   </section>
 
   <style>
-    :root{
-      --primary:#1549FF;
-      --primary-dark:#0F38CC;
-      --secondary:#060E21;
-      --accent:#00E5A0;
-      --light:#F5F8FF;
-      --dark:#060E21;
-      --gray:#7B93B0;
-      --light-gray:#E2E8F4;
-    }
-
-    .retail-page{
-      font-family:'Inter',sans-serif;
-      color:var(--dark);
-      line-height:1.6;
-      overflow-x:hidden;
-      background:var(--light);
-    }
-
-    .retail-container{
-      width:100%;
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-
-    .retail-btn{
-      padding:10px 18px;
-      border-radius:30px;
-      font-weight:600;
-      transition:all .3s;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:14px;
-      font-family:inherit;
-    }
-
-    .retail-btn-outline{
-      border:2px solid var(--primary);
-      color:var(--primary);
-      background:transparent;
-    }
-
-    .retail-btn-outline:hover{
-      background:var(--primary);
-      color:#fff;
-      transform:translateY(-3px);
-      box-shadow:0 10px 20px rgba(0,85,255,.2);
-    }
-
-    .retail-btn-primary{
-      background:linear-gradient(135deg,#2D60FF,var(--primary));
-      color:#fff;
-      border:none;
-      box-shadow:0 8px 28px rgba(21,73,255,.35);
-    }
-
-    .retail-btn-primary:hover{
-      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-      transform:translateY(-2px);
-      box-shadow:0 12px 32px rgba(21,73,255,.45);
-    }
-
-    .retail-btn-hero-outline{
-      background:rgba(255,255,255,.07);
-      color:#fff;
-      border:1.5px solid rgba(255,255,255,.28);
-    }
-    .retail-btn-hero-outline:hover{
-      background:rgba(255,255,255,.12);
-      border-color:rgba(255,255,255,.5);
-    }
-
-    .retail-hero{
-      background:
-        radial-gradient(ellipse 100% 70% at 80% -10%, rgba(21,73,255,.28) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at -10% 100%, rgba(0,207,255,.12) 0%, transparent 50%),
-        linear-gradient(160deg,#060E21 0%,#0C1A38 60%,#0a1c42 100%);
-      color:#fff;
-      padding:100px 0;
-      position:relative;
-      overflow:hidden;
-    }
-    .retail-hero::before{
-      content:"";position:absolute;inset:0;
-      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events:none;opacity:.3;
-    }
-
-    .retail-hero-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:30px;
-      align-items:center;
-    }
-
-    .retail-hero h1{
-      font-size:2.6rem;
-      line-height:1.15;
-      margin-bottom:16px;
-      animation:retail-fadeInUp 1s ease;
-    }
-
-    .retail-hero p{
-      opacity:.9;
-      margin-bottom:26px;
-      animation:retail-fadeInUp 1s ease .15s both;
-    }
-
-    .retail-badges{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:22px;
-    }
-
-    .retail-badge{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.2);
-      backdrop-filter:blur(4px);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.9rem;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .retail-btns{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .retail-scene{
-      position:relative;
-      height:480px;
-    }
-
-    .retail-counter{
-      position:absolute;
-      bottom:0;
-      left:50%;
-      transform:translateX(-50%);
-      width:620px;
-      height:38px;
-      background:linear-gradient(180deg,#0f1a31,#0a1426);
-      border-radius:12px;
-      box-shadow:0 -6px 18px rgba(0,0,0,.28) inset;
-    }
-
-    .retail-pos{
-      position:absolute;
-      right:24px;
-      top:24px;
-      width:320px;
-      height:190px;
-      border-radius:16px;
-      background:linear-gradient(145deg,#12233d,#203b66);
-      box-shadow:0 14px 30px rgba(0,0,0,.3);
-      padding:14px;
-    }
-
-    .retail-pos .title{
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.08em;
-      color:#89b5ff;
-      opacity:.9;
-      margin-bottom:6px;
-    }
-
-    .retail-pos .line{
-      height:36px;
-      background:rgba(255,255,255,.07);
-      border-radius:10px;
-      margin-top:8px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .retail-pos .line::after{
-      content:'';
-      position:absolute;
-      left:-120px;
-      top:0;
-      height:100%;
-      width:80px;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
-      animation:retail-shine 6s linear infinite;
-    }
-
-    .retail-pinpad{
-      position:absolute;
-      left:24px;
-      bottom:64px;
-      width:310px;
-      height:210px;
-      border-radius:20px;
-      background:linear-gradient(145deg,#2b3b50,#4a6580);
-      box-shadow:0 20px 40px rgba(0,0,0,.35);
-    }
-
-    .retail-pinpad-screen{
-      position:absolute;
-      left:14px;
-      right:14px;
-      top:16px;
-      height:72px;
-      background:#060E21;
-      border-radius:10px;
-      box-shadow:inset 0 0 12px rgba(0,0,0,.5);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 14px;
-    }
-
-    .retail-pinpad-screen .amount{
-      color:#bff1df;
-      font-weight:700;
-    }
-
-    .retail-pinpad-screen .tap{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      background:var(--accent);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      box-shadow:0 0 18px rgba(0,204,150,.6);
-      animation:retail-tapPulse 2.2s ease-in-out infinite;
-    }
-
-    .retail-tips{
-      position:absolute;
-      left:14px;
-      right:14px;
-      top:102px;
-      height:64px;
-      background:#102342;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:space-evenly;
-    }
-
-    .retail-pill{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.15);
-      color:#d9f5ff;
-      font-weight:600;
-      font-size:.9rem;
-    }
-
-    .retail-pill.active{
-      background:rgba(0,204,150,.18);
-      border-color:rgba(0,204,150,.6);
-      color:#eafff8;
-    }
-
-    .retail-keypad{
-      position:absolute;
-      left:14px;
-      right:14px;
-      bottom:12px;
-      height:46px;
-      background:rgba(255,255,255,.06);
-      border-radius:10px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:6px;
-      padding:6px;
-    }
-
-    .retail-keypad .key{
-      border-radius:8px;
-      background:rgba(255,255,255,.08);
-      display:block;
-    }
-
-    .retail-keypad .key.ok{
-      background:rgba(0,204,150,.25);
-    }
-
-    .retail-product{
-      position:absolute;
-      left:380px;
-      bottom:84px;
-      width:120px;
-      height:80px;
-      border-radius:12px;
-      background:linear-gradient(180deg,#f0f4ff,#dde7ff);
-      box-shadow:0 12px 24px rgba(0,0,0,.25);
-    }
-
-    .retail-barcode{
-      position:absolute;
-      left:16px;
-      top:18px;
-      width:88px;
-      height:18px;
-      background:repeating-linear-gradient(90deg,#111 0 2px,#fff 2px 4px);
-      border-radius:3px;
-    }
-
-    .retail-scanner{
-      position:absolute;
-      left:360px;
-      bottom:48px;
-      width:150px;
-      height:20px;
-      border-radius:12px;
-      background:linear-gradient(145deg,#1d2a45,#2a4476);
-      box-shadow:0 10px 22px rgba(0,0,0,.32);
-    }
-
-    .retail-beam{
-      position:absolute;
-      left:-80px;
-      top:-14px;
-      width:80px;
-      height:48px;
-      background:radial-gradient(ellipse at left, rgba(0,255,170,.45), rgba(0,255,170,0));
-      filter:blur(2px);
-      animation:retail-scan 4.2s linear infinite;
-    }
-
-    .retail-printer{
-      position:absolute;
-      left:220px;
-      top:22px;
-      width:110px;
-      height:70px;
-      border-radius:12px;
-      background:linear-gradient(145deg,#1e2e4d,#2f4b7d);
-      box-shadow:0 14px 30px rgba(0,0,0,.28);
-    }
-
-    .retail-paper{
-      position:absolute;
-      left:12px;
-      top:62px;
-      width:86px;
-      height:0;
-      background:#fff;
-      border-radius:0 0 6px 6px;
-      box-shadow:0 10px 18px rgba(0,0,0,.18);
-      overflow:hidden;
-      animation:retail-print 6s ease-in-out infinite;
-    }
-
-    .retail-paper::before{
-      content:'RECEIPT\A Item A  $24.00\A Item B  $12.00\A Tax     $3.60\A TOTAL   $39.60';
-      white-space:pre;
-      position:absolute;
-      left:8px;
-      top:6px;
-      color:#333;
-      font-size:10px;
-      line-height:1.5;
-    }
-
-    .retail-kiosk{
-      position:absolute;
-      right:0;
-      bottom:40px;
-      width:160px;
-      height:240px;
-      border-radius:18px 18px 12px 12px;
-      background:linear-gradient(160deg,#1c2b45,#2f4b7d);
-      box-shadow:0 16px 34px rgba(0,0,0,.32);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px;
-    }
-
-    .retail-kiosk-screen{
-      width:100%;
-      height:100%;
-      background:#060E21;
-      border-radius:12px;
-      padding:12px;
-      box-shadow:inset 0 0 12px rgba(0,0,0,.55);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .retail-kiosk-title{
-      color:#e9f2ff;
-      font-weight:800;
-      letter-spacing:.06em;
-      font-size:12px;
-      opacity:.95;
-      margin-bottom:8px;
-    }
-
-    .retail-kiosk-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:8px;
-      margin-top:2px;
-    }
-
-    .retail-kiosk-grid .card{
-      display:block;
-      height:44px;
-      border-radius:10px;
-      background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
-      box-shadow:inset 0 0 6px rgba(0,0,0,.25);
-    }
-
-    .retail-kiosk-cta{
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:12px;
-      height:32px;
-      border-radius:10px;
-      background:rgba(0,204,150,.22);
-      color:#eafff8;
-      font-weight:700;
-      display:grid;
-      place-items:center;
-      animation:retail-kioskPulse 3.5s ease-in-out infinite;
-    }
-
-    .retail-section{
-      padding:70px 0;
-    }
-
-    .retail-section-title{
-      text-align:center;
-      margin-bottom:40px;
-    }
-
-    .retail-section-title h2{
-      font-size:2rem;
-      color:var(--secondary);
-      margin-bottom:12px;
-    }
-
-    .retail-section-title p{
-      color:var(--gray);
-      max-width:680px;
-      margin:0 auto;
-    }
-
-    .retail-features-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:20px;
-    }
-
-    .retail-feature-card{
-      background:#fff;
-      border-radius:14px;
-      padding:22px;
-      box-shadow:0 6px 18px rgba(0,0,0,.08);
-      transition:.4s;
-      opacity:0;
-      transform:translateY(20px);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .retail-feature-card::before{
-      content:'';
-      position:absolute;
-      left:0;
-      top:0;
-      width:5px;
-      height:0;
-      background:var(--primary);
-      transition:height .5s;
-    }
-
-    .retail-feature-card.animated{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    .retail-feature-card.animated::before{
-      height:100%;
-    }
-
-    .retail-feature-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 14px 30px rgba(0,0,0,.1);
-    }
-
-    .retail-feature-icon{
-      width:56px;
-      height:56px;
-      border-radius:12px;
-      background:rgba(0,85,255,.1);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:12px;
-    }
-
-    .retail-feature-icon i{
-      font-size:22px;
-      color:var(--primary);
-    }
-
-    .retail-feature-card h3{
-      font-size:1.15rem;
-      margin-bottom:8px;
-      color:var(--secondary);
-    }
-
-    .retail-slider-shell{
-      position:relative;
-    }
-
-    .retail-slider-viewport{
-      overflow:auto;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-      scrollbar-width:none;
-      padding-bottom:8px;
-    }
-
-    .retail-slider-viewport::-webkit-scrollbar{
-      display:none;
-    }
-
-    .retail-slider-track{
-      display:flex;
-      gap:22px;
-      align-items:stretch;
-    }
-
-    .retail-slide{
-      scroll-snap-align:start;
-      flex:0 0 88%;
-    }
-
-    .retail-hw-card{
-      background:#fff;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 12px 28px rgba(16,24,40,.08);
-      transition:transform .25s ease, box-shadow .25s ease;
-      height:100%;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .retail-hw-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 16px 36px rgba(16,24,40,.12);
-    }
-
-    .retail-hw-media{
-      height:180px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(135deg,#4F46E5,#10B981);
-    }
-
-    .retail-hw-media img{
-      max-width:90%;
-      max-height:90%;
-      object-fit:contain;
-      display:block;
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));
-    }
-
-    .retail-hw-content{
-      padding:22px;
-    }
-
-    .retail-hw-content h3{
-      font-size:1.25rem;
-      margin-bottom:10px;
-      color:var(--secondary);
-    }
-
-    .retail-hw-content p{
-      color:#475569;
-    }
-
-    .retail-tag{
-      display:inline-block;
-      margin-top:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(0,204,150,.12);
-      color:#0a7c63;
-      font-size:.85rem;
-    }
-
-    .retail-slider-nav{
-      display:flex;
-      gap:10px;
-      justify-content:flex-end;
-      margin-top:14px;
-    }
-
-    .retail-slider-btn{
-      background:#fff;
-      border:1px solid var(--light-gray);
-      width:40px;
-      height:40px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 8px 16px rgba(0,0,0,.06);
-      transition:transform .2s ease, background .2s ease;
-    }
-
-    .retail-slider-btn:hover{
-      transform:translateY(-2px);
-      background:#F8FAFF;
-    }
-
-    .retail-slider-btn:disabled{
-      opacity:.4;
-      cursor:not-allowed;
-      transform:none;
-    }
-
-    .retail-slider-dots{
-      display:flex;
-      gap:8px;
-      justify-content:center;
-      margin-top:14px;
-    }
-
-    .retail-slider-dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#d1d5db;
-      border:none;
-      cursor:pointer;
-      transition:transform .2s ease, background .2s ease;
-    }
-
-    .retail-slider-dot[aria-current="true"]{
-      transform:scale(1.4);
-      background:var(--primary);
-    }
-
-    .retail-cta{
-      color:#fff;
-      padding:70px 0;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);
-      background-size:200% 200%;
-      animation:retail-ctaGradient 12s ease-in-out infinite;
-    }
-
-    .retail-cta h2{
-      font-size:2rem;
-      margin-bottom:18px;
-      opacity:0;
-      transform:translateY(20px);
-      transition:all .8s;
-    }
-
-    .retail-cta p{
-      max-width:700px;
-      margin:0 auto 24px;
-      opacity:0;
-      transform:translateY(20px);
-      transition:all .8s .15s;
-    }
-
-    .retail-cta .retail-btn{
-      opacity:0;
-      transform:translateY(20px);
-      transition:all .8s .3s;
-    }
-
-    .retail-cta.animated h2,
-    .retail-cta.animated p,
-    .retail-cta.animated .retail-btn{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    .retail-cta-btn{
-      background:#fff;
-      color:var(--primary);
-      font-weight:600;
-      border-color:#fff;
-    }
-
-    @media(min-width:768px){
-      .retail-hero{
-        padding:110px 0;
-      }
-
-      .retail-hero h1{
-        font-size:3rem;
-      }
-
-      .retail-features-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:24px;
-      }
-    }
-
-    @media (min-width:600px){
-      .retail-slide{
-        flex-basis:48%;
-      }
-    }
-
-    @media (min-width:992px){
-      .retail-slide{
-        flex-basis:31%;
-      }
+    .rt-container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+
+    .rt-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:all .3s ease;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+    .rt-btn--primary{background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;box-shadow:0 8px 28px rgba(21,73,255,.35)}
+    .rt-btn--primary:hover{background:linear-gradient(135deg,#1549FF,#0F38CC);transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
+    .rt-btn--ghost{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.2);backdrop-filter:blur(4px)}
+    .rt-btn--ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+    .rt-btn--lg{padding:14px 28px;font-size:16px}
+
+    .rt-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:rgba(0,207,255,.08);border:1px solid rgba(0,207,255,.2);color:#00CFFF}
+    .rt-pill--sm{font-size:12px;padding:6px 14px}
+
+    .rt-grad{background:linear-gradient(135deg,#00CFFF,#2D60FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* ── HERO ── */
+    .rt-hero{position:relative;padding:100px 0 80px;overflow:hidden;background:linear-gradient(160deg,#060E21 0%,#0C1A38 60%,#0a1c42 100%);color:#fff}
+    .rt-hero__grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+    .rt-hero__orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+    .rt-hero__orb--1{width:500px;height:500px;top:-120px;right:-60px;background:rgba(21,73,255,.2)}
+    .rt-hero__orb--2{width:400px;height:400px;bottom:-100px;left:-80px;background:rgba(0,207,255,.1)}
+
+    .rt-hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .rt-hero__text{max-width:560px}
+    .rt-hero__text .rt-pill{margin-bottom:20px}
+    .rt-hero__text h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.12;margin:0 0 18px}
+    .rt-hero__text p{font-size:17px;line-height:1.7;color:rgba(255,255,255,.75);margin-bottom:28px}
+    .rt-hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+    .rt-hero__trust{display:flex;gap:16px;flex-wrap:wrap}
+    .rt-hero__trust span{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.5);font-weight:500}
+    .rt-hero__trust span i{color:#00CFFF;font-size:14px}
+
+    .rt-hero__visual{position:relative;min-height:420px}
+
+    /* ── HERO APP MOCKUP ── */
+    .rt-hero-app{position:relative;width:100%;border-radius:16px;overflow:hidden;background:#0a1628;border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+    .rt-hero-app__bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
+    .rt-hero-app__dots{display:flex;gap:6px}
+    .rt-hero-app__dots span{width:10px;height:10px;border-radius:50%}
+    .rt-hero-app__dots span:nth-child(1){background:#ff5f57}
+    .rt-hero-app__dots span:nth-child(2){background:#ffbd2e}
+    .rt-hero-app__dots span:nth-child(3){background:#28ca42}
+    .rt-hero-app__title{font-size:12px;color:rgba(255,255,255,.45);font-weight:500}
+    .rt-hero-app__body{display:flex;min-height:260px}
+    .rt-hero-app__sidebar{width:44px;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0}
+    .rt-hero-app__nav{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:rgba(255,255,255,.3);font-size:13px;transition:all .2s}
+    .rt-hero-app__nav.active{background:rgba(21,73,255,.25);color:#00CFFF}
+    .rt-hero-app__main{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+    .rt-hero-app__topbar{display:flex;justify-content:space-between;align-items:center}
+    .rt-hero-app__topbar strong{font-size:13px;color:#fff;display:block}
+    .rt-hero-app__topbar span{font-size:11px;color:rgba(255,255,255,.4)}
+    .rt-hero-app__presets{display:flex;gap:4px}
+    .rt-hero-app__presets span{padding:4px 10px;border-radius:6px;font-size:11px;color:rgba(255,255,255,.4);font-weight:500;cursor:default}
+    .rt-hero-app__presets span.active{background:rgba(21,73,255,.2);color:#00CFFF}
+    .rt-hero-app__kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .rt-hero-kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:2px}
+    .rt-hero-kpi__label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+    .rt-hero-kpi__val{font-size:18px;font-weight:700;color:#fff}
+    .rt-hero-kpi__tag{font-size:10px;font-weight:600;display:inline-flex;align-items:center;gap:3px}
+    .rt-hero-kpi__tag.green{color:#00E5A0}
+    .rt-hero-kpi__tag.neutral{color:rgba(255,255,255,.4)}
+    .rt-hero-app__chart{flex:1;min-height:50px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
+    .rt-spark{width:100%;height:100%;display:block}
+
+    /* ── FLOATING CARDS ── */
+    .rt-hero-card{position:absolute;border-radius:14px;background:rgba(12,26,56,.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);padding:14px 16px;box-shadow:0 12px 40px rgba(0,0,0,.4);animation:rtFloatIn .8s ease both}
+    .rt-hero-card--pos{bottom:20px;left:-30px;width:220px;animation-delay:.4s}
+    .rt-hero-card--inv{top:30px;right:-20px;width:210px;animation-delay:.6s}
+    .rt-hero-card__hdr{font-size:11px;font-weight:700;color:#00CFFF;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .rt-hero-card__line{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.7);padding:3px 0}
+    .rt-hero-card__line--total{border-top:1px solid rgba(255,255,255,.1);margin-top:4px;padding-top:6px;color:#fff;font-weight:700}
+    .rt-hero-card__badge{margin-top:8px;font-size:11px;color:#00E5A0;font-weight:600;display:flex;align-items:center;gap:4px}
+    .rt-low{color:#ff6b6b;font-weight:600}
+
+    @keyframes rtFloatIn{from{opacity:0;transform:translateY(16px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+    /* ── METRICS BAR ── */
+    .rt-metrics{background:#060E21;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:32px 0}
+    .rt-metrics__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+    .rt-metrics__num{display:block;font-size:28px;font-weight:800;color:#fff}
+    .rt-metrics__label{font-size:13px;color:rgba(255,255,255,.45);font-weight:500;margin-top:4px;display:block}
+
+    /* ── SECTIONS ── */
+    .rt-section{padding:80px 0;background:#060E21}
+    .rt-section--dark{background:linear-gradient(180deg,#0C1A38,#060E21)}
+    .rt-section__header{text-align:center;max-width:640px;margin:0 auto 56px}
+    .rt-section__header .rt-pill{margin-bottom:16px}
+    .rt-section__header h2{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:800;color:#fff;line-height:1.2;margin:0 0 14px}
+    .rt-section__header p{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7}
+    .rt-section__header--light h2{color:#fff}
+
+    /* ── FEATURES ── */
+    .rt-features__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .rt-feature{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px 24px;transition:all .35s ease;opacity:0;transform:translateY(24px)}
+    .rt-feature.animated{opacity:1;transform:translateY(0)}
+    .rt-feature:hover{border-color:rgba(0,207,255,.2);background:rgba(0,207,255,.04);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+    .rt-feature__icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(21,73,255,.15),rgba(0,207,255,.1));display:grid;place-items:center;margin-bottom:16px;font-size:20px;color:#00CFFF}
+    .rt-feature h3{font-size:17px;font-weight:700;color:#fff;margin:0 0 8px}
+    .rt-feature p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;margin:0}
+
+    /* ── SHOWCASE ── */
+    .rt-showcase{padding:80px 0;background:linear-gradient(180deg,#060E21,#0C1A38)}
+    .rt-showcase__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .rt-showcase__card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:0;overflow:hidden;transition:all .35s ease;opacity:0;transform:translateY(24px)}
+    .rt-showcase__card.animated{opacity:1;transform:translateY(0)}
+    .rt-showcase__card:hover{border-color:rgba(0,207,255,.2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.25)}
+    .rt-showcase__card h3{font-size:17px;font-weight:700;color:#fff;margin:0 0 6px;padding:0 24px}
+    .rt-showcase__card p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;margin:0;padding:0 24px 24px}
+
+    .rt-showcase__mock{background:rgba(0,0,0,.25);border-bottom:1px solid rgba(255,255,255,.06);padding:0;margin-bottom:16px}
+    .rt-mock-bar{display:flex;gap:5px;padding:10px 14px;background:rgba(255,255,255,.03)}
+    .rt-mock-bar span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15)}
+    .rt-mock-body{padding:16px;min-height:140px;display:flex;flex-direction:column;justify-content:center}
+
+    .rt-mock-kpi{text-align:center;margin-bottom:12px}
+    .rt-mock-kpi__val{display:block;font-size:24px;font-weight:800;color:#fff}
+    .rt-mock-kpi__label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.04em}
+    .rt-mock-chart{display:flex;align-items:flex-end;gap:8px;justify-content:center;height:60px}
+    .rt-mock-chart__bar{width:28px;border-radius:6px 6px 0 0;background:rgba(21,73,255,.3);transition:height .6s ease}
+    .rt-mock-chart__bar--active{background:linear-gradient(180deg,#00CFFF,#1549FF)}
+
+    .rt-mock-inv__row{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:12px;color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.04)}
+    .rt-mock-inv__row:last-child{border-bottom:none}
+    .rt-mock-inv__row span:last-child{margin-left:auto;font-weight:600}
+    .rt-mock-inv__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .rt-mock-inv__dot.green{background:#00E5A0}
+    .rt-mock-inv__dot.amber{background:#ffbd2e}
+    .rt-mock-inv__dot.red{background:#ff5f57}
+
+    .rt-mock-kiosk{text-align:center}
+    .rt-mock-kiosk__title{font-size:11px;font-weight:800;letter-spacing:.08em;color:rgba(255,255,255,.6);margin-bottom:10px}
+    .rt-mock-kiosk__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px}
+    .rt-mock-kiosk__grid span{height:32px;border-radius:8px;background:rgba(255,255,255,.06)}
+    .rt-mock-kiosk__btn{padding:8px;border-radius:8px;background:linear-gradient(135deg,#2D60FF,#1549FF);color:#fff;font-size:12px;font-weight:700}
+
+    .rt-mock-sync{display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 0}
+    .rt-mock-sync__col{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.6);font-size:12px;font-weight:600}
+    .rt-mock-sync__col i{font-size:28px;color:#00CFFF}
+    .rt-mock-sync__arrow{color:rgba(255,255,255,.25);font-size:20px;animation:rtSyncPulse 2s ease-in-out infinite}
+
+    @keyframes rtSyncPulse{0%,100%{opacity:.4}50%{opacity:1;color:#00CFFF}}
+
+    /* ── HARDWARE ── */
+    .rt-hw__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .rt-hw-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:all .35s ease;opacity:0;transform:translateY(24px)}
+    .rt-hw-card.animated{opacity:1;transform:translateY(0)}
+    .rt-hw-card:hover{border-color:rgba(0,207,255,.2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+    .rt-hw-card__media{height:200px;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden}
+    .rt-hw-card__media img{max-width:100%;max-height:160px;object-fit:contain;transition:transform .4s ease}
+    .rt-hw-card:hover .rt-hw-card__media img{transform:scale(1.05)}
+    .rt-hw-card__body{padding:20px}
+    .rt-hw-card__tag{display:inline-block;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;background:rgba(0,207,255,.1);color:#00CFFF;margin-bottom:8px;letter-spacing:.02em}
+    .rt-hw-card__body h3{font-size:16px;font-weight:700;color:#fff;margin:0 0 6px}
+    .rt-hw-card__body p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0}
+
+    /* ── CTA ── */
+    .rt-cta{position:relative;padding:80px 0;background:linear-gradient(160deg,#0C1A38,#060E21);overflow:hidden;text-align:center}
+    .rt-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(21,73,255,.12),transparent 70%);pointer-events:none}
+    .rt-cta__inner{position:relative;z-index:1;max-width:640px}
+    .rt-cta__inner .rt-pill{margin-bottom:16px}
+    .rt-cta__inner h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:#fff;line-height:1.15;margin:0 0 16px}
+    .rt-cta__inner p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:32px}
+    .rt-cta__actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:991px){
+      .rt-hero__inner{grid-template-columns:1fr;gap:40px}
+      .rt-hero__visual{min-height:340px}
+      .rt-hero-card--pos{left:0;bottom:10px}
+      .rt-hero-card--inv{right:0;top:10px}
+      .rt-features__grid{grid-template-columns:repeat(2,1fr)}
+      .rt-showcase__grid{grid-template-columns:repeat(2,1fr)}
+      .rt-hw__grid{grid-template-columns:repeat(2,1fr)}
+      .rt-hero-app__kpis{grid-template-columns:repeat(2,1fr)}
     }
 
     @media(max-width:767px){
-      .retail-hero-grid{
-        grid-template-columns:1fr;
-      }
-
-      .retail-scene{
-        height:460px;
-      }
+      .rt-hero{padding:70px 0 60px}
+      .rt-hero__visual{min-height:auto}
+      .rt-hero-card{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%!important;margin-top:12px}
+      .rt-features__grid{grid-template-columns:1fr}
+      .rt-showcase__grid{grid-template-columns:1fr}
+      .rt-hw__grid{grid-template-columns:1fr}
+      .rt-metrics__grid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .rt-hero-app__kpis{grid-template-columns:repeat(2,1fr)}
+      .rt-section{padding:60px 0}
+      .rt-showcase{padding:60px 0}
     }
 
-    @media (prefers-reduced-motion: reduce){
-      *{
-        animation:none!important;
-        transition:none!important;
-        scroll-behavior:auto!important;
-      }
+    @media(max-width:480px){
+      .rt-hero-app__kpis{grid-template-columns:1fr}
+      .rt-metrics__grid{grid-template-columns:repeat(2,1fr)}
     }
 
-    @keyframes retail-shine{
-      0%{left:-120px}
-      100%{left:360px}
-    }
-
-    @keyframes retail-scan{
-      0%{left:-80px}
-      50%{left:70px}
-      100%{left:-80px}
-    }
-
-    @keyframes retail-print{
-      0%{height:0;opacity:0}
-      20%{height:86px;opacity:1}
-      60%{height:86px;opacity:1}
-      100%{height:0;opacity:0}
-    }
-
-    @keyframes retail-fadeInUp{
-      from{opacity:0;transform:translateY(20px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    @keyframes retail-tapPulse{
-      0%{box-shadow:0 0 0 0 rgba(0,204,150,.45)}
-      70%{box-shadow:0 0 0 14px rgba(0,204,150,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,204,150,0)}
-    }
-
-    @keyframes retail-kioskPulse{
-      0%,100%{transform:scale(1);opacity:.9}
-      50%{transform:scale(1.03);opacity:1}
-    }
-
-    @keyframes retail-ctaGradient{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important}
     }
   </style>
 
   <script is:inline>
-    // @ts-nocheck
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.retail-btn').forEach((b) => {
-        b.addEventListener('mouseenter', () => {
-          b.style.transform = 'translateY(-3px)';
-        });
-        b.addEventListener('mouseleave', () => {
-          b.style.transform = 'translateY(0)';
-        });
-      });
-
-      const reveal = [
-        ...document.querySelectorAll('.retail-feature-card'),
+    document.addEventListener('DOMContentLoaded',()=>{
+      const els=[
+        ...document.querySelectorAll('.rt-feature'),
+        ...document.querySelectorAll('.rt-showcase__card'),
+        ...document.querySelectorAll('.rt-hw-card'),
         document.getElementById('cta')
       ].filter(Boolean);
 
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            io.unobserve(entry.target);
+      const io=new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('animated');
+            io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.15 });
+      },{threshold:0.12});
 
-      reveal.forEach((el) => io.observe(el));
-
-      const viewport = document.getElementById('sliderViewport');
-      const track = document.getElementById('sliderTrack');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsWrap = document.getElementById('sliderDots');
-
-      if (!viewport || !track || !prevBtn || !nextBtn || !dotsWrap) return;
-
-      const slides = Array.from(track.querySelectorAll('.retail-slide'));
-      let current = 0;
-
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'retail-slider-dot';
-        dot.type = 'button';
-        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-        dot.addEventListener('click', () => goTo(i, true));
-        dotsWrap.appendChild(dot);
-      });
-
-      function update() {
-        const viewCenter = viewport.scrollLeft + viewport.clientWidth / 2;
-        let nearest = 0;
-        let nearestDist = Infinity;
-
-        slides.forEach((slide, i) => {
-          const center = slide.offsetLeft + slide.clientWidth / 2;
-          const dist = Math.abs(viewCenter - center);
-          if (dist < nearestDist) {
-            nearestDist = dist;
-            nearest = i;
-          }
-        });
-
-        current = nearest;
-        prevBtn.disabled = current === 0;
-        nextBtn.disabled = current === slides.length - 1;
-
-        dotsWrap.querySelectorAll('.retail-slider-dot').forEach((dot, i) => {
-          dot.setAttribute('aria-current', i === current ? 'true' : 'false');
-        });
-      }
-
-      function goTo(i, smooth = true) {
-        current = Math.max(0, Math.min(slides.length - 1, i));
-        slides[current].scrollIntoView({
-          behavior: smooth ? 'smooth' : 'auto',
-          inline: 'start',
-          block: 'nearest'
-        });
-        update();
-      }
-
-      prevBtn.addEventListener('click', () => goTo(current - 1));
-      nextBtn.addEventListener('click', () => goTo(current + 1));
-
-      window.addEventListener('keydown', (e) => {
-        const tag = (e.target.tagName || '').toLowerCase();
-        if (tag === 'input' || tag === 'textarea' || e.altKey || e.metaKey || e.ctrlKey) return;
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          goTo(current - 1);
-        }
-        if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          goTo(current + 1);
-        }
-      });
-
-      let startX = null;
-      let startTime = 0;
-
-      viewport.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        startTime = Date.now();
-      }, { passive: true });
-
-      viewport.addEventListener('touchend', (e) => {
-        if (startX === null) return;
-        const dx = e.changedTouches[0].clientX - startX;
-        const dt = Date.now() - startTime;
-        const threshold = dt < 500 ? 30 : 50;
-
-        if (dx > threshold) goTo(current - 1);
-        else if (dx < -threshold) goTo(current + 1);
-
-        startX = null;
-      });
-
-      viewport.addEventListener('scroll', () => {
-        window.requestAnimationFrame(update);
-      });
-
-      window.addEventListener('resize', update);
-
-      goTo(0, false);
+      els.forEach(el=>io.observe(el));
     });
   </script>
 </BaseLayout>
