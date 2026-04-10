@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "AYddGgSSRvCsnhmSTjAJt"
+uri = "file://public/images/restaurant/hero-1.png"
+type = "image"
+title = "elegant restaurant interior"
+
+[[generated]]
+id = "G-xzrVUn3LdcpAtyoh674"
+uri = "file://public/images/restaurant/hero-2.png"
+type = "image"
+title = "artisan pizza preparation"
+
+[[generated]]
+id = "geMLsRDkzAz60UabDO3Wt"
+uri = "file://public/images/restaurant/hero-3.png"
+type = "image"
+title = "upscale cocktail bar"
+
+[[generated]]
+id = "h8J5WHlo7eS09lDtS2ctK"
+uri = "file://public/images/restaurant/hero-4.png"
+type = "image"
+title = "gourmet plated dish"

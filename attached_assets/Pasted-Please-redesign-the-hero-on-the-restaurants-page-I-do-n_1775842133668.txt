@@ -1,0 +1,45 @@
+Please redesign the hero on the `/restaurants` page. I do **not** want the current fake dashboard / software animation on the right side anymore. It feels too generic and not as strong visually as the older restaurant photo-carousel style.
+
+Replace the current right-side visual with something more premium and creative that feels closer to a high-end restaurant brand while still supporting the restaurant POS / payments message.
+
+What I want instead:
+
+* Build a **large restaurant photo carousel** on the right side of the hero
+* Use beautiful, high-end restaurant imagery with a polished, editorial feel
+* Make it feel modern, warm, premium, and more visually impressive than the current dashboard graphic
+* Keep it sleek and tech-forward, but do **not** make it look like a fake SaaS screenshot
+
+Creative direction:
+
+* The carousel should rotate through 3 to 5 restaurant scenes
+* Large rounded image frame
+* Subtle motion only: soft slide, fade, parallax, or layered transitions
+* Add tasteful floating accent elements or badges tied to restaurant features, such as:
+
+  * Online Ordering
+  * QR Pay
+  * KDS
+  * Next-Day Funding
+  * Live Sales
+* These overlays should be minimal and elegant, not cluttered
+* You can also add a small bottom overlay panel with something like:
+
+  * “Built for dine-in, takeout, and fast casual”
+  * or a subtle metrics strip
+* Overall feel should be closer to a premium hospitality landing page, not a software demo screen
+
+Important:
+
+* Do **not** just swap the dashboard for one plain photo
+* Make it feel intentionally designed and more on par with the reference I provided
+* The image area should feel rich, layered, and alive
+* Use better composition, better spacing, and stronger visual balance with the left-side text
+* Make sure it still fits the existing page and brand, but elevate it
+
+Optional nice touch:
+
+* Add a very subtle glow, glass overlay, or floating chips that animate gently as the carousel changes
+* Keep the motion smooth and premium, never busy
+
+Goal:
+I want the `/restaurants` hero to feel more like a modern restaurant-tech brand with strong visual appeal, and less like a generic dashboard illustration.

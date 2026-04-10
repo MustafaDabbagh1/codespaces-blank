@@ -58,56 +58,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="rest-hero__visual">
-          <div class="rest-hero-app">
-            <div class="rest-hero-app__bar">
-              <div class="rest-hero-app__dots"><span></span><span></span><span></span></div>
-              <span class="rest-hero-app__title">PPD Restaurant — Dashboard</span>
-            </div>
-            <div class="rest-hero-app__body">
-              <div class="rest-hero-app__sidebar">
-                <div class="rest-hero-app__nav active"><i class="fa-solid fa-chart-line"></i></div>
-                <div class="rest-hero-app__nav"><i class="fa-solid fa-utensils"></i></div>
-                <div class="rest-hero-app__nav"><i class="fa-solid fa-cash-register"></i></div>
-                <div class="rest-hero-app__nav"><i class="fa-solid fa-display"></i></div>
-                <div class="rest-hero-app__nav"><i class="fa-solid fa-users"></i></div>
-                <div class="rest-hero-app__nav"><i class="fa-solid fa-gear"></i></div>
-              </div>
-              <div class="rest-hero-app__main">
-                <div class="rest-hero-app__topbar">
-                  <div><strong>Good morning</strong><span class="rest-hero-app__sub">Ember Taqueria — Main St</span></div>
-                  <div class="rest-hero-app__presets"><span class="active">Today</span><span>7d</span><span>30d</span></div>
+          <div class="rest-carousel" aria-roledescription="carousel" aria-label="Restaurant scenes">
+            <div class="rest-carousel__frame">
+              <div class="rest-carousel__track" id="carouselTrack">
+                <div class="rest-carousel__slide active" aria-roledescription="slide" aria-label="Slide 1 of 4">
+                  <img src="/images/restaurant/hero-1.png" alt="Elegant restaurant interior with warm ambient lighting" loading="eager" />
                 </div>
-                <div class="rest-hero-app__kpis">
-                  <div class="rest-kpi"><span class="rest-kpi__label">Revenue</span><span class="rest-kpi__val">$6,842</span><span class="rest-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 21%</span></div>
-                  <div class="rest-kpi"><span class="rest-kpi__label">Orders</span><span class="rest-kpi__val">147</span><span class="rest-kpi__tag cyan">42 online</span></div>
-                  <div class="rest-kpi"><span class="rest-kpi__label">Avg Ticket</span><span class="rest-kpi__val">$46</span><span class="rest-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 8%</span></div>
-                  <div class="rest-kpi"><span class="rest-kpi__label">Tips</span><span class="rest-kpi__val">$1,024</span><span class="rest-kpi__tag green"><i class="fa-solid fa-arrow-up"></i> 15%</span></div>
+                <div class="rest-carousel__slide" aria-roledescription="slide" aria-label="Slide 2 of 4">
+                  <img src="/images/restaurant/hero-2.png" alt="Artisan pizza preparation in a wood-fired oven" loading="lazy" />
                 </div>
-                <div class="rest-hero-app__orders">
-                  <div class="rest-hero-app__orders-hdr"><strong>Live Orders</strong><span>View All</span></div>
-                  <div class="rest-hero-order"><span class="rest-order-badge amber">Cooking</span><span class="rest-order-item">Table 7 — Smash Burger x2, Fries</span><span class="rest-order-price">$28.50</span></div>
-                  <div class="rest-hero-order"><span class="rest-order-badge green">Ready</span><span class="rest-order-item">Online #412 — Neapolitan 16"</span><span class="rest-order-price">$17.00</span></div>
-                  <div class="rest-hero-order"><span class="rest-order-badge blue">New</span><span class="rest-order-item">QR Table 3 — Oat Latte, Muffin</span><span class="rest-order-price">$9.25</span></div>
+                <div class="rest-carousel__slide" aria-roledescription="slide" aria-label="Slide 3 of 4">
+                  <img src="/images/restaurant/hero-3.png" alt="Upscale cocktail bar with ambient lighting" loading="lazy" />
+                </div>
+                <div class="rest-carousel__slide" aria-roledescription="slide" aria-label="Slide 4 of 4">
+                  <img src="/images/restaurant/hero-4.png" alt="Gourmet plated dish with artistic presentation" loading="lazy" />
                 </div>
               </div>
+              <div class="rest-carousel__overlay"></div>
             </div>
-          </div>
-
-          <div class="rest-hero-card rest-hero-card--qr">
-            <div class="rest-hero-card__hdr"><i class="fa-solid fa-qrcode"></i> QR Pay — Table 3</div>
-            <div class="rest-hero-card__line"><span>Oat Latte 16oz</span><span>$4.75</span></div>
-            <div class="rest-hero-card__line"><span>Blueberry Muffin</span><span>$4.50</span></div>
-            <div class="rest-hero-card__total"><span>Total</span><span>$9.25</span></div>
-            <div class="rest-hero-card__bar">
-              <span class="active"><i class="fa-solid fa-credit-card"></i> Card</span>
-              <span><i class="fa-brands fa-apple-pay"></i></span>
-              <span><i class="fa-brands fa-google-pay"></i></span>
+            <div class="rest-carousel__dots" role="tablist" aria-label="Carousel navigation">
+              <button class="rest-carousel__dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+              <button class="rest-carousel__dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+              <button class="rest-carousel__dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
+              <button class="rest-carousel__dot" role="tab" aria-selected="false" aria-label="Slide 4" data-slide="3"></button>
             </div>
-          </div>
-
-          <div class="rest-hero-card rest-hero-card--online">
-            <div class="rest-hero-card__hdr"><i class="fa-solid fa-mobile-screen-button"></i> Online Order #412</div>
-            <div class="rest-hero-card__status"><i class="fa-solid fa-circle-check"></i> Confirmed — Pickup 6:30pm</div>
+            <div class="rest-carousel__chips">
+              <div class="rest-carousel__chip rest-carousel__chip--1"><i class="fa-solid fa-mobile-screen-button"></i> Online Ordering</div>
+              <div class="rest-carousel__chip rest-carousel__chip--2"><i class="fa-solid fa-qrcode"></i> QR Pay</div>
+              <div class="rest-carousel__chip rest-carousel__chip--3"><i class="fa-solid fa-display"></i> KDS</div>
+              <div class="rest-carousel__chip rest-carousel__chip--4"><i class="fa-solid fa-bolt"></i> Next-Day Funding</div>
+            </div>
+            <div class="rest-carousel__strip">
+              <span><i class="fa-solid fa-utensils"></i> Dine-In</span>
+              <span class="rest-carousel__strip-sep"></span>
+              <span><i class="fa-solid fa-bag-shopping"></i> Takeout</span>
+              <span class="rest-carousel__strip-sep"></span>
+              <span><i class="fa-solid fa-truck"></i> Delivery</span>
+              <span class="rest-carousel__strip-sep"></span>
+              <span><i class="fa-solid fa-bolt"></i> Fast Casual</span>
+            </div>
           </div>
         </div>
       </div>
@@ -652,117 +641,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .rest-hero__visual{position:relative}
 
-    .rest-hero-app{
-      background:#0F172A;border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,.4);
-    }
+    .rest-carousel{position:relative}
+    .rest-carousel__frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);aspect-ratio:4/3}
+    .rest-carousel__track{position:relative;width:100%;height:100%}
+    .rest-carousel__slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease,transform .8s ease;transform:scale(1.03)}
+    .rest-carousel__slide.active{opacity:1;transform:scale(1);z-index:1}
+    .rest-carousel__slide img{width:100%;height:100%;object-fit:cover;border-radius:20px}
+    .rest-carousel__overlay{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(6,14,33,0) 40%,rgba(6,14,33,.6) 100%)}
 
-    .rest-hero-app__bar{
-      display:flex;align-items:center;gap:10px;
-      padding:10px 14px;background:rgba(255,255,255,.03);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+    .rest-carousel__dots{display:flex;gap:8px;justify-content:center;margin-top:16px}
+    .rest-carousel__dot{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.2);background:transparent;cursor:pointer;transition:all .3s;padding:0}
+    .rest-carousel__dot.active{background:var(--rest-cyan,#00CFFF);border-color:var(--rest-cyan,#00CFFF);box-shadow:0 0 10px rgba(0,207,255,.4)}
 
-    .rest-hero-app__dots{display:flex;gap:5px}
-    .rest-hero-app__dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)}
-    .rest-hero-app__dots span:first-child{background:#EF4444}
-    .rest-hero-app__dots span:nth-child(2){background:#F59E0B}
-    .rest-hero-app__dots span:last-child{background:#22C55E}
+    .rest-carousel__chips{position:absolute;inset:0;z-index:5;pointer-events:none}
+    .rest-carousel__chip{position:absolute;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;font-size:11px;font-weight:700;color:#fff;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(12,26,56,.75);border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap;opacity:0;animation:rest-chip-in .6s ease forwards}
+    .rest-carousel__chip i{color:#00CFFF;font-size:12px}
+    .rest-carousel__chip--1{top:20px;right:20px;animation-delay:.2s}
+    .rest-carousel__chip--2{bottom:60px;left:20px;animation-delay:.4s}
+    .rest-carousel__chip--3{top:70px;right:20px;animation-delay:.6s}
+    .rest-carousel__chip--4{bottom:60px;right:20px;animation-delay:.8s}
+    @keyframes rest-chip-in{to{opacity:1;transform:translateY(0)}}
+    .rest-carousel__chip{transform:translateY(8px)}
 
-    .rest-hero-app__title{font-size:11px;color:#64748B;font-weight:600}
+    .rest-carousel__strip{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 20px;background:rgba(6,14,33,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:0 0 20px 20px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7)}
+    .rest-carousel__strip i{color:#00CFFF;margin-right:4px;font-size:11px}
+    .rest-carousel__strip-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.2)}
 
-    .rest-hero-app__body{display:grid;grid-template-columns:42px 1fr}
-
-    .rest-hero-app__sidebar{
-      background:rgba(255,255,255,.02);border-right:1px solid rgba(255,255,255,.06);
-      padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:2px;
-    }
-
-    .rest-hero-app__nav{
-      width:30px;height:30px;border-radius:8px;
-      display:flex;align-items:center;justify-content:center;
-      color:#475569;font-size:12px;transition:all .2s;
-    }
-    .rest-hero-app__nav.active{background:rgba(21,73,255,.15);color:#2D60FF}
-
-    .rest-hero-app__main{padding:12px}
-
-    .rest-hero-app__topbar{
-      display:flex;justify-content:space-between;align-items:center;
-      margin-bottom:10px;
-    }
-    .rest-hero-app__topbar strong{font-size:12px;color:#E2E8F0}
-    .rest-hero-app__sub{display:block;font-size:10px;color:#64748B;margin-top:1px}
-
-    .rest-hero-app__presets{display:flex;gap:3px}
-    .rest-hero-app__presets span{
-      font-size:9px;font-weight:600;padding:3px 8px;border-radius:5px;
-      color:#64748B;cursor:pointer;
-    }
-    .rest-hero-app__presets span.active{background:rgba(21,73,255,.15);color:#2D60FF}
-
-    .rest-hero-app__kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
-
-    .rest-kpi{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
-      border-radius:8px;padding:8px;
-    }
-    .rest-kpi__label{display:block;font-size:9px;color:#64748B;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
-    .rest-kpi__val{display:block;font-size:16px;font-weight:800;color:#E2E8F0;margin:2px 0}
-    .rest-kpi__tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px}
-    .rest-kpi__tag.green{color:#22C55E;background:rgba(34,197,94,.1)}
-    .rest-kpi__tag.cyan{color:#00CFFF;background:rgba(0,207,255,.1)}
-
-    .rest-hero-app__orders{border-top:1px solid rgba(255,255,255,.06);padding-top:8px}
-    .rest-hero-app__orders-hdr{display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px}
-    .rest-hero-app__orders-hdr strong{color:#E2E8F0}
-    .rest-hero-app__orders-hdr span{color:#1549FF;font-weight:600;font-size:10px}
-
-    .rest-hero-order{
-      display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;
-      padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px;
-    }
-
-    .rest-order-badge{
-      font-size:9px;font-weight:700;padding:3px 8px;border-radius:5px;
-      text-transform:uppercase;letter-spacing:.03em;
-    }
-    .rest-order-badge.amber{color:#F59E0B;background:rgba(245,158,11,.1)}
-    .rest-order-badge.green{color:#22C55E;background:rgba(34,197,94,.1)}
-    .rest-order-badge.blue{color:#3B82F6;background:rgba(59,130,246,.1)}
-
-    .rest-order-item{color:#94A3B8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .rest-order-price{color:#E2E8F0;font-weight:700}
-
-    .rest-hero-card{
-      position:absolute;
-      background:#0F172A;border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:12px;
-      box-shadow:0 12px 40px rgba(0,0,0,.4);
-      width:200px;font-size:11px;
-      animation:rest-float 6s ease-in-out infinite;
-    }
-
-    .rest-hero-card--qr{bottom:20px;left:-30px;animation-delay:-1s}
-    .rest-hero-card--online{top:30px;right:-20px;animation-delay:-3s}
-
-    .rest-hero-card__hdr{font-weight:700;color:#E2E8F0;margin-bottom:8px;font-size:11px}
-    .rest-hero-card__hdr i{color:#00CFFF;margin-right:5px}
-    .rest-hero-card__line{display:flex;justify-content:space-between;color:#94A3B8;padding:2px 0;font-size:10px}
-    .rest-hero-card__total{display:flex;justify-content:space-between;font-weight:800;color:#E2E8F0;border-top:1px solid rgba(255,255,255,.08);padding-top:5px;margin-top:4px;font-size:11px}
-
-    .rest-hero-card__bar{display:flex;gap:3px;margin-top:6px}
-    .rest-hero-card__bar span{
-      flex:1;padding:4px;border-radius:5px;
-      border:1px solid rgba(255,255,255,.08);
-      text-align:center;font-size:9px;font-weight:600;
-      color:#64748B;display:flex;align-items:center;justify-content:center;gap:3px;
-    }
-    .rest-hero-card__bar span.active{background:#1549FF;color:#fff;border-color:#1549FF}
-
-    .rest-hero-card__status{color:#22C55E;font-weight:600;font-size:10px}
-    .rest-hero-card__status i{margin-right:4px}
 
     .rest-metrics{
       background:#0C1A38;
@@ -1164,8 +1068,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     @media(max-width:1024px){
       .rest-hero__inner{grid-template-columns:1fr;gap:40px}
-      .rest-hero-card--qr{left:10px;bottom:10px}
-      .rest-hero-card--online{right:10px;top:10px}
+      .rest-carousel__frame{max-width:520px;margin:0 auto}
+      .rest-carousel__chip--3{display:none}
+      .rest-carousel__chip--4{display:none}
     }
 
     @media(max-width:900px){
@@ -1184,17 +1089,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       .rest-testi-grid{grid-template-columns:1fr}
       .rest-hero__actions{flex-direction:column;width:100%}
       .rest-hero__actions button{width:100%;justify-content:center}
-      .rest-hero-app__kpis{grid-template-columns:repeat(2,1fr)}
-      .rest-hero-card{display:none}
+      .rest-carousel__chips{display:none}
+      .rest-carousel__strip{gap:10px;font-size:11px;padding:10px 12px}
     }
 
     @media(max-width:640px){
       .rest-kds__grid{grid-template-columns:1fr}
       .rest-demo-grid{grid-template-columns:1fr}
       .rest-demo-row{grid-template-columns:1fr}
-      .rest-hero-app__kpis{grid-template-columns:1fr}
       .rest-float-cta{right:12px;bottom:12px}
       .rest-float-cta .rest-btn-pill{padding:10px 16px;font-size:13px}
+      .rest-carousel__strip span{font-size:10px}
     }
 
     @keyframes rest-float{
@@ -1211,6 +1116,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <script is:inline>
     // @ts-nocheck
     (() => {
+      const slides = document.querySelectorAll('.rest-carousel__slide');
+      const dots = document.querySelectorAll('.rest-carousel__dot');
+      if (slides.length > 0 && !window.__restCarouselInit) {
+        window.__restCarouselInit = true;
+        let current = 0;
+        let timer;
+        function goTo(idx) {
+          if (!Number.isInteger(idx) || idx < 0 || idx >= slides.length || idx === current) return;
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          dots[current].setAttribute('aria-selected', 'false');
+          current = idx;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+          dots[current].setAttribute('aria-selected', 'true');
+        }
+        function advance() { goTo((current + 1) % slides.length); }
+        function startAuto() { timer = setInterval(advance, 4500); }
+        function stopAuto() { clearInterval(timer); }
+        function resetAuto() { stopAuto(); startAuto(); }
+        dots.forEach(d => d.addEventListener('click', () => {
+          const idx = parseInt(d.dataset.slide, 10);
+          if (!isNaN(idx)) { goTo(idx); resetAuto(); }
+        }));
+        startAuto();
+        window.addEventListener('beforeunload', stopAuto);
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) stopAuto(); else resetAuto();
+        });
+      }
       document.querySelectorAll('.rest-menu-card').forEach((card) => {
         const base = parseFloat(card.dataset.base || '0');
         const priceEl = card.querySelector('.rest-price-val');
