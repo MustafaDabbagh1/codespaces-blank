@@ -1,0 +1,73 @@
+Please improve the /retail page and make it feel more premium, modern, and software-driven, while keeping the retail focus and overall message intact.
+
+Important fixes first:
+1. Update all old hardware/product links that still point to mmdabbagh24.neocities.org
+- Replace those old links with the correct live site links on ppdtechnology.com
+- Check every card in the “Retail Hardware & Software That Click” section
+- Make sure all links are correct on both desktop and mobile
+
+2. Remove Clover Duo from the retail hardware section
+- Remove Clover Duo completely from the lineup
+- Rebalance the section so the layout still looks clean and intentional
+- Do not leave an awkward gap
+
+3. Add Korona POS as the new 6th section/card in the retail hardware/software lineup
+- Add **Korona POS** into that section as the new 6th item
+- Use a photo/image from the **Korona POS page on our website** as the visual for that card
+- Match the styling, spacing, and layout of the other cards
+- Make sure the Korona POS card links correctly to the Korona POS page
+- Keep the whole section balanced and visually polished after this change
+
+Design/content improvements:
+1. Keep the hero section, but make it stronger and more polished
+- Keep the retail-specific message
+- Make the hero feel more premium and software-forward
+- Improve hierarchy, spacing, and CTA presentation
+- Upgrade the visual so it feels more like a real retail commerce platform, not just a simple cart mockup
+
+2. Upgrade the “Everything to Move Lines and Move Inventory” section
+- Keep the existing feature set:
+  - Omnichannel Checkout
+  - Real-Time Inventory
+  - Loyalty & CRM
+  - BOPIS & Ship-from-Store
+  - Returns & Exchanges
+  - Security & Compliance
+- Improve the card design, icons, spacing, and overall visual consistency
+- Make this section easier to scan and more visually engaging
+
+3. Add stronger software/demo energy to the page
+- Make the page feel closer in quality to the newer PPD Repair page
+- Introduce a more premium product showcase feel for retail workflows
+- Better highlight things like:
+  - POS / checkout
+  - inventory visibility
+  - self-checkout
+  - online + in-store sync
+  - returns
+  - customer data / loyalty
+
+4. Improve the hardware/software section
+- Keep it clean and premium
+- Better card styling, alignment, spacing, and consistency
+- Make it feel like part of the same retail software ecosystem, not just a list of devices
+
+5. Tighten the final CTA section
+- Keep the “Ready to Ring Up More Sales?” direction
+- Make the close of the page stronger and more polished
+- Improve visual hierarchy and CTA emphasis
+
+General direction:
+- Do not completely rewrite the page
+- Keep the strongest retail messaging
+- Make it feel more modern, premium, and software-driven
+- Improve spacing, polish, and hierarchy
+- Match the quality level of the newer pages on the site
+
+Important:
+Focus especially on:
+- fixing all old neocities links
+- removing Clover Duo
+- adding Korona POS using a website image from the Korona POS page
+- making the page feel more premium and less plain
+- adding stronger retail software/demo presence without overcomplicating the page
