@@ -1,0 +1,214 @@
+I need you to completely redesign the /signup page on ppdtechnology.com into a true merchant processing application landing page.
+
+This page should no longer feel like a “deals” or “hardware credits” page first. Its main purpose is to get serious businesses to complete an application for payment processing and give us enough information to properly evaluate and onboard them.
+
+Main goal:
+Create a high-converting, professional, modern fintech-style landing page that strongly emphasizes the application process, security, and completeness of information. The design should feel trustworthy, premium, clean, and optimized for form completion.
+
+Overall direction:
+- Make this page feel like a secure merchant application / business onboarding page
+- Prioritize collecting full business details over promoting hardware
+- Keep it sleek, high-tech, and very user friendly
+- Make the application the main event on the page
+- Strong focus on trust, security, ease, and professionalism
+- Mobile responsive and polished
+- Keep the header/footer consistent with the rest of the site
+
+Please rebuild the page structure like this:
+
+1. Hero section
+- Strong headline focused on applying for merchant processing
+- Clear subheadline explaining that businesses can submit their information for approval and onboarding
+- Add trust language like secure application, encrypted submission, underwriting review, US-based support, etc.
+- Primary CTA button should scroll directly to the application form
+- Secondary CTA can be something like “Speak to a Specialist” or “Questions Before Applying?”
+- Remove the current heavy focus on limited-time deals and hardware credits from the hero
+
+Example direction for headline:
+Apply for Merchant Processing with PPD Technology
+Secure, streamlined business onboarding for payment processing, POS, and next-day funding options.
+
+2. Trust / credibility strip
+Add a clean section directly under the hero with items like:
+- Encrypted application
+- Secure bank information submission
+- Fast review process
+- U.S.-based support
+- POS and terminal options available
+- Business underwriting ready
+
+3. “What you’ll need to apply” section
+Create a short visual section before the form that tells users what information they should have ready.
+Include:
+- Legal business information
+- Owner details
+- EIN / tax information
+- Estimated processing volume
+- Bank routing and account number
+- Voided check or bank verification if needed
+- Basic processing history
+
+This should reduce dropoff and prepare the user before they begin.
+
+4. Main application section
+This needs to be the centerpiece of the page.
+
+Build a premium multi-step form with a very clean layout, strong spacing, excellent validation, and a clear progress indicator.
+
+Use sections like:
+
+Step 1: Business Information
+- Legal business name
+- DBA
+- Business entity type
+- Industry / business type
+- Years in business
+- Business start date
+- EIN / Tax ID
+- Business phone
+- Business email
+- Website
+- Business address
+- Mailing address if different
+- Number of locations
+- State of incorporation
+- Describe products/services sold
+- Do you sell in-store, online, mobile, invoice, recurring, or MOTO
+
+Step 2: Owner / Principal Information
+- Full legal name
+- Ownership %
+- Title / role
+- Date of birth
+- SSN or at minimum last 4 if that is all we want
+- Home address
+- Mobile phone
+- Email
+- Secondary owner / additional principal option if ownership structure requires it
+
+Step 3: Processing Profile
+- Estimated monthly card volume
+- Average ticket
+- Highest ticket
+- Card present or card not present %
+- Current processor
+- Processing history
+- Have you processed before? yes/no
+- Chargeback history
+- Refund policy
+- Days between sale and fulfillment
+- Products/services timing
+- Do you accept ACH?
+- Need virtual terminal?
+- Need invoicing?
+- Need online payments?
+- Need POS or terminal hardware?
+
+Step 4: Bank / Funding Information
+This section should be treated very seriously and professionally.
+- Bank name
+- Routing number
+- Account number
+- Account type
+- Name on bank account
+- Confirmation field for account number
+- Add trust messaging that this is securely submitted for funding setup
+- Visually make this section feel safe and encrypted
+
+Step 5: Equipment / Solution Needs
+- Terminal only
+- POS system
+- Mobile reader
+- Wireless terminal
+- Pin pad
+- eCommerce gateway
+- Virtual terminal
+- Other needs
+- Quantity needed
+- Notes / special requirements
+
+Step 6: Review & Submit
+- Show a clean review summary
+- Checkbox confirmations
+- Consent language
+- Submit button
+- Add small note that a specialist may contact them for any missing underwriting items
+
+5. Important UX requirements
+- Autosave progress if possible
+- Clean progress bar at top
+- Smart field validation
+- Mask routing/account inputs nicely
+- Make required vs optional fields obvious
+- Use expandable helper text where needed
+- Break up long forms visually so it never feels overwhelming
+- Make the form feel premium, not generic
+- Use strong spacing and card-based sections
+- On mobile, keep everything neat and very easy to fill out
+
+6. Security emphasis
+Throughout the page, reinforce trust without looking scary.
+Examples:
+- Secure encrypted submission
+- Information used only for merchant application review and account setup
+- Bank details handled securely
+- A specialist may follow up for any final documentation
+
+7. Supporting content below form
+After or beside the form, add a short section:
+Why businesses apply with PPD Technology
+Include a few short points:
+- Personalized support
+- Payment processing solutions tailored to business type
+- POS and terminal options
+- Fast underwriting review
+- Next-day funding options for eligible businesses
+
+8. Success / confirmation state
+After form submission, show a much better success screen than the current one.
+Include:
+- Confirmation that the application was received
+- What happens next
+- Approximate follow-up expectations without making risky guarantees
+- Optional button to call or email support
+- Optional note about having documents ready if requested
+
+9. Design instructions
+- Make the design look like a serious fintech / SaaS onboarding page
+- Clean typography
+- Strong visual hierarchy
+- Modern cards, subtle gradients, premium UI
+- Smooth scrolling and subtle animations
+- No clutter
+- No cheesy stock feel
+- Very polished on desktop and mobile
+
+10. Content priority changes
+Please reduce the current emphasis on:
+- hardware deals
+- promotional pricing cards
+- flashy “limited-time” language
+
+This page should primarily be about:
+- applying
+- submitting business details
+- secure onboarding
+- processing approval
+- complete business intake
+
+11. Conversion improvements
+Please include:
+- sticky apply button on mobile if appropriate
+- anchor link to jump into the form
+- short FAQ near the bottom about:
+  - What information is required?
+  - Why do you need routing and account number?
+  - How secure is my information?
+  - What happens after I apply?
+  - Will someone contact me if something is missing?
+
+12. Final instruction
+Do not make this look like a generic contact form.
+This should feel like a real merchant application experience designed to collect serious business information for processing approval and onboarding.
+
+Please fully redesign the page and improve both the layout and the wording. Keep it conversion-focused, trustworthy, modern, and centered around completing the application.
