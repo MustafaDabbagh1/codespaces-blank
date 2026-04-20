@@ -1,0 +1,77 @@
+Please update the Korona page on ppdtechnology.com and make it feel much more modern, retail-tech, and software-driven while keeping the page professional, polished, and conversion-focused.
+
+Goal:
+Make the Korona page feel less plain and more like a premium retail technology solution page, similar to a modern SaaS / smart retail platform. It should feel sleek, high-trust, and built for serious retail businesses.
+
+What I want improved:
+
+1. Overall visual direction
+- Make the page feel more “retail tech” and less static
+- Use a modern software aesthetic with cleaner spacing, stronger hierarchy, more depth, better card styling, and more polished UI sections
+- Keep it professional and premium, not flashy or gimmicky
+- The page should feel like a smart retail operating system, not just a basic POS page
+
+2. Hero section
+- Redesign or enhance the hero so it immediately feels like advanced retail technology
+- Add stronger visual interest through layered UI cards, mock dashboards, inventory widgets, barcode/checkout style elements, product analytics visuals, or subtle software-inspired graphics
+- Add refined motion in the hero if appropriate, such as soft floating UI elements, subtle background glow, or slight parallax
+- Improve headline/subheadline layout so it feels more premium and persuasive
+- Make the CTA area stand out more clearly
+
+3. Retail-tech visuals
+- Add sections or visual elements that make the page feel built for modern retailers:
+  - inventory management
+  - barcode scanning
+  - multi-location reporting
+  - customer analytics
+  - real-time product performance
+  - employee permissions
+  - checkout speed
+  - back-office control
+- Use UI-style cards, dashboards, charts, metrics, and retail workflow visuals rather than generic blocks of text
+
+4. Section styling
+- Improve all sections with stronger visual structure and better spacing
+- Upgrade cards so they have a more premium SaaS feel with subtle shadows, border glow, hover lift, and better icon treatment
+- Add better visual separation between sections using soft gradients, layered backgrounds, divider transitions, or subtle glow accents
+- Make the whole page feel more immersive as you scroll
+
+5. Animations and scroll effects
+- Add tasteful scroll animations throughout the page
+- Use staggered reveals for cards and content
+- Use subtle fade-up, scale-in, or slide-in effects that feel smooth and modern
+- Add hover interactions to cards/buttons where appropriate
+- Keep motion restrained and premium, not overdone
+- Respect reduced motion preferences
+
+6. Product/software feel
+- Make the page feel like a true retail management platform, not just a payment processor page
+- Emphasize operational control, live visibility, and modern store management
+- Highlight things like:
+  - smart inventory control
+  - real-time retail reporting
+  - product-level insights
+  - fast checkout experience
+  - multi-store visibility
+  - employee and register controls
+  - integrations or ecosystem feel if relevant
+
+7. CTA and conversion improvements
+- Make CTA sections feel stronger and more intentional
+- Improve button styling with premium hover states
+- Keep the page focused on getting demos / leads
+- Make the page visually persuasive for retailers who want better technology and better visibility into their business
+
+8. Keep brand consistency
+- Keep the overall PPD Technology branding consistent with the rest of the site
+- Do not make it look like a different company
+- It should still fit naturally with the rest of ppdtechnology.com, just elevated and more retail-tech focused
+
+Important:
+- Do not strip out important existing content unless needed
+- Improve the existing page rather than replacing it with something generic
+- Maintain mobile responsiveness
+- Keep the page fast and clean
+- Make the finished page feel like a premium modern retail software landing page
+
+Please directly update the Korona page code and any shared styles/components needed to support the improved design and animations.
