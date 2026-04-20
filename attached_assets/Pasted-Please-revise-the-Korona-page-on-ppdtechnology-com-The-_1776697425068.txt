@@ -1,0 +1,45 @@
+Please revise the Korona page on ppdtechnology.com.
+
+The current direction made the page feel too far from the original Korona page and it lost some of the Korona identity. I want the page to still feel more modern, polished, and retail-tech focused, but it needs to keep the recognizable feel of the previous page.
+
+What I want fixed:
+
+1. Bring back the Korona logo
+- Add the Korona logo back somewhere clearly visible on the page
+- Best placement would likely be in the hero section, near the headline/subheadline, in a partner/integration style lockup, or another strong visible area
+- The logo should feel intentional and premium, not randomly dropped in
+- It should help restore the page’s original Korona identity and trust
+
+2. Keep the Korona feel
+- Do not make the page feel like a totally different product or company
+- Preserve the original Korona page’s overall spirit, messaging feel, and recognition
+- It should still clearly feel like a Korona-related page, just upgraded and more polished
+
+3. Improve without over-replacing
+- Do not over-redesign the page to the point that it loses its previous character
+- Build on the original page instead of replacing it with a generic SaaS page
+- Keep the parts that already gave the page its original Korona personality where possible
+
+4. Modern retail-tech polish
+- Keep the improvements that make it feel more premium, software-driven, and retail-tech focused
+- Use better spacing, stronger hierarchy, cleaner cards, more polished visuals, and tasteful motion
+- But make sure all of that still supports the Korona branding rather than overpowering it
+
+5. Visual balance
+- Blend the original Korona identity with the newer PPD Technology style
+- The page should feel like:
+  - PPD Technology + Korona partnership/integration
+  - modern retail technology
+  - trustworthy and established
+  - not generic and not disconnected from the original page
+
+6. Animations and styling
+- Keep animations tasteful and smooth
+- Do not make the page overly flashy
+- Prioritize premium polish, clarity, and brand continuity
+
+Important:
+- Please restore some of the original Korona identity
+- Add the Korona logo back in a strong, visible, natural way
+- Keep the upgraded look, but do not let the page lose the feel of the previous version
+- The result should feel like an improved version of the old Korona page, not a completely different landing page

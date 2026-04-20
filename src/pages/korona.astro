@@ -22,7 +22,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="container kp-hero__inner">
         <div class="kp-hero__text">
-          <span class="kp-eyebrow"><i class="fa-solid fa-barcode"></i> KORONA POS · Powered by PPD Technology</span>
+          <div class="kp-lockup">
+            <img class="kp-lockup__logo" src="https://ppdtechnology.com/images/Korona/KORONA-POS-Logo-Long.png" alt="KORONA POS" />
+            <span class="kp-lockup__x" aria-hidden="true">×</span>
+            <span class="kp-lockup__partner"><strong>PPD</strong>Technology</span>
+          </div>
+          <span class="kp-eyebrow kp-eyebrow--korona"><i class="fa-solid fa-barcode"></i> Authorized KORONA POS Reseller</span>
           <h1>The retail operating system built for <span class="kp-grad-text">smarter stores</span>.</h1>
           <p class="kp-hero__sub">
             Run faster checkouts, control inventory across every location, and unlock real-time
@@ -53,7 +58,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <span class="kp-dash__dot" style="background:#ff5f57"></span>
               <span class="kp-dash__dot" style="background:#febc2e"></span>
               <span class="kp-dash__dot" style="background:#28c840"></span>
-              <span class="kp-dash__title">KORONA · Retail Dashboard</span>
+              <img class="kp-dash__brand" src="https://ppdtechnology.com/images/Korona/KORONA-POS-Logo-Long.png" alt="" aria-hidden="true" />
               <span class="kp-dash__live" aria-hidden="true">Live</span>
             </div>
 
@@ -556,6 +561,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <div class="kp-demo-card kp-demo-card--side">
+            <div class="kp-demo-brand">
+              <img src="https://ppdtechnology.com/images/Korona/KORONA-POS-Logo-Long.png" alt="KORONA POS" />
+              <span>Authorized Reseller</span>
+            </div>
             <h4><i class="fa-solid fa-store"></i> What we'll cover</h4>
             <ul class="kp-demo-list">
               <li><i class="fa-solid fa-check"></i> Barcode workflows &amp; checkout speed</li>
@@ -631,6 +640,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       color:#fff;
     }
     .kp-eyebrow i{color:var(--cyan)}
+    .kp-eyebrow--korona{
+      background:linear-gradient(90deg,rgba(255,138,29,.18),rgba(255,106,0,.18));
+      border-color:rgba(255,138,29,.45);
+    }
+    .kp-eyebrow--korona i{color:var(--orange-2)}
+
+    /* PPD × KORONA partner lockup */
+    .kp-lockup{
+      display:inline-flex;align-items:center;gap:14px;
+      padding:10px 18px;border-radius:14px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(10px);
+      box-shadow:0 8px 28px rgba(0,0,0,.25);
+      margin-bottom:16px;
+    }
+    .korona-page .kp-lockup__logo{
+      height:30px;width:auto;
+      filter:brightness(0) invert(1) drop-shadow(0 1px 4px rgba(255,138,29,.45));
+    }
+    .kp-lockup__x{
+      font-size:18px;font-weight:300;color:rgba(255,255,255,.4);line-height:1;
+    }
+    .kp-lockup__partner{
+      font-size:15px;font-weight:600;color:#fff;letter-spacing:-.01em;
+      display:inline-flex;align-items:baseline;gap:1px;
+    }
+    .kp-lockup__partner strong{
+      color:var(--cyan);font-weight:800;
+    }
 
     /* Buttons */
     .kp-btn{
@@ -748,22 +787,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       background:rgba(0,0,0,.32);border-bottom:1px solid rgba(255,255,255,.06);
     }
     .kp-dash__dot{width:10px;height:10px;border-radius:50%}
-    .kp-dash__title{margin-left:auto;font-size:11px;opacity:.5;font-weight:600}
+    .korona-page .kp-dash__brand{
+      margin-left:auto;height:16px;width:auto;opacity:.95;
+      filter:brightness(0) invert(1);
+    }
     .kp-dash__live{
       display:inline-flex;align-items:center;gap:6px;margin-left:10px;
-      font-size:9px;font-weight:800;color:#00E5A0;text-transform:uppercase;
-      letter-spacing:.08em;background:rgba(0,229,160,.1);padding:3px 9px;
-      border-radius:999px;border:1px solid rgba(0,229,160,.25);
+      font-size:9px;font-weight:800;color:#FFB67A;text-transform:uppercase;
+      letter-spacing:.08em;background:rgba(255,138,29,.12);padding:3px 9px;
+      border-radius:999px;border:1px solid rgba(255,138,29,.32);
     }
     .kp-dash__live::before{
-      content:"";width:6px;height:6px;border-radius:50%;background:#00E5A0;
-      box-shadow:0 0 0 0 rgba(0,229,160,.7);
+      content:"";width:6px;height:6px;border-radius:50%;background:#FF8A1D;
+      box-shadow:0 0 0 0 rgba(255,138,29,.7);
       animation:kpLivePing 1.6s ease-out infinite;
     }
     @keyframes kpLivePing{
-      0%{box-shadow:0 0 0 0 rgba(0,229,160,.55)}
-      70%{box-shadow:0 0 0 8px rgba(0,229,160,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,229,160,0)}
+      0%{box-shadow:0 0 0 0 rgba(255,138,29,.55)}
+      70%{box-shadow:0 0 0 8px rgba(255,138,29,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,138,29,0)}
     }
     .kp-dash__body{padding:16px;display:flex;flex-direction:column;gap:14px}
     .kp-dash__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -1018,12 +1060,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .kp-price{font-weight:800;font-size:1rem;color:var(--ink)}
     .kp-price--muted{color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(110,120,146,.4)}
     .kp-compare__per{font-size:11px;color:var(--ink-3)}
-    .kp-compare__row--save{background:linear-gradient(90deg,rgba(0,229,160,.06),rgba(0,207,255,.04))}
+    .kp-compare__row--save{background:linear-gradient(90deg,rgba(255,138,29,.06),rgba(0,207,255,.04))}
     .kp-save{
       display:inline-flex;align-items:center;gap:8px;
-      background:linear-gradient(135deg,var(--green),#00B080);
-      color:#022;padding:8px 14px;border-radius:999px;font-weight:800;font-size:.95rem;
-      box-shadow:0 8px 20px rgba(0,229,160,.3);
+      background:linear-gradient(135deg,var(--orange-2),var(--orange));
+      color:#fff;padding:8px 14px;border-radius:999px;font-weight:800;font-size:.95rem;
+      box-shadow:0 8px 20px rgba(255,106,0,.3);
     }
 
     .kp-savings{
@@ -1078,6 +1120,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .kp-demo-card h4 i{color:var(--blue)}
     .kp-demo-card--side{
       background:linear-gradient(160deg,#fff,#F5F8FD);
+    }
+    .kp-demo-brand{
+      display:flex;align-items:center;gap:12px;
+      padding:12px 14px;margin:-4px 0 18px;
+      background:linear-gradient(135deg,#0C1A38,#060E21);
+      border-radius:12px;
+    }
+    .korona-page .kp-demo-brand img{
+      height:24px;width:auto;
+      filter:brightness(0) invert(1);
+    }
+    .kp-demo-brand span{
+      margin-left:auto;font-size:10px;font-weight:800;
+      letter-spacing:.06em;text-transform:uppercase;
+      color:var(--orange-2);
+      padding:4px 10px;border-radius:999px;
+      background:rgba(255,138,29,.12);
+      border:1px solid rgba(255,138,29,.32);
     }
 
     .kp-demo-form label{display:block;font-size:11px;font-weight:700;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
