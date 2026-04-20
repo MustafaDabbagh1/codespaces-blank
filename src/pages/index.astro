@@ -9,6 +9,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="hp-hero__bg-grid"></div>
     <div class="hp-hero__orb hp-hero__orb--1"></div>
     <div class="hp-hero__orb hp-hero__orb--2"></div>
+    <div class="hp-hero__particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
 
     <div class="container hp-hero__inner">
       <div class="hp-hero__text">
@@ -36,6 +39,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <span class="hp-dash__dot" style="background:#febc2e"></span>
             <span class="hp-dash__dot" style="background:#28c840"></span>
             <span class="hp-dash__bar-title">PPD Dashboard</span>
+            <span class="hp-dash__live" aria-hidden="true">Live</span>
           </div>
           <div class="hp-dash__body">
             <div class="hp-dash__sidebar">
@@ -48,12 +52,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div class="hp-dash__stat-row">
                 <div class="hp-dash__stat">
                   <span class="hp-dash__stat-label">Today's Revenue</span>
-                  <span class="hp-dash__stat-value">$12,847</span>
+                  <span class="hp-dash__stat-value" data-count="12847" data-prefix="$" data-commas="1">$12,847</span>
                   <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 18.2%</span>
                 </div>
                 <div class="hp-dash__stat">
                   <span class="hp-dash__stat-label">Transactions</span>
-                  <span class="hp-dash__stat-value">1,284</span>
+                  <span class="hp-dash__stat-value" data-count="1284" data-commas="1">1,284</span>
                   <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 12.6%</span>
                 </div>
               </div>
@@ -320,6 +324,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="hp-eco__hub">
+        <svg class="hp-eco__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="ecoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1549FF"/>
+              <stop offset="100%" stop-color="#00CFFF"/>
+            </linearGradient>
+          </defs>
+          <line x1="50" y1="50" x2="50" y2="20"/>
+          <line x1="50" y1="50" x2="76" y2="35"/>
+          <line x1="50" y1="50" x2="76" y2="65"/>
+          <line x1="50" y1="50" x2="50" y2="80"/>
+          <line x1="50" y1="50" x2="24" y2="65"/>
+          <line x1="50" y1="50" x2="24" y2="35"/>
+        </svg>
         <div class="hp-eco__center">
           <div class="hp-eco__logo-ring">
             <span class="brandtext"><span class="ppd">PPD</span><span class="tech">Tech</span></span>
@@ -963,6 +981,168 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 }
 .hp-cta__badges span i{color:var(--cyan);opacity:.7}
 
+/* ═══════════════════════════════════════════════════
+   PREMIUM POLISH
+   ═══════════════════════════════════════════════════ */
+
+/* Hero — staggered entrance */
+.hp-hero__text > *{opacity:0;transform:translateY(18px);animation:heroIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hp-hero__text > .hp-pill{animation-delay:.05s}
+.hp-hero__text > h1{animation-delay:.18s}
+.hp-hero__text > p{animation-delay:.32s}
+.hp-hero__text > .hp-hero__actions{animation-delay:.46s}
+.hp-hero__text > .hp-hero__proof{animation-delay:.6s}
+@keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+
+/* Hero ambient particles */
+.hp-hero__particles{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.hp-hero__particles span{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,207,255,.95),rgba(0,207,255,0));
+  opacity:0;animation:particleDrift 18s linear infinite;
+}
+.hp-hero__particles span:nth-child(1){left:8%;top:65%;animation-delay:0s;animation-duration:22s}
+.hp-hero__particles span:nth-child(2){left:24%;top:80%;animation-delay:3s;animation-duration:18s;background:radial-gradient(circle,rgba(21,73,255,.9),rgba(21,73,255,0))}
+.hp-hero__particles span:nth-child(3){left:60%;top:75%;animation-delay:6s;animation-duration:25s}
+.hp-hero__particles span:nth-child(4){left:80%;top:70%;animation-delay:2s;animation-duration:20s;background:radial-gradient(circle,rgba(0,229,160,.7),rgba(0,229,160,0))}
+.hp-hero__particles span:nth-child(5){left:45%;top:85%;animation-delay:8s;animation-duration:24s}
+.hp-hero__particles span:nth-child(6){left:90%;top:78%;animation-delay:5s;animation-duration:19s;background:radial-gradient(circle,rgba(21,73,255,.9),rgba(21,73,255,0))}
+@keyframes particleDrift{
+  0%{transform:translateY(0) scale(.8);opacity:0}
+  10%{opacity:.6}
+  60%{opacity:.9}
+  100%{transform:translateY(-220px) scale(1.4);opacity:0}
+}
+
+/* Hero parallax (set via JS) */
+.hp-hero__visual{transition:transform .25s cubic-bezier(.2,.7,.2,1);will-change:transform}
+
+/* Dashboard live ping */
+.hp-dash__live{
+  margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+  font-size:9px;font-weight:700;color:#00E5A0;text-transform:uppercase;
+  letter-spacing:.08em;background:rgba(0,229,160,.1);padding:3px 9px;
+  border-radius:999px;border:1px solid rgba(0,229,160,.25);
+}
+.hp-dash__bar-title + .hp-dash__live{margin-left:8px}
+.hp-dash__bar{align-items:center}
+.hp-dash__bar .hp-dash__bar-title{margin-left:auto}
+.hp-dash__live::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:#00E5A0;
+  box-shadow:0 0 0 0 rgba(0,229,160,.7);animation:livePing 1.6s ease-out infinite;
+}
+@keyframes livePing{
+  0%{box-shadow:0 0 0 0 rgba(0,229,160,.55)}
+  70%{box-shadow:0 0 0 8px rgba(0,229,160,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,229,160,0)}
+}
+
+/* Transaction row state animations */
+.hp-dash__table-row{transition:background .35s ease,transform .35s ease}
+.hp-dash__table-row.tx-approved{background:rgba(0,229,160,.10);transform:translateX(2px)}
+.hp-dash__table-row.tx-fresh{animation:freshRow .55s ease}
+@keyframes freshRow{from{opacity:.3;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.hp-badge{transition:background .35s ease,color .35s ease}
+
+/* Section transition divider — soft glow on dark sections */
+.hp-flow,.hp-cta{position:relative}
+.hp-flow::after,.hp-cta::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,207,255,.45),transparent);
+  z-index:3;pointer-events:none;
+}
+
+/* Platform card — premium gradient border on hover */
+.hp-plat-card{position:relative;overflow:hidden}
+.hp-plat-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:linear-gradient(135deg,rgba(21,73,255,.55),rgba(0,207,255,.55),rgba(21,73,255,0));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s ease;pointer-events:none;
+}
+.hp-plat-card:hover::before{opacity:1}
+.hp-plat-card__icon{transition:all .35s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.hp-plat-card:hover .hp-plat-card__icon{transform:translateY(-2px) rotate(-3deg)}
+
+/* How It Works — animated gradient flow on connector + step polish */
+@media(min-width:768px){
+  .hp-flow__connector{
+    background:linear-gradient(90deg,transparent 0%,rgba(21,73,255,.4) 25%,rgba(0,207,255,.65) 50%,rgba(21,73,255,.4) 75%,transparent 100%) !important;
+    background-size:200% 100% !important;
+    animation:connectorFlow 6s linear infinite;
+  }
+}
+@keyframes connectorFlow{from{background-position:0% 50%}to{background-position:200% 50%}}
+.hp-step__icon{transition:transform .4s ease,box-shadow .4s ease,background .3s ease}
+.hp-step:hover .hp-step__icon{
+  transform:translateY(-3px) scale(1.06);
+  background:rgba(21,73,255,.3);
+  box-shadow:0 12px 32px rgba(0,207,255,.25);
+}
+.hp-step__number{transition:filter .3s ease}
+.hp-step:hover .hp-step__number{filter:drop-shadow(0 0 14px rgba(0,207,255,.45))}
+
+/* Ecosystem connecting lines */
+.hp-eco__lines{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:1;
+}
+.hp-eco__lines line{
+  stroke:url(#ecoGrad);stroke-width:.4;stroke-dasharray:1.2 1.8;
+  opacity:.7;animation:ecoDash 2.5s linear infinite;
+  vector-effect:non-scaling-stroke;
+}
+@keyframes ecoDash{to{stroke-dashoffset:-6}}
+.hp-eco__center{animation:hubPulse 4s ease-in-out infinite}
+@keyframes hubPulse{
+  0%,100%{box-shadow:0 0 60px rgba(21,73,255,.3),var(--shadow-blue)}
+  50%{box-shadow:0 0 90px rgba(0,207,255,.5),0 0 0 8px rgba(0,207,255,.07),var(--shadow-blue)}
+}
+.hp-eco__node-icon{position:relative}
+.hp-eco__node-icon::after{
+  content:"";position:absolute;inset:-4px;border-radius:inherit;
+  border:1px solid rgba(0,207,255,.45);opacity:0;transition:all .4s ease;
+}
+.hp-eco__node:hover .hp-eco__node-icon::after{opacity:1;inset:-9px}
+
+/* Industry card mouse-tracking spotlight + accent border */
+.hp-ind-card{position:relative;overflow:hidden;--mx:50%;--my:50%;--accent:#1549FF}
+.hp-ind-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(220px circle at var(--mx) var(--my),color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%);
+  opacity:0;transition:opacity .35s ease;
+}
+.hp-ind-card:hover::before{opacity:1}
+.hp-ind-card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
+.hp-ind-card__icon{box-shadow:0 0 0 0 transparent;transition:all .35s ease,box-shadow .4s ease}
+.hp-ind-card:hover .hp-ind-card__icon{
+  transform:scale(1.08) rotate(-3deg);
+  box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 35%,transparent);
+}
+.hp-ind-card > *{position:relative;z-index:1}
+
+/* Buttons — premium hover glow halo + shimmer for white */
+.btn-primary{position:relative;isolation:isolate}
+.btn-primary::before{
+  content:"";position:absolute;inset:-2px;border-radius:inherit;
+  background:linear-gradient(135deg,var(--cyan),var(--blue),var(--blue-dark));
+  filter:blur(12px);opacity:0;transition:opacity .35s ease;z-index:-1;
+}
+.btn-primary:hover::before{opacity:.6}
+
+/* Stat card subtle conic glow on hover */
+.hp-stat-card::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent 0%,rgba(0,207,255,.35) 25%,transparent 50%,rgba(21,73,255,.35) 75%,transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;padding:1px;
+  opacity:0;transition:opacity .4s ease;
+}
+.hp-stat-card:hover::after{opacity:1}
+
 /* ── RESPONSIVE ── */
 @media(min-width:768px){
   .hp-hero__inner{grid-template-columns:1fr 1.1fr;gap:40px}
@@ -985,6 +1165,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 }
 @media(max-width:767px){
   .hp-hero__visual{display:none}
+  .hp-eco__lines{display:none}
   .hp-hero__text{text-align:center}
   .hp-hero__actions{justify-content:center}
   .hp-hero__proof{justify-content:center}
@@ -1007,22 +1188,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     opacity:1;transform:none;transition:none;
   }
   .hp-stat-card::before{transform:scaleX(1);transition:none}
+  .hp-hero__particles,.hp-eco__lines line,.hp-dash__live::before,
+  .hp-eco__center,.hp-flow__connector{animation:none !important}
+  .hp-hero__text > *{animation:none;opacity:1;transform:none}
+  .hp-hero__visual{transition:none}
 }
 </style>
 
 <script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reveal-on-scroll for [data-anim]
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('animated') });
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('animated'); io.unobserve(e.target); } });
   }, {threshold:.15});
   document.querySelectorAll('[data-anim]').forEach(el => io.observe(el));
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.hp-stat-card__num[data-count]').forEach(el => {
+  // Count-up — supports prefix, suffix, decimals, and thousand separators
+  function fmt(val, decimals, useCommas){
+    if(useCommas){
+      return val.toLocaleString(undefined,{minimumFractionDigits:decimals,maximumFractionDigits:decimals});
+    }
+    return val.toFixed(decimals);
+  }
+  document.querySelectorAll('[data-count]').forEach(el => {
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
     const decimals = parseInt(el.dataset.decimals) || 0;
-    if(prefersReducedMotion) return;
-    el.textContent = '0';
+    const useCommas = el.dataset.commas === '1';
+    if(prefersReducedMotion){
+      el.textContent = prefix + fmt(target, decimals, useCommas) + suffix;
+      return;
+    }
+    el.textContent = prefix + '0' + suffix;
     const obs = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting){
         let start = 0;
@@ -1033,12 +1232,92 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           const progress = Math.min(start / dur, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           const val = eased * target;
-          el.textContent = val.toFixed(decimals) + suffix;
-          if(start >= dur) clearInterval(timer);
+          el.textContent = prefix + fmt(val, decimals, useCommas) + suffix;
+          if(start >= dur){ clearInterval(timer); }
         }, step);
         obs.disconnect();
       }
     }, {threshold:.5});
     obs.observe(el);
+  });
+
+  // Hero parallax — translate dashboard visual with scroll
+  const heroVisual = document.querySelector('.hp-hero__visual');
+  if(heroVisual && !prefersReducedMotion){
+    let raf = null;
+    window.addEventListener('scroll', () => {
+      if(raf) return;
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if(y < 900){
+          heroVisual.style.transform = 'translateY(' + (y * 0.06).toFixed(1) + 'px)';
+        }
+        raf = null;
+      });
+    }, { passive: true });
+  }
+
+  // Dashboard simulated live activity — cycle pending row (only when visible)
+  const dashEl = document.querySelector('.hp-dash');
+  const dashRows = document.querySelectorAll('.hp-dash__table-row');
+  if(dashEl && dashRows.length >= 3 && !prefersReducedMotion){
+    const pendingRow = dashRows[dashRows.length - 1];
+    const pendingBadge = pendingRow.querySelector('.hp-badge');
+    const labelEl = pendingRow.querySelectorAll('span')[1];
+    const amountEl = pendingRow.querySelector('.hp-dash__amount');
+    const cards = ['Visa •••• 7821','MC •••• 3104','Amex •••• 1009','Visa •••• 4242','Disc •••• 6620'];
+    const amts = ['$84.20','$216.90','$342.00','$58.75','$129.40'];
+    let i = 0;
+    let approved = false;
+    let timer = null;
+    const tick = () => {
+      if(!pendingBadge) return;
+      if(!approved){
+        // Approve current pending
+        pendingBadge.classList.remove('blue');
+        pendingBadge.classList.add('green');
+        pendingBadge.innerHTML = '<i class="fa-solid fa-check"></i>';
+        pendingRow.classList.add('tx-approved');
+        approved = true;
+      } else {
+        // Bring in a new pending tx
+        i = (i + 1) % cards.length;
+        if(labelEl) labelEl.textContent = cards[i];
+        if(amountEl) amountEl.textContent = amts[i];
+        pendingBadge.classList.remove('green');
+        pendingBadge.classList.add('blue');
+        pendingBadge.innerHTML = '<i class="fa-solid fa-clock"></i>';
+        pendingRow.classList.remove('tx-approved');
+        pendingRow.classList.add('tx-fresh');
+        setTimeout(() => pendingRow.classList.remove('tx-fresh'), 600);
+        approved = false;
+      }
+    };
+    const dashObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting && !timer){
+          timer = setInterval(tick, 2800);
+        } else if(!entry.isIntersecting && timer){
+          clearInterval(timer);
+          timer = null;
+        }
+      });
+    }, { threshold: 0.2 });
+    dashObs.observe(dashEl);
+  }
+
+  // Industry card mouse-tracking spotlight + accent inheritance
+  document.querySelectorAll('.hp-ind-card').forEach(card => {
+    const iconEl = card.querySelector('.hp-ind-card__icon');
+    const accent = iconEl && iconEl.style.getPropertyValue('--accent');
+    if(accent) card.style.setProperty('--accent', accent);
+    if(prefersReducedMotion) return;
+    card.addEventListener('pointermove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
   });
 </script>
