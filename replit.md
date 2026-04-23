@@ -108,3 +108,10 @@ Configured as a **static** site deployment:
 - Dev server runs on `0.0.0.0:5000`
 - All hosts allowed (for Replit proxy)
 - Workflow: "Start application" → `npm run dev`
+
+## Environment Variables
+
+- `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` — required for `/api/lead` to send emails via Resend.
+- `LEAD_ALLOWED_HOSTS` — optional comma-separated allowlist of Origin/Referer hosts for `/api/lead` (defaults to `ppdtechnology.com`).
+- `PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key (exposed to the browser). When set, BaseLayout loads the Turnstile script and lead forms render the widget.
+- `TURNSTILE_SECRET_KEY` — Cloudflare Turnstile secret key (server-only). When set, `/api/lead` verifies the `cf-turnstile-response` token and rejects requests with a missing/invalid token. If unset, CAPTCHA verification is skipped (useful for local development).

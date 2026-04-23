@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout title="Contact Us | PPD Technology" description="Get in touch with PPD Technology. Contact our team for payment processing solutions, POS systems, merchant services, and technical support.">
@@ -66,6 +67,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   <textarea id="contact-message" name="message" required></textarea>
                 </div>
 
+                {turnstileSiteKey && (
+                  <div class="form-group">
+                    <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
+                  </div>
+                )}
                 <button type="submit" class="submit-btn">
                   <i class="fas fa-paper-plane"></i> Send Message
                 </button>
@@ -242,6 +248,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 ></textarea>
               </div>
             </div>
+
+            {turnstileSiteKey && (
+              <div class="form-group" style="margin-top:16px">
+                <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
+              </div>
+            )}
 
             <div class="actions">
               <button class="btn secondary" data-close-modal type="button">Cancel</button>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout title="Clover Devices | PPD Technology" description="Clover POS devices and payment solutions through PPD Technology. Countertop, mobile, and kiosk options for restaurants, retail, and service businesses.">
@@ -411,6 +412,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <textarea id="notes" name="notes" rows="4" placeholder="Locations, terminals needed, timeline, special requirements..."></textarea>
               </div>
             </div>
+
+            {turnstileSiteKey && (
+              <div class="field field-full">
+                <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
+              </div>
+            )}
 
             <div class="inline actions-row">
               <span class="small">By submitting, you agree to be contacted by PPD Technology.</span>

@@ -21,7 +21,7 @@ function escapeHtml(s: string): string {
 }
 
 function renderRows(data: Record<string, unknown>): string {
-  const skip = new Set(['_form', '_subject', 'website']);
+  const skip = new Set(['_form', '_subject', 'website', 'cf-turnstile-response']);
   const rows: string[] = [];
   for (const [k, v] of Object.entries(data)) {
     if (skip.has(k)) continue;
@@ -103,6 +103,46 @@ function getAllowedHosts(request: Request): Set<string> {
   return hosts;
 }
 
+async function verifyTurnstile(
+  token: string,
+  ip: string
+): Promise<{ ok: boolean; error?: string }> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    return { ok: true };
+  }
+  if (!token) {
+    return { ok: false, error: 'Missing CAPTCHA token.' };
+  }
+  try {
+    const body = new URLSearchParams();
+    body.set('secret', secret);
+    body.set('response', token);
+    if (ip && ip !== 'unknown') body.set('remoteip', ip);
+
+    const res = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      { method: 'POST', body }
+    );
+    if (!res.ok) {
+      console.error('[lead] Turnstile siteverify HTTP error:', res.status);
+      return { ok: false, error: 'CAPTCHA verification failed.' };
+    }
+    const data = (await res.json()) as {
+      success?: boolean;
+      'error-codes'?: string[];
+    };
+    if (!data.success) {
+      console.warn('[lead] Turnstile rejected token:', data['error-codes']);
+      return { ok: false, error: 'CAPTCHA verification failed.' };
+    }
+    return { ok: true };
+  } catch (err) {
+    console.error('[lead] Turnstile verification error:', err);
+    return { ok: false, error: 'CAPTCHA verification failed.' };
+  }
+}
+
 function isOriginAllowed(request: Request): boolean {
   const allowed = getAllowedHosts(request);
   const candidates = [
@@ -178,6 +218,15 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({ ok: false, error: 'Invalid request body.' }),
       { status: 400, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
+  const captchaToken = String(payload['cf-turnstile-response'] || '');
+  const captcha = await verifyTurnstile(captchaToken, ip);
+  if (!captcha.ok) {
+    return new Response(
+      JSON.stringify({ ok: false, error: captcha.error || 'CAPTCHA failed.' }),
+      { status: 403, headers: { 'Content-Type': 'application/json' } }
     );
   }
 

@@ -13,6 +13,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 const resolvedOgImage = new URL(ogImage, Astro.site ?? Astro.url.origin).href;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <html lang="en">
@@ -40,6 +41,13 @@ const resolvedOgImage = new URL(ogImage, Astro.site ?? Astro.url.origin).href;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    {turnstileSiteKey && (
+      <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+      ></script>
+    )}
     {Astro.slots.has('head') && <slot name="head" />}
     <style is:global>
 

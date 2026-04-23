@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/repair-modules.css";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout title="PPD Repair | All-in-One Repair Shop Management Software" description="Manage tickets, inventory, customers, and payments in one platform. Built for phone repair, computer repair, and electronics repair shops.">
@@ -963,6 +964,11 @@ import "../styles/repair-modules.css";
           <label for="rp-message">Message (optional)</label>
           <textarea id="rp-message" name="message" rows="3" placeholder="Tell us about your shop and what you're looking for..."></textarea>
         </div>
+        {turnstileSiteKey && (
+          <div class="rp-form-group">
+            <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
+          </div>
+        )}
         <button type="submit" class="btn btn-primary btn-lg" style="width:100%"><i class="fa-solid fa-paper-plane"></i> Request My Demo</button>
         <p class="rp-modal__footer-note"><i class="fa-solid fa-lock"></i> Your info stays private. A specialist will reach out within 24 hours.</p>
       </form>
