@@ -12,6 +12,44 @@ const FORM_LABELS: Record<string, string> = {
   'repair-demo': 'Repair Demo Request',
 };
 
+const MAX_TOTAL_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10 MB
+const MAX_FILES = 10;
+
+const ALLOWED_MIME = new Set<string>([
+  'image/png',
+  'image/jpeg',
+  'image/gif',
+  'image/webp',
+  'image/heic',
+  'image/heif',
+  'application/pdf',
+  'text/plain',
+  'text/csv',
+  'application/json',
+  'application/zip',
+  'application/x-zip-compressed',
+]);
+
+const ALLOWED_EXT = new Set<string>([
+  'png', 'jpg', 'jpeg', 'gif', 'webp', 'heic', 'heif',
+  'pdf', 'txt', 'log', 'csv', 'json', 'zip',
+]);
+
+function extOf(name: string): string {
+  const i = name.lastIndexOf('.');
+  return i >= 0 ? name.slice(i + 1).toLowerCase() : '';
+}
+
+function isAllowedFile(file: File): boolean {
+  const ext = extOf(file.name);
+  if (!ALLOWED_EXT.has(ext)) return false;
+  // If a MIME type is provided, it must also be in the allowlist.
+  // Missing MIME (some browsers/clients omit it for .log/.txt) is acceptable
+  // because the extension already passed the allowlist.
+  if (file.type && !ALLOWED_MIME.has(file.type)) return false;
+  return true;
+}
+
 function escapeHtml(s: string): string {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -134,6 +172,14 @@ function isOriginAllowed(request: Request): boolean {
   return false;
 }
 
+function formatBytes(n: number): string {
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+type Attachment = { filename: string; content: Buffer; contentType?: string };
+
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.LEAD_TO_EMAIL;
@@ -172,6 +218,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   let payload: Record<string, unknown> = {};
+  const attachments: Attachment[] = [];
   const contentType = request.headers.get('content-type') || '';
   try {
     if (contentType.includes('application/json')) {
@@ -179,11 +226,57 @@ export const POST: APIRoute = async ({ request }) => {
     } else {
       const fd = await request.formData();
       const obj: Record<string, unknown> = {};
+      const fileEntries: File[] = [];
       for (const key of new Set(fd.keys())) {
-        const all = fd.getAll(key).filter((v) => typeof v === 'string') as string[];
-        obj[key] = all.length > 1 ? all : all[0] ?? '';
+        const all = fd.getAll(key);
+        const strings = all.filter((v) => typeof v === 'string') as string[];
+        if (strings.length > 0) {
+          obj[key] = strings.length > 1 ? strings : strings[0];
+        }
+        for (const v of all) {
+          if (v instanceof File && v.size > 0) fileEntries.push(v);
+        }
       }
       payload = obj;
+
+      if (fileEntries.length > MAX_FILES) {
+        return new Response(
+          JSON.stringify({
+            ok: false,
+            error: `Too many attachments. Please send up to ${MAX_FILES} files.`,
+          }),
+          { status: 413, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+
+      let totalBytes = 0;
+      for (const f of fileEntries) {
+        if (!isAllowedFile(f)) {
+          return new Response(
+            JSON.stringify({
+              ok: false,
+              error: `Unsupported file type: ${f.name}. Allowed: images, PDF, TXT, LOG, CSV, JSON, ZIP.`,
+            }),
+            { status: 415, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        totalBytes += f.size;
+        if (totalBytes > MAX_TOTAL_ATTACHMENT_BYTES) {
+          return new Response(
+            JSON.stringify({
+              ok: false,
+              error: `Attachments exceed the 10 MB total limit.`,
+            }),
+            { status: 413, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        const buf = Buffer.from(await f.arrayBuffer());
+        attachments.push({
+          filename: f.name || 'attachment',
+          content: buf,
+          contentType: f.type || undefined,
+        });
+      }
     }
   } catch {
     return new Response(
@@ -217,6 +310,17 @@ export const POST: APIRoute = async ({ request }) => {
       ? payload.email
       : undefined;
 
+  const attachmentsRowHtml = attachments.length
+    ? `<tr><td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#0C1A38;vertical-align:top">Attachments</td><td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;color:#1f2937">${attachments
+        .map(
+          (a) =>
+            `${escapeHtml(a.filename)} <span style="color:#5b74a6">(${formatBytes(
+              a.content.length
+            )})</span>`
+        )
+        .join('<br/>')}</td></tr>`
+    : '';
+
   const html = `<!doctype html>
 <html><body style="margin:0;padding:24px;background:#f5f8ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif">
   <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(6,14,33,.08)">
@@ -227,6 +331,7 @@ export const POST: APIRoute = async ({ request }) => {
     <div style="padding:8px 12px 24px">
       <table style="width:100%;border-collapse:collapse;font-size:14px">
         ${renderRows(payload)}
+        ${attachmentsRowHtml}
       </table>
     </div>
     <div style="padding:14px 24px;background:#f5f8ff;font-size:12px;color:#5b74a6">
@@ -244,6 +349,13 @@ export const POST: APIRoute = async ({ request }) => {
       subject,
       html,
       replyTo,
+      attachments: attachments.length
+        ? attachments.map((a) => ({
+            filename: a.filename,
+            content: a.content,
+            contentType: a.contentType,
+          }))
+        : undefined,
     });
 
     if (error) {

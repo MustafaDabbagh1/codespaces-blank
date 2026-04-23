@@ -165,8 +165,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
             <div class="cs-fg">
               <label for="files">Attachments (optional)</label>
-              <input id="files" name="files" type="file" multiple />
-              <div class="cs-help">Up to 10 MB total; screenshots and logs are helpful.</div>
+              <input id="files" name="files" type="file" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.heic,.heif,.pdf,.txt,.log,.csv,.json,.zip,image/*,application/pdf,text/plain,text/csv,application/json,application/zip" />
+              <div class="cs-help">Screenshots, PDFs, or logs (PNG, JPG, PDF, TXT, LOG, CSV, JSON, ZIP). Up to 10 files, 10 MB total.</div>
+              <div id="filesError" class="cs-help" style="color:#dc2626;display:none"></div>
             </div>
 
             {turnstileSiteKey && (
@@ -584,10 +585,63 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         });
       });
 
+      const MAX_TOTAL = 10 * 1024 * 1024;
+      const MAX_FILES = 10;
+      const ALLOWED_EXT = ['png','jpg','jpeg','gif','webp','heic','heif','pdf','txt','log','csv','json','zip'];
+
+      const filesInput = root.querySelector('#files');
+      const filesError = root.querySelector('#filesError');
+
+      function validateFiles(input) {
+        if (!input || !input.files) return { ok: true };
+        const files = Array.from(input.files);
+        if (files.length === 0) return { ok: true };
+        if (files.length > MAX_FILES) {
+          return { ok: false, msg: 'Please attach no more than ' + MAX_FILES + ' files.' };
+        }
+        let total = 0;
+        for (const f of files) {
+          const ext = (f.name.split('.').pop() || '').toLowerCase();
+          if (ALLOWED_EXT.indexOf(ext) === -1) {
+            return { ok: false, msg: '"' + f.name + '" is not an allowed file type.' };
+          }
+          total += f.size;
+        }
+        if (total > MAX_TOTAL) {
+          return { ok: false, msg: 'Attachments total ' + (total / 1048576).toFixed(2) + ' MB; the limit is 10 MB.' };
+        }
+        return { ok: true };
+      }
+
+      function showFilesError(msg) {
+        if (!filesError) return;
+        if (msg) {
+          filesError.textContent = msg;
+          filesError.style.display = 'block';
+        } else {
+          filesError.textContent = '';
+          filesError.style.display = 'none';
+        }
+      }
+
+      filesInput?.addEventListener('change', () => {
+        const r = validateFiles(filesInput);
+        showFilesError(r.ok ? '' : r.msg);
+      });
+
       const ticketForm = root.querySelector('#csTicketForm');
       ticketForm?.addEventListener('submit', async function (e) {
         e.preventDefault();
         if (this.website && this.website.value) return;
+
+        const v = validateFiles(filesInput);
+        if (!v.ok) {
+          showFilesError(v.msg);
+          filesInput?.focus();
+          return;
+        }
+        showFilesError('');
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn ? submitBtn.innerHTML : '';
         if (submitBtn) {
@@ -596,14 +650,20 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         }
         try {
           const data = new FormData(this);
-          // strip files (lead endpoint emails fields, not attachments)
-          data.delete('files');
           data.append('_page', window.location.pathname);
           const res = await fetch('/api/lead', { method: 'POST', body: data });
-          if (!res.ok) throw new Error('Network');
+          if (!res.ok) {
+            let msg = '';
+            try {
+              const body = await res.json();
+              if (body && body.error) msg = body.error;
+            } catch {}
+            throw new Error(msg || 'Network');
+          }
           window.location.href = '/thank-you';
-        } catch {
-          alert("Sorry, something went wrong submitting your ticket. Please email info@ppdtechnology.com and we'll help right away.");
+        } catch (err) {
+          const detail = err && err.message && err.message !== 'Network' ? '\n\n' + err.message : '';
+          alert("Sorry, something went wrong submitting your ticket." + detail + "\n\nPlease email info@ppdtechnology.com and we'll help right away.");
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalText;
