@@ -42,52 +42,185 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <span class="hp-dash__live" aria-hidden="true">Live</span>
           </div>
           <div class="hp-dash__body">
-            <div class="hp-dash__sidebar">
-              <div class="hp-dash__nav-item active"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="hp-dash__nav-item"><i class="fa-solid fa-wallet"></i></div>
-              <div class="hp-dash__nav-item"><i class="fa-solid fa-users"></i></div>
-              <div class="hp-dash__nav-item"><i class="fa-solid fa-gear"></i></div>
+            <div class="hp-dash__sidebar" role="tablist" aria-label="Dashboard sections">
+              <button type="button" class="hp-dash__nav-item active" data-tab="analytics" role="tab" aria-selected="true" aria-controls="hp-panel-analytics" title="Analytics">
+                <i class="fa-solid fa-chart-line"></i>
+              </button>
+              <button type="button" class="hp-dash__nav-item" data-tab="payments" role="tab" aria-selected="false" aria-controls="hp-panel-payments" title="Payments">
+                <i class="fa-solid fa-wallet"></i>
+              </button>
+              <button type="button" class="hp-dash__nav-item" data-tab="customers" role="tab" aria-selected="false" aria-controls="hp-panel-customers" title="Merchants">
+                <i class="fa-solid fa-users"></i>
+              </button>
+              <button type="button" class="hp-dash__nav-item" data-tab="settings" role="tab" aria-selected="false" aria-controls="hp-panel-settings" title="Operations">
+                <i class="fa-solid fa-gear"></i>
+              </button>
             </div>
             <div class="hp-dash__main">
-              <div class="hp-dash__stat-row">
-                <div class="hp-dash__stat">
-                  <span class="hp-dash__stat-label">Today's Revenue</span>
-                  <span class="hp-dash__stat-value" data-count="12847" data-prefix="$" data-commas="1">$12,847</span>
-                  <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 18.2%</span>
+              <!-- ── Tab 1 · Analytics ── -->
+              <div class="hp-dash__panel is-active" id="hp-panel-analytics" data-panel="analytics" role="tabpanel">
+                <div class="hp-dash__stat-row">
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">Today's Revenue</span>
+                    <span class="hp-dash__stat-value" data-pcount="12847" data-prefix="$" data-commas="1">$12,847</span>
+                    <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 18.2%</span>
+                  </div>
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">Transactions</span>
+                    <span class="hp-dash__stat-value" data-pcount="1284" data-commas="1">1,284</span>
+                    <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 12.6%</span>
+                  </div>
                 </div>
-                <div class="hp-dash__stat">
-                  <span class="hp-dash__stat-label">Transactions</span>
-                  <span class="hp-dash__stat-value" data-count="1284" data-commas="1">1,284</span>
-                  <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 12.6%</span>
+                <div class="hp-dash__chart">
+                  <svg viewBox="0 0 300 80" preserveAspectRatio="none" class="hp-chart-svg">
+                    <defs>
+                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="rgba(21,73,255,.4)"/>
+                        <stop offset="100%" stop-color="rgba(21,73,255,0)"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="hp-chart-area" d="M0 70 Q30 60 60 50 T120 35 T180 25 T240 20 T300 10 V80 H0 Z" fill="url(#chartGrad)"/>
+                    <path class="hp-chart-line" d="M0 70 Q30 60 60 50 T120 35 T180 25 T240 20 T300 10" fill="none" stroke="#1549FF" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="hp-dash__table">
+                  <div class="hp-dash__table-row">
+                    <span class="hp-badge green"><i class="fa-solid fa-check"></i></span>
+                    <span>Visa •••• 4242</span>
+                    <span class="hp-dash__amount">$189.00</span>
+                  </div>
+                  <div class="hp-dash__table-row">
+                    <span class="hp-badge green"><i class="fa-solid fa-check"></i></span>
+                    <span>MC •••• 8831</span>
+                    <span class="hp-dash__amount">$67.50</span>
+                  </div>
+                  <div class="hp-dash__table-row">
+                    <span class="hp-badge blue"><i class="fa-solid fa-clock"></i></span>
+                    <span>Amex •••• 1009</span>
+                    <span class="hp-dash__amount">$342.00</span>
+                  </div>
                 </div>
               </div>
-              <div class="hp-dash__chart">
-                <svg viewBox="0 0 300 80" preserveAspectRatio="none" class="hp-chart-svg">
-                  <defs>
-                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="rgba(21,73,255,.4)"/>
-                      <stop offset="100%" stop-color="rgba(21,73,255,0)"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M0 70 Q30 60 60 50 T120 35 T180 25 T240 20 T300 10 V80 H0 Z" fill="url(#chartGrad)"/>
-                  <path d="M0 70 Q30 60 60 50 T120 35 T180 25 T240 20 T300 10" fill="none" stroke="#1549FF" stroke-width="2"/>
-                </svg>
+
+              <!-- ── Tab 2 · Payments ── -->
+              <div class="hp-dash__panel" id="hp-panel-payments" data-panel="payments" role="tabpanel" hidden>
+                <div class="hp-dash__hero-card">
+                  <div class="hp-dash__hero-card-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                  <div class="hp-dash__hero-card-body">
+                    <span class="hp-dash__hero-card-label">Next-Day Payout</span>
+                    <span class="hp-dash__hero-card-value" data-pcount="8421" data-prefix="$" data-commas="1" data-decimals="2">$8,421.00</span>
+                  </div>
+                  <span class="hp-dash__hero-card-eta">9:00 AM</span>
+                </div>
+                <div class="hp-dash__progress">
+                  <div class="hp-dash__progress-row">
+                    <span>Settlement progress</span>
+                    <span><span data-pcount="72" data-suffix="%">0%</span></span>
+                  </div>
+                  <div class="hp-dash__progress-bar"><div class="hp-dash__progress-fill" style="--w:72%"></div></div>
+                </div>
+                <div class="hp-dash__stat-row">
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">Today</span>
+                    <span class="hp-dash__stat-value" data-pcount="42.1" data-prefix="$" data-suffix="K" data-decimals="1">$0.0K</span>
+                  </div>
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">This Week</span>
+                    <span class="hp-dash__stat-value" data-pcount="318" data-prefix="$" data-suffix="K">$0K</span>
+                  </div>
+                </div>
+                <div class="hp-dash__table">
+                  <div class="hp-dash__table-row">
+                    <span class="hp-badge green"><i class="fa-solid fa-arrow-down"></i></span>
+                    <span>Deposit · Chase ••• 4271</span>
+                    <span class="hp-dash__amount up">+$2,180</span>
+                  </div>
+                  <div class="hp-dash__table-row">
+                    <span class="hp-badge green"><i class="fa-solid fa-arrow-down"></i></span>
+                    <span>Deposit · Chase ••• 4271</span>
+                    <span class="hp-dash__amount up">+$1,540</span>
+                  </div>
+                </div>
               </div>
-              <div class="hp-dash__table">
-                <div class="hp-dash__table-row">
-                  <span class="hp-badge green"><i class="fa-solid fa-check"></i></span>
-                  <span>Visa •••• 4242</span>
-                  <span class="hp-dash__amount">$189.00</span>
+
+              <!-- ── Tab 3 · Merchants ── -->
+              <div class="hp-dash__panel" id="hp-panel-customers" data-panel="customers" role="tabpanel" hidden>
+                <div class="hp-dash__stat-row">
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">Active Merchants</span>
+                    <span class="hp-dash__stat-value" data-pcount="2487" data-commas="1">0</span>
+                    <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 9.4%</span>
+                  </div>
+                  <div class="hp-dash__stat">
+                    <span class="hp-dash__stat-label">New This Month</span>
+                    <span class="hp-dash__stat-value" data-pcount="184">0</span>
+                    <span class="hp-dash__stat-change up"><i class="fa-solid fa-arrow-up"></i> 22%</span>
+                  </div>
                 </div>
-                <div class="hp-dash__table-row">
-                  <span class="hp-badge green"><i class="fa-solid fa-check"></i></span>
-                  <span>MC •••• 8831</span>
-                  <span class="hp-dash__amount">$67.50</span>
+                <div class="hp-dash__merchants">
+                  <div class="hp-dash__merchant">
+                    <span class="hp-dash__merchant-avatar" style="background:linear-gradient(135deg,#1549FF,#00CFFF)">SR</span>
+                    <div class="hp-dash__merchant-info">
+                      <strong>Sunset Restaurant</strong>
+                      <span>312 txns this week</span>
+                    </div>
+                    <span class="hp-dash__merchant-amt">$18,420</span>
+                  </div>
+                  <div class="hp-dash__merchant">
+                    <span class="hp-dash__merchant-avatar" style="background:linear-gradient(135deg,#FF6A00,#FFB037)">UB</span>
+                    <div class="hp-dash__merchant-info">
+                      <strong>Urban Boutique</strong>
+                      <span>184 txns this week</span>
+                    </div>
+                    <span class="hp-dash__merchant-amt">$9,210</span>
+                  </div>
+                  <div class="hp-dash__merchant">
+                    <span class="hp-dash__merchant-avatar" style="background:linear-gradient(135deg,#00E5A0,#00CFFF)">QR</span>
+                    <div class="hp-dash__merchant-info">
+                      <strong>Quick Repair Co.</strong>
+                      <span>96 txns this week</span>
+                    </div>
+                    <span class="hp-dash__merchant-amt">$4,720</span>
+                  </div>
                 </div>
-                <div class="hp-dash__table-row">
-                  <span class="hp-badge blue"><i class="fa-solid fa-clock"></i></span>
-                  <span>Amex •••• 1009</span>
-                  <span class="hp-dash__amount">$342.00</span>
+              </div>
+
+              <!-- ── Tab 4 · Operations ── -->
+              <div class="hp-dash__panel" id="hp-panel-settings" data-panel="settings" role="tabpanel" hidden>
+                <div class="hp-dash__settings">
+                  <div class="hp-dash__setting">
+                    <div class="hp-dash__setting-text">
+                      <strong>Next-Day Funding</strong>
+                      <span>Auto-deposit to bank</span>
+                    </div>
+                    <span class="hp-toggle is-on" aria-hidden="true"><span></span></span>
+                  </div>
+                  <div class="hp-dash__setting">
+                    <div class="hp-dash__setting-text">
+                      <strong>Fraud Screening</strong>
+                      <span>Real-time risk scoring</span>
+                    </div>
+                    <span class="hp-toggle is-on" aria-hidden="true"><span></span></span>
+                  </div>
+                  <div class="hp-dash__setting">
+                    <div class="hp-dash__setting-text">
+                      <strong>Instant Alerts</strong>
+                      <span>Push + SMS notifications</span>
+                    </div>
+                    <span class="hp-toggle is-on" aria-hidden="true"><span></span></span>
+                  </div>
+                  <div class="hp-dash__setting">
+                    <div class="hp-dash__setting-text">
+                      <strong>Multi-User Access</strong>
+                      <span>Team roles &amp; permissions</span>
+                    </div>
+                    <span class="hp-toggle" aria-hidden="true"><span></span></span>
+                  </div>
+                </div>
+                <div class="hp-dash__connections">
+                  <span class="hp-dash__connection"><i class="fa-solid fa-circle-check"></i> QuickBooks</span>
+                  <span class="hp-dash__connection"><i class="fa-solid fa-circle-check"></i> Clover POS</span>
+                  <span class="hp-dash__connection"><i class="fa-solid fa-circle-check"></i> Stripe</span>
                 </div>
               </div>
             </div>
@@ -597,14 +730,193 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0;
 }
 .hp-dash__nav-item{
+  position:relative;
+  background:transparent;border:0;padding:0;
   width:34px;height:34px;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   color:rgba(255,255,255,.35);font-size:14px;
-  transition:all .2s;cursor:pointer;
+  transition:color .25s ease, background .25s ease, transform .25s ease, box-shadow .25s ease;
+  cursor:pointer;
 }
-.hp-dash__nav-item.active{background:rgba(21,73,255,.3);color:var(--cyan)}
-.hp-dash__nav-item:hover{color:rgba(255,255,255,.7)}
-.hp-dash__main{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px}
+.hp-dash__nav-item:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.04)}
+.hp-dash__nav-item:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.hp-dash__nav-item.active{
+  background:linear-gradient(135deg, rgba(21,73,255,.55), rgba(0,207,255,.22));
+  color:#fff;
+  box-shadow:
+    0 0 0 1px rgba(0,207,255,.45),
+    0 0 18px rgba(0,207,255,.35),
+    inset 0 0 12px rgba(0,207,255,.18);
+}
+.hp-dash__nav-item.active::after{
+  content:"";position:absolute;left:-10px;top:50%;
+  width:3px;height:16px;border-radius:3px;
+  background:var(--cyan);
+  box-shadow:0 0 8px var(--cyan);
+  transform:translateY(-50%);
+  animation:navPulse 2.4s ease-in-out infinite;
+}
+@keyframes navPulse{
+  0%,100%{opacity:.85;height:16px}
+  50%{opacity:1;height:22px}
+}
+.hp-dash__main{flex:1;padding:16px;position:relative;min-height:260px}
+.hp-dash__panel{display:none;flex-direction:column;gap:12px}
+.hp-dash__panel.is-active{display:flex}
+.hp-dash__panel.is-active > *{
+  opacity:0;transform:translateY(10px);
+  animation:panelRowIn .55s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.hp-dash__panel.is-active > *:nth-child(1){animation-delay:.04s}
+.hp-dash__panel.is-active > *:nth-child(2){animation-delay:.12s}
+.hp-dash__panel.is-active > *:nth-child(3){animation-delay:.20s}
+.hp-dash__panel.is-active > *:nth-child(4){animation-delay:.28s}
+@keyframes panelRowIn{to{opacity:1;transform:translateY(0)}}
+
+/* Chart line draw-in */
+.hp-chart-line{
+  stroke-dasharray:1000;
+  stroke-dashoffset:1000;
+}
+.hp-dash__panel.is-active .hp-chart-line{
+  animation:drawLine 1.6s cubic-bezier(.4,.1,.2,1) forwards;
+}
+.hp-chart-area{opacity:0}
+.hp-dash__panel.is-active .hp-chart-area{
+  animation:fadeArea .9s ease .6s forwards;
+}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes fadeArea{to{opacity:1}}
+
+/* Hero card (payments tab) */
+.hp-dash__hero-card{
+  display:flex;align-items:center;gap:12px;
+  background:linear-gradient(135deg, rgba(21,73,255,.22), rgba(0,207,255,.10));
+  border:1px solid rgba(0,207,255,.25);
+  border-radius:12px;padding:12px 14px;
+  position:relative;overflow:hidden;
+}
+.hp-dash__hero-card::before{
+  content:"";position:absolute;inset:-1px;border-radius:12px;
+  background:radial-gradient(circle at top right, rgba(0,207,255,.18), transparent 60%);
+  pointer-events:none;
+}
+.hp-dash__hero-card-icon{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#1549FF,#00CFFF);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:16px;
+  box-shadow:0 6px 20px rgba(21,73,255,.45);
+}
+.hp-dash__hero-card-body{display:flex;flex-direction:column;min-width:0}
+.hp-dash__hero-card-label{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.05em}
+.hp-dash__hero-card-value{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:2px}
+.hp-dash__hero-card-eta{
+  margin-left:auto;font-size:11px;font-weight:600;
+  color:var(--cyan);background:rgba(0,207,255,.10);
+  padding:5px 9px;border-radius:999px;
+  border:1px solid rgba(0,207,255,.25);
+  white-space:nowrap;
+}
+
+/* Progress bar */
+.hp-dash__progress{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;padding:10px 12px;
+}
+.hp-dash__progress-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;opacity:.75;margin-bottom:7px;
+}
+.hp-dash__progress-row span:last-child{color:var(--cyan);font-weight:700;opacity:1}
+.hp-dash__progress-bar{
+  height:6px;background:rgba(255,255,255,.06);
+  border-radius:999px;overflow:hidden;position:relative;
+}
+.hp-dash__progress-fill{
+  height:100%;width:0;
+  background:linear-gradient(90deg,#1549FF,#00CFFF);
+  border-radius:999px;
+  box-shadow:0 0 12px rgba(0,207,255,.5);
+  position:relative;
+}
+.hp-dash__panel.is-active .hp-dash__progress-fill{
+  animation:fillBar 1.4s cubic-bezier(.4,.1,.2,1) .15s forwards;
+}
+@keyframes fillBar{to{width:var(--w,72%)}}
+
+.hp-dash__amount.up{color:var(--green)}
+
+/* Merchant cards */
+.hp-dash__merchants{display:flex;flex-direction:column;gap:8px}
+.hp-dash__merchant{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;padding:9px 11px;
+  transition:transform .25s ease, background .25s ease, border-color .25s ease;
+}
+.hp-dash__merchant:hover{
+  transform:translateX(3px);
+  background:rgba(0,207,255,.06);
+  border-color:rgba(0,207,255,.22);
+}
+.hp-dash__merchant-avatar{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:11px;font-weight:700;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);
+}
+.hp-dash__merchant-info{display:flex;flex-direction:column;min-width:0;flex:1}
+.hp-dash__merchant-info strong{font-size:12px;font-weight:600}
+.hp-dash__merchant-info span{font-size:10px;opacity:.55;margin-top:2px}
+.hp-dash__merchant-amt{margin-left:auto;font-weight:700;font-size:13px;color:var(--cyan)}
+
+/* Settings / Operations */
+.hp-dash__settings{display:flex;flex-direction:column;gap:8px}
+.hp-dash__setting{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;padding:10px 12px;
+}
+.hp-dash__setting-text{flex:1;display:flex;flex-direction:column;min-width:0}
+.hp-dash__setting-text strong{font-size:12px;font-weight:600}
+.hp-dash__setting-text span{font-size:10px;opacity:.55;margin-top:2px}
+.hp-toggle{
+  position:relative;display:inline-block;
+  width:34px;height:18px;border-radius:999px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.10);
+  transition:background .3s ease, border-color .3s ease;
+  flex-shrink:0;
+}
+.hp-toggle > span{
+  position:absolute;top:1px;left:1px;
+  width:14px;height:14px;border-radius:50%;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+  transition:left .3s cubic-bezier(.2,.7,.2,1), background .3s ease;
+}
+.hp-toggle.is-on{
+  background:linear-gradient(90deg,#1549FF,#00CFFF);
+  border-color:rgba(0,207,255,.5);
+  box-shadow:0 0 10px rgba(0,207,255,.35);
+}
+.hp-toggle.is-on > span{left:17px}
+.hp-dash__connections{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding-top:4px;margin-top:auto;
+}
+.hp-dash__connection{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:600;
+  padding:5px 9px;border-radius:999px;
+  background:rgba(0,229,160,.08);
+  color:var(--green);
+  border:1px solid rgba(0,229,160,.20);
+}
+.hp-dash__connection i{font-size:9px}
 .hp-dash__stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hp-dash__stat{
   background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
@@ -1164,7 +1476,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .hp-ind-card--wide{grid-column:span 1}
 }
 @media(max-width:767px){
-  .hp-hero__visual{display:none}
+  .hp-hero__visual{
+    margin-top:8px;
+    transform:none;animation:none;
+    max-width:100%;
+  }
+  .hp-dash{transform:none;animation:none;border-radius:14px}
+  .hp-dash__body{min-height:0}
+  .hp-dash__sidebar{width:42px;padding:10px 0}
+  .hp-dash__nav-item{width:30px;height:30px;font-size:13px}
+  .hp-dash__nav-item.active::after{display:none}
+  .hp-dash__main{padding:12px;min-height:240px}
+  .hp-dash__stat-value{font-size:17px}
+  .hp-dash__hero-card-value{font-size:17px}
+  .hp-float--approval,.hp-float--shield{display:none}
+  .hp-float--payout{
+    position:static;margin:10px 0 0;width:100%;
+    animation-delay:.4s;
+  }
   .hp-eco__lines{display:none}
   .hp-hero__text{text-align:center}
   .hp-hero__actions{justify-content:center}
@@ -1257,10 +1586,85 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }, { passive: true });
   }
 
-  // Dashboard simulated live activity — cycle pending row (only when visible)
+  // ── Hero dashboard tabs ──
+  const dashTabBtns = document.querySelectorAll('.hp-dash__nav-item');
+  const dashPanels = document.querySelectorAll('.hp-dash__panel');
+
+  function fmtN(val, decimals, useCommas){
+    if(useCommas){
+      return val.toLocaleString(undefined,{minimumFractionDigits:decimals,maximumFractionDigits:decimals});
+    }
+    return val.toFixed(decimals);
+  }
+  function runPanelCounts(panel){
+    panel.querySelectorAll('[data-pcount]').forEach(el => {
+      const target = parseFloat(el.dataset.pcount);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const decimals = parseInt(el.dataset.decimals) || 0;
+      const useCommas = el.dataset.commas === '1';
+      if(prefersReducedMotion){
+        el.textContent = prefix + fmtN(target, decimals, useCommas) + suffix;
+        return;
+      }
+      let start = 0;
+      const dur = 1100;
+      const step = 16;
+      el.textContent = prefix + fmtN(0, decimals, useCommas) + suffix;
+      const timer = setInterval(() => {
+        start += step;
+        const progress = Math.min(start / dur, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + fmtN(eased * target, decimals, useCommas) + suffix;
+        if(start >= dur){ clearInterval(timer); }
+      }, step);
+    });
+  }
+  function reanimatePanel(panel){
+    // Force-restart panel-row stagger by removing then re-adding is-active
+    panel.classList.remove('is-active');
+    void panel.offsetWidth;
+    panel.classList.add('is-active');
+    runPanelCounts(panel);
+  }
+  function setActiveTab(name){
+    dashTabBtns.forEach(b => {
+      const on = b.dataset.tab === name;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    dashPanels.forEach(p => {
+      const on = p.dataset.panel === name;
+      if(on){
+        p.hidden = false;
+        reanimatePanel(p);
+      } else {
+        p.classList.remove('is-active');
+        p.hidden = true;
+      }
+    });
+  }
+  dashTabBtns.forEach(b => {
+    b.addEventListener('click', () => setActiveTab(b.dataset.tab));
+  });
+
+  // Initial count-up for the default (analytics) panel when it scrolls into view
+  const initialPanel = document.querySelector('.hp-dash__panel.is-active');
+  if(initialPanel){
+    const initObs = new IntersectionObserver(entries => {
+      if(entries[0].isIntersecting){
+        runPanelCounts(initialPanel);
+        initObs.disconnect();
+      }
+    }, {threshold:.2});
+    initObs.observe(initialPanel);
+  }
+
+  // Dashboard simulated live activity — cycle pending row (only when analytics tab visible)
   const dashEl = document.querySelector('.hp-dash');
-  const dashRows = document.querySelectorAll('.hp-dash__table-row');
-  if(dashEl && dashRows.length >= 3 && !prefersReducedMotion){
+  const analyticsPanel = document.querySelector('.hp-dash__panel[data-panel="analytics"]');
+  const dashRows = analyticsPanel ? analyticsPanel.querySelectorAll('.hp-dash__table-row') : [];
+  if(dashEl && analyticsPanel && dashRows.length >= 3 && !prefersReducedMotion){
     const pendingRow = dashRows[dashRows.length - 1];
     const pendingBadge = pendingRow.querySelector('.hp-badge');
     const labelEl = pendingRow.querySelectorAll('span')[1];
@@ -1272,6 +1676,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     let timer = null;
     const tick = () => {
       if(!pendingBadge) return;
+      if(!analyticsPanel.classList.contains('is-active')) return;
       if(!approved){
         // Approve current pending
         pendingBadge.classList.remove('blue');

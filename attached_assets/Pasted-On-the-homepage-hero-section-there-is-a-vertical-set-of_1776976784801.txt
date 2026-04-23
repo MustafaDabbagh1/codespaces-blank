@@ -1,0 +1,69 @@
+On the homepage hero section, there is a vertical set of 4 sidebar icons/tabs inside the dashboard mockup. I want those 4 tabs to become fully clickable and interactive.
+
+Please update the homepage hero so that:
+
+1. Each of the 4 tabs is clickable
+- Only one tab should be active at a time
+- The first tab should be active by default on page load
+- Add a clear active state with glow, highlight, or brighter icon treatment
+- Add hover states so it feels premium and interactive
+
+2. Each tab should reveal different content inside the hero dashboard area
+Use the current dark, modern, software-style design and keep everything on-brand with PPD Technology.
+
+Suggested tab themes:
+- Tab 1: Analytics
+  Show animated chart lines, stat cards, count-up numbers, revenue trends, and performance metrics
+- Tab 2: Payments
+  Show next-day funding, recent transactions, payout cards, deposit activity, and payment flow visuals
+- Tab 3: Customers / Merchants
+  Show merchant/customer cards, account activity, growth metrics, user list animations, and engagement stats
+- Tab 4: Settings / Operations
+  Show automation toggles, connected tools, risk/ops controls, account settings, and status indicators
+
+3. Add smooth animations when switching tabs
+I want this to feel polished and high-end, like a real software product demo.
+Please include:
+- fade + slide transitions between tab panels
+- animated charts drawing in
+- stat counters counting up
+- cards floating/sliding in
+- subtle glow or pulse effects on active elements
+- micro-interactions on hover/click
+- no jarring or excessive motion
+
+4. Make the content feel like a live product demo
+The dashboard should feel like it is actually changing when each tab is clicked, not just swapping static text.
+Please animate:
+- charts
+- cards
+- progress bars
+- status badges
+- floating notification/payout cards
+- small UI elements that make it feel alive
+
+5. Keep the existing look and layout
+- Do not break the current homepage design
+- Keep the same dark blue premium software aesthetic
+- Keep the current hero structure, spacing, and overall vibe
+- Improve what is already there rather than redesigning the whole section
+- Preserve the existing logo/branding feel
+
+6. Make it responsive
+- Desktop should feel rich and interactive
+- Mobile/tablet should still work cleanly
+- Tabs should remain usable on smaller screens
+
+7. Code quality
+- Use the existing framework and structure already in the project
+- Keep code clean and reusable
+- If possible, separate the tab content into a clean data structure/component setup so it is easy to edit later
+- Make sure there are no console errors
+- Make sure transitions are smooth and performance is good
+
+Important:
+I do not want a full page redirect when a tab is clicked.
+This should all happen inside the homepage hero/dashboard section as an interactive UI demo.
+
+Goal:
+Make the hero feel much more like a real, premium fintech/software platform by turning those 4 sidebar icons into clickable demo tabs with different content and animations.
