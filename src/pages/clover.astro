@@ -343,6 +343,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
         <div class="modal-body">
           <form id="pricingForm" novalidate>
+            <input type="hidden" name="_form" value="clover-pricing" />
+            <input type="hidden" name="_subject" value="New Clover Pricing Request" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
             <div class="form-grid">
               <div class="field">
                 <label for="name">Full name <span class="required">*</span></label>
@@ -769,16 +772,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
       });
 
-      form?.addEventListener("submit", (e) => {
+      form?.addEventListener("submit", async (e) => {
         e.preventDefault();
+        if (form.website && form.website.value) return;
         const data = new FormData(form);
         if (!data.get("name") || !data.get("email") || !data.get("business")) {
           alert("Please fill name, email, and business.");
           return;
         }
-        closeModal();
-        toast?.classList.add("show");
-        setTimeout(() => toast?.classList.remove("show"), 2600);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = "Sending…";
+        }
+        try {
+          data.append("_page", window.location.pathname);
+          const res = await fetch("/api/lead", { method: "POST", body: data });
+          if (!res.ok) throw new Error("Network");
+          closeModal();
+          form.reset();
+          toast?.classList.add("show");
+          setTimeout(() => toast?.classList.remove("show"), 2600);
+        } catch {
+          alert("Sorry, something went wrong sending your request. Please email info@ppdtechnology.com and we'll help right away.");
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
       });
 
       const hero = root.querySelector(".hero");

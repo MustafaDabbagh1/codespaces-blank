@@ -920,7 +920,10 @@ import "../styles/repair-modules.css";
         <h3 id="rpModalTitle">Get a Personalized Demo</h3>
         <p>See how PPD Repair manages tickets, inventory, technicians, and payments — all in one system for only $30/month.</p>
       </div>
-      <form class="rp-modal__form" id="rpLeadForm">
+      <form class="rp-modal__form" id="rpLeadForm" novalidate>
+        <input type="hidden" name="_form" value="repair-demo" />
+        <input type="hidden" name="_subject" value="New Repair Demo Request" />
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
         <div class="rp-form-row">
           <div class="rp-form-group">
             <label for="rp-name">Full Name *</label>
@@ -1440,10 +1443,29 @@ import "../styles/repair-modules.css";
     }
   });
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    form.style.display = 'none';
-    if (success) success.style.display = 'block';
+    if (form.website && form.website.value) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+    }
+    try {
+      const data = new FormData(form);
+      data.append('_page', window.location.pathname);
+      const res = await fetch('/api/lead', { method: 'POST', body: data });
+      if (!res.ok) throw new Error('Network');
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    } catch {
+      alert("Sorry, something went wrong submitting your request. Please email info@ppdtechnology.com and we'll help right away.");
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    }
   });
 
   // ── Module Tabs ──

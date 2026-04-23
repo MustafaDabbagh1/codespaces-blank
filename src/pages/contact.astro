@@ -22,7 +22,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="contact-form-container">
             <div class="contact-form">
               <h2>Send Us a Message</h2>
-              <form id="contactForm">
+              <form id="contactForm" novalidate>
+                <input type="hidden" name="_form" value="contact-message" />
+                <input type="hidden" name="_subject" value="New Contact Message" />
+                <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
                 <div class="form-group">
                   <label for="contact-name">Full Name</label>
                   <input type="text" id="contact-name" name="name" required />
@@ -182,6 +185,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <form id="callForm" class="step-wrap active" data-step-wrap="1" novalidate>
+            <input type="hidden" name="_form" value="contact-call-request" />
+            <input type="hidden" name="_subject" value="New Schedule a Call Request" />
             <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" />
 
             <div class="form-grid modal-grid">
@@ -1115,10 +1120,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       if (!root) return;
 
       const contactForm = root.querySelector("#contactForm");
-      contactForm?.addEventListener("submit", function (e) {
+      contactForm?.addEventListener("submit", async function (e) {
         e.preventDefault();
-        alert("Thank you for your message! We will get back to you soon.");
-        this.reset();
+        if (this.website && this.website.value) return;
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+        }
+        try {
+          const data = new FormData(this);
+          data.append("_page", window.location.pathname);
+          const res = await fetch("/api/lead", { method: "POST", body: data });
+          if (!res.ok) throw new Error("Network");
+          window.location.href = "/thank-you";
+        } catch {
+          alert("Sorry, something went wrong sending your message. Please email info@ppdtechnology.com and we'll help right away.");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
       });
 
       const callModal = root.querySelector("#callModal");
@@ -1126,7 +1149,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       const closeBtns = callModal?.querySelectorAll("[data-close-modal]") || [];
       const success = root.querySelector("#callSuccess");
 
-      const CALL_FORM_ENDPOINT = null;
+      const CALL_FORM_ENDPOINT = "/api/lead";
       const AVAILABILITY_URL = null;
       const DEFAULT_WEEKLY = {
         0: [],
@@ -1475,7 +1498,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         setStep(2);
       });
 
-      root.querySelector("#finalSubmit")?.addEventListener("click", async () => {
+      root.querySelector("#finalSubmit")?.addEventListener("click", async (ev) => {
+        const finalBtn = ev.currentTarget;
+        const finalOriginal = finalBtn ? finalBtn.innerHTML : "";
         const data = new FormData(cform);
         const req = [
           ["firstName", "firstName"],
@@ -1500,11 +1525,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         if (cform.website && cform.website.value) return;
 
+        if (finalBtn) {
+          finalBtn.disabled = true;
+          finalBtn.innerHTML = "Sending…";
+        }
+
         const payload = Object.fromEntries(data.entries());
         payload.timezone = tz;
         payload.schedule_iso = selectedISO;
         payload.schedule_label = selectedLabel;
         payload.intent = "Contact - Schedule a Call";
+        payload._form = "contact-call-request";
+        payload._subject = "New Schedule a Call Request";
+        payload._page = window.location.pathname;
 
         try {
           if (CALL_FORM_ENDPOINT) {
@@ -1525,6 +1558,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           success.focus();
         } catch {
           alert("Sorry, something went wrong submitting your request. You can email info@ppdtechnology.com and we’ll help right away.");
+          if (finalBtn) {
+            finalBtn.disabled = false;
+            finalBtn.innerHTML = finalOriginal;
+          }
         }
       });
     })();
