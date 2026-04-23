@@ -77,7 +77,7 @@ function renderRows(data: Record<string, unknown>): string {
     if (v === undefined || v === null || v === '') continue;
     const value = Array.isArray(v) ? v.join(', ') : String(v);
     rows.push(
-      `<tr><td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#0C1A38;vertical-align:top;text-transform:capitalize">${escapeHtml(k)}</td><td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;color:#1f2937;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`
+      `<tr><td class="r-row-label" style="padding:8px 12px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#0C1A38;vertical-align:top;text-transform:capitalize">${escapeHtml(k)}</td><td class="r-row-value" style="padding:8px 12px;border-bottom:1px solid #e5e7eb;color:#1f2937;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`
     );
   }
   return rows.join('');
@@ -283,32 +283,107 @@ function buildReceiptHtml(
   const stepsHtml = copy.nextSteps
     .map(
       (s) =>
-        `<li style="margin-bottom:6px;color:#1f2937">${escapeHtml(s)}</li>`
+        `<li class="r-step" style="margin-bottom:6px;color:#1f2937">${escapeHtml(s)}</li>`
     )
     .join('');
 
   return `<!doctype html>
-<html><body style="margin:0;padding:24px;background:#f5f8ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif">
-  <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(6,14,33,.08)">
-    <div style="background:linear-gradient(135deg,#1549FF,#00CFFF);padding:24px;color:#fff">
-      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85">PPD Technology</div>
-      <div style="font-size:22px;font-weight:700;margin-top:6px">${escapeHtml(copy.heading)}</div>
-      <div style="font-size:13px;margin-top:6px;opacity:.9">${escapeHtml(label)}</div>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>${escapeHtml(copy.subject)}</title>
+<style>
+  /* Mobile tweaks: tighter padding, larger touch targets, stacked rows */
+  @media only screen and (max-width: 480px) {
+    .r-outer { padding: 12px !important; }
+    .r-card { border-radius: 8px !important; }
+    .r-header { padding: 18px 16px !important; }
+    .r-heading { font-size: 18px !important; line-height: 1.3 !important; }
+    .r-body { padding: 16px 16px 4px !important; }
+    .r-footer { padding: 12px 16px !important; }
+    .r-row-label,
+    .r-row-value {
+      display: block !important;
+      width: 100% !important;
+      padding: 6px 0 !important;
+      border-bottom: 0 !important;
+    }
+    .r-row-label { padding-top: 12px !important; }
+    .r-row-value { padding-bottom: 12px !important; border-bottom: 1px solid #e5e7eb !important; }
+  }
+  /* Dark-mode overrides for clients that honor prefers-color-scheme
+     (Apple Mail, iOS Mail, recent Outlook). Keep brand gradient on header. */
+  @media (prefers-color-scheme: dark) {
+    body, .r-outer { background: #0b1020 !important; }
+    .r-card { background: #111a33 !important; box-shadow: 0 4px 16px rgba(0,0,0,.4) !important; }
+    .r-intro, .r-step, .r-row-value { color: #e5ecff !important; }
+    .r-section-title, .r-row-label { color: #9fb4ff !important; }
+    .r-row-label, .r-row-value { border-bottom-color: #1f2a4a !important; }
+    .r-rows { border-top-color: #1f2a4a !important; }
+    .r-footer { background: #0b1020 !important; color: #8fa3d6 !important; }
+  }
+  /* Outlook.com / dark-mode hint */
+  [data-ogsc] body, [data-ogsc] .r-outer { background: #0b1020 !important; }
+  [data-ogsc] .r-card { background: #111a33 !important; }
+  [data-ogsc] .r-intro, [data-ogsc] .r-step, [data-ogsc] .r-row-value { color: #e5ecff !important; }
+  [data-ogsc] .r-section-title, [data-ogsc] .r-row-label { color: #9fb4ff !important; }
+</style>
+</head>
+<body class="r-outer" style="margin:0;padding:24px;background:#f5f8ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif">
+  <div class="r-card" style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(6,14,33,.08)">
+    <div class="r-header" style="background:#1549FF;background:linear-gradient(135deg,#1549FF,#00CFFF);padding:24px;color:#fff">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;color:#ffffff">PPD Technology</div>
+      <div class="r-heading" style="font-size:22px;font-weight:700;margin-top:6px;color:#ffffff">${escapeHtml(copy.heading)}</div>
+      <div style="font-size:13px;margin-top:6px;opacity:.9;color:#ffffff">${escapeHtml(label)}</div>
     </div>
-    <div style="padding:20px 24px 8px">
-      <p style="margin:0 0 16px;color:#1f2937;font-size:14px;line-height:1.6">${escapeHtml(copy.intro)}</p>
-      <div style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What happens next</div>
+    <div class="r-body" style="padding:20px 24px 8px">
+      <p class="r-intro" style="margin:0 0 16px;color:#1f2937;font-size:14px;line-height:1.6">${escapeHtml(copy.intro)}</p>
+      <div class="r-section-title" style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What happens next</div>
       <ul style="padding-left:20px;margin:0 0 16px;font-size:14px;line-height:1.5">${stepsHtml}</ul>
-      <div style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What you submitted</div>
-      <table style="width:100%;border-collapse:collapse;font-size:14px;border-top:1px solid #e5e7eb">
+      <div class="r-section-title" style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What you submitted</div>
+      <table class="r-rows" style="width:100%;border-collapse:collapse;font-size:14px;border-top:1px solid #e5e7eb" role="presentation">
         ${renderRows(payload)}
       </table>
     </div>
-    <div style="padding:14px 24px;background:#f5f8ff;font-size:12px;color:#5b74a6">
+    <div class="r-footer" style="padding:14px 24px;background:#f5f8ff;font-size:12px;color:#5b74a6">
       This is an automated confirmation from PPD Technology. If you did not submit this form, please ignore this email.
     </div>
   </div>
 </body></html>`;
+}
+
+function buildReceiptText(
+  copy: ReceiptCopy,
+  label: string,
+  payload: Record<string, unknown>
+): string {
+  const skip = new Set(['_form', '_subject', 'website', 'cf-turnstile-response']);
+  const lines: string[] = [];
+  lines.push('PPD Technology');
+  lines.push(copy.heading);
+  lines.push(label);
+  lines.push('');
+  lines.push(copy.intro);
+  lines.push('');
+  lines.push('What happens next:');
+  for (const s of copy.nextSteps) lines.push(`  - ${s}`);
+  lines.push('');
+  lines.push('What you submitted:');
+  for (const [k, v] of Object.entries(payload)) {
+    if (skip.has(k)) continue;
+    if (v === undefined || v === null || v === '') continue;
+    const value = Array.isArray(v) ? v.join(', ') : String(v);
+    lines.push(`  ${k}: ${value}`);
+  }
+  lines.push('');
+  lines.push('---');
+  lines.push(
+    'This is an automated confirmation from PPD Technology. If you did not submit this form, please ignore this email.'
+  );
+  return lines.join('\n');
 }
 
 function isValidEmail(value: unknown): value is string {
@@ -511,12 +586,14 @@ export const POST: APIRoute = async ({ request }) => {
       const visitorEmail = (payload.email as string).trim();
       const copy = getReceiptCopy(formKey, label);
       const receiptHtml = buildReceiptHtml(copy, label, payload);
+      const receiptText = buildReceiptText(copy, label, payload);
       try {
         const { error: receiptError } = await resend.emails.send({
           from: fromEmail,
           to: [visitorEmail],
           subject: copy.subject,
           html: receiptHtml,
+          text: receiptText,
           replyTo: toEmail,
         });
         if (receiptError) {
