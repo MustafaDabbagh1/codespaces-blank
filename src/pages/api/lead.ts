@@ -34,6 +34,95 @@ function renderRows(data: Record<string, unknown>): string {
   return rows.join('');
 }
 
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
+const rateLimitBuckets = new Map<string, number[]>();
+
+function getClientIp(request: Request): string {
+  // Prefer headers set by trusted ingress proxies (Cloudflare, Replit/nginx)
+  // over the client-controllable x-forwarded-for, which can be spoofed and
+  // would let an attacker rotate "IPs" per request to bypass the limiter.
+  const trusted =
+    request.headers.get('cf-connecting-ip') ||
+    request.headers.get('x-real-ip');
+  if (trusted) return trusted.trim();
+
+  // Fall back to the last hop in x-forwarded-for: the value appended by our
+  // own ingress is harder to forge than the leftmost (client-supplied) entry.
+  const xff = request.headers.get('x-forwarded-for');
+  if (xff) {
+    const parts = xff.split(',').map((p) => p.trim()).filter(Boolean);
+    const last = parts[parts.length - 1];
+    if (last) return last;
+  }
+  return 'unknown';
+}
+
+function checkRateLimit(ip: string): { allowed: boolean; retryAfter: number } {
+  const now = Date.now();
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  const hits = (rateLimitBuckets.get(ip) || []).filter((t) => t > cutoff);
+
+  if (rateLimitBuckets.size > 5000) {
+    for (const [k, v] of rateLimitBuckets) {
+      const fresh = v.filter((t) => t > cutoff);
+      if (fresh.length === 0) rateLimitBuckets.delete(k);
+      else rateLimitBuckets.set(k, fresh);
+    }
+  }
+
+  if (hits.length >= RATE_LIMIT_MAX) {
+    const retryAfter = Math.max(
+      1,
+      Math.ceil((hits[0] + RATE_LIMIT_WINDOW_MS - now) / 1000)
+    );
+    return { allowed: false, retryAfter };
+  }
+
+  hits.push(now);
+  rateLimitBuckets.set(ip, hits);
+  return { allowed: true, retryAfter: 0 };
+}
+
+function getAllowedHosts(request: Request): Set<string> {
+  const hosts = new Set<string>();
+  const envHosts = process.env.LEAD_ALLOWED_HOSTS;
+  if (envHosts) {
+    for (const h of envHosts.split(',')) {
+      const trimmed = h.trim().toLowerCase();
+      if (trimmed) hosts.add(trimmed);
+    }
+  } else {
+    hosts.add('ppdtechnology.com');
+    hosts.add('www.ppdtechnology.com');
+  }
+  const replitDomain = process.env.REPLIT_DEV_DOMAIN;
+  if (replitDomain) hosts.add(replitDomain.toLowerCase());
+  const selfHost = request.headers.get('host');
+  if (selfHost) hosts.add(selfHost.toLowerCase());
+  return hosts;
+}
+
+function isOriginAllowed(request: Request): boolean {
+  const allowed = getAllowedHosts(request);
+  const candidates = [
+    request.headers.get('origin'),
+    request.headers.get('referer'),
+  ].filter((v): v is string => !!v);
+
+  if (candidates.length === 0) return false;
+
+  for (const raw of candidates) {
+    try {
+      const host = new URL(raw).host.toLowerCase();
+      if (allowed.has(host)) return true;
+    } catch {
+      // ignore unparsable header
+    }
+  }
+  return false;
+}
+
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.LEAD_TO_EMAIL;
@@ -43,6 +132,31 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({ ok: false, error: 'Email service not configured.' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
+  if (!isOriginAllowed(request)) {
+    return new Response(
+      JSON.stringify({ ok: false, error: 'Request origin not allowed.' }),
+      { status: 403, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
+  const ip = getClientIp(request);
+  const { allowed, retryAfter } = checkRateLimit(ip);
+  if (!allowed) {
+    return new Response(
+      JSON.stringify({
+        ok: false,
+        error: 'Too many requests. Please try again later.',
+      }),
+      {
+        status: 429,
+        headers: {
+          'Content-Type': 'application/json',
+          'Retry-After': String(retryAfter),
+        },
+      }
     );
   }
 
