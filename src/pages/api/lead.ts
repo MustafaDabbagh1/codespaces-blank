@@ -190,6 +190,134 @@ function formatBytes(n: number): string {
 
 type Attachment = { filename: string; content: Buffer; contentType?: string };
 
+type ReceiptCopy = {
+  subject: string;
+  heading: string;
+  intro: string;
+  nextSteps: string[];
+};
+
+function getReceiptCopy(formKey: string, label: string): ReceiptCopy {
+  const isDemo =
+    formKey.endsWith('-demo') ||
+    formKey === 'clover-pricing' ||
+    formKey === 'contact-call-request';
+  const isApplication =
+    formKey === 'become-a-partner' || formKey === 'merchant-signup';
+  const isReferral = formKey === 'refer-program';
+  const isSupport = formKey === 'customer-support';
+
+  if (isReferral) {
+    return {
+      subject: 'We received your referral — PPD Technology',
+      heading: 'Thanks for your referral!',
+      intro:
+        "We've received the referral details you submitted. Our partner team will reach out to your contact shortly and keep you posted on their progress.",
+      nextSteps: [
+        'A partner specialist will contact your referral within 1–2 business days.',
+        "We'll email you once the referral has been engaged so you can track its status.",
+        "If we need more context to make the introduction, we'll reply to this email.",
+      ],
+    };
+  }
+
+  if (isApplication) {
+    return {
+      subject: `We received your application — ${label}`,
+      heading: 'Thanks for applying!',
+      intro:
+        "We've received your application and a member of our onboarding team is already reviewing it. A copy of what you submitted is below for your records.",
+      nextSteps: [
+        'Our team will review your application within 1 business day.',
+        "We may reply to this email if we need additional information or documentation.",
+        "Once approved, you'll receive next-step instructions to get fully set up.",
+      ],
+    };
+  }
+
+  if (isSupport) {
+    return {
+      subject: 'We received your support request — PPD Technology',
+      heading: 'Your support ticket has been received',
+      intro:
+        "Thanks for reaching out. Our support team has received your ticket and will follow up as soon as possible. A copy of what you submitted is below for your records.",
+      nextSteps: [
+        'A support specialist will reply to this email with next steps.',
+        'Please reply to this thread if you have any additional details to share.',
+        'For urgent issues, you can also call our support line during business hours.',
+      ],
+    };
+  }
+
+  if (isDemo) {
+    return {
+      subject: `We received your demo request — ${label}`,
+      heading: 'Thanks for requesting a demo!',
+      intro:
+        "We've received your request and a product specialist will be in touch shortly to schedule your personalized walkthrough. A copy of what you submitted is below for your records.",
+      nextSteps: [
+        'A specialist will reach out within 1 business day to coordinate a time.',
+        "We'll tailor the demo to the use case and questions you shared.",
+        "If your timeline shifts, just reply to this email and we'll adjust.",
+      ],
+    };
+  }
+
+  return {
+    subject: `We received your message — ${label}`,
+    heading: 'Thanks for reaching out!',
+    intro:
+      "We've received your message and a member of our team will get back to you shortly. A copy of what you submitted is below for your records.",
+    nextSteps: [
+      'A member of our team will reply within 1 business day.',
+      'Feel free to reply to this email with any additional details.',
+    ],
+  };
+}
+
+function buildReceiptHtml(
+  copy: ReceiptCopy,
+  label: string,
+  payload: Record<string, unknown>
+): string {
+  const stepsHtml = copy.nextSteps
+    .map(
+      (s) =>
+        `<li style="margin-bottom:6px;color:#1f2937">${escapeHtml(s)}</li>`
+    )
+    .join('');
+
+  return `<!doctype html>
+<html><body style="margin:0;padding:24px;background:#f5f8ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif">
+  <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(6,14,33,.08)">
+    <div style="background:linear-gradient(135deg,#1549FF,#00CFFF);padding:24px;color:#fff">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85">PPD Technology</div>
+      <div style="font-size:22px;font-weight:700;margin-top:6px">${escapeHtml(copy.heading)}</div>
+      <div style="font-size:13px;margin-top:6px;opacity:.9">${escapeHtml(label)}</div>
+    </div>
+    <div style="padding:20px 24px 8px">
+      <p style="margin:0 0 16px;color:#1f2937;font-size:14px;line-height:1.6">${escapeHtml(copy.intro)}</p>
+      <div style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What happens next</div>
+      <ul style="padding-left:20px;margin:0 0 16px;font-size:14px;line-height:1.5">${stepsHtml}</ul>
+      <div style="font-size:13px;font-weight:700;color:#0C1A38;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px">What you submitted</div>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;border-top:1px solid #e5e7eb">
+        ${renderRows(payload)}
+      </table>
+    </div>
+    <div style="padding:14px 24px;background:#f5f8ff;font-size:12px;color:#5b74a6">
+      This is an automated confirmation from PPD Technology. If you did not submit this form, please ignore this email.
+    </div>
+  </div>
+</body></html>`;
+}
+
+function isValidEmail(value: unknown): value is string {
+  if (typeof value !== 'string') return false;
+  const trimmed = value.trim();
+  // Simple, conservative check — avoid sending receipts to obviously bad addresses.
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+}
+
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.LEAD_TO_EMAIL;
@@ -374,6 +502,29 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({ ok: false, error: 'Failed to send email.' }),
         { status: 502, headers: { 'Content-Type': 'application/json' } }
       );
+    }
+
+    // Send a branded confirmation receipt to the visitor. This is best-effort:
+    // any failure here is logged but must not affect the response, since the
+    // internal lead email has already been delivered successfully.
+    if (isValidEmail(payload.email)) {
+      const visitorEmail = (payload.email as string).trim();
+      const copy = getReceiptCopy(formKey, label);
+      const receiptHtml = buildReceiptHtml(copy, label, payload);
+      try {
+        const { error: receiptError } = await resend.emails.send({
+          from: fromEmail,
+          to: [visitorEmail],
+          subject: copy.subject,
+          html: receiptHtml,
+          replyTo: toEmail,
+        });
+        if (receiptError) {
+          console.error('[lead] Visitor receipt send error:', receiptError);
+        }
+      } catch (receiptErr) {
+        console.error('[lead] Visitor receipt unexpected error:', receiptErr);
+      }
     }
 
     return new Response(JSON.stringify({ ok: true }), {
