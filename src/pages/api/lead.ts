@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
+import { checkRateLimit } from '../../lib/rateLimit';
 
 export const prerender = false;
 
@@ -34,10 +35,6 @@ function renderRows(data: Record<string, unknown>): string {
   return rows.join('');
 }
 
-const RATE_LIMIT_MAX = 5;
-const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
-const rateLimitBuckets = new Map<string, number[]>();
-
 function getClientIp(request: Request): string {
   // Prefer headers set by trusted ingress proxies (Cloudflare, Replit/nginx)
   // over the client-controllable x-forwarded-for, which can be spoofed and
@@ -56,32 +53,6 @@ function getClientIp(request: Request): string {
     if (last) return last;
   }
   return 'unknown';
-}
-
-function checkRateLimit(ip: string): { allowed: boolean; retryAfter: number } {
-  const now = Date.now();
-  const cutoff = now - RATE_LIMIT_WINDOW_MS;
-  const hits = (rateLimitBuckets.get(ip) || []).filter((t) => t > cutoff);
-
-  if (rateLimitBuckets.size > 5000) {
-    for (const [k, v] of rateLimitBuckets) {
-      const fresh = v.filter((t) => t > cutoff);
-      if (fresh.length === 0) rateLimitBuckets.delete(k);
-      else rateLimitBuckets.set(k, fresh);
-    }
-  }
-
-  if (hits.length >= RATE_LIMIT_MAX) {
-    const retryAfter = Math.max(
-      1,
-      Math.ceil((hits[0] + RATE_LIMIT_WINDOW_MS - now) / 1000)
-    );
-    return { allowed: false, retryAfter };
-  }
-
-  hits.push(now);
-  rateLimitBuckets.set(ip, hits);
-  return { allowed: true, retryAfter: 0 };
 }
 
 function getAllowedHosts(request: Request): Set<string> {
@@ -183,7 +154,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const ip = getClientIp(request);
-  const { allowed, retryAfter } = checkRateLimit(ip);
+  const { allowed, retryAfter } = await checkRateLimit(ip);
   if (!allowed) {
     return new Response(
       JSON.stringify({

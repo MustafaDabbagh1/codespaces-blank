@@ -83,6 +83,11 @@ public/
 - `mx-build.astro` - MX Build for contractors
 - `passport-banking.astro` - Banking/treasury platform
 
+## Backend / API
+
+- `src/pages/api/lead.ts` — server endpoint handling all lead form submissions via Resend.
+- `src/lib/rateLimit.ts` — shared per-IP rate limiter (5 hits / 5 min) for `/api/lead`. Uses PostgreSQL (`lead_rate_limit_hits` table) so limits are enforced globally across all server instances; falls back to an in-process map only if `DATABASE_URL` is unavailable or DB queries fail.
+
 ## Important Notes
 
 - `contractors.astro` and `customer-support.astro` use `<style is:global>` which sets `:root` CSS variables — these must stay aligned with the design system to avoid conflicts
