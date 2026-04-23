@@ -1905,7 +1905,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <button class="pays-modal-close" id="paysCloseModal" aria-label="Close">&times;</button>
         </div>
         <div class="pays-modal-body">
-          <form action="https://formspree.io/f/mkgqpnyz" method="POST">
+          <form id="paysDemoForm" action="/api/lead" method="POST">
+            <input type="hidden" name="_form" value="pays-pos-demo" />
+            <input type="hidden" name="_subject" value="New Pays POS Demo Request" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
             <div class="pays-modal-grid">
               <div>
                 <label for="paysName">Full Name</label>
@@ -2077,6 +2080,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           closeModal();
         }
       });
+
+      const paysForm = document.getElementById("paysDemoForm");
+      if (paysForm instanceof HTMLFormElement) {
+        paysForm.addEventListener("submit", async (event: SubmitEvent) => {
+          event.preventDefault();
+          const submitBtn = paysForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn instanceof HTMLButtonElement ? submitBtn.innerHTML : "";
+          if (submitBtn instanceof HTMLButtonElement) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+          }
+          try {
+            const data = new FormData(paysForm);
+            data.append("_page", window.location.pathname);
+            const res = await fetch("/api/lead", { method: "POST", body: data });
+            if (!res.ok) throw new Error("Network");
+            window.location.href = "/thank-you";
+          } catch {
+            window.alert("Sorry, something went wrong sending your request. Please email info@ppdtechnology.com and we'll help right away.");
+            if (submitBtn instanceof HTMLButtonElement) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalText;
+            }
+          }
+        });
+      }
 
       let demoInterval: ReturnType<typeof window.setInterval> | null = null;
       let currentStep = 0;

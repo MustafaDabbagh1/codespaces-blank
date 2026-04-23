@@ -10,6 +10,16 @@ const FORM_LABELS: Record<string, string> = {
   'clover-pricing': 'Clover Pricing Modal',
   'customer-support': 'Customer Support Ticket',
   'repair-demo': 'Repair Demo Request',
+  'restaurants-demo': 'Restaurants — Demo Request',
+  'healthcare-demo': 'Healthcare — Demo Request',
+  'contractors-demo': 'Contractors — Demo Request',
+  'korona-demo': 'KORONA POS — Demo Request',
+  'pays-pos-demo': 'Pays POS — Demo Request',
+  'vp-800-demo': 'VP800 — Demo Request',
+  'mx-build-demo': 'MX Build — Demo Request',
+  'become-a-partner': 'Become a Partner — Application',
+  'merchant-signup': 'Merchant Processing Application',
+  'refer-program': 'Referral Program — New Referral',
 };
 
 const MAX_TOTAL_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10 MB

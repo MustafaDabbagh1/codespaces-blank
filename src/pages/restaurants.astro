@@ -422,9 +422,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 id="demoForm"
                 class="rest-demo-form"
                 novalidate
-                action="https://formspree.io/f/mkgqbwvd"
+                action="/api/lead"
                 method="POST"
               >
+                <input type="hidden" name="_form" value="restaurants-demo" />
+                <input type="hidden" name="_subject" value="New Restaurants Demo Request" />
+                <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
                 <div class="rest-demo-row">
                   <div>
                     <label for="rest-name">Full Name</label>

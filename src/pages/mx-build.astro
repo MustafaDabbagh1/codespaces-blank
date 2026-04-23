@@ -253,7 +253,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="demo-card">
-          <form action="https://formspree.io/f/xblzyjrj" method="POST">
+          <form id="mxDemoForm" action="/api/lead" method="POST">
+            <input type="hidden" name="_form" value="mx-build-demo" />
+            <input type="hidden" name="_subject" value="New MX Build Demo Request" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
             <div class="form-row">
               <div class="field">
                 <label for="name">Your name</label>
@@ -757,4 +760,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       }
     }
   </style>
+
+  <script is:inline>
+    (() => {
+      const form = document.getElementById('mxDemoForm');
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+        }
+        try {
+          const data = new FormData(form);
+          data.append('_page', window.location.pathname);
+          const res = await fetch('/api/lead', { method: 'POST', body: data });
+          if (!res.ok) throw new Error('Network');
+          window.location.href = '/thank-you';
+        } catch {
+          alert("Sorry, something went wrong sending your request. Please email info@ppdtechnology.com and we'll help right away.");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
+      });
+    })();
+  </script>
 </BaseLayout>

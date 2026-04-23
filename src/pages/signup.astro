@@ -120,10 +120,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p>Complete the form below to apply. All information is securely encrypted and used solely for application review and account setup.</p>
         </div>
 
-        <form id="appForm" class="su-form" action="https://formspree.io/f/mvgwalay" method="POST" novalidate>
+        <form id="appForm" class="su-form" action="/api/lead" method="POST" novalidate>
+          <input type="hidden" name="_form" value="merchant-signup" />
           <input type="hidden" name="_subject" value="New PPD Merchant Processing Application" />
-          <input type="hidden" name="_redirect" value="" />
-          <input type="text" name="_gotcha" style="display:none" />
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
 
           <div class="su-stepper" aria-label="Application progress">
             <div class="su-stepper__track">
