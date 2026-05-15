@@ -1,0 +1,78 @@
+Please improve the new “Build Your Perfect Payment Setup” section on the homepage. The idea is good, but Step 2 and Step 3 currently look too plain and unfinished.
+
+For Step 2: Needs, redesign the selected needs area so it does not look like basic white rectangles. Make the option cards match the PPD Technology theme with dark glassmorphism styling, rounded corners, icons, hover effects, cyan/blue outlines, and clear selected states. The cards should feel premium and interactive.
+
+For Step 3: Recommended Setup, redesign the recommendation card so it looks like a polished software/payment recommendation panel, not a plain text box. Use a better layout with sections/cards for:
+
+Recommended software
+Recommended hardware
+Payment features
+Business tools
+Why this setup fits
+Best for
+Complexity level
+
+Also, the recommended hardware is too random right now. Please make the hardware recommendations more realistic and specific. Each setup should recommend one or two actual devices only, not random or vague hardware.
+
+Use these device recommendations:
+
+Restaurants
+
+PAX A920 or Dejavoo P17
+Optional: kitchen printer or barcode scanner only if relevant
+
+Retail
+
+Dejavoo P17 or PAX A920
+Optional: barcode scanner if inventory/barcode scanning is selected
+
+Repair Shops
+
+Dejavoo P17 or PAX A920
+Optional: barcode scanner if parts inventory is selected
+
+E-commerce
+
+No hardware required
+Recommend: PPD Merchant Gateway / hosted checkout
+
+B2B / Wholesale
+
+No hardware required unless in-person payments are selected
+Recommend: PPD Merchant Gateway + virtual terminal
+Optional: Dejavoo P17 if card-present payments are selected
+
+Mobile Business
+
+PAX A920 or Dejavoo P17
+
+Healthcare
+
+Dejavoo P17 or PAX A920
+Also recommend invoicing, recurring billing, and secure payment links
+
+Nonprofit
+
+PPD Merchant Gateway / donation payment page
+Optional: Dejavoo P17 for in-person events
+
+Salon / Spa
+
+PAX A920 or Dejavoo P17
+Add appointments, tips, gift cards, and loyalty if selected
+
+Grocery / Market
+
+Dejavoo P17 or PAX A920
+Optional: barcode scanner and scale integration only if relevant
+
+Please make the recommendation logic smarter:
+
+If the selected industry is online-only, do not recommend hardware.
+If the user selects barcode scanning, recommend a barcode scanner as an optional add-on.
+If the user selects mobile payments, recommend PAX A920 or Dejavoo P17.
+If the user selects repair ticket management, recommend PPD Repair.
+If the user selects invoicing, ACH, recurring billing, or customer accounts, recommend PPD Merchant Gateway.
+If the user selects POS, recommend the matching POS solution for that industry.
+
+Make Step 3 visually exciting with animated cards, subtle charts or feature badges, and a clean “Your recommended setup” summary at the top. Keep it mobile friendly and make sure it looks professional, not like a basic form.
