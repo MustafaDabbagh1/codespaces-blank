@@ -44,50 +44,211 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <span class="iso-cmd-title">Your ISO Command Center</span>
             </div>
             <div class="iso-cmd-body">
-              <div class="iso-cmd-sidebar">
-                <div class="iso-cmd-nav active"><i class="fa-solid fa-grip"></i></div>
-                <div class="iso-cmd-nav"><i class="fa-solid fa-users"></i></div>
-                <div class="iso-cmd-nav"><i class="fa-solid fa-robot"></i></div>
-                <div class="iso-cmd-nav"><i class="fa-solid fa-chart-pie"></i></div>
-                <div class="iso-cmd-nav"><i class="fa-solid fa-gear"></i></div>
+              <div class="iso-cmd-sidebar" role="tablist" aria-label="ISO Command Center tabs">
+                <button type="button" class="iso-cmd-nav active" role="tab" aria-selected="true" data-iso-tab="dashboard" aria-label="Dashboard Overview" title="Dashboard"><i class="fa-solid fa-grip"></i><span class="iso-cmd-nav-rail" aria-hidden="true"></span></button>
+                <button type="button" class="iso-cmd-nav" role="tab" aria-selected="false" data-iso-tab="crm" aria-label="Merchant CRM" title="Merchant CRM"><i class="fa-solid fa-users"></i><span class="iso-cmd-nav-rail" aria-hidden="true"></span></button>
+                <button type="button" class="iso-cmd-nav" role="tab" aria-selected="false" data-iso-tab="agents" aria-label="Agent Management" title="Agents"><i class="fa-solid fa-user-tie"></i><span class="iso-cmd-nav-rail" aria-hidden="true"></span></button>
+                <button type="button" class="iso-cmd-nav" role="tab" aria-selected="false" data-iso-tab="ai" aria-label="AI Insights" title="AI Insights"><i class="fa-solid fa-robot"></i><span class="iso-cmd-nav-rail" aria-hidden="true"></span></button>
+                <button type="button" class="iso-cmd-nav" role="tab" aria-selected="false" data-iso-tab="reports" aria-label="Reports & Analytics" title="Reports"><i class="fa-solid fa-chart-pie"></i><span class="iso-cmd-nav-rail" aria-hidden="true"></span></button>
               </div>
               <div class="iso-cmd-main">
-                <div class="iso-cmd-stats">
-                  <div class="iso-cmd-stat">
-                    <span class="iso-cmd-stat-label">Active Merchants</span>
-                    <span class="iso-cmd-stat-value">2,847</span>
-                    <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 24%</span>
+                <!-- 1. Dashboard Overview -->
+                <div class="iso-cmd-panel is-active" data-iso-panel="dashboard" role="tabpanel">
+                  <div class="iso-cmd-stats">
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Active Merchants</span>
+                      <span class="iso-cmd-stat-value" data-isocount="2847" data-isoprefix="" data-isosuffix="">2,847</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 24%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Monthly Volume</span>
+                      <span class="iso-cmd-stat-value" data-isocount="48.2" data-isoprefix="$" data-isosuffix="M" data-isodec="1">$48.2M</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 31%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Active Agents</span>
+                      <span class="iso-cmd-stat-value" data-isocount="186" data-isoprefix="" data-isosuffix="">186</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+                    </div>
                   </div>
-                  <div class="iso-cmd-stat">
-                    <span class="iso-cmd-stat-label">Monthly Volume</span>
-                    <span class="iso-cmd-stat-value">$48.2M</span>
-                    <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 31%</span>
-                  </div>
-                  <div class="iso-cmd-stat">
-                    <span class="iso-cmd-stat-label">Active Agents</span>
-                    <span class="iso-cmd-stat-value">186</span>
-                    <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+                  <div class="iso-cmd-row">
+                    <div class="iso-cmd-chart">
+                      <div class="iso-cmd-chart-label">Portfolio Growth</div>
+                      <svg viewBox="0 0 260 60" preserveAspectRatio="none" class="iso-chart-svg">
+                        <defs>
+                          <linearGradient id="isoGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(0,207,255,.35)"/>
+                            <stop offset="100%" stop-color="rgba(0,207,255,0)"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M0 55 Q20 48 50 42 T100 30 T150 22 T200 15 T260 5 V60 H0 Z" fill="url(#isoGrad)"/>
+                        <path class="iso-chart-line" d="M0 55 Q20 48 50 42 T100 30 T150 22 T200 15 T260 5" fill="none" stroke="#00CFFF" stroke-width="2"/>
+                      </svg>
+                    </div>
+                    <div class="iso-cmd-ai-box">
+                      <div class="iso-cmd-ai-head"><i class="fa-solid fa-robot"></i> AI Insights</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot green"></span> 14 merchants ready to upsell</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot yellow"></span> 3 agents need follow-up</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot blue"></span> Gym vertical +42% this month</div>
+                    </div>
                   </div>
                 </div>
-                <div class="iso-cmd-row">
-                  <div class="iso-cmd-chart">
-                    <div class="iso-cmd-chart-label">Portfolio Growth</div>
-                    <svg viewBox="0 0 260 60" preserveAspectRatio="none" class="iso-chart-svg">
-                      <defs>
-                        <linearGradient id="isoGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="rgba(0,207,255,.35)"/>
-                          <stop offset="100%" stop-color="rgba(0,207,255,0)"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M0 55 Q20 48 50 42 T100 30 T150 22 T200 15 T260 5 V60 H0 Z" fill="url(#isoGrad)"/>
-                      <path d="M0 55 Q20 48 50 42 T100 30 T150 22 T200 15 T260 5" fill="none" stroke="#00CFFF" stroke-width="2"/>
-                    </svg>
+
+                <!-- 2. Merchant CRM -->
+                <div class="iso-cmd-panel" data-iso-panel="crm" role="tabpanel" hidden>
+                  <div class="iso-cmd-stats">
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Open Pipeline</span>
+                      <span class="iso-cmd-stat-value" data-isocount="12.4" data-isoprefix="$" data-isosuffix="M" data-isodec="1">$12.4M</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 18%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Won This Month</span>
+                      <span class="iso-cmd-stat-value" data-isocount="47">47</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 9%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Avg Deal</span>
+                      <span class="iso-cmd-stat-value" data-isocount="3.2" data-isoprefix="$" data-isosuffix="k" data-isodec="1">$3.2k</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 6%</span>
+                    </div>
                   </div>
-                  <div class="iso-cmd-ai-box">
-                    <div class="iso-cmd-ai-head"><i class="fa-solid fa-robot"></i> AI Insights</div>
-                    <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot green"></span> 14 merchants ready to upsell</div>
-                    <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot yellow"></span> 3 agents need follow-up</div>
-                    <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot blue"></span> Gym vertical +42% this month</div>
+                  <div class="iso-cmd-row iso-cmd-row--wide">
+                    <div class="iso-cmd-list">
+                      <div class="iso-cmd-list-head">Merchant Pipeline</div>
+                      <div class="iso-cmd-list-row"><span class="iso-cmd-avatar">BR</span><div class="iso-cmd-list-text"><strong>Brio Restaurant</strong><span>Discovery · Follow-up Mar 14</span></div><span class="iso-pill iso-pill--blue">Discovery</span></div>
+                      <div class="iso-cmd-list-row"><span class="iso-cmd-avatar">GG</span><div class="iso-cmd-list-text"><strong>Greenline Gym</strong><span>Proposal sent · $4.8k MRR</span></div><span class="iso-pill iso-pill--yellow">Proposal</span></div>
+                      <div class="iso-cmd-list-row"><span class="iso-cmd-avatar">AS</span><div class="iso-cmd-list-text"><strong>Arrow Supply Co.</strong><span>Underwriting · 92% approved</span></div><span class="iso-pill iso-pill--cyan">Underwriting</span></div>
+                      <div class="iso-cmd-list-row"><span class="iso-cmd-avatar">NS</span><div class="iso-cmd-list-text"><strong>Northside Salon</strong><span>Signed · Onboarding</span></div><span class="iso-pill iso-pill--green">Won</span></div>
+                    </div>
+                    <div class="iso-cmd-side">
+                      <div class="iso-cmd-side-head"><i class="fa-solid fa-bell"></i> Follow-ups Today</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot yellow"></span> Call Brio @ 2:30 PM</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot blue"></span> Send pricing to Greenline</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot green"></span> Welcome kit · Northside</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Agent Management -->
+                <div class="iso-cmd-panel" data-iso-panel="agents" role="tabpanel" hidden>
+                  <div class="iso-cmd-stats">
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Top Performers</span>
+                      <span class="iso-cmd-stat-value" data-isocount="23">23</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 15%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Avg Commission</span>
+                      <span class="iso-cmd-stat-value" data-isocount="4.8" data-isoprefix="$" data-isosuffix="k" data-isodec="1">$4.8k</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 11%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Active / Week</span>
+                      <span class="iso-cmd-stat-value" data-isocount="142">142</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 7%</span>
+                    </div>
+                  </div>
+                  <div class="iso-cmd-row iso-cmd-row--wide">
+                    <div class="iso-cmd-list">
+                      <div class="iso-cmd-list-head">Agent Leaderboard</div>
+                      <div class="iso-cmd-bar-row"><span class="iso-cmd-rank">1</span><span class="iso-cmd-name">Marcus T.</span><div class="iso-cmd-bar"><span style="width:94%"></span></div><span class="iso-cmd-val">$28.4k</span></div>
+                      <div class="iso-cmd-bar-row"><span class="iso-cmd-rank">2</span><span class="iso-cmd-name">Priya S.</span><div class="iso-cmd-bar"><span style="width:81%"></span></div><span class="iso-cmd-val">$22.1k</span></div>
+                      <div class="iso-cmd-bar-row"><span class="iso-cmd-rank">3</span><span class="iso-cmd-name">David L.</span><div class="iso-cmd-bar"><span style="width:67%"></span></div><span class="iso-cmd-val">$18.6k</span></div>
+                      <div class="iso-cmd-bar-row"><span class="iso-cmd-rank">4</span><span class="iso-cmd-name">Erin K.</span><div class="iso-cmd-bar"><span style="width:52%"></span></div><span class="iso-cmd-val">$14.2k</span></div>
+                    </div>
+                    <div class="iso-cmd-side">
+                      <div class="iso-cmd-side-head"><i class="fa-solid fa-people-group"></i> Team Activity</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot green"></span> 12 new merchants signed</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot blue"></span> 38 proposals sent today</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot yellow"></span> 5 agents need coaching</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. AI Insights -->
+                <div class="iso-cmd-panel" data-iso-panel="ai" role="tabpanel" hidden>
+                  <div class="iso-cmd-stats">
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Upsell Ready</span>
+                      <span class="iso-cmd-stat-value" data-isocount="14">14</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 42%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">At-Risk Accounts</span>
+                      <span class="iso-cmd-stat-value" data-isocount="6">6</span>
+                      <span class="iso-cmd-stat-change iso-cmd-stat-change--down"><i class="fa-solid fa-arrow-down"></i> 2</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Growth Signals</span>
+                      <span class="iso-cmd-stat-value" data-isocount="28">28</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 19%</span>
+                    </div>
+                  </div>
+                  <div class="iso-cmd-row iso-cmd-row--wide">
+                    <div class="iso-cmd-ai-box iso-cmd-ai-box--lg">
+                      <div class="iso-cmd-ai-head"><i class="fa-solid fa-robot"></i> Live Recommendations</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot green"></span> 14 merchants ready to upsell to PPD Merchant</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot blue"></span> Gym vertical trending +42% this month</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot yellow"></span> 3 agents need follow-up coaching</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot red"></span> 2 merchants flagged for unusual volume</div>
+                      <div class="iso-cmd-ai-item"><span class="iso-cmd-ai-dot cyan"></span> Restaurant POS — 8 expansion targets</div>
+                    </div>
+                    <div class="iso-cmd-side iso-cmd-gauge-wrap">
+                      <div class="iso-cmd-side-head"><i class="fa-solid fa-gauge-high"></i> Opportunity Score</div>
+                      <div class="iso-cmd-gauge">
+                        <svg viewBox="0 0 80 80" class="iso-gauge-svg">
+                          <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,.08)" stroke-width="8" fill="none"/>
+                          <circle cx="40" cy="40" r="32" stroke="#00CFFF" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="50" transform="rotate(-90 40 40)" class="iso-gauge-arc"/>
+                        </svg>
+                        <span class="iso-gauge-val">87<small>/100</small></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5. Reports & Analytics -->
+                <div class="iso-cmd-panel" data-iso-panel="reports" role="tabpanel" hidden>
+                  <div class="iso-cmd-stats">
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Total Volume</span>
+                      <span class="iso-cmd-stat-value" data-isocount="48.2" data-isoprefix="$" data-isosuffix="M" data-isodec="1">$48.2M</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 31%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Residuals</span>
+                      <span class="iso-cmd-stat-value" data-isocount="186" data-isoprefix="$" data-isosuffix="K">$186K</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 22%</span>
+                    </div>
+                    <div class="iso-cmd-stat">
+                      <span class="iso-cmd-stat-label">Approval Rate</span>
+                      <span class="iso-cmd-stat-value" data-isocount="94" data-isosuffix="%">94%</span>
+                      <span class="iso-cmd-stat-change"><i class="fa-solid fa-arrow-up"></i> 3%</span>
+                    </div>
+                  </div>
+                  <div class="iso-cmd-row iso-cmd-row--wide">
+                    <div class="iso-cmd-chart">
+                      <div class="iso-cmd-chart-label">Monthly Volume Trend</div>
+                      <div class="iso-cmd-bars">
+                        <div class="iso-cmd-bar-v" style="height:38%"></div>
+                        <div class="iso-cmd-bar-v" style="height:52%"></div>
+                        <div class="iso-cmd-bar-v" style="height:46%"></div>
+                        <div class="iso-cmd-bar-v" style="height:64%"></div>
+                        <div class="iso-cmd-bar-v" style="height:58%"></div>
+                        <div class="iso-cmd-bar-v" style="height:72%"></div>
+                        <div class="iso-cmd-bar-v" style="height:84%"></div>
+                        <div class="iso-cmd-bar-v" style="height:78%"></div>
+                        <div class="iso-cmd-bar-v" style="height:92%"></div>
+                        <div class="iso-cmd-bar-v iso-cmd-bar-v--hi" style="height:100%"></div>
+                      </div>
+                    </div>
+                    <div class="iso-cmd-side">
+                      <div class="iso-cmd-side-head"><i class="fa-solid fa-ranking-star"></i> Top Verticals</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot green"></span> Restaurants · $14.8M</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot blue"></span> Retail · $11.2M</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot cyan"></span> Repair · $7.4M</div>
+                      <div class="iso-cmd-side-item"><span class="iso-cmd-ai-dot yellow"></span> Gyms · $5.1M</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -849,11 +1010,143 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0;
     }
     .iso-cmd-nav{
-      width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+      position:relative;width:32px;height:32px;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
       font-size:13px;color:rgba(255,255,255,.4);
+      background:transparent;border:1px solid transparent;padding:0;
+      cursor:pointer;-webkit-tap-highlight-color:transparent;
+      transition:background .25s ease, color .25s ease, border-color .25s ease, transform .15s ease, box-shadow .25s ease;
     }
-    .iso-cmd-nav.active{background:rgba(21,73,255,.25);color:var(--iso-cyan)}
-    .iso-cmd-main{flex:1;padding:14px}
+    .iso-cmd-nav:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.06)}
+    .iso-cmd-nav:active{transform:scale(.94)}
+    .iso-cmd-nav:focus-visible{outline:2px solid var(--iso-cyan);outline-offset:2px}
+    .iso-cmd-nav.active{
+      background:linear-gradient(135deg, rgba(21,73,255,.35), rgba(0,207,255,.22));
+      border-color:rgba(0,207,255,.4);
+      color:var(--iso-cyan);
+      box-shadow:0 4px 14px rgba(0,207,255,.25), inset 0 0 0 1px rgba(0,207,255,.15);
+    }
+    .iso-cmd-nav-rail{
+      position:absolute;left:-8px;top:50%;transform:translateY(-50%) scaleY(0);
+      width:3px;height:18px;border-radius:2px;
+      background:linear-gradient(180deg,#00CFFF,#1549FF);
+      box-shadow:0 0 10px rgba(0,207,255,.7);
+      transition:transform .3s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+      opacity:0;
+    }
+    .iso-cmd-nav.active .iso-cmd-nav-rail{
+      transform:translateY(-50%) scaleY(1);opacity:1;
+      animation:isoRailPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes isoRailPulse{
+      0%,100%{box-shadow:0 0 8px rgba(0,207,255,.5)}
+      50%{box-shadow:0 0 16px rgba(0,207,255,.95)}
+    }
+    .iso-cmd-main{flex:1;padding:14px;min-height:230px;position:relative}
+
+    /* Panel transitions */
+    .iso-cmd-panel{opacity:0;transform:translateY(8px);transition:opacity .35s ease, transform .35s ease;pointer-events:none}
+    .iso-cmd-panel.is-active{opacity:1;transform:none;pointer-events:auto;animation:isoPanelIn .45s cubic-bezier(.2,.7,.2,1) both}
+    .iso-cmd-panel[hidden]{display:none}
+    @keyframes isoPanelIn{
+      0%{opacity:0;transform:translateY(10px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
+    .iso-cmd-panel.is-active .iso-cmd-stat{animation:isoStatIn .5s cubic-bezier(.2,.7,.2,1) both}
+    .iso-cmd-panel.is-active .iso-cmd-stat:nth-child(2){animation-delay:.07s}
+    .iso-cmd-panel.is-active .iso-cmd-stat:nth-child(3){animation-delay:.14s}
+    @keyframes isoStatIn{
+      0%{opacity:0;transform:translateY(8px) scale(.97)}
+      100%{opacity:1;transform:none}
+    }
+    .iso-cmd-panel.is-active .iso-cmd-row > *{animation:isoStatIn .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.18s}
+    .iso-cmd-panel.is-active .iso-cmd-row > *:nth-child(2){animation-delay:.26s}
+    .iso-cmd-row--wide{grid-template-columns:1.4fr .9fr}
+    .iso-cmd-stat-change--down{color:#f59e0b}
+
+    /* Lists, pills, side panels (used across panels) */
+    .iso-cmd-list{
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+      border-radius:10px;padding:10px;
+    }
+    .iso-cmd-list-head{font-size:10px;color:rgba(255,255,255,.45);margin-bottom:8px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+    .iso-cmd-list-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .iso-cmd-list-row:last-child{border-bottom:0}
+    .iso-cmd-avatar{
+      width:24px;height:24px;border-radius:50%;flex-shrink:0;
+      background:linear-gradient(135deg,#1549FF,#00CFFF);
+      color:#fff;font-size:9px;font-weight:700;
+      display:inline-flex;align-items:center;justify-content:center;letter-spacing:.02em;
+    }
+    .iso-cmd-list-text{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
+    .iso-cmd-list-text strong{font-size:11px;color:#fff;font-weight:600}
+    .iso-cmd-list-text span{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px}
+    .iso-pill{
+      font-size:9px;font-weight:700;padding:3px 7px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;
+      border:1px solid transparent;flex-shrink:0;
+    }
+    .iso-pill--green{background:rgba(0,229,160,.14);color:#00E5A0;border-color:rgba(0,229,160,.25)}
+    .iso-pill--blue{background:rgba(21,73,255,.18);color:#7da3ff;border-color:rgba(21,73,255,.3)}
+    .iso-pill--cyan{background:rgba(0,207,255,.14);color:var(--iso-cyan);border-color:rgba(0,207,255,.3)}
+    .iso-pill--yellow{background:rgba(245,158,11,.14);color:#fbbf24;border-color:rgba(245,158,11,.3)}
+
+    .iso-cmd-side{
+      background:rgba(21,73,255,.10);border:1px solid rgba(21,73,255,.18);
+      border-radius:10px;padding:10px;
+    }
+    .iso-cmd-side-head{font-size:11px;font-weight:700;color:var(--iso-cyan);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .iso-cmd-side-item{font-size:11px;color:rgba(255,255,255,.72);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+    .iso-cmd-ai-dot.red{background:#ef4444}
+    .iso-cmd-ai-dot.cyan{background:var(--iso-cyan)}
+    .iso-cmd-ai-box--lg .iso-cmd-ai-item{margin-bottom:6px;line-height:1.35}
+
+    /* Agent leaderboard bars */
+    .iso-cmd-bar-row{display:flex;align-items:center;gap:8px;padding:5px 0}
+    .iso-cmd-rank{
+      width:18px;height:18px;border-radius:50%;flex-shrink:0;
+      background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);
+      font-size:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;
+    }
+    .iso-cmd-bar-row:nth-child(2) .iso-cmd-rank{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1a1100}
+    .iso-cmd-name{font-size:11px;color:#fff;width:62px;flex-shrink:0;font-weight:500}
+    .iso-cmd-bar{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden}
+    .iso-cmd-bar > span{
+      display:block;height:100%;background:linear-gradient(90deg,#1549FF,#00CFFF);
+      border-radius:999px;
+      animation:isoBarGrow .9s cubic-bezier(.2,.7,.2,1) both;
+      transform-origin:left;
+    }
+    .iso-cmd-val{font-size:10px;color:rgba(255,255,255,.7);font-weight:600;width:46px;text-align:right;flex-shrink:0}
+    @keyframes isoBarGrow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+
+    /* Vertical bars for reports */
+    .iso-cmd-bars{display:flex;align-items:flex-end;gap:5px;height:60px;padding:4px 2px 0}
+    .iso-cmd-bar-v{
+      flex:1;background:linear-gradient(180deg,rgba(0,207,255,.55),rgba(21,73,255,.7));
+      border-radius:3px 3px 0 0;transform-origin:bottom;
+      animation:isoBarGrowV .8s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .iso-cmd-bar-v--hi{background:linear-gradient(180deg,#00CFFF,#1549FF);box-shadow:0 0 12px rgba(0,207,255,.5)}
+    @keyframes isoBarGrowV{0%{transform:scaleY(0)}100%{transform:scaleY(1)}}
+
+    /* Opportunity gauge */
+    .iso-cmd-gauge-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .iso-cmd-gauge{position:relative;width:90px;height:90px;margin-top:4px}
+    .iso-gauge-svg{width:100%;height:100%;filter:drop-shadow(0 0 8px rgba(0,207,255,.4))}
+    .iso-gauge-arc{animation:isoGaugeDraw 1.2s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes isoGaugeDraw{from{stroke-dashoffset:201}to{stroke-dashoffset:50}}
+    .iso-gauge-val{
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      font-size:18px;font-weight:800;color:#fff;
+    }
+    .iso-gauge-val small{font-size:9px;color:rgba(255,255,255,.45);margin-left:2px;font-weight:500}
+
+    /* Chart line draw-in */
+    .iso-cmd-panel.is-active .iso-chart-line{
+      stroke-dasharray:300;stroke-dashoffset:300;
+      animation:isoLineDraw 1.4s cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    @keyframes isoLineDraw{to{stroke-dashoffset:0}}
     .iso-cmd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
     .iso-cmd-stat{
       background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
@@ -1189,6 +1482,78 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           if (target) target.classList.add('active');
         });
       });
+
+      // ── Hero ISO Command Center tabs ──
+      const isoNavs = page.querySelectorAll('.iso-cmd-nav[data-iso-tab]');
+      const isoPanels = page.querySelectorAll('.iso-cmd-panel[data-iso-panel]');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const animateCounts = (panel) => {
+        if (prefersReduced) return;
+        panel.querySelectorAll('[data-isocount]').forEach(el => {
+          const target = parseFloat(el.dataset.isocount);
+          if (isNaN(target)) return;
+          const prefix = el.dataset.isoprefix || '';
+          const suffix = el.dataset.isosuffix || '';
+          const dec = parseInt(el.dataset.isodec || '0', 10);
+          const dur = 700;
+          const start = performance.now();
+          const useComma = target >= 1000 && dec === 0;
+          const fmt = (v) => {
+            const n = dec ? v.toFixed(dec) : Math.round(v).toString();
+            const withSep = useComma ? Number(n).toLocaleString('en-US') : n;
+            return prefix + withSep + suffix;
+          };
+          const tick = (now) => {
+            const t = Math.min(1, (now - start) / dur);
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = fmt(target * eased);
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = fmt(target);
+          };
+          requestAnimationFrame(tick);
+        });
+      };
+
+      const switchIsoTab = (key) => {
+        isoNavs.forEach(n => {
+          const on = n.dataset.isoTab === key;
+          n.classList.toggle('active', on);
+          n.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        isoPanels.forEach(p => {
+          const on = p.dataset.isoPanel === key;
+          if (on) {
+            p.hidden = false;
+            // force reflow so animations replay
+            void p.offsetWidth;
+            p.classList.add('is-active');
+            animateCounts(p);
+          } else {
+            p.classList.remove('is-active');
+            p.hidden = true;
+          }
+        });
+      };
+
+      isoNavs.forEach(nav => {
+        nav.addEventListener('click', () => switchIsoTab(nav.dataset.isoTab));
+        nav.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+          e.preventDefault();
+          const list = Array.from(isoNavs);
+          const i = list.indexOf(nav);
+          const next = e.key === 'ArrowDown'
+            ? list[(i + 1) % list.length]
+            : list[(i - 1 + list.length) % list.length];
+          next.focus();
+          switchIsoTab(next.dataset.isoTab);
+        });
+      });
+
+      // Kick off count-up for the initially-active panel
+      const initialPanel = page.querySelector('.iso-cmd-panel.is-active');
+      if (initialPanel) animateCounts(initialPanel);
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
