@@ -1,0 +1,90 @@
+Please fix the new “Build Your Payment Setup” section on the homepage. Right now the option buttons and recommended setup card look messy, confusing, and unfinished.
+
+Make the section much simpler, cleaner, and more premium.
+
+Main changes:
+
+Fix the option buttons
+The buttons in Step 2 currently look like plain white boxes and they do not match the website. Replace them with clean dark glassmorphism cards/chips that match the PPD Technology theme.
+
+Use:
+
+Dark navy card background
+Subtle border
+Cyan/blue hover glow
+Clear selected state
+Rounded corners
+Better spacing
+Icons aligned properly
+No white rectangular buttons
+
+Each option should look like a modern clickable feature chip, not a form input.
+
+Simplify the recommendation
+The recommended setup section is too complicated and confusing. Do not show a long breakdown with too many categories.
+
+Instead, show one clean recommendation card with only:
+
+Recommended solution name
+One recommended software OR one recommended device
+3 short benefits
+Best for
+One CTA button
+
+Example for Repair Shop:
+
+Your Recommended Setup
+PPD Repair
+
+A simple repair shop system for tickets, inventory, customer updates, and payments.
+
+Includes:
+
+Repair ticket tracking
+Inventory and parts management
+Customer notifications
+
+Best for: Phone repair, computer repair, jewelry repair, and small appliance repair.
+
+Button: “Get This Setup”
+
+Only recommend one main thing
+Do not recommend multiple devices and software together. Choose one main recommendation based on the selected industry.
+
+Examples:
+
+Repair Shop → PPD Repair
+Restaurant → Restaurant POS System
+Retail Store → Korona POS
+B2B / Wholesale → PPD Merchant Gateway
+E-commerce → Online Payment Gateway
+Mobile Business → Dejavoo P17 Terminal
+Healthcare → PPD Merchant Gateway
+Nonprofit → Online Donations + Payment Gateway
+Salon / Spa → Smart POS System
+Grocery / Market → Korona POS
+Make the recommendation card look better
+Use one large polished card with:
+Dark glass background
+Soft blue/cyan border
+Small badge at top like “Recommended for Repair Shops”
+Large title
+Short paragraph
+3 benefit bullets with check icons
+Simple “Best for” line
+One CTA button
+
+Remove the confusing rows like:
+“Recommended Software”
+“Recommended Hardware”
+“Payment Features”
+“Business Tools”
+“Complexity Level”
+
+Make the section feel interactive but simple
+Keep the step system, but make it easier to understand:
+Step 1: Choose your business
+Step 2: Choose what matters most
+Step 3: Get your recommended setup
+
+Make sure it looks good on desktop and mobile. The goal is for a visitor to quickly understand what PPD recommends without feeling overwhelmed.

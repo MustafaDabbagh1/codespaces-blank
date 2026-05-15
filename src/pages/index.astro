@@ -614,9 +614,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <ol class="hp-builder__steps" aria-label="Builder progress">
-        <li class="is-active" data-bstepind="1"><span class="hp-builder__step-num">1</span><span class="hp-builder__step-lbl">Industry</span></li>
-        <li data-bstepind="2"><span class="hp-builder__step-num">2</span><span class="hp-builder__step-lbl">Needs</span></li>
-        <li data-bstepind="3"><span class="hp-builder__step-num">3</span><span class="hp-builder__step-lbl">Your Setup</span></li>
+        <li class="is-active" data-bstepind="1"><span class="hp-builder__step-num">1</span><span class="hp-builder__step-lbl">Your business</span></li>
+        <li data-bstepind="2"><span class="hp-builder__step-num">2</span><span class="hp-builder__step-lbl">What matters most</span></li>
+        <li data-bstepind="3"><span class="hp-builder__step-num">3</span><span class="hp-builder__step-lbl">Recommendation</span></li>
       </ol>
       <div class="hp-builder__bar" aria-hidden="true"><span class="hp-builder__bar-fill" id="hpBuilderBar" style="width:33.33%"></span></div>
 
@@ -657,10 +657,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hp-builder__panel" data-bpanel="3" role="tabpanel" hidden>
         <div class="hp-builder__reco" id="hpBuilderReco"></div>
         <div class="hp-builder__nav hp-builder__nav--reco">
-          <button class="btn btn-outline" type="button" data-bback="2"><i class="fa-solid fa-arrow-left"></i> Edit Selections</button>
-          <button class="btn btn-primary" type="button" id="hpBuilderQuote">Get My Setup <i class="fa-solid fa-arrow-right"></i></button>
-          <a class="btn btn-outline" href="/contact">Book a Demo</a>
-          <a class="btn btn-outline" href="/contact"><i class="fa-solid fa-headset"></i> Talk to PPD</a>
+          <button class="btn btn-ghost" type="button" data-bback="2"><i class="fa-solid fa-arrow-left"></i> Edit Selections</button>
         </div>
       </div>
     </div>
@@ -1751,21 +1748,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   padding:4px 10px;border-radius:999px;
 }
 
-/* Needs card — slightly different rhythm vs. industry card */
-.hp-bcard--need{padding:16px 16px 14px;min-height:104px}
-.hp-bcard--need > i{
-  width:38px;height:38px;border-radius:10px;font-size:18px;
-  background:linear-gradient(135deg,rgba(21,73,255,.18),rgba(0,207,255,.1));
-  border:1px solid rgba(255,255,255,.08);
+/* ───────── Step 2 — Needs chips (dark glass, not white boxes) ───────── */
+.hp-builder__grid--needs{
+  display:flex;flex-wrap:wrap;gap:10px;
 }
-.hp-bcard--need strong{font-size:14px;margin-top:4px}
-.hp-bcard--need span{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.4}
+.hp-bcard--need{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 16px 11px 13px;min-height:0;
+  background:linear-gradient(135deg,rgba(12,26,56,.7),rgba(6,14,33,.85));
+  border:1px solid rgba(255,255,255,.10);border-radius:999px;
+  color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;
+  text-align:left;cursor:pointer;
+  transition:border-color .2s ease, background .2s ease, transform .15s ease, box-shadow .2s ease, color .2s ease;
+  backdrop-filter:blur(6px);
+}
+.hp-bcard--need > i{
+  width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+  font-size:13px;flex:0 0 auto;
+  background:linear-gradient(135deg,rgba(21,73,255,.22),rgba(0,207,255,.14));
+  color:var(--cyan);
+  border:1px solid rgba(0,207,255,.22);
+  transition:background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.hp-bcard--need strong{font-size:13.5px;font-weight:600;color:inherit;margin:0;line-height:1.1}
+.hp-bcard--need span{display:none}
+.hp-bcard--need:hover{
+  border-color:rgba(0,207,255,.5);background:linear-gradient(135deg,rgba(0,207,255,.10),rgba(12,26,56,.85));
+  color:#fff;transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,207,255,.18);
+}
+.hp-bcard--need.is-on{
+  border-color:rgba(0,207,255,.6);
+  background:linear-gradient(135deg,rgba(21,73,255,.32),rgba(0,207,255,.18));
+  color:#fff;
+  box-shadow:0 10px 28px rgba(0,207,255,.28), inset 0 0 0 1px rgba(0,207,255,.25);
+}
 .hp-bcard--need.is-on > i{
   background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;border-color:transparent;
-  box-shadow:0 6px 18px rgba(0,207,255,.35);
+  box-shadow:0 6px 18px rgba(0,207,255,.45);
 }
 
-/* ───────── Recommendation card (premium) ───────── */
+/* ───────── Step 3 — Single recommendation card ───────── */
 .hp-builder__reco{
   background:linear-gradient(135deg,rgba(21,73,255,.10),rgba(12,26,56,.72));
   border:1px solid rgba(0,207,255,.28);border-radius:24px;padding:clamp(20px,2.6vw,30px);
@@ -1782,154 +1805,61 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .hp-builder__reco > *{position:relative;z-index:1}
 @keyframes hpBRecoIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
 
-/* Top summary band */
-.hp-reco__summary{
-  background:linear-gradient(135deg,rgba(21,73,255,.28),rgba(0,207,255,.10));
-  border:1px solid rgba(0,207,255,.32);border-radius:18px;padding:18px 20px;margin-bottom:18px;
-  position:relative;overflow:hidden;
-}
-.hp-reco__summary::after{
-  content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,207,255,.22),transparent 70%);pointer-events:none;
-}
-.hp-reco__summary-eyebrow{
+.hp-reco__badge{
   display:inline-flex;align-items:center;gap:8px;
   font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);
-  background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.3);
-  padding:5px 12px;border-radius:999px;margin-bottom:12px;
+  background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.32);
+  padding:6px 12px;border-radius:999px;margin-bottom:18px;
 }
-.hp-reco__summary-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hp-reco__head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
 .hp-reco__icon{
   width:64px;height:64px;border-radius:18px;flex:0 0 auto;
   display:inline-flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;font-size:28px;
   box-shadow:0 14px 34px rgba(0,207,255,.45);
 }
-.hp-reco__summary-text{flex:1 1 260px;min-width:0}
-.hp-reco__title{font-size:clamp(1.35rem,2.3vw,1.8rem);font-weight:800;color:#fff;line-height:1.15;margin:0}
-.hp-reco__sub{font-size:14px;color:rgba(255,255,255,.7);margin-top:4px}
-.hp-reco__summary-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.hp-reco__pill{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:600;color:rgba(255,255,255,.85);
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  padding:5px 11px;border-radius:999px;
+.hp-reco__head-text{flex:1 1 240px;min-width:0}
+.hp-reco__eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-bottom:4px;
 }
-.hp-reco__pill i{color:var(--cyan);font-size:11px}
+.hp-reco__title{
+  font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:#fff;line-height:1.1;margin:0;
+}
+.hp-reco__summary-text{
+  font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.6;margin:0 0 18px;
+}
+.hp-reco__benefits{
+  list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:10px;
+}
+.hp-reco__benefits li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14.5px;font-weight:500;color:rgba(255,255,255,.92);line-height:1.45;
+}
+.hp-reco__benefits li > i{
+  width:24px;height:24px;border-radius:50%;flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;font-size:11px;
+  box-shadow:0 4px 12px rgba(0,207,255,.32);margin-top:1px;
+}
+.hp-reco__bestfor{
+  display:flex;flex-wrap:wrap;gap:6px 8px;align-items:baseline;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;padding:12px 16px;margin-bottom:20px;
+}
+.hp-reco__bestfor-lbl{
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);
+}
+.hp-reco__bestfor-val{font-size:14px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.4}
+.hp-reco__cta-row{display:flex;justify-content:flex-start}
+.hp-reco__cta{display:inline-flex;align-items:center;gap:10px;font-weight:700}
+.hp-reco__cta i{font-size:13px}
 
-/* Panels grid */
-.hp-reco__panels{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px;
-}
-.hp-reco__panel{
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;
-  padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;
-  opacity:0;transform:translateY(8px);
-  animation:hpBPanelInUp .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);
-  transition:border-color .25s ease, background .25s ease, transform .25s ease;
-}
-.hp-reco__panel:hover{
-  border-color:rgba(0,207,255,.3);background:rgba(0,207,255,.04);transform:translateY(-2px);
-}
-@keyframes hpBPanelInUp{to{opacity:1;transform:none}}
-.hp-reco__panel header{display:flex;align-items:center;gap:10px}
-.hp-reco__panel-icon{
-  width:32px;height:32px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,rgba(21,73,255,.22),rgba(0,207,255,.12));
-  color:var(--cyan);font-size:14px;border:1px solid rgba(0,207,255,.2);
-}
-.hp-reco__panel h4{margin:0;font-size:13px;font-weight:700;color:#fff;letter-spacing:.02em}
-.hp-reco__panel-body{display:flex;flex-direction:column;gap:8px}
-
-/* Device row */
-.hp-reco__device{
-  display:flex;align-items:center;gap:12px;
-  background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px 12px;
-  transition:border-color .2s ease, background .2s ease;
-}
-.hp-reco__device:hover{border-color:rgba(0,207,255,.3);background:rgba(0,207,255,.05)}
-.hp-reco__device-icon{
-  width:38px;height:38px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;font-size:15px;flex:0 0 auto;
-  box-shadow:0 6px 18px rgba(0,207,255,.32);
-}
-.hp-reco__device-body{display:flex;flex-direction:column;gap:2px;min-width:0}
-.hp-reco__device-body strong{font-size:14px;color:#fff;font-weight:700;line-height:1.25}
-.hp-reco__device-body span{font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-
-/* Feature chips inside panels */
-.hp-reco__chips{flex-direction:row;flex-wrap:wrap;gap:6px}
-.hp-reco__chip-feat{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(0,207,255,.08);border:1px solid rgba(0,207,255,.25);color:#fff;
-  font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;
-  transition:background .2s ease, transform .2s ease;
-}
-.hp-reco__chip-feat i{color:var(--cyan);font-size:11px}
-.hp-reco__chip-feat:hover{background:rgba(0,207,255,.15);transform:translateY(-1px)}
-
-.hp-reco__empty{
-  font-size:13px;color:rgba(255,255,255,.55);font-style:italic;line-height:1.45;
-  background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.12);
-  border-radius:10px;padding:10px 12px;
-}
-.hp-reco__empty i{color:var(--cyan);margin-right:6px;font-style:normal}
-.hp-reco__empty--inline{background:none;border:none;padding:0;font-size:12.5px}
-
-/* Footer: why + meta cards */
-.hp-reco__footer{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
-.hp-reco__why{
-  padding:16px 18px;border-radius:16px;
-  background:linear-gradient(135deg,rgba(0,207,255,.08),rgba(21,73,255,.05));
-  border:1px solid rgba(0,207,255,.25);
-  font-size:14px;color:rgba(255,255,255,.85);line-height:1.55;
-  opacity:0;transform:translateY(8px);
-  animation:hpBPanelInUp .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);
-}
-.hp-reco__why-head{
-  display:flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px;
-}
-.hp-reco__why p{margin:0;color:rgba(255,255,255,.85)}
-.hp-reco__meta-cards{display:grid;grid-template-rows:1fr 1fr;gap:12px}
-.hp-reco__meta-card{
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 14px;
-  opacity:0;transform:translateY(8px);
-  animation:hpBPanelInUp .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);
-}
-.hp-reco__meta-lbl{
-  display:flex;align-items:center;gap:6px;
-  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px;
-}
-.hp-reco__meta-val{font-size:14px;color:#fff;font-weight:700;line-height:1.3}
-.hp-reco__meta-card--simple{border-color:rgba(0,229,160,.3);background:rgba(0,229,160,.05)}
-.hp-reco__meta-card--simple .hp-reco__meta-lbl{color:var(--green)}
-.hp-reco__meta-card--moderate{border-color:rgba(0,207,255,.3);background:rgba(0,207,255,.05)}
-.hp-reco__meta-card--advanced{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.05)}
-.hp-reco__meta-card--advanced .hp-reco__meta-lbl{color:#fbbf24}
-
-.hp-reco__meter{display:flex;gap:6px;margin-top:8px}
-.hp-reco__meter-dot{
-  flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.08);
-  position:relative;transition:background .3s ease;
-}
-.hp-reco__meter-dot.is-on{background:linear-gradient(90deg,#1549FF,#00CFFF);box-shadow:0 0 10px rgba(0,207,255,.5)}
-.hp-reco__meta-card--simple .hp-reco__meter-dot.is-on{background:linear-gradient(90deg,#00CFFF,#00E5A0);box-shadow:0 0 10px rgba(0,229,160,.45)}
-.hp-reco__meta-card--advanced .hp-reco__meter-dot.is-on{background:linear-gradient(90deg,#00CFFF,#fbbf24);box-shadow:0 0 10px rgba(251,191,36,.45)}
-
-@media (max-width:760px){
-  .hp-reco__panels{grid-template-columns:1fr}
-  .hp-reco__footer{grid-template-columns:1fr}
-  .hp-reco__meta-cards{grid-template-rows:auto;grid-template-columns:1fr 1fr}
-  .hp-reco__summary-row{gap:14px}
-  .hp-reco__icon{width:54px;height:54px;font-size:24px}
-}
-@media (max-width:480px){
-  .hp-reco__meta-cards{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion: reduce){
-  .hp-reco__panel,.hp-reco__why,.hp-reco__meta-card{opacity:1;transform:none;animation:none !important}
+@media (max-width:560px){
+  .hp-reco__head{gap:14px}
+  .hp-reco__icon{width:54px;height:54px;font-size:24px;border-radius:14px}
+  .hp-reco__cta-row{justify-content:stretch}
+  .hp-reco__cta{width:100%;justify-content:center}
 }
 
 /* Modal */
@@ -2252,83 +2182,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       salon:     ['pos','terminal','employee','crm','loyalty','gift','online','nextday','reports'],
       grocery:   ['pos','terminal','barcode','inventory','loyalty','multiloc','nextday','employee','reports']
     };
+    /* One clean recommendation per industry */
     const RECOS = {
-      restaurant:{icon:'fa-utensils',           title:'Restaurant POS Stack',     sub:'Front of house, kitchen & online — unified.', why:'Built for high-volume hospitality — handle dine-in, takeout & delivery from one stack.',          complexity:'Moderate', bestFor:'Single-location and growing multi-unit restaurants', posSoftware:'KORONA POS or Pays POS'},
-      retail:    {icon:'fa-store',              title:'Retail POS + Omnichannel', sub:'In-store, online, and inventory in sync.',     why:'Unified omnichannel checkout with real-time inventory across every location.',                     complexity:'Moderate', bestFor:'Growing single-store to multi-location retailers',   posSoftware:'NRS POS or Korona Retail'},
-      repair:    {icon:'fa-screwdriver-wrench', title:'PPD Repair Workstation',   sub:'Every ticket, deposit & notification in one app.', why:'Purpose-built for repair shops — every job and customer follow-up tracked end-to-end.',           complexity:'Simple',   bestFor:'Phone, computer, watch, jewelry & small-appliance repair', posSoftware:'PPD Repair'},
-      ecommerce: {icon:'fa-cart-shopping',      title:'E-commerce Gateway',       sub:'Drop-in checkout with the CRM built in.',      why:'Take payments online with low decline rates and a real CRM behind your store.',                    complexity:'Simple',   bestFor:'Shopify, Woo, headless and custom storefronts',     posSoftware:'PPD Merchant Hosted Checkout'},
-      b2b:       {icon:'fa-handshake',          title:'B2B Payments & AR',        sub:'ACH, invoicing & net terms automated.',        why:'Move large-ticket B2B payments at lower cost and automate AR end-to-end.',                         complexity:'Moderate', bestFor:'Wholesalers, distributors and service businesses',  posSoftware:'PPD Merchant Gateway'},
-      healthcare:{icon:'fa-heart-pulse',        title:'Healthcare Payments',      sub:'Secure patient pay & recurring plans.',        why:'PCI-secure patient payments with installment plans and automated receipts.',                       complexity:'Moderate', bestFor:'Practices, dental, vet & specialty clinics',        posSoftware:'PPD Merchant + Patient Pay'},
-      nonprofit: {icon:'fa-hand-holding-heart', title:'Donor Acceptance',         sub:'One-time, monthly & event giving.',            why:'Lower processing fees, recurring giving, and clean donor records.',                                complexity:'Simple',   bestFor:'501(c)(3) and faith-based organizations',           posSoftware:'PPD Merchant Donate Page'},
-      mobile:    {icon:'fa-truck',              title:'Mobile Acceptance',        sub:'Take payments anywhere.',                      why:'Accept payments anywhere with a phone or smart terminal — no tethering, no extra hardware.',       complexity:'Simple',   bestFor:'Field service, food trucks, pop-ups & contractors', posSoftware:'PPD Merchant Mobile'},
-      salon:     {icon:'fa-scissors',           title:'Salon & Spa POS',          sub:'Tip-aware POS with stylist tracking.',         why:'Tip-aware POS with stylist tracking and built-in customer history.',                               complexity:'Simple',   bestFor:'Salons, spas, barbershops, nail & lash studios',    posSoftware:'KORONA POS or Pays POS'},
-      grocery:   {icon:'fa-basket-shopping',    title:'Grocery & Market POS',     sub:'High-throughput checkout with EBT.',           why:'High-throughput checkout with proper inventory and multi-store sync.',                              complexity:'Advanced', bestFor:'Convenience, grocery and ethnic markets',          posSoftware:'NRS POS or Korona'}
-    };
-
-    /* Smart hardware picker — returns array of {label, tag, icon} */
-    const pickHardware = (industry, needs) => {
-      // Online-only: no hardware
-      if(industry === 'ecommerce') return [];
-      // Nonprofit: gateway-first, optional in-person device
-      if(industry === 'nonprofit'){
-        const out = [];
-        if(needs.has('terminal') || needs.has('mobpay')){
-          out.push({label:'Dejavoo P17', tag:'For in-person events', icon:'fa-mobile-screen-button'});
-        }
-        return out;
-      }
-      // B2B: only hardware when card-present is selected
-      if(industry === 'b2b'){
-        if(needs.has('terminal') || needs.has('mobpay')){
-          return [{label:'Dejavoo P17 PIN Pad', tag:'Card-present', icon:'fa-mobile-screen-button'}];
-        }
-        return [];
-      }
-      // Default: primary smart terminal
-      const out = [{label:'PAX A920 or Dejavoo P17', tag:'Smart Terminal', icon:'fa-mobile-screen-button'}];
-      // Optional add-ons by selected needs
-      if(needs.has('barcode')){
-        out.push({label:'USB Barcode Scanner', tag:'Optional', icon:'fa-barcode'});
-      }
-      if(industry === 'restaurant' && needs.has('menu')){
-        out.push({label:'Kitchen Printer', tag:'Optional', icon:'fa-print'});
-      }
-      if(industry === 'grocery' && needs.has('inventory')){
-        out.push({label:'Weight Scale Integration', tag:'Optional', icon:'fa-scale-balanced'});
-      }
-      return out;
-    };
-
-    /* Smart software picker — returns array of {label, tag, icon} */
-    const pickSoftware = (industry, needs) => {
-      const out = [];
-      const seen = new Set();
-      const add = (label, tag, icon) => { if(!seen.has(label)){ seen.add(label); out.push({label, tag, icon}); } };
-
-      // Hard rules per industry (always-on defaults)
-      if(industry === 'ecommerce'){
-        add('PPD Merchant Gateway', 'Recommended', 'fa-network-wired');
-        add('PPD Merchant Hosted Checkout', 'Drop-in checkout', 'fa-globe');
-      } else if(industry === 'nonprofit'){
-        add('PPD Merchant Gateway', 'Recommended', 'fa-network-wired');
-        add('PPD Merchant Donate Page', 'Donations', 'fa-hand-holding-heart');
-      } else if(industry === 'b2b'){
-        add('PPD Merchant Gateway', 'Recommended', 'fa-network-wired');
-        add('Virtual Terminal', 'Keyed payments', 'fa-keyboard');
-      } else {
-        const r = RECOS[industry];
-        if(r && r.posSoftware) add(r.posSoftware, 'Recommended', 'fa-cube');
-      }
-
-      // Need-driven additions
-      if(needs.has('tickets')) add('PPD Repair', 'Repair add-on', 'fa-screwdriver-wrench');
-      if(needs.has('invoicing') || needs.has('ach') || needs.has('recurring') || needs.has('crm')){
-        add('PPD Merchant Gateway', 'AR & CRM', 'fa-network-wired');
-      }
-      if(needs.has('online') || needs.has('website')){
-        add('PPD Merchant Hosted Checkout', 'Online', 'fa-globe');
-      }
-      return out;
+      restaurant:{icon:'fa-utensils',           badge:'Recommended for Restaurants',     title:'Restaurant POS System',         summary:'A complete front-of-house, kitchen, and online ordering system built for hospitality.',                    benefits:['Dine-in, takeout & delivery in one','Menu, modifiers & tip-aware checkout','Next-day funding & built-in reporting'],   bestFor:'Single-location and growing multi-unit restaurants'},
+      retail:    {icon:'fa-store',              badge:'Recommended for Retail Stores',   title:'Korona POS',                    summary:'A modern omnichannel POS that keeps in-store, online, and inventory in sync.',                              benefits:['Barcode scanning & real-time inventory','Loyalty, gift cards & customer profiles','Multi-location reporting & dashboards'], bestFor:'Single-store and multi-location retailers'},
+      repair:    {icon:'fa-screwdriver-wrench', badge:'Recommended for Repair Shops',    title:'PPD Repair',                    summary:'A simple repair shop system for tickets, inventory, customer updates, and payments.',                       benefits:['Repair ticket tracking','Inventory and parts management','Customer notifications'],                                  bestFor:'Phone, computer, jewelry & small-appliance repair'},
+      ecommerce: {icon:'fa-cart-shopping',      badge:'Recommended for E-commerce',      title:'Online Payment Gateway',        summary:'A fast, secure online payment gateway with drop-in checkout for any storefront.',                            benefits:['Card, ACH & digital wallets','Recurring billing & customer vault','PCI-secure with low decline rates'],               bestFor:'Shopify, Woo, headless & custom storefronts'},
+      b2b:       {icon:'fa-handshake',          badge:'Recommended for B2B Businesses',  title:'PPD Merchant Gateway',          summary:'A B2B payment platform with invoicing, ACH, and recurring billing built in.',                                benefits:['ACH and card payments','Invoicing with net terms','Recurring billing & customer accounts'],                          bestFor:'Wholesalers, distributors & service businesses'},
+      healthcare:{icon:'fa-heart-pulse',        badge:'Recommended for Healthcare',      title:'PPD Merchant Gateway',          summary:'A PCI-secure payment platform for patient billing, plans, and online pay.',                                  benefits:['Secure patient payment links','Recurring billing & payment plans','Card-on-file with automated receipts'],            bestFor:'Practices, dental, vet & specialty clinics'},
+      nonprofit: {icon:'fa-hand-holding-heart', badge:'Recommended for Nonprofits',      title:'Online Donations + Payment Gateway', summary:'A donor-friendly gateway with a hosted donation page and recurring giving.',                              benefits:['One-time & monthly giving','Embeddable donation widgets','Donor records & receipting'],                              bestFor:'501(c)(3) and faith-based organizations'},
+      mobile:    {icon:'fa-truck',              badge:'Recommended for Mobile Businesses', title:'Dejavoo P17 Terminal',        summary:'A compact wireless smart terminal made for accepting payments anywhere.',                                    benefits:['Tap, swipe & dip on the go','Wi-Fi and 4G connectivity','Built-in receipts & next-day funding'],                     bestFor:'Field service, food trucks, pop-ups & contractors'},
+      salon:     {icon:'fa-scissors',           badge:'Recommended for Salons & Spas',   title:'Smart POS System',              summary:'A tip-aware smart POS with stylist tracking, customer history, and gift cards.',                             benefits:['Tipping & stylist tracking','Appointments & customer profiles','Gift cards & loyalty rewards'],                      bestFor:'Salons, spas, barbershops & nail studios'},
+      grocery:   {icon:'fa-basket-shopping',    badge:'Recommended for Grocery & Markets', title:'Korona POS',                  summary:'A high-throughput grocery POS with barcode scanning, inventory, and multi-store sync.',                      benefits:['Barcode scanning & fast checkout','Inventory and pricing control','Multi-location reporting'],                       bestFor:'Convenience, grocery and ethnic markets'}
     };
 
     const state = { step:1, industry:null, needs:new Set() };
@@ -2399,98 +2264,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       indName.textContent = INDUSTRY_LABEL[state.industry] || 'business';
     };
 
-    // Map selected need keys into "Payment Features" vs "Business Tools" buckets
-    const PAYMENT_FEATURE_KEYS = new Set(['terminal','online','invoicing','ach','recurring','nextday','dual','mobpay','website','gift']);
-    const BUSINESS_TOOL_KEYS   = new Set(['pos','inventory','crm','employee','reports','loyalty','multiloc','tickets','menu','table','barcode']);
-
     const renderReco = () => {
       const r = RECOS[state.industry];
       if(!r){ recoEl.innerHTML = ''; return; }
-      const indLabel = INDUSTRY_LABEL[state.industry] || 'your business';
-      const cmpKey = r.complexity.toLowerCase();
-      const complexitySteps = ['Simple','Moderate','Advanced'];
-      const cmpIndex = complexitySteps.indexOf(r.complexity);
-
-      const software = pickSoftware(state.industry, state.needs);
-      const hardware = pickHardware(state.industry, state.needs);
-
-      const selectedKeys = [...state.needs];
-      const paymentChips = selectedKeys.filter(k => PAYMENT_FEATURE_KEYS.has(k));
-      const toolChips    = selectedKeys.filter(k => BUSINESS_TOOL_KEYS.has(k));
-
-      const chip = (k) => {
-        const f = FEATURES[k]; if(!f) return '';
-        return `<span class="hp-reco__chip-feat"><i class="fa-solid ${f.icon}"></i> ${f.name}</span>`;
-      };
-      const softwareHtml = software.length
-        ? software.map(s => `<div class="hp-reco__device"><span class="hp-reco__device-icon"><i class="fa-solid ${s.icon}"></i></span><div class="hp-reco__device-body"><strong>${s.label}</strong><span>${s.tag}</span></div></div>`).join('')
-        : `<div class="hp-reco__empty">No specific software needed — talk to PPD about a custom fit.</div>`;
-      const hardwareHtml = hardware.length
-        ? hardware.map(h => `<div class="hp-reco__device"><span class="hp-reco__device-icon"><i class="fa-solid ${h.icon}"></i></span><div class="hp-reco__device-body"><strong>${h.label}</strong><span>${h.tag}</span></div></div>`).join('')
-        : `<div class="hp-reco__empty"><i class="fa-solid fa-cloud"></i> No hardware required — fully online setup.</div>`;
-      const paymentHtml = paymentChips.length
-        ? paymentChips.map(chip).join('')
-        : `<span class="hp-reco__empty hp-reco__empty--inline">Add payment features in Step 2 to personalize.</span>`;
-      const toolsHtml = toolChips.length
-        ? toolChips.map(chip).join('')
-        : `<span class="hp-reco__empty hp-reco__empty--inline">No business tools selected — that's okay.</span>`;
-      const meterDots = complexitySteps.map((lbl, i) =>
-        `<span class="hp-reco__meter-dot${i <= cmpIndex ? ' is-on':''}" data-lbl="${lbl}"></span>`
+      const benefits = r.benefits.map(b =>
+        `<li><i class="fa-solid fa-check"></i><span>${b}</span></li>`
       ).join('');
-
       recoEl.innerHTML = `
-        <div class="hp-reco__summary">
-          <span class="hp-reco__summary-eyebrow"><i class="fa-solid fa-wand-magic-sparkles"></i> Your recommended setup</span>
-          <div class="hp-reco__summary-row">
-            <span class="hp-reco__icon"><i class="fa-solid ${r.icon}"></i></span>
-            <div class="hp-reco__summary-text">
-              <h3 class="hp-reco__title">${r.title}</h3>
-              <div class="hp-reco__sub">${r.sub}</div>
-              <div class="hp-reco__summary-pills">
-                <span class="hp-reco__pill"><i class="fa-solid fa-briefcase"></i> ${indLabel}</span>
-                <span class="hp-reco__pill"><i class="fa-solid fa-list-check"></i> ${state.needs.size} need${state.needs.size===1?'':'s'} selected</span>
-              </div>
-            </div>
+        <span class="hp-reco__badge"><i class="fa-solid fa-wand-magic-sparkles"></i> ${r.badge}</span>
+        <div class="hp-reco__head">
+          <span class="hp-reco__icon"><i class="fa-solid ${r.icon}"></i></span>
+          <div class="hp-reco__head-text">
+            <div class="hp-reco__eyebrow">Your Recommended Setup</div>
+            <h3 class="hp-reco__title">${r.title}</h3>
           </div>
         </div>
-
-        <div class="hp-reco__panels">
-          <article class="hp-reco__panel" style="--d:.05s">
-            <header><span class="hp-reco__panel-icon"><i class="fa-solid fa-cube"></i></span><h4>Recommended Software</h4></header>
-            <div class="hp-reco__panel-body">${softwareHtml}</div>
-          </article>
-          <article class="hp-reco__panel" style="--d:.12s">
-            <header><span class="hp-reco__panel-icon"><i class="fa-solid fa-microchip"></i></span><h4>Recommended Hardware</h4></header>
-            <div class="hp-reco__panel-body">${hardwareHtml}</div>
-          </article>
-          <article class="hp-reco__panel" style="--d:.19s">
-            <header><span class="hp-reco__panel-icon"><i class="fa-solid fa-credit-card"></i></span><h4>Payment Features</h4></header>
-            <div class="hp-reco__panel-body hp-reco__chips">${paymentHtml}</div>
-          </article>
-          <article class="hp-reco__panel" style="--d:.26s">
-            <header><span class="hp-reco__panel-icon"><i class="fa-solid fa-toolbox"></i></span><h4>Business Tools</h4></header>
-            <div class="hp-reco__panel-body hp-reco__chips">${toolsHtml}</div>
-          </article>
+        <p class="hp-reco__summary-text">${r.summary}</p>
+        <ul class="hp-reco__benefits">${benefits}</ul>
+        <div class="hp-reco__bestfor">
+          <span class="hp-reco__bestfor-lbl">Best for:</span>
+          <span class="hp-reco__bestfor-val">${r.bestFor}</span>
         </div>
-
-        <div class="hp-reco__footer">
-          <div class="hp-reco__why" style="--d:.32s">
-            <div class="hp-reco__why-head"><i class="fa-solid fa-circle-info"></i> Why this setup fits</div>
-            <p>${r.why}</p>
-          </div>
-          <div class="hp-reco__meta-cards">
-            <div class="hp-reco__meta-card hp-reco__meta-card--best" style="--d:.38s">
-              <div class="hp-reco__meta-lbl"><i class="fa-solid fa-bullseye"></i> Best for</div>
-              <div class="hp-reco__meta-val">${r.bestFor}</div>
-            </div>
-            <div class="hp-reco__meta-card hp-reco__meta-card--cmp hp-reco__meta-card--${cmpKey}" style="--d:.45s">
-              <div class="hp-reco__meta-lbl"><i class="fa-solid fa-signal"></i> Complexity level</div>
-              <div class="hp-reco__meta-val">${r.complexity}</div>
-              <div class="hp-reco__meter">${meterDots}</div>
-            </div>
-          </div>
+        <div class="hp-reco__cta-row">
+          <button type="button" class="btn btn-primary hp-reco__cta" id="hpBuilderQuote2"><i class="fa-solid fa-arrow-right"></i> Get This Setup</button>
         </div>
       `;
+      const q2 = document.getElementById('hpBuilderQuote2');
+      if(q2) q2.addEventListener('click', openModal);
     };
 
     // Industry selection (radiogroup semantics + arrow-key nav)
@@ -2550,11 +2350,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     const openModal = () => {
       const r = RECOS[state.industry] || {};
       const needList = [...state.needs].map(k => FEATURES[k] ? FEATURES[k].name : '').filter(Boolean);
-      const sw = pickSoftware(state.industry, state.needs).map(s => s.label).join(', ');
-      const hw = pickHardware(state.industry, state.needs).map(h => h.label).join(', ') || 'No hardware required';
       fIndustry.value = INDUSTRY_LABEL[state.industry] || '';
       fNeeds.value = needList.join(', ');
-      fReco.value = r.title ? `${r.title} — Software: ${sw || '—'}; Hardware: ${hw}` : '';
+      fReco.value = r.title || '';
       fSummary.innerHTML = `
         <strong>Your selections</strong><br>
         Industry: ${fIndustry.value || '—'}<br>
