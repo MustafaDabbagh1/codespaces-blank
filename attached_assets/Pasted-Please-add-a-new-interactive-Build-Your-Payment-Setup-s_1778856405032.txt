@@ -1,0 +1,115 @@
+Please add a new interactive “Build Your Payment Setup” section to the homepage of ppdtechnology.com. Make it feel like a modern fintech/software configurator, not a basic form.
+
+The section should be placed somewhere after the hero/trust section but before the bottom CTA. It should match the PPD Technology theme: dark blue gradient, glassmorphism cards, cyan/blue highlights, rounded cards, smooth animations, and clean professional styling.
+
+Create a multi-step interactive builder:
+
+Section Title:
+“Build Your Perfect Payment Setup”
+
+Subtitle:
+“Choose your business type, select what you need, and we’ll recommend the right PPD Technology solution.”
+
+The builder should have multiple clickable steps:
+
+Step 1: Choose Your Industry
+Add selectable cards for:
+
+Restaurant
+Retail Store
+Repair Shop
+E-commerce
+B2B / Wholesale
+Healthcare
+Nonprofit
+Mobile Business
+Salon / Spa
+Grocery / Market
+
+Each industry card should have an icon, short description, hover effect, and active selected state.
+
+Step 2: Choose What You Need
+Add clickable option chips/cards for:
+
+POS System
+Credit Card Terminal
+Online Payments
+Invoicing
+ACH Payments
+Recurring Billing
+Inventory Management
+Customer Management
+Employee / Team Management
+Next-Day Funding
+Cash Discount / Dual Pricing
+Reporting Dashboard
+Gift Cards
+Loyalty Program
+Multi-Location Support
+Mobile Payments
+Website Payments
+Repair Ticket Management
+Menu Management
+Table / Floor Management
+Barcode Scanning
+
+Make the options change slightly depending on the industry selected. For example:
+
+Restaurant should show menu, table, kitchen, and online ordering options.
+Repair Shop should show repair tickets, parts inventory, deposits, and customer notifications.
+Retail should show barcode scanning, inventory, loyalty, and multi-location.
+B2B should show invoicing, ACH, recurring billing, and customer accounts.
+
+Step 3: Recommended Setup
+After selections, show a dynamic recommendation card that updates in real time.
+
+Examples:
+
+Restaurant: “Recommended Setup: Restaurant POS + Smart Terminal + Online Ordering + Next-Day Funding”
+Repair Shop: “Recommended Setup: PPD Repair + P17 Terminal + Deposits + Inventory Tracking”
+Retail: “Recommended Setup: Retail POS + Barcode Scanner + Gift Cards + Loyalty”
+B2B: “Recommended Setup: PPD Merchant Gateway + ACH + Invoicing + Recurring Billing”
+
+The recommendation card should include:
+
+Recommended product/software
+Recommended hardware
+Payment features
+Business tools
+Why this setup fits them
+Estimated complexity: Simple / Moderate / Advanced
+Best for: small shop, growing business, multi-location, etc.
+
+Step 4: Call to Action
+Add buttons:
+
+“Get My Setup”
+“Book a Demo”
+“Talk to PPD Technology”
+
+When the user clicks “Get My Setup,” open a small lead form/modal asking for:
+
+Name
+Business name
+Phone number
+Email
+Industry
+Selected needs
+Message
+
+The form should automatically include their selected industry and options in the submission payload.
+
+If there is already a form system on the site, connect it to the same form handling logic. If not, create the frontend cleanly and leave clear comments where the backend/API/Resend integration should be connected.
+
+Also add:
+
+Smooth transitions between steps
+Progress indicator at the top
+Animated recommendation card
+Active selected states
+Mobile-friendly layout
+No broken buttons
+No placeholder-looking design
+Make it feel premium, interactive, and useful
+
+Please keep the copy professional but simple. The goal is to make visitors feel like PPD Technology can build a custom payment/POS setup for their exact business.
