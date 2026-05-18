@@ -119,6 +119,13 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     : 'lead';
   const subject = `[PPD Lead] ${formTag}`;
 
+  // Always include the source page URL — use _page if the form sent one,
+  // otherwise fall back to the Referer header so emails always show origin.
+  if (!data._page || (typeof data._page === 'string' && !data._page.trim())) {
+    const referer = request.headers.get('referer');
+    if (referer) data._page = referer;
+  }
+
   const entries = Object.entries(data).filter(
     ([k, v]) =>
       !HONEYPOT_FIELDS.includes(k) &&

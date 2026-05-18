@@ -23,7 +23,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
           <div class="contact-form-container">
             <div class="contact-form">
               <h2>Send Us a Message</h2>
-              <form id="contactForm" novalidate>
+              <form id="contactForm" action="/api/lead" method="POST" novalidate>
                 <input type="hidden" name="_form" value="contact-message" />
                 <input type="hidden" name="_subject" value="New Contact Message" />
                 <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
@@ -190,7 +190,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             </div>
           </div>
 
-          <form id="callForm" class="step-wrap active" data-step-wrap="1" novalidate>
+          <form id="callForm" class="step-wrap active" data-step-wrap="1" action="/api/lead" method="POST" novalidate>
             <input type="hidden" name="_form" value="contact-call-request" />
             <input type="hidden" name="_subject" value="New Schedule a Call Request" />
             <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" />

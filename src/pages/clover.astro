@@ -343,7 +343,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
           <button class="close-x" id="pricingClose" aria-label="Close">✕</button>
         </div>
         <div class="modal-body">
-          <form id="pricingForm" novalidate>
+          <form id="pricingForm" action="/api/lead" method="POST" novalidate>
             <input type="hidden" name="_form" value="clover-pricing" />
             <input type="hidden" name="_subject" value="New Clover Pricing Request" />
             <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />

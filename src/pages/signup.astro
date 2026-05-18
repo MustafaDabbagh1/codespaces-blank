@@ -123,7 +123,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <form id="appForm" class="su-form" action="/api/lead" method="POST" novalidate>
           <input type="hidden" name="_form" value="merchant-signup" />
           <input type="hidden" name="_subject" value="New PPD Merchant Processing Application" />
-          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
 
           <div class="su-stepper" aria-label="Application progress">
             <div class="su-stepper__track">

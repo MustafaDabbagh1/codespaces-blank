@@ -921,7 +921,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         <h3 id="rpModalTitle">Get a Personalized Demo</h3>
         <p>See how PPD Repair manages tickets, inventory, technicians, and payments — all in one system for only $30/month.</p>
       </div>
-      <form class="rp-modal__form" id="rpLeadForm" novalidate>
+      <form class="rp-modal__form" id="rpLeadForm" action="/api/lead" method="POST" novalidate>
         <input type="hidden" name="_form" value="repair-demo" />
         <input type="hidden" name="_subject" value="New Repair Demo Request" />
         <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
