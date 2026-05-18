@@ -1,0 +1,48 @@
+We previously tried hooking up the site forms to Resend, but it broke the website and I reverted the changes. I want to carefully add Resend back in without breaking the site.
+
+Please do this step by step and make sure the website still builds and loads after each major change.
+
+Current situation from your audit:
+- All forms post to /api/lead
+- There is currently no src/pages/api/lead.ts
+- astro.config.mjs is set to output: 'static'
+- Resend secrets already exist:
+  RESEND_API_KEY
+  LEAD_TO_EMAIL
+  LEAD_FROM_EMAIL
+- Forms are currently getting a 404 because /api/lead does not exist
+
+Please implement the safest working setup for Replit:
+
+1. Install the needed packages:
+   - resend
+   - @astrojs/node if needed
+
+2. Update Astro correctly so API routes work on Replit.
+   If switching from static to server output is necessary, do it carefully and explain what changed.
+
+3. Create src/pages/api/lead.ts to handle all form submissions sent to /api/lead.
+
+The API route should:
+- Only accept POST requests
+- Read normal form posts and JSON/fetch submissions
+- Use the hidden _form field to create a clear email subject
+- Send all submitted fields to LEAD_TO_EMAIL through Resend
+- Use LEAD_FROM_EMAIL as the sender
+- Ignore spam honeypot fields if present
+- Redirect normal form submissions to /thank-you
+- Return JSON success for fetch/AJAX forms like the retail page
+- Return helpful errors without crashing the site
+
+4. Please check every form that posts to /api/lead and make sure it still works with this handler.
+
+5. Do not add Cloudflare Turnstile or rate limiting yet. Keep this first version simple so we can confirm Resend works before adding extra protection.
+
+6. After implementing, run the build/test commands and tell me:
+- Which files were changed
+- Whether the site builds successfully
+- Whether /api/lead exists and works
+- How I can test a form submission
+- Whether this requires deploying as a Replit server app instead of a static/GitHub Pages deployment
+
+Very important: Do not redesign the forms or change the website appearance. Only wire the existing forms to Resend and keep the site visually the same.
