@@ -117,7 +117,10 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const formTag = typeof data._form === 'string' && data._form.trim()
     ? data._form.trim().slice(0, 80)
     : 'lead';
-  const subject = `[PPD Lead] ${formTag}`;
+  // Prefer the form's own _subject (sanitized) when provided; otherwise build one.
+  const rawSubject = typeof data._subject === 'string' ? data._subject.trim() : '';
+  const cleanSubject = rawSubject.replace(/[\r\n]+/g, ' ').slice(0, 150);
+  const subject = cleanSubject || `[PPD Lead] ${formTag}`;
 
   // Always include the source page URL — use _page if the form sent one,
   // otherwise fall back to the Referer header so emails always show origin.
