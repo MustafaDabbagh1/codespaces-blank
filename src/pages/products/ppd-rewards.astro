@@ -102,7 +102,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="container pr-strip-inner">
         <div class="pr-strip-item">
           <i class="fa-solid fa-percent"></i>
-          <div><strong>0.01%</strong><span>of eligible volume</span></div>
+          <div><strong>Rate-based</strong><span>on eligible volume</span></div>
         </div>
         <div class="pr-strip-item">
           <i class="fa-solid fa-rotate"></i>
@@ -429,7 +429,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <div class="pr-calc-out-value" id="prMonthly">$10.00</div>
             <div class="pr-calc-out-grid">
               <div><span>Annual Estimate</span><strong id="prAnnual">$120.00</strong></div>
-              <div><span>Rate</span><strong>0.01% of eligible volume</strong></div>
+              <div><span>Rate</span><strong>Based on eligible volume</strong></div>
             </div>
             <a class="pr-btn pr-btn-primary pr-btn-md" href="/contact"><i class="fa-solid fa-bolt"></i> Start Earning Rewards</a>
             <p class="pr-calc-fine">Estimates are for illustration only. Actual rewards depend on eligible settled volume, program enrollment, account status, and PPD Rewards terms.</p>
@@ -1225,7 +1225,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     const monthlyEl = document.getElementById('prMonthly');
     const annualEl = document.getElementById('prAnnual');
     const presetBtns = document.querySelectorAll<HTMLButtonElement>('.pr-calc-presets button');
-    const RATE = 0.0001; // 0.01%
+    const RATE = 0.0001; // illustrative rate for the calculator only
 
     const fmt = (n: number) =>
       n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
