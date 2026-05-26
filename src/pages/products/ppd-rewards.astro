@@ -89,9 +89,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     <span class="pr-wallet-stat-value">$1,594.25</span>
                   </div>
                 </div>
-                <button class="pr-redeem-btn" type="button">
-                  <i class="fa-solid fa-gift"></i> Redeem Rewards
+                <button class="pr-redeem-btn" type="button" id="prRedeemBtn">
+                  <i class="fa-solid fa-gift"></i> <span class="pr-redeem-label">Redeem Rewards</span>
                 </button>
+                <div class="pr-redeem-success" id="prRedeemSuccess" hidden>
+                  <div class="pr-redeem-success-head">
+                    <span class="pr-redeem-success-ico"><i class="fa-solid fa-circle-check"></i></span>
+                    <div>
+                      <strong>Redemption submitted</strong>
+                      <span>$50.00 is being processed to bank account ending in ****4821.</span>
+                    </div>
+                    <span class="pr-wbadge progress pr-redeem-success-badge">Processing</span>
+                  </div>
+                  <p class="pr-redeem-success-note">Example preview — no real payout is initiated from this page.</p>
+                </div>
               </div>
 
               <div class="pr-wpanel" data-wpanel="refer" role="tabpanel" hidden>
@@ -856,6 +867,36 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       transition: transform .2s;
     }
     .pr-redeem-btn:hover { transform: translateY(-2px); }
+    .pr-redeem-btn:disabled { cursor: default; transform: none; opacity: .95; }
+    .pr-redeem-btn.is-loading { background: linear-gradient(135deg, #F59E0B, #F97316); }
+    .pr-redeem-btn.is-done { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 8px 20px rgba(16,185,129,.3); }
+    .pr-spin {
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.4); border-top-color: #fff;
+      display: inline-block; animation: prSpin .7s linear infinite;
+    }
+    @keyframes prSpin { to { transform: rotate(360deg); } }
+
+    .pr-redeem-success {
+      margin-top: 12px; padding: 12px;
+      background: linear-gradient(135deg, rgba(16,185,129,.08), rgba(0,207,255,.06));
+      border: 1px solid rgba(16,185,129,.28); border-radius: 12px;
+      animation: prWFade .3s ease;
+    }
+    .pr-redeem-success-head {
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .pr-redeem-success-ico {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, #10b981, #059669); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+    }
+    .pr-redeem-success-head > div { flex: 1; min-width: 0; }
+    .pr-redeem-success-head strong { display: block; font-size: .88rem; color: #0b1530; }
+    .pr-redeem-success-head span:not(.pr-wbadge):not(.pr-redeem-success-ico) { display: block; font-size: .76rem; color: #4a5876; line-height: 1.4; margin-top: 2px; }
+    .pr-redeem-success-badge { align-self: center; }
+    .pr-redeem-success-note { margin: 8px 0 0; font-size: .7rem; color: #6b7693; font-style: italic; }
 
     /* Wallet tabs */
     .pr-wtabs {
@@ -1563,6 +1604,43 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           if (on) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
         });
       });
+    });
+
+    // ============ REDEEM DEMO ============
+    const redeemBtn = document.getElementById('prRedeemBtn') as HTMLButtonElement | null;
+    const redeemSuccess = document.getElementById('prRedeemSuccess');
+    const ledger = document.querySelector<HTMLElement>('[data-wpanel="activity"] .pr-wledger');
+    let redeemDone = false;
+    redeemBtn?.addEventListener('click', () => {
+      if (redeemDone || !redeemBtn) return;
+      const label = redeemBtn.querySelector<HTMLElement>('.pr-redeem-label');
+      const icon = redeemBtn.querySelector<HTMLElement>('i');
+      redeemBtn.disabled = true;
+      redeemBtn.classList.add('is-loading');
+      if (icon) icon.outerHTML = '<span class="pr-spin" aria-hidden="true"></span>';
+      if (label) label.textContent = 'Processing Redemption...';
+
+      setTimeout(() => {
+        redeemDone = true;
+        const newIcon = redeemBtn.querySelector('.pr-spin');
+        if (newIcon) newIcon.outerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i>';
+        const newLabel = redeemBtn.querySelector<HTMLElement>('.pr-redeem-label');
+        if (newLabel) newLabel.textContent = 'Redemption Processing';
+        redeemBtn.classList.remove('is-loading');
+        redeemBtn.classList.add('is-done');
+        if (redeemSuccess) redeemSuccess.removeAttribute('hidden');
+
+        if (ledger) {
+          const row = document.createElement('div');
+          row.className = 'pr-wledger-row';
+          row.innerHTML = `
+            <span class="pr-wledger-ico neg"><i class="fa-solid fa-gift"></i></span>
+            <div class="pr-wledger-main"><strong>Redemption processing</strong><span>Processing to bank ****4821</span></div>
+            <span class="pr-wledger-amt neg">−$50.00</span>
+          `;
+          ledger.prepend(row);
+        }
+      }, 1600);
     });
 
     const demoReferBtn = document.getElementById('prDemoReferBtn');
