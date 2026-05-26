@@ -8,6 +8,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 >
   <div class="pr-page">
 
+    <div class="pr-member-bar">
+      <div class="container pr-member-bar__inner">
+        <span>Already a member?</span>
+        <a href="https://www.ppdrewards.com/" target="_blank" rel="noopener noreferrer" class="pr-member-bar__link"><i class="fa-solid fa-right-to-bracket"></i> Login Now</a>
+      </div>
+    </div>
+
     <!-- ============== HERO ============== -->
     <section class="pr-hero">
       <div class="pr-hero-grid"></div>
@@ -662,6 +669,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       border: 1px solid rgba(255,255,255,.18);
       font-size: .82rem; font-weight: 700;
     }
+
+    /* ============== MEMBER BAR ============== */
+    .pr-member-bar { background: linear-gradient(90deg,#0C1A38,#060E21); border-bottom: 1px solid rgba(255,255,255,.06); padding: 10px 0; position: relative; z-index: 5; }
+    .pr-member-bar__inner { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,.6); }
+    .pr-member-bar__link { display: inline-flex; align-items: center; gap: 6px; color: #FFB800; font-weight: 700; text-decoration: none; padding: 5px 14px; border-radius: 9999px; border: 1px solid rgba(245,158,11,.32); background: rgba(245,158,11,.08); transition: all .25s; font-size: 13px; }
+    .pr-member-bar__link:hover { background: rgba(245,158,11,.18); border-color: rgba(245,158,11,.6); color: #fff; }
 
     /* ============== HERO ============== */
     .pr-hero {
