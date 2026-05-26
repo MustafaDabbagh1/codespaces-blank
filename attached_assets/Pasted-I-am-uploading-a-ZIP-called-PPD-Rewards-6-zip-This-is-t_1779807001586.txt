@@ -1,0 +1,210 @@
+I am uploading a ZIP called “PPD-Rewards (6).zip”. This is the PPD Rewards software/project we created. Please inspect the ZIP first and reuse the existing design language, components, wording, routes, and visuals from that project wherever possible.
+
+Goal:
+Add “PPD Rewards” under the Products section of the main PPDTechnology.com website. This needs to be a public, merchant/client-facing product page, not an agent-facing or internal admin page.
+
+Important audience:
+This page is for merchants, business owners, and potential PPD clients. Do NOT make this page sound like it is for sales agents. Do NOT focus on agent cost, residual deductions, admin reserve, agent opt-in controls, or internal compensation mechanics on the public marketing page.
+
+What PPD Rewards is:
+PPD Rewards is a rewards and referral software/program for merchants. It helps PPD merchants earn rewards, track their balance, redeem rewards, and refer other businesses. Merchants can earn rewards from eligible processing activity and can also refer other businesses to PPD. The goal is to show merchants that PPD helps them get more value from their processing relationship and rewards them for helping other businesses discover PPD.
+
+Please add:
+1. A new Product navigation item or dropdown item called “PPD Rewards”
+2. A new public page route, preferably:
+   /products/ppd-rewards
+   or match the existing Products route structure if the site already uses a different pattern
+3. A polished, interactive, merchant-facing landing page
+4. Internal links/buttons from the Products section to this new page
+5. CTA buttons that lead to existing lead/contact/signup flow, such as:
+   “Request Access”
+   “Ask About PPD Rewards”
+   “Start Earning Rewards”
+   “Refer a Business”
+
+Page direction:
+Create a modern, interactive page that explains the benefits of PPD Rewards to merchants. The page should feel premium, clean, trustworthy, and aligned with PPDTechnology.com’s current design. Use the existing PPD brand style, colors, card styles, gradients, animations, and buttons.
+
+Use the uploaded PPD Rewards ZIP as inspiration. It already includes a merchant-facing rewards portal, dashboard concepts, reward balance tracking, referrals, redemption history, and program terms. Bring that same feel into a public marketing/product page.
+
+Required sections:
+
+1. Hero Section
+Headline ideas:
+“Turn Everyday Processing Into Real Rewards”
+or
+“Earn More Value From Every Eligible Dollar You Process”
+
+Subtext:
+“PPD Rewards helps eligible merchants earn, track, and redeem rewards while making it easy to refer other businesses to PPD.”
+
+Hero should include:
+- Premium gradient background
+- Rewards/wallet/coins/gift/referral visual elements
+- CTA buttons
+- A mock rewards dashboard card showing:
+  Available Rewards
+  Pending Rewards
+  Referral Earnings
+  Lifetime Rewards
+  “Redeem Rewards” button
+- Add subtle animation, hover effects, glow, or floating cards
+
+2. How It Works Section
+Make this visual and interactive with 3 or 4 steps:
+Step 1: Process with PPD
+Step 2: Earn monthly rewards on eligible activity
+Step 3: Refer other businesses
+Step 4: Redeem rewards
+
+Use cards with icons, hover effects, and short merchant-friendly explanations.
+
+3. Merchant Benefits Section
+Include benefit cards:
+- Earn rewards from eligible processing
+- Refer businesses and track referral status
+- View pending and available rewards
+- Redeem rewards as statement credits or digital rewards
+- See reward history in one place
+- Transparent activity ledger
+- Built for active merchants in good standing
+
+Keep the wording simple and client-facing.
+
+4. Interactive Feature Showcase
+Please build an interactive tabbed or card-based section where users can click between features:
+- Rewards Dashboard
+- Referral Tracking
+- Redemption Options
+- Reward History
+- Good Standing Transparency
+
+Each tab should update the visible mockup/details.
+
+Example copy:
+Rewards Dashboard:
+“See available rewards, pending rewards, redeemed rewards, and lifetime earnings at a glance.”
+
+Referral Tracking:
+“Submit business referrals and follow their progress from review to approval.”
+
+Redemption Options:
+“Redeem available rewards through statement credits or eligible digital payout options.”
+
+Reward History:
+“Keep a clear record of earned, redeemed, pending, and adjusted rewards.”
+
+Good Standing Transparency:
+“Rewards are available to eligible merchants whose accounts remain active and in good standing.”
+
+5. Rewards Calculator
+Add a simple interactive calculator for merchants.
+Input:
+Monthly eligible processing volume
+
+Output:
+Estimated monthly rewards
+
+Use the public merchant reward rate:
+0.01% of eligible processing volume
+
+Example:
+$100,000 monthly eligible volume = $10 estimated rewards
+
+Important:
+Add a small disclaimer under the calculator:
+“Estimates are for illustration only. Actual rewards depend on eligible settled volume, program enrollment, account status, and PPD Rewards terms.”
+
+Do not mention agent cost or residual reduction on this public calculator.
+
+6. Redemption Section
+Show redemption options as cards:
+- Statement Credit
+- Digital Rewards
+- Gift Card Options
+
+Use careful language:
+“Available options may vary by program settings and merchant eligibility.”
+
+7. Referral Section
+Create a section focused on merchants referring other businesses:
+Headline:
+“Know another business that needs better payment technology?”
+
+Explain:
+“PPD Rewards makes it easy for merchants to refer other businesses and track referral activity through the rewards portal.”
+
+Add CTA:
+“Refer a Business”
+or
+“Ask About Merchant Referrals”
+
+8. Trust and Eligibility Section
+Include a clean section explaining:
+- Rewards are for enrolled merchants
+- Rewards are based on eligible settled processing volume
+- Rewards may be pending before becoming available
+- Merchant must be active and in good standing to redeem
+- Terms and conditions apply
+
+Keep this positive and simple. Do not make it sound scary.
+
+9. Final CTA Section
+Headline:
+“Ready to See What PPD Rewards Can Do for Your Business?”
+
+Buttons:
+“Request Access”
+“Talk to PPD Technology”
+
+10. Mobile responsiveness
+Make sure the page is beautiful on desktop, tablet, and mobile. Cards should stack cleanly. Calculator should be easy to use on mobile.
+
+Design requirements:
+- Use the existing PPDTechnology.com design system and components
+- Match current header/footer/nav style
+- Add smooth hover states
+- Add subtle motion using existing animation library if available
+- Use icons like Gift, Wallet, Coins, Users, TrendingUp, ShieldCheck, CreditCard, ArrowRight
+- Avoid clutter
+- Keep copy concise
+- Make it feel like a premium SaaS/product page, not a plain informational page
+
+Technical requirements:
+- Follow the existing project structure
+- Do not break existing pages or routes
+- Do not remove current Products items
+- Add the PPD Rewards item under Products
+- Use reusable components if the site already has them
+- If the site uses Astro, React, Tailwind, shadcn, or existing components, follow that pattern
+- Run typecheck/build after changes
+- Fix any lint, TypeScript, or build errors
+- Make sure all imports are correct
+- Make sure buttons link to the existing contact/lead form or the best existing CTA destination
+
+Content restrictions:
+Do NOT include:
+- Agent residual deduction language
+- Agent cost rate
+- Admin reserve details
+- Internal admin controls
+- Tremendous API implementation details
+- Database schema
+- Internal ledger architecture
+- Anything that makes the page feel like an agent/admin dashboard
+
+You may mention:
+- Eligible merchants
+- Rewards based on eligible settled processing volume
+- Pending and available rewards
+- Statement credit redemption
+- Digital reward options
+- Merchant referrals
+- Good-standing requirement
+- Terms apply
+
+Please complete the implementation and tell me:
+1. What files you changed
+2. What route the new page uses
+3. Where the Products navigation item was added
+4. Whether the build passed
