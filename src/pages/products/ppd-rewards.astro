@@ -403,36 +403,77 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="container">
         <div class="pr-head-center">
           <span class="pr-chip"><i class="fa-solid fa-calculator"></i> Rewards Calculator</span>
-          <h2>See What You Could Earn</h2>
-          <p class="pr-sub">Enter your monthly eligible processing volume to get a quick estimate.</p>
+          <h2>See How Referrals Can Add Up</h2>
+          <p class="pr-sub">Enter your monthly eligible processing volume and estimated approved referrals to see how PPD Rewards can add up.</p>
+        </div>
+
+        <div class="pr-ref-note">
+          <div class="pr-ref-note-icon"><i class="fa-solid fa-handshake"></i></div>
+          <p>Referral rewards can help merchants earn more by introducing other businesses to PPD Technology.</p>
         </div>
 
         <div class="pr-calc">
-          <div class="pr-calc-input">
-            <label for="prVolume">Monthly Eligible Processing Volume</label>
-            <div class="pr-calc-field">
-              <span class="pr-calc-prefix">$</span>
-              <input id="prVolume" type="number" min="0" step="1000" value="100000" inputmode="numeric" />
+          <div class="pr-calc-inputs">
+            <div class="pr-calc-input">
+              <label for="prVolume">Monthly Eligible Processing Volume</label>
+              <div class="pr-calc-field">
+                <span class="pr-calc-prefix">$</span>
+                <input id="prVolume" type="number" min="0" step="1000" value="100000" inputmode="numeric" />
+              </div>
+              <input id="prVolumeRange" type="range" min="0" max="2000000" step="5000" value="100000" />
+              <div class="pr-calc-presets" data-preset-group="vol">
+                <button type="button" data-vol="25000">$25K</button>
+                <button type="button" data-vol="50000">$50K</button>
+                <button type="button" data-vol="100000" class="active">$100K</button>
+                <button type="button" data-vol="250000">$250K</button>
+                <button type="button" data-vol="500000">$500K</button>
+                <button type="button" data-vol="1000000">$1M</button>
+              </div>
             </div>
-            <input id="prVolumeRange" type="range" min="0" max="2000000" step="5000" value="100000" />
-            <div class="pr-calc-presets">
-              <button type="button" data-vol="25000">$25K</button>
-              <button type="button" data-vol="50000">$50K</button>
-              <button type="button" data-vol="100000" class="active">$100K</button>
-              <button type="button" data-vol="250000">$250K</button>
-              <button type="button" data-vol="500000">$500K</button>
-              <button type="button" data-vol="1000000">$1M</button>
+
+            <div class="pr-calc-input">
+              <label for="prRefs">Approved Referrals <span class="pr-label-hint">per month</span></label>
+              <div class="pr-calc-field">
+                <span class="pr-calc-prefix"><i class="fa-solid fa-handshake"></i></span>
+                <input id="prRefs" type="number" min="0" max="10" step="1" value="2" inputmode="numeric" />
+              </div>
+              <input id="prRefsRange" type="range" min="0" max="10" step="1" value="2" />
+              <div class="pr-calc-presets" data-preset-group="refs">
+                <button type="button" data-refs="0">0</button>
+                <button type="button" data-refs="1">1</button>
+                <button type="button" data-refs="2" class="active">2</button>
+                <button type="button" data-refs="5">5</button>
+                <button type="button" data-refs="10">10</button>
+              </div>
             </div>
           </div>
+
           <div class="pr-calc-output">
-            <div class="pr-calc-out-label">Estimated Monthly Rewards</div>
-            <div class="pr-calc-out-value" id="prMonthly">$10.00</div>
-            <div class="pr-calc-out-grid">
-              <div><span>Annual Estimate</span><strong id="prAnnual">$120.00</strong></div>
-              <div><span>Rate</span><strong>Based on eligible volume</strong></div>
+            <div class="pr-calc-out-label">Estimated Monthly Value</div>
+            <div class="pr-calc-out-value" id="prMonthly">$160.00</div>
+
+            <div class="pr-calc-breakdown">
+              <div class="pr-calc-bk-row">
+                <span><i class="fa-solid fa-percent"></i> Processing Rewards</span>
+                <strong id="prProcessing">$10.00</strong>
+              </div>
+              <div class="pr-calc-bk-row">
+                <span><i class="fa-solid fa-handshake"></i> Referral Rewards</span>
+                <strong id="prReferral">$150.00</strong>
+              </div>
+              <div class="pr-calc-bk-row pr-calc-bk-annual">
+                <span><i class="fa-solid fa-calendar"></i> Annual Estimate</span>
+                <strong id="prAnnual">$1,920.00</strong>
+              </div>
             </div>
+
+            <div class="pr-calc-rate-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Includes eligible volume rewards + example referral rewards</span>
+            </div>
+
             <a class="pr-btn pr-btn-primary pr-btn-md" href="/contact"><i class="fa-solid fa-bolt"></i> Start Earning Rewards</a>
-            <p class="pr-calc-fine">Estimates are for illustration only. Actual rewards depend on eligible settled volume, program enrollment, account status, and PPD Rewards terms.</p>
+            <p class="pr-calc-fine">Estimates are for illustration only. Referral reward amounts, eligibility, timing, and redemption options may vary by program terms, merchant status, approved referrals, and PPD Rewards settings.</p>
           </div>
         </div>
       </div>
@@ -984,15 +1025,38 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     .pr-trust-row span { font-size: .82rem; color: #4a5876; }
 
     /* ============== CALCULATOR ============== */
+    .pr-ref-note {
+      max-width: 920px; margin: 0 auto 20px;
+      display: flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, rgba(245,158,11,.1), rgba(21,73,255,.06));
+      border: 1px solid rgba(245,158,11,.28);
+      border-radius: 14px; padding: 14px 18px;
+    }
+    .pr-ref-note-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, #F59E0B, #F97316); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.05rem;
+    }
+    .pr-ref-note p {
+      margin: 0; color: #0b1530; font-size: .95rem; font-weight: 600; line-height: 1.45;
+    }
     .pr-calc {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px;
       background: #fff; border: 1px solid #e4e9f3; border-radius: 20px;
       padding: 32px; box-shadow: 0 14px 40px rgba(21,73,255,.08);
       max-width: 920px; margin: 0 auto;
     }
+    .pr-calc-inputs {
+      display: flex; flex-direction: column; gap: 22px;
+    }
     .pr-calc-input label {
       display: block; font-size: .9rem; font-weight: 700; color: #0b1530; margin-bottom: 10px;
     }
+    .pr-label-hint {
+      font-weight: 500; color: #6b7693; font-size: .82rem; margin-left: 4px;
+    }
+    .pr-calc-prefix i { color: #F59E0B; }
     .pr-calc-field {
       display: flex; align-items: center;
       border: 2px solid #e4e9f3; border-radius: 12px;
@@ -1005,7 +1069,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       font-size: 1.15rem; font-weight: 700; color: #0b1530;
       outline: none; background: transparent; min-width: 0;
     }
-    #prVolumeRange {
+    #prVolumeRange, #prRefsRange {
       width: 100%; margin: 16px 0 14px; accent-color: #F59E0B;
     }
     .pr-calc-presets {
@@ -1042,12 +1106,32 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       -webkit-background-clip: text; background-clip: text; color: transparent;
       letter-spacing: -.02em; line-height: 1;
     }
-    .pr-calc-out-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-      padding: 12px 0; border-top: 1px solid rgba(255,255,255,.1);
+    .pr-calc-breakdown {
+      display: flex; flex-direction: column; gap: 2px;
+      padding: 12px 0 4px; border-top: 1px solid rgba(255,255,255,.12);
     }
-    .pr-calc-out-grid span { display: block; font-size: .72rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .05em; }
-    .pr-calc-out-grid strong { display: block; font-size: 1rem; color: #fff; margin-top: 2px; }
+    .pr-calc-bk-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0;
+      font-size: .9rem;
+    }
+    .pr-calc-bk-row span {
+      color: rgba(255,255,255,.72); display: inline-flex; align-items: center; gap: 8px;
+    }
+    .pr-calc-bk-row span i { color: #F59E0B; font-size: .85rem; width: 14px; text-align: center; }
+    .pr-calc-bk-row strong { color: #fff; font-size: 1rem; font-weight: 700; }
+    .pr-calc-bk-annual {
+      border-top: 1px dashed rgba(255,255,255,.14);
+      margin-top: 4px; padding-top: 10px;
+    }
+    .pr-calc-bk-annual strong { color: #FFB800; font-size: 1.05rem; }
+    .pr-calc-rate-note {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .78rem; color: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.06); border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .pr-calc-rate-note i { color: #00CFFF; }
     .pr-calc-fine {
       font-size: .76rem; color: rgba(255,255,255,.6); line-height: 1.45; margin: 0;
     }
@@ -1172,6 +1256,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       .pr-demo-panel.active { grid-template-columns: 1fr; }
       .pr-demo-info { order: 2; }
       .pr-calc { grid-template-columns: 1fr; padding: 24px; }
+      .pr-ref-note { flex-direction: row; padding: 12px 14px; }
+      .pr-ref-note p { font-size: .88rem; }
       .pr-referral-inner { grid-template-columns: 1fr; gap: 32px; }
       .pr-demo-kpi-row { grid-template-columns: 1fr 1fr; }
       .pr-redeem-grid { grid-template-columns: 1fr; }
@@ -1220,34 +1306,68 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     });
 
     // ============ CALCULATOR ============
+    // Tunable example values used for the public-facing estimate only.
+    const RATE = 0.0001; // illustrative processing reward rate
+    const REFERRAL_BONUS_ESTIMATE = 75; // example per-approved-referral value
+
     const volInput = document.getElementById('prVolume') as HTMLInputElement | null;
     const volRange = document.getElementById('prVolumeRange') as HTMLInputElement | null;
+    const refsInput = document.getElementById('prRefs') as HTMLInputElement | null;
+    const refsRange = document.getElementById('prRefsRange') as HTMLInputElement | null;
     const monthlyEl = document.getElementById('prMonthly');
     const annualEl = document.getElementById('prAnnual');
-    const presetBtns = document.querySelectorAll<HTMLButtonElement>('.pr-calc-presets button');
-    const RATE = 0.0001; // illustrative rate for the calculator only
+    const processingEl = document.getElementById('prProcessing');
+    const referralEl = document.getElementById('prReferral');
+    const volPresets = document.querySelectorAll<HTMLButtonElement>('[data-preset-group="vol"] button');
+    const refsPresets = document.querySelectorAll<HTMLButtonElement>('[data-preset-group="refs"] button');
 
     const fmt = (n: number) =>
       n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-    function update(volRaw: number, source: 'input' | 'range' | 'preset') {
-      const vol = isFinite(volRaw) && volRaw > 0 ? volRaw : 0;
-      const monthly = vol * RATE;
-      const annual = monthly * 12;
-      if (monthlyEl) monthlyEl.textContent = fmt(monthly);
-      if (annualEl) annualEl.textContent = fmt(annual);
-      if (volInput && source !== 'input') volInput.value = String(vol);
-      if (volRange && source !== 'range') volRange.value = String(Math.min(vol, Number(volRange.max)));
-      presetBtns.forEach((b) => b.classList.toggle('active', Number(b.dataset.vol) === vol));
+    function clamp(n: number, min: number, max: number) {
+      return Math.max(min, Math.min(max, n));
     }
 
-    volInput?.addEventListener('input', () => update(Number(volInput.value), 'input'));
-    volRange?.addEventListener('input', () => update(Number(volRange.value), 'range'));
-    presetBtns.forEach((b) =>
-      b.addEventListener('click', () => update(Number(b.dataset.vol), 'preset')),
+    function recompute() {
+      const vol = Math.max(0, Number(volInput?.value) || 0);
+      const refs = clamp(Math.round(Number(refsInput?.value) || 0), 0, 10);
+      const processing = vol * RATE;
+      const referral = refs * REFERRAL_BONUS_ESTIMATE;
+      const monthly = processing + referral;
+      const annual = monthly * 12;
+      if (processingEl) processingEl.textContent = fmt(processing);
+      if (referralEl) referralEl.textContent = fmt(referral);
+      if (monthlyEl) monthlyEl.textContent = fmt(monthly);
+      if (annualEl) annualEl.textContent = fmt(annual);
+      volPresets.forEach((b) => b.classList.toggle('active', Number(b.dataset.vol) === vol));
+      refsPresets.forEach((b) => b.classList.toggle('active', Number(b.dataset.refs) === refs));
+    }
+
+    function setVolume(v: number, source: 'input' | 'range' | 'preset') {
+      const val = Math.max(0, isFinite(v) ? v : 0);
+      if (volInput && source !== 'input') volInput.value = String(val);
+      if (volRange && source !== 'range') volRange.value = String(Math.min(val, Number(volRange.max)));
+      recompute();
+    }
+    function setRefs(r: number, source: 'input' | 'range' | 'preset') {
+      const val = clamp(Math.round(isFinite(r) ? r : 0), 0, 10);
+      if (refsInput && source !== 'input') refsInput.value = String(val);
+      if (refsRange && source !== 'range') refsRange.value = String(val);
+      recompute();
+    }
+
+    volInput?.addEventListener('input', () => setVolume(Number(volInput.value), 'input'));
+    volRange?.addEventListener('input', () => setVolume(Number(volRange.value), 'range'));
+    refsInput?.addEventListener('input', () => setRefs(Number(refsInput.value), 'input'));
+    refsRange?.addEventListener('input', () => setRefs(Number(refsRange.value), 'range'));
+    volPresets.forEach((b) =>
+      b.addEventListener('click', () => setVolume(Number(b.dataset.vol), 'preset')),
+    );
+    refsPresets.forEach((b) =>
+      b.addEventListener('click', () => setRefs(Number(b.dataset.refs), 'preset')),
     );
 
     // initial sync
-    if (volInput) update(Number(volInput.value), 'preset');
+    recompute();
   </script>
 </BaseLayout>

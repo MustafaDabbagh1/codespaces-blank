@@ -1,0 +1,77 @@
+Please revise the PPD Rewards calculator section.
+
+Right now the calculator only shows estimated rewards based on monthly eligible processing volume. Since the public merchant reward rate is small by itself, the section should feel more referral-focused and more exciting for merchants.
+
+Keep the processing volume slider because I like it, but update the calculator so it includes both:
+
+1. Monthly eligible processing volume
+2. Estimated approved referrals per month
+
+The calculator should show a combined estimated monthly value:
+Estimated Monthly Rewards = processing reward estimate + referral reward estimate
+
+Use this public-facing logic:
+- Processing reward estimate: eligible monthly volume × 0.01%
+- Referral reward estimate: approved referrals × configurable referral bonus amount
+
+For the public page, use a sample referral bonus of $75 per approved referral, but do not hard-code it in a way that is difficult to change later. Make it a constant/config value near the calculator component, such as REFERRAL_BONUS_ESTIMATE = 75.
+
+Example outputs:
+- $25,000 monthly eligible volume + 2 approved referrals = about $152.50/month
+- $50,000 monthly eligible volume + 5 approved referrals = about $380/month
+- $100,000 monthly eligible volume + 5 approved referrals = about $385/month
+- $250,000 monthly eligible volume + 10 approved referrals = about $775/month
+
+Important:
+Do not make the page promise these exact amounts. This needs to feel like an estimate and not a guaranteed payout.
+
+Change the section headline from:
+“See What You Could Earn”
+
+To something more referral-focused, like:
+“See How Referrals Can Add Up”
+or
+“Estimate Your Rewards Potential”
+
+Update the subheading to something like:
+“Enter your monthly eligible processing volume and estimated approved referrals to see how PPD Rewards can add up.”
+
+Calculator UI changes:
+- Keep the processing volume slider
+- Add a second slider or stepper for “Approved Referrals”
+- Referral slider should allow 0 to 10 referrals
+- Show the estimated referral value separately
+- Show the processing reward estimate separately, but make it less visually dominant
+- Make the combined monthly estimate the biggest number
+- Add an annual estimate if it looks good
+- Keep the quick-pick buttons for processing volume
+- Add quick-pick buttons for referrals, such as 1, 2, 5, 10
+
+Suggested display card:
+Estimated Monthly Value
+$380.00
+
+Breakdown:
+Processing Rewards: $5.00
+Referral Rewards: $375.00
+Annual Estimate: $4,560.00
+
+Replace the current “Rate: Based on eligible volume” area with something clearer:
+“Includes eligible volume rewards + example referral rewards”
+
+Disclaimer text:
+“Estimates are for illustration only. Referral reward amounts, eligibility, timing, and redemption options may vary by program terms, merchant status, approved referrals, and PPD Rewards settings.”
+
+Please make the section more vague in a polished way:
+- Avoid emphasizing that $25k in processing only earns $2.50
+- Emphasize that referrals can increase the merchant’s reward potential
+- Use language like “estimated,” “potential,” “example,” and “eligible”
+- Do not promise guaranteed earnings
+- Do not mention agent costs, residuals, internal program costs, or admin reserve
+
+Also, please update any nearby copy so this page clearly explains that PPD Rewards is not only for processing rewards, but also helps merchants earn through referrals.
+
+Add a small feature card near the calculator that says:
+“Referral rewards can help merchants earn more by introducing other businesses to PPD Technology.”
+
+Make sure the calculator remains mobile-friendly and visually matches the rest of the PPD Rewards page.
