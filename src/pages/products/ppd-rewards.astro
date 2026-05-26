@@ -58,32 +58,113 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               <span class="pr-dash-tag">Good Standing</span>
             </div>
             <div class="pr-dash-body">
-              <div class="pr-wallet-hero">
-                <div class="pr-wallet-label">Available Rewards</div>
-                <div class="pr-wallet-amount">$248.50</div>
-                <div class="pr-wallet-trend"><i class="fa-solid fa-arrow-up"></i> +$32.40 this month</div>
+              <div class="pr-wtabs" role="tablist" aria-label="PPD Rewards wallet sections">
+                <button type="button" class="pr-wtab active" role="tab" aria-selected="true" data-wtab="overview"><i class="fa-solid fa-wallet"></i> Overview</button>
+                <button type="button" class="pr-wtab" role="tab" aria-selected="false" data-wtab="refer"><i class="fa-solid fa-user-plus"></i> Refer Someone</button>
+                <button type="button" class="pr-wtab" role="tab" aria-selected="false" data-wtab="past"><i class="fa-solid fa-list-check"></i> Past Referrals</button>
+                <button type="button" class="pr-wtab" role="tab" aria-selected="false" data-wtab="activity"><i class="fa-solid fa-clock-rotate-left"></i> Rewards Activity</button>
               </div>
-              <div class="pr-wallet-grid">
-                <div class="pr-wallet-stat">
-                  <span class="pr-wallet-stat-label"><i class="fa-solid fa-hourglass-half"></i> Pending</span>
-                  <span class="pr-wallet-stat-value">$48.20</span>
+
+              <div class="pr-wpanel active" data-wpanel="overview" role="tabpanel">
+                <div class="pr-wallet-hero">
+                  <div class="pr-wallet-label">Available Rewards</div>
+                  <div class="pr-wallet-amount">$248.50</div>
+                  <div class="pr-wallet-trend"><i class="fa-solid fa-arrow-up"></i> +$32.40 this month</div>
                 </div>
-                <div class="pr-wallet-stat">
-                  <span class="pr-wallet-stat-label"><i class="fa-solid fa-handshake"></i> Referral Earnings</span>
-                  <span class="pr-wallet-stat-value">$120.00</span>
+                <div class="pr-wallet-grid">
+                  <div class="pr-wallet-stat">
+                    <span class="pr-wallet-stat-label"><i class="fa-solid fa-hourglass-half"></i> Pending</span>
+                    <span class="pr-wallet-stat-value">$48.20</span>
+                  </div>
+                  <div class="pr-wallet-stat">
+                    <span class="pr-wallet-stat-label"><i class="fa-solid fa-handshake"></i> Referral Earnings</span>
+                    <span class="pr-wallet-stat-value">$120.00</span>
+                  </div>
+                  <div class="pr-wallet-stat">
+                    <span class="pr-wallet-stat-label"><i class="fa-solid fa-trophy"></i> Lifetime Rewards</span>
+                    <span class="pr-wallet-stat-value">$1,842.75</span>
+                  </div>
+                  <div class="pr-wallet-stat">
+                    <span class="pr-wallet-stat-label"><i class="fa-solid fa-check-double"></i> Redeemed</span>
+                    <span class="pr-wallet-stat-value">$1,594.25</span>
+                  </div>
                 </div>
-                <div class="pr-wallet-stat">
-                  <span class="pr-wallet-stat-label"><i class="fa-solid fa-trophy"></i> Lifetime Rewards</span>
-                  <span class="pr-wallet-stat-value">$1,842.75</span>
-                </div>
-                <div class="pr-wallet-stat">
-                  <span class="pr-wallet-stat-label"><i class="fa-solid fa-check-double"></i> Redeemed</span>
-                  <span class="pr-wallet-stat-value">$1,594.25</span>
+                <button class="pr-redeem-btn" type="button">
+                  <i class="fa-solid fa-gift"></i> Redeem Rewards
+                </button>
+              </div>
+
+              <div class="pr-wpanel" data-wpanel="refer" role="tabpanel" hidden>
+                <p class="pr-wform-help">Refer a business that may benefit from PPD Technology.</p>
+                <div class="pr-wform">
+                  <div class="pr-wform-field">
+                    <label>Business Name</label>
+                    <div class="pr-wform-input"><i class="fa-solid fa-building"></i><span>Brewline Cafe</span></div>
+                  </div>
+                  <div class="pr-wform-field">
+                    <label>Contact Name</label>
+                    <div class="pr-wform-input"><i class="fa-solid fa-user"></i><span>Sarah Patel</span></div>
+                  </div>
+                  <div class="pr-wform-field">
+                    <label>Phone or Email</label>
+                    <div class="pr-wform-input"><i class="fa-solid fa-envelope"></i><span>sarah@brewlinecafe.com</span></div>
+                  </div>
+                  <button class="pr-redeem-btn pr-wform-btn" type="button" id="prDemoReferBtn">
+                    <i class="fa-solid fa-paper-plane"></i> <span>Send Referral</span>
+                  </button>
                 </div>
               </div>
-              <button class="pr-redeem-btn" type="button">
-                <i class="fa-solid fa-gift"></i> Redeem Rewards
-              </button>
+
+              <div class="pr-wpanel" data-wpanel="past" role="tabpanel" hidden>
+                <div class="pr-wlist">
+                  <div class="pr-wrow">
+                    <div class="pr-wrow-main"><strong>Bella Salon Group</strong><span>Referred May 14</span></div>
+                    <div class="pr-wrow-side"><span class="pr-wbadge approved">Approved</span><span class="pr-wrow-amt">+$75.00</span></div>
+                  </div>
+                  <div class="pr-wrow">
+                    <div class="pr-wrow-main"><strong>Fresh Market Deli</strong><span>Referred May 18</span></div>
+                    <div class="pr-wrow-side"><span class="pr-wbadge pending">Pending Review</span></div>
+                  </div>
+                  <div class="pr-wrow">
+                    <div class="pr-wrow-main"><strong>Elite Auto Care</strong><span>Referred May 9</span></div>
+                    <div class="pr-wrow-side"><span class="pr-wbadge earned">Reward Earned</span><span class="pr-wrow-amt">+$75.00</span></div>
+                  </div>
+                  <div class="pr-wrow">
+                    <div class="pr-wrow-main"><strong>Sunrise Dental</strong><span>Referred May 21</span></div>
+                    <div class="pr-wrow-side"><span class="pr-wbadge progress">In Progress</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pr-wpanel" data-wpanel="activity" role="tabpanel" hidden>
+                <div class="pr-wledger">
+                  <div class="pr-wledger-row">
+                    <span class="pr-wledger-ico pos"><i class="fa-solid fa-handshake"></i></span>
+                    <div class="pr-wledger-main"><strong>Referral reward earned</strong><span>Bella Salon Group · May 24</span></div>
+                    <span class="pr-wledger-amt pos">+$75.00</span>
+                  </div>
+                  <div class="pr-wledger-row">
+                    <span class="pr-wledger-ico pos"><i class="fa-solid fa-coins"></i></span>
+                    <div class="pr-wledger-main"><strong>Processing reward earned</strong><span>Monthly cycle · May 22</span></div>
+                    <span class="pr-wledger-amt pos">+$12.40</span>
+                  </div>
+                  <div class="pr-wledger-row">
+                    <span class="pr-wledger-ico neg"><i class="fa-solid fa-gift"></i></span>
+                    <div class="pr-wledger-main"><strong>Statement credit redeemed</strong><span>Applied to account · May 19</span></div>
+                    <span class="pr-wledger-amt neg">−$50.00</span>
+                  </div>
+                  <div class="pr-wledger-row">
+                    <span class="pr-wledger-ico pos"><i class="fa-solid fa-circle-check"></i></span>
+                    <div class="pr-wledger-main"><strong>Referral approved</strong><span>Elite Auto Care · May 16</span></div>
+                    <span class="pr-wledger-amt pos">+$75.00</span>
+                  </div>
+                  <div class="pr-wledger-row">
+                    <span class="pr-wledger-ico pending"><i class="fa-solid fa-hourglass-half"></i></span>
+                    <div class="pr-wledger-main"><strong>Pending reward available soon</strong><span>Awaiting settlement</span></div>
+                    <span class="pr-wledger-amt pending">$48.20</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="pr-float pr-float-1">
@@ -102,6 +183,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </div>
       </div>
+      <p class="pr-hero-caption">
+        Inside the PPD Rewards portal, merchants can view rewards, refer businesses, track referral status, and redeem available rewards in one place.
+      </p>
     </section>
 
     <!-- ============== METRICS STRIP ============== -->
@@ -773,6 +857,80 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     }
     .pr-redeem-btn:hover { transform: translateY(-2px); }
 
+    /* Wallet tabs */
+    .pr-wtabs {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+      padding-bottom: 12px; border-bottom: 1px solid #eef1f7;
+    }
+    .pr-wtab {
+      flex: 1 1 auto; min-width: 0;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 7px 10px; border-radius: 999px;
+      background: #F5F8FF; border: 1px solid transparent;
+      font-size: .74rem; font-weight: 700; color: #4a5876;
+      cursor: pointer; transition: all .2s; white-space: nowrap;
+    }
+    .pr-wtab i { font-size: .72rem; }
+    .pr-wtab:hover { background: #eaeefb; color: #0b1530; }
+    .pr-wtab.active {
+      background: linear-gradient(135deg, #F59E0B, #F97316);
+      color: #fff; border-color: transparent;
+      box-shadow: 0 4px 12px rgba(245,158,11,.28);
+    }
+    .pr-wpanel { animation: prWFade .25s ease; }
+    .pr-wpanel[hidden] { display: none; }
+    @keyframes prWFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Refer form */
+    .pr-wform-help { font-size: .78rem; color: #6b7693; margin: 0 0 12px; }
+    .pr-wform { display: flex; flex-direction: column; gap: 10px; }
+    .pr-wform-field label { display: block; font-size: .7rem; font-weight: 700; color: #4a5876; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+    .pr-wform-input {
+      display: flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid #e4e9f3; border-radius: 10px;
+      padding: 9px 12px; font-size: .85rem; color: #0b1530;
+    }
+    .pr-wform-input i { color: #F59E0B; font-size: .82rem; }
+    .pr-wform-btn { margin-top: 6px; }
+
+    /* Past referrals */
+    .pr-wlist { display: flex; flex-direction: column; gap: 8px; }
+    .pr-wrow {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: #fff; border: 1px solid #e4e9f3; border-radius: 10px; padding: 10px 12px;
+    }
+    .pr-wrow-main strong { display: block; font-size: .88rem; color: #0b1530; }
+    .pr-wrow-main span { font-size: .72rem; color: #6b7693; }
+    .pr-wrow-side { display: flex; align-items: center; gap: 10px; }
+    .pr-wrow-amt { font-size: .85rem; font-weight: 800; color: #047857; }
+    .pr-wbadge { font-size: .68rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+    .pr-wbadge.approved { background: rgba(16,185,129,.14); color: #047857; }
+    .pr-wbadge.earned { background: rgba(245,158,11,.16); color: #B45309; }
+    .pr-wbadge.pending { background: rgba(99,102,241,.14); color: #4338CA; }
+    .pr-wbadge.progress { background: rgba(0,207,255,.14); color: #0369A1; }
+
+    /* Rewards activity ledger */
+    .pr-wledger { display: flex; flex-direction: column; gap: 6px; }
+    .pr-wledger-row {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid #e4e9f3; border-radius: 10px; padding: 9px 12px;
+    }
+    .pr-wledger-ico {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: .78rem; color: #fff;
+    }
+    .pr-wledger-ico.pos { background: linear-gradient(135deg, #10b981, #059669); }
+    .pr-wledger-ico.neg { background: linear-gradient(135deg, #1549FF, #00CFFF); }
+    .pr-wledger-ico.pending { background: linear-gradient(135deg, #F59E0B, #F97316); }
+    .pr-wledger-main { flex: 1; min-width: 0; }
+    .pr-wledger-main strong { display: block; font-size: .82rem; color: #0b1530; }
+    .pr-wledger-main span { font-size: .7rem; color: #6b7693; }
+    .pr-wledger-amt { font-size: .85rem; font-weight: 800; white-space: nowrap; }
+    .pr-wledger-amt.pos { color: #047857; }
+    .pr-wledger-amt.neg { color: #1d4ed8; }
+    .pr-wledger-amt.pending { color: #B45309; }
+
     .pr-float {
       position: absolute; background: #fff; border-radius: 12px;
       padding: 10px 14px; box-shadow: 0 14px 40px rgba(0,0,0,.25);
@@ -788,6 +946,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     .pr-float span { display: block; font-size: .72rem; color: #6b7693; }
     .pr-float-1 { left: -28px; top: 22%; }
     .pr-float-1 i { background: linear-gradient(135deg, #F59E0B, #F97316); }
+    .pr-hero-caption {
+      max-width: 760px; margin: 48px auto 0; text-align: center;
+      font-size: .95rem; color: rgba(255,255,255,.78); line-height: 1.55;
+      padding: 0 20px;
+    }
     .pr-float-2 { right: -28px; bottom: 18%; animation-delay: 1.5s; }
     .pr-float-2 i { background: linear-gradient(135deg, #1549FF, #00CFFF); }
     @keyframes prFloat {
@@ -1382,5 +1545,39 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     // initial sync
     recompute();
+
+    // ============ HERO WALLET TABS ============
+    const wtabs = document.querySelectorAll<HTMLButtonElement>('.pr-wtab');
+    const wpanels = document.querySelectorAll<HTMLElement>('.pr-wpanel');
+    wtabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.wtab;
+        wtabs.forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        wpanels.forEach((p) => {
+          const on = p.dataset.wpanel === target;
+          p.classList.toggle('active', on);
+          if (on) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+        });
+      });
+    });
+
+    const demoReferBtn = document.getElementById('prDemoReferBtn');
+    demoReferBtn?.addEventListener('click', () => {
+      const label = demoReferBtn.querySelector('span');
+      const icon = demoReferBtn.querySelector('i');
+      if (!label || !icon) return;
+      const original = label.textContent;
+      const originalIcon = icon.className;
+      icon.className = 'fa-solid fa-circle-check';
+      label.textContent = 'Referral Sent (Demo)';
+      setTimeout(() => {
+        icon.className = originalIcon;
+        label.textContent = original;
+      }, 2000);
+    });
   </script>
 </BaseLayout>

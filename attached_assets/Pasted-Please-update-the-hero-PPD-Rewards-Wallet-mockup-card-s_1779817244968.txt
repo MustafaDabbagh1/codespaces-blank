@@ -1,0 +1,83 @@
+Please update the hero “PPD Rewards Wallet” mockup card so it feels more interactive and closer to the actual PPD Rewards software.
+
+Right now the card shows rewards, pending, referral earnings, lifetime rewards, redeemed, and a redeem button. Please add a small tabbed interface inside this mockup card, similar to what exists in the Rewards software.
+
+Add tabs such as:
+
+1. Overview
+2. Refer Someone
+3. Past Referrals
+4. Rewards Activity
+
+The tabs do not need to be fully functional backend-connected on the public marketing page. They should be interactive front-end demo tabs that switch the visible content inside the mock wallet card.
+
+Tab details:
+
+Overview tab:
+Show the current rewards dashboard:
+- Available Rewards
+- Pending
+- Referral Earnings
+- Lifetime Rewards
+- Redeemed
+- Redeem Rewards button
+
+Refer Someone tab:
+Show a simple mini referral form mockup:
+- Business Name
+- Contact Name
+- Phone or Email
+- “Send Referral” button
+- Small helper text: “Refer a business that may benefit from PPD Technology.”
+
+This should look like a product preview, not a real submitted form unless there is already a safe demo handler. If it is not connected, make the button non-submitting or show a small demo success state.
+
+Past Referrals tab:
+Show a few sample referral rows:
+- Bella Salon Group — Approved — $75 reward
+- Fresh Market Deli — Pending Review
+- Elite Auto Care — Reward Earned
+- Sunrise Dental — In Progress
+
+Use nice status badges:
+Approved, Pending, In Progress, Reward Earned
+
+Rewards Activity tab:
+Show a small activity ledger preview:
+- +$75.00 Referral reward earned
+- +$12.40 Processing reward earned
+- -$50.00 Statement credit redeemed
+- +$75.00 Referral approved
+- Pending reward available soon
+
+Design requirements:
+- Keep the current tilted/floating card style
+- Keep the “Good Standing” badge
+- Add the tabs near the top of the card under the title bar
+- Use small pill-style tabs
+- Active tab should be highlighted in PPD orange or blue
+- Add smooth transitions when switching tabs
+- Keep it clean and not overcrowded
+- Make sure it still looks good on mobile
+- Keep the floating mini callout bubbles like “Reward earned” and “Referral Approved”
+- The mockup should clearly show that the merchant can refer someone, view past referrals, and track rewards in the software
+
+Important copy direction:
+This is a merchant/client-facing page. Do not make this sound like an agent dashboard. Use merchant-friendly language like:
+- “Refer a business”
+- “Track referral status”
+- “See reward activity”
+- “Redeem available rewards”
+- “Approved referrals can add to your rewards”
+
+Do not mention:
+- Agent residuals
+- Agent cost
+- Internal admin reserve
+- Agent opt-in pricing
+- Internal program cost
+
+Also please add a short line near the hero or under the mockup:
+“Inside the PPD Rewards portal, merchants can view rewards, refer businesses, track referral status, and redeem available rewards in one place.”
+
+Please inspect the uploaded PPD Rewards ZIP and reuse any referral tabs, referral table, reward activity styles, or wallet/dashboard components from that software if possible.
