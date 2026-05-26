@@ -425,7 +425,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <i class="fa-solid fa-users-gear"></i><span>Agent Portal</span>
           </button>
           <button class="iso-demo-tab" data-tab="tab-ai">
-            <i class="fa-solid fa-robot"></i><span>AI Assistant</span>
+            <i class="fa-solid fa-gift"></i><span>PPD Rewards</span>
           </button>
         </div>
 
@@ -679,45 +679,46 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="iso-demo-panel" id="tab-ai">
             <div class="iso-demo-dash">
               <div class="iso-demo-topbar">
-                <div class="iso-demo-topbar-left"><i class="fa-solid fa-robot"></i> AI Sales Assistant</div>
+                <div class="iso-demo-topbar-left"><i class="fa-solid fa-gift"></i> PPD Rewards Portal</div>
                 <div class="iso-demo-topbar-right">
-                  <span class="iso-badge-demo green">Learning</span>
-                  <span class="iso-demo-user"><i class="fa-solid fa-circle-user"></i> Admin</span>
+                  <span class="iso-badge-demo green">Active</span>
+                  <span class="iso-demo-user"><i class="fa-solid fa-circle-user"></i> Merchant</span>
                 </div>
               </div>
-              <div class="iso-demo-content iso-demo-ai-content">
-                <div class="iso-ai-chat">
-                  <div class="iso-ai-msg assistant">
-                    <div class="iso-ai-avatar"><i class="fa-solid fa-robot"></i></div>
-                    <div class="iso-ai-bubble">
-                      <strong>PPD AI Assistant</strong>
-                      <p>Good morning! I found <strong>14 merchants</strong> in your portfolio with upsell potential. Here are 3 priority recommendations:</p>
-                    </div>
+              <div class="iso-demo-content">
+                <div class="iso-demo-stats-row">
+                  <div class="iso-demo-stat-card">
+                    <div class="iso-demo-stat-icon money"><i class="fa-solid fa-wallet"></i></div>
+                    <div><span class="iso-demo-stat-label">Rewards Balance</span><strong>$1,284</strong></div>
                   </div>
-                  <div class="iso-ai-recs">
-                    <div class="iso-ai-rec">
-                      <div class="iso-ai-rec-head"><i class="fa-solid fa-fire"></i> High Priority</div>
-                      <strong>Elite Fitness Co.</strong> — Processing $82K/mo but no POS integration. Recommend DineFlow POS upsell. <em>Est. revenue lift: $1,200/mo</em>
-                    </div>
-                    <div class="iso-ai-rec">
-                      <div class="iso-ai-rec-head"><i class="fa-solid fa-chart-line"></i> Growth Signal</div>
-                      <strong>QuickBite Restaurants</strong> — Volume up 45% in 60 days. Second location likely opening. <em>Proactive outreach suggested.</em>
-                    </div>
-                    <div class="iso-ai-rec">
-                      <div class="iso-ai-rec-head"><i class="fa-solid fa-triangle-exclamation"></i> Churn Risk</div>
-                      <strong>Metro Dental Group</strong> — Support tickets up 3x. Schedule retention call. <em>Risk score: 72/100</em>
-                    </div>
+                  <div class="iso-demo-stat-card">
+                    <div class="iso-demo-stat-icon repair"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div><span class="iso-demo-stat-label">Earned This Month</span><strong>$385</strong></div>
                   </div>
-                  <div class="iso-ai-msg user">
-                    <div class="iso-ai-bubble user-bubble">
-                      <p>Draft a follow-up email for Elite Fitness about the POS upgrade.</p>
-                    </div>
+                  <div class="iso-demo-stat-card">
+                    <div class="iso-demo-stat-icon parts"><i class="fa-solid fa-handshake"></i></div>
+                    <div><span class="iso-demo-stat-label">Approved Referrals</span><strong>5</strong></div>
                   </div>
-                  <div class="iso-ai-msg assistant">
-                    <div class="iso-ai-avatar"><i class="fa-solid fa-robot"></i></div>
-                    <div class="iso-ai-bubble">
-                      <p>Done! I've drafted a personalized email referencing their volume growth and POS benefits. Ready to review in your outbox. <span class="iso-ai-cursor">|</span></p>
-                    </div>
+                  <div class="iso-demo-stat-card">
+                    <div class="iso-demo-stat-icon cust"><i class="fa-solid fa-gift"></i></div>
+                    <div><span class="iso-demo-stat-label">Redeemed YTD</span><strong>$2,150</strong></div>
+                  </div>
+                </div>
+                <div class="iso-demo-table">
+                  <div class="iso-demo-table-head">
+                    <span>Date</span><span>Activity</span><span>Type</span><span>Amount</span>
+                  </div>
+                  <div class="iso-demo-table-row">
+                    <span>May 24</span><span>Referral approved — Brewline Cafe</span><span class="iso-badge-demo green">Referral</span><span>+$75.00</span>
+                  </div>
+                  <div class="iso-demo-table-row">
+                    <span>May 22</span><span>Statement credit redemption</span><span class="iso-badge-demo blue">Redeem</span><span>−$250.00</span>
+                  </div>
+                  <div class="iso-demo-table-row">
+                    <span>May 18</span><span>Monthly processing rewards</span><span class="iso-badge-demo yellow">Earned</span><span>+$32.40</span>
+                  </div>
+                  <div class="iso-demo-table-row">
+                    <span>May 12</span><span>Referral approved — Northside Auto</span><span class="iso-badge-demo green">Referral</span><span>+$75.00</span>
                   </div>
                 </div>
               </div>
