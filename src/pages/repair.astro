@@ -909,6 +909,19 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         <span><i class="fa-solid fa-headset"></i> 24/7 Support</span>
         <span><i class="fa-solid fa-file-contract"></i> No Contracts</span>
       </div>
+
+      <div class="rp-social">
+        <h3 class="rp-social__title">Follow PPD Repair</h3>
+        <p class="rp-social__sub">See product updates, demos, and repair shop software tips.</p>
+        <div class="rp-social__links">
+          <a class="rp-social__btn rp-social__btn--ig" href="https://www.instagram.com/ppdrepair/" target="_blank" rel="noopener noreferrer" aria-label="Follow PPD Repair on Instagram">
+            <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+          </a>
+          <a class="rp-social__btn rp-social__btn--yt" href="https://www.youtube.com/@PPDRepair/" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to PPD Repair on YouTube">
+            <i class="fa-brands fa-youtube"></i><span>YouTube</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1291,6 +1304,18 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 .rp-cta__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:36px}
 .rp-cta__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
 .rp-cta__badges span{display:inline-flex;align-items:center;gap:6px;font-size:12px;opacity:.5;font-weight:500}.rp-cta__badges span i{color:#00CFFF;opacity:.7}
+
+/* ─── Follow PPD Repair ─── */
+.rp-social{margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1)}
+.rp-social__title{font-size:1.35rem;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.rp-social__sub{font-size:.95rem;opacity:.7;margin:0 0 22px}
+.rp-social__links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.rp-social__btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:14px;font-weight:700;font-size:.95rem;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.rp-social__btn i{font-size:1.25rem}
+.rp-social__btn:hover{transform:translateY(-3px) scale(1.03)}
+.rp-social__btn--ig:hover{background:linear-gradient(135deg,#feda75,#d62976,#962fbf);border-color:transparent;box-shadow:0 10px 30px rgba(214,41,118,.45)}
+.rp-social__btn--yt:hover{background:#FF0000;border-color:transparent;box-shadow:0 10px 30px rgba(255,0,0,.4)}
+@media(max-width:520px){.rp-social__links{flex-direction:column}.rp-social__btn{justify-content:center;width:100%}}
 
 /* ═══════════════ MODAL ═══════════════ */
 .rp-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s}
