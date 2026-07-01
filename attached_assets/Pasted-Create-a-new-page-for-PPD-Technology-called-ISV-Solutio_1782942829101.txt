@@ -1,0 +1,648 @@
+Create a new page for PPD Technology called “ISV Solutions.”
+
+Page route:
+Use /isv-solutions
+
+Page title:
+ISV Solutions | PPD Technology
+
+Meta description:
+Embedded payments, merchant onboarding, and build-for-you software solutions for ISVs, SaaS companies, and vertical software teams.
+
+Important positioning:
+This page is for ISV companies, SaaS founders, software platforms, and vertical-market companies that want to monetize payments. This is not the same as the sales agent page or ISO page.
+
+PPD Technology should be positioned as more than a payment integration partner.
+
+Most ISV payment pages talk about APIs, embedded payments, onboarding, security, reporting, and revenue share. PPD Technology should offer all of that, but with a bigger differentiator:
+
+If the ISV already has software, we can help them embed payments, improve merchant onboarding, add hardware/payment options, and monetize transactions.
+
+If the ISV does not have software yet, or has an idea but not a technical team, PPD Technology can help build the software for them so they can focus on selling, merchant relationships, and growing the vertical.
+
+Core message:
+“Already have software? We’ll help you monetize payments. Need software built? We can help build it so you can focus on selling.”
+
+Design direction:
+Make this page feel premium, modern, colorful, and SaaS-like.
+Use the existing PPD Technology visual style:
+- Deep navy and blue gradients
+- Cyan/blue/purple accents
+- Rounded cards
+- Clean spacing
+- Software dashboard mockups
+- Payment/merchant dashboard visuals
+- Subtle glow effects
+- Modern icons
+- Responsive layout
+
+Do not copy competitor designs or copy. Use competitor pages only as inspiration for what ISV buyers expect.
+
+Navigation:
+Add “ISV Solutions” to the site navigation where appropriate.
+Preferred placement:
+- Under Solutions, Partners, or a similar dropdown if one exists.
+- If there is no dropdown, add it as a top-level nav link only if the current nav has room.
+Keep navigation consistent with the current site.
+
+Page sections:
+
+1. HERO SECTION
+
+Badge:
+ISV SOLUTIONS
+
+Headline:
+Payments, software, and launch support for ISVs ready to scale.
+
+Subheadline:
+Already have software? We’ll help you embed payments and monetize every transaction. Need software built? PPD Technology can help build the platform so you can focus on selling.
+
+Supporting copy:
+From payment integration and merchant onboarding to branded software, reporting, and go-to-market support, we help ISV companies turn payment processing into a stronger revenue engine.
+
+Primary CTA:
+Book an ISV Strategy Call
+
+Secondary CTA:
+Explore Build-for-You Software
+
+Hero visual:
+Create a large interactive SaaS/payment dashboard mockup on the right side.
+
+Mockup title:
+ISV Growth Dashboard
+
+Inside the mockup, show:
+- Embedded Payments
+- Merchant Onboarding
+- Software Fees
+- Processing Volume
+- Active Merchants
+- Monthly Revenue
+- API Status
+- Boarding Pipeline
+- Payment Activity
+
+Add three clickable tabs inside the hero visual:
+- Existing Software
+- Build My Software
+- White-Label Launch
+
+When a visitor clicks each tab, the mockup content should change.
+
+Use React state or the equivalent framework pattern already used in the project.
+
+Tab 1: Existing Software
+Dashboard headline:
+Embed payments into your current platform.
+Stats:
+- Payment Volume: $1.8M
+- Active Merchants: 74
+- Software Fees: $6,240
+- Boarding Status: 18 in progress
+Activity:
+- New merchant boarded
+- Gateway connected
+- Recurring billing enabled
+
+Tab 2: Build My Software
+Dashboard headline:
+Turn your vertical idea into a sellable platform.
+Stats:
+- MVP Modules: 8
+- Launch Timeline: Scoped
+- Demo Accounts: Ready
+- Sales Pipeline: Building
+Activity:
+- Workflow mapped
+- Dashboard prototype created
+- Payment flow planned
+
+Tab 3: White-Label Launch
+Dashboard headline:
+Launch under your brand with PPD behind the build.
+Stats:
+- Brand Setup: Complete
+- Merchant Apps: Digital
+- Revenue Streams: Software + Processing
+- Support Model: Defined
+Activity:
+- Branded portal configured
+- Onboarding emails drafted
+- Sales assets prepared
+
+Hero trust chips:
+- Embedded payments
+- Merchant onboarding
+- Build-for-you software
+- White-label options
+- Software fees + processing
+- Go-to-market support
+
+2. DIFFERENTIATOR SECTION
+
+Badge:
+WHY PPD FOR ISVS
+
+Heading:
+More than a payment integration.
+
+Subheading:
+Most providers give ISVs payment APIs and a partner agreement. PPD Technology can help with the software, the payments, the onboarding, and the selling system behind it.
+
+Use a 3 or 4 card layout.
+
+Card 1 title:
+Embed Payments Into Your Platform
+
+Card 1 body:
+Add card-present, card-not-present, recurring, invoice, and online payment flows directly into your software experience.
+
+Card 2 title:
+Build the Software With Us
+
+Card 2 body:
+If you have the niche, relationships, and sales motion but not the full product team, we can help scope, design, and build the software around your market.
+
+Card 3 title:
+Monetize Beyond Subscriptions
+
+Card 3 body:
+Create revenue through processing, software fees, setup fees, premium modules, and long-term merchant retention.
+
+Card 4 title:
+Launch With a Sales Engine
+
+Card 4 body:
+Get support around landing pages, merchant acquisition funnels, sales materials, onboarding flows, and positioning for your vertical.
+
+3. “TWO PATHS” SECTION
+
+Badge:
+CHOOSE YOUR PATH
+
+Heading:
+Whether you have software or just the market, we can help.
+
+Create two large side-by-side cards.
+
+Card 1:
+Title:
+I already have software.
+
+Subtitle:
+We help you add payments and monetize your user base.
+
+Bullets:
+- Embedded payment integration
+- Gateway and processor setup
+- Merchant onboarding flow
+- Terminal and device options
+- Recurring billing and invoices
+- Reporting and reconciliation support
+- Revenue share strategy
+- Developer/integration support
+
+CTA:
+Integrate Payments
+
+Card 2:
+Title:
+I need software built.
+
+Subtitle:
+We help you build the platform so you can focus on selling.
+
+Bullets:
+- Product strategy and scope
+- UI/UX design
+- Custom vertical software buildout
+- Payment workflow planning
+- Merchant dashboard
+- Admin portal
+- Branded experience
+- Launch and sales support
+
+CTA:
+Build My ISV Platform
+
+Design:
+Make the second card visually stand out because this is PPD’s biggest differentiator.
+
+4. BUILD-FOR-YOU SOFTWARE SECTION
+
+Badge:
+BUILD-FOR-YOU SOFTWARE
+
+Heading:
+You sell the market. We help build the software.
+
+Subheading:
+Some ISV founders already know the vertical, the merchants, and the pain points. They just need the product built the right way. PPD Technology can help turn that niche knowledge into a software platform with payments built in from the start.
+
+Create a visual process/timeline:
+
+Step 1:
+Find the vertical
+Body:
+We identify the merchant niche, workflow, pain points, and revenue opportunity.
+
+Step 2:
+Map the product
+Body:
+We define the features, payment flows, merchant dashboard, admin tools, and launch plan.
+
+Step 3:
+Build the platform
+Body:
+We help create the branded software experience, payment workflows, CRM tools, and reporting.
+
+Step 4:
+Launch with payments
+Body:
+We connect the payment stack, onboarding process, devices, processing, and merchant support flow.
+
+Step 5:
+Sell and scale
+Body:
+You focus on merchant acquisition, demos, referrals, and expanding the vertical.
+
+Add a visual mockup beside the timeline:
+- Product roadmap
+- UI wireframe
+- Payment API connection
+- Merchant CRM
+- Revenue model
+
+5. PAYMENT CAPABILITIES SECTION
+
+Badge:
+PAYMENT STACK
+
+Heading:
+The payment features ISVs need to compete.
+
+Subheading:
+Build a better software experience with payment tools that fit how your merchants actually get paid.
+
+Use cards or an icon grid.
+
+Capabilities:
+- In-person payments
+- Online checkout
+- Mobile payments
+- Recurring billing
+- Invoices and payment links
+- ACH where applicable
+- Card tokenization
+- Hosted payment fields
+- Gateway integrations
+- Merchant onboarding
+- Reporting dashboards
+- Terminal and device options
+- Tips, adjustments, and partial approvals where supported
+- Gift, loyalty, or value-added services where applicable
+- Portfolio and residual visibility
+
+Important compliance wording:
+Do not make absolute claims like “we eliminate PCI risk” or “we guarantee compliance.”
+Use safer wording like:
+- “PCI-conscious payment workflows”
+- “Tokenization-supported payment experiences”
+- “Compliance support”
+- “Security-focused implementation”
+- “Processor-supported tools where available”
+
+6. VERTICAL EXAMPLES SECTION
+
+Badge:
+VERTICAL SOFTWARE
+
+Heading:
+Built around the industries your merchants actually operate in.
+
+Subheading:
+Generic payment tools are easy to copy. Vertical software is harder to replace.
+
+Create interactive tabs or cards for vertical examples.
+
+Verticals:
+- Restaurants
+- Repair Shops
+- Retail
+- Contractors
+- Med Spas
+- Automotive
+- Healthcare
+- Fitness
+- B2B Services
+
+When a user clicks or hovers on each vertical, show example modules.
+
+Restaurants:
+- Table orders
+- Tips
+- Loyalty
+- Online ordering
+- Staff reports
+
+Repair Shops:
+- Repair tickets
+- Device intake
+- Warranty tracking
+- SMS updates
+- Deposits
+
+Retail:
+- Inventory
+- Gift cards
+- Customer profiles
+- Product reporting
+- Checkout
+
+Contractors:
+- Estimates
+- Job deposits
+- Mobile invoices
+- Recurring billing
+- Field payments
+
+Med Spas:
+- Packages
+- Memberships
+- Deposits
+- Client profiles
+- Payment plans
+
+Automotive:
+- Repair orders
+- Parts tracking
+- Invoices
+- Deposits
+- Customer history
+
+Healthcare:
+- Patient payments
+- Payment plans
+- Invoices
+- Recurring billing
+- Reporting
+
+Fitness:
+- Memberships
+- Class packages
+- Recurring payments
+- Check-ins
+- Client profiles
+
+B2B Services:
+- Invoices
+- ACH options
+- Recurring billing
+- Customer accounts
+- Reporting
+
+7. MONETIZATION SECTION
+
+Badge:
+MONETIZE PAYMENTS
+
+Heading:
+Turn payments into a real revenue stream.
+
+Subheading:
+ISVs should not only make money from software subscriptions. With the right payment strategy, every active merchant relationship can become more valuable.
+
+Use four cards:
+
+Card 1 title:
+Processing Revenue
+
+Body:
+Earn from the payment volume running through the software.
+
+Card 2 title:
+Software Fees
+
+Body:
+Add monthly platform fees, premium modules, or vertical-specific feature packages.
+
+Card 3 title:
+Implementation Fees
+
+Body:
+Charge for onboarding, setup, migration, training, or custom workflows where appropriate.
+
+Card 4 title:
+Retention and Expansion
+
+Body:
+Payments make the software stickier, helping you retain merchants and expand into more locations or modules.
+
+Add a simple calculator-style mockup:
+Inputs:
+- Active merchants
+- Average monthly volume
+- Software fee per merchant
+- Estimated payment margin
+
+Keep it front-end only. It does not need to be a real financial calculator unless easy to implement. If implemented, label it clearly as an estimate.
+
+8. GO-TO-MARKET SUPPORT SECTION
+
+Badge:
+GROWTH SUPPORT
+
+Heading:
+We help you sell the platform, not just build it.
+
+Subheading:
+A software platform only wins if merchants understand why they need it. PPD Technology can help with the sales and launch assets behind the offer.
+
+Cards:
+- Landing pages and websites
+- Merchant acquisition funnels
+- Demo scripts
+- Sales decks
+- Pricing strategy
+- Onboarding emails
+- Partner CRM
+- Referral campaigns
+- Vertical messaging
+- Launch roadmap
+
+9. SECURITY / ONBOARDING SECTION
+
+Badge:
+ONBOARDING + SECURITY
+
+Heading:
+Cleaner merchant onboarding from demo to processing.
+
+Subheading:
+Help merchants move from interest to application to activation with a smoother onboarding experience.
+
+Include:
+- Digital merchant applications
+- White-labeled or branded onboarding where available
+- Merchant status tracking
+- Boarding pipeline
+- Payment setup support
+- Device and gateway coordination
+- Reporting access
+- Security-focused payment workflows
+- Tokenization-supported payments where available
+
+Avoid overpromising underwriting speed, approval guarantees, or compliance guarantees.
+
+10. FAQ SECTION
+
+Add a FAQ section with these questions and answers:
+
+Q:
+Do I need to already have software?
+
+A:
+No. If you already have software, we can help with payment integration and monetization. If you do not have software yet, PPD Technology can help scope and build a platform around your vertical.
+
+Q:
+Can PPD build the software for my ISV company?
+
+A:
+Yes. For the right partner and market, we can help design and build a branded software platform with payments built into the workflow.
+
+Q:
+Can the software be branded as my company?
+
+A:
+Yes. The page should communicate that branding, co-branding, or white-label style options may be available depending on the project structure.
+
+Q:
+How do ISVs make money with payments?
+
+A:
+ISVs can create revenue from processing volume, software fees, setup or implementation fees, premium modules, and long-term merchant retention.
+
+Q:
+Can we support in-person devices?
+
+A:
+Yes. The page should communicate that device and terminal options can be part of the payment strategy depending on the vertical and integration.
+
+Q:
+What if my software is already built?
+
+A:
+PPD Technology can help review the current payment flow, identify integration options, improve onboarding, and create a plan to monetize payments.
+
+Q:
+What types of verticals do you work with?
+
+A:
+Restaurants, retail, repair shops, contractors, med spas, automotive, healthcare, fitness, B2B services, and other verticals where payments and workflow software can work together.
+
+Q:
+How long does it take to launch?
+
+A:
+It depends on whether the partner already has software, the complexity of the payment workflow, and the custom features needed. The first step is an ISV strategy call to map the best path.
+
+11. FINAL CTA SECTION
+
+Heading:
+Ready to build, embed, or monetize payments?
+
+Body:
+Tell us what you are building, who you sell to, and whether you already have software. We’ll help you map the right ISV path.
+
+Primary CTA:
+Book an ISV Strategy Call
+
+Secondary CTA:
+Talk Through My Software Idea
+
+Optional form fields:
+If there is an existing contact form component, add or reuse it with ISV-specific fields:
+- Name
+- Company
+- Email
+- Phone
+- Do you already have software?
+  Options:
+  - Yes, we have software
+  - No, we need it built
+  - We have a concept/MVP
+- What vertical do you serve?
+- Estimated number of merchants or users
+- What do you want help with?
+  Options:
+  - Embedded payments
+  - Merchant onboarding
+  - Custom software build
+  - White-label platform
+  - Sales/launch support
+  - Not sure yet
+- Message
+
+Technical implementation instructions:
+1. Inspect the existing project structure and routing system.
+2. Create a new ISV Solutions page at /isv-solutions using the same framework conventions already used in the project.
+3. Reuse existing layout components, nav, footer, buttons, cards, icons, gradients, and spacing where possible.
+4. Add the page to navigation if appropriate.
+5. Use a data-driven structure for interactive tabs and vertical examples.
+6. Use React state or the project’s existing state pattern for:
+   - Hero dashboard tabs
+   - Vertical examples
+   - Optional calculator
+7. Do not add external dependencies unless the project already uses them.
+8. Do not hotlink competitor images or copy competitor content.
+9. Use brand-safe UI mockups, icons, gradients, and CSS illustrations.
+10. Make the page fully responsive.
+11. Ensure strong mobile layout:
+   - Stack hero copy above visual
+   - Cards become single column
+   - Tabs wrap or horizontally scroll
+   - No overflow
+12. Add SEO metadata for the page if the project supports it.
+13. Make sure all buttons link to the existing booking/contact destination unless there is already a better scheduling route.
+14. Check for typos and grammar.
+15. Run the app and verify the page builds without errors.
+
+Tone:
+Confident, practical, and direct.
+Speak to software founders, ISV teams, SaaS platforms, and vertical-market operators.
+Avoid vague corporate wording.
+The page should make visitors feel:
+“PPD can help us monetize payments, and if we need the software built, they can help with that too.”
+
+Important messaging to include throughout the page:
+- Already have software? We can help integrate payments.
+- Need software built? We can help build it.
+- You focus on selling. We help with the platform, payments, onboarding, and launch.
+- Monetize through software fees and processing.
+- Build around a specific vertical, not a generic payment experience.
+- Create a stickier product for merchants.
+
+Acceptance criteria:
+- A new page exists at /isv-solutions.
+- The page is clearly for ISVs and software companies.
+- The page explains embedded payments and payment monetization.
+- The page clearly states PPD can help build the software for partners who need it.
+- The page explains that ISVs can focus on selling while PPD supports software, payments, onboarding, and launch.
+- The design is premium, colorful, and consistent with PPDTechnology.com.
+- The hero includes an interactive ISV dashboard mockup.
+- The page includes sections for:
+  - Hero
+  - Why PPD for ISVs
+  - Existing software vs build-for-you path
+  - Build-for-you software process
+  - Payment capabilities
+  - Vertical examples
+  - Monetization
+  - Go-to-market support
+  - Onboarding/security
+  - FAQ
+  - Final CTA
+- The page works well on desktop and mobile.
+- No unrelated existing pages are broken.

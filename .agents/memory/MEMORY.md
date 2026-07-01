@@ -1,0 +1,1 @@
+- [Astro scoped CSS vs innerHTML](astro-scoped-css-innerhtml.md) — JS-injected `<li>` lose scoped `<style>`; fix with `.parent :global(child)` or static-toggle. Screenshot passes, click breaks.

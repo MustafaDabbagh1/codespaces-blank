@@ -1,0 +1,952 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="ISV Solutions | PPD Technology"
+  description="Embedded payments, merchant onboarding, and build-for-you software solutions for ISVs, SaaS companies, and vertical software teams."
+>
+  <div class="isv-page">
+
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="isv-hero">
+      <div class="isv-hero-grid" aria-hidden="true"></div>
+      <div class="isv-orb isv-orb--1" aria-hidden="true"></div>
+      <div class="isv-orb isv-orb--2" aria-hidden="true"></div>
+
+      <div class="container isv-hero-inner">
+        <div class="isv-hero-text">
+          <span class="isv-badge isv-badge--on-dark"><i class="fa-solid fa-plug-circle-bolt"></i> ISV Solutions</span>
+          <h1 class="isv-hero-title">
+            Payments, software, and launch support for <span class="isv-grad">ISVs ready to scale.</span>
+          </h1>
+          <p class="isv-hero-sub">
+            Already have software? We'll help you embed payments and monetize every transaction. Need software built?
+            PPD Technology can help build the platform so you can focus on selling.
+          </p>
+          <p class="isv-hero-support">
+            From payment integration and merchant onboarding to branded software, reporting, and go-to-market support,
+            we help ISV companies turn payment processing into a stronger revenue engine.
+          </p>
+
+          <div class="isv-hero-actions">
+            <a class="isv-btn isv-btn-primary isv-btn-lg" href="/contact">
+              <i class="fa-solid fa-calendar-check"></i> Book an ISV Strategy Call
+            </a>
+            <a class="isv-btn isv-btn-ghost isv-btn-lg" href="#build">
+              <i class="fa-solid fa-cubes"></i> Explore Build-for-You Software
+            </a>
+          </div>
+
+          <ul class="isv-chips" aria-label="What PPD offers ISVs">
+            <li><i class="fa-solid fa-bolt"></i> Embedded payments</li>
+            <li><i class="fa-solid fa-user-check"></i> Merchant onboarding</li>
+            <li><i class="fa-solid fa-screwdriver-wrench"></i> Build-for-you software</li>
+            <li><i class="fa-solid fa-tags"></i> White-label options</li>
+            <li><i class="fa-solid fa-coins"></i> Software fees + processing</li>
+            <li><i class="fa-solid fa-rocket"></i> Go-to-market support</li>
+          </ul>
+        </div>
+
+        <!-- Interactive dashboard mockup -->
+        <div class="isv-hero-visual">
+          <div class="isv-dash">
+            <div class="isv-dash-bar">
+              <span class="isv-dash-dot" style="background:#ff5f57"></span>
+              <span class="isv-dash-dot" style="background:#febc2e"></span>
+              <span class="isv-dash-dot" style="background:#28c840"></span>
+              <span class="isv-dash-title">ISV Growth Dashboard</span>
+              <span class="isv-dash-api"><span class="isv-dash-api-dot"></span> API Operational</span>
+            </div>
+
+            <div class="isv-dash-tabs" role="tablist" aria-label="ISV dashboard views">
+              <button type="button" class="isv-dash-tab active" role="tab" aria-selected="true" tabindex="0" data-isv-tab="existing">Existing Software</button>
+              <button type="button" class="isv-dash-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-tab="build">Build My Software</button>
+              <button type="button" class="isv-dash-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-tab="white">White-Label Launch</button>
+            </div>
+
+            <div class="isv-dash-body">
+              <!-- Panel 1: Existing Software -->
+              <div class="isv-dash-panel is-active" role="tabpanel" data-isv-panel="existing">
+                <p class="isv-dash-headline">Embed payments into your current platform.</p>
+                <div class="isv-dash-stats">
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Payment Volume</span><span class="isv-dash-stat-value">$1.8M</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Active Merchants</span><span class="isv-dash-stat-value">74</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Software Fees</span><span class="isv-dash-stat-value">$6,240</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Boarding Status</span><span class="isv-dash-stat-value">18 in progress</span></div>
+                </div>
+                <div class="isv-dash-activity">
+                  <span class="isv-dash-activity-title"><i class="fa-solid fa-wave-square"></i> Payment Activity</span>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> New merchant boarded</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Gateway connected</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Recurring billing enabled</div>
+                </div>
+              </div>
+
+              <!-- Panel 2: Build My Software -->
+              <div class="isv-dash-panel" role="tabpanel" data-isv-panel="build" hidden>
+                <p class="isv-dash-headline">Turn your vertical idea into a sellable platform.</p>
+                <div class="isv-dash-stats">
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">MVP Modules</span><span class="isv-dash-stat-value">8</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Launch Timeline</span><span class="isv-dash-stat-value">Scoped</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Demo Accounts</span><span class="isv-dash-stat-value">Ready</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Sales Pipeline</span><span class="isv-dash-stat-value">Building</span></div>
+                </div>
+                <div class="isv-dash-activity">
+                  <span class="isv-dash-activity-title"><i class="fa-solid fa-wave-square"></i> Build Activity</span>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Workflow mapped</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Dashboard prototype created</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Payment flow planned</div>
+                </div>
+              </div>
+
+              <!-- Panel 3: White-Label Launch -->
+              <div class="isv-dash-panel" role="tabpanel" data-isv-panel="white" hidden>
+                <p class="isv-dash-headline">Launch under your brand with PPD behind the build.</p>
+                <div class="isv-dash-stats">
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Brand Setup</span><span class="isv-dash-stat-value">Complete</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Merchant Apps</span><span class="isv-dash-stat-value">Digital</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Revenue Streams</span><span class="isv-dash-stat-value">Software + Processing</span></div>
+                  <div class="isv-dash-stat"><span class="isv-dash-stat-label">Support Model</span><span class="isv-dash-stat-value">Defined</span></div>
+                </div>
+                <div class="isv-dash-activity">
+                  <span class="isv-dash-activity-title"><i class="fa-solid fa-wave-square"></i> Launch Activity</span>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Branded portal configured</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Onboarding emails drafted</div>
+                  <div class="isv-dash-row"><i class="fa-solid fa-circle-check"></i> Sales assets prepared</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. DIFFERENTIATOR ===================== -->
+    <section class="isv-section isv-section--light">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge"><i class="fa-solid fa-layer-group"></i> Why PPD for ISVs</span>
+          <h2 class="isv-h2">More than a payment integration.</h2>
+          <p class="isv-sub">
+            Most providers give ISVs payment APIs and a partner agreement. PPD Technology can help with the software,
+            the payments, the onboarding, and the selling system behind it.
+          </p>
+        </div>
+
+        <div class="isv-grid-4">
+          <div class="isv-card reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-plug"></i></div>
+            <h3>Embed Payments Into Your Platform</h3>
+            <p>Add card-present, card-not-present, recurring, invoice, and online payment flows directly into your software experience.</p>
+          </div>
+          <div class="isv-card reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Build the Software With Us</h3>
+            <p>If you have the niche, relationships, and sales motion but not the full product team, we can help scope, design, and build the software around your market.</p>
+          </div>
+          <div class="isv-card reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-coins"></i></div>
+            <h3>Monetize Beyond Subscriptions</h3>
+            <p>Create revenue through processing, software fees, setup fees, premium modules, and long-term merchant retention.</p>
+          </div>
+          <div class="isv-card reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Launch With a Sales Engine</h3>
+            <p>Get support around landing pages, merchant acquisition funnels, sales materials, onboarding flows, and positioning for your vertical.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. TWO PATHS ===================== -->
+    <section class="isv-section isv-section--dark">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge isv-badge--on-dark"><i class="fa-solid fa-code-branch"></i> Choose Your Path</span>
+          <h2 class="isv-h2 isv-h2--light">Whether you have software or just the market, we can help.</h2>
+        </div>
+
+        <div class="isv-paths">
+          <div class="isv-path reveal">
+            <span class="isv-path-tag">Path A</span>
+            <h3>I already have software.</h3>
+            <p class="isv-path-sub">We help you add payments and monetize your user base.</p>
+            <ul class="isv-path-list">
+              <li><i class="fa-solid fa-check"></i> Embedded payment integration</li>
+              <li><i class="fa-solid fa-check"></i> Gateway and processor setup</li>
+              <li><i class="fa-solid fa-check"></i> Merchant onboarding flow</li>
+              <li><i class="fa-solid fa-check"></i> Terminal and device options</li>
+              <li><i class="fa-solid fa-check"></i> Recurring billing and invoices</li>
+              <li><i class="fa-solid fa-check"></i> Reporting and reconciliation support</li>
+              <li><i class="fa-solid fa-check"></i> Revenue share strategy</li>
+              <li><i class="fa-solid fa-check"></i> Developer / integration support</li>
+            </ul>
+            <a class="isv-btn isv-btn-outline-dark isv-btn-block" href="/contact">Integrate Payments</a>
+          </div>
+
+          <div class="isv-path isv-path--feature reveal">
+            <span class="isv-path-flag"><i class="fa-solid fa-star"></i> PPD Differentiator</span>
+            <span class="isv-path-tag isv-path-tag--feature">Path B</span>
+            <h3>I need software built.</h3>
+            <p class="isv-path-sub">We help you build the platform so you can focus on selling.</p>
+            <ul class="isv-path-list">
+              <li><i class="fa-solid fa-check"></i> Product strategy and scope</li>
+              <li><i class="fa-solid fa-check"></i> UI/UX design</li>
+              <li><i class="fa-solid fa-check"></i> Custom vertical software buildout</li>
+              <li><i class="fa-solid fa-check"></i> Payment workflow planning</li>
+              <li><i class="fa-solid fa-check"></i> Merchant dashboard</li>
+              <li><i class="fa-solid fa-check"></i> Admin portal</li>
+              <li><i class="fa-solid fa-check"></i> Branded experience</li>
+              <li><i class="fa-solid fa-check"></i> Launch and sales support</li>
+            </ul>
+            <a class="isv-btn isv-btn-primary isv-btn-block" href="/contact">Build My ISV Platform</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. BUILD-FOR-YOU ===================== -->
+    <section class="isv-section isv-section--light" id="build">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge"><i class="fa-solid fa-cubes"></i> Build-for-You Software</span>
+          <h2 class="isv-h2">You sell the market. We help build the software.</h2>
+          <p class="isv-sub">
+            Some ISV founders already know the vertical, the merchants, and the pain points. They just need the product
+            built the right way. PPD Technology can help turn that niche knowledge into a software platform with payments
+            built in from the start.
+          </p>
+        </div>
+
+        <div class="isv-build">
+          <ol class="isv-timeline">
+            <li class="isv-step reveal">
+              <span class="isv-step-num">1</span>
+              <div class="isv-step-body">
+                <h3>Find the vertical</h3>
+                <p>We identify the merchant niche, workflow, pain points, and revenue opportunity.</p>
+              </div>
+            </li>
+            <li class="isv-step reveal">
+              <span class="isv-step-num">2</span>
+              <div class="isv-step-body">
+                <h3>Map the product</h3>
+                <p>We define the features, payment flows, merchant dashboard, admin tools, and launch plan.</p>
+              </div>
+            </li>
+            <li class="isv-step reveal">
+              <span class="isv-step-num">3</span>
+              <div class="isv-step-body">
+                <h3>Build the platform</h3>
+                <p>We help create the branded software experience, payment workflows, CRM tools, and reporting.</p>
+              </div>
+            </li>
+            <li class="isv-step reveal">
+              <span class="isv-step-num">4</span>
+              <div class="isv-step-body">
+                <h3>Launch with payments</h3>
+                <p>We connect the payment stack, onboarding process, devices, processing, and merchant support flow.</p>
+              </div>
+            </li>
+            <li class="isv-step reveal">
+              <span class="isv-step-num">5</span>
+              <div class="isv-step-body">
+                <h3>Sell and scale</h3>
+                <p>You focus on merchant acquisition, demos, referrals, and expanding the vertical.</p>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="isv-build-mock reveal" aria-label="Build blueprint preview">
+            <div class="isv-build-mock-head"><i class="fa-solid fa-diagram-project"></i> Platform Blueprint</div>
+            <div class="isv-build-mock-item"><i class="fa-solid fa-map"></i> <span>Product roadmap</span><em>Scoped</em></div>
+            <div class="isv-build-mock-item"><i class="fa-solid fa-object-group"></i> <span>UI wireframe</span><em>In design</em></div>
+            <div class="isv-build-mock-item"><i class="fa-solid fa-code"></i> <span>Payment API connection</span><em>Mapped</em></div>
+            <div class="isv-build-mock-item"><i class="fa-solid fa-address-book"></i> <span>Merchant CRM</span><em>Planned</em></div>
+            <div class="isv-build-mock-item"><i class="fa-solid fa-sack-dollar"></i> <span>Revenue model</span><em>Modeled</em></div>
+            <div class="isv-build-mock-foot">
+              <div class="isv-build-mock-bar"><span style="width:72%"></span></div>
+              <span class="isv-build-mock-note">Build progress preview — sample data</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. PAYMENT CAPABILITIES ===================== -->
+    <section class="isv-section isv-section--dark">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge isv-badge--on-dark"><i class="fa-solid fa-layer-group"></i> Payment Stack</span>
+          <h2 class="isv-h2 isv-h2--light">The payment features ISVs need to compete.</h2>
+          <p class="isv-sub isv-sub--light">
+            Build a better software experience with payment tools that fit how your merchants actually get paid.
+          </p>
+        </div>
+
+        <div class="isv-cap-grid">
+          <div class="isv-cap reveal"><i class="fa-solid fa-store"></i> In-person payments</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-cart-shopping"></i> Online checkout</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-mobile-screen"></i> Mobile payments</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-arrows-rotate"></i> Recurring billing</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices and payment links</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-building-columns"></i> ACH where applicable</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-shield-halved"></i> Card tokenization</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-keyboard"></i> Hosted payment fields</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-plug"></i> Gateway integrations</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-user-check"></i> Merchant onboarding</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-chart-line"></i> Reporting dashboards</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-credit-card"></i> Terminal and device options</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-hand-holding-dollar"></i> Tips, adjustments &amp; partial approvals where supported</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-gift"></i> Gift, loyalty &amp; value-added services where applicable</div>
+          <div class="isv-cap reveal"><i class="fa-solid fa-sitemap"></i> Portfolio and residual visibility</div>
+        </div>
+
+        <p class="isv-compliance reveal">
+          <i class="fa-solid fa-lock"></i> PCI-conscious payment workflows, tokenization-supported payment experiences,
+          and security-focused implementation with compliance support and processor-supported tools where available.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== 6. VERTICAL EXAMPLES ===================== -->
+    <section class="isv-section isv-section--light">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge"><i class="fa-solid fa-diagram-project"></i> Vertical Software</span>
+          <h2 class="isv-h2">Built around the industries your merchants actually operate in.</h2>
+          <p class="isv-sub">Generic payment tools are easy to copy. Vertical software is harder to replace.</p>
+        </div>
+
+        <div class="isv-vert reveal">
+          <div class="isv-vert-tabs" role="tablist" aria-label="Vertical software examples">
+            <button type="button" class="isv-vert-tab active" role="tab" aria-selected="true" tabindex="0" data-isv-vert="restaurants"><i class="fa-solid fa-utensils"></i> Restaurants</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="repair"><i class="fa-solid fa-screwdriver-wrench"></i> Repair Shops</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="retail"><i class="fa-solid fa-store"></i> Retail</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="contractors"><i class="fa-solid fa-helmet-safety"></i> Contractors</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="medspas"><i class="fa-solid fa-spa"></i> Med Spas</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="automotive"><i class="fa-solid fa-car"></i> Automotive</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="healthcare"><i class="fa-solid fa-user-doctor"></i> Healthcare</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="fitness"><i class="fa-solid fa-dumbbell"></i> Fitness</button>
+            <button type="button" class="isv-vert-tab" role="tab" aria-selected="false" tabindex="-1" data-isv-vert="b2b"><i class="fa-solid fa-briefcase"></i> B2B Services</button>
+          </div>
+
+          <div class="isv-vert-panel" role="tabpanel">
+            <div class="isv-vert-panel-head">
+              <span class="isv-vert-ico" data-isv-vert-ico><i class="fa-solid fa-utensils"></i></span>
+              <div>
+                <h3 data-isv-vert-title>Restaurants</h3>
+                <p>Example modules built into the platform</p>
+              </div>
+            </div>
+            <ul class="isv-vert-modules" data-isv-vert-modules>
+              <li><i class="fa-solid fa-check"></i> Table orders</li>
+              <li><i class="fa-solid fa-check"></i> Tips</li>
+              <li><i class="fa-solid fa-check"></i> Loyalty</li>
+              <li><i class="fa-solid fa-check"></i> Online ordering</li>
+              <li><i class="fa-solid fa-check"></i> Staff reports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. MONETIZATION ===================== -->
+    <section class="isv-section isv-section--dark">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge isv-badge--on-dark"><i class="fa-solid fa-coins"></i> Monetize Payments</span>
+          <h2 class="isv-h2 isv-h2--light">Turn payments into a real revenue stream.</h2>
+          <p class="isv-sub isv-sub--light">
+            ISVs should not only make money from software subscriptions. With the right payment strategy, every active
+            merchant relationship can become more valuable.
+          </p>
+        </div>
+
+        <div class="isv-grid-4">
+          <div class="isv-card isv-card--glass reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-chart-column"></i></div>
+            <h3>Processing Revenue</h3>
+            <p>Earn from the payment volume running through the software.</p>
+          </div>
+          <div class="isv-card isv-card--glass reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-cubes-stacked"></i></div>
+            <h3>Software Fees</h3>
+            <p>Add monthly platform fees, premium modules, or vertical-specific feature packages.</p>
+          </div>
+          <div class="isv-card isv-card--glass reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Implementation Fees</h3>
+            <p>Charge for onboarding, setup, migration, training, or custom workflows where appropriate.</p>
+          </div>
+          <div class="isv-card isv-card--glass reveal">
+            <div class="isv-card-ico"><i class="fa-solid fa-arrows-to-circle"></i></div>
+            <h3>Retention and Expansion</h3>
+            <p>Payments make the software stickier, helping you retain merchants and expand into more locations or modules.</p>
+          </div>
+        </div>
+
+        <div class="isv-calc reveal">
+          <div class="isv-calc-inputs">
+            <span class="isv-calc-tag"><i class="fa-solid fa-calculator"></i> Revenue Estimator</span>
+            <label class="isv-calc-field">
+              <span>Active merchants</span>
+              <input type="number" id="isvMerchants" min="0" step="1" value="50" inputmode="numeric" />
+            </label>
+            <label class="isv-calc-field">
+              <span>Average monthly volume ($ / merchant)</span>
+              <input type="number" id="isvVolume" min="0" step="1000" value="25000" inputmode="numeric" />
+            </label>
+            <label class="isv-calc-field">
+              <span>Software fee ($ / merchant / mo)</span>
+              <input type="number" id="isvFee" min="0" step="1" value="49" inputmode="numeric" />
+            </label>
+            <label class="isv-calc-field">
+              <span>Estimated payment margin (%)</span>
+              <input type="number" id="isvMargin" min="0" step="0.05" value="0.5" inputmode="decimal" />
+            </label>
+          </div>
+          <div class="isv-calc-out">
+            <div class="isv-calc-out-row">
+              <span>Processing revenue / mo</span>
+              <strong id="isvOutProcessing">$0</strong>
+            </div>
+            <div class="isv-calc-out-row">
+              <span>Software revenue / mo</span>
+              <strong id="isvOutSoftware">$0</strong>
+            </div>
+            <div class="isv-calc-out-total">
+              <span>Estimated monthly revenue</span>
+              <strong id="isvOutMonthly">$0</strong>
+            </div>
+            <div class="isv-calc-out-annual">
+              <span>Estimated annual revenue</span>
+              <strong id="isvOutAnnual">$0</strong>
+            </div>
+            <p class="isv-calc-note">Illustrative estimate only. Actual revenue depends on your pricing, program, and processing terms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. GO-TO-MARKET ===================== -->
+    <section class="isv-section isv-section--light">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge"><i class="fa-solid fa-rocket"></i> Growth Support</span>
+          <h2 class="isv-h2">We help you sell the platform, not just build it.</h2>
+          <p class="isv-sub">
+            A software platform only wins if merchants understand why they need it. PPD Technology can help with the sales
+            and launch assets behind the offer.
+          </p>
+        </div>
+
+        <div class="isv-gtm-grid">
+          <div class="isv-gtm reveal"><i class="fa-solid fa-window-maximize"></i> Landing pages and websites</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-filter"></i> Merchant acquisition funnels</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-clapperboard"></i> Demo scripts</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-file-powerpoint"></i> Sales decks</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-tags"></i> Pricing strategy</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-envelope-open-text"></i> Onboarding emails</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-address-book"></i> Partner CRM</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-share-nodes"></i> Referral campaigns</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-bullhorn"></i> Vertical messaging</div>
+          <div class="isv-gtm reveal"><i class="fa-solid fa-map-signs"></i> Launch roadmap</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. ONBOARDING + SECURITY ===================== -->
+    <section class="isv-section isv-section--dark">
+      <div class="container">
+        <div class="isv-head reveal">
+          <span class="isv-badge isv-badge--on-dark"><i class="fa-solid fa-shield-halved"></i> Onboarding + Security</span>
+          <h2 class="isv-h2 isv-h2--light">Cleaner merchant onboarding from demo to processing.</h2>
+          <p class="isv-sub isv-sub--light">
+            Help merchants move from interest to application to activation with a smoother onboarding experience.
+          </p>
+        </div>
+
+        <div class="isv-sec-grid">
+          <div class="isv-sec reveal"><i class="fa-solid fa-file-signature"></i> Digital merchant applications</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-tags"></i> White-labeled or branded onboarding where available</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-list-check"></i> Merchant status tracking</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-diagram-successor"></i> Boarding pipeline</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-gears"></i> Payment setup support</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-credit-card"></i> Device and gateway coordination</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-chart-line"></i> Reporting access</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-lock"></i> Security-focused payment workflows</div>
+          <div class="isv-sec reveal"><i class="fa-solid fa-shield"></i> Tokenization-supported payments where available</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 10. FAQ ===================== -->
+    <section class="isv-section isv-section--light">
+      <div class="container isv-faq-wrap">
+        <div class="isv-head reveal">
+          <span class="isv-badge"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+          <h2 class="isv-h2">Questions ISVs ask us.</h2>
+        </div>
+
+        <div class="isv-faq reveal">
+          <details class="isv-faq-item">
+            <summary>Do I need to already have software? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">No. If you already have software, we can help with payment integration and monetization. If you do not have software yet, PPD Technology can help scope and build a platform around your vertical.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>Can PPD build the software for my ISV company? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">Yes. For the right partner and market, we can help design and build a branded software platform with payments built into the workflow.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>Can the software be branded as my company? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">Yes. Branding, co-branding, or white-label style options may be available depending on the project structure.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>How do ISVs make money with payments? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">ISVs can create revenue from processing volume, software fees, setup or implementation fees, premium modules, and long-term merchant retention.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>Can we support in-person devices? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">Yes. Device and terminal options can be part of the payment strategy depending on the vertical and integration.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>What if my software is already built? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">PPD Technology can help review the current payment flow, identify integration options, improve onboarding, and create a plan to monetize payments.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>What types of verticals do you work with? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">Restaurants, retail, repair shops, contractors, med spas, automotive, healthcare, fitness, B2B services, and other verticals where payments and workflow software can work together.</div>
+          </details>
+          <details class="isv-faq-item">
+            <summary>How long does it take to launch? <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="isv-faq-a">It depends on whether the partner already has software, the complexity of the payment workflow, and the custom features needed. The first step is an ISV strategy call to map the best path.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 11. FINAL CTA ===================== -->
+    <section class="isv-cta">
+      <div class="isv-cta-glow" aria-hidden="true"></div>
+      <div class="container isv-cta-inner reveal">
+        <h2>Ready to build, embed, or monetize payments?</h2>
+        <p>Tell us what you are building, who you sell to, and whether you already have software. We'll help you map the right ISV path.</p>
+        <div class="isv-cta-actions">
+          <a class="isv-btn isv-btn-white isv-btn-lg" href="/contact"><i class="fa-solid fa-calendar-check"></i> Book an ISV Strategy Call</a>
+          <a class="isv-btn isv-btn-ghost isv-btn-lg" href="/contact"><i class="fa-solid fa-lightbulb"></i> Talk Through My Software Idea</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <style>
+    .isv-page{background:var(--white);overflow-x:hidden}
+    .isv-page *{box-sizing:border-box}
+
+    /* ---------- Shared primitives ---------- */
+    .isv-badge{
+      display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--blue);background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.18);
+      padding:7px 14px;border-radius:var(--r-pill);
+    }
+    .isv-badge i{font-size:12px}
+    .isv-badge--on-dark{color:var(--cyan);background:rgba(0,207,255,.1);border-color:rgba(0,207,255,.24)}
+
+    .isv-head{max-width:760px;margin:0 auto 44px;text-align:center}
+    .isv-h2{font-size:clamp(28px,4vw,42px);line-height:1.1;font-weight:900;color:var(--text-1);margin:18px 0 14px;letter-spacing:-.02em}
+    .isv-h2--light{color:#fff}
+    .isv-sub{font-size:clamp(16px,1.6vw,18px);line-height:1.6;color:var(--text-2);margin:0}
+    .isv-sub--light{color:rgba(255,255,255,.72)}
+
+    .isv-section{padding:var(--section-py) 0;position:relative}
+    .isv-section--light{background:var(--surface)}
+    .isv-section--dark{background:linear-gradient(180deg,var(--navy),var(--navy-2));color:#fff}
+
+    /* ---------- Buttons ---------- */
+    .isv-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;font-size:15px;
+      padding:13px 24px;border-radius:var(--r-pill);text-decoration:none;cursor:pointer;border:1px solid transparent;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;white-space:nowrap;
+    }
+    .isv-btn-lg{padding:15px 28px;font-size:16px}
+    .isv-btn-block{width:100%}
+    .isv-btn-primary{background:linear-gradient(135deg,var(--blue-mid),var(--blue));color:#fff;box-shadow:var(--shadow-blue)}
+    .isv-btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(21,73,255,.45)}
+    .isv-btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.22)}
+    .isv-btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+    .isv-btn-outline-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+    .isv-btn-outline-dark:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+    .isv-btn-white{background:#fff;color:var(--blue);box-shadow:0 10px 34px rgba(0,0,0,.28)}
+    .isv-btn-white:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(0,0,0,.36)}
+
+    /* ---------- HERO ---------- */
+    .isv-hero{
+      position:relative;background:radial-gradient(1200px 600px at 78% -10%,rgba(21,73,255,.28),transparent 60%),
+      radial-gradient(900px 500px at 0% 20%,rgba(0,207,255,.14),transparent 55%),
+      linear-gradient(180deg,var(--navy),var(--navy-2));
+      color:#fff;padding:calc(var(--section-py) + 20px) 0 var(--section-py);overflow:hidden;
+    }
+    .isv-hero-grid{
+      position:absolute;inset:0;opacity:.5;pointer-events:none;
+      background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;
+      -webkit-mask-image:linear-gradient(180deg,#000,transparent 80%);mask-image:linear-gradient(180deg,#000,transparent 80%);
+    }
+    .isv-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+    .isv-orb--1{width:360px;height:360px;background:rgba(21,73,255,.5);top:-80px;right:-60px}
+    .isv-orb--2{width:300px;height:300px;background:rgba(0,207,255,.32);bottom:-100px;left:-40px}
+    .isv-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+    .isv-hero-title{font-size:clamp(34px,4.6vw,56px);line-height:1.05;font-weight:900;letter-spacing:-.025em;margin:18px 0 20px}
+    .isv-grad{background:linear-gradient(120deg,var(--cyan),var(--blue-mid) 55%,#9b8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .isv-hero-sub{font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:rgba(255,255,255,.9);margin:0 0 14px;font-weight:600}
+    .isv-hero-support{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.66);margin:0 0 26px;max-width:560px}
+    .isv-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+    .isv-chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0}
+    .isv-chips li{
+      display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:8px 14px;border-radius:var(--r-pill);
+    }
+    .isv-chips i{color:var(--cyan);font-size:12px}
+
+    /* ---------- Hero dashboard ---------- */
+    .isv-hero-visual{position:relative}
+    .isv-dash{
+      background:linear-gradient(180deg,rgba(18,34,74,.94),rgba(9,18,40,.96));border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--r-xl);box-shadow:0 40px 90px rgba(0,0,0,.5);overflow:hidden;backdrop-filter:blur(6px);
+    }
+    .isv-dash-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+    .isv-dash-dot{width:11px;height:11px;border-radius:50%}
+    .isv-dash-title{margin-left:8px;font-size:13px;font-weight:700;color:rgba(255,255,255,.82)}
+    .isv-dash-api{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--green);background:rgba(0,229,160,.12);border:1px solid rgba(0,229,160,.28);padding:4px 10px;border-radius:var(--r-pill)}
+    .isv-dash-api-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(0,229,160,.6);animation:isvPulse 2s infinite}
+    @keyframes isvPulse{0%{box-shadow:0 0 0 0 rgba(0,229,160,.5)}70%{box-shadow:0 0 0 7px rgba(0,229,160,0)}100%{box-shadow:0 0 0 0 rgba(0,229,160,0)}}
+
+    .isv-dash-tabs{display:flex;gap:6px;padding:12px 14px 0;flex-wrap:wrap}
+    .isv-dash-tab{
+      flex:1;min-width:96px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.62);background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:9px 8px;cursor:pointer;transition:all .2s ease;
+    }
+    .isv-dash-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .isv-dash-tab.active{color:#fff;background:linear-gradient(135deg,rgba(21,73,255,.6),rgba(0,207,255,.35));border-color:rgba(0,207,255,.5)}
+
+    .isv-dash-body{padding:16px}
+    .isv-dash-panel{animation:isvFade .35s ease}
+    @keyframes isvFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .isv-dash-headline{font-size:15px;font-weight:800;color:#fff;margin:2px 0 14px}
+    .isv-dash-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+    .isv-dash-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px}
+    .isv-dash-stat-label{display:block;font-size:11px;color:rgba(255,255,255,.55);font-weight:600;margin-bottom:5px}
+    .isv-dash-stat-value{display:block;font-size:16px;font-weight:800;color:#fff}
+    .isv-dash-activity{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+    .isv-dash-activity-title{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:10px}
+    .isv-dash-activity-title i{color:var(--cyan)}
+    .isv-dash-row{display:flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,.85);padding:6px 0}
+    .isv-dash-row i{color:var(--green);font-size:13px}
+
+    /* ---------- Cards grid ---------- */
+    .isv-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .isv-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 22px;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
+    .isv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+    .isv-card-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;background:linear-gradient(135deg,var(--blue-mid),var(--cyan));box-shadow:0 8px 22px rgba(21,73,255,.32);margin-bottom:16px}
+    .isv-card h3{font-size:17px;font-weight:800;color:var(--text-1);margin:0 0 9px}
+    .isv-card p{font-size:14.5px;line-height:1.6;color:var(--text-2);margin:0}
+    .isv-card--glass{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);box-shadow:none}
+    .isv-card--glass h3{color:#fff}
+    .isv-card--glass p{color:rgba(255,255,255,.7)}
+
+    /* ---------- Two paths ---------- */
+    .isv-paths{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .isv-path{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-xl);padding:30px 28px;display:flex;flex-direction:column}
+    .isv-path--feature{
+      background:linear-gradient(180deg,rgba(21,73,255,.22),rgba(0,207,255,.08));border-color:rgba(0,207,255,.4);
+      box-shadow:0 30px 70px rgba(21,73,255,.28);transform:translateY(-6px);
+    }
+    .isv-path-flag{position:absolute;top:-14px;left:28px;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#04122e;background:linear-gradient(135deg,var(--cyan),var(--green));padding:6px 14px;border-radius:var(--r-pill);box-shadow:0 8px 22px rgba(0,207,255,.4)}
+    .isv-path-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+    .isv-path-tag--feature{color:var(--green)}
+    .isv-path h3{font-size:22px;font-weight:900;color:#fff;margin:0 0 6px}
+    .isv-path-sub{font-size:15px;color:rgba(255,255,255,.72);margin:0 0 18px}
+    .isv-path-list{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:11px;flex:1}
+    .isv-path-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:rgba(255,255,255,.9)}
+    .isv-path-list i{color:var(--green);margin-top:3px;font-size:13px}
+    .isv-path--feature .isv-path-list i{color:var(--cyan)}
+
+    /* ---------- Build-for-you ---------- */
+    .isv-build{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+    .isv-timeline{list-style:none;padding:0;margin:0;position:relative}
+    .isv-timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--blue),var(--cyan))}
+    .isv-step{display:flex;gap:18px;position:relative;padding-bottom:26px}
+    .isv-step:last-child{padding-bottom:0}
+    .isv-step-num{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--blue-mid),var(--blue));box-shadow:0 8px 20px rgba(21,73,255,.35);position:relative;z-index:1}
+    .isv-step-body h3{font-size:18px;font-weight:800;color:var(--text-1);margin:6px 0 6px}
+    .isv-step-body p{font-size:14.5px;line-height:1.6;color:var(--text-2);margin:0}
+    .isv-build-mock{position:sticky;top:100px;background:linear-gradient(180deg,var(--navy),var(--navy-2));border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:20px;box-shadow:var(--shadow-lg)}
+    .isv-build-mock-head{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800;color:#fff;padding-bottom:14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .isv-build-mock-head i{color:var(--cyan)}
+    .isv-build-mock-item{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.88)}
+    .isv-build-mock-item i{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;background:rgba(21,73,255,.35);flex:none}
+    .isv-build-mock-item span{flex:1}
+    .isv-build-mock-item em{font-style:normal;font-size:11px;font-weight:700;color:var(--cyan);background:rgba(0,207,255,.12);padding:3px 9px;border-radius:var(--r-pill)}
+    .isv-build-mock-foot{padding-top:14px}
+    .isv-build-mock-bar{height:8px;border-radius:var(--r-pill);background:rgba(255,255,255,.1);overflow:hidden}
+    .isv-build-mock-bar span{display:block;height:100%;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--blue),var(--cyan))}
+    .isv-build-mock-note{font-size:11px;color:rgba(255,255,255,.5);margin:10px 0 0;text-align:center}
+
+    /* ---------- Payment capabilities ---------- */
+    .isv-cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .isv-cap{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 18px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,.9);transition:transform .2s ease,background .2s ease}
+    .isv-cap:hover{transform:translateY(-4px);background:rgba(255,255,255,.08)}
+    .isv-cap i{width:36px;height:36px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--blue-mid),var(--cyan))}
+    .isv-compliance{margin:28px auto 0;max-width:900px;text-align:center;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.6);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 22px}
+    .isv-compliance i{color:var(--cyan);margin-right:6px}
+
+    /* ---------- Vertical examples ---------- */
+    .isv-vert{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-md);overflow:hidden}
+    .isv-vert-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:18px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+    .isv-vert-tab{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--text-2);background:#fff;border:1px solid var(--border);border-radius:var(--r-pill);padding:9px 16px;cursor:pointer;transition:all .2s ease}
+    .isv-vert-tab i{font-size:12px;color:var(--blue)}
+    .isv-vert-tab:hover{border-color:var(--blue);color:var(--text-1)}
+    .isv-vert-tab.active{background:linear-gradient(135deg,var(--blue-mid),var(--blue));color:#fff;border-color:transparent;box-shadow:var(--shadow-blue)}
+    .isv-vert-tab.active i{color:#fff}
+    .isv-vert-panel{padding:28px}
+    .isv-vert-panel-head{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .isv-vert-ico{width:54px;height:54px;flex:none;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 8px 22px rgba(21,73,255,.3)}
+    .isv-vert-panel-head h3{font-size:20px;font-weight:900;color:var(--text-1);margin:0 0 3px}
+    .isv-vert-panel-head p{font-size:13px;color:var(--text-3);margin:0}
+    .isv-vert-modules{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .isv-vert-modules :global(li){display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--text-1);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 12px}
+    .isv-vert-modules :global(li i){color:var(--green);font-size:13px}
+
+    /* ---------- Monetization calculator ---------- */
+    .isv-calc{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-xl);overflow:hidden}
+    .isv-calc-inputs{padding:28px;display:grid;gap:16px;align-content:start;border-right:1px solid rgba(255,255,255,.1)}
+    .isv-calc-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+    .isv-calc-field{display:grid;gap:7px}
+    .isv-calc-field span{font-size:13px;font-weight:600;color:rgba(255,255,255,.8)}
+    .isv-calc-field input{
+      font-size:15px;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+      border-radius:10px;padding:11px 13px;width:100%;transition:border .2s ease}
+    .isv-calc-field input:focus{outline:none;border-color:var(--cyan);background:rgba(255,255,255,.1)}
+    .isv-calc-out{padding:28px;background:linear-gradient(180deg,rgba(21,73,255,.18),rgba(0,207,255,.06));display:flex;flex-direction:column;justify-content:center;gap:14px}
+    .isv-calc-out-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:rgba(255,255,255,.8)}
+    .isv-calc-out-row strong{font-size:16px;font-weight:800;color:#fff}
+    .isv-calc-out-total{display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:4px;border-top:1px solid rgba(255,255,255,.14)}
+    .isv-calc-out-total span{font-size:14px;font-weight:700;color:rgba(255,255,255,.9)}
+    .isv-calc-out-total strong{font-size:28px;font-weight:900;background:linear-gradient(120deg,var(--cyan),#9b8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .isv-calc-out-annual{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.7)}
+    .isv-calc-out-annual strong{font-size:16px;color:var(--green)}
+    .isv-calc-note{font-size:11px;color:rgba(255,255,255,.5);margin:6px 0 0;line-height:1.5}
+
+    /* ---------- Go-to-market ---------- */
+    .isv-gtm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .isv-gtm{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 16px;font-size:14px;font-weight:700;color:var(--text-1);box-shadow:var(--shadow-xs);transition:transform .2s ease,box-shadow .2s ease}
+    .isv-gtm:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+    .isv-gtm i{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--blue-mid),var(--cyan))}
+
+    /* ---------- Onboarding + security ---------- */
+    .isv-sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .isv-sec{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,.9)}
+    .isv-sec i{width:38px;height:38px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--cyan);background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.24)}
+
+    /* ---------- FAQ ---------- */
+    .isv-faq-wrap{max-width:820px}
+    .isv-faq{display:grid;gap:12px}
+    .isv-faq-item{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow .2s ease}
+    .isv-faq-item[open]{box-shadow:var(--shadow-sm)}
+    .isv-faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;font-size:15.5px;font-weight:700;color:var(--text-1)}
+    .isv-faq-item summary::-webkit-details-marker{display:none}
+    .isv-faq-item summary i{color:var(--blue);transition:transform .25s ease;font-size:14px}
+    .isv-faq-item[open] summary i{transform:rotate(180deg)}
+    .isv-faq-a{padding:0 20px 20px;font-size:14.5px;line-height:1.65;color:var(--text-2)}
+
+    /* ---------- Final CTA ---------- */
+    .isv-cta{position:relative;padding:var(--section-py) 0;background:linear-gradient(135deg,var(--navy),#0A2B74);color:#fff;overflow:hidden;text-align:center}
+    .isv-cta-glow{position:absolute;top:50%;left:50%;width:700px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(0,207,255,.22),transparent 60%);pointer-events:none}
+    .isv-cta-inner{position:relative;z-index:1;max-width:720px}
+    .isv-cta h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.02em;margin:0 0 16px}
+    .isv-cta p{font-size:17px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 30px}
+    .isv-cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+    /* ---------- Reveal ---------- */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:980px){
+      .isv-hero-inner{grid-template-columns:1fr;gap:40px}
+      .isv-grid-4{grid-template-columns:1fr 1fr}
+      .isv-paths{grid-template-columns:1fr}
+      .isv-path--feature{transform:none}
+      .isv-build{grid-template-columns:1fr;gap:28px}
+      .isv-build-mock{position:static}
+      .isv-cap-grid{grid-template-columns:1fr 1fr}
+      .isv-vert-modules{grid-template-columns:repeat(3,1fr)}
+      .isv-gtm-grid{grid-template-columns:repeat(3,1fr)}
+      .isv-sec-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .isv-grid-4{grid-template-columns:1fr}
+      .isv-hero-actions{flex-direction:column;align-items:stretch}
+      .isv-hero-actions .isv-btn{width:100%}
+      .isv-dash-stats{grid-template-columns:1fr}
+      .isv-cap-grid{grid-template-columns:1fr}
+      .isv-vert-modules{grid-template-columns:1fr 1fr}
+      .isv-vert-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .isv-vert-tab{white-space:nowrap}
+      .isv-calc{grid-template-columns:1fr}
+      .isv-calc-inputs{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+      .isv-gtm-grid{grid-template-columns:1fr 1fr}
+      .isv-sec-grid{grid-template-columns:1fr}
+      .isv-cta-actions{flex-direction:column}
+      .isv-cta-actions .isv-btn{width:100%}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .reveal{opacity:1;transform:none;transition:none}
+      .isv-dash-panel{animation:none}
+    }
+  </style>
+
+  <script>
+    // ---- Reveal on scroll ----
+    (() => {
+      const els = document.querySelectorAll('.isv-page .reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach((el) => io.observe(el));
+    })();
+
+    // ---- Hero dashboard tabs (roving tabindex) ----
+    (() => {
+      const tabs = Array.from(document.querySelectorAll('.isv-dash-tab[data-isv-tab]'));
+      const panels = Array.from(document.querySelectorAll('.isv-dash-panel[data-isv-panel]'));
+      if (!tabs.length) return;
+
+      const activate = (key, focus) => {
+        tabs.forEach((t) => {
+          const on = t.dataset.isvTab === key;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.setAttribute('tabindex', on ? '0' : '-1');
+          if (on && focus) t.focus();
+        });
+        panels.forEach((p) => {
+          const on = p.dataset.isvPanel === key;
+          p.hidden = !on;
+          p.classList.toggle('is-active', on);
+        });
+      };
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => activate(tab.dataset.isvTab, false));
+        tab.addEventListener('keydown', (ev) => {
+          if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
+            ev.preventDefault();
+            const dir = ev.key === 'ArrowRight' ? 1 : -1;
+            const next = tabs[(i + dir + tabs.length) % tabs.length];
+            activate(next.dataset.isvTab, true);
+          }
+        });
+      });
+    })();
+
+    // ---- Vertical examples tabs ----
+    (() => {
+      const tabs = Array.from(document.querySelectorAll('.isv-vert-tab[data-isv-vert]'));
+      const titleEl = document.querySelector('[data-isv-vert-title]');
+      const modulesEl = document.querySelector('[data-isv-vert-modules]');
+      const icoEl = document.querySelector('[data-isv-vert-ico]');
+      if (!tabs.length || !titleEl || !modulesEl) return;
+
+      const data = {
+        restaurants: { label: 'Restaurants', icon: 'fa-utensils', modules: ['Table orders', 'Tips', 'Loyalty', 'Online ordering', 'Staff reports'] },
+        repair: { label: 'Repair Shops', icon: 'fa-screwdriver-wrench', modules: ['Repair tickets', 'Device intake', 'Warranty tracking', 'SMS updates', 'Deposits'] },
+        retail: { label: 'Retail', icon: 'fa-store', modules: ['Inventory', 'Gift cards', 'Customer profiles', 'Product reporting', 'Checkout'] },
+        contractors: { label: 'Contractors', icon: 'fa-helmet-safety', modules: ['Estimates', 'Job deposits', 'Mobile invoices', 'Recurring billing', 'Field payments'] },
+        medspas: { label: 'Med Spas', icon: 'fa-spa', modules: ['Packages', 'Memberships', 'Deposits', 'Client profiles', 'Payment plans'] },
+        automotive: { label: 'Automotive', icon: 'fa-car', modules: ['Repair orders', 'Parts tracking', 'Invoices', 'Deposits', 'Customer history'] },
+        healthcare: { label: 'Healthcare', icon: 'fa-user-doctor', modules: ['Patient payments', 'Payment plans', 'Invoices', 'Recurring billing', 'Reporting'] },
+        fitness: { label: 'Fitness', icon: 'fa-dumbbell', modules: ['Memberships', 'Class packages', 'Recurring payments', 'Check-ins', 'Client profiles'] },
+        b2b: { label: 'B2B Services', icon: 'fa-briefcase', modules: ['Invoices', 'ACH options', 'Recurring billing', 'Customer accounts', 'Reporting'] },
+      };
+
+      const render = (key) => {
+        const d = data[key];
+        if (!d) return;
+        titleEl.textContent = d.label;
+        if (icoEl) icoEl.innerHTML = '<i class="fa-solid ' + d.icon + '"></i>';
+        modulesEl.innerHTML = d.modules
+          .map((m) => '<li><i class="fa-solid fa-check"></i> ' + m + '</li>')
+          .join('');
+      };
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.setAttribute('tabindex', on ? '0' : '-1');
+          });
+          render(tab.dataset.isvVert);
+        });
+        tab.addEventListener('keydown', (ev) => {
+          if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
+            ev.preventDefault();
+            const dir = ev.key === 'ArrowRight' ? 1 : -1;
+            const next = tabs[(i + dir + tabs.length) % tabs.length];
+            next.click();
+            next.focus();
+          }
+        });
+      });
+    })();
+
+    // ---- Monetization estimator ----
+    (() => {
+      const merchantsEl = document.getElementById('isvMerchants');
+      const volumeEl = document.getElementById('isvVolume');
+      const feeEl = document.getElementById('isvFee');
+      const marginEl = document.getElementById('isvMargin');
+      const outProc = document.getElementById('isvOutProcessing');
+      const outSoft = document.getElementById('isvOutSoftware');
+      const outMonthly = document.getElementById('isvOutMonthly');
+      const outAnnual = document.getElementById('isvOutAnnual');
+      if (!merchantsEl || !outMonthly) return;
+
+      const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
+      const num = (el) => {
+        const v = parseFloat(el.value);
+        return Number.isFinite(v) && v > 0 ? v : 0;
+      };
+
+      const compute = () => {
+        const merchants = num(merchantsEl);
+        const volume = num(volumeEl);
+        const fee = num(feeEl);
+        const margin = num(marginEl);
+        const processing = merchants * volume * (margin / 100);
+        const software = merchants * fee;
+        const monthly = processing + software;
+        outProc.textContent = money(processing);
+        outSoft.textContent = money(software);
+        outMonthly.textContent = money(monthly);
+        outAnnual.textContent = money(monthly * 12);
+      };
+
+      [merchantsEl, volumeEl, feeEl, marginEl].forEach((el) => el.addEventListener('input', compute));
+      compute();
+    })();
+  </script>
+</BaseLayout>
