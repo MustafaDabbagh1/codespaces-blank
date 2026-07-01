@@ -29,7 +29,7 @@ A high-performance marketing website for PPD Technology, a payment processing so
 - Hover: lift with stronger shadow
 
 ### Featured Nav Item
-- The "Agent Program" nav link (`.nav-featured`, in both Header.astro desktop nav and BaseLayout.astro mobile menu) is styled as a premium gradient pill to stand out — softer than the main CTA. Blue→royal→cyan→subtle-purple `linear-gradient(120deg, #1030b8, #1549FF, #2D60FF, #00CFFF, #6f5bff)`, `rgba(255,255,255,.15)` border, blue/cyan glow shadow. Desktop uses `::before` faint gradient-mesh shine + `::after` hover sweep (reuses global `btnSweep`); hover brightens + lifts. Mobile keeps gradient on hover/active. Styles live in BaseLayout global CSS.
+- The "Agent Program" nav link (`.nav-featured`, in both Header.astro desktop nav and BaseLayout.astro mobile menu) is a normal nav link with a **subtle blue/cyan gradient applied to the text only** (`background:linear-gradient(120deg,#5c9bff,#00d4ff)` + `background-clip:text` + `-webkit-text-fill-color:transparent`). No pill/button background, border, glow, or extra padding — it keeps the exact same spacing, font size, height, and alignment as the other nav links. Hover brightens the text slightly (`filter:brightness`). On mobile the icon is forced to solid cyan so it stays visible. Styles live in BaseLayout global CSS.
 
 ### Hero Pattern
 - Dark navy background with radial gradient blue/cyan accents
