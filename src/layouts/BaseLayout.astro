@@ -164,14 +164,6 @@ nav ul li a{
 }
 nav ul li a:hover{color:#fff;background:rgba(255,255,255,.08)}
 
-/* Featured nav item — Agent Program (subtle gradient text only; same layout as other links) */
-nav ul li a.nav-featured{
-  background:linear-gradient(120deg,#5c9bff,#00d4ff);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-}
-nav ul li a.nav-featured:hover{filter:brightness(1.18)}
-
 /* Header buttons */
 .header-buttons{display:flex;gap:8px}
 .btn{
@@ -276,19 +268,6 @@ nav ul li a.nav-featured:hover{filter:brightness(1.18)}
 }
 .mobile-menu ul li a i{width:18px;text-align:center;font-size:15px;color:var(--cyan);opacity:.7;flex-shrink:0}
 .mobile-menu ul li a:hover,.mobile-menu ul li a:active{background:rgba(255,255,255,.06);color:#fff}
-/* Featured mobile nav item — Agent Program (subtle gradient text only) */
-.mobile-menu ul li a.nav-featured{
-  background:linear-gradient(120deg,#5c9bff,#00d4ff);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-}
-.mobile-menu ul li a.nav-featured i{-webkit-text-fill-color:var(--cyan);color:var(--cyan);opacity:1}
-.mobile-menu ul li a.nav-featured:hover,.mobile-menu ul li a.nav-featured:active{
-  background:linear-gradient(120deg,#5c9bff,#00d4ff);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;filter:brightness(1.12);
-}
-.mobile-menu ul li a.nav-featured:hover i,.mobile-menu ul li a.nav-featured:active i{-webkit-text-fill-color:var(--cyan);color:var(--cyan)}
 
 .mobile-menu .header-buttons{
   flex-direction:column;padding:16px 24px 24px;gap:10px;
@@ -770,7 +749,7 @@ footer::before{
           </div>
         </li>
         <li class="mobile-menu__divider-li" aria-hidden="true"><div class="mobile-menu__divider"></div></li>
-        <li><a href="/become-a-partner" class="nav-featured"><i class="fa-solid fa-handshake"></i> Agent Program</a></li>
+        <li><a href="/become-a-partner"><i class="fa-solid fa-handshake"></i> Agent Program</a></li>
         <li><a href="/iso"><i class="fa-solid fa-diagram-project"></i> ISO Solutions</a></li>
         <li><a href="/isv-solutions"><i class="fa-solid fa-plug"></i> ISV Solutions</a></li>
         <li><a href="/customer-support"><i class="fa-solid fa-headset"></i> Customer Support</a></li>
