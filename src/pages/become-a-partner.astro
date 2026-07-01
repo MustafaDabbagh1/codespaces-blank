@@ -367,47 +367,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <span>Valor</span>
               </div>
               <div class="pp-hw-device">
-                <!-- No approved Dejavoo product photo exists in the project assets, so this is a
-                     clean branded CSS/SVG illustration of a Dejavoo-style countertop terminal.
-                     When an approved Dejavoo image is added to /public/images, replace this
-                     <div class="pp-hw-device-illus"> block with an <img> like the tiles above. -->
-                <div class="pp-hw-device-illus" aria-hidden="true">
-                  <svg viewBox="0 0 100 132" width="100" height="132" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="pp-deja-screen" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#1549FF" />
-                        <stop offset="1" stop-color="#00CFFF" />
-                      </linearGradient>
-                      <linearGradient id="pp-deja-body" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stop-color="#12213f" />
-                        <stop offset="1" stop-color="#0b1730" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="34" y="1.5" width="32" height="5" rx="2.5" fill="#1b2b4d" />
-                    <rect x="22" y="4" width="56" height="124" rx="13" fill="url(#pp-deja-body)" stroke="rgba(255,255,255,.08)" stroke-width="1" />
-                    <rect x="28.5" y="14" width="43" height="46" rx="5" fill="url(#pp-deja-screen)" />
-                    <rect x="39" y="30" width="22" height="15" rx="2.5" fill="#ffffff" opacity="0.95" />
-                    <rect x="42.5" y="33" width="6.5" height="5" rx="1.2" fill="#F5B301" />
-                    <rect x="42" y="41" width="16" height="1.6" rx="0.8" fill="#0b1730" opacity="0.35" />
-                    <path d="M55 24 a6 6 0 0 1 0 11" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.9" />
-                    <path d="M58 21 a10 10 0 0 1 0 17" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.6" />
-                    <g fill="rgba(255,255,255,.14)">
-                      <rect x="31" y="67" width="10.5" height="9" rx="2.5" />
-                      <rect x="44.75" y="67" width="10.5" height="9" rx="2.5" />
-                      <rect x="58.5" y="67" width="10.5" height="9" rx="2.5" />
-                      <rect x="31" y="80" width="10.5" height="9" rx="2.5" />
-                      <rect x="44.75" y="80" width="10.5" height="9" rx="2.5" />
-                      <rect x="58.5" y="80" width="10.5" height="9" rx="2.5" />
-                      <rect x="31" y="93" width="10.5" height="9" rx="2.5" />
-                      <rect x="44.75" y="93" width="10.5" height="9" rx="2.5" />
-                      <rect x="58.5" y="93" width="10.5" height="9" rx="2.5" />
-                    </g>
-                    <rect x="31" y="106" width="10.5" height="9" rx="2.5" fill="rgba(0,207,255,.55)" />
-                    <rect x="44.75" y="106" width="10.5" height="9" rx="2.5" fill="rgba(255,255,255,.14)" />
-                    <rect x="58.5" y="106" width="10.5" height="9" rx="2.5" fill="rgba(0,229,160,.55)" />
-                    <rect x="42" y="121" width="16" height="3" rx="1.5" fill="rgba(255,255,255,.28)" />
-                  </svg>
-                </div>
+                <!-- Dejavoo P3 smart terminal product photo. Swap here for an updated Dejavoo image if needed. -->
+                <img src="/images/dejavoo-p3.png" alt="Dejavoo P3 payment device" loading="lazy" width="200" height="74" />
                 <span>Dejavoo</span>
               </div>
             </div>
@@ -1034,8 +995,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-hw-device:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
     .pp-hw-device img{width:100%;height:74px;object-fit:contain}
     .pp-hw-device span{font-size:12px;font-weight:800;color:var(--pp-navy)}
-    .pp-hw-device-illus{width:100%;height:74px;display:flex;align-items:center;justify-content:center}
-    .pp-hw-device-illus svg{height:74px;width:auto;display:block;filter:drop-shadow(0 8px 14px rgba(13,27,57,.22))}
     .pp-hw-dash{
       background:linear-gradient(135deg,var(--pp-navy),#0A2B74);border-radius:14px;padding:16px;color:#fff;
       position:relative;z-index:1;border:1px solid rgba(255,255,255,.08);
