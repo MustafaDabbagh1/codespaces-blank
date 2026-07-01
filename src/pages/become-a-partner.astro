@@ -17,9 +17,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
               Book a Quick Compare Call <i class="fa-regular fa-calendar"></i>
             </button>
-            <a class="pp-btn pp-btn-outline" href="#partner-kit">
-              Download Partner Kit <i class="fa-solid fa-download"></i>
-            </a>
           </div>
           <div class="pp-trust-row">
             <span class="pp-trust-pill"><i class="fa-solid fa-bolt"></i> Fast onboarding</span>
@@ -400,72 +397,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="pp-quote-role">Referral Partner &middot; 1 year</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pp-section pp-section-alt" id="faq">
-      <div class="pp-container">
-        <div class="pp-section-head reveal">
-          <span class="pp-chip"><i class="fa-solid fa-circle-question"></i> FAQ</span>
-          <h2>Quick answers for agents & ISOs</h2>
-        </div>
-
-        <div class="pp-faq reveal">
-          <details>
-            <summary>How fast is onboarding? <i class="fa-solid fa-plus"></i></summary>
-            <p>Submit apps through the partner workflow with visible underwriting steps. Most approvals move within days, not weeks.</p>
-          </details>
-          <details>
-            <summary>What support do I get? <i class="fa-solid fa-plus"></i></summary>
-            <p>24/7 ISO support desk with structured case handling, defined escalation paths, and SLA-backed response expectations.</p>
-          </details>
-          <details>
-            <summary>What business types can I bring? <i class="fa-solid fa-plus"></i></summary>
-            <p>Many categories: retail, restaurants, e-commerce, services, and more. We'll help position the right stack based on merchant needs.</p>
-          </details>
-          <details>
-            <summary>How does the compare call work? <i class="fa-solid fa-plus"></i></summary>
-            <p>Bring your current deal sheet (redacted is fine) and we'll walk through it with you on a quick call. We'll confirm exact comp based on your volume, vertical, and support needs.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="pp-section" id="partner-kit">
-      <div class="pp-container">
-        <div class="pp-kit-row reveal">
-          <div class="pp-kit-info">
-            <span class="pp-chip"><i class="fa-solid fa-toolbox"></i> Partner Kit</span>
-            <h2>Download everything you need</h2>
-            <p class="pp-sub">A simple kit built for agents and ISOs who want clarity before the call.</p>
-          </div>
-          <div class="pp-kit-cards">
-            <a class="pp-kit-card" href="COMPARE_PDF_URL_HERE" target="_blank" rel="noopener">
-              <i class="fa-solid fa-file-signature"></i>
-              <div>
-                <strong>Quick Compare Sheet</strong>
-                <span>Side-by-side comp, support, reporting</span>
-              </div>
-              <span class="pp-kit-tag">PDF</span>
-            </a>
-            <a class="pp-kit-card" href="STATEMENT_BREAKDOWN_URL_HERE" target="_blank" rel="noopener">
-              <i class="fa-solid fa-receipt"></i>
-              <div>
-                <strong>Statement Breakdown</strong>
-                <span>What matters on statements</span>
-              </div>
-              <span class="pp-kit-tag">PDF</span>
-            </a>
-            <a class="pp-kit-card" href="ONBOARDING_CHECKLIST_URL_HERE" target="_blank" rel="noopener">
-              <i class="fa-solid fa-list-check"></i>
-              <div>
-                <strong>Fast Start Checklist</strong>
-                <span>Clean apps, faster onboarding</span>
-              </div>
-              <span class="pp-kit-tag">PDF</span>
-            </a>
           </div>
         </div>
       </div>
@@ -903,47 +834,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-quote-name{font-weight:800;color:var(--pp-navy);font-size:14px}
     .pp-quote-role{font-size:12px;color:var(--pp-muted)}
 
-    .pp-faq{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;
-    }
-    .partner-page details{
-      background:var(--pp-surface);border:1px solid var(--pp-border);border-radius:14px;
-      box-shadow:0 4px 12px rgba(2,6,23,.04);padding:16px;transition:.2s;
-    }
-    .partner-page details[open]{border-color:rgba(21,73,255,.18);box-shadow:var(--pp-shadow)}
-    .partner-page summary{
-      cursor:pointer;list-style:none;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;font-weight:800;color:var(--pp-navy);font-size:15px;
-    }
-    .partner-page summary::-webkit-details-marker{display:none}
-    .partner-page details p{margin-top:10px;color:var(--pp-muted);font-weight:500;font-size:14px;line-height:1.6}
-
-    .pp-kit-row{
-      display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start;
-    }
-    .pp-kit-info{display:flex;flex-direction:column;gap:10px}
-    .pp-kit-info h2{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.02em}
-    .pp-kit-cards{display:flex;flex-direction:column;gap:10px}
-    .pp-kit-card{
-      display:flex;align-items:center;gap:14px;padding:16px;border-radius:14px;
-      background:#fff;border:1px solid var(--pp-border);box-shadow:var(--pp-shadow);
-      transition:transform .2s,box-shadow .2s;
-    }
-    .pp-kit-card:hover{transform:translateY(-2px);box-shadow:var(--pp-shadow-lg)}
-    .pp-kit-card>i{
-      font-size:18px;color:var(--pp-primary);flex-shrink:0;
-      width:40px;height:40px;display:flex;align-items:center;justify-content:center;
-      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);border-radius:10px;
-    }
-    .pp-kit-card div{flex:1;min-width:0}
-    .pp-kit-card strong{display:block;font-size:14px;color:var(--pp-navy)}
-    .pp-kit-card span{font-size:13px;color:var(--pp-muted)}
-    .pp-kit-tag{
-      font-size:11px;font-weight:800;color:var(--pp-muted);
-      border:1px solid var(--pp-border);padding:5px 10px;border-radius:999px;
-      background:#fff;flex-shrink:0;
-    }
-
     .pp-cta-split{
       display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start;
     }
@@ -993,8 +883,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     @media (max-width:980px){
       .pp-hero-grid{grid-template-columns:1fr !important;gap:24px}
       .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:1fr}
-      .pp-faq{grid-template-columns:1fr}
-      .pp-kit-row{grid-template-columns:1fr}
       .pp-cta-split{grid-template-columns:1fr}
       .pp-form-grid{grid-template-columns:1fr}
       .pp-switch-grid{grid-template-columns:1fr}
