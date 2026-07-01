@@ -1,0 +1,151 @@
+Revamp the Become a Partner page at /become-a-partner for PPD Technology.
+
+Goal:
+Update the page messaging so it focuses less on generic ISO benefits and more on PPD Technology helping agents and ISOs create a software advantage in their strongest niche.
+
+Context:
+Most agents have one or two main niches they focus on, such as repair shops, restaurants, retail, contractors, healthcare, etc. The problem is that most agents are stuck selling the same devices, terminals, POS systems, and gateway options that every other ISO or agent has access to. PPD Technology is different because we can help partners create custom POS/software solutions for their main niche, giving them something unique to offer merchants.
+
+Important message:
+Instead of being another generic ISO, PPD Technology helps agents build a custom vertical software offer for their merchants. The partner can earn software fees in addition to processing revenue. This makes the merchant relationship stronger, creates a better experience for merchants, makes referrals easier, and helps the agent expand their book of business.
+
+Do not redesign the entire page. Keep the current visual style, spacing, card design, icons, rounded corners, blue accent colors, responsive behavior, header, footer, forms, and CTAs. Only update the copy and feature-card content in the sections described below.
+
+Section 1 to update:
+Find the section currently titled:
+“Why partners switch to PPD”
+
+Change this section so it is focused on custom software/POS for the partner’s niche.
+
+Use this updated section copy:
+
+Badge:
+WHY PPD
+
+Heading:
+Why partners switch to PPD Technology
+
+Subheading:
+Stop selling the same systems every other agent has access to. We help you build a software advantage around the niche you already know best.
+
+Replace the four cards in this section with these:
+
+Card 1 title:
+Turn Your Niche Into Software
+
+Card 1 body:
+Most agents win in one or two verticals. We help you turn that focus into a custom POS or software solution built around the exact merchants you already serve.
+
+Card 2 title:
+Stop Selling Generic POS
+
+Card 2 body:
+Instead of pitching the same terminals, devices, and software every other ISO has, you can walk in with a niche-specific solution that feels built for the merchant.
+
+Card 3 title:
+Earn Software Fees + Processing
+
+Card 3 body:
+Give merchants a better system and create a second revenue stream. Partners can earn software fees while still building processing volume and residual income.
+
+Card 4 title:
+Grow Through Happier Merchants
+
+Card 4 body:
+When your merchants get software that actually fits how they operate, retention improves, referrals become easier, and your book of business can move to the next level.
+
+Update the CTA bar below those cards to say:
+
+CTA text:
+Tell us the niche you win in, and we’ll help map out the software your merchants would actually pay for.
+
+CTA button:
+Book a Vertical Strategy Call
+
+Keep the button style the same as the current “Book a Compare Call” button unless there is already a shared CTA component.
+
+Section 2 to update:
+Find the section currently titled:
+“Tools and support that help you scale”
+
+Change this section so it is focused on PPD Technology’s partner enablement features that other ISOs typically do not provide.
+
+Use this updated section copy:
+
+Badge:
+ENABLEMENT PLATFORM
+
+Heading:
+Tools other ISOs do not give you
+
+Subheading:
+PPD Technology gives partners more than processing. We help you build the software, sales systems, and acquisition engine needed to grow a stronger book.
+
+Replace the current feature cards in this section with these primary cards:
+
+Card 1 title:
+Custom Vertical Software for Your Main Niche
+
+Card 1 body:
+We help you create a niche-specific POS or merchant software solution so you can offer something your competitors cannot easily copy.
+
+Card 2 title:
+Custom ISO CRM
+
+Card 2 body:
+Manage leads, merchants, follow-ups, onboarding, deal stages, and partner activity in a CRM built around how ISOs and agents actually sell.
+
+Card 3 title:
+Websites & Merchant Acquisition
+
+Card 3 body:
+We can help you build landing pages, niche websites, and merchant acquisition funnels that position you as the go-to solution in your vertical.
+
+If the existing layout is a 3-card grid, use only the three cards above.
+
+If the existing layout expects six cards and would look better with six, add these additional three cards:
+
+Card 4 title:
+Partner Sales Assets
+
+Card 4 body:
+Get sharper positioning, sales materials, and niche-specific messaging that make your offer easier for merchants to understand.
+
+Card 5 title:
+Merchant Onboarding Support
+
+Card 5 body:
+Give merchants a cleaner path from application to launch with support around setup, implementation, and next steps.
+
+Card 6 title:
+Portfolio Growth Strategy
+
+Card 6 body:
+We help you identify the best verticals, offers, and acquisition channels so you can grow with a more focused plan.
+
+Tone:
+Use a confident, clear, partner-focused tone. Avoid sounding too corporate or vague. Make the copy feel direct and practical. The main idea should be: “PPD Technology helps partners build a software advantage in their niche, not just resell generic payment products.”
+
+Implementation instructions:
+1. Search the codebase for the exact text “Why partners switch to PPD” and “Tools and support that help you scale.”
+2. Update the content/data arrays or JSX for those sections.
+3. Preserve the page’s existing design system and layout.
+4. Keep the section spacing and mobile responsiveness intact.
+5. Use existing icon components if available. Suggested icons:
+   - software/code icon for custom vertical software
+   - layout/dashboard icon for CRM
+   - globe/browser icon for websites and acquisition
+   - users/growth/referral icon for referrals or portfolio growth
+6. Do not remove the partner form, FAQ, partner kit, hero section, navigation, or footer.
+7. After making changes, run the app and verify the page renders correctly on desktop and mobile.
+8. Check for typos, especially “niche,” not “nice.”
+
+Acceptance criteria:
+- The “Why partners switch to PPD Technology” section clearly explains that PPD helps partners create custom POS/software for their main niche.
+- The section explains that partners can earn software fees in addition to processing revenue.
+- The messaging explains why this makes merchants happier, improves referrals, and helps the partner grow their book.
+- The “Tools other ISOs do not give you” section includes:
+  - Custom Vertical Software for Your Main Niche
+  - Custom ISO CRM
+  - Websites & Merchant Acquisition
+- The page still matches the current PPD Technology visual style.
