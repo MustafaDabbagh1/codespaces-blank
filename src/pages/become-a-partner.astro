@@ -8,58 +8,117 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="pp-hero">
       <div class="pp-container pp-hero-grid">
         <div class="reveal">
-          <span class="pp-eyebrow"><i class="fa-solid fa-handshake"></i> Agents & ISOs</span>
-          <h1>Keep your book.<br/>Get a cleaner deal.</h1>
+          <span class="pp-eyebrow"><i class="fa-solid fa-user-tie"></i> Sales Agents</span>
+          <h1>Keep your book. Get a higher split. <span class="pp-hero-grad">Launch your own branded payment software.</span></h1>
           <p class="pp-sub">
-            If you already know payments, you don't need more noise. You need clean reporting, responsive support, and a program you can scale.
+            You already know how to sell payments. PPD Technology helps you take the next step with stronger economics, book ownership, and custom branded software built around the niche you know best.
+          </p>
+          <p class="pp-hero-support">
+            Whether you focus on restaurants, repair shops, retail, contractors, med spas, or another vertical, we help you turn that niche into a software-driven offer merchants can actually get excited about.
           </p>
           <div class="pp-hero-ctas">
             <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
-              Book a Quick Compare Call <i class="fa-regular fa-calendar"></i>
+              Book an Agent Strategy Call <i class="fa-regular fa-calendar"></i>
+            </button>
+            <button class="pp-btn pp-btn-outline" type="button" onclick="document.getElementById('why-switch').scrollIntoView({behavior:'smooth'})">
+              See how the software works <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
           <div class="pp-trust-row">
-            <span class="pp-trust-pill"><i class="fa-solid fa-bolt"></i> Fast onboarding</span>
-            <span class="pp-trust-pill"><i class="fa-solid fa-chart-line"></i> Transparent reporting</span>
-            <span class="pp-trust-pill"><i class="fa-solid fa-headset"></i> 24/7 support desk</span>
-            <span class="pp-trust-pill"><i class="fa-solid fa-shield-halved"></i> Risk-aware underwriting</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-book-bookmark"></i> Keep your book</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-arrow-trend-up"></i> Higher agent split</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-shapes"></i> Branded niche software</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-layer-group"></i> Software fees + processing</span>
+            <span class="pp-trust-pill"><i class="fa-solid fa-user-tie"></i> Built for seasoned agents</span>
           </div>
         </div>
 
-        <div class="pp-dashboard reveal" aria-label="Partner program preview">
-          <div class="pp-dash-header">
-            <div class="pp-dash-dots"><span></span><span></span><span></span></div>
-            <span class="pp-dash-title">Partner Dashboard</span>
-          </div>
-          <div class="pp-dash-body">
-            <div class="pp-dash-row">
-              <div class="pp-dash-stat">
-                <div class="pp-dash-label">Active Merchants</div>
-                <div class="pp-dash-value">127</div>
-                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-up"></i> 12 this month</div>
-              </div>
-              <div class="pp-dash-stat">
-                <div class="pp-dash-label">Monthly Residuals</div>
-                <div class="pp-dash-value">$8,420</div>
-                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-up"></i> 18.2%</div>
-              </div>
+        <div class="pp-bn-wrap reveal">
+          <div class="pp-bn-mock" id="pp-bn-dash">
+            <div class="pp-dash-header">
+              <div class="pp-dash-dots"><span></span><span></span><span></span></div>
+              <span class="pp-dash-title">Your Branded Niche Software</span>
+              <span class="pp-bn-brandbadge"><i class="fa-solid fa-star"></i> Your Brand</span>
             </div>
-            <div class="pp-dash-row">
-              <div class="pp-dash-stat">
-                <div class="pp-dash-label">Avg. Approval Time</div>
-                <div class="pp-dash-value">1.8 days</div>
-                <div class="pp-dash-change positive"><i class="fa-solid fa-arrow-down"></i> Faster</div>
+
+            <div class="pp-bn-body">
+              <div class="pp-bn-tabs" role="tablist" aria-label="Preview your branded software by niche">
+                <button class="pp-bn-tab active" type="button" role="tab" id="pp-bn-tab-restaurants" data-niche="restaurants" aria-selected="true" aria-controls="pp-bn-panel" tabindex="0">Restaurants</button>
+                <button class="pp-bn-tab" type="button" role="tab" id="pp-bn-tab-repair" data-niche="repair" aria-selected="false" aria-controls="pp-bn-panel" tabindex="-1">Repair Shops</button>
+                <button class="pp-bn-tab" type="button" role="tab" id="pp-bn-tab-retail" data-niche="retail" aria-selected="false" aria-controls="pp-bn-panel" tabindex="-1">Retail</button>
+                <button class="pp-bn-tab" type="button" role="tab" id="pp-bn-tab-contractors" data-niche="contractors" aria-selected="false" aria-controls="pp-bn-panel" tabindex="-1">Contractors</button>
+                <button class="pp-bn-tab" type="button" role="tab" id="pp-bn-tab-medspas" data-niche="medspas" aria-selected="false" aria-controls="pp-bn-panel" tabindex="-1">Med Spas</button>
               </div>
-              <div class="pp-dash-stat">
-                <div class="pp-dash-label">Portfolio Retention</div>
-                <div class="pp-dash-value">96.4%</div>
-                <div class="pp-dash-change positive"><i class="fa-solid fa-circle-check"></i> Healthy</div>
-              </div>
-            </div>
-            <div class="pp-dash-bar">
-              <div class="pp-dash-bar-label">Revenue Growth (6mo)</div>
-              <div class="pp-dash-bar-track">
-                <div class="pp-dash-bar-fill" style="width:72%"></div>
+
+              <div class="pp-bn-content" id="pp-bn-panel" role="tabpanel" aria-live="polite" aria-labelledby="pp-bn-tab-restaurants">
+                <div class="pp-bn-head">
+                  <div class="pp-bn-head-text">
+                    <div class="pp-bn-title" data-field="title">RestaurantPay Pro</div>
+                    <div class="pp-bn-desc" data-field="description">Orders, tabs, tips, loyalty, online ordering, and payment reporting in one branded system.</div>
+                  </div>
+                  <span class="pp-bn-tag">Custom Niche POS</span>
+                </div>
+
+                <div class="pp-bn-stats">
+                  <div class="pp-bn-stat s-blue">
+                    <div class="pp-bn-stat-ic"><i class="fa-solid fa-code"></i></div>
+                    <div class="pp-bn-stat-meta">
+                      <div class="pp-bn-stat-lbl">Software Fees</div>
+                      <div class="pp-bn-stat-val" data-field="softwareFees">$5,860</div>
+                    </div>
+                  </div>
+                  <div class="pp-bn-stat s-cyan">
+                    <div class="pp-bn-stat-ic"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="pp-bn-stat-meta">
+                      <div class="pp-bn-stat-lbl">Processing Volume</div>
+                      <div class="pp-bn-stat-val" data-field="processingVolume">$1.8M</div>
+                    </div>
+                  </div>
+                  <div class="pp-bn-stat s-purple">
+                    <div class="pp-bn-stat-ic"><i class="fa-solid fa-store"></i></div>
+                    <div class="pp-bn-stat-meta">
+                      <div class="pp-bn-stat-lbl">Active Merchants</div>
+                      <div class="pp-bn-stat-val" data-field="activeMerchants">67</div>
+                    </div>
+                  </div>
+                  <div class="pp-bn-stat s-green">
+                    <div class="pp-bn-stat-ic"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="pp-bn-stat-meta">
+                      <div class="pp-bn-stat-lbl">Referrals</div>
+                      <div class="pp-bn-stat-val" data-field="referrals">31</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pp-bn-panels">
+                  <div class="pp-bn-panel">
+                    <div class="pp-bn-panel-title"><i class="fa-solid fa-user-gear"></i> Merchant CRM</div>
+                    <div class="pp-bn-merchants" data-field="merchants">
+                      <div class="pp-bn-merch"><span class="pp-bn-avatar">HG</span><span class="pp-bn-merch-name">Harbor Grill</span><span class="pp-bn-merch-dot"></span></div>
+                      <div class="pp-bn-merch"><span class="pp-bn-avatar">MT</span><span class="pp-bn-merch-name">Midtown Tacos</span><span class="pp-bn-merch-dot"></span></div>
+                    </div>
+                  </div>
+                  <div class="pp-bn-panel">
+                    <div class="pp-bn-panel-title"><i class="fa-solid fa-chart-simple"></i> Revenue</div>
+                    <div class="pp-bn-bars" data-field="chart">
+                      <span style="height:50%"></span><span style="height:64%"></span><span style="height:60%"></span><span style="height:78%"></span><span style="height:70%"></span><span style="height:90%"></span><span style="height:100%"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pp-bn-modules" data-field="modules">
+                  <span class="pp-bn-chip">Table Orders</span><span class="pp-bn-chip">Tip Management</span><span class="pp-bn-chip">Loyalty</span><span class="pp-bn-chip">Online Ordering</span>
+                </div>
+
+                <div class="pp-bn-panel">
+                  <div class="pp-bn-panel-title"><i class="fa-solid fa-bell"></i> Recent Activity</div>
+                  <div class="pp-bn-activity" data-field="activity">
+                    <div class="pp-bn-act"><i class="fa-solid fa-circle-check"></i> Harbor Grill enabled online ordering</div>
+                    <div class="pp-bn-act"><i class="fa-solid fa-user-plus"></i> New referral from Coastal Kitchen</div>
+                  </div>
+                </div>
+
+                <div class="pp-bn-brandline"><i class="fa-solid fa-wand-magic-sparkles"></i> Branded by Your Agency</div>
               </div>
             </div>
           </div>
@@ -690,10 +749,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       display:inline-flex;align-items:center;gap:7px;
     }
 
-    .pp-dashboard{
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-      border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);
-    }
+    /* shared browser-bar (also used by #why-switch mock) */
     .pp-dash-header{
       display:flex;align-items:center;gap:10px;padding:10px 14px;
       border-bottom:1px solid rgba(255,255,255,.1);
@@ -704,23 +760,110 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-dash-dots span:nth-child(2){background:#FEBC2E}
     .pp-dash-dots span:nth-child(3){background:#28C840}
     .pp-dash-title{font-weight:700;font-size:12px;color:rgba(255,255,255,.7)}
-    .pp-dash-body{padding:16px;display:flex;flex-direction:column;gap:12px}
-    .pp-dash-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pp-dash-stat{
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:14px;
+
+    /* Hero copy extras */
+    .pp-hero-grad{
+      background:linear-gradient(100deg,var(--pp-cyan),#8B5CF6 55%,var(--pp-accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
     }
-    .pp-dash-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);font-weight:600}
-    .pp-dash-value{font-size:22px;font-weight:900;margin:4px 0 2px;letter-spacing:-.02em}
-    .pp-dash-change{font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px}
-    .pp-dash-change.positive{color:var(--pp-accent)}
-    .pp-dash-bar{
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:14px;
+    .pp-hero-support{color:rgba(255,255,255,.6);font-size:14px;line-height:1.6;margin-top:12px;max-width:46ch}
+
+    /* Branded niche software mockup (hero) */
+    .pp-bn-wrap{position:relative;z-index:2}
+    .pp-bn-wrap::before{
+      content:"";position:absolute;inset:-16px;border-radius:28px;z-index:0;pointer-events:none;
+      background:conic-gradient(from 130deg,rgba(21,73,255,.55),rgba(0,207,255,.45),rgba(139,92,246,.55),rgba(0,229,160,.4),rgba(21,73,255,.55));
+      filter:blur(42px);opacity:.42;
     }
-    .pp-dash-bar-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:8px}
-    .pp-dash-bar-track{height:8px;border-radius:99px;background:rgba(255,255,255,.1)}
-    .pp-dash-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--pp-primary),var(--pp-cyan))}
+    .pp-bn-mock{
+      position:relative;z-index:1;border:1px solid transparent;border-radius:20px;overflow:hidden;width:100%;
+      background:
+        linear-gradient(165deg,rgba(13,24,52,.94),rgba(9,16,38,.96)) padding-box,
+        linear-gradient(135deg,rgba(21,73,255,.7),rgba(0,207,255,.5) 45%,rgba(139,92,246,.65)) border-box;
+      box-shadow:0 30px 70px rgba(2,6,23,.5);backdrop-filter:blur(12px);
+    }
+    .pp-bn-brandbadge{
+      margin-left:auto;display:inline-flex;align-items:center;gap:5px;
+      padding:3px 9px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.03em;color:#fff;
+      background:linear-gradient(135deg,var(--pp-primary),#8B5CF6);
+    }
+    .pp-bn-brandbadge i{font-size:9px;color:#ffdf6b}
+
+    .pp-bn-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+
+    .pp-bn-tabs{display:flex;flex-wrap:wrap;gap:6px}
+    .pp-bn-tab{
+      border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.72);
+      padding:6px 11px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;
+      transition:transform .15s,background .2s,border-color .2s,color .2s,box-shadow .2s;
+    }
+    .pp-bn-tab:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);transform:translateY(-1px)}
+    .pp-bn-tab.active{
+      color:#fff;border-color:transparent;
+      background:linear-gradient(135deg,var(--pp-primary),#7C4DFF 60%,var(--pp-cyan));
+      box-shadow:0 8px 22px rgba(21,73,255,.4);
+    }
+    .pp-bn-tab:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
+
+    .pp-bn-content{display:flex;flex-direction:column;gap:11px;transition:opacity .18s ease}
+    .pp-bn-content.pp-bn-swap{opacity:0}
+
+    .pp-bn-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .pp-bn-title{font-size:16px;font-weight:900;letter-spacing:-.01em;color:#fff}
+    .pp-bn-desc{font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.6);margin-top:3px}
+    .pp-bn-tag{
+      flex:none;padding:3px 8px;border-radius:8px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+      color:var(--pp-cyan);background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.28);white-space:nowrap;
+    }
+
+    .pp-bn-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .pp-bn-stat{
+      display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:11px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+    }
+    .pp-bn-stat-ic{width:28px;height:28px;flex:none;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px}
+    .pp-bn-stat.s-blue .pp-bn-stat-ic{background:rgba(21,73,255,.2);color:#7ea2ff;border:1px solid rgba(21,73,255,.35)}
+    .pp-bn-stat.s-cyan .pp-bn-stat-ic{background:rgba(0,207,255,.16);color:var(--pp-cyan);border:1px solid rgba(0,207,255,.32)}
+    .pp-bn-stat.s-purple .pp-bn-stat-ic{background:rgba(139,92,246,.2);color:#b79cff;border:1px solid rgba(139,92,246,.35)}
+    .pp-bn-stat.s-green .pp-bn-stat-ic{background:rgba(0,229,160,.16);color:var(--pp-accent);border:1px solid rgba(0,229,160,.32)}
+    .pp-bn-stat-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);font-weight:700}
+    .pp-bn-stat-val{font-size:15px;font-weight:900;color:#fff;letter-spacing:-.01em;margin-top:1px}
+
+    .pp-bn-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .pp-bn-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:11px;padding:10px}
+    .pp-bn-panel-title{font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.55);font-weight:800;display:flex;align-items:center;gap:5px;margin-bottom:8px}
+    .pp-bn-panel-title i{color:var(--pp-cyan);font-size:10px}
+
+    .pp-bn-merchants{display:flex;flex-direction:column;gap:7px}
+    .pp-bn-merch{display:flex;align-items:center;gap:8px}
+    .pp-bn-avatar{
+      width:24px;height:24px;flex:none;border-radius:7px;display:flex;align-items:center;justify-content:center;
+      font-size:9px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--pp-primary),#8B5CF6);
+    }
+    .pp-bn-merch-name{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.85);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pp-bn-merch-dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--pp-accent);box-shadow:0 0 0 3px rgba(0,229,160,.15)}
+
+    .pp-bn-bars{display:flex;align-items:flex-end;gap:5px;height:52px}
+    .pp-bn-bars span{
+      flex:1;border-radius:4px 4px 0 0;transform-origin:bottom;
+      background:linear-gradient(180deg,var(--pp-cyan),var(--pp-primary));animation:pp-bn-grow .6s ease both;
+    }
+    .pp-bn-bars span:last-child{background:linear-gradient(180deg,#b79cff,#7C4DFF)}
+    @keyframes pp-bn-grow{from{transform:scaleY(.05);opacity:.3}to{transform:scaleY(1);opacity:1}}
+
+    .pp-bn-modules{display:flex;flex-wrap:wrap;gap:6px}
+    .pp-bn-chip{
+      padding:4px 9px;border-radius:999px;font-size:10.5px;font-weight:700;
+      color:rgba(255,255,255,.82);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    }
+
+    .pp-bn-activity{display:flex;flex-direction:column;gap:6px}
+    .pp-bn-act{font-size:11px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:7px;line-height:1.35}
+    .pp-bn-act i{font-size:10px;color:var(--pp-accent);flex:none}
+    .pp-bn-act:nth-child(2) i{color:var(--pp-cyan)}
+
+    .pp-bn-brandline{display:flex;align-items:center;justify-content:center;gap:7px;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.55);padding-top:2px}
+    .pp-bn-brandline i{color:#b79cff}
 
     .pp-switch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
     .pp-switch-card{
@@ -1005,6 +1148,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     @media (max-width:420px){
       .pp-diff-stats,.pp-diff-panels,.pp-hw-dash-stats{grid-template-columns:1fr}
+      .pp-bn-stats,.pp-bn-panels{grid-template-columns:1fr}
     }
     @media (min-width:640px) and (max-width:980px){
       .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:repeat(2,1fr)}
@@ -1277,6 +1421,144 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           }
         });
       }
+    })();
+  </script>
+
+  <script is:inline>
+    (() => {
+      const dash = document.getElementById("pp-bn-dash");
+      if (!dash) return;
+
+      const NICHES = {
+        restaurants: {
+          title: "RestaurantPay Pro",
+          description: "Orders, tabs, tips, loyalty, online ordering, and payment reporting in one branded system.",
+          softwareFees: "$5,860", processingVolume: "$1.8M", activeMerchants: "67", referrals: "31",
+          merchants: [{ n: "Harbor Grill", a: "HG" }, { n: "Midtown Tacos", a: "MT" }],
+          modules: ["Table Orders", "Tip Management", "Loyalty", "Online Ordering"],
+          activity: [
+            { i: "fa-circle-check", t: "Harbor Grill enabled online ordering" },
+            { i: "fa-user-plus", t: "New referral from Coastal Kitchen" }
+          ],
+          chart: [50, 64, 60, 78, 70, 90, 100]
+        },
+        repair: {
+          title: "RepairPay CRM",
+          description: "Tickets, devices, estimates, warranties, payments, and repeat customers built for repair shops.",
+          softwareFees: "$4,120", processingVolume: "$1.2M", activeMerchants: "84", referrals: "23",
+          merchants: [{ n: "Riverside Repair Co.", a: "RR" }, { n: "Downtown Devices", a: "DD" }],
+          modules: ["Repair Tickets", "Device Intake", "Warranty Tracking", "SMS Updates"],
+          activity: [
+            { i: "fa-circle-check", t: "Riverside Repair Co. closed 3 tickets today" },
+            { i: "fa-user-plus", t: "New referral from Northside Phone Repair" }
+          ],
+          chart: [42, 58, 48, 72, 64, 86, 100]
+        },
+        retail: {
+          title: "RetailFlow Payments",
+          description: "Checkout, inventory, customer profiles, gift cards, and reporting for retail merchants.",
+          softwareFees: "$3,740", processingVolume: "$940K", activeMerchants: "58", referrals: "19",
+          merchants: [{ n: "Main Street Boutique", a: "MB" }, { n: "Urban Market", a: "UM" }],
+          modules: ["Inventory Sync", "Customer Profiles", "Gift Cards", "Product Reports"],
+          activity: [
+            { i: "fa-circle-check", t: "Main Street Boutique synced inventory" },
+            { i: "fa-user-plus", t: "New referral from Parkside Goods" }
+          ],
+          chart: [38, 52, 46, 60, 72, 80, 100]
+        },
+        contractors: {
+          title: "ContractorPay Hub",
+          description: "Mobile invoices, deposits, job tracking, recurring billing, and field payment tools.",
+          softwareFees: "$6,240", processingVolume: "$2.1M", activeMerchants: "73", referrals: "27",
+          merchants: [{ n: "Apex HVAC", a: "AH" }, { n: "Prime Plumbing", a: "PP" }],
+          modules: ["Mobile Invoices", "Job Deposits", "Recurring Billing", "Dispatch Notes"],
+          activity: [
+            { i: "fa-circle-check", t: "Apex HVAC collected 4 job deposits" },
+            { i: "fa-user-plus", t: "New referral from Summit Electric" }
+          ],
+          chart: [46, 60, 54, 74, 68, 88, 100]
+        },
+        medspas: {
+          title: "MedSpaPay Suite",
+          description: "Deposits, packages, memberships, client profiles, payment plans, and appointment-based checkout.",
+          softwareFees: "$4,980", processingVolume: "$1.4M", activeMerchants: "52", referrals: "21",
+          merchants: [{ n: "Glow Aesthetics", a: "GA" }, { n: "Luxe Skin Studio", a: "LS" }],
+          modules: ["Memberships", "Packages", "Deposits", "Client Profiles"],
+          activity: [
+            { i: "fa-circle-check", t: "Glow Aesthetics sold 6 memberships" },
+            { i: "fa-user-plus", t: "New referral from Serenity MedSpa" }
+          ],
+          chart: [44, 56, 62, 70, 78, 86, 100]
+        }
+      };
+
+      const content = dash.querySelector(".pp-bn-content");
+      const tabs = Array.from(dash.querySelectorAll(".pp-bn-tab"));
+      const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+      const setField = (name, value) => {
+        const el = content.querySelector('[data-field="' + name + '"]');
+        if (el) el.textContent = value;
+      };
+
+      const render = (key) => {
+        const d = NICHES[key];
+        if (!d) return;
+        setField("title", d.title);
+        setField("description", d.description);
+        setField("softwareFees", d.softwareFees);
+        setField("processingVolume", d.processingVolume);
+        setField("activeMerchants", d.activeMerchants);
+        setField("referrals", d.referrals);
+
+        const merchWrap = content.querySelector('[data-field="merchants"]');
+        if (merchWrap) merchWrap.innerHTML = d.merchants.map((m) =>
+          '<div class="pp-bn-merch"><span class="pp-bn-avatar">' + esc(m.a) + '</span>' +
+          '<span class="pp-bn-merch-name">' + esc(m.n) + '</span><span class="pp-bn-merch-dot"></span></div>'
+        ).join("");
+
+        const modWrap = content.querySelector('[data-field="modules"]');
+        if (modWrap) modWrap.innerHTML = d.modules.map((m) => '<span class="pp-bn-chip">' + esc(m) + '</span>').join("");
+
+        const actWrap = content.querySelector('[data-field="activity"]');
+        if (actWrap) actWrap.innerHTML = d.activity.map((a) =>
+          '<div class="pp-bn-act"><i class="fa-solid ' + esc(a.i) + '"></i> ' + esc(a.t) + '</div>'
+        ).join("");
+
+        const chartWrap = content.querySelector('[data-field="chart"]');
+        if (chartWrap) chartWrap.innerHTML = d.chart.map((h) => '<span style="height:' + h + '%"></span>').join("");
+      };
+
+      const activate = (tab) => {
+        const key = tab.getAttribute("data-niche");
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle("active", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          t.setAttribute("tabindex", on ? "0" : "-1");
+        });
+        content.setAttribute("aria-labelledby", tab.id);
+        content.classList.add("pp-bn-swap");
+        window.setTimeout(() => {
+          render(key);
+          content.classList.remove("pp-bn-swap");
+        }, 160);
+      };
+
+      tabs.forEach((tab, idx) => {
+        tab.addEventListener("click", () => activate(tab));
+        tab.addEventListener("keydown", (e) => {
+          let next = -1;
+          if (e.key === "ArrowRight" || e.key === "ArrowDown") next = (idx + 1) % tabs.length;
+          else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = (idx - 1 + tabs.length) % tabs.length;
+          else if (e.key === "Home") next = 0;
+          else if (e.key === "End") next = tabs.length - 1;
+          if (next < 0) return;
+          e.preventDefault();
+          tabs[next].focus();
+          activate(tabs[next]);
+        });
+      });
     })();
   </script>
 </BaseLayout>

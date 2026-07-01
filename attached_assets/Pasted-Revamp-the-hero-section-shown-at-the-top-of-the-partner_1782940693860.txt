@@ -1,0 +1,248 @@
+Revamp the hero section shown at the top of the partner/agent page.
+
+Current section:
+The hero currently says:
+Badge: “AGENTS & ISOS”
+Heading: “Keep your book. Get a cleaner deal.”
+Subheading talks about payments, clean reporting, support, and scaling.
+Right side shows a “Partner Dashboard” card with generic stats.
+
+Change this section so it is specifically for sales agents only, not ISOs. ISOs will have their own page, so remove “ISO” language from this hero.
+
+Goal:
+Make the hero speak directly to experienced payment sales agents who want:
+1. To keep their book.
+2. To get a higher split.
+3. To get custom branded payment software for their niche of choice.
+4. To stand out from other agents who are selling the same hardware and processing.
+5. To scale with a more unique offer.
+
+Core message:
+PPD Technology helps sales agents keep their merchant book, earn a higher split, and launch a custom branded payment software/POS solution for the niche they already sell into.
+
+Update the hero copy:
+
+Badge:
+SALES AGENTS
+
+Headline:
+Keep your book. Get a higher split. Launch your own branded payment software.
+
+Subheadline:
+You already know how to sell payments. PPD Technology helps you take the next step with stronger economics, book ownership, and custom branded software built around the niche you know best.
+
+Supporting copy:
+Whether you focus on restaurants, repair shops, retail, contractors, med spas, or another vertical, we help you turn that niche into a software-driven offer merchants can actually get excited about.
+
+Primary CTA button:
+Book an Agent Strategy Call
+
+Secondary CTA button or text link:
+See how the software works
+
+Hero trust chips:
+Replace the current chips with:
+- Keep your book
+- Higher agent split
+- Branded niche software
+- Software fees + processing
+- Built for seasoned agents
+
+Design direction:
+Keep the dark blue hero background, but make the design more colorful, modern, and energetic. Add more visual depth using blue, cyan, purple, and subtle green accents. The hero should feel premium, SaaS-like, and exciting without looking messy.
+
+Right-side visual:
+Replace the current generic “Partner Dashboard” with a more dynamic, colorful, interactive niche software preview.
+
+The right-side card should show a custom branded payment software dashboard that changes based on the selected niche.
+
+Use a title like:
+Your Branded Niche Software
+
+Add clickable tabs across the top of the mockup:
+- Restaurants
+- Repair Shops
+- Retail
+- Contractors
+- Med Spas
+
+When a user clicks a tab, the mockup content should update to that niche.
+
+Use React state or the equivalent framework pattern already used in the project.
+
+Each niche should update:
+- Dashboard title
+- Description
+- Example merchant names
+- Software modules
+- Software fee stat
+- Processing volume stat
+- Active merchants stat
+- Referral stat
+- Recent activity
+- Mini chart or progress bars
+
+Example niche data:
+
+Restaurants:
+Title: RestaurantPay Pro
+Description: Orders, tabs, tips, loyalty, online ordering, and payment reporting in one branded system.
+Merchants:
+- Harbor Grill
+- Midtown Tacos
+Modules:
+- Table Orders
+- Tip Management
+- Loyalty
+- Online Ordering
+Stats:
+Software Fees: $5,860
+Processing Volume: $1.8M
+Active Merchants: 67
+Referrals: 31
+
+Repair Shops:
+Title: RepairPay CRM
+Description: Tickets, devices, estimates, warranties, payments, and repeat customers built for repair shops.
+Merchants:
+- Riverside Repair Co.
+- Downtown Devices
+Modules:
+- Repair Tickets
+- Device Intake
+- Warranty Tracking
+- SMS Updates
+Stats:
+Software Fees: $4,120
+Processing Volume: $1.2M
+Active Merchants: 84
+Referrals: 23
+
+Retail:
+Title: RetailFlow Payments
+Description: Checkout, inventory, customer profiles, gift cards, and reporting for retail merchants.
+Merchants:
+- Main Street Boutique
+- Urban Market
+Modules:
+- Inventory Sync
+- Customer Profiles
+- Gift Cards
+- Product Reports
+Stats:
+Software Fees: $3,740
+Processing Volume: $940K
+Active Merchants: 58
+Referrals: 19
+
+Contractors:
+Title: ContractorPay Hub
+Description: Mobile invoices, deposits, job tracking, recurring billing, and field payment tools.
+Merchants:
+- Apex HVAC
+- Prime Plumbing
+Modules:
+- Mobile Invoices
+- Job Deposits
+- Recurring Billing
+- Dispatch Notes
+Stats:
+Software Fees: $6,240
+Processing Volume: $2.1M
+Active Merchants: 73
+Referrals: 27
+
+Med Spas:
+Title: MedSpaPay Suite
+Description: Deposits, packages, memberships, client profiles, payment plans, and appointment-based checkout.
+Merchants:
+- Glow Aesthetics
+- Luxe Skin Studio
+Modules:
+- Memberships
+- Packages
+- Deposits
+- Client Profiles
+Stats:
+Software Fees: $4,980
+Processing Volume: $1.4M
+Active Merchants: 52
+Referrals: 21
+
+Right-side visual layout:
+Create a polished SaaS-style mockup with:
+- Browser-style top bar
+- Colorful niche tabs
+- Main dashboard title
+- Small description
+- Four compact stat cards
+- Merchant CRM preview
+- Module chips
+- Recent activity feed
+- Mini revenue chart
+- Optional “Branded by Your Agency” label or badge
+
+Make it clear visually that this could be the agent’s own branded software, not just a generic PPD dashboard.
+
+Suggested labels inside the mockup:
+- “Your Brand”
+- “Custom Niche POS”
+- “Software Fees”
+- “Processing Volume”
+- “Active Merchants”
+- “Referrals”
+- “Merchant CRM”
+- “Recent Activity”
+
+Interactive behavior:
+- Niche tabs should be clickable.
+- Active tab should have a strong colorful gradient style.
+- Inactive tabs should still look clickable.
+- Add hover states.
+- Add smooth transition/fade when switching niches.
+- Make sure it works on mobile.
+- No real payment functionality is needed.
+
+Design improvements:
+- Make the mockup more colorful than the current dashboard.
+- Use gradient highlights, glowing accent borders, colorful stat icons, and subtle animated chart bars if easy.
+- Keep it clean and readable.
+- Do not make the mockup too huge or bulky.
+- It should fit nicely in the hero section on desktop.
+- On mobile, stack the hero copy first and the dashboard preview underneath.
+
+Important wording rules:
+- Do not say “Agents & ISOs” in this hero.
+- Do not focus on generic ISO support.
+- Do not make the hero about “clean reporting” as the main message.
+- Focus on:
+  - Sales agents
+  - Keeping their book
+  - Higher split
+  - Custom branded payment software
+  - Their niche of choice
+  - Software fees plus processing
+  - Standing out and scaling
+
+Implementation steps:
+1. Search the codebase for the current hero text “Keep your book. Get a cleaner deal.”
+2. Replace the hero copy with the new agent-focused copy.
+3. Replace the badge “AGENTS & ISOS” with “SALES AGENTS.”
+4. Update the CTA text.
+5. Replace or upgrade the right-side “Partner Dashboard” visual with the interactive branded niche software mockup.
+6. Use a data-driven array/object for the niche tab content.
+7. Use React state for the active niche.
+8. Keep the existing navigation, footer, and unrelated page sections unchanged.
+9. Test the hero on desktop and mobile.
+10. Make sure there are no console errors and the page builds successfully.
+
+Acceptance criteria:
+- Hero is clearly for sales agents only.
+- “ISO” is removed from the hero.
+- Hero clearly says agents can keep their book.
+- Hero clearly says agents can get a higher split.
+- Hero clearly says PPD helps agents launch custom branded payment software for their niche.
+- Right-side mockup has clickable niche tabs.
+- Clicking the tabs changes the dashboard content.
+- Design is more colorful, modern, and exciting.
+- The section still matches PPDTechnology.com visually.
