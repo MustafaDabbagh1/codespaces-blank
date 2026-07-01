@@ -1,0 +1,313 @@
+Update the Become a Partner page.
+
+There are two things to fix/improve:
+
+1. Fix the Dejavoo image tile in the “Hardware You Know + Software That Stands Out” section.
+2. Make the custom dashboard under the “What makes PPD different” section highly interactive and dynamic.
+
+Part 1: Fix the Dejavoo image
+In the hardware visual card, the Clover and Valor images are showing, but the Dejavoo section is only showing a placeholder icon.
+
+Update the Dejavoo tile so it shows an actual Dejavoo terminal/device image.
+
+Important image rules:
+- First, check the project assets for any existing Dejavoo image.
+- If there is an approved Dejavoo asset, import and use it.
+- Do not hotlink a random external image.
+- If no Dejavoo image exists in the assets, create a clean branded fallback illustration of a Dejavoo-style payment terminal using HTML/CSS/SVG so the card does not look empty.
+- Keep the tile consistent with the Clover and Valor tiles.
+- The device tiles should all feel balanced in size and spacing.
+
+The three device tiles should read:
+- Clover
+- Valor
+- Dejavoo
+
+Part 2: Make the “Custom Niche POS” dashboard interactive
+Find the section titled:
+“What makes PPD different”
+
+In that section, there is a large custom dashboard mockup with tabs/buttons like:
+- Repair Shops
+- Restaurants
+- Retail
+- Field Services
+
+Right now, these tabs look like buttons but should actually be clickable and dynamic.
+
+Make these tabs fully interactive using React state or the equivalent framework pattern already used in the project.
+
+When the visitor clicks each niche button, the entire dashboard should update to show a different custom software/CRM experience for that niche.
+
+This should feel like the visitor is previewing what PPD could build for their niche.
+
+Core behavior:
+- The active tab should have a clear active style.
+- Clicking “Repair Shops” should show a repair-shop-focused dashboard.
+- Clicking “Restaurants” should show a restaurant-focused dashboard.
+- Clicking “Retail” should show a retail-focused dashboard.
+- Clicking “Field Services” should show a field-services-focused dashboard.
+- Add smooth transitions when the dashboard content changes.
+- Make all buttons feel clickable with hover states, active states, and cursor changes.
+- Make it work on desktop and mobile.
+- Add keyboard accessibility where practical.
+
+Use a data-driven structure:
+Create an array/object of vertical dashboard data, then map the UI from that data instead of hardcoding everything repeatedly.
+
+Example data structure:
+- label
+- headline
+- description
+- softwareFees
+- processingVolume
+- activeMerchants
+- referrals
+- checkoutAmount
+- ticketLabel
+- cardLabel
+- merchants
+- CRM pipeline stages
+- recent activity
+- modules/features
+- revenue chart values
+
+Dashboard content by niche:
+
+Repair Shops
+Headline:
+Repair Shop POS + CRM
+
+Description:
+Track tickets, devices, estimates, payments, warranties, repeat customers, and merchant activity in one custom workflow.
+
+Stats:
+Software Fees: $4,120
+Processing Volume: $1.2M
+Active Merchants: 84
+Referrals: 23
+
+Checkout:
+$248.50
+Ticket #4821
+Card **** 4821
+
+Merchants:
+- Riverside Repair Co.
+- Downtown Devices
+
+CRM Pipeline:
+- New Lead: 12
+- Demo Booked: 7
+- Software Setup: 4
+- Live Merchant: 84
+
+Modules:
+- Repair Tickets
+- Device Intake
+- Warranty Tracking
+- SMS Updates
+
+Recent Activity:
+- Riverside Repair Co. closed 3 repair tickets today
+- Downtown Devices added warranty tracking
+- New referral from Northside Phone Repair
+
+Restaurants
+Headline:
+Restaurant POS + Guest CRM
+
+Description:
+Give restaurants tools for orders, tabs, tips, loyalty, online ordering, staff activity, and payment reporting.
+
+Stats:
+Software Fees: $5,860
+Processing Volume: $1.8M
+Active Merchants: 67
+Referrals: 31
+
+Checkout:
+$86.40
+Table 12
+Card **** 1088
+
+Merchants:
+- Harbor Grill
+- Midtown Tacos
+
+CRM Pipeline:
+- New Lead: 18
+- Menu Review: 9
+- Install Scheduled: 6
+- Live Merchant: 67
+
+Modules:
+- Table Orders
+- Tip Management
+- Loyalty
+- Online Ordering
+
+Recent Activity:
+- Harbor Grill processed 142 orders today
+- Midtown Tacos activated loyalty rewards
+- New referral from a local restaurant group
+
+Retail
+Headline:
+Retail POS + Inventory CRM
+
+Description:
+Help retailers manage checkout, inventory, customer profiles, repeat purchases, gift cards, and reporting.
+
+Stats:
+Software Fees: $3,740
+Processing Volume: $940K
+Active Merchants: 58
+Referrals: 19
+
+Checkout:
+$132.75
+Order #7194
+Card **** 3372
+
+Merchants:
+- Main Street Boutique
+- Urban Market
+
+CRM Pipeline:
+- New Lead: 10
+- Inventory Demo: 5
+- Proposal Sent: 8
+- Live Merchant: 58
+
+Modules:
+- Inventory Sync
+- Customer Profiles
+- Gift Cards
+- Product Reporting
+
+Recent Activity:
+- Main Street Boutique added 46 SKUs
+- Urban Market launched digital gift cards
+- New referral from a retail plaza owner
+
+Field Services
+Headline:
+Field Service Payments + CRM
+
+Description:
+Give contractors and mobile teams invoicing, dispatch notes, job deposits, recurring billing, and mobile payments.
+
+Stats:
+Software Fees: $6,240
+Processing Volume: $2.1M
+Active Merchants: 73
+Referrals: 27
+
+Checkout:
+$675.00
+Job #2048
+Card **** 9021
+
+Merchants:
+- Apex HVAC
+- Prime Plumbing
+
+CRM Pipeline:
+- New Lead: 15
+- Estimate Sent: 11
+- Onboarding: 5
+- Live Merchant: 73
+
+Modules:
+- Mobile Invoices
+- Job Deposits
+- Recurring Billing
+- Dispatch Notes
+
+Recent Activity:
+- Apex HVAC collected 8 job deposits today
+- Prime Plumbing enabled recurring service billing
+- New referral from a contractor network
+
+Visual/UI requirements for the interactive dashboard:
+The dashboard should feel more like a real CRM/software product, not just stat cards.
+
+Include these areas inside the mockup:
+1. Top tab buttons for the niches
+2. Stat cards
+3. Checkout/payment panel
+4. Merchant CRM panel
+5. Pipeline panel
+6. Recent activity feed
+7. Revenue activity chart
+8. Feature/module chips
+
+The dashboard should visually update when each tab is clicked:
+- The headline should change
+- The description should change
+- Stats should change
+- Merchant names should change
+- Checkout details should change
+- Pipeline numbers should change
+- Activity feed should change
+- Module chips should change
+- Chart bars should change
+
+Add micro-interactions:
+- Hover effects on the niche tabs
+- Hover effects on merchant rows
+- A clickable “Charge Card” button
+- When “Charge Card” is clicked, show a temporary success state like:
+  “Payment simulated”
+  or
+  “Demo payment approved”
+- Do not connect it to a real payment flow.
+- This is only a front-end demo interaction.
+
+Add another small button inside the dashboard:
+“View CRM”
+
+When clicked:
+- Toggle or reveal the CRM pipeline/recent activity area more prominently.
+- The button text can change to “Hide CRM” when active.
+- Keep it smooth and polished.
+
+Copy near the mockup:
+Make sure the section clearly communicates this idea:
+
+“We make custom payment software for your main niche so you can stand out and scale.”
+
+Use or keep this messaging in the section:
+You can still sell the typical Clover, Dejavoo, Valor, terminals, gateways, and processing solutions. But when every agent has access to the same hardware, you need something that makes your pitch different. PPD Technology helps seasoned sales agents create custom software around the niche they already know best.
+
+Design requirements:
+- Keep the dark blue gradient background.
+- Keep the heading “What makes PPD different.”
+- Make the mockup feel premium, modern, and SaaS-like.
+- Use blue/cyan accents consistent with the current PPD style.
+- Do not make the section feel cluttered.
+- Keep the layout responsive.
+- On mobile, stack the content cleanly and make the dashboard scroll/resize nicely.
+- Avoid overflowing content on small screens.
+- Keep existing page navigation, footer, form, and unrelated sections unchanged.
+
+Technical requirements:
+- Use React state for the active niche tab.
+- Use React state for the payment success demo.
+- Use React state for showing/hiding the CRM panel if needed.
+- Avoid external dependencies unless the project already uses them.
+- Use existing icon components if available.
+- Keep code clean and easy to update.
+- Make sure there are no console errors.
+- Make sure the page builds successfully.
+
+Acceptance criteria:
+- The Dejavoo tile no longer looks empty.
+- The niche buttons in the dashboard are clickable.
+- Clicking Repair Shops, Restaurants, Retail, or Field Services updates the whole dashboard.
+- The dashboard feels like a different CRM/software preview for each niche.
+- The “Charge Card” button has a simulated success interaction.
+- The dashboard includes CRM-style elements, not only stat cards.
+- The section still looks consistent with PPDTechnology.com.
+- The page works correctly on desktop and mobile.

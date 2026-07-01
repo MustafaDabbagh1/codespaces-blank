@@ -125,7 +125,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div class="pp-diff-headline-icon"><i class="fa-solid fa-code"></i></div>
               <h3>We make you custom payment software for your main niche.</h3>
             </div>
-            <p class="pp-diff-body">You can still sell the typical Clover, Dejavoo, terminals, gateways, and processing solutions. But if every other agent has access to the same tools, you need something that makes you different. PPD Technology helps you create that edge with niche-specific software built around the merchants you already understand.</p>
+            <p class="pp-diff-body">You can still sell the typical Clover, Dejavoo, Valor, terminals, gateways, and processing solutions. But when every agent has access to the same hardware, you need something that makes your pitch different. PPD Technology helps seasoned sales agents create custom software around the niche they already know best.</p>
             <p class="pp-diff-body">We work with seasoned sales agents who are ready to move to the next level. Bring us the niche you already sell into, and we'll help you shape a software-driven offer that makes your pitch stronger, your merchants stickier, and your book easier to grow.</p>
             <div class="pp-diff-cta">
               <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
@@ -135,76 +135,118 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <div class="pp-diff-mock" aria-hidden="true">
+          <div class="pp-diff-mock" id="pp-dash">
             <div class="pp-dash-header">
               <div class="pp-dash-dots"><span></span><span></span><span></span></div>
               <span class="pp-dash-title">Custom Niche POS</span>
             </div>
             <div class="pp-diff-mock-body">
-              <div class="pp-diff-tabs">
-                <span class="pp-diff-tab active">Repair Shops</span>
-                <span class="pp-diff-tab">Restaurants</span>
-                <span class="pp-diff-tab">Retail</span>
-                <span class="pp-diff-tab">Field Services</span>
+              <div class="pp-diff-tabs" role="tablist" aria-label="Preview PPD software by niche">
+                <button class="pp-diff-tab active" type="button" role="tab" id="pp-tab-repair" data-niche="repair" aria-selected="true" aria-controls="pp-diff-tabpanel">Repair Shops</button>
+                <button class="pp-diff-tab" type="button" role="tab" id="pp-tab-restaurants" data-niche="restaurants" aria-selected="false" aria-controls="pp-diff-tabpanel" tabindex="-1">Restaurants</button>
+                <button class="pp-diff-tab" type="button" role="tab" id="pp-tab-retail" data-niche="retail" aria-selected="false" aria-controls="pp-diff-tabpanel" tabindex="-1">Retail</button>
+                <button class="pp-diff-tab" type="button" role="tab" id="pp-tab-field" data-niche="field" aria-selected="false" aria-controls="pp-diff-tabpanel" tabindex="-1">Field Services</button>
               </div>
 
-              <div class="pp-diff-stats">
-                <div class="pp-diff-stat">
-                  <div class="lbl"><i class="fa-solid fa-code"></i> Software Fees</div>
-                  <div class="val">$4,120<small>+14%</small></div>
+              <div class="pp-diff-dashcontent" id="pp-diff-tabpanel" role="tabpanel" aria-live="polite" aria-labelledby="pp-tab-repair">
+                <div class="pp-diff-dashhead">
+                  <div class="pp-diff-dashhead-title" data-field="headline">Repair Shop POS + CRM</div>
+                  <div class="pp-diff-dashhead-desc" data-field="description">Track tickets, devices, estimates, payments, warranties, repeat customers, and merchant activity in one custom workflow.</div>
                 </div>
-                <div class="pp-diff-stat">
-                  <div class="lbl"><i class="fa-solid fa-chart-line"></i> Processing Volume</div>
-                  <div class="val">$1.2M</div>
-                </div>
-                <div class="pp-diff-stat">
-                  <div class="lbl"><i class="fa-solid fa-store"></i> Active Merchants</div>
-                  <div class="val">84</div>
-                </div>
-                <div class="pp-diff-stat">
-                  <div class="lbl"><i class="fa-solid fa-users"></i> Referrals</div>
-                  <div class="val">23<small>+6</small></div>
-                </div>
-              </div>
 
-              <div class="pp-diff-panels">
-                <div class="pp-diff-panel">
-                  <div class="pp-diff-panel-title"><i class="fa-solid fa-credit-card"></i> Checkout</div>
-                  <div class="pp-diff-checkout-amt">$248.50</div>
-                  <div class="pp-diff-checkout-line"><span>Ticket #4821</span><span>Card ****4821</span></div>
-                  <div class="pp-diff-pay-btn"><i class="fa-solid fa-lock"></i> Charge Card</div>
-                </div>
-                <div class="pp-diff-panel">
-                  <div class="pp-diff-panel-title"><i class="fa-solid fa-user-gear"></i> Merchants</div>
-                  <div class="pp-diff-merchant">
-                    <div class="pp-diff-avatar">RC</div>
-                    <div class="pp-diff-merchant-info">
-                      <div class="pp-diff-merchant-name">Riverside Repair Co.</div>
-                      <div class="pp-diff-merchant-sub">Active &middot; Software + Processing</div>
-                    </div>
-                    <span class="pp-diff-dot"></span>
+                <div class="pp-diff-stats">
+                  <div class="pp-diff-stat">
+                    <div class="lbl"><i class="fa-solid fa-code"></i> Software Fees</div>
+                    <div class="val"><span data-field="softwareFees">$4,120</span><small data-field="feesDelta">+14%</small></div>
                   </div>
-                  <div class="pp-diff-merchant">
-                    <div class="pp-diff-avatar">DT</div>
-                    <div class="pp-diff-merchant-info">
-                      <div class="pp-diff-merchant-name">Downtown Devices</div>
-                      <div class="pp-diff-merchant-sub">Active &middot; Software + Processing</div>
-                    </div>
-                    <span class="pp-diff-dot"></span>
+                  <div class="pp-diff-stat">
+                    <div class="lbl"><i class="fa-solid fa-chart-line"></i> Processing Volume</div>
+                    <div class="val"><span data-field="processingVolume">$1.2M</span></div>
+                  </div>
+                  <div class="pp-diff-stat">
+                    <div class="lbl"><i class="fa-solid fa-store"></i> Active Merchants</div>
+                    <div class="val"><span data-field="activeMerchants">84</span></div>
+                  </div>
+                  <div class="pp-diff-stat">
+                    <div class="lbl"><i class="fa-solid fa-users"></i> Referrals</div>
+                    <div class="val"><span data-field="referrals">23</span><small data-field="refsDelta">+6</small></div>
                   </div>
                 </div>
-              </div>
 
-              <div class="pp-diff-chart">
-                <div class="pp-diff-panel-title"><i class="fa-solid fa-chart-simple"></i> Revenue Activity</div>
-                <div class="pp-diff-bars">
-                  <span style="height:42%"></span>
-                  <span style="height:58%"></span>
-                  <span style="height:48%"></span>
-                  <span style="height:72%"></span>
-                  <span style="height:64%"></span>
-                  <span style="height:86%"></span>
-                  <span style="height:100%"></span>
+                <div class="pp-diff-panels">
+                  <div class="pp-diff-panel">
+                    <div class="pp-diff-panel-title"><i class="fa-solid fa-credit-card"></i> Checkout</div>
+                    <div class="pp-diff-checkout-amt" data-field="checkoutAmount">$248.50</div>
+                    <div class="pp-diff-checkout-line"><span data-field="ticketLabel">Ticket #4821</span><span data-field="cardLabel">Card **** 4821</span></div>
+                    <button class="pp-diff-pay-btn" type="button" id="pp-charge-btn"><i class="fa-solid fa-lock"></i> Charge Card</button>
+                  </div>
+                  <div class="pp-diff-panel">
+                    <div class="pp-diff-panel-title"><i class="fa-solid fa-user-gear"></i> Merchants</div>
+                    <div class="pp-diff-merchants" data-field="merchants">
+                      <div class="pp-diff-merchant">
+                        <div class="pp-diff-avatar">RR</div>
+                        <div class="pp-diff-merchant-info">
+                          <div class="pp-diff-merchant-name">Riverside Repair Co.</div>
+                          <div class="pp-diff-merchant-sub">Active &middot; Software + Processing</div>
+                        </div>
+                        <span class="pp-diff-dot"></span>
+                      </div>
+                      <div class="pp-diff-merchant">
+                        <div class="pp-diff-avatar">DD</div>
+                        <div class="pp-diff-merchant-info">
+                          <div class="pp-diff-merchant-name">Downtown Devices</div>
+                          <div class="pp-diff-merchant-sub">Active &middot; Software + Processing</div>
+                        </div>
+                        <span class="pp-diff-dot"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pp-diff-modules" data-field="modules">
+                  <span class="pp-diff-chip">Repair Tickets</span>
+                  <span class="pp-diff-chip">Device Intake</span>
+                  <span class="pp-diff-chip">Warranty Tracking</span>
+                  <span class="pp-diff-chip">SMS Updates</span>
+                </div>
+
+                <div class="pp-diff-chart">
+                  <div class="pp-diff-panel-title"><i class="fa-solid fa-chart-simple"></i> Revenue Activity</div>
+                  <div class="pp-diff-bars" data-field="chart">
+                    <span style="height:42%"></span>
+                    <span style="height:58%"></span>
+                    <span style="height:48%"></span>
+                    <span style="height:72%"></span>
+                    <span style="height:64%"></span>
+                    <span style="height:86%"></span>
+                    <span style="height:100%"></span>
+                  </div>
+                </div>
+
+                <button class="pp-diff-crm-toggle" type="button" id="pp-crm-toggle" aria-expanded="false" aria-controls="pp-crm-area">
+                  <span class="pp-diff-crm-toggle-label">View CRM</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="pp-diff-crm" id="pp-crm-area" hidden>
+                  <div class="pp-diff-panels">
+                    <div class="pp-diff-panel">
+                      <div class="pp-diff-panel-title"><i class="fa-solid fa-filter"></i> Pipeline</div>
+                      <div class="pp-diff-pipeline" data-field="pipeline">
+                        <div class="pp-diff-pl-row"><div class="pp-diff-pl-top"><span>New Lead</span><strong>12</strong></div><div class="pp-diff-pl-bar"><span style="width:14%"></span></div></div>
+                        <div class="pp-diff-pl-row"><div class="pp-diff-pl-top"><span>Demo Booked</span><strong>7</strong></div><div class="pp-diff-pl-bar"><span style="width:8%"></span></div></div>
+                        <div class="pp-diff-pl-row"><div class="pp-diff-pl-top"><span>Software Setup</span><strong>4</strong></div><div class="pp-diff-pl-bar"><span style="width:6%"></span></div></div>
+                        <div class="pp-diff-pl-row"><div class="pp-diff-pl-top"><span>Live Merchant</span><strong>84</strong></div><div class="pp-diff-pl-bar"><span style="width:100%"></span></div></div>
+                      </div>
+                    </div>
+                    <div class="pp-diff-panel">
+                      <div class="pp-diff-panel-title"><i class="fa-solid fa-bell"></i> Recent Activity</div>
+                      <div class="pp-diff-activity" data-field="activity">
+                        <div class="pp-diff-act-row"><i class="fa-solid fa-circle-check"></i><span>Riverside Repair Co. closed 3 repair tickets today</span></div>
+                        <div class="pp-diff-act-row"><i class="fa-solid fa-circle-check"></i><span>Downtown Devices added warranty tracking</span></div>
+                        <div class="pp-diff-act-row"><i class="fa-solid fa-user-plus"></i><span>New referral from Northside Phone Repair</span></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,11 +307,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <img src="/images/VP800-View-01.png" alt="Valor VP800 payment device" loading="lazy" width="200" height="74" />
                 <span>Valor</span>
               </div>
-              <div class="pp-hw-device pp-hw-device--placeholder">
-                <!-- TODO: No approved Dejavoo product image in the project yet.
-                     Add one to /public/images (e.g. /images/dejavoo-device.png) and
-                     replace this placeholder block with an <img> like the tiles above. -->
-                <div class="pp-hw-device-ph"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <div class="pp-hw-device">
+                <!-- No approved Dejavoo product photo exists in the project assets, so this is a
+                     clean branded CSS/SVG illustration of a Dejavoo-style countertop terminal.
+                     When an approved Dejavoo image is added to /public/images, replace this
+                     <div class="pp-hw-device-illus"> block with an <img> like the tiles above. -->
+                <div class="pp-hw-device-illus" aria-hidden="true">
+                  <svg viewBox="0 0 100 132" width="100" height="132" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="pp-deja-screen" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#1549FF" />
+                        <stop offset="1" stop-color="#00CFFF" />
+                      </linearGradient>
+                      <linearGradient id="pp-deja-body" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#12213f" />
+                        <stop offset="1" stop-color="#0b1730" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="34" y="1.5" width="32" height="5" rx="2.5" fill="#1b2b4d" />
+                    <rect x="22" y="4" width="56" height="124" rx="13" fill="url(#pp-deja-body)" stroke="rgba(255,255,255,.08)" stroke-width="1" />
+                    <rect x="28.5" y="14" width="43" height="46" rx="5" fill="url(#pp-deja-screen)" />
+                    <rect x="39" y="30" width="22" height="15" rx="2.5" fill="#ffffff" opacity="0.95" />
+                    <rect x="42.5" y="33" width="6.5" height="5" rx="1.2" fill="#F5B301" />
+                    <rect x="42" y="41" width="16" height="1.6" rx="0.8" fill="#0b1730" opacity="0.35" />
+                    <path d="M55 24 a6 6 0 0 1 0 11" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.9" />
+                    <path d="M58 21 a10 10 0 0 1 0 17" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.6" />
+                    <g fill="rgba(255,255,255,.14)">
+                      <rect x="31" y="67" width="10.5" height="9" rx="2.5" />
+                      <rect x="44.75" y="67" width="10.5" height="9" rx="2.5" />
+                      <rect x="58.5" y="67" width="10.5" height="9" rx="2.5" />
+                      <rect x="31" y="80" width="10.5" height="9" rx="2.5" />
+                      <rect x="44.75" y="80" width="10.5" height="9" rx="2.5" />
+                      <rect x="58.5" y="80" width="10.5" height="9" rx="2.5" />
+                      <rect x="31" y="93" width="10.5" height="9" rx="2.5" />
+                      <rect x="44.75" y="93" width="10.5" height="9" rx="2.5" />
+                      <rect x="58.5" y="93" width="10.5" height="9" rx="2.5" />
+                    </g>
+                    <rect x="31" y="106" width="10.5" height="9" rx="2.5" fill="rgba(0,207,255,.55)" />
+                    <rect x="44.75" y="106" width="10.5" height="9" rx="2.5" fill="rgba(255,255,255,.14)" />
+                    <rect x="58.5" y="106" width="10.5" height="9" rx="2.5" fill="rgba(0,229,160,.55)" />
+                    <rect x="42" y="121" width="16" height="3" rx="1.5" fill="rgba(255,255,255,.28)" />
+                  </svg>
+                </div>
                 <span>Dejavoo</span>
               </div>
             </div>
@@ -704,13 +783,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-mock-body{padding:16px;display:flex;flex-direction:column;gap:14px}
     .pp-diff-tabs{display:flex;flex-wrap:wrap;gap:8px}
     .pp-diff-tab{
-      padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;
+      padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);
+      transition:background .18s,color .18s,border-color .18s,transform .12s;
     }
+    .pp-diff-tab:hover{background:rgba(255,255,255,.14);color:#fff}
+    .pp-diff-tab:active{transform:translateY(1px)}
     .pp-diff-tab.active{
       background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan));
-      border-color:transparent;color:#fff;
+      border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(21,73,255,.35);
     }
+    .pp-diff-tab:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
+    .pp-diff-dashcontent{transition:opacity .2s ease}
+    .pp-diff-dashcontent.pp-swapping{opacity:.25}
+    .pp-diff-dashhead-title{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.01em}
+    .pp-diff-dashhead-desc{font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.5;margin-top:5px}
     .pp-diff-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .pp-diff-stat{
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
@@ -730,12 +817,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-checkout-amt{font-size:24px;font-weight:900;color:#fff;letter-spacing:-.02em}
     .pp-diff-checkout-line{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;font-weight:600}
     .pp-diff-pay-btn{
-      margin-top:12px;width:100%;padding:9px;border-radius:9px;border:none;cursor:default;
+      margin-top:12px;width:100%;padding:9px;border-radius:9px;border:none;cursor:pointer;font-family:inherit;
       background:linear-gradient(135deg,#2D60FF,var(--pp-primary));color:#fff;font-weight:800;font-size:12px;
-      display:flex;align-items:center;justify-content:center;gap:7px;
+      display:flex;align-items:center;justify-content:center;gap:7px;transition:filter .18s,transform .12s,background .25s;
     }
-    .pp-diff-merchant{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-    .pp-diff-merchant:last-child{border-bottom:none;padding-bottom:0}
+    .pp-diff-pay-btn:hover{filter:brightness(1.08)}
+    .pp-diff-pay-btn:active{transform:translateY(1px)}
+    .pp-diff-pay-btn.is-done{background:linear-gradient(135deg,var(--pp-accent),#00b386)}
+    .pp-diff-pay-btn:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
+    .pp-diff-modules{display:flex;flex-wrap:wrap;gap:7px}
+    .pp-diff-chip{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.88);background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.24);padding:5px 10px;border-radius:999px}
+    .pp-diff-crm-toggle{
+      display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:9px;border-radius:9px;cursor:pointer;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:12px;font-family:inherit;
+      transition:background .18s,border-color .18s;
+    }
+    .pp-diff-crm-toggle:hover{background:rgba(255,255,255,.13)}
+    .pp-diff-crm-toggle:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
+    .pp-diff-crm-toggle i{color:var(--pp-cyan);transition:transform .25s ease}
+    .pp-diff-crm-toggle.is-open i{transform:rotate(180deg)}
+    .pp-diff-crm{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease}
+    .pp-diff-crm[hidden]{display:none}
+    .pp-diff-crm.is-open{max-height:720px;opacity:1}
+    .pp-diff-pipeline{display:flex;flex-direction:column;gap:10px}
+    .pp-diff-pl-top{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:5px}
+    .pp-diff-pl-top strong{color:#fff;font-weight:900}
+    .pp-diff-pl-bar{height:5px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+    .pp-diff-pl-bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--pp-primary),var(--pp-cyan))}
+    .pp-diff-activity{display:flex;flex-direction:column;gap:10px}
+    .pp-diff-act-row{display:flex;gap:9px;align-items:flex-start;font-size:11px;color:rgba(255,255,255,.72);line-height:1.45}
+    .pp-diff-act-row i{color:var(--pp-cyan);font-size:11px;margin-top:2px;flex-shrink:0}
+    .pp-diff-merchant{display:flex;align-items:center;gap:10px;padding:7px 6px;margin:0 -6px;border-radius:9px;border-bottom:1px solid rgba(255,255,255,.07);transition:background .15s}
+    .pp-diff-merchant:hover{background:rgba(255,255,255,.06)}
+    .pp-diff-merchant:last-child{border-bottom:none}
     .pp-diff-avatar{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan))}
     .pp-diff-merchant-info{flex:1;min-width:0}
     .pp-diff-merchant-name{font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -776,10 +890,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-hw-device:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
     .pp-hw-device img{width:100%;height:74px;object-fit:contain}
     .pp-hw-device span{font-size:12px;font-weight:800;color:var(--pp-navy)}
-    .pp-hw-device-ph{
-      width:100%;height:74px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-      background:rgba(21,73,255,.06);border:1px dashed rgba(21,73,255,.28);color:var(--pp-primary);font-size:26px;
-    }
+    .pp-hw-device-illus{width:100%;height:74px;display:flex;align-items:center;justify-content:center}
+    .pp-hw-device-illus svg{height:74px;width:auto;display:block;filter:drop-shadow(0 8px 14px rgba(13,27,57,.22))}
     .pp-hw-dash{
       background:linear-gradient(135deg,var(--pp-navy),#0A2B74);border-radius:14px;padding:16px;color:#fff;
       position:relative;z-index:1;border:1px solid rgba(255,255,255,.08);
@@ -940,6 +1052,230 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           }
         }
       });
+    })();
+  </script>
+
+  <script is:inline>
+    (() => {
+      const dash = document.getElementById("pp-dash");
+      if (!dash) return;
+
+      const NICHES = {
+        repair: {
+          headline: "Repair Shop POS + CRM",
+          description: "Track tickets, devices, estimates, payments, warranties, repeat customers, and merchant activity in one custom workflow.",
+          softwareFees: "$4,120", feesDelta: "+14%",
+          processingVolume: "$1.2M",
+          activeMerchants: "84",
+          referrals: "23", refsDelta: "+6",
+          checkoutAmount: "$248.50", ticketLabel: "Ticket #4821", cardLabel: "Card **** 4821",
+          merchants: [{ n: "Riverside Repair Co.", a: "RR" }, { n: "Downtown Devices", a: "DD" }],
+          modules: ["Repair Tickets", "Device Intake", "Warranty Tracking", "SMS Updates"],
+          pipeline: [{ s: "New Lead", c: 12 }, { s: "Demo Booked", c: 7 }, { s: "Software Setup", c: 4 }, { s: "Live Merchant", c: 84 }],
+          activity: [
+            { i: "fa-circle-check", t: "Riverside Repair Co. closed 3 repair tickets today" },
+            { i: "fa-circle-check", t: "Downtown Devices added warranty tracking" },
+            { i: "fa-user-plus", t: "New referral from Northside Phone Repair" }
+          ],
+          chart: [42, 58, 48, 72, 64, 86, 100]
+        },
+        restaurants: {
+          headline: "Restaurant POS + Guest CRM",
+          description: "Give restaurants tools for orders, tabs, tips, loyalty, online ordering, staff activity, and payment reporting.",
+          softwareFees: "$5,860", feesDelta: "+19%",
+          processingVolume: "$1.8M",
+          activeMerchants: "67",
+          referrals: "31", refsDelta: "+8",
+          checkoutAmount: "$86.40", ticketLabel: "Table 12", cardLabel: "Card **** 1088",
+          merchants: [{ n: "Harbor Grill", a: "HG" }, { n: "Midtown Tacos", a: "MT" }],
+          modules: ["Table Orders", "Tip Management", "Loyalty", "Online Ordering"],
+          pipeline: [{ s: "New Lead", c: 18 }, { s: "Menu Review", c: 9 }, { s: "Install Scheduled", c: 6 }, { s: "Live Merchant", c: 67 }],
+          activity: [
+            { i: "fa-circle-check", t: "Harbor Grill processed 142 orders today" },
+            { i: "fa-circle-check", t: "Midtown Tacos activated loyalty rewards" },
+            { i: "fa-user-plus", t: "New referral from a local restaurant group" }
+          ],
+          chart: [50, 64, 60, 78, 70, 90, 100]
+        },
+        retail: {
+          headline: "Retail POS + Inventory CRM",
+          description: "Help retailers manage checkout, inventory, customer profiles, repeat purchases, gift cards, and reporting.",
+          softwareFees: "$3,740", feesDelta: "+11%",
+          processingVolume: "$940K",
+          activeMerchants: "58",
+          referrals: "19", refsDelta: "+4",
+          checkoutAmount: "$132.75", ticketLabel: "Order #7194", cardLabel: "Card **** 3372",
+          merchants: [{ n: "Main Street Boutique", a: "MB" }, { n: "Urban Market", a: "UM" }],
+          modules: ["Inventory Sync", "Customer Profiles", "Gift Cards", "Product Reporting"],
+          pipeline: [{ s: "New Lead", c: 10 }, { s: "Inventory Demo", c: 5 }, { s: "Proposal Sent", c: 8 }, { s: "Live Merchant", c: 58 }],
+          activity: [
+            { i: "fa-circle-check", t: "Main Street Boutique added 46 SKUs" },
+            { i: "fa-circle-check", t: "Urban Market launched digital gift cards" },
+            { i: "fa-user-plus", t: "New referral from a retail plaza owner" }
+          ],
+          chart: [38, 52, 46, 60, 72, 80, 100]
+        },
+        field: {
+          headline: "Field Service Payments + CRM",
+          description: "Give contractors and mobile teams invoicing, dispatch notes, job deposits, recurring billing, and mobile payments.",
+          softwareFees: "$6,240", feesDelta: "+22%",
+          processingVolume: "$2.1M",
+          activeMerchants: "73",
+          referrals: "27", refsDelta: "+9",
+          checkoutAmount: "$675.00", ticketLabel: "Job #2048", cardLabel: "Card **** 9021",
+          merchants: [{ n: "Apex HVAC", a: "AH" }, { n: "Prime Plumbing", a: "PP" }],
+          modules: ["Mobile Invoices", "Job Deposits", "Recurring Billing", "Dispatch Notes"],
+          pipeline: [{ s: "New Lead", c: 15 }, { s: "Estimate Sent", c: 11 }, { s: "Onboarding", c: 5 }, { s: "Live Merchant", c: 73 }],
+          activity: [
+            { i: "fa-circle-check", t: "Apex HVAC collected 8 job deposits today" },
+            { i: "fa-circle-check", t: "Prime Plumbing enabled recurring service billing" },
+            { i: "fa-user-plus", t: "New referral from a contractor network" }
+          ],
+          chart: [55, 68, 62, 80, 74, 92, 100]
+        }
+      };
+
+      const content = dash.querySelector(".pp-diff-dashcontent");
+      const tabs = Array.from(dash.querySelectorAll(".pp-diff-tab"));
+      const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+      const setField = (name, value) => {
+        const el = content.querySelector('[data-field="' + name + '"]');
+        if (el) el.textContent = value;
+      };
+
+      const renderMerchants = (list) => {
+        const wrap = content.querySelector('[data-field="merchants"]');
+        if (!wrap) return;
+        wrap.innerHTML = list.map((m) =>
+          '<div class="pp-diff-merchant"><div class="pp-diff-avatar">' + esc(m.a) + '</div>' +
+          '<div class="pp-diff-merchant-info"><div class="pp-diff-merchant-name">' + esc(m.n) + '</div>' +
+          '<div class="pp-diff-merchant-sub">Active &middot; Software + Processing</div></div>' +
+          '<span class="pp-diff-dot"></span></div>'
+        ).join("");
+      };
+
+      const renderModules = (list) => {
+        const wrap = content.querySelector('[data-field="modules"]');
+        if (!wrap) return;
+        wrap.innerHTML = list.map((m) => '<span class="pp-diff-chip">' + esc(m) + '</span>').join("");
+      };
+
+      const renderPipeline = (list) => {
+        const wrap = content.querySelector('[data-field="pipeline"]');
+        if (!wrap) return;
+        const max = Math.max.apply(null, list.map((p) => p.c)) || 1;
+        wrap.innerHTML = list.map((p) => {
+          const w = Math.max(6, Math.round((p.c / max) * 100));
+          return '<div class="pp-diff-pl-row"><div class="pp-diff-pl-top"><span>' + esc(p.s) + '</span><strong>' + esc(p.c) + '</strong></div>' +
+            '<div class="pp-diff-pl-bar"><span style="width:' + w + '%"></span></div></div>';
+        }).join("");
+      };
+
+      const renderActivity = (list) => {
+        const wrap = content.querySelector('[data-field="activity"]');
+        if (!wrap) return;
+        wrap.innerHTML = list.map((a) => '<div class="pp-diff-act-row"><i class="fa-solid ' + esc(a.i) + '"></i><span>' + esc(a.t) + '</span></div>').join("");
+      };
+
+      const renderChart = (vals) => {
+        const spans = content.querySelectorAll('[data-field="chart"] span');
+        vals.forEach((v, idx) => { if (spans[idx]) spans[idx].style.height = v + "%"; });
+      };
+
+      const render = (key) => {
+        const d = NICHES[key];
+        if (!d) return;
+        setField("headline", d.headline);
+        setField("description", d.description);
+        setField("softwareFees", d.softwareFees);
+        setField("feesDelta", d.feesDelta);
+        setField("processingVolume", d.processingVolume);
+        setField("activeMerchants", d.activeMerchants);
+        setField("referrals", d.referrals);
+        setField("refsDelta", d.refsDelta);
+        setField("checkoutAmount", d.checkoutAmount);
+        setField("ticketLabel", d.ticketLabel);
+        setField("cardLabel", d.cardLabel);
+        renderMerchants(d.merchants);
+        renderModules(d.modules);
+        renderPipeline(d.pipeline);
+        renderActivity(d.activity);
+        renderChart(d.chart);
+      };
+
+      let swapTimer = null;
+      const selectTab = (tab, focus) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle("active", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          t.tabIndex = on ? 0 : -1;
+        });
+        if (content) content.setAttribute("aria-labelledby", tab.id);
+        if (content) {
+          content.classList.add("pp-swapping");
+          window.clearTimeout(swapTimer);
+          swapTimer = window.setTimeout(() => {
+            render(tab.dataset.niche);
+            content.classList.remove("pp-swapping");
+          }, 150);
+        } else {
+          render(tab.dataset.niche);
+        }
+        if (focus) tab.focus();
+      };
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => selectTab(tab, false));
+        tab.addEventListener("keydown", (e) => {
+          let idx = null;
+          if (e.key === "ArrowRight" || e.key === "ArrowDown") idx = (i + 1) % tabs.length;
+          else if (e.key === "ArrowLeft" || e.key === "ArrowUp") idx = (i - 1 + tabs.length) % tabs.length;
+          else if (e.key === "Home") idx = 0;
+          else if (e.key === "End") idx = tabs.length - 1;
+          if (idx !== null) { e.preventDefault(); selectTab(tabs[idx], true); }
+        });
+      });
+
+      const charge = document.getElementById("pp-charge-btn");
+      if (charge) {
+        let busy = false;
+        const original = charge.innerHTML;
+        charge.addEventListener("click", () => {
+          if (busy) return;
+          busy = true;
+          charge.classList.add("is-done");
+          charge.innerHTML = '<i class="fa-solid fa-circle-check"></i> Demo payment approved';
+          window.setTimeout(() => {
+            charge.classList.remove("is-done");
+            charge.innerHTML = original;
+            busy = false;
+          }, 1900);
+        });
+      }
+
+      const crmToggle = document.getElementById("pp-crm-toggle");
+      const crmArea = document.getElementById("pp-crm-area");
+      if (crmToggle && crmArea) {
+        const label = crmToggle.querySelector(".pp-diff-crm-toggle-label");
+        crmToggle.addEventListener("click", () => {
+          const open = !crmArea.classList.contains("is-open");
+          crmToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          crmToggle.classList.toggle("is-open", open);
+          if (label) label.textContent = open ? "Hide CRM" : "View CRM";
+          if (open) {
+            crmArea.hidden = false;
+            void crmArea.offsetHeight;
+            crmArea.classList.add("is-open");
+          } else {
+            crmArea.classList.remove("is-open");
+            window.setTimeout(() => {
+              if (!crmArea.classList.contains("is-open")) crmArea.hidden = true;
+            }, 400);
+          }
+        });
+      }
     })();
   </script>
 </BaseLayout>
