@@ -1,0 +1,131 @@
+Revamp the “Ways to Partner” section on the Become a Partner page.
+
+Current section:
+The section currently has the badge “WAYS TO PARTNER,” the heading “Find the right fit for how you work,” and three pricing-style cards:
+- Referral Partner
+- Sales Partner
+- ISO Partner
+
+Change this section so it is no longer focused on partnership tiers. Instead, make it focused on this message:
+
+Partners can still sell the well-known payment hardware they are already used to — Clover, Dejavoo, Valor, terminals, gateways, and standard processing — but PPD Technology gives them something extra: custom niche payment software that helps them stand out and scale.
+
+New section direction:
+The point of this section should be:
+“You do not have to stop selling the hardware you already know. We help you add a custom software advantage on top of it.”
+
+Use this updated copy:
+
+Badge:
+HARDWARE + SOFTWARE
+
+Heading:
+Sell the hardware you know. Lead with software that makes you different.
+
+Subheading:
+You can still sell the well-known hardware your merchants already recognize — Clover, Dejavoo, Valor, terminals, gateways, and standard processing. PPD Technology helps you add the custom niche software layer that makes your offer stand out.
+
+Main body copy:
+Most agents have access to the same devices and payment tools. That makes it hard to separate yourself from the next ISO walking through the door. With PPD Technology, you can keep selling the hardware you trust while giving merchants a custom software solution built around their industry, workflow, and pain points.
+
+Secondary body copy:
+That means a stronger pitch, stickier merchants, more referral opportunities, and the ability to earn software fees in addition to processing revenue.
+
+Visual requirements:
+Replace the three partner cards with a more visual hardware/software layout.
+
+Preferred layout:
+- Keep the current light background and clean card styling.
+- Use a two-column layout on desktop.
+- Left side: headline, subheading, body copy, and CTA.
+- Right side: a premium visual card showing payment hardware images plus a software dashboard layer.
+
+Hardware imagery:
+Show images of well-known payment devices, including:
+- Clover device
+- Dejavoo device
+- Valor device
+
+Important:
+Use real product images only if there are already approved/legal assets in the project or if the assets are added manually to the project. Do not hotlink random images from the web. If approved images are not available yet, create clean placeholder image cards with labels:
+- Clover
+- Dejavoo
+- Valor
+
+Add a note/comment in the code where the image paths should be swapped for final product images.
+
+Suggested visual structure:
+Create a large right-side card titled:
+Hardware You Know + Software That Stands Out
+
+Inside the visual card:
+- Display three device image tiles/cards:
+  - Clover
+  - Dejavoo
+  - Valor
+- Add a software dashboard mockup behind or beside the devices.
+- The software dashboard should include labels like:
+  - Custom Niche POS
+  - Merchant Dashboard
+  - Software Fees
+  - Processing Volume
+  - Referrals
+- Use blue/cyan accents to match the PPD Technology brand.
+- Make it feel like PPD combines familiar payment hardware with custom software.
+
+CTA button:
+Build My Software Advantage
+
+CTA supporting text:
+Bring us your main niche. We’ll help you turn it into a stronger merchant offer.
+
+Add three small support cards below the main layout:
+
+Card 1 title:
+Keep Selling Familiar Devices
+
+Card 1 body:
+Clover, Dejavoo, Valor, terminals, gateways, and processing can still be part of your offer.
+
+Card 2 title:
+Add a Custom Software Layer
+
+Card 2 body:
+We help you create niche-specific software that gives merchants a reason to choose you over another agent.
+
+Card 3 title:
+Earn More From Each Relationship
+
+Card 3 body:
+Add software fees, improve retention, create stronger referrals, and grow your book beyond processing alone.
+
+Design requirements:
+- Remove the current Referral Partner, Sales Partner, and ISO Partner cards from this section.
+- Keep the section visually premium and consistent with the rest of the page.
+- Keep the layout responsive.
+- On mobile, stack the content first, then the hardware/software visual, then the three support cards.
+- Use existing brand colors, rounded cards, shadows, buttons, and spacing.
+- Do not change the navigation, footer, hero section, partner form, or other unrelated sections.
+- Make sure the section still feels like part of ppdtechnology.com and not a separate design.
+
+Implementation steps:
+1. Search the codebase for the text “Find the right fit for how you work.”
+2. Replace that section’s content and layout with the new hardware/software-focused section.
+3. Add image imports or asset paths for Clover, Dejavoo, and Valor device images.
+4. If final images are not available, use labeled placeholder cards and leave clear comments for replacing them.
+5. Reuse existing CTA/button link behavior from the page unless a specific booking link already exists.
+6. Test the page on desktop and mobile.
+7. Check spelling carefully:
+   - Clover
+   - Dejavoo
+   - Valor
+   - niche
+   - PPD Technology
+
+Acceptance criteria:
+- The section no longer shows Referral Partner, Sales Partner, and ISO Partner cards.
+- The new section clearly says partners can still sell familiar hardware like Clover, Dejavoo, and Valor.
+- The section explains that PPD adds custom niche payment software on top of the normal hardware/processing offer.
+- The design includes device imagery or clearly labeled device image placeholders.
+- The section explains that this helps agents stand out, earn software fees, improve retention, get referrals, and scale.
+- The section looks modern, visual, and consistent with the current PPD Technology website.

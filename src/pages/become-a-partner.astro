@@ -236,73 +236,76 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <section class="pp-section" id="tiers">
       <div class="pp-container">
-        <div class="pp-section-head reveal">
-          <span class="pp-chip"><i class="fa-solid fa-handshake-simple"></i> Ways to Partner</span>
-          <h2>Find the right fit for how you work</h2>
-          <p class="pp-sub">Whether you send a few referrals or manage a full book, there's a partnership model that matches your business. No fees, no buy-in — just different levels of involvement and support.</p>
+        <div class="pp-hw-split reveal">
+          <div class="pp-hw-copy">
+            <span class="pp-chip"><i class="fa-solid fa-layer-group"></i> Hardware + Software</span>
+            <h2>Sell the hardware you know. Lead with software that makes you different.</h2>
+            <p class="pp-sub">You can still sell the well-known hardware your merchants already recognize — Clover, Dejavoo, Valor, terminals, gateways, and standard processing. PPD Technology helps you add the custom niche software layer that makes your offer stand out.</p>
+            <p class="pp-hw-body">Most agents have access to the same devices and payment tools. That makes it hard to separate yourself from the next ISO walking through the door. With PPD Technology, you can keep selling the hardware you trust while giving merchants a custom software solution built around their industry, workflow, and pain points.</p>
+            <p class="pp-hw-body">That means a stronger pitch, stickier merchants, more referral opportunities, and the ability to earn software fees in addition to processing revenue.</p>
+            <div class="pp-hw-cta">
+              <button class="pp-btn pp-btn-primary" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+                Build My Software Advantage <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <span class="pp-hw-cta-note">Bring us your main niche. We'll help you turn it into a stronger merchant offer.</span>
+            </div>
+          </div>
+
+          <div class="pp-hw-visual">
+            <div class="pp-hw-visual-head">
+              <i class="fa-solid fa-shapes"></i>
+              <span>Hardware You Know + Software That Stands Out</span>
+            </div>
+
+            <div class="pp-hw-devices">
+              <div class="pp-hw-device">
+                <!-- Approved Clover product asset. Swap here for an updated Clover image if needed. -->
+                <img src="/images/Clover/Clover%20solo.png" alt="Clover payment device" loading="lazy" width="200" height="74" />
+                <span>Clover</span>
+              </div>
+              <div class="pp-hw-device">
+                <!-- Approved Valor (VP800) product asset. Swap here for an updated Valor image if needed. -->
+                <img src="/images/VP800-View-01.png" alt="Valor VP800 payment device" loading="lazy" width="200" height="74" />
+                <span>Valor</span>
+              </div>
+              <div class="pp-hw-device pp-hw-device--placeholder">
+                <!-- TODO: No approved Dejavoo product image in the project yet.
+                     Add one to /public/images (e.g. /images/dejavoo-device.png) and
+                     replace this placeholder block with an <img> like the tiles above. -->
+                <div class="pp-hw-device-ph"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <span>Dejavoo</span>
+              </div>
+            </div>
+
+            <div class="pp-hw-dash">
+              <div class="pp-hw-dash-top">
+                <span class="pp-hw-dash-title"><i class="fa-solid fa-desktop"></i> Custom Niche POS</span>
+                <span class="pp-hw-dash-tag">Merchant Dashboard</span>
+              </div>
+              <div class="pp-hw-dash-stats">
+                <div><span>Software Fees</span><strong>$4,120</strong></div>
+                <div><span>Processing Volume</span><strong>$1.2M</strong></div>
+                <div><span>Referrals</span><strong>23</strong></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="pp-tiers reveal">
-          <div class="pp-tier">
-            <div class="pp-tier-head">
-              <div>
-                <div class="pp-tier-name">Referral Partner</div>
-                <div class="pp-tier-desc">Send leads, earn commissions</div>
-              </div>
-            </div>
-            <div class="pp-tier-body">
-              <p class="pp-tier-summary">You know someone who needs processing. You make an introduction, we handle the rest. Simple and low-touch.</p>
-              <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Per-deal referral commissions</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Marketing materials provided</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Online training and resources</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Dedicated partner contact</li>
-              </ul>
-              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
-            </div>
+        <div class="pp-hw-support reveal">
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Keep Selling Familiar Devices</h3>
+            <p>Clover, Dejavoo, Valor, terminals, gateways, and processing can still be part of your offer.</p>
           </div>
-
-          <div class="pp-tier pp-tier-featured">
-            <div class="pp-tier-head">
-              <div>
-                <div class="pp-tier-name">Sales Partner</div>
-                <div class="pp-tier-desc">Build a book, earn residuals</div>
-              </div>
-              <div class="pp-tier-badge">Most Common</div>
-            </div>
-            <div class="pp-tier-body">
-              <p class="pp-tier-summary">You're actively selling and managing merchant relationships. You get the tools, leads, and ongoing residual income to grow.</p>
-              <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Monthly residual income</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Partner CRM and reporting</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Co-branded sales materials</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Coaching and sales support</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Pre-qualified lead access</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Priority support line</li>
-              </ul>
-              <button class="pp-btn pp-btn-primary pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
-            </div>
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Add a Custom Software Layer</h3>
+            <p>We help you create niche-specific software that gives merchants a reason to choose you over another agent.</p>
           </div>
-
-          <div class="pp-tier">
-            <div class="pp-tier-head">
-              <div>
-                <div class="pp-tier-name">ISO Partner</div>
-                <div class="pp-tier-desc">Full control, max scale</div>
-              </div>
-            </div>
-            <div class="pp-tier-body">
-              <p class="pp-tier-summary">You run your own operation with sub-agents and a growing portfolio. You need infrastructure, not hand-holding.</p>
-              <ul>
-                <li><i class="fa-solid fa-check pp-good"></i> Highest earning structure</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Portfolio ownership options</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Sub-agent management tools</li>
-                <li><i class="fa-solid fa-check pp-good"></i> White-label capabilities</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Dedicated ISO support team</li>
-                <li><i class="fa-solid fa-check pp-good"></i> Custom onboarding flow</li>
-              </ul>
-              <button class="pp-btn pp-btn-ghost pp-full" type="button" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Learn More</button>
-            </div>
+          <div class="pp-switch-card">
+            <div class="pp-switch-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h3>Earn More From Each Relationship</h3>
+            <p>Add software fees, improve retention, create stronger referrals, and grow your book beyond processing alone.</p>
           </div>
         </div>
       </div>
@@ -812,35 +815,54 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-bars span{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--pp-cyan),var(--pp-primary));opacity:.85}
     .pp-diff-support{margin-top:32px}
 
-    .pp-tiers{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;
+    /* Ways to Partner — hardware + software */
+    .pp-hw-split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+    .pp-hw-copy .pp-chip{margin-bottom:16px}
+    .pp-hw-copy h2{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.18;margin-bottom:14px;color:var(--pp-navy)}
+    .pp-hw-copy .pp-sub{margin-bottom:16px}
+    .pp-hw-body{color:var(--pp-muted);font-size:15px;line-height:1.7;margin-bottom:14px}
+    .pp-hw-cta{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+    .pp-hw-cta .pp-btn{width:fit-content}
+    .pp-hw-cta-note{color:var(--pp-muted);font-size:13px;font-weight:600;max-width:46ch}
+
+    .pp-hw-visual{
+      background:linear-gradient(160deg,#fff,#F5F8FF);
+      border:1px solid var(--pp-border);border-radius:20px;padding:22px;
+      box-shadow:var(--pp-shadow-lg);position:relative;overflow:hidden;
     }
-    .pp-tier{
-      border-radius:20px;overflow:hidden;border:1px solid var(--pp-border);
-      background:#fff;box-shadow:var(--pp-shadow);position:relative;
+    .pp-hw-visual::before{
+      content:"";position:absolute;inset:auto -30% -40% auto;width:320px;height:320px;border-radius:50%;
+      background:radial-gradient(circle,rgba(0,207,255,.14),transparent 65%);pointer-events:none;
+    }
+    .pp-hw-visual-head{display:flex;align-items:center;gap:11px;font-weight:800;font-size:14px;color:var(--pp-navy);margin-bottom:18px;position:relative;z-index:1}
+    .pp-hw-visual-head i{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan));color:#fff;font-size:15px}
+    .pp-hw-devices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;position:relative;z-index:1}
+    .pp-hw-device{
+      background:#fff;border:1px solid var(--pp-border);border-radius:14px;padding:14px 10px;
+      display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:var(--pp-shadow);
       transition:transform .2s,box-shadow .2s;
     }
-    .pp-tier:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
-    .pp-tier-featured{border-color:var(--pp-primary);box-shadow:0 8px 32px rgba(21,73,255,.15)}
-    .pp-tier-price-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-    .pp-tier-badge{
-      padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800;
-      background:var(--pp-accent);color:var(--pp-navy);letter-spacing:.04em;text-transform:uppercase;
+    .pp-hw-device:hover{transform:translateY(-4px);box-shadow:var(--pp-shadow-lg)}
+    .pp-hw-device img{width:100%;height:74px;object-fit:contain}
+    .pp-hw-device span{font-size:12px;font-weight:800;color:var(--pp-navy)}
+    .pp-hw-device-ph{
+      width:100%;height:74px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+      background:rgba(21,73,255,.06);border:1px dashed rgba(21,73,255,.28);color:var(--pp-primary);font-size:26px;
     }
-    .pp-tier-head{
-      padding:20px;color:#fff;
-      background:linear-gradient(135deg,var(--pp-primary),var(--pp-primary-dark));
-      display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+    .pp-hw-dash{
+      background:linear-gradient(135deg,var(--pp-navy),#0A2B74);border-radius:14px;padding:16px;color:#fff;
+      position:relative;z-index:1;border:1px solid rgba(255,255,255,.08);
     }
-    .pp-tier-name{font-weight:900;font-size:18px;letter-spacing:-.02em}
-    .pp-tier-desc{opacity:.85;font-size:13px;font-weight:600;margin-top:3px}
-    .pp-tier-price{font-weight:900;opacity:.95}
-    .pp-tier-body{padding:20px}
-    .pp-tier-summary{font-size:13px;color:var(--pp-muted);line-height:1.6;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--pp-border)}
-    .pp-tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
-    .pp-tier li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:14px;color:var(--pp-text)}
-    .pp-tier li i{margin-top:3px}
-    .pp-good{color:var(--pp-accent)}
+    .pp-hw-dash-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+    .pp-hw-dash-title{font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px}
+    .pp-hw-dash-title i{color:var(--pp-cyan)}
+    .pp-hw-dash-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:5px 10px;border-radius:999px;background:rgba(0,207,255,.15);color:var(--pp-cyan);border:1px solid rgba(0,207,255,.25)}
+    .pp-hw-dash-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .pp-hw-dash-stats > div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 12px}
+    .pp-hw-dash-stats span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.55);font-weight:700;margin-bottom:5px}
+    .pp-hw-dash-stats strong{font-size:17px;font-weight:900;letter-spacing:-.02em}
+    .pp-hw-support{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+
     .pp-bad{color:#E11D48}
     .pp-muted-li{opacity:.45}
 
@@ -970,16 +992,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     @media (max-width:980px){
       .pp-hero-grid{grid-template-columns:1fr !important;gap:24px}
-      .pp-value-grid,.pp-tiers,.pp-tools-grid,.pp-testimonials{grid-template-columns:1fr}
+      .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:1fr}
       .pp-faq{grid-template-columns:1fr}
       .pp-kit-row{grid-template-columns:1fr}
       .pp-cta-split{grid-template-columns:1fr}
       .pp-form-grid{grid-template-columns:1fr}
       .pp-switch-grid{grid-template-columns:1fr}
       .pp-diff-split{grid-template-columns:1fr;gap:28px}
+      .pp-hw-split{grid-template-columns:1fr;gap:28px}
+      .pp-hw-support{grid-template-columns:1fr}
     }
     @media (max-width:420px){
-      .pp-diff-stats,.pp-diff-panels{grid-template-columns:1fr}
+      .pp-diff-stats,.pp-diff-panels,.pp-hw-dash-stats{grid-template-columns:1fr}
     }
     @media (min-width:640px) and (max-width:980px){
       .pp-value-grid,.pp-tools-grid,.pp-testimonials{grid-template-columns:repeat(2,1fr)}
