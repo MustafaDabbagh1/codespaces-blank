@@ -1,0 +1,279 @@
+Update the homepage.
+
+Remove the current “Build Your Perfect Payment Setup” configurator section from the homepage and replace it with a new section focused on potential payment sales agents.
+
+Current section to remove:
+Search for the homepage section with this heading:
+“Build Your Perfect Payment Setup”
+
+Remove the whole configurator experience from the homepage, including:
+- The “CONFIGURATOR” badge
+- The step navigation
+- The industry cards
+- The “Continue” button
+- Any floating “Build for free” widget or CTA connected to this configurator section
+
+Do not delete the component globally if it is used somewhere else. Only remove it from the homepage.
+
+New section goal:
+Replace it with a premium, colorful, high-converting section for payment sales agents.
+
+This section should drive agents to the Agent Program page.
+
+Target audience:
+Experienced payment sales agents who already sell merchant services and want a better opportunity.
+
+Core message:
+PPD Technology helps sales agents keep their book, get a higher split, and stand out with custom branded payment software for their niche of choice.
+
+The section should clearly communicate:
+- This is for sales agents.
+- They can keep their book.
+- They can get a higher split.
+- They can still sell traditional hardware and processing.
+- PPD can help them add custom branded payment software for their niche.
+- They can earn from software fees plus processing.
+- The CTA should take them to the Agent Program page.
+
+New section copy:
+
+Badge:
+FOR PAYMENT SALES AGENTS
+
+Heading:
+Keep your book. Get a higher split. Sell software that makes you different.
+
+Subheading:
+Most agents are stuck selling the same terminals, gateways, and processing programs as everyone else. PPD Technology helps you add a custom branded payment software offer around the niche you already know best.
+
+Body copy:
+You can still sell the hardware and processing solutions your merchants are used to. The difference is that now you can lead with a software-driven offer built for restaurants, repair shops, retail, contractors, med spas, or your vertical of choice.
+
+Primary CTA:
+Explore the Agent Program
+
+Primary CTA link:
+Route this button to the Agent Program page. Use the correct existing route in the project. If the route is /agent-program, use /agent-program.
+
+Secondary CTA:
+Book an Agent Strategy Call
+
+Secondary CTA link:
+Use the existing booking/contact link used elsewhere on the site.
+
+Small supporting line under buttons:
+Built for seasoned agents who are ready to move beyond generic ISO selling.
+
+Visual/design direction:
+Make this section look amazing and more exciting than the current configurator.
+
+Use:
+- Dark navy/blue gradient background
+- Cyan, blue, purple, and subtle green accents
+- Modern SaaS-style dashboard mockup
+- Subtle glow effects
+- Soft animated gradient or mesh background
+- Rounded cards
+- Premium glassmorphism-style panels
+- Clean, sharp typography
+- A layout that feels like a homepage feature section, not a full-page tool
+
+Preferred layout:
+Desktop:
+- Two-column layout
+- Left side: badge, heading, subheading, body copy, CTA buttons, trust chips
+- Right side: colorful interactive software mockup for agents
+
+Mobile:
+- Stack content first
+- Then show the mockup
+- Buttons should stack or wrap cleanly
+- No horizontal overflow
+
+Trust chips:
+Add small chips under the CTA area:
+- Keep your book
+- Higher split
+- Branded niche software
+- Software fees + processing
+- Built for seasoned agents
+
+Right-side visual:
+Create a polished mockup called:
+Agent Software Advantage
+
+Inside the mockup, show tabs for niche examples:
+- Restaurants
+- Repair Shops
+- Retail
+- Contractors
+- Med Spas
+
+Make the tabs clickable using React state or the project’s existing state pattern.
+
+When a tab is clicked, update the mockup content so the agent can see how their niche software could change.
+
+Example data:
+
+Restaurants:
+Title:
+RestaurantPay Pro
+Description:
+Orders, tips, loyalty, online ordering, and payment reporting built for restaurant merchants.
+Stats:
+Software Fees: $5,860
+Processing Volume: $1.8M
+Active Merchants: 67
+Referrals: 31
+Modules:
+- Table Orders
+- Tip Management
+- Loyalty
+- Online Ordering
+
+Repair Shops:
+Title:
+RepairPay CRM
+Description:
+Tickets, devices, estimates, warranties, SMS updates, and payment tools for repair shops.
+Stats:
+Software Fees: $4,120
+Processing Volume: $1.2M
+Active Merchants: 84
+Referrals: 23
+Modules:
+- Repair Tickets
+- Device Intake
+- Warranty Tracking
+- SMS Updates
+
+Retail:
+Title:
+RetailFlow Payments
+Description:
+Checkout, inventory, customer profiles, gift cards, and reporting for retail merchants.
+Stats:
+Software Fees: $3,740
+Processing Volume: $940K
+Active Merchants: 58
+Referrals: 19
+Modules:
+- Inventory Sync
+- Customer Profiles
+- Gift Cards
+- Product Reports
+
+Contractors:
+Title:
+ContractorPay Hub
+Description:
+Mobile invoices, deposits, recurring billing, job notes, and field payment tools.
+Stats:
+Software Fees: $6,240
+Processing Volume: $2.1M
+Active Merchants: 73
+Referrals: 27
+Modules:
+- Mobile Invoices
+- Job Deposits
+- Recurring Billing
+- Dispatch Notes
+
+Med Spas:
+Title:
+MedSpaPay Suite
+Description:
+Packages, deposits, memberships, client profiles, payment plans, and appointment checkout.
+Stats:
+Software Fees: $4,980
+Processing Volume: $1.4M
+Active Merchants: 52
+Referrals: 21
+Modules:
+- Memberships
+- Packages
+- Deposits
+- Client Profiles
+
+Mockup visual requirements:
+The right-side mockup should be compact and polished.
+
+Include:
+- Browser-style top bar
+- “Your Brand” or “Branded by Your Agency” badge
+- Clickable niche tabs
+- Four compact stat cards
+- Module chips
+- Mini merchant CRM preview
+- Mini revenue chart or progress bars
+- Small label that says “Software fees + processing”
+
+Do not make the mockup too large or bulky. It should feel like a sleek product preview, not a full application taking over the page.
+
+Add a few floating visual elements around the mockup if it looks good:
+- “Higher Split”
+- “Keep Your Book”
+- “Custom Niche POS”
+- “Software Fees”
+
+Keep these subtle and tasteful.
+
+Section support cards:
+Below the main two-column layout, add three compact cards:
+
+Card 1 title:
+Keep Your Book
+
+Card 1 body:
+Bring your relationships with you and grow them with a stronger program built around agent ownership.
+
+Card 2 title:
+Get a Higher Split
+
+Card 2 body:
+Move into a better compensation structure while continuing to build long-term residual income.
+
+Card 3 title:
+Add Branded Software
+
+Card 3 body:
+Stand out with custom payment software built around the niche you already sell into.
+
+Design details:
+- Use a colorful gradient accent on key words in the heading, such as “higher split” or “software.”
+- Add subtle background patterning similar to the homepage style, but make it feel fresh and premium.
+- Use existing icons if available.
+- Keep the section responsive.
+- Keep the section height reasonable.
+- Make the CTA button visually strong but consistent with the existing PPD design system.
+- The section should look like a polished marketing block that belongs on the homepage.
+
+Important:
+Do not make this section about ISOs.
+Do not say “Agents & ISOs.”
+Do not focus on the old configurator idea.
+Do not keep the “Build Your Perfect Payment Setup” headline.
+Do not keep the industry selection cards from the old configurator.
+
+Implementation steps:
+1. Search for “Build Your Perfect Payment Setup.”
+2. Remove that homepage configurator section.
+3. Build the new agent-focused section in its place.
+4. Use a data-driven array/object for the interactive niche tabs.
+5. Use React state for the active niche.
+6. Link the primary CTA to the Agent Program page.
+7. Reuse existing button, card, icon, and layout styling where possible.
+8. Make sure the section looks great on desktop and mobile.
+9. Make sure there are no console errors.
+10. Make sure the homepage builds successfully.
+
+Acceptance criteria:
+- The homepage no longer shows the “Build Your Perfect Payment Setup” configurator section.
+- A new premium section for payment sales agents appears in its place.
+- The new section clearly promotes the Agent Program.
+- The section includes a CTA linking to the Agent Program page.
+- The messaging clearly says agents can keep their book, get a higher split, and get custom branded payment software for their niche.
+- The design is colorful, modern, and visually impressive.
+- The right-side niche software mockup has clickable tabs.
+- The section is responsive and does not overflow on mobile.
+- No unrelated homepage sections are broken.

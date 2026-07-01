@@ -600,103 +600,130 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- ══════════════ BUILD YOUR PAYMENT SETUP ══════════════ -->
-  <section class="hp-builder" id="builder">
-    <div class="hp-builder__bg-grid"></div>
-    <span class="hp-builder__orb hp-builder__orb--1"></span>
-    <span class="hp-builder__orb hp-builder__orb--2"></span>
+  <!-- ══════════════ FOR PAYMENT SALES AGENTS ══════════════ -->
+  <section class="hp-agent" id="agents">
+    <div class="hp-agent__bg-grid"></div>
+    <span class="hp-agent__orb hp-agent__orb--1"></span>
+    <span class="hp-agent__orb hp-agent__orb--2"></span>
+    <span class="hp-agent__orb hp-agent__orb--3"></span>
 
-    <div class="container hp-builder__inner">
-      <div class="hp-builder__head">
-        <span class="hp-pill"><i class="fa-solid fa-sliders"></i> Configurator</span>
-        <h2>Build Your Perfect <span class="hp-grad-text">Payment Setup</span></h2>
-        <p>Choose your business type, select what you need, and we'll recommend the right PPD Technology solution.</p>
+    <div class="container hp-agent__inner">
+      <div class="hp-agent__grid">
+        <!-- LEFT: copy -->
+        <div class="hp-agent__copy" data-anim>
+          <span class="hp-pill hp-agent__badge"><i class="fa-solid fa-user-tie"></i> For Payment Sales Agents</span>
+          <h2 class="hp-agent__title">Keep your book. Get a <span class="hp-grad-text">higher split</span>. Sell <span class="hp-grad-text">software</span> that makes you different.</h2>
+          <p class="hp-agent__sub">Most agents are stuck selling the same terminals, gateways, and processing programs as everyone else. PPD Technology helps you add a custom branded payment software offer around the niche you already know best.</p>
+          <p class="hp-agent__body">You can still sell the hardware and processing solutions your merchants are used to. The difference is that now you can lead with a software-driven offer built for restaurants, repair shops, retail, contractors, med spas, or your vertical of choice.</p>
+
+          <div class="hp-agent__actions">
+            <a class="btn btn-primary btn-lg" href="/become-a-partner">Explore the Agent Program <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn btn-outline btn-lg" href="/contact">Book an Agent Strategy Call</a>
+          </div>
+          <p class="hp-agent__note"><i class="fa-solid fa-circle-check"></i> Built for seasoned agents who are ready to move beyond generic ISO selling.</p>
+
+          <ul class="hp-agent__chips" aria-label="Agent program highlights">
+            <li><i class="fa-solid fa-book-bookmark"></i> Keep your book</li>
+            <li><i class="fa-solid fa-arrow-trend-up"></i> Higher split</li>
+            <li><i class="fa-solid fa-layer-group"></i> Branded niche software</li>
+            <li><i class="fa-solid fa-coins"></i> Software fees + processing</li>
+            <li><i class="fa-solid fa-medal"></i> Built for seasoned agents</li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: interactive mockup -->
+        <div class="hp-agent__visual" data-anim>
+          <span class="hp-agent__float hp-agent__float--a"><i class="fa-solid fa-arrow-trend-up"></i> Higher Split</span>
+          <span class="hp-agent__float hp-agent__float--b"><i class="fa-solid fa-book-bookmark"></i> Keep Your Book</span>
+          <span class="hp-agent__float hp-agent__float--c"><i class="fa-solid fa-cash-register"></i> Custom Niche POS</span>
+          <span class="hp-agent__float hp-agent__float--d"><i class="fa-solid fa-coins"></i> Software Fees</span>
+
+          <div class="hp-agent__mock" role="group" aria-label="Agent Software Advantage preview">
+            <div class="hp-agent__mock-bar">
+              <span class="hp-agent__dots"><i></i><i></i><i></i></span>
+              <span class="hp-agent__mock-title">Agent Software Advantage</span>
+              <span class="hp-agent__mock-brand"><i class="fa-solid fa-wand-magic-sparkles"></i> Branded by Your Agency</span>
+            </div>
+
+            <div class="hp-agent__mock-body">
+              <div class="hp-agent__tabs" role="tablist" aria-label="Niche examples">
+                <button role="tab" class="hp-agent__tab is-active" id="agTab-restaurants" aria-selected="true" aria-controls="agPanel" tabindex="0" data-niche="restaurants"><i class="fa-solid fa-utensils"></i> Restaurants</button>
+                <button role="tab" class="hp-agent__tab" id="agTab-repair" aria-selected="false" aria-controls="agPanel" tabindex="-1" data-niche="repair"><i class="fa-solid fa-screwdriver-wrench"></i> Repair Shops</button>
+                <button role="tab" class="hp-agent__tab" id="agTab-retail" aria-selected="false" aria-controls="agPanel" tabindex="-1" data-niche="retail"><i class="fa-solid fa-store"></i> Retail</button>
+                <button role="tab" class="hp-agent__tab" id="agTab-contractors" aria-selected="false" aria-controls="agPanel" tabindex="-1" data-niche="contractors"><i class="fa-solid fa-helmet-safety"></i> Contractors</button>
+                <button role="tab" class="hp-agent__tab" id="agTab-medspas" aria-selected="false" aria-controls="agPanel" tabindex="-1" data-niche="medspas"><i class="fa-solid fa-spa"></i> Med Spas</button>
+              </div>
+
+              <div class="hp-agent__panel" id="agPanel" role="tabpanel" aria-labelledby="agTab-restaurants" tabindex="0">
+                <div class="hp-agent__panel-head">
+                  <div>
+                    <span class="hp-agent__panel-eyebrow">Your branded platform</span>
+                    <h3 class="hp-agent__panel-title" data-ag="title">RestaurantPay Pro</h3>
+                  </div>
+                  <span class="hp-agent__yourbrand">Your Brand</span>
+                </div>
+                <p class="hp-agent__panel-desc" data-ag="desc">Orders, tips, loyalty, online ordering, and payment reporting built for restaurant merchants.</p>
+
+                <div class="hp-agent__stats">
+                  <div class="hp-agent__stat"><span class="hp-agent__stat-lbl">Software Fees</span><span class="hp-agent__stat-val" data-ag="fees">$5,860</span></div>
+                  <div class="hp-agent__stat"><span class="hp-agent__stat-lbl">Processing Volume</span><span class="hp-agent__stat-val" data-ag="volume">$1.8M</span></div>
+                  <div class="hp-agent__stat"><span class="hp-agent__stat-lbl">Active Merchants</span><span class="hp-agent__stat-val" data-ag="merchants">67</span></div>
+                  <div class="hp-agent__stat"><span class="hp-agent__stat-lbl">Referrals</span><span class="hp-agent__stat-val" data-ag="referrals">31</span></div>
+                </div>
+
+                <div class="hp-agent__modules" data-ag="modules" aria-label="Included modules">
+                  <span class="hp-agent__module">Table Orders</span>
+                  <span class="hp-agent__module">Tip Management</span>
+                  <span class="hp-agent__module">Loyalty</span>
+                  <span class="hp-agent__module">Online Ordering</span>
+                </div>
+
+                <div class="hp-agent__lower">
+                  <div class="hp-agent__crm">
+                    <span class="hp-agent__crm-head"><i class="fa-solid fa-users"></i> Merchant CRM</span>
+                    <ul data-ag="crm">
+                      <li><span class="hp-agent__crm-name">Bella Trattoria</span><span class="hp-agent__crm-tag is-active">Active</span></li>
+                      <li><span class="hp-agent__crm-name">Sushi Nine</span><span class="hp-agent__crm-tag is-active">Active</span></li>
+                      <li><span class="hp-agent__crm-name">Corner Diner</span><span class="hp-agent__crm-tag">Onboarding</span></li>
+                    </ul>
+                  </div>
+                  <div class="hp-agent__chart">
+                    <span class="hp-agent__chart-head"><i class="fa-solid fa-chart-simple"></i> Monthly Revenue</span>
+                    <div class="hp-agent__bars" data-ag="bars">
+                      <div class="hp-agent__bar"><span class="hp-agent__bar-lbl">Software</span><span class="hp-agent__bar-track"><span class="hp-agent__bar-fill" style="width:82%"></span></span></div>
+                      <div class="hp-agent__bar"><span class="hp-agent__bar-lbl">Processing</span><span class="hp-agent__bar-track"><span class="hp-agent__bar-fill" style="width:64%"></span></span></div>
+                      <div class="hp-agent__bar"><span class="hp-agent__bar-lbl">Residual</span><span class="hp-agent__bar-track"><span class="hp-agent__bar-fill" style="width:48%"></span></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hp-agent__mock-foot"><i class="fa-solid fa-circle-dollar-to-slot"></i> Software fees + processing</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <ol class="hp-builder__steps" aria-label="Builder progress">
-        <li class="is-active" data-bstepind="1"><span class="hp-builder__step-num">1</span><span class="hp-builder__step-lbl">Your business</span></li>
-        <li data-bstepind="2"><span class="hp-builder__step-num">2</span><span class="hp-builder__step-lbl">What matters most</span></li>
-        <li data-bstepind="3"><span class="hp-builder__step-num">3</span><span class="hp-builder__step-lbl">Recommendation</span></li>
-      </ol>
-      <div class="hp-builder__bar" aria-hidden="true"><span class="hp-builder__bar-fill" id="hpBuilderBar" style="width:33.33%"></span></div>
-
-      <!-- Step 1: Industry -->
-      <div class="hp-builder__panel is-active" data-bpanel="1" role="tabpanel">
-        <div class="hp-builder__grid hp-builder__grid--ind" role="radiogroup" aria-label="Choose your industry">
-          <button type="button" role="radio" aria-checked="false" tabindex="0" class="hp-bcard" data-bind="restaurant"><i class="fa-solid fa-utensils"></i><strong>Restaurant</strong><span>Dine-in, takeout &amp; online ordering</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="retail"><i class="fa-solid fa-store"></i><strong>Retail Store</strong><span>In-store + omnichannel</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="repair"><i class="fa-solid fa-screwdriver-wrench"></i><strong>Repair Shop</strong><span>Tickets, parts &amp; deposits</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="ecommerce"><i class="fa-solid fa-cart-shopping"></i><strong>E-commerce</strong><span>Online checkout &amp; gateways</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="b2b"><i class="fa-solid fa-handshake"></i><strong>B2B / Wholesale</strong><span>Invoicing, ACH &amp; net terms</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="healthcare"><i class="fa-solid fa-heart-pulse"></i><strong>Healthcare</strong><span>Secure patient payments</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="nonprofit"><i class="fa-solid fa-hand-holding-heart"></i><strong>Nonprofit</strong><span>Donations &amp; recurring giving</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="mobile"><i class="fa-solid fa-truck"></i><strong>Mobile Business</strong><span>On-the-go acceptance</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="salon"><i class="fa-solid fa-scissors"></i><strong>Salon / Spa</strong><span>Appointments &amp; tipping</span></button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" class="hp-bcard" data-bind="grocery"><i class="fa-solid fa-basket-shopping"></i><strong>Grocery / Market</strong><span>High volume + EBT-ready</span></button>
+      <!-- support cards -->
+      <div class="hp-agent__cards">
+        <div class="hp-agent__card" data-anim>
+          <span class="hp-agent__card-icon"><i class="fa-solid fa-book-bookmark"></i></span>
+          <h3>Keep Your Book</h3>
+          <p>Bring your relationships with you and grow them with a stronger program built around agent ownership.</p>
         </div>
-        <div class="hp-builder__nav">
-          <span class="hp-builder__hint" id="hpBuilderHint1">Select an industry to continue</span>
-          <button class="btn btn-primary" type="button" data-bnext="2" disabled>Continue <i class="fa-solid fa-arrow-right"></i></button>
+        <div class="hp-agent__card" data-anim>
+          <span class="hp-agent__card-icon hp-agent__card-icon--green"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          <h3>Get a Higher Split</h3>
+          <p>Move into a better compensation structure while continuing to build long-term residual income.</p>
         </div>
-      </div>
-
-      <!-- Step 2: Needs -->
-      <div class="hp-builder__panel" data-bpanel="2" role="tabpanel" hidden>
-        <div class="hp-builder__sub">
-          <span>For your <strong id="hpBuilderIndName">business</strong> — pick everything that applies. We'll do the rest.</span>
-          <span class="hp-builder__count"><span id="hpBuilderCount">0</span> selected</span>
-        </div>
-        <div class="hp-builder__grid hp-builder__grid--needs" id="hpBuilderNeeds" role="group" aria-label="Select what you need"></div>
-        <div class="hp-builder__nav">
-          <button class="btn btn-outline" type="button" data-bback="1"><i class="fa-solid fa-arrow-left"></i> Back</button>
-          <button class="btn btn-primary" type="button" data-bnext="3">See Recommendation <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </div>
-
-      <!-- Step 3: Recommendation -->
-      <div class="hp-builder__panel" data-bpanel="3" role="tabpanel" hidden>
-        <div class="hp-builder__reco" id="hpBuilderReco"></div>
-        <div class="hp-builder__nav hp-builder__nav--reco">
-          <button class="btn btn-ghost" type="button" data-bback="2"><i class="fa-solid fa-arrow-left"></i> Edit Selections</button>
+        <div class="hp-agent__card" data-anim>
+          <span class="hp-agent__card-icon hp-agent__card-icon--purple"><i class="fa-solid fa-layer-group"></i></span>
+          <h3>Add Branded Software</h3>
+          <p>Stand out with custom payment software built around the niche you already sell into.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Builder Quote Modal -->
-  <div class="hp-bmodal" id="hpBuilderModal" role="dialog" aria-modal="true" aria-labelledby="hpBuilderModalTitle" hidden>
-    <div class="hp-bmodal__backdrop" data-bclose></div>
-    <div class="hp-bmodal__card">
-      <button type="button" class="hp-bmodal__close" data-bclose aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-      <div class="hp-bmodal__head">
-        <span class="hp-pill"><i class="fa-solid fa-paper-plane"></i> Get My Setup</span>
-        <h3 id="hpBuilderModalTitle">Send me my custom setup</h3>
-        <p>We'll review your selections and get back within one business day.</p>
-      </div>
-      <!-- NOTE: Submits to /api/lead with _form=builder-quote. Wire to email backend / Formspree here. -->
-      <form class="hp-bmodal__form" id="hpBuilderForm" action="/api/lead" method="POST" novalidate>
-        <input type="hidden" name="_form" value="builder-quote" />
-        <input type="hidden" name="industry" id="hpBuilderFIndustry" value="" />
-        <input type="hidden" name="needs" id="hpBuilderFNeeds" value="" />
-        <input type="hidden" name="recommendation" id="hpBuilderFReco" value="" />
-        <div class="hp-bmodal__row">
-          <label><span>Name</span><input type="text" name="name" required autocomplete="name" /></label>
-          <label><span>Business name</span><input type="text" name="business" autocomplete="organization" /></label>
-        </div>
-        <div class="hp-bmodal__row">
-          <label><span>Phone</span><input type="tel" name="phone" required autocomplete="tel" /></label>
-          <label><span>Email</span><input type="email" name="email" required autocomplete="email" /></label>
-        </div>
-        <label><span>Message (optional)</span><textarea name="message" rows="3" placeholder="Anything we should know about your setup?"></textarea></label>
-        <div class="hp-bmodal__summary" id="hpBuilderFSummary"></div>
-        <div class="hp-bmodal__actions">
-          <button type="button" class="btn btn-outline" data-bclose>Cancel</button>
-          <button type="submit" class="btn btn-primary">Send My Setup <i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-        <div class="hp-bmodal__msg" id="hpBuilderFMsg" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-  </div>
 
   <!-- ══════════════ FINAL CTA ══════════════ -->
   <section class="hp-cta" id="hpCta">
@@ -1632,295 +1659,223 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .hp-hero__visual{transition:none}
 }
 
-/* ═══════════════ BUILDER SECTION ═══════════════ */
-.hp-builder{
+/* ═══════════════ AGENT SECTION ═══════════════ */
+.hp-agent{
   position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#060E21 0%,#0a1530 100%);
-  color:#fff;padding:clamp(60px,8vw,110px) 0;
+  background:
+    radial-gradient(120% 90% at 85% 0%,rgba(124,92,255,.10),transparent 55%),
+    linear-gradient(180deg,#060E21 0%,#0a1530 60%,#0b1a3a 100%);
+  color:#fff;padding:clamp(64px,8vw,120px) 0;
 }
-.hp-builder__bg-grid{
+.hp-agent__bg-grid{
   position:absolute;inset:0;opacity:.5;pointer-events:none;
   background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-.hp-builder__orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.18;pointer-events:none}
-.hp-builder__orb--1{width:520px;height:520px;background:var(--blue);top:-200px;left:-150px}
-.hp-builder__orb--2{width:420px;height:420px;background:var(--cyan);bottom:-150px;right:-100px}
-.hp-builder__inner{position:relative;z-index:2}
-.hp-builder__head{text-align:center;max-width:720px;margin:0 auto 36px}
-.hp-builder__head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;margin:16px 0 12px;line-height:1.1}
-.hp-builder__head p{color:rgba(255,255,255,.7);font-size:clamp(15px,1.2vw,17px);line-height:1.6;max-width:600px;margin:0 auto}
+.hp-agent__orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.22;pointer-events:none}
+.hp-agent__orb--1{width:520px;height:520px;background:var(--blue);top:-200px;left:-160px;animation:hpAgentDrift 18s ease-in-out infinite}
+.hp-agent__orb--2{width:440px;height:440px;background:var(--cyan);bottom:-180px;right:-120px;animation:hpAgentDrift 22s ease-in-out infinite reverse}
+.hp-agent__orb--3{width:360px;height:360px;background:#7c5cff;top:28%;right:18%;opacity:.14;animation:hpAgentDrift 26s ease-in-out infinite}
+@keyframes hpAgentDrift{0%,100%{transform:translate(0,0)}50%{transform:translate(42px,-30px)}}
+.hp-agent__inner{position:relative;z-index:2}
 
-/* Stepper */
-.hp-builder__steps{
-  display:flex;justify-content:center;gap:8px;list-style:none;padding:0;margin:0 0 12px;
-  flex-wrap:wrap;
-}
-.hp-builder__steps li{
-  display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  color:rgba(255,255,255,.55);font-size:13px;font-weight:600;
-  transition:background .35s ease, border-color .35s ease, color .35s ease;
-}
-.hp-builder__steps li.is-active{
-  background:linear-gradient(135deg,rgba(21,73,255,.25),rgba(0,207,255,.12));
-  border-color:rgba(0,207,255,.4);color:#fff;
-}
-.hp-builder__steps li.is-done{color:var(--green);border-color:rgba(0,229,160,.3)}
-.hp-builder__step-num{
-  width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.08);font-size:11px;font-weight:700;
-  transition:background .35s ease, color .35s ease;
-}
-.hp-builder__steps li.is-active .hp-builder__step-num{background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff}
-.hp-builder__steps li.is-done .hp-builder__step-num{background:var(--green);color:#001f12}
-.hp-builder__bar{
-  max-width:560px;margin:0 auto 36px;height:4px;border-radius:999px;
-  background:rgba(255,255,255,.06);overflow:hidden;
-}
-.hp-builder__bar-fill{
-  display:block;height:100%;border-radius:999px;
-  background:linear-gradient(90deg,#1549FF,#00CFFF);
-  box-shadow:0 0 12px rgba(0,207,255,.5);
-  transition:width .5s cubic-bezier(.2,.7,.2,1);
-}
+/* Layout */
+.hp-agent__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,4vw,60px);align-items:center}
 
-/* Panels */
-.hp-builder__panel{opacity:0;transform:translateY(10px);transition:opacity .4s ease, transform .4s ease}
-.hp-builder__panel.is-active{opacity:1;transform:none;animation:hpBPanelIn .5s cubic-bezier(.2,.7,.2,1) both}
-.hp-builder__panel[hidden]{display:none}
-@keyframes hpBPanelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* Reveal */
+.hp-agent__copy,.hp-agent__visual{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.hp-agent__copy.animated,.hp-agent__visual.animated{opacity:1;transform:none}
+.hp-agent__visual{position:relative;transition-delay:.08s}
 
-/* Industry/Need cards grid */
-.hp-builder__grid{display:grid;gap:14px}
-.hp-builder__grid--ind{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
-.hp-builder__grid--needs{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.hp-bcard{
-  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;
-  padding:18px 18px 16px;border-radius:16px;text-align:left;cursor:pointer;
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  color:rgba(255,255,255,.85);
-  transition:transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease;
-  -webkit-tap-highlight-color:transparent;
+/* Left copy */
+.hp-agent__badge i{margin-right:2px}
+.hp-agent__title{font-size:clamp(2rem,3.6vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:18px 0 16px}
+.hp-agent__sub{color:rgba(255,255,255,.82);font-size:clamp(15px,1.2vw,17px);line-height:1.6;margin:0 0 14px;max-width:560px}
+.hp-agent__body{color:rgba(255,255,255,.62);font-size:14.5px;line-height:1.65;margin:0 0 24px;max-width:560px}
+.hp-agent__actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.hp-agent__note{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin:0 0 22px}
+.hp-agent__note i{color:var(--green)}
+.hp-agent__chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0}
+.hp-agent__chips li{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12.5px;font-weight:600;color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  padding:7px 13px;border-radius:999px;
 }
-.hp-bcard:hover{
-  background:rgba(255,255,255,.06);border-color:rgba(0,207,255,.3);
-  transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
-.hp-bcard:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-.hp-bcard > i{
-  font-size:22px;color:var(--cyan);
-  width:42px;height:42px;border-radius:10px;
-  background:linear-gradient(135deg,rgba(21,73,255,.22),rgba(0,207,255,.12));
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:transform .3s ease;
-}
-.hp-bcard:hover > i{transform:scale(1.08) rotate(-3deg)}
-.hp-bcard strong{font-size:15px;font-weight:700;color:#fff}
-.hp-bcard span{font-size:12px;color:rgba(255,255,255,.55);line-height:1.4}
-.hp-bcard.is-on{
-  background:linear-gradient(135deg,rgba(21,73,255,.18),rgba(0,207,255,.08));
-  border-color:rgba(0,207,255,.55);
-  box-shadow:0 14px 38px rgba(0,207,255,.18), inset 0 0 0 1px rgba(0,207,255,.2);
-}
-.hp-bcard.is-on::after{
-  content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;
-  position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;
-  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-size:10px;
-  box-shadow:0 4px 14px rgba(0,207,255,.5);
-  animation:hpBCheck .3s ease both;
-}
-@keyframes hpBCheck{from{transform:scale(0)}to{transform:scale(1)}}
+.hp-agent__chips li i{color:var(--cyan);font-size:12px}
 
-.hp-builder__nav{
-  display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:28px;flex-wrap:wrap;
+/* Right visual + floats */
+.hp-agent__float{
+  position:absolute;z-index:3;
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:700;color:#fff;
+  background:rgba(12,26,56,.82);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);border-radius:12px;
+  padding:8px 12px;box-shadow:0 12px 30px rgba(0,0,0,.35);
+  animation:hpAgentFloat 6s ease-in-out infinite;
 }
-.hp-builder__nav--reco{justify-content:center}
-.hp-builder__hint{margin-right:auto;font-size:13px;color:rgba(255,255,255,.5)}
-.hp-builder__sub{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  margin-bottom:16px;font-size:14px;color:rgba(255,255,255,.7);flex-wrap:wrap;
-}
-.hp-builder__sub strong{color:var(--cyan)}
-.hp-builder__count{
-  font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-  background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.3);color:var(--cyan);
-  padding:4px 10px;border-radius:999px;
-}
+.hp-agent__float i{font-size:12px}
+.hp-agent__float--a{top:-14px;left:-8px}
+.hp-agent__float--a i{color:var(--green)}
+.hp-agent__float--b{top:34%;right:-18px}
+.hp-agent__float--b i{color:var(--cyan)}
+.hp-agent__float--c{bottom:9%;left:-22px;animation-delay:1.2s}
+.hp-agent__float--c i{color:var(--blue-mid)}
+.hp-agent__float--d{bottom:-16px;right:8%;animation-delay:2s}
+.hp-agent__float--d i{color:#c9b8ff}
+@keyframes hpAgentFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
-/* ───────── Step 2 — Needs chips (dark glass, not white boxes) ───────── */
-.hp-builder__grid--needs{
-  display:flex;flex-wrap:wrap;gap:10px;
-}
-.hp-bcard--need{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:11px 16px 11px 13px;min-height:0;
-  background:linear-gradient(135deg,rgba(12,26,56,.7),rgba(6,14,33,.85));
-  border:1px solid rgba(255,255,255,.10);border-radius:999px;
-  color:rgba(255,255,255,.85);font-size:13.5px;font-weight:600;
-  text-align:left;cursor:pointer;
-  transition:border-color .2s ease, background .2s ease, transform .15s ease, box-shadow .2s ease, color .2s ease;
-  backdrop-filter:blur(6px);
-}
-.hp-bcard--need > i{
-  width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-  font-size:13px;flex:0 0 auto;
-  background:linear-gradient(135deg,rgba(21,73,255,.22),rgba(0,207,255,.14));
-  color:var(--cyan);
+/* Mockup */
+.hp-agent__mock{
+  position:relative;z-index:2;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(12,26,56,.96),rgba(9,18,42,.96));
   border:1px solid rgba(0,207,255,.22);
-  transition:background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03) inset;
 }
-.hp-bcard--need strong{font-size:13.5px;font-weight:600;color:inherit;margin:0;line-height:1.1}
-.hp-bcard--need span{display:none}
-.hp-bcard--need:hover{
-  border-color:rgba(0,207,255,.5);background:linear-gradient(135deg,rgba(0,207,255,.10),rgba(12,26,56,.85));
-  color:#fff;transform:translateY(-1px);
-  box-shadow:0 8px 24px rgba(0,207,255,.18);
+.hp-agent__mock-bar{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
 }
-.hp-bcard--need.is-on{
-  border-color:rgba(0,207,255,.6);
-  background:linear-gradient(135deg,rgba(21,73,255,.32),rgba(0,207,255,.18));
-  color:#fff;
-  box-shadow:0 10px 28px rgba(0,207,255,.28), inset 0 0 0 1px rgba(0,207,255,.25);
+.hp-agent__dots{display:inline-flex;gap:6px}
+.hp-agent__dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18)}
+.hp-agent__dots i:nth-child(1){background:#ff5f57}
+.hp-agent__dots i:nth-child(2){background:#febc2e}
+.hp-agent__dots i:nth-child(3){background:#28c840}
+.hp-agent__mock-title{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.72)}
+.hp-agent__mock-brand{
+  margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+  font-size:10.5px;font-weight:700;letter-spacing:.02em;color:#c9b8ff;
+  background:rgba(124,92,255,.16);border:1px solid rgba(124,92,255,.34);
+  padding:4px 9px;border-radius:999px;white-space:nowrap;
 }
-.hp-bcard--need.is-on > i{
-  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;border-color:transparent;
-  box-shadow:0 6px 18px rgba(0,207,255,.45);
+.hp-agent__mock-brand i{font-size:10px}
+.hp-agent__mock-body{padding:16px}
+
+/* Tabs */
+.hp-agent__tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.hp-agent__tab{
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  font-size:12px;font-weight:600;color:rgba(255,255,255,.62);
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  padding:7px 11px;border-radius:999px;transition:color .2s ease,border-color .2s ease,background .2s ease;
+}
+.hp-agent__tab i{font-size:11px;opacity:.85}
+.hp-agent__tab:hover{color:#fff;border-color:rgba(0,207,255,.4)}
+.hp-agent__tab:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.hp-agent__tab.is-active{
+  color:#fff;border-color:transparent;
+  background:linear-gradient(135deg,#1549FF,#00CFFF);
+  box-shadow:0 6px 18px rgba(0,207,255,.35);
 }
 
-/* ───────── Step 3 — Single recommendation card ───────── */
-.hp-builder__reco{
-  background:linear-gradient(135deg,rgba(21,73,255,.10),rgba(12,26,56,.72));
-  border:1px solid rgba(0,207,255,.28);border-radius:24px;padding:clamp(20px,2.6vw,30px);
-  box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 0 1px rgba(0,207,255,.08);
-  animation:hpBRecoIn .55s cubic-bezier(.2,.7,.2,1) both;
-  position:relative;overflow:hidden;
-}
-.hp-builder__reco::before{
-  content:"";position:absolute;inset:-1px;border-radius:24px;pointer-events:none;
-  background:radial-gradient(80% 60% at 0% 0%,rgba(0,207,255,.15),transparent 60%),
-             radial-gradient(60% 70% at 100% 100%,rgba(21,73,255,.18),transparent 60%);
-  opacity:.9;z-index:0;
-}
-.hp-builder__reco > *{position:relative;z-index:1}
-@keyframes hpBRecoIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
-
-.hp-reco__badge{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);
+/* Panel */
+.hp-agent__panel{animation:hpAgentPanel .4s ease both}
+.hp-agent__panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px}
+.hp-agent__panel-eyebrow{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hp-agent__panel-title{font-size:1.25rem;font-weight:800;color:#fff;margin:2px 0 0;line-height:1.15}
+.hp-agent__yourbrand{
+  flex:0 0 auto;font-size:10px;font-weight:700;color:var(--cyan);
   background:rgba(0,207,255,.12);border:1px solid rgba(0,207,255,.32);
-  padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  padding:4px 9px;border-radius:999px;white-space:nowrap;
 }
-.hp-reco__head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
-.hp-reco__icon{
-  width:64px;height:64px;border-radius:18px;flex:0 0 auto;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;font-size:28px;
-  box-shadow:0 14px 34px rgba(0,207,255,.45);
-}
-.hp-reco__head-text{flex:1 1 240px;min-width:0}
-.hp-reco__eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);margin-bottom:4px;
-}
-.hp-reco__title{
-  font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:#fff;line-height:1.1;margin:0;
-}
-.hp-reco__summary-text{
-  font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.6;margin:0 0 18px;
-}
-.hp-reco__benefits{
-  list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:10px;
-}
-.hp-reco__benefits li{
-  display:flex;align-items:flex-start;gap:12px;
-  font-size:14.5px;font-weight:500;color:rgba(255,255,255,.92);line-height:1.45;
-}
-.hp-reco__benefits li > i{
-  width:24px;height:24px;border-radius:50%;flex:0 0 auto;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#1549FF,#00CFFF);color:#fff;font-size:11px;
-  box-shadow:0 4px 12px rgba(0,207,255,.32);margin-top:1px;
-}
-.hp-reco__bestfor{
-  display:flex;flex-wrap:wrap;gap:6px 8px;align-items:baseline;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);
-  border-radius:12px;padding:12px 16px;margin-bottom:20px;
-}
-.hp-reco__bestfor-lbl{
-  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);
-}
-.hp-reco__bestfor-val{font-size:14px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.4}
-.hp-reco__cta-row{display:flex;justify-content:flex-start}
-.hp-reco__cta{display:inline-flex;align-items:center;gap:10px;font-weight:700}
-.hp-reco__cta i{font-size:13px}
+.hp-agent__panel-desc{font-size:12.5px;color:rgba(255,255,255,.66);line-height:1.55;margin:0 0 14px}
 
+/* Stats */
+.hp-agent__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.hp-agent__stat{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;padding:10px;text-align:left;
+}
+.hp-agent__stat-lbl{display:block;font-size:9.5px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px;line-height:1.2}
+.hp-agent__stat-val{display:block;font-size:15px;font-weight:800;color:#fff;line-height:1}
+
+/* Modules */
+.hp-agent__modules{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.hp-agent__modules :global(.hp-agent__module){
+  font-size:11px;font-weight:600;color:rgba(255,255,255,.82);
+  background:rgba(21,73,255,.14);border:1px solid rgba(45,96,255,.3);
+  padding:5px 10px;border-radius:8px;
+}
+
+/* Lower: CRM + chart */
+.hp-agent__lower{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.hp-agent__crm,.hp-agent__chart{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;padding:11px 12px;
+}
+.hp-agent__crm-head,.hp-agent__chart-head{
+  display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:700;
+  letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:9px;
+}
+.hp-agent__crm-head i,.hp-agent__chart-head i{color:var(--cyan);font-size:11px}
+.hp-agent__crm ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.hp-agent__crm ul :global(li){display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hp-agent__crm :global(.hp-agent__crm-name){font-size:12px;font-weight:600;color:rgba(255,255,255,.86);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hp-agent__crm :global(.hp-agent__crm-tag){
+  flex:0 0 auto;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.06);border-radius:999px;padding:3px 8px;
+}
+.hp-agent__crm :global(.hp-agent__crm-tag.is-active){color:var(--green);background:rgba(0,229,160,.12)}
+.hp-agent__bars{display:flex;flex-direction:column;gap:9px}
+.hp-agent__bars :global(.hp-agent__bar){display:flex;align-items:center;gap:8px}
+.hp-agent__bars :global(.hp-agent__bar-lbl){flex:0 0 62px;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.62)}
+.hp-agent__bars :global(.hp-agent__bar-track){flex:1;height:7px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.hp-agent__bars :global(.hp-agent__bar-fill){display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#1549FF,#00CFFF);transition:width .5s ease}
+.hp-agent__bars :global(.hp-agent__bar:nth-child(2) .hp-agent__bar-fill){background:linear-gradient(90deg,#2D60FF,#00E5A0)}
+.hp-agent__bars :global(.hp-agent__bar:nth-child(3) .hp-agent__bar-fill){background:linear-gradient(90deg,#7c5cff,#00CFFF)}
+
+.hp-agent__mock-foot{
+  display:flex;align-items:center;gap:8px;justify-content:center;
+  font-size:11.5px;font-weight:700;color:#eafff6;
+  background:linear-gradient(90deg,rgba(0,229,160,.14),rgba(0,207,255,.14));
+  border:1px solid rgba(0,229,160,.28);border-radius:10px;padding:9px;
+}
+.hp-agent__mock-foot i{color:var(--green)}
+
+/* Support cards */
+.hp-agent__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(36px,5vw,56px)}
+.hp-agent__card{
+  opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:24px;
+}
+.hp-agent__card.animated{opacity:1;transform:none}
+.hp-agent__card:nth-child(2){transition-delay:.08s}
+.hp-agent__card:nth-child(3){transition-delay:.16s}
+.hp-agent__card-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:46px;height:46px;border-radius:13px;font-size:19px;color:#fff;
+  background:linear-gradient(135deg,#1549FF,#00CFFF);
+  box-shadow:0 10px 26px rgba(0,207,255,.32);margin-bottom:14px;
+}
+.hp-agent__card-icon--green{background:linear-gradient(135deg,#00CFFF,#00E5A0);box-shadow:0 10px 26px rgba(0,229,160,.3)}
+.hp-agent__card-icon--purple{background:linear-gradient(135deg,#7c5cff,#2D60FF);box-shadow:0 10px 26px rgba(124,92,255,.34)}
+.hp-agent__card h3{font-size:1.05rem;font-weight:700;margin:0 0 8px;color:#fff}
+.hp-agent__card p{font-size:13.5px;color:rgba(255,255,255,.66);line-height:1.6;margin:0}
+
+@keyframes hpAgentPanel{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:900px){
+  .hp-agent__grid{grid-template-columns:1fr;gap:36px}
+  .hp-agent__visual{order:2;max-width:520px;margin:0 auto;width:100%}
+  .hp-agent__cards{grid-template-columns:1fr}
+  .hp-agent__float--b{right:-6px}
+  .hp-agent__float--c{left:-6px}
+}
 @media (max-width:560px){
-  .hp-reco__head{gap:14px}
-  .hp-reco__icon{width:54px;height:54px;font-size:24px;border-radius:14px}
-  .hp-reco__cta-row{justify-content:stretch}
-  .hp-reco__cta{width:100%;justify-content:center}
-}
-
-/* Modal */
-.hp-bmodal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
-.hp-bmodal[hidden]{display:none}
-.hp-bmodal__backdrop{position:absolute;inset:0;background:rgba(6,14,33,.78);backdrop-filter:blur(8px);animation:hpBFade .25s ease both}
-.hp-bmodal__card{
-  position:relative;z-index:2;max-width:560px;width:100%;max-height:92vh;overflow:auto;
-  background:linear-gradient(180deg,#0C1A38 0%,#0a1530 100%);
-  border:1px solid rgba(0,207,255,.25);border-radius:20px;padding:28px;color:#fff;
-  box-shadow:0 30px 80px rgba(0,0,0,.55);
-  animation:hpBModalIn .35s cubic-bezier(.2,.7,.2,1) both;
-}
-@keyframes hpBFade{from{opacity:0}to{opacity:1}}
-@keyframes hpBModalIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
-.hp-bmodal__close{
-  position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s ease, transform .15s ease;
-}
-.hp-bmodal__close:hover{background:rgba(255,255,255,.12);transform:rotate(90deg)}
-.hp-bmodal__head{text-align:center;margin-bottom:18px}
-.hp-bmodal__head h3{font-size:1.5rem;font-weight:800;margin:12px 0 6px}
-.hp-bmodal__head p{color:rgba(255,255,255,.7);font-size:14px;margin:0}
-.hp-bmodal__form label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:12px}
-.hp-bmodal__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hp-bmodal__form input,
-.hp-bmodal__form textarea{
-  width:100%;padding:11px 14px;border-radius:10px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff;
-  font:inherit;font-size:14px;transition:border-color .2s ease, background .2s ease;
-}
-.hp-bmodal__form input:focus,
-.hp-bmodal__form textarea:focus{outline:none;border-color:var(--cyan);background:rgba(0,207,255,.05)}
-.hp-bmodal__summary{
-  background:rgba(0,207,255,.06);border:1px dashed rgba(0,207,255,.25);
-  border-radius:10px;padding:10px 12px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.5;
-  margin:6px 0 14px;
-}
-.hp-bmodal__summary strong{color:var(--cyan)}
-.hp-bmodal__actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;flex-wrap:wrap}
-.hp-bmodal__msg{margin-top:10px;font-size:13px;text-align:center;min-height:18px}
-.hp-bmodal__msg.is-ok{color:var(--green)}
-.hp-bmodal__msg.is-err{color:#f87171}
-
-/* Mobile */
-@media (max-width:640px){
-  .hp-builder__grid--ind{grid-template-columns:repeat(2,1fr)}
-  .hp-bcard{padding:14px 12px 12px}
-  .hp-bcard strong{font-size:13px}
-  .hp-bcard span{font-size:11px}
-  .hp-builder__steps li{padding:6px 10px;font-size:12px;gap:6px}
-  .hp-builder__steps li .hp-builder__step-lbl{display:none}
-  .hp-builder__nav{justify-content:center}
-  .hp-builder__hint{text-align:center;width:100%;margin:0 0 6px}
-  .hp-bmodal__row{grid-template-columns:1fr}
-  .hp-bmodal__card{padding:22px 18px}
+  .hp-agent__actions .btn{width:100%;justify-content:center}
+  .hp-agent__stats{grid-template-columns:repeat(2,1fr)}
+  .hp-agent__lower{grid-template-columns:1fr}
+  .hp-agent__float{display:none}
+  .hp-agent__tabs{gap:5px}
+  .hp-agent__tab{font-size:11px;padding:6px 9px}
 }
 @media (prefers-reduced-motion: reduce){
-  .hp-builder__panel,.hp-builder__reco,.hp-bcard,.hp-bmodal__card,.hp-bcard.is-on::after{animation:none !important;transition:none !important}
+  .hp-agent__orb,.hp-agent__float{animation:none}
+  .hp-agent__copy,.hp-agent__visual,.hp-agent__card{opacity:1;transform:none;transition:none}
+  .hp-agent__panel{animation:none}
+  .hp-agent__bars :global(.hp-agent__bar-fill){transition:none}
 }
 </style>
 
@@ -2137,269 +2092,111 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     });
   });
 
-  /* ═══════════════ BUILDER WIDGET ═══════════════ */
+  /* ═══════════════ AGENT NICHE TABS ═══════════════ */
   (() => {
-    const root = document.getElementById('builder');
-    if(!root) return;
+    const panel = document.getElementById('agPanel');
+    if(!panel) return;
+    const tabs = Array.from(document.querySelectorAll('.hp-agent__tab'));
+    if(!tabs.length) return;
 
-    const INDUSTRY_LABEL = {
-      restaurant:'Restaurant', retail:'Retail Store', repair:'Repair Shop', ecommerce:'E-commerce',
-      b2b:'B2B / Wholesale', healthcare:'Healthcare', nonprofit:'Nonprofit',
-      mobile:'Mobile Business', salon:'Salon / Spa', grocery:'Grocery / Market'
-    };
-    const FEATURES = {
-      pos:       {icon:'fa-cash-register',         name:'POS System',                desc:'All-in-one register'},
-      terminal:  {icon:'fa-credit-card',           name:'Credit Card Terminal',      desc:'Tap, swipe & dip'},
-      online:    {icon:'fa-globe',                 name:'Online Payments',           desc:'Web & app checkout'},
-      invoicing: {icon:'fa-file-invoice-dollar',   name:'Invoicing',                 desc:'Bill & collect online'},
-      ach:       {icon:'fa-building-columns',      name:'ACH Payments',              desc:'Bank-to-bank transfers'},
-      recurring: {icon:'fa-rotate',                name:'Recurring Billing',         desc:'Subscriptions & plans'},
-      inventory: {icon:'fa-boxes-stacked',         name:'Inventory Management',      desc:'Stock, SKUs & alerts'},
-      crm:       {icon:'fa-address-book',          name:'Customer Management',       desc:'Customer profiles & notes'},
-      employee:  {icon:'fa-user-clock',            name:'Employee / Team',           desc:'Roles, hours & tips'},
-      nextday:   {icon:'fa-bolt',                  name:'Next-Day Funding',          desc:'Funds in your bank fast'},
-      dual:      {icon:'fa-percent',               name:'Cash Discount / Dual Pricing', desc:'Pass card fees on'},
-      reports:   {icon:'fa-chart-line',            name:'Reporting Dashboard',       desc:'KPIs, exports & trends'},
-      gift:      {icon:'fa-gift',                  name:'Gift Cards',                desc:'Branded gift cards'},
-      loyalty:   {icon:'fa-medal',                 name:'Loyalty Program',           desc:'Points, tiers & rewards'},
-      multiloc:  {icon:'fa-map-location-dot',      name:'Multi-Location Support',    desc:'Multiple stores in sync'},
-      mobpay:    {icon:'fa-mobile-screen',         name:'Mobile Payments',           desc:'Phone or tablet checkout'},
-      website:   {icon:'fa-laptop-code',           name:'Website Payments',          desc:'Embeddable widgets'},
-      tickets:   {icon:'fa-clipboard-list',        name:'Repair Ticket Management',  desc:'Work orders & status'},
-      menu:      {icon:'fa-utensils',              name:'Menu Management',           desc:'Items, modifiers & 86s'},
-      table:     {icon:'fa-chair',                 name:'Table / Floor Management',  desc:'Floor map & seating'},
-      barcode:   {icon:'fa-barcode',               name:'Barcode Scanning',          desc:'SKU lookup at checkout'}
-    };
-    const INDUSTRY_FEATURES = {
-      restaurant:['pos','menu','table','online','terminal','employee','nextday','loyalty','gift','reports','dual'],
-      retail:    ['pos','terminal','barcode','inventory','loyalty','gift','multiloc','nextday','reports','dual','employee'],
-      repair:    ['pos','tickets','inventory','crm','terminal','nextday','reports','employee','invoicing'],
-      ecommerce: ['online','website','recurring','crm','reports','gift','loyalty','invoicing','nextday'],
-      b2b:       ['invoicing','ach','recurring','crm','terminal','reports','nextday','inventory'],
-      healthcare:['terminal','recurring','online','crm','invoicing','reports','nextday'],
-      nonprofit: ['online','recurring','website','crm','reports','nextday','invoicing'],
-      mobile:    ['mobpay','terminal','online','nextday','reports','invoicing','crm'],
-      salon:     ['pos','terminal','employee','crm','loyalty','gift','online','nextday','reports'],
-      grocery:   ['pos','terminal','barcode','inventory','loyalty','multiloc','nextday','employee','reports']
-    };
-    /* One clean recommendation per industry */
-    const RECOS = {
-      restaurant:{icon:'fa-utensils',           badge:'Recommended for Restaurants',     title:'Restaurant POS System',         summary:'A complete front-of-house, kitchen, and online ordering system built for hospitality.',                    benefits:['Dine-in, takeout & delivery in one','Menu, modifiers & tip-aware checkout','Next-day funding & built-in reporting'],   bestFor:'Single-location and growing multi-unit restaurants'},
-      retail:    {icon:'fa-store',              badge:'Recommended for Retail Stores',   title:'Korona POS',                    summary:'A modern omnichannel POS that keeps in-store, online, and inventory in sync.',                              benefits:['Barcode scanning & real-time inventory','Loyalty, gift cards & customer profiles','Multi-location reporting & dashboards'], bestFor:'Single-store and multi-location retailers'},
-      repair:    {icon:'fa-screwdriver-wrench', badge:'Recommended for Repair Shops',    title:'PPD Repair',                    summary:'A simple repair shop system for tickets, inventory, customer updates, and payments.',                       benefits:['Repair ticket tracking','Inventory and parts management','Customer notifications'],                                  bestFor:'Phone, computer, jewelry & small-appliance repair'},
-      ecommerce: {icon:'fa-cart-shopping',      badge:'Recommended for E-commerce',      title:'Online Payment Gateway',        summary:'A fast, secure online payment gateway with drop-in checkout for any storefront.',                            benefits:['Card, ACH & digital wallets','Recurring billing & customer vault','PCI-secure with low decline rates'],               bestFor:'Shopify, Woo, headless & custom storefronts'},
-      b2b:       {icon:'fa-handshake',          badge:'Recommended for B2B Businesses',  title:'PPD Merchant Gateway',          summary:'A B2B payment platform with invoicing, ACH, and recurring billing built in.',                                benefits:['ACH and card payments','Invoicing with net terms','Recurring billing & customer accounts'],                          bestFor:'Wholesalers, distributors & service businesses'},
-      healthcare:{icon:'fa-heart-pulse',        badge:'Recommended for Healthcare',      title:'PPD Merchant Gateway',          summary:'A PCI-secure payment platform for patient billing, plans, and online pay.',                                  benefits:['Secure patient payment links','Recurring billing & payment plans','Card-on-file with automated receipts'],            bestFor:'Practices, dental, vet & specialty clinics'},
-      nonprofit: {icon:'fa-hand-holding-heart', badge:'Recommended for Nonprofits',      title:'Online Donations + Payment Gateway', summary:'A donor-friendly gateway with a hosted donation page and recurring giving.',                              benefits:['One-time & monthly giving','Embeddable donation widgets','Donor records & receipting'],                              bestFor:'501(c)(3) and faith-based organizations'},
-      mobile:    {icon:'fa-truck',              badge:'Recommended for Mobile Businesses', title:'Dejavoo P17 Terminal',        summary:'A compact wireless smart terminal made for accepting payments anywhere.',                                    benefits:['Tap, swipe & dip on the go','Wi-Fi and 4G connectivity','Built-in receipts & next-day funding'],                     bestFor:'Field service, food trucks, pop-ups & contractors'},
-      salon:     {icon:'fa-scissors',           badge:'Recommended for Salons & Spas',   title:'Smart POS System',              summary:'A tip-aware smart POS with stylist tracking, customer history, and gift cards.',                             benefits:['Tipping & stylist tracking','Appointments & customer profiles','Gift cards & loyalty rewards'],                      bestFor:'Salons, spas, barbershops & nail studios'},
-      grocery:   {icon:'fa-basket-shopping',    badge:'Recommended for Grocery & Markets', title:'Korona POS',                  summary:'A high-throughput grocery POS with barcode scanning, inventory, and multi-store sync.',                      benefits:['Barcode scanning & fast checkout','Inventory and pricing control','Multi-location reporting'],                       bestFor:'Convenience, grocery and ethnic markets'}
-    };
-
-    const state = { step:1, industry:null, needs:new Set() };
-
-    const $ = (sel) => root.querySelector(sel);
-    const $$ = (sel) => root.querySelectorAll(sel);
-    const steps = $$('.hp-builder__steps li');
-    const panels = $$('.hp-builder__panel');
-    const bar = $('#hpBuilderBar');
-    const indCards = $$('.hp-bcard[data-bind]');
-    const needsGrid = $('#hpBuilderNeeds');
-    const indName = $('#hpBuilderIndName');
-    const countEl = $('#hpBuilderCount');
-    const recoEl = $('#hpBuilderReco');
-    const nextStep1 = root.querySelector('[data-bnext="2"]');
-
-    const goTo = (n) => {
-      state.step = n;
-      steps.forEach(li => {
-        const i = +li.dataset.bstepind;
-        li.classList.toggle('is-active', i === n);
-        li.classList.toggle('is-done', i < n);
-      });
-      bar.style.width = (n / 3 * 100) + '%';
-      panels.forEach(p => {
-        const i = +p.dataset.bpanel;
-        const on = i === n;
-        if(on){
-          p.hidden = false;
-          void p.offsetWidth;
-          p.classList.add('is-active');
-          const focusable = p.querySelector('.hp-bcard, .btn');
-          if(focusable && n !== 1) focusable.focus({preventScroll:true});
-        } else {
-          p.classList.remove('is-active');
-          p.hidden = true;
-        }
-      });
-      if(n === 3) renderReco();
-      // scroll into view smoothly on small screens
-      if(window.matchMedia('(max-width: 900px)').matches){
-        root.scrollIntoView({behavior:'smooth', block:'start'});
+    const NICHES = {
+      restaurants:{
+        title:'RestaurantPay Pro',
+        desc:'Orders, tips, loyalty, online ordering, and payment reporting built for restaurant merchants.',
+        fees:'$5,860', volume:'$1.8M', merchants:'67', referrals:'31',
+        modules:['Table Orders','Tip Management','Loyalty','Online Ordering'],
+        crm:[['Bella Trattoria','Active'],['Sushi Nine','Active'],['Corner Diner','Onboarding']],
+        bars:[82,64,48]
+      },
+      repair:{
+        title:'RepairPay CRM',
+        desc:'Tickets, devices, estimates, warranties, SMS updates, and payment tools for repair shops.',
+        fees:'$4,120', volume:'$1.2M', merchants:'84', referrals:'23',
+        modules:['Repair Tickets','Device Intake','Warranty Tracking','SMS Updates'],
+        crm:[['FixIt Mobile','Active'],['Uptown Repair','Active'],['GadgetLab','Onboarding']],
+        bars:[70,58,44]
+      },
+      retail:{
+        title:'RetailFlow Payments',
+        desc:'Checkout, inventory, customer profiles, gift cards, and reporting for retail merchants.',
+        fees:'$3,740', volume:'$940K', merchants:'58', referrals:'19',
+        modules:['Inventory Sync','Customer Profiles','Gift Cards','Product Reports'],
+        crm:[['Maple & Co','Active'],['Urban Threads','Active'],['The Gift Nook','Onboarding']],
+        bars:[62,52,38]
+      },
+      contractors:{
+        title:'ContractorPay Hub',
+        desc:'Mobile invoices, deposits, recurring billing, job notes, and field payment tools.',
+        fees:'$6,240', volume:'$2.1M', merchants:'73', referrals:'27',
+        modules:['Mobile Invoices','Job Deposits','Recurring Billing','Dispatch Notes'],
+        crm:[['Summit Builders','Active'],['ProHVAC Services','Active'],['Ridgeline Roofing','Onboarding']],
+        bars:[88,72,55]
+      },
+      medspas:{
+        title:'MedSpaPay Suite',
+        desc:'Packages, deposits, memberships, client profiles, payment plans, and appointment checkout.',
+        fees:'$4,980', volume:'$1.4M', merchants:'52', referrals:'21',
+        modules:['Memberships','Packages','Deposits','Client Profiles'],
+        crm:[['Lumiere Spa','Active'],['Glow Aesthetics','Active'],['Serene MedSpa','Onboarding']],
+        bars:[74,60,46]
       }
     };
 
-    const renderNeeds = () => {
-      const keys = INDUSTRY_FEATURES[state.industry] || [];
-      needsGrid.innerHTML = keys.map(k => {
-        const f = FEATURES[k];
-        if(!f) return '';
-        const on = state.needs.has(k);
-        return `<button type="button" class="hp-bcard hp-bcard--need${on?' is-on':''}" data-bneed="${k}" aria-pressed="${on?'true':'false'}">
-          <i class="fa-solid ${f.icon}"></i>
-          <strong>${f.name}</strong>
-          <span>${f.desc}</span>
-        </button>`;
-      }).join('');
-      needsGrid.querySelectorAll('[data-bneed]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const k = btn.dataset.bneed;
-          if(state.needs.has(k)) state.needs.delete(k); else state.needs.add(k);
-          btn.classList.toggle('is-on');
-          btn.setAttribute('aria-pressed', state.needs.has(k) ? 'true' : 'false');
-          countEl.textContent = state.needs.size;
-        });
+    const barLabels = ['Software','Processing','Residual'];
+    const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    const set = (attr, val) => { const el = panel.querySelector('[data-ag="'+attr+'"]'); if(el) el.textContent = val; };
+
+    function render(key){
+      const d = NICHES[key];
+      if(!d) return;
+      set('title', d.title);
+      set('desc', d.desc);
+      set('fees', d.fees);
+      set('volume', d.volume);
+      set('merchants', d.merchants);
+      set('referrals', d.referrals);
+
+      const mod = panel.querySelector('[data-ag="modules"]');
+      if(mod) mod.innerHTML = d.modules.map(m => '<span class="hp-agent__module">'+esc(m)+'</span>').join('');
+
+      const crm = panel.querySelector('[data-ag="crm"]');
+      if(crm) crm.innerHTML = d.crm.map(row => '<li><span class="hp-agent__crm-name">'+esc(row[0])+'</span><span class="hp-agent__crm-tag'+(row[1]==='Active'?' is-active':'')+'">'+esc(row[1])+'</span></li>').join('');
+
+      const bars = panel.querySelector('[data-ag="bars"]');
+      if(bars) bars.innerHTML = d.bars.map((w,i) => '<div class="hp-agent__bar"><span class="hp-agent__bar-lbl">'+barLabels[i]+'</span><span class="hp-agent__bar-track"><span class="hp-agent__bar-fill" style="width:'+w+'%"></span></span></div>').join('');
+
+      // restart panel entrance animation
+      panel.style.animation = 'none';
+      void panel.offsetWidth;
+      panel.style.animation = '';
+      panel.setAttribute('aria-labelledby', 'agTab-' + key);
+    }
+
+    function activate(tab, focus){
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
       });
-      countEl.textContent = state.needs.size;
-      indName.textContent = INDUSTRY_LABEL[state.industry] || 'business';
-    };
+      render(tab.dataset.niche);
+      if(focus) tab.focus();
+    }
 
-    const renderReco = () => {
-      const r = RECOS[state.industry];
-      if(!r){ recoEl.innerHTML = ''; return; }
-      const benefits = r.benefits.map(b =>
-        `<li><i class="fa-solid fa-check"></i><span>${b}</span></li>`
-      ).join('');
-      recoEl.innerHTML = `
-        <span class="hp-reco__badge"><i class="fa-solid fa-wand-magic-sparkles"></i> ${r.badge}</span>
-        <div class="hp-reco__head">
-          <span class="hp-reco__icon"><i class="fa-solid ${r.icon}"></i></span>
-          <div class="hp-reco__head-text">
-            <div class="hp-reco__eyebrow">Your Recommended Setup</div>
-            <h3 class="hp-reco__title">${r.title}</h3>
-          </div>
-        </div>
-        <p class="hp-reco__summary-text">${r.summary}</p>
-        <ul class="hp-reco__benefits">${benefits}</ul>
-        <div class="hp-reco__bestfor">
-          <span class="hp-reco__bestfor-lbl">Best for:</span>
-          <span class="hp-reco__bestfor-val">${r.bestFor}</span>
-        </div>
-        <div class="hp-reco__cta-row">
-          <button type="button" class="btn btn-primary hp-reco__cta" id="hpBuilderQuote2"><i class="fa-solid fa-arrow-right"></i> Get This Setup</button>
-        </div>
-      `;
-      const q2 = document.getElementById('hpBuilderQuote2');
-      if(q2) q2.addEventListener('click', openModal);
-    };
+    tabs.forEach(tab => tab.addEventListener('click', () => activate(tab, false)));
 
-    // Industry selection (radiogroup semantics + arrow-key nav)
-    const selectIndustry = (card) => {
-      state.industry = card.dataset.bind;
-      state.needs.clear();
-      indCards.forEach(c => {
-        const on = c === card;
-        c.classList.toggle('is-on', on);
-        c.setAttribute('aria-checked', on ? 'true' : 'false');
-        c.setAttribute('tabindex', on ? '0' : '-1');
+    const tablist = document.querySelector('.hp-agent__tabs');
+    if(tablist){
+      tablist.addEventListener('keydown', e => {
+        const i = tabs.indexOf(document.activeElement);
+        if(i === -1) return;
+        let n = null;
+        if(e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % tabs.length;
+        else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + tabs.length) % tabs.length;
+        else if(e.key === 'Home') n = 0;
+        else if(e.key === 'End') n = tabs.length - 1;
+        if(n !== null){ e.preventDefault(); activate(tabs[n], true); }
       });
-      nextStep1.disabled = false;
-      const hint = $('#hpBuilderHint1');
-      if(hint) hint.textContent = 'Great — click Continue to choose what you need.';
-    };
-    indCards.forEach((card, idx) => {
-      card.addEventListener('click', () => selectIndustry(card));
-      card.addEventListener('keydown', e => {
-        const keys = ['ArrowRight','ArrowDown','ArrowLeft','ArrowUp','Home','End'];
-        if(!keys.includes(e.key)) return;
-        e.preventDefault();
-        let next = idx;
-        if(e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (idx + 1) % indCards.length;
-        else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (idx - 1 + indCards.length) % indCards.length;
-        else if(e.key === 'Home') next = 0;
-        else if(e.key === 'End') next = indCards.length - 1;
-        const target = indCards[next];
-        target.focus();
-        selectIndustry(target);
-      });
-    });
-
-    // Nav buttons
-    root.querySelectorAll('[data-bnext]').forEach(b => {
-      b.addEventListener('click', () => {
-        const n = +b.dataset.bnext;
-        if(n === 2 && !state.industry) return;
-        if(n === 2) renderNeeds();
-        goTo(n);
-      });
-    });
-    root.querySelectorAll('[data-bback]').forEach(b => {
-      b.addEventListener('click', () => goTo(+b.dataset.bback));
-    });
-
-    // ── Modal ──
-    const modal = document.getElementById('hpBuilderModal');
-    const fIndustry = document.getElementById('hpBuilderFIndustry');
-    const fNeeds = document.getElementById('hpBuilderFNeeds');
-    const fReco = document.getElementById('hpBuilderFReco');
-    const fSummary = document.getElementById('hpBuilderFSummary');
-    const form = document.getElementById('hpBuilderForm');
-    const msg = document.getElementById('hpBuilderFMsg');
-    let lastFocused = null;
-
-    const openModal = () => {
-      const r = RECOS[state.industry] || {};
-      const needList = [...state.needs].map(k => FEATURES[k] ? FEATURES[k].name : '').filter(Boolean);
-      fIndustry.value = INDUSTRY_LABEL[state.industry] || '';
-      fNeeds.value = needList.join(', ');
-      fReco.value = r.title || '';
-      fSummary.innerHTML = `
-        <strong>Your selections</strong><br>
-        Industry: ${fIndustry.value || '—'}<br>
-        Needs: ${fNeeds.value || '—'}<br>
-        Recommended: ${fReco.value || '—'}
-      `;
-      msg.textContent = '';
-      msg.className = 'hp-bmodal__msg';
-      lastFocused = document.activeElement;
-      modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => { const i = form.querySelector('input[name="name"]'); if(i) i.focus(); }, 50);
-    };
-    const closeModal = () => {
-      modal.hidden = true;
-      document.body.style.overflow = '';
-      if(lastFocused && lastFocused.focus) lastFocused.focus();
-    };
-
-    const quoteBtn = document.getElementById('hpBuilderQuote');
-    if(quoteBtn) quoteBtn.addEventListener('click', openModal);
-    modal.querySelectorAll('[data-bclose]').forEach(el => el.addEventListener('click', closeModal));
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape' && !modal.hidden) closeModal();
-    });
-
-    // Form submit — POSTs to /api/lead (same convention as other forms on the site).
-    // TODO: wire to email backend or Formspree when ready.
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      msg.textContent = 'Sending…';
-      msg.className = 'hp-bmodal__msg';
-      try {
-        const data = new FormData(form);
-        const res = await fetch('/api/lead', { method:'POST', body:data });
-        if(res.ok){
-          msg.textContent = 'Thanks — we\'ll be in touch within one business day.';
-          msg.className = 'hp-bmodal__msg is-ok';
-          form.reset();
-          setTimeout(closeModal, 1800);
-        } else {
-          throw new Error('bad response');
-        }
-      } catch(err){
-        msg.textContent = 'Could not send right now — please call or email us directly.';
-        msg.className = 'hp-bmodal__msg is-err';
-      }
-    });
+    }
   })();
 </script>
