@@ -164,6 +164,35 @@ nav ul li a{
 }
 nav ul li a:hover{color:#fff;background:rgba(255,255,255,.08)}
 
+/* Featured nav item — Agent Program (premium pill) */
+nav ul li a.nav-featured{
+  position:relative;overflow:hidden;isolation:isolate;
+  color:#eaf1ff;font-weight:600;padding:8px 16px;border-radius:var(--r-pill);
+  background-image:linear-gradient(120deg,#1030b8,#1549FF 34%,#2D60FF 55%,#00CFFF 80%,#6f5bff);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 2px 10px rgba(21,73,255,.35),0 0 0 1px rgba(0,207,255,.12);
+  transition:color .2s,box-shadow .25s,transform .2s,filter .25s;
+}
+/* faint gradient-mesh shine (subtle static pattern) */
+nav ul li a.nav-featured::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.16),rgba(255,255,255,0) 42%),
+    radial-gradient(120% 90% at 12% 0%,rgba(0,207,255,.28),transparent 55%);
+  opacity:.65;
+}
+/* diagonal sweep on hover (reuses global btnSweep) */
+nav ul li a.nav-featured::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.22),transparent);
+  transform:translateX(-150%);
+}
+nav ul li a.nav-featured:hover{
+  color:#fff;transform:translateY(-1px);filter:brightness(1.08) saturate(1.05);
+  box-shadow:0 6px 20px rgba(21,73,255,.5),0 0 0 1px rgba(0,207,255,.4);
+}
+nav ul li a.nav-featured:hover::after{animation:btnSweep .7s ease}
+
 /* Header buttons */
 .header-buttons{display:flex;gap:8px}
 .btn{
@@ -268,6 +297,18 @@ nav ul li a:hover{color:#fff;background:rgba(255,255,255,.08)}
 }
 .mobile-menu ul li a i{width:18px;text-align:center;font-size:15px;color:var(--cyan);opacity:.7;flex-shrink:0}
 .mobile-menu ul li a:hover,.mobile-menu ul li a:active{background:rgba(255,255,255,.06);color:#fff}
+/* Featured mobile nav item — Agent Program */
+.mobile-menu ul li a.nav-featured{
+  color:#fff;font-weight:600;
+  background-image:linear-gradient(120deg,#1030b8,#1549FF 34%,#2D60FF 55%,#00CFFF 80%,#6f5bff);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 2px 12px rgba(21,73,255,.35),0 0 0 1px rgba(0,207,255,.12);
+}
+.mobile-menu ul li a.nav-featured i{color:#eaf3ff;opacity:1}
+.mobile-menu ul li a.nav-featured:hover,.mobile-menu ul li a.nav-featured:active{
+  color:#fff;filter:brightness(1.08) saturate(1.05);
+  background-image:linear-gradient(120deg,#1030b8,#1549FF 34%,#2D60FF 55%,#00CFFF 80%,#6f5bff);
+}
 
 .mobile-menu .header-buttons{
   flex-direction:column;padding:16px 24px 24px;gap:10px;
@@ -749,7 +790,7 @@ footer::before{
           </div>
         </li>
         <li class="mobile-menu__divider-li" aria-hidden="true"><div class="mobile-menu__divider"></div></li>
-        <li><a href="/become-a-partner"><i class="fa-solid fa-handshake"></i> Agent Program</a></li>
+        <li><a href="/become-a-partner" class="nav-featured"><i class="fa-solid fa-handshake"></i> Agent Program</a></li>
         <li><a href="/iso"><i class="fa-solid fa-diagram-project"></i> ISO Solutions</a></li>
         <li><a href="/isv-solutions"><i class="fa-solid fa-plug"></i> ISV Solutions</a></li>
         <li><a href="/customer-support"><i class="fa-solid fa-headset"></i> Customer Support</a></li>

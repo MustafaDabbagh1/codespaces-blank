@@ -28,6 +28,9 @@ A high-performance marketing website for PPD Technology, a payment processing so
 - Primary: `linear-gradient(135deg, #2D60FF, #1549FF)` with `box-shadow: 0 8px 28px rgba(21,73,255,.35)`
 - Hover: lift with stronger shadow
 
+### Featured Nav Item
+- The "Agent Program" nav link (`.nav-featured`, in both Header.astro desktop nav and BaseLayout.astro mobile menu) is styled as a premium gradient pill to stand out — softer than the main CTA. Blue→royal→cyan→subtle-purple `linear-gradient(120deg, #1030b8, #1549FF, #2D60FF, #00CFFF, #6f5bff)`, `rgba(255,255,255,.15)` border, blue/cyan glow shadow. Desktop uses `::before` faint gradient-mesh shine + `::after` hover sweep (reuses global `btnSweep`); hover brightens + lifts. Mobile keeps gradient on hover/active. Styles live in BaseLayout global CSS.
+
 ### Hero Pattern
 - Dark navy background with radial gradient blue/cyan accents
 - SVG dot grid overlay (`::before` pseudo-element)
