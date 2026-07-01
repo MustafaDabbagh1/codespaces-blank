@@ -1,0 +1,89 @@
+Fix the interactive “Custom Niche POS” dashboard inside the “What makes PPD different” section.
+
+Issue:
+The dashboard is now way too big, bulky, and overpowering the section. It looks like a full app screen instead of a clean website mockup.
+
+Goal:
+Keep the interactive niche buttons and dynamic dashboard content, but make the whole mockup much more compact, sleek, and easier to scan.
+
+Important:
+Do not remove the interactivity. Keep the buttons clickable:
+- Repair Shops
+- Restaurants
+- Retail
+- Field Services
+
+But shrink the entire dashboard design.
+
+Design changes:
+1. Make the dashboard a compact product preview, not a full CRM screen.
+2. Limit the dashboard width so it fits cleanly inside the section.
+3. Reduce padding, font sizes, card sizes, and spacing.
+4. Make the stat cards smaller.
+5. Make the merchant rows compact instead of huge text blocks.
+6. Turn the modules into small pill badges, not large text.
+7. Make the revenue chart shorter.
+8. Keep only the most important CRM details visible.
+9. Hide extra CRM details behind the “View CRM” toggle if needed.
+10. Make sure nothing overflows or gets cut off.
+
+Suggested sizing:
+- Max dashboard width on desktop: around 520px to 600px
+- Dashboard padding: 20px to 24px max
+- Tab buttons: smaller pills, around 13px to 14px text
+- Stat cards: compact, around 100px to 120px tall
+- Large stat numbers: around 24px to 30px, not huge
+- Body text: around 14px to 15px
+- Merchant rows: one-line or two-line max
+- Revenue chart height: around 90px to 120px
+
+Layout:
+Inside the dashboard:
+- Keep the top browser-style bar.
+- Keep the niche tabs.
+- Keep the headline and short description.
+- Use a 2-column grid for stats.
+- Use a compact checkout card.
+- Use a compact merchants card.
+- Put modules as small chips in a wrapping row.
+- Keep the revenue activity chart smaller.
+- CRM pipeline/recent activity can be shown only when “View CRM” is clicked.
+
+Make the “Merchants” section look like this style:
+- Small initials badge
+- Merchant name
+- Small status line
+- Small green status dot
+Do not let the merchant names and status text become oversized.
+
+Make the module chips look like small pills:
+Repair Tickets
+Device Intake
+Warranty Tracking
+SMS Updates
+
+They should not appear as giant text across the dashboard.
+
+Mobile requirements:
+- The dashboard should stack cleanly.
+- Tabs should wrap or horizontally scroll.
+- Nothing should overflow the screen.
+- The mockup should feel compact on mobile too.
+
+Keep the visual style:
+- Dark blue gradient
+- Blue/cyan accents
+- Rounded cards
+- Premium SaaS look
+- Consistent with PPDTechnology.com
+
+Acceptance criteria:
+- The dashboard is much smaller and cleaner.
+- It no longer dominates the section.
+- The interactive tabs still work.
+- The dashboard content still changes by niche.
+- The “Charge Card” demo interaction still works.
+- The “View CRM” toggle still works, but the CRM details do not make the dashboard huge by default.
+- No text is oversized.
+- No content overflows or gets cut off.
+- The section looks sleek and professional again.

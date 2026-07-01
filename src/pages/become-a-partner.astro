@@ -151,7 +151,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div class="pp-diff-dashcontent" id="pp-diff-tabpanel" role="tabpanel" aria-live="polite" aria-labelledby="pp-tab-repair">
                 <div class="pp-diff-dashhead">
                   <div class="pp-diff-dashhead-title" data-field="headline">Repair Shop POS + CRM</div>
-                  <div class="pp-diff-dashhead-desc" data-field="description">Track tickets, devices, estimates, payments, warranties, repeat customers, and merchant activity in one custom workflow.</div>
+                  <div class="pp-diff-dashhead-desc" data-field="description">Tickets, devices, estimates, payments, and warranties in one workflow.</div>
                 </div>
 
                 <div class="pp-diff-stats">
@@ -695,15 +695,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);
     }
     .pp-dash-header{
-      display:flex;align-items:center;gap:10px;padding:12px 16px;
+      display:flex;align-items:center;gap:10px;padding:10px 14px;
       border-bottom:1px solid rgba(255,255,255,.1);
     }
     .pp-dash-dots{display:flex;gap:5px}
-    .pp-dash-dots span{width:8px;height:8px;border-radius:50%}
+    .pp-dash-dots span{width:7px;height:7px;border-radius:50%}
     .pp-dash-dots span:nth-child(1){background:#FF5F57}
     .pp-dash-dots span:nth-child(2){background:#FEBC2E}
     .pp-dash-dots span:nth-child(3){background:#28C840}
-    .pp-dash-title{font-weight:700;font-size:13px;color:rgba(255,255,255,.7)}
+    .pp-dash-title{font-weight:700;font-size:12px;color:rgba(255,255,255,.7)}
     .pp-dash-body{padding:16px;display:flex;flex-direction:column;gap:12px}
     .pp-dash-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .pp-dash-stat{
@@ -760,7 +760,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     /* What makes PPD different — software split */
     .pp-diff-split{
-      display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:36px;
+      display:grid;grid-template-columns:1fr minmax(0,540px);gap:48px;align-items:center;margin-top:36px;
     }
     .pp-diff-headline{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
     .pp-diff-headline-icon{
@@ -776,14 +776,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-cta-note{color:rgba(255,255,255,.55);font-size:13px;font-weight:600;max-width:46ch}
 
     .pp-diff-mock{
+      max-width:540px;width:100%;margin-inline:auto;
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-      border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);
-      box-shadow:0 30px 60px rgba(2,6,23,.35);
+      border-radius:18px;overflow:hidden;backdrop-filter:blur(10px);
+      box-shadow:0 22px 44px rgba(2,6,23,.32);
     }
-    .pp-diff-mock-body{padding:16px;display:flex;flex-direction:column;gap:14px}
-    .pp-diff-tabs{display:flex;flex-wrap:wrap;gap:8px}
+    .pp-diff-mock-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:12px}
+    .pp-diff-tabs{display:flex;flex-wrap:wrap;gap:6px}
     .pp-diff-tab{
-      padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;
+      padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap;
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);
       transition:background .18s,color .18s,border-color .18s,transform .12s;
     }
@@ -791,45 +792,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-tab:active{transform:translateY(1px)}
     .pp-diff-tab.active{
       background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan));
-      border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(21,73,255,.35);
+      border-color:transparent;color:#fff;box-shadow:0 5px 14px rgba(21,73,255,.32);
     }
     .pp-diff-tab:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
     .pp-diff-dashcontent{transition:opacity .2s ease}
     .pp-diff-dashcontent.pp-swapping{opacity:.25}
-    .pp-diff-dashhead-title{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.01em}
-    .pp-diff-dashhead-desc{font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.5;margin-top:5px}
-    .pp-diff-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pp-diff-dashhead-title{font-size:13.5px;font-weight:800;color:#fff;letter-spacing:-.01em}
+    .pp-diff-dashhead-desc{font-size:11px;color:rgba(255,255,255,.6);line-height:1.45;margin-top:4px}
+    .pp-diff-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .pp-diff-stat{
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:12px 14px;
+      border-radius:10px;padding:9px 11px;
     }
-    .pp-diff-stat .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.5);font-weight:700;display:flex;align-items:center;gap:6px}
+    .pp-diff-stat .lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);font-weight:700;display:flex;align-items:center;gap:5px}
     .pp-diff-stat .lbl i{color:var(--pp-cyan)}
-    .pp-diff-stat .val{font-size:20px;font-weight:900;margin-top:5px;letter-spacing:-.02em;color:#fff}
-    .pp-diff-stat .val small{font-size:11px;font-weight:800;color:var(--pp-accent);margin-left:6px}
-    .pp-diff-panels{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pp-diff-stat .val{font-size:17px;font-weight:900;margin-top:3px;letter-spacing:-.02em;color:#fff}
+    .pp-diff-stat .val small{font-size:10px;font-weight:800;color:var(--pp-accent);margin-left:5px}
+    .pp-diff-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .pp-diff-panel{
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:14px;
+      border-radius:10px;padding:11px;
     }
-    .pp-diff-panel-title{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+    .pp-diff-panel-title{font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
     .pp-diff-panel-title i{color:var(--pp-cyan)}
-    .pp-diff-checkout-amt{font-size:24px;font-weight:900;color:#fff;letter-spacing:-.02em}
-    .pp-diff-checkout-line{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.55);margin-top:8px;font-weight:600}
+    .pp-diff-checkout-amt{font-size:20px;font-weight:900;color:#fff;letter-spacing:-.02em}
+    .pp-diff-checkout-line{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.55);margin-top:6px;font-weight:600}
     .pp-diff-pay-btn{
-      margin-top:12px;width:100%;padding:9px;border-radius:9px;border:none;cursor:pointer;font-family:inherit;
-      background:linear-gradient(135deg,#2D60FF,var(--pp-primary));color:#fff;font-weight:800;font-size:12px;
-      display:flex;align-items:center;justify-content:center;gap:7px;transition:filter .18s,transform .12s,background .25s;
+      margin-top:10px;width:100%;padding:8px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;
+      background:linear-gradient(135deg,#2D60FF,var(--pp-primary));color:#fff;font-weight:800;font-size:11.5px;
+      display:flex;align-items:center;justify-content:center;gap:6px;transition:filter .18s,transform .12s,background .25s;
     }
     .pp-diff-pay-btn:hover{filter:brightness(1.08)}
     .pp-diff-pay-btn:active{transform:translateY(1px)}
     .pp-diff-pay-btn.is-done{background:linear-gradient(135deg,var(--pp-accent),#00b386)}
     .pp-diff-pay-btn:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:2px}
-    .pp-diff-modules{display:flex;flex-wrap:wrap;gap:7px}
-    .pp-diff-chip{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.88);background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.24);padding:5px 10px;border-radius:999px}
+    .pp-diff-modules{display:flex;flex-wrap:wrap;gap:6px}
+    .pp-diff-chip{font-size:10px;font-weight:700;color:rgba(255,255,255,.88);background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.24);padding:4px 9px;border-radius:999px}
     .pp-diff-crm-toggle{
-      display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:9px;border-radius:9px;cursor:pointer;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:12px;font-family:inherit;
+      display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:8px;border-radius:8px;cursor:pointer;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:11.5px;font-family:inherit;
       transition:background .18s,border-color .18s;
     }
     .pp-diff-crm-toggle:hover{background:rgba(255,255,255,.13)}
@@ -838,25 +839,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .pp-diff-crm-toggle.is-open i{transform:rotate(180deg)}
     .pp-diff-crm{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease}
     .pp-diff-crm[hidden]{display:none}
-    .pp-diff-crm.is-open{max-height:720px;opacity:1}
-    .pp-diff-pipeline{display:flex;flex-direction:column;gap:10px}
-    .pp-diff-pl-top{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:5px}
+    .pp-diff-crm.is-open{max-height:640px;opacity:1;margin-top:2px}
+    .pp-diff-pipeline{display:flex;flex-direction:column;gap:8px}
+    .pp-diff-pl-top{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:4px}
     .pp-diff-pl-top strong{color:#fff;font-weight:900}
-    .pp-diff-pl-bar{height:5px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+    .pp-diff-pl-bar{height:4px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
     .pp-diff-pl-bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--pp-primary),var(--pp-cyan))}
-    .pp-diff-activity{display:flex;flex-direction:column;gap:10px}
-    .pp-diff-act-row{display:flex;gap:9px;align-items:flex-start;font-size:11px;color:rgba(255,255,255,.72);line-height:1.45}
-    .pp-diff-act-row i{color:var(--pp-cyan);font-size:11px;margin-top:2px;flex-shrink:0}
-    .pp-diff-merchant{display:flex;align-items:center;gap:10px;padding:7px 6px;margin:0 -6px;border-radius:9px;border-bottom:1px solid rgba(255,255,255,.07);transition:background .15s}
+    .pp-diff-activity{display:flex;flex-direction:column;gap:8px}
+    .pp-diff-act-row{display:flex;gap:8px;align-items:flex-start;font-size:10px;color:rgba(255,255,255,.72);line-height:1.4}
+    .pp-diff-act-row i{color:var(--pp-cyan);font-size:10px;margin-top:2px;flex-shrink:0}
+    .pp-diff-merchant{display:flex;align-items:center;gap:9px;padding:6px;margin:0 -6px;border-radius:8px;border-bottom:1px solid rgba(255,255,255,.07);transition:background .15s}
     .pp-diff-merchant:hover{background:rgba(255,255,255,.06)}
     .pp-diff-merchant:last-child{border-bottom:none}
-    .pp-diff-avatar{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan))}
+    .pp-diff-avatar{width:26px;height:26px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--pp-primary),var(--pp-cyan))}
     .pp-diff-merchant-info{flex:1;min-width:0}
-    .pp-diff-merchant-name{font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .pp-diff-merchant-sub{font-size:10px;color:rgba(255,255,255,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pp-diff-merchant-name{font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pp-diff-merchant-sub{font-size:9.5px;color:rgba(255,255,255,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .pp-diff-dot{width:7px;height:7px;border-radius:50%;background:var(--pp-accent);flex-shrink:0}
-    .pp-diff-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px}
-    .pp-diff-bars{display:flex;align-items:flex-end;gap:6px;height:50px}
+    .pp-diff-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:11px}
+    .pp-diff-bars{display:flex;align-items:flex-end;gap:5px;height:42px}
     .pp-diff-bars span{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--pp-cyan),var(--pp-primary));opacity:.85}
     .pp-diff-support{margin-top:32px}
 
@@ -1063,7 +1064,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       const NICHES = {
         repair: {
           headline: "Repair Shop POS + CRM",
-          description: "Track tickets, devices, estimates, payments, warranties, repeat customers, and merchant activity in one custom workflow.",
+          description: "Tickets, devices, estimates, payments, and warranties in one workflow.",
           softwareFees: "$4,120", feesDelta: "+14%",
           processingVolume: "$1.2M",
           activeMerchants: "84",
@@ -1081,7 +1082,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         },
         restaurants: {
           headline: "Restaurant POS + Guest CRM",
-          description: "Give restaurants tools for orders, tabs, tips, loyalty, online ordering, staff activity, and payment reporting.",
+          description: "Orders, tabs, tips, loyalty, and online ordering in one system.",
           softwareFees: "$5,860", feesDelta: "+19%",
           processingVolume: "$1.8M",
           activeMerchants: "67",
@@ -1099,7 +1100,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         },
         retail: {
           headline: "Retail POS + Inventory CRM",
-          description: "Help retailers manage checkout, inventory, customer profiles, repeat purchases, gift cards, and reporting.",
+          description: "Checkout, inventory, customer profiles, and gift cards in one system.",
           softwareFees: "$3,740", feesDelta: "+11%",
           processingVolume: "$940K",
           activeMerchants: "58",
@@ -1117,7 +1118,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         },
         field: {
           headline: "Field Service Payments + CRM",
-          description: "Give contractors and mobile teams invoicing, dispatch notes, job deposits, recurring billing, and mobile payments.",
+          description: "Invoicing, dispatch, job deposits, and mobile payments on the go.",
           softwareFees: "$6,240", feesDelta: "+22%",
           processingVolume: "$2.1M",
           activeMerchants: "73",
