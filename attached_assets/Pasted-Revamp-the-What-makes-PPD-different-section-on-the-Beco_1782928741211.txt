@@ -1,0 +1,131 @@
+Revamp the “What makes PPD different” section on the Become a Partner page.
+
+Current section:
+The section currently has the heading “What makes PPD different” with six generic feature cards like book ownership, reporting, underwriting, support desk, flexible solutions, and monthly residuals.
+
+Important:
+Keep the main heading exactly:
+What makes PPD different
+
+Change everything else in this section.
+
+Goal:
+This section should explain that PPD Technology helps seasoned sales agents and partners stand out by creating custom payment/POS software for their main niche. The message should be that agents can still sell normal hardware like Clover and Dejavoo, but PPD gives them something more powerful and differentiated: their own niche-specific software offer that helps them scale.
+
+The section should feel more visual and less like a plain grid of text cards. Add stronger imagery, product mockups, or visual UI elements that make the idea of “custom software for your niche” immediately obvious.
+
+New section direction:
+PPD Technology works with experienced sales agents who already know how to sell, already have relationships, and usually have one or two niches they win in. The problem is that most agents are stuck offering the same terminals, POS devices, and payment options as everyone else. PPD helps them move to the next level by creating a custom payment software solution for their main niche, giving them a unique offer that merchants actually care about.
+
+Use this copy direction:
+
+Badge:
+BUILT FOR SEASONED SALES AGENTS
+
+Heading:
+What makes PPD different
+
+Subheading:
+We help you turn your strongest niche into a custom payment software offer, so you can stand out, win better merchants, and scale beyond generic ISO selling.
+
+Main feature headline:
+We make you custom payment software for your main niche.
+
+Main feature body:
+You can still sell the typical Clover, Dejavoo, terminals, gateways, and processing solutions. But if every other agent has access to the same tools, you need something that makes you different. PPD Technology helps you create that edge with niche-specific software built around the merchants you already understand.
+
+Supporting copy:
+We work with seasoned sales agents who are ready to move to the next level. Bring us the niche you already sell into, and we’ll help you shape a software-driven offer that makes your pitch stronger, your merchants stickier, and your book easier to grow.
+
+Visual/layout instructions:
+Replace the current six-card grid with a more visual layout.
+
+Preferred layout:
+- Keep the same dark blue gradient background.
+- Use a two-column layout on desktop.
+- Left side: badge, heading, subheading, main headline, body copy, and one CTA-style button.
+- Right side: a large software/product mockup card showing a custom POS/payment dashboard.
+- Under the main content, add 3 smaller visual cards that support the message.
+
+Right-side imagery/mockup:
+Create a polished mockup that looks like a custom merchant software dashboard. It should feel like a modern SaaS/POS interface, not a stock photo.
+
+The mockup can include:
+- A header that says “Custom Niche POS”
+- Example vertical tabs or pills like “Repair Shops,” “Restaurants,” “Retail,” and “Field Services”
+- Small dashboard stats such as “Software Fees,” “Processing Volume,” “Active Merchants,” and “Referrals”
+- A payment/checkout panel
+- A merchant management panel
+- A simple chart or activity feed
+- Blue/cyan accent colors to match the existing PPD style
+
+Do not use random stock photography. Use either existing brand-safe imagery, a CSS/HTML product mockup, or existing icon/illustration components from the project. The goal is for visitors to visually understand that PPD builds custom software systems, not just processing programs.
+
+CTA button:
+Book a Strategy Call
+
+CTA supporting text near the button:
+Tell us your niche. We’ll show you what your software advantage could look like.
+
+Three smaller support cards below the main split layout:
+
+Card 1 title:
+Still Sell the Hardware
+
+Card 1 body:
+Keep offering Clover, Dejavoo, terminals, gateways, and standard processing when they fit. We simply give you a stronger software story to lead with.
+
+Card 2 title:
+Own a Better Pitch
+
+Card 2 body:
+Instead of sounding like every other ISO, you can show merchants a solution designed around their industry, workflow, and pain points.
+
+Card 3 title:
+Scale Your Book Faster
+
+Card 3 body:
+Better software creates stickier merchants, stronger referrals, and more reasons for business owners to choose you over the next agent.
+
+Tone:
+Make the copy confident, direct, and practical. It should speak to experienced agents, not beginners. Avoid vague corporate phrases. Make it clear that PPD is helping agents create a custom niche software advantage.
+
+Design requirements:
+- Keep the same overall dark gradient style from the current section.
+- Keep the heading “What makes PPD different.”
+- Make the section feel more visual and premium.
+- Use larger imagery/product mockup elements instead of only text cards.
+- Maintain responsive behavior.
+- On mobile, stack the copy first, then the software mockup, then the three support cards.
+- Keep spacing clean and readable.
+- Use existing button styles, card styles, icons, gradients, and border treatments where possible.
+- Make sure the section still matches the rest of ppdtechnology.com visually.
+
+Suggested icons:
+- Software/code icon for the custom software concept
+- Credit card or terminal icon for hardware
+- Sparkles/target icon for differentiation
+- Growth/users icon for scaling and referrals
+
+Implementation steps:
+1. Search the codebase for the text “What makes PPD different.”
+2. Locate the section currently showing the six cards.
+3. Keep the main heading but replace the badge, subheading, cards, and layout.
+4. Build the new split visual layout with a custom software dashboard mockup.
+5. Add the three smaller support cards below the split layout.
+6. Ensure the CTA button links to the same booking/contact destination as the current page CTAs unless there is a better existing booking link.
+7. Test on desktop and mobile.
+8. Check spelling carefully:
+   - “niche,” not “nice”
+   - “Dejavoo”
+   - “Clover”
+   - “PPD Technology”
+
+Acceptance criteria:
+- The section keeps the heading “What makes PPD different.”
+- The old six generic cards are removed.
+- The new message clearly says PPD helps seasoned sales agents create custom payment/POS software for their main niche.
+- The copy explains that agents can still sell Clover, Dejavoo, and standard processing, but need something unique to stand out.
+- The section includes stronger imagery or a custom software dashboard mockup.
+- The section speaks directly to seasoned sales agents who want to scale.
+- The final design looks premium, modern, and consistent with the current PPD Technology site.
