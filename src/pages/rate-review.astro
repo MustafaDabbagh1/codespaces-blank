@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<BaseLayout
+  title="Get a Free Rate Review | PPD Technology"
+  description="See if your business could lower payment processing costs or improve your POS setup. Send us a few details and our team will review your current setup — free, no obligation."
+>
+  <div class="rr-page">
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="rr-hero">
+      <div class="rr-hero__grid" aria-hidden="true"></div>
+      <div class="rr-hero__orb rr-hero__orb--1" aria-hidden="true"></div>
+      <div class="rr-hero__orb rr-hero__orb--2" aria-hidden="true"></div>
+      <div class="container rr-hero__inner">
+        <span class="rr-pill"><i class="fa-solid fa-magnifying-glass-dollar"></i> Free Rate Review</span>
+        <h1>Get a Free Rate Review</h1>
+        <p>
+          See if your business could lower payment processing costs or improve your
+          POS setup. Send us a few details and our team will review your current setup.
+        </p>
+        <ul class="rr-hero__trust" aria-label="What to expect">
+          <li><i class="fa-solid fa-shield-halved"></i> No obligation</li>
+          <li><i class="fa-solid fa-headset"></i> U.S.-based team</li>
+          <li><i class="fa-solid fa-clock"></i> Fast turnaround</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ FORM ══════════════ -->
+    <section class="rr-content">
+      <div class="container rr-grid">
+        <!-- Form -->
+        <div class="rr-card rr-form-card">
+          <h2>Request Your Rate Review</h2>
+          <p class="rr-form-sub">Tell us a bit about your business and current setup. We'll take it from there.</p>
+
+          <form id="rrForm" action="/api/lead" method="POST" novalidate>
+            <input type="hidden" name="_form" value="rate-review" />
+            <input type="hidden" name="_subject" value="New Free Rate Review Request" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="rr-hp" />
+
+            <div class="rr-fields">
+              <div class="rr-group">
+                <label for="rr-name">Name</label>
+                <input type="text" id="rr-name" name="name" autocomplete="name" required />
+              </div>
+
+              <div class="rr-group">
+                <label for="rr-business">Business name</label>
+                <input type="text" id="rr-business" name="business_name" autocomplete="organization" required />
+              </div>
+
+              <div class="rr-group">
+                <label for="rr-phone">Phone</label>
+                <input type="tel" id="rr-phone" name="phone" inputmode="tel" autocomplete="tel" required />
+              </div>
+
+              <div class="rr-group">
+                <label for="rr-email">Email</label>
+                <input type="email" id="rr-email" name="email" inputmode="email" autocomplete="email" required />
+              </div>
+
+              <div class="rr-group">
+                <label for="rr-industry">Industry</label>
+                <select id="rr-industry" name="industry" required>
+                  <option value="">Select an industry</option>
+                  <option value="Restaurant & Hospitality">Restaurant &amp; Hospitality</option>
+                  <option value="Retail">Retail</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Repair Shop">Repair Shop</option>
+                  <option value="Contractor">Contractor</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Non-profit">Non-profit</option>
+                  <option value="Higher Education">Higher Education</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="rr-group">
+                <label for="rr-processor">Current processor</label>
+                <input type="text" id="rr-processor" name="current_processor" placeholder="e.g. Square, Toast, Stripe, none" />
+              </div>
+
+              <div class="rr-group rr-group--full">
+                <label for="rr-volume">Estimated monthly processing volume</label>
+                <select id="rr-volume" name="monthly_volume">
+                  <option value="">Select a range</option>
+                  <option value="Under $10,000">Under $10,000</option>
+                  <option value="$10,000 - $50,000">$10,000 - $50,000</option>
+                  <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                  <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                  <option value="$250,000 - $1M">$250,000 - $1M</option>
+                  <option value="Over $1M">Over $1M</option>
+                </select>
+              </div>
+
+              <div class="rr-group rr-group--full">
+                <label for="rr-message">Message / notes</label>
+                <textarea id="rr-message" name="message" placeholder="Anything you'd like us to know — current rates, POS system, pain points, goals..."></textarea>
+              </div>
+            </div>
+
+            {turnstileSiteKey && (
+              <div class="rr-group rr-group--full">
+                <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
+              </div>
+            )}
+
+            <p class="rr-form-error" id="rrError" role="alert" hidden></p>
+
+            <button type="submit" class="rr-submit">
+              <i class="fa-solid fa-paper-plane"></i> Get My Free Rate Review
+            </button>
+            <p class="rr-fineprint">Free, no obligation. We'll only use your details to review your setup.</p>
+          </form>
+        </div>
+
+        <!-- Side info -->
+        <aside class="rr-card rr-side">
+          <h2>What we'll look at</h2>
+          <ul class="rr-checklist">
+            <li><i class="fa-solid fa-circle-check"></i> Your current processing rates and fees</li>
+            <li><i class="fa-solid fa-circle-check"></i> Whether cash discount or dual pricing could help</li>
+            <li><i class="fa-solid fa-circle-check"></i> POS and terminal setup for your industry</li>
+            <li><i class="fa-solid fa-circle-check"></i> Next-day funding options</li>
+            <li><i class="fa-solid fa-circle-check"></i> Real-time reporting and back-office tools</li>
+          </ul>
+
+          <div class="rr-contact">
+            <h3>Prefer to talk?</h3>
+            <a class="rr-contact-row" href="tel:2487260085">
+              <i class="fa-solid fa-phone"></i>
+              <span><strong>Sales:</strong> (248) 726-0085</span>
+            </a>
+            <a class="rr-contact-row" href="tel:3134667836">
+              <i class="fa-solid fa-headset"></i>
+              <span><strong>Merchant Support:</strong> 313-466-7836</span>
+            </a>
+            <a class="rr-contact-row" href="mailto:info@ppdtechnology.com">
+              <i class="fa-solid fa-envelope"></i>
+              <span><strong>Email:</strong> info@ppdtechnology.com</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .rr-page{
+      --navy:#060E21;--navy-2:#0C1A38;--blue:#1549FF;--blue-mid:#2D60FF;
+      --cyan:#00CFFF;--green:#00E5A0;--surface:#F5F8FF;
+      --ink:#0b1732;--ink-2:#48587a;--line:#E2E8F4;
+      background:var(--surface);color:var(--ink);
+    }
+    .rr-page *{box-sizing:border-box}
+    .rr-page .container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* Hero */
+    .rr-hero{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        radial-gradient(1200px 600px at 80% -10%,rgba(21,73,255,.28),transparent 60%),
+        radial-gradient(900px 500px at 0% 20%,rgba(0,207,255,.14),transparent 55%),
+        linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 60%,#0a1c42 100%);
+      padding:96px 0 64px;
+    }
+    .rr-hero__grid{
+      position:absolute;inset:0;opacity:.5;pointer-events:none;
+      background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;
+      -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);
+    }
+    .rr-hero__orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+    .rr-hero__orb--1{width:340px;height:340px;background:rgba(21,73,255,.55);top:-90px;right:-60px}
+    .rr-hero__orb--2{width:280px;height:280px;background:rgba(0,207,255,.35);bottom:-120px;left:-50px}
+    .rr-hero__inner{position:relative;z-index:1;text-align:center;max-width:760px;margin:0 auto}
+    .rr-pill{
+      display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+      padding:7px 16px;border-radius:999px;margin-bottom:20px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;
+    }
+    .rr-pill i{color:var(--cyan)}
+    .rr-hero h1{font-size:clamp(2.1rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0 0 18px}
+    .rr-hero p{font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.7;color:rgba(255,255,255,.85);margin:0 auto;max-width:620px}
+    .rr-hero__trust{
+      list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;
+    }
+    .rr-hero__trust li{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(255,255,255,.82)}
+    .rr-hero__trust li i{color:var(--green)}
+
+    /* Content */
+    .rr-content{padding:64px 0 80px}
+    .rr-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
+    .rr-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;box-shadow:0 14px 40px rgba(12,26,56,.07)}
+    .rr-form-card h2,.rr-side h2{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:0 0 6px}
+    .rr-form-sub{color:var(--ink-2);font-size:.98rem;margin:0 0 26px}
+
+    .rr-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+    .rr-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .rr-group{display:flex;flex-direction:column}
+    .rr-group--full{grid-column:1 / -1}
+    .rr-group label{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:7px}
+    .rr-group input,.rr-group select,.rr-group textarea{
+      width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;
+      font-size:15px;font-family:inherit;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s;
+    }
+    .rr-group textarea{min-height:120px;resize:vertical}
+    .rr-group input:focus,.rr-group select:focus,.rr-group textarea:focus{
+      outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,73,255,.12);
+    }
+    .rr-group input[aria-invalid="true"],.rr-group select[aria-invalid="true"]{border-color:#e11d48;box-shadow:0 0 0 3px rgba(225,29,72,.12)}
+
+    .rr-form-error{margin:18px 0 0;color:#e11d48;font-size:.92rem;font-weight:600}
+
+    .rr-submit{
+      width:100%;margin-top:22px;padding:15px;border:none;border-radius:12px;cursor:pointer;
+      font-size:16px;font-weight:700;color:#fff;
+      background:linear-gradient(135deg,var(--blue-mid),var(--blue));
+      box-shadow:0 8px 28px rgba(21,73,255,.35);
+      display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s,box-shadow .2s;
+    }
+    .rr-submit:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(21,73,255,.45)}
+    .rr-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+    .rr-fineprint{text-align:center;color:var(--ink-2);font-size:.82rem;margin:14px 0 0}
+
+    /* Side */
+    .rr-side{background:linear-gradient(180deg,#fff,#fbfdff)}
+    .rr-checklist{list-style:none;padding:0;margin:0 0 26px}
+    .rr-checklist li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;font-size:.96rem;color:var(--ink);border-bottom:1px solid var(--line)}
+    .rr-checklist li:last-child{border-bottom:none}
+    .rr-checklist li i{color:var(--green);margin-top:3px;flex-shrink:0}
+    .rr-contact{background:var(--navy);color:#fff;border-radius:14px;padding:22px}
+    .rr-contact h3{font-size:1.05rem;font-weight:700;margin:0 0 14px}
+    .rr-contact-row{display:flex;align-items:center;gap:12px;padding:9px 0;color:rgba(255,255,255,.9);font-size:.94rem;transition:color .2s}
+    .rr-contact-row:hover{color:var(--cyan)}
+    .rr-contact-row i{width:34px;height:34px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:9px;background:rgba(255,255,255,.08);color:var(--cyan)}
+    .rr-contact-row strong{color:#fff;font-weight:600}
+
+    /* Success state */
+    .rr-success{text-align:center;padding:20px 0}
+    .rr-success .rr-success__icon{
+      width:66px;height:66px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:rgba(0,229,160,.14);color:var(--green);font-size:28px;
+    }
+    .rr-success h2{color:var(--navy);margin:0 0 10px}
+    .rr-success p{color:var(--ink-2);margin:0 auto;max-width:420px;line-height:1.6}
+
+    @media (max-width:860px){
+      .rr-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:540px){
+      .rr-fields{grid-template-columns:1fr}
+      .rr-card{padding:26px 20px}
+      .rr-hero{padding:84px 0 52px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .rr-submit{transition:none}
+    }
+  </style>
+
+  <script>
+    const form = document.getElementById("rrForm");
+    if (form instanceof HTMLFormElement) {
+      const errorBox = document.getElementById("rrError");
+      const submitBtn = form.querySelector(".rr-submit");
+
+      const showError = (msg) => {
+        if (errorBox) {
+          errorBox.textContent = msg;
+          errorBox.hidden = false;
+        }
+      };
+
+      const required = Array.from(
+        form.querySelectorAll("[required]")
+      );
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (errorBox) errorBox.hidden = true;
+
+        // Validate required fields
+        let firstInvalid = null;
+        for (const field of required) {
+          const el = field;
+          const value = (el.value || "").trim();
+          const isEmail = el.type === "email";
+          const valid = isEmail
+            ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+            : value.length > 0;
+          el.setAttribute("aria-invalid", valid ? "false" : "true");
+          if (!valid && !firstInvalid) firstInvalid = el;
+        }
+        if (firstInvalid) {
+          showError("Please fill in the highlighted fields.");
+          firstInvalid.focus();
+          return;
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+          const data = new FormData(form);
+          const res = await fetch("/api/lead", { method: "POST", body: data });
+          if (!res.ok) throw new Error("Request failed");
+          window.location.href = "/thank-you";
+        } catch (err) {
+          if (submitBtn) submitBtn.disabled = false;
+          showError("Something went wrong. Please try again, or call us at (248) 726-0085.");
+        }
+      });
+
+      // Clear invalid state on input
+      required.forEach((el) => {
+        el.addEventListener("input", () => el.setAttribute("aria-invalid", "false"));
+      });
+    }
+  </script>
+</BaseLayout>

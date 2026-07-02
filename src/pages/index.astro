@@ -16,12 +16,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container hp-hero__inner">
       <div class="hp-hero__text">
         <span class="hp-pill"><i class="fa-solid fa-bolt"></i> Next-Gen Payment Infrastructure</span>
-        <h1>The Operating System<br>for <span class="hp-grad-text">Modern Payments</span></h1>
-        <p>One platform to accept, manage, and grow every payment — in-store, online, and on the go. Real-time analytics. Instant funding. Enterprise-grade security.</p>
+        <h1>Payment processing, POS, and merchant software built for <span class="hp-grad-text">growing businesses</span></h1>
+        <p>Accept payments in-store, online, or on the go. Get next-day funding options, real-time reporting, U.S.-based support, and industry-specific POS solutions for restaurants, retail, repair shops, contractors, healthcare, and more.</p>
         <div class="hp-hero__actions">
-          <a class="btn btn-primary btn-lg" href="/signup"><i class="fa-solid fa-rocket"></i> Start Processing</a>
+          <a class="btn btn-primary btn-lg" href="/rate-review"><i class="fa-solid fa-magnifying-glass-dollar"></i> Get a Free Rate Review</a>
           <a class="btn btn-outline btn-lg" href="/contact"><i class="fa-solid fa-calendar"></i> Book a Demo</a>
         </div>
+        <a class="hp-hero__tertiary" href="/signup">Start Application <i class="fa-solid fa-arrow-right"></i></a>
+        <ul class="hp-hero__trust" aria-label="Why businesses choose PPD Technology">
+          <li><i class="fa-solid fa-headset"></i> U.S.-based support</li>
+          <li><i class="fa-solid fa-bolt"></i> Next-day funding options</li>
+          <li><i class="fa-solid fa-shield-halved"></i> PCI-focused setup</li>
+          <li><i class="fa-solid fa-chart-line"></i> Real-time reporting</li>
+        </ul>
         <div class="hp-hero__proof">
           <div class="hp-hero__proof-avatars">
             <span style="background:#2D60FF;"><i class="fa-solid fa-building" style="font-size:11px;color:#fff"></i></span>
@@ -817,7 +824,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   font-size:clamp(1rem,1.8vw,1.12rem);opacity:.8;
   line-height:1.75;margin-bottom:32px;max-width:48ch;
 }
-.hp-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.hp-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.hp-hero__tertiary{
+  display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;
+  color:rgba(255,255,255,.72);text-decoration:none;transition:color .2s,gap .2s;margin-bottom:24px;
+}
+.hp-hero__tertiary i{font-size:12px;color:var(--cyan);transition:transform .2s}
+.hp-hero__tertiary:hover{color:#fff}
+.hp-hero__tertiary:hover i{transform:translateX(3px)}
+.hp-hero__trust{
+  list-style:none;padding:0;margin:0 0 26px;display:flex;flex-wrap:wrap;gap:10px 18px;
+}
+.hp-hero__trust li{
+  display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.78);
+}
+.hp-hero__trust li i{color:var(--green);font-size:13px}
 .hp-hero__proof{display:flex;align-items:center;gap:10px}
 .hp-hero__proof-avatars{display:flex}
 .hp-hero__proof-avatars span{
@@ -1439,7 +1460,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .hp-hero__text > h1{animation-delay:.18s}
 .hp-hero__text > p{animation-delay:.32s}
 .hp-hero__text > .hp-hero__actions{animation-delay:.46s}
-.hp-hero__text > .hp-hero__proof{animation-delay:.6s}
+.hp-hero__text > .hp-hero__tertiary{animation-delay:.54s}
+.hp-hero__text > .hp-hero__trust{animation-delay:.62s}
+.hp-hero__text > .hp-hero__proof{animation-delay:.72s}
 @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
 
 /* Hero ambient particles */

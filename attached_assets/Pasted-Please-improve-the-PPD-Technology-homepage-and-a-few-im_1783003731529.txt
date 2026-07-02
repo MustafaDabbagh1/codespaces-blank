@@ -1,0 +1,70 @@
+Please improve the PPD Technology homepage and a few important website items, but keep the existing top homepage dashboard visual exactly as-is.
+
+Do not change the dark PPD Dashboard mockup that shows the LIVE badge, Today’s Revenue, Transactions, Payment Approved, PCI Level 1, and Next-Day Payout. I like that visual. Do not change its colors, layout, cards, numbers, icons, or styling.
+
+Homepage hero updates:
+
+Replace the current hero headline with:
+“Payment processing, POS, and merchant software built for growing businesses”
+
+Replace the current hero subheadline with:
+“Accept payments in-store, online, or on the go. Get next-day funding options, real-time reporting, U.S.-based support, and industry-specific POS solutions for restaurants, retail, repair shops, contractors, healthcare, and more.”
+
+Update the hero buttons:
+
+Primary button:
+“Get a Free Rate Review”
+Link this to /rate-review if you create that page, otherwise link it to /contact.
+
+Secondary button:
+“Book a Demo”
+Link this to /contact unless there is already a better demo route.
+
+Smaller third option:
+“Start Application”
+Keep this linked to the existing signup/application page, but make it less visually dominant than the first two buttons.
+
+Add a small trust row under the hero buttons with:
+“U.S.-based support”
+“Next-day funding options”
+“PCI-focused setup”
+“Real-time reporting”
+
+Create a simple /rate-review page if it does not already exist. Use the same design style as the rest of the site.
+
+Rate review page headline:
+“Get a Free Rate Review”
+
+Subheadline:
+“See if your business could lower payment processing costs or improve your POS setup. Send us a few details and our team will review your current setup.”
+
+Form fields:
+Name, Business name, Phone, Email, Industry, Current processor, Estimated monthly processing volume, Message / notes.
+
+Use the same form behavior as the contact page if possible. Do not create unnecessary backend changes.
+
+Also check the Cash Discount page. If it currently says “coming soon” or feels unfinished, turn it into a simple landing page called:
+
+“Cash Discount & Dual Pricing Programs”
+
+Explain that PPD helps businesses review their current setup and implement cash discount or dual-pricing with POS setup, signage, receipt formatting, customer-facing pricing display, and support.
+
+Add a CTA button:
+“Request a Cash Discount Review”
+Link it to /rate-review or /contact.
+
+Also clean up the footer so items that look clickable actually link somewhere. Prioritize About, Contact, Support, Cash Discount, Referral Program, Partners / ISO Program, Privacy Policy, Terms of Use, and Security / PCI.
+
+Clarify phone numbers wherever they appear:
+Sales: (248) 726-0085
+Merchant Support: 313-466-7836
+Email: info@ppdtechnology.com
+
+Important:
+Do not modify the merchant application form.
+Do not change the homepage dashboard visual.
+Do not make unnecessary backend changes.
+Keep the existing design style.
+Make sure everything looks good on desktop and mobile.
+
+After finishing, summarize the files changed, any new routes created, where each homepage CTA links, and confirm that the dashboard visual was preserved.
