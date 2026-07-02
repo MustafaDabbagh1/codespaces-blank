@@ -143,17 +143,12 @@ header.shrink{box-shadow:0 4px 32px rgba(0,0,0,.35)}
 .brandtext .ppd{color:var(--cyan);font-weight:800}
 .brandtext .tech{color:#fff;font-weight:800}
 .logo-chip{
-  width:28px;height:28px;display:inline-block;line-height:0;
-  background:var(--cyan);
-  -webkit-mask:url("https://ppdtechnology.com/images/Chip-reader-EMV.png") center/contain no-repeat;
-  mask:url("https://ppdtechnology.com/images/Chip-reader-EMV.png") center/contain no-repeat;
+  width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;line-height:0;
+  color:var(--cyan);
   animation:pulse 2.5s ease-in-out infinite;
   filter:drop-shadow(0 0 8px var(--cyan));
 }
-@supports not ((mask:url("")) or (-webkit-mask:url(""))){
-  .logo-chip{background:none;filter:none;display:inline-flex;align-items:center;justify-content:center}
-  .logo-chip::before{content:"";width:28px;height:28px;background:url("https://ppdtechnology.com/images/Chip-reader-EMV.png") center/contain no-repeat;display:block}
-}
+.logo-chip svg{width:28px;height:28px;display:block}
 
 /* Nav */
 nav ul{display:flex;list-style:none;gap:4px;align-items:center}
