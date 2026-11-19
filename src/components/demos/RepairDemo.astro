@@ -2,13 +2,16 @@
 // PPD Repair: one ticket, intake to five-star review, on the command board.
 // Steps and sample ticket follow ppdrepair.com.
 import DemoSteps from './DemoSteps.astro';
+import DemoTicker from './DemoTicker.astro';
 import Icon from '../Icon.astro';
 
 interface Props {
   layout?: 'split' | 'flip' | 'stack';
-  captions?: boolean;
+  // 'list' = full step list beside the stage; 'line' = one-line caption under it
+  captions?: 'list' | 'line' | 'none';
 }
-const { layout = 'split', captions = true } = Astro.props;
+const { layout: wanted = 'split', captions = 'list' } = Astro.props;
+const layout = captions === 'list' ? wanted : 'stack';
 
 const steps = [
   { title: 'Create the ticket.', body: 'Customer, device, issue, estimate and intake notes in one place.' },
@@ -23,7 +26,7 @@ const steps = [
 
 <div class:list={['demo', `demo--${layout}`, 't-repair', 'rd']} data-stepper data-durations="2600,2300,2800,2800,2400,3000,3200" data-rest="4">
   {
-    captions && (
+    captions === 'list' && (
       <div class="demo__side">
         <slot />
         <DemoSteps steps={steps} label="Steps in a PPD Repair ticket" />
@@ -118,6 +121,7 @@ const steps = [
       </div>
     </div>
   </div>
+  {captions === 'line' && <DemoTicker steps={steps} label="Steps in a PPD Repair ticket" />}
 </div>
 
 <style>

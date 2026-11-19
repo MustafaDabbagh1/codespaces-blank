@@ -7,7 +7,6 @@ import { company } from '../data/site';
 <SiteLayout title="Thank you | PPD Technology" description="We received your message. A PPD Technology specialist will reach out within one business day.">
   <meta name="robots" content="noindex" slot="head" />
   <section class="ty">
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap ty__inner">
       <span class="ty__check" aria-hidden="true"><Icon name="check" size={34} stroke={2.6} /></span>
       <p class="eyebrow eyebrow--plain">Message received</p>
@@ -31,7 +30,7 @@ import { company } from '../data/site';
     display: grid;
     align-items: center;
     min-height: 70vh;
-    padding: clamp(64px, 10vw, 140px) 0;
+    padding: calc(var(--hero-top) + 40px) 0 clamp(64px, 10vw, 140px);
     overflow: hidden;
   }
   .ty__inner {

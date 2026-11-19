@@ -1,0 +1,150 @@
+---
+// One-line caption for a demo: the current step's title, with a row of
+// progress bars that double as step buttons. The quiet alternative to
+// DemoSteps for places where the animation should speak for itself.
+import Icon from '../Icon.astro';
+interface Step {
+  title: string;
+  body: string;
+}
+interface Props {
+  steps: Step[];
+  label: string;
+}
+const { steps, label } = Astro.props;
+---
+
+<div class="dt">
+  <p class="dt__cap" aria-live="off">
+    {
+      steps.map((s, i) => (
+        <span class:list={['fx-swap', { on: i === 0 }]} data-from={i} data-to={i}>
+          <b>{String(i + 1).padStart(2, '0')}</b>
+          {s.title}
+        </span>
+      ))
+    }
+  </p>
+  <div class="dt__bars" role="group" aria-label={label}>
+    {
+      steps.map((s, i) => (
+        <button type="button" data-go={i} aria-label={`Step ${i + 1}: ${s.title}`}>
+          <i />
+        </button>
+      ))
+    }
+  </div>
+  <button type="button" class="dt__toggle" data-toggle aria-pressed="false" aria-label="Pause animation">
+    <span class="i-pause"><Icon name="pause" size={14} stroke={2.4} /></span>
+    <span class="i-play"><Icon name="play" size={14} stroke={2.4} /></span>
+  </button>
+</div>
+
+<style>
+  .dt {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 14px 22px;
+    margin-top: clamp(40px, 7vw, 84px);
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .dt__cap {
+    min-height: 1.6em;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  .dt__cap span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 14px;
+    animation: dt-in 0.5s var(--ease-out);
+  }
+  .dt__cap b {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--accent-2);
+  }
+  .dt__bars {
+    display: flex;
+    gap: 6px;
+  }
+  .dt__bars button {
+    width: clamp(18px, 3vw, 34px);
+    height: 22px;
+    display: grid;
+    align-items: center;
+  }
+  .dt__bars i {
+    display: block;
+    position: relative;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--line-2);
+    overflow: hidden;
+  }
+  .dt__bars i::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .dt__bars button.is-active i::after {
+    transform: scaleX(1);
+  }
+  :global([data-stepper].is-playing) .dt__bars button.is-active i::after {
+    animation: dt-fill var(--step-dur, 2400ms) linear both;
+  }
+  .dt__toggle {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid var(--line-2);
+    color: var(--muted);
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+  }
+  .dt__toggle:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
+  .dt__toggle .i-play,
+  .dt__toggle[aria-pressed='true'] .i-pause {
+    display: none;
+  }
+  .dt__toggle[aria-pressed='true'] .i-play {
+    display: block;
+  }
+  @keyframes dt-fill {
+    from {
+      transform: scaleX(0);
+    }
+  }
+  @keyframes dt-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @media (max-width: 640px) {
+    .dt {
+      grid-template-columns: 1fr auto;
+    }
+    .dt__cap {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

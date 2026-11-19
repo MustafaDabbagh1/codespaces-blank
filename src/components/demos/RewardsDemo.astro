@@ -2,13 +2,16 @@
 // PPD Rewards: processing volume becomes a balance, the balance becomes a credit.
 // Flow follows ppdrewards.com; every figure is illustrative sample data.
 import DemoSteps from './DemoSteps.astro';
+import DemoTicker from './DemoTicker.astro';
 import Icon from '../Icon.astro';
 
 interface Props {
   layout?: 'split' | 'flip' | 'stack';
-  captions?: boolean;
+  // 'list' = full step list beside the stage; 'line' = one-line caption under it
+  captions?: 'list' | 'line' | 'none';
 }
-const { layout = 'split', captions = true } = Astro.props;
+const { layout: wanted = 'split', captions = 'list' } = Astro.props;
+const layout = captions === 'list' ? wanted : 'stack';
 
 const steps = [
   { title: 'Process with PPD.', body: 'Run your payments through PPD Technology like you do today.' },
@@ -20,7 +23,7 @@ const steps = [
 
 <div class:list={['demo', `demo--${layout}`, 't-rewards', 'wd']} data-stepper data-durations="2800,2800,3200,3200" data-rest="1">
   {
-    captions && (
+    captions === 'list' && (
       <div class="demo__side">
         <slot />
         <DemoSteps steps={steps} label="How PPD Rewards works" />
@@ -103,6 +106,7 @@ const steps = [
       </div>
     </div>
   </div>
+  {captions === 'line' && <DemoTicker steps={steps} label="How PPD Rewards works" />}
 </div>
 
 <style>

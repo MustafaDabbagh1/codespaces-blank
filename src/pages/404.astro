@@ -5,7 +5,6 @@ import Icon from '../components/Icon.astro';
 
 <SiteLayout title="Page not found | PPD Technology" description="That page does not exist. Here is where to go next.">
   <section class="nf">
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap nf__inner">
       <p class="eyebrow eyebrow--plain">Error 404</p>
       <h1 class="h-hero">Declined.<br /><span class="grad">Page not found.</span></h1>
@@ -26,7 +25,7 @@ import Icon from '../components/Icon.astro';
     display: grid;
     align-items: center;
     min-height: 70vh;
-    padding: clamp(64px, 10vw, 140px) 0;
+    padding: calc(var(--hero-top) + 40px) 0 clamp(64px, 10vw, 140px);
     overflow: hidden;
   }
   .nf__inner {

@@ -43,13 +43,29 @@ const niches = [
 const colors = ['#1549ff', '#f47b20', '#0e9c68', '#7c4dff', '#e11d74', '#0f172a'];
 const first = niches[0];
 const stages = ['Proposal sent', 'Onboarding', 'Live'];
+
+// The studio demonstrates itself: it types these example agencies one after
+// another until the visitor starts typing their own.
+const presets = [
+  { name: 'Summit Payments', niche: 'repair', color: '#1549ff' },
+  { name: 'Harbor Merchant Co.', niche: 'restaurants', color: '#f47b20' },
+  { name: 'Northline Pay', niche: 'retail', color: '#0e9c68' },
+  { name: 'Apex Processing', niche: 'contractors', color: '#7c4dff' },
+];
+
+interface Props {
+  // compact: just the name field and the live preview (used on the homepage)
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
 ---
 
-<div class="bs" data-brand-studio style={`--brand:${colors[0]}`}>
+<div class:list={['bs', { 'bs--compact': compact }]} data-brand-studio style={`--brand:${colors[0]}`}>
   <div class="bs__controls">
     <div class="bs__field">
       <label for="bs-name">Your agency’s name</label>
       <input id="bs-name" type="text" value="Summit Payments" maxlength="26" autocomplete="off" spellcheck="false" data-bs-name />
+      <p class="bs__hint"><Icon name="pen" size={14} /> Type your own and watch it land.</p>
     </div>
 
     <fieldset class="bs__field">
@@ -140,7 +156,7 @@ const stages = ['Proposal sent', 'Onboarding', 'Live'];
     </figure>
   </div>
 
-  <script type="application/json" data-bs-data set:html={JSON.stringify({ niches, stages })} />
+  <script type="application/json" data-bs-data set:html={JSON.stringify({ niches, stages, presets })} />
 </div>
 
 <script>
@@ -195,13 +211,87 @@ const stages = ['Proposal sent', 'Onboarding', 'Live'];
       root.classList.add('is-swapping');
     };
 
-    input?.addEventListener('input', setName);
-    root.querySelectorAll<HTMLInputElement>('input[name="bs-niche"]').forEach((r) =>
-      r.addEventListener('change', () => r.checked && setNiche(r.value)),
+    const setColor = (color: string) => root.style.setProperty('--brand', color);
+
+    const nicheRadios = Array.from(root.querySelectorAll<HTMLInputElement>('input[name="bs-niche"]'));
+    const colorRadios = Array.from(root.querySelectorAll<HTMLInputElement>('input[name="bs-color"]'));
+
+    // ── self-running demo ────────────────────────────────────
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let auto = !reduced;
+    let visible = false;
+    let timer = 0;
+    let index = 0;
+
+    const stop = () => {
+      auto = false;
+      window.clearTimeout(timer);
+      root.classList.remove('is-auto');
+    };
+    const wait = (ms: number, fn: () => void) => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => auto && visible && fn(), ms);
+    };
+    const erase = (done: () => void) => {
+      if (!input) return;
+      if (!input.value) return done();
+      input.value = input.value.slice(0, -1);
+      setName();
+      wait(28, () => erase(done));
+    };
+    const type = (text: string, done: () => void) => {
+      if (!input) return;
+      if (input.value.length >= text.length) return done();
+      input.value = text.slice(0, input.value.length + 1);
+      setName();
+      wait(62 + Math.random() * 50, () => type(text, done));
+    };
+    const play = () => {
+      const preset = data.presets[index % data.presets.length];
+      index += 1;
+      erase(() => {
+        setNiche(preset.niche);
+        setColor(preset.color);
+        nicheRadios.forEach((r) => (r.checked = r.value === preset.niche));
+        colorRadios.forEach((r) => (r.checked = r.value === preset.color));
+        wait(260, () => type(preset.name, () => wait(2600, play)));
+      });
+    };
+
+    input?.addEventListener('input', (e) => {
+      if (e.isTrusted) stop();
+      setName();
+    });
+    input?.addEventListener('focus', () => {
+      if (!auto) return;
+      stop();
+      input.select();
+    });
+    nicheRadios.forEach((r) =>
+      r.addEventListener('change', (e) => {
+        if (e.isTrusted) stop();
+        if (r.checked) setNiche(r.value);
+      }),
     );
-    root.querySelectorAll<HTMLInputElement>('input[name="bs-color"]').forEach((r) =>
-      r.addEventListener('change', () => r.checked && root.style.setProperty('--brand', r.value)),
+    colorRadios.forEach((r) =>
+      r.addEventListener('change', (e) => {
+        if (e.isTrusted) stop();
+        if (r.checked) setColor(r.value);
+      }),
     );
+
+    if (auto) {
+      root.classList.add('is-auto');
+      index = 1; // the first preset is already on screen
+      new IntersectionObserver(
+        ([entry]) => {
+          visible = entry.isIntersecting;
+          if (visible && auto) wait(2200, play);
+          else window.clearTimeout(timer);
+        },
+        { threshold: 0.3 },
+      ).observe(root);
+    }
   });
 </script>
 
@@ -249,6 +339,25 @@ const stages = ['Proposal sent', 'Onboarding', 'Live'];
   .bs__field input[type='text']:focus {
     outline: none;
     border-bottom-color: var(--brand);
+  }
+  .bs__hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--paper-muted);
+  }
+  /* a caret while the studio is typing for itself */
+  .bs.is-auto .bs__field input[type='text'] {
+    border-image: linear-gradient(90deg, var(--brand), var(--paper-text)) 1;
+    caret-color: transparent;
+  }
+  .bs--compact {
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.5fr);
+  }
+  .bs--compact fieldset,
+  .bs--compact .fine {
+    display: none;
   }
   .bs__chips {
     display: flex;

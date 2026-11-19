@@ -32,8 +32,10 @@ payment sales agents PPD wants to recruit ("not just your ISO, your tech and bra
 
 - `src/data/site.ts` — single source of truth for products, hardware lineup, industries, partner
   links, login portals and company contact facts. Header, footer and pages read from it.
-- `src/components/SiteHeader.astro`, `SiteFooter.astro` — self-contained global header (mega
-  menus, Log in menu for the customer portals, mobile sheet) and footer.
+- `src/components/SiteHeader.astro`, `SiteFooter.astro` — self-contained global header (four
+  links, a Log in menu for the customer portals, mobile sheet) and footer. The header is
+  transparent over the hero and becomes a floating bar on scroll; BaseLayout passes `solid`
+  because some legacy pages open on a light background.
 - `src/components/Icon.astro` — inline stroke icons for the new pages (no icon font).
 - `src/components/LeadForm.astro` — form wrapper for `/api/lead` (honeypot, optional Turnstile,
   fetch submit, redirect to `/thank-you`).
@@ -48,15 +50,21 @@ payment sales agents PPD wants to recruit ("not just your ISO, your tech and bra
 - `src/components/demos/` — `ForgeDemo` (a sale on the register + customer display), `RepairDemo`
   (one ticket across the command board), `MerchantDemo` (invoice sent, paid, books updated),
   `RewardsDemo` (volume to reward to redemption). All figures are sample data and labelled so.
-- `src/components/agents/` — `CookieCutter` (identical agent kits vs a kit built up with brand,
-  software, website, CRM and a second revenue line), `BrandStudio` (visitor types their agency
-  name and sees it on software, a website and a CRM), `LevelUp` (the four-level path), and
-  `PitchDuel` (rate-sheet pitch vs software pitch).
+- `src/components/agents/` — `BrandStudio` (types example agency names by itself, then lets the
+  visitor type their own and see it on software, a website and a CRM), `LevelUp` (the four-level
+  path), and `PitchDuel` (rate-sheet pitch vs software pitch).
+- `src/components/Intro.astro` — the entrance sequence (light streaks, an "Authorizing 000 → 100"
+  counter, "Approved", then the page). Plays once per browser session, skips on any key, click or
+  scroll, and never plays with reduced motion. The decision is made by the inline script in
+  SiteLayout's `<head>`; headline lines marked `.rise` / `.fade-up` wait for `html.is-ready`.
+- Demos take `captions="list"` (step list beside the stage, used on product pages) or
+  `captions="line"` (one-line caption under the stage, used on the homepage and `/products`).
 
 ### Rebuilt pages (SiteLayout)
 
-- `/` — dual-audience homepage: hero with two doors (merchant / agent), product strip, tabbed
-  product demos, processing section, agent section, industries, closing CTAs.
+- `/` — dual-audience homepage, deliberately sparse: hero (headline, one sentence, two buttons,
+  the four products orbiting the PPD chip), a scroll-lit statement, the four product demos,
+  a short processing band, the agent brand studio, industries, closing CTA.
 - `/agents` — the agent program. `/become-a-partner` 301-redirects here. Application form posts
   `_form=become-a-partner`; the Google Calendar scheduler loads on click.
 - `/products` — the lineup: four product demos plus hardware and partner software (`#lineup`).
@@ -82,6 +90,8 @@ copies in `public/images/`.
   names away from the `sh__*` / `sf__*` header and footer classes.
 - Do not put `overflow-x: hidden` on `body` in the new layout: it must stay on `html`, or the
   sticky header and the mobile-menu scroll lock break.
+- In SiteLayout, `main` is pulled up under the transparent header, so every page hero must start
+  with `padding-top: var(--hero-top)`.
 - Product facts on the new pages come from the product sites. When a price or feature changes
   there, update `src/data/site.ts` and the matching product page.
 

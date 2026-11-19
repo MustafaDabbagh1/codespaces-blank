@@ -5,22 +5,13 @@ import ForgeDemo from '../components/demos/ForgeDemo.astro';
 import RepairDemo from '../components/demos/RepairDemo.astro';
 import MerchantDemo from '../components/demos/MerchantDemo.astro';
 import RewardsDemo from '../components/demos/RewardsDemo.astro';
-import CookieCutter from '../components/agents/CookieCutter.astro';
+import BrandStudio from '../components/agents/BrandStudio.astro';
 import { products, industries, company } from '../data/site';
 
-const processing = [
-  { icon: 'chart', title: 'A free rate review', body: 'Send us a statement. We show you what you pay today and what it would look like with PPD, with no obligation.', href: '/rate-review', link: 'Request a review' },
-  { icon: 'tag', title: 'Cash discount and dual pricing', body: 'Offset processing costs with a compliant program: POS setup, signage, receipts and customer-facing pricing handled.', href: '/cash-discount', link: 'How it works' },
-  { icon: 'bolt', title: 'Next-day funding options', body: 'Batch out today and see the deposit sooner, with settlement reporting you can actually read.' },
-  { icon: 'phone', title: 'U.S.-based support', body: `A team you can call. ${company.hours}.`, href: '/customer-support', link: 'Support center' },
-  { icon: 'card', title: 'Hardware you already know', body: 'Clover, Dejavoo, Valor and SUNMI devices, configured by us and shipped ready for your counter.', href: '/products#lineup', link: 'See the lineup' },
-  { icon: 'globe', title: 'Every way customers pay', body: 'At the counter, at the table, on an invoice, online or over the phone, reported in one place.' },
-];
-
-const agentPoints = [
-  { title: 'Keep your book', body: 'Bring your relationships with you and grow them in a program built around agent ownership.' },
-  { title: 'Sell software, not a rate sheet', body: 'Walk in with Forge, Repair, Merchant and Rewards, or with software built around your niche and branded as yours.' },
-  { title: 'Earn on both lines', body: 'Software fees in addition to processing residuals, from merchants who have a reason to stay.' },
+const facts = [
+  { title: 'A free rate review', body: 'Send a statement. We show you what you pay now and what you would pay with us.', href: '/rate-review', link: 'Request a review' },
+  { title: 'Cash discount, done properly', body: 'Compliant dual pricing with the signage, receipts and setup handled for you.', href: '/cash-discount', link: 'How it works' },
+  { title: 'People who pick up', body: `U.S.-based support. ${company.hours}.`, href: '/customer-support', link: 'Support' },
 ];
 ---
 
@@ -30,109 +21,75 @@ const agentPoints = [
 >
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="hero">
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="hero__glow" aria-hidden="true"></div>
-    <div class="wrap hero__inner">
-      <p class="eyebrow reveal">Payments · Software · Partnership</p>
-      <h1 class="h-hero reveal" style="--i:1">
-        <span class="hero__l1">
-          Not just your
-          <span class="rot" aria-hidden="true">
-            <span>processor.</span>
-            <span>ISO.</span>
-            <span>POS vendor.</span>
-          </span>
-          <span class="sr-only">processor, ISO or POS vendor.</span>
-        </span>
-        <span class="grad hero__l2">Your technology partner.</span>
-      </h1>
+    <div class="horizon" aria-hidden="true"></div>
 
-      <div class="hero__row">
-        <p class="lede reveal" style="--i:2">
-          PPD Technology pairs payment processing with software we build ourselves. Merchants run their counter, their shop and their back office on it. Agents build a brand on it.
+    <div class="wrap hero__inner">
+      <div class="hero__head">
+        <p class="eyebrow fade-up">Payments + software</p>
+        <h1 class="h-hero">
+          <span class="rise" style="--i:1"><span>Not just your processor.</span></span>
+          <span class="rise" style="--i:2"><span class="grad">Your technology partner.</span></span>
+        </h1>
+      </div>
+
+      <div class="hero__copy">
+        <p class="lede fade-up" style="--i:4">
+          We process the payments and build the software that runs on top of them. For the businesses that take them, and the agents who sell them.
         </p>
-        <div class="doors reveal" style="--i:3">
-          <a class="door" href="/products">
-            <span class="door__ic"><Icon name="store" size={22} /></span>
-            <span class="door__t">I run a business</span>
-            <span class="door__b">Software and processing to run on</span>
-            <span class="door__go"><Icon name="arrow-right" size={18} /></span>
-          </a>
-          <a class="door door--agent" href="/agents">
-            <span class="door__ic"><Icon name="briefcase" size={22} /></span>
-            <span class="door__t">I sell payments</span>
-            <span class="door__b">Become a software brand</span>
-            <span class="door__go"><Icon name="arrow-right" size={18} /></span>
-          </a>
+        <div class="btn-row fade-up" style="--i:5">
+          <a class="btn btn--primary" href="/products">I run a business <Icon name="arrow-right" /></a>
+          <a class="btn btn--ghost" href="/agents">I sell payments <Icon name="arrow-right" /></a>
         </div>
+      </div>
+
+      <!-- PPD at the centre, the four products in orbit -->
+      <div class="orbit fade-up" style="--i:3" aria-label="PPD Technology and its four products">
+        <div class="orbit__ring orbit__ring--a" aria-hidden="true"></div>
+        <div class="orbit__ring orbit__ring--b" aria-hidden="true"></div>
+        <div class="orbit__core" aria-hidden="true">
+          <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1.2" y="1.2" width="29.6" height="21.6" rx="6"></rect>
+            <path d="M11.1 1.4 15.9 5.7l4.8-4.3M15.9 5.7v.95a1.2 1.2 0 0 1-1.2 1.2H1.3M10.6 7.85v7.25M1.3 15.1h29.4M21.5 15.1V9.05a1.2 1.2 0 0 1 1.2-1.2h8M15.9 15.1v2.1M11.1 22.6l4.8-5.4 4.8 5.4"></path>
+          </svg>
+        </div>
+        {
+          products.map((p, i) => (
+            <div class:list={['orbit__track', `orbit__track--${i % 2 ? 'b' : 'a'}`]} style={`--t:${((i * 90 + 25) / 360).toFixed(4)}`}>
+              <a class:list={['orbit__sat', `t-${p.key}`]} href={p.href}>
+                <img src={p.icon} alt="" width="56" height="56" />
+                <span>{p.short}</span>
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
 
-    <!-- suite strip -->
+    <p class="hero__ticker fade-up" style="--i:6" aria-hidden="true">
+      <span>Processing</span><span>Software</span><span>Branding</span>
+    </p>
+  </section>
+
+  <!-- ── STATEMENT ────────────────────────────────────────── -->
+  <section class="section statement">
     <div class="wrap">
-      <ul class="strip">
-        {
-          products.map((p, i) => (
-            <li class:list={['reveal', `t-${p.key}`]} style={`--i:${i + 3}`}>
-              <a class="tile" href={p.href}>
-                <span class="tile__head">
-                  <img src={p.icon} alt="" width="44" height="44" />
-                  <span>
-                    <b>{p.name}</b>
-                    <small>{p.kind}</small>
-                  </span>
-                </span>
-
-                <span class="tile__live" aria-hidden="true">
-                  {p.key === 'forge' && (
-                    <span class="mw mw--forge">
-                      <span class="mw__row"><i>Cold Brew 12oz</i><em>EBT</em></span>
-                      <span class="mw__dual"><b>Cash $4.25</b><b>Card $4.38</b></span>
-                    </span>
-                  )}
-                  {p.key === 'repair' && (
-                    <span class="mw mw--repair">
-                      <span class="mw__cols"><i>In</i><i>Bench</i><i>Ready</i></span>
-                      <span class="mw__ticket">TKT-1042</span>
-                    </span>
-                  )}
-                  {p.key === 'merchant' && (
-                    <span class="mw mw--merchant">
-                      <span class="mw__row"><i>Invoice · Atlas Commercial</i></span>
-                      <span class="mw__inv"><b>$4,250</b><span class="mw__flip"><em>Sent</em><em>Paid</em></span></span>
-                    </span>
-                  )}
-                  {p.key === 'rewards' && (
-                    <span class="mw mw--rewards">
-                      <span class="mw__row"><i>Rewards wallet</i><em>+$12.40</em></span>
-                      <span class="mw__bal"><b>$236.10</b><b>$248.50</b></span>
-                    </span>
-                  )}
-                </span>
-
-                <span class="tile__foot">{p.tagline} <Icon name="arrow-up-right" size={16} /></span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-      <p class="hero__fine fine">{company.isoLine}</p>
+      <p class="statement__text" data-lightup>
+        Most processors hand you a terminal and a rate sheet. We write the software your business runs on, and stand behind every payment underneath it.
+      </p>
     </div>
   </section>
 
-  <!-- ── SUITE ────────────────────────────────────────────── -->
-  <section class="section section--raised suite" id="suite">
+  <!-- ── PRODUCTS ─────────────────────────────────────────── -->
+  <section class="section suite" id="suite">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow reveal">Built in-house</p>
-        <h2 class="h-1 reveal" style="--i:1">Software we build.<br />Watch it work.</h2>
-        <p class="lede reveal" style="--i:2">
-          Most processors hand you someone else’s terminal. We write the software your day runs on, then stand behind the payments underneath it.
-        </p>
+        <h2 class="h-1 reveal" style="--i:1">Four products.<br />Watch them work.</h2>
       </div>
 
       <div class="tabs" data-tabs>
-        <div class="tabs__list" role="tablist" aria-label="PPD products">
+        <div class="tabs__list" role="tablist" aria-label="PPD products" aria-orientation="vertical">
           {
             products.map((p, i) => (
               <button
@@ -144,84 +101,51 @@ const agentPoints = [
                 tabindex={i === 0 ? 0 : -1}
                 class:list={[`t-${p.key}`]}
               >
-                <img src={p.icon} alt="" width="28" height="28" loading="lazy" />
-                {p.short}
+                <img src={p.icon} alt="" width="40" height="40" loading="lazy" />
+                <span>
+                  <b>{p.short}</b>
+                  <em>{p.kind}</em>
+                </span>
+                <Icon name="arrow-right" size={20} />
               </button>
             ))
           }
         </div>
 
-        {
-          products.map((p, i) => (
-            <div class:list={['tabs__panel', `t-${p.key}`]} role="tabpanel" id={`suite-panel-${p.key}`} aria-labelledby={`suite-tab-${p.key}`} hidden={i !== 0}>
-              {p.key === 'forge' && (
-                <ForgeDemo>
-                  <p class="eyebrow">{p.kind}</p>
-                  <h3 class="h-2">{p.tagline}</h3>
-                </ForgeDemo>
-              )}
-              {p.key === 'repair' && (
-                <RepairDemo>
-                  <p class="eyebrow">{p.kind}</p>
-                  <h3 class="h-2">{p.tagline}</h3>
-                </RepairDemo>
-              )}
-              {p.key === 'merchant' && (
-                <MerchantDemo>
-                  <p class="eyebrow">{p.kind}</p>
-                  <h3 class="h-2">{p.tagline}</h3>
-                </MerchantDemo>
-              )}
-              {p.key === 'rewards' && (
-                <RewardsDemo>
-                  <p class="eyebrow">{p.kind}</p>
-                  <h3 class="h-2">{p.tagline}</h3>
-                </RewardsDemo>
-              )}
-
-              <div class="suite__foot">
-                <div class="suite__fact">
-                  <b>{p.price}</b>
-                  <span>{p.priceNote}</span>
-                </div>
-                <div class="suite__fact suite__fact--wide">
-                  <b>Built for</b>
-                  <span>{p.audience}</span>
-                </div>
-                <div class="btn-row">
-                  <a class="btn btn--accent" href={p.href}>Explore {p.short} <Icon name="arrow-right" /></a>
-                  <a class="btn btn--ghost" href={p.site} rel="noopener">{p.siteLabel} <Icon name="arrow-up-right" /></a>
+        <div class="tabs__panels">
+          {
+            products.map((p, i) => (
+              <div class:list={['tabs__panel', `t-${p.key}`]} role="tabpanel" id={`suite-panel-${p.key}`} aria-labelledby={`suite-tab-${p.key}`} hidden={i !== 0}>
+                {p.key === 'forge' && <ForgeDemo captions="line" />}
+                {p.key === 'repair' && <RepairDemo captions="line" />}
+                {p.key === 'merchant' && <MerchantDemo captions="line" />}
+                {p.key === 'rewards' && <RewardsDemo captions="line" />}
+                <div class="suite__foot">
+                  <p>{p.blurb}</p>
+                  <a class="link-arrow" href={p.href}>Explore {p.short} <Icon name="arrow-right" /></a>
                 </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── PROCESSING ───────────────────────────────────────── -->
-  <section class="section section--paper">
-    <div class="wrap proc">
+  <section class="section section--paper proc">
+    <div class="wrap">
       <div class="proc__head">
-        <p class="eyebrow reveal">Merchant services</p>
-        <h2 class="h-1 reveal" style="--i:1">The processing is the easy part.</h2>
-        <p class="lede reveal" style="--i:2">
-          Underneath the software is a straightforward merchant account: clear pricing, hardware set up before it ships, and people to call when something needs fixing.
-        </p>
-        <div class="btn-row reveal" style="--i:3">
-          <a class="btn btn--primary" href="/rate-review">Get a free rate review <Icon name="arrow-right" /></a>
-          <a class="btn btn--ghost" href="/signup">Start an application</a>
-        </div>
+        <h2 class="h-1 reveal">The processing is the easy part.</h2>
+        <a class="btn btn--primary reveal" style="--i:1" href="/rate-review">Get a free rate review <Icon name="arrow-right" /></a>
       </div>
-      <ul class="proc__grid">
+      <ul class="proc__facts">
         {
-          processing.map((c, i) => (
-            <li class="card reveal" style={`--i:${i % 3}`}>
-              <span class="proc__ic"><Icon name={c.icon} size={20} /></span>
-              <h3 class="h-3">{c.title}</h3>
-              <p>{c.body}</p>
-              {c.href && <a class="link-arrow" href={c.href}>{c.link} <Icon name="arrow-right" /></a>}
+          facts.map((f, i) => (
+            <li class="reveal" style={`--i:${i}`}>
+              <h3 class="h-3">{f.title}</h3>
+              <p>{f.body}</p>
+              <a class="link-arrow" href={f.href}>{f.link} <Icon name="arrow-right" /></a>
             </li>
           ))
         }
@@ -231,31 +155,18 @@ const agentPoints = [
 
   <!-- ── AGENTS ───────────────────────────────────────────── -->
   <section class="section agents" id="agents">
-    <div class="agents__glow" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="section-head section-head--center">
-        <p class="eyebrow eyebrow--plain reveal">For payment sales agents</p>
+      <div class="section-head">
+        <p class="eyebrow reveal">For payment sales agents</p>
         <h2 class="h-1 reveal" style="--i:1">We’re not just your ISO.<br /><span class="grad">We’re your tech and branding partner.</span></h2>
         <p class="lede reveal" style="--i:2">
-          Every ISO hands its agents the same terminals and the same rate sheet. We build the software, the brand and the sales system around the niche you already win in.
+          Every other ISO hands you the same terminal and the same rate sheet. We put your name on software your merchants log in to every day.
         </p>
       </div>
 
-      <div class="reveal" style="--i:2">
-        <CookieCutter />
+      <div class="studio section--paper reveal">
+        <BrandStudio compact />
       </div>
-
-      <ul class="agents__points">
-        {
-          agentPoints.map((a, i) => (
-            <li class="reveal" style={`--i:${i}`}>
-              <span class="mono">0{i + 1}</span>
-              <h3 class="h-3">{a.title}</h3>
-              <p>{a.body}</p>
-            </li>
-          ))
-        }
-      </ul>
 
       <div class="btn-row agents__cta reveal">
         <a class="btn btn--primary" href="/agents">See the agent program <Icon name="arrow-right" /></a>
@@ -265,22 +176,14 @@ const agentPoints = [
   </section>
 
   <!-- ── INDUSTRIES ───────────────────────────────────────── -->
-  <section class="section section--raised">
+  <section class="section section--tight ind" id="industries">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal">Industries</p>
-        <h2 class="h-1 reveal" style="--i:1">Set up for the way your business actually takes money.</h2>
-      </div>
-      <ul class="ind">
+      <p class="eyebrow reveal">Industries we set up every week</p>
+      <ul class="ind__list reveal" style="--i:1">
         {
-          industries.map((ind, i) => (
-            <li class="reveal" style={`--i:${i % 3}`}>
-              <a href={ind.href}>
-                <span class="ind__n mono">{String(i + 1).padStart(2, '0')}</span>
-                <span class="ind__t">{ind.name}</span>
-                <span class="ind__b">{ind.note}</span>
-                <span class="ind__go"><Icon name="arrow-up-right" size={18} /></span>
-              </a>
+          industries.map((ind) => (
+            <li>
+              <a href={ind.href}>{ind.name}</a>
             </li>
           ))
         }
@@ -289,34 +192,23 @@ const agentPoints = [
   </section>
 
   <!-- ── CLOSE ────────────────────────────────────────────── -->
-  <section class="section close">
-    <div class="wrap close__grid">
-      <div class="close__card reveal">
-        <p class="eyebrow">Merchants</p>
-        <h2 class="h-2">See what you’d pay, and what you’d run on.</h2>
-        <p>A rate review and a product walkthrough, from people who will also be the ones supporting you.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="/rate-review">Free rate review <Icon name="arrow-right" /></a>
-          <a class="btn btn--ghost" href="/contact">Book a demo</a>
-        </div>
-      </div>
-      <div class="close__card close__card--agent reveal" style="--i:1">
-        <p class="eyebrow">Agents</p>
-        <h2 class="h-2">Tell us the niche you win in.</h2>
-        <p>We’ll map out the software your merchants would actually pay for, and what your brand looks like on it.</p>
-        <div class="btn-row">
-          <a class="btn" href="/agents#book">Book a strategy call <Icon name="arrow-right" /></a>
-          <a class="btn btn--ghost" href="/agents">The agent program</a>
-        </div>
+  <section class="close">
+    <div class="horizon" aria-hidden="true"></div>
+    <div class="wrap close__inner">
+      <h2 class="h-hero reveal">Ready when you are.</h2>
+      <p class="lede reveal" style="--i:1">A rate review if you run a business. A strategy call if you sell payments.</p>
+      <div class="btn-row reveal" style="--i:2">
+        <a class="btn btn--primary" href="/rate-review">Free rate review <Icon name="arrow-right" /></a>
+        <a class="btn btn--ghost" href="/agents#book">Agent strategy call</a>
       </div>
     </div>
   </section>
 </SiteLayout>
 
 <script>
-  // Product tabs in the suite section.
+  // Product tabs.
   document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((root) => {
-    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>(':scope > [role="tablist"] > [role="tab"]'));
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[role="tablist"] > [role="tab"]'));
     const select = (tab: HTMLButtonElement, focus = false) => {
       tabs.forEach((t) => {
         const on = t === tab;
@@ -331,8 +223,8 @@ const agentPoints = [
       tab.addEventListener('click', () => select(tab));
       tab.addEventListener('keydown', (e) => {
         let to = -1;
-        if (e.key === 'ArrowRight') to = (i + 1) % tabs.length;
-        if (e.key === 'ArrowLeft') to = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') to = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') to = (i - 1 + tabs.length) % tabs.length;
         if (e.key === 'Home') to = 0;
         if (e.key === 'End') to = tabs.length - 1;
         if (to < 0) return;
@@ -344,684 +236,474 @@ const agentPoints = [
 </script>
 
 <style>
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
   /* ── hero ── */
   .hero {
     position: relative;
-    padding: clamp(44px, 5.5vw, 76px) 0 clamp(56px, 7vw, 96px);
+    display: grid;
+    align-content: center;
+    min-height: min(100svh, 960px);
+    padding: var(--hero-top) 0 clamp(150px, 16vw, 220px);
     overflow: hidden;
   }
   .hero__glow {
     position: absolute;
-    left: 50%;
-    top: -30%;
-    width: min(1300px, 130vw);
-    aspect-ratio: 1.6;
-    translate: -50% 0;
+    inset: 0;
     background:
-      radial-gradient(40% 50% at 28% 45%, rgba(21, 73, 255, 0.5), transparent 70%),
-      radial-gradient(34% 44% at 74% 38%, rgba(124, 77, 255, 0.28), transparent 70%);
-    filter: blur(30px);
+      radial-gradient(60% 70% at 18% 30%, rgba(21, 73, 255, 0.34), transparent 70%),
+      radial-gradient(40% 50% at 82% 40%, rgba(34, 211, 255, 0.12), transparent 70%),
+      linear-gradient(180deg, #040714 0%, #060c26 70%, #071038 100%);
     pointer-events: none;
   }
   .hero__inner {
     position: relative;
     display: grid;
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: clamp(20px, 3vw, 40px) clamp(24px, 4vw, 64px);
+    align-items: start;
+  }
+  .hero__head {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 22px;
+  }
+  .hero__copy {
+    display: grid;
+    gap: 28px;
+    justify-items: start;
+    padding-top: 8px;
   }
   .hero .h-hero {
-    font-size: clamp(2.5rem, 6.6vw, 5.6rem);
+    font-size: clamp(2.5rem, 6.5vw, 5.9rem);
   }
-  .hero__l1,
-  .hero__l2 {
-    display: block;
+  .hero .lede {
+    max-width: 44ch;
   }
-  .hero__l2 {
-    padding-bottom: 0.08em;
+  .hero__ticker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: clamp(18px, 2.4vw, 34px);
+    display: flex;
+    justify-content: center;
+    gap: clamp(18px, 4vw, 54px);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #9fb4e6;
   }
-  .hero__row {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: clamp(24px, 4vw, 64px);
+  .hero__ticker span {
+    display: inline-flex;
     align-items: center;
-    margin-top: 10px;
+    gap: 12px;
   }
-  .rot {
-    display: inline-grid;
-    vertical-align: baseline;
+  .hero__ticker span::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
   }
-  .rot span {
-    grid-area: 1 / 1;
-    white-space: nowrap;
-    animation: rot 9s var(--ease-out) infinite both;
+
+  /* orbit */
+  .orbit {
+    position: relative;
+    justify-self: end;
+    width: min(100%, 430px);
+    aspect-ratio: 1;
+    margin-top: clamp(-70px, -4vw, -20px);
+    margin-bottom: clamp(-120px, -8vw, -40px);
   }
-  .rot span:nth-child(2) {
-    animation-delay: 3s;
+  .orbit__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(140, 175, 255, 0.22);
   }
-  .rot span:nth-child(3) {
-    animation-delay: 6s;
+  .orbit__ring--a {
+    inset: 21%;
   }
-  @keyframes rot {
-    0% {
-      transform: translateY(0.35em);
-      opacity: 0;
-      filter: blur(6px);
+  .orbit__ring--b {
+    inset: 3%;
+    border-style: dashed;
+    border-color: rgba(140, 175, 255, 0.16);
+  }
+  .orbit__core {
+    position: absolute;
+    inset: 37%;
+    display: grid;
+    place-items: center;
+    border-radius: 28%;
+    color: var(--cyan);
+    background: radial-gradient(circle at 30% 20%, #16245e, #070d2a 70%);
+    border: 1px solid rgba(110, 200, 255, 0.5);
+    box-shadow:
+      0 0 0 10px rgba(34, 211, 255, 0.05),
+      0 0 70px 6px rgba(21, 110, 255, 0.55);
+    animation: orbit-pulse 5s ease-in-out infinite;
+  }
+  .orbit__core svg {
+    width: 58%;
+    filter: drop-shadow(0 0 10px rgba(34, 211, 255, 0.8));
+  }
+  .orbit__track {
+    position: absolute;
+    inset: 21%;
+    animation: orbit-spin 46s linear infinite;
+    animation-delay: calc(var(--t) * -46s);
+    pointer-events: none;
+  }
+  .orbit__track--b {
+    inset: 3%;
+    animation-duration: 70s;
+    animation-direction: reverse;
+    animation-delay: calc(var(--t) * -70s);
+  }
+  .orbit__sat {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    width: 76px;
+    margin: -32px 0 0 -38px;
+    pointer-events: auto;
+    animation: orbit-spin 46s linear infinite reverse;
+    animation-delay: calc(var(--t) * -46s);
+  }
+  .orbit__track--b .orbit__sat {
+    animation-duration: 70s;
+    animation-direction: normal;
+    animation-delay: calc(var(--t) * -70s);
+  }
+  .orbit__sat img {
+    width: 56px;
+    height: 56px;
+    padding: 9px;
+    border-radius: 16px;
+    object-fit: contain;
+    background: #0a1130;
+    border: 1px solid rgba(var(--accent-rgb), 0.6);
+    box-shadow: 0 0 26px -4px rgba(var(--accent-rgb), 0.8);
+    transition: transform 0.4s var(--spring);
+  }
+  .orbit__sat.t-repair img,
+  .orbit__sat.t-merchant img {
+    padding: 0;
+  }
+  .orbit__sat span {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c6d2f2;
+  }
+  .orbit__sat:hover img {
+    transform: scale(1.14);
+  }
+  .orbit:hover .orbit__track,
+  .orbit:hover .orbit__sat {
+    animation-play-state: paused;
+  }
+  @keyframes orbit-spin {
+    to {
+      transform: rotate(360deg);
     }
-    5%,
-    30% {
-      transform: none;
-      opacity: 1;
-      filter: blur(0);
-    }
-    35%,
-    100% {
-      transform: translateY(-0.35em);
-      opacity: 0;
-      filter: blur(6px);
-    }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .rot span {
-      animation: none;
-      opacity: 0;
-    }
-    .rot span:first-child {
-      opacity: 1;
+  @keyframes orbit-pulse {
+    50% {
+      box-shadow:
+        0 0 0 16px rgba(34, 211, 255, 0.04),
+        0 0 100px 12px rgba(21, 110, 255, 0.7);
     }
   }
 
-  .doors {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  /* ── statement ── */
+  .statement {
+    padding-block: clamp(90px, 13vw, 200px);
   }
-  .door {
+  .statement__text {
+    max-width: 22ch;
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4.6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    max-width: 1040px;
+    text-wrap: balance;
+  }
+
+  /* ── products ── */
+  .tabs {
+    display: grid;
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+    gap: clamp(28px, 5vw, 80px);
+    align-items: start;
+  }
+  .tabs__list {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+  .tabs__list button {
     position: relative;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    column-gap: 16px;
     align-items: center;
-    padding: 18px 18px;
-    border-radius: var(--r);
-    border: 1px solid var(--line-2);
-    background: rgba(255, 255, 255, 0.04);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transition:
-      transform 0.4s var(--ease-out),
-      border-color 0.3s,
-      background 0.3s;
-  }
-  .door:hover {
-    transform: translateY(-3px);
-    border-color: var(--blue-2);
-    background: rgba(21, 73, 255, 0.16);
-  }
-  .door__ic {
-    grid-row: span 2;
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--blue-3);
-  }
-  .door--agent .door__ic {
-    background: var(--blue);
-    color: #fff;
-  }
-  .door__t {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .door__b {
-    grid-column: 2;
-    font-size: 0.92rem;
-    color: var(--muted);
-  }
-  .door__go {
-    grid-row: 1 / span 2;
-    grid-column: 3;
-    color: var(--muted);
-    transition:
-      transform 0.4s var(--ease-out),
-      color 0.3s;
-  }
-  .door:hover .door__go {
-    transform: translateX(5px);
-    color: #fff;
-  }
-
-  .strip {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-top: clamp(36px, 4.5vw, 60px);
-  }
-  .tile {
-    position: relative;
-    display: grid;
-    gap: 18px;
-    height: 100%;
-    padding: 20px;
-    border-radius: var(--r);
-    border: 1px solid var(--line);
-    background:
-      radial-gradient(120% 70% at 50% 120%, rgba(var(--accent-rgb), 0.34), transparent 70%),
-      var(--ink-2);
-    overflow: hidden;
-    transition:
-      transform 0.5s var(--ease-out),
-      border-color 0.3s,
-      box-shadow 0.5s;
-  }
-  .tile:hover {
-    transform: translateY(-6px);
-    border-color: rgba(var(--accent-rgb), 0.7);
-    box-shadow: 0 30px 60px -30px rgba(var(--accent-rgb), 0.8);
-  }
-  .tile__head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .tile__head img {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    object-fit: contain;
-  }
-  .tile__head b {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.18rem;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-  .tile__head small {
-    font-size: 0.82rem;
-    color: var(--muted);
-  }
-  .tile__foot {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-    font-size: 0.92rem;
-    line-height: 1.35;
-    color: var(--muted);
-  }
-  .tile__foot :global(svg) {
-    flex-shrink: 0;
-    color: var(--accent-2);
-  }
-
-  /* micro widgets inside tiles */
-  .mw {
-    display: grid;
-    gap: 8px;
-    padding: 12px;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid var(--line);
-    font-size: 0.8rem;
-  }
-  .mw__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    color: var(--muted);
-  }
-  .mw i {
-    font-style: normal;
-  }
-  .mw em {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 0.72rem;
-    padding: 2px 8px;
-    border-radius: 99px;
-    color: var(--accent-2);
-    background: rgba(var(--accent-rgb), 0.18);
-  }
-  .mw b {
-    font-feature-settings: 'tnum' 1;
-  }
-  .mw__dual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-  }
-  .mw__dual b {
-    padding: 7px 0;
-    border-radius: 8px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.07);
-    animation: mw-dual 4s ease-in-out infinite;
-  }
-  .mw__dual b:last-child {
-    animation-delay: 2s;
-  }
-  .mw__cols {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    gap: 16px;
+    padding: 22px 6px 22px 0;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
     color: var(--dim);
-  }
-  .mw__cols i {
-    padding-bottom: 26px;
-    border-bottom: 1px dashed var(--line-2);
-    font-size: 0.7rem;
-  }
-  .mw--repair {
-    position: relative;
-  }
-  .mw__ticket {
-    position: absolute;
-    left: 12px;
-    bottom: 18px;
-    width: calc((100% - 36px) / 3);
-    padding: 3px 0;
-    border-radius: 6px;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--repair);
-    animation: mw-move 6s var(--ease-out) infinite;
-  }
-  .mw__inv,
-  .mw__bal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.25rem;
-    font-family: var(--font-display);
-    letter-spacing: -0.02em;
-  }
-  .mw__flip {
-    display: inline-grid;
-  }
-  .mw__flip em {
-    grid-area: 1 / 1;
-    font-family: var(--font-body);
-    animation: mw-swap 5s ease-in-out infinite;
-  }
-  .mw__flip em:last-child {
-    color: #062b1b;
-    background: var(--ok);
-    animation-delay: 2.5s;
-  }
-  .mw__bal {
-    display: grid;
-  }
-  .mw__bal b {
-    grid-area: 1 / 1;
-    color: var(--rewards-2);
-    animation: mw-swap 5s ease-in-out infinite;
-  }
-  .mw__bal b:last-child {
-    animation-delay: 2.5s;
-  }
-  .mw--rewards .mw__row em {
-    animation: mw-swap 5s ease-in-out 2.5s infinite;
-  }
-  @keyframes mw-dual {
-    0%,
-    45%,
-    100% {
-      background: rgba(255, 255, 255, 0.07);
-      color: inherit;
-    }
-    10%,
-    35% {
-      background: var(--forge);
-      color: #1a0e03;
-    }
-  }
-  @keyframes mw-move {
-    0%,
-    18% {
-      transform: translateX(0);
-    }
-    33%,
-    55% {
-      transform: translateX(calc(100% + 6px));
-    }
-    70%,
-    92% {
-      transform: translateX(calc(200% + 12px));
-      background: #0e9c68;
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @keyframes mw-swap {
-    0%,
-    44% {
-      opacity: 1;
-      transform: none;
-    }
-    50%,
-    94% {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-    100% {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  .hero__fine {
-    margin-top: 22px;
-    text-align: center;
-  }
-
-  /* ── suite ── */
-  .tabs__list {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 6px;
-    margin-bottom: clamp(32px, 5vw, 56px);
-    border-radius: 999px;
-    border: 1px solid var(--line-2);
-    background: rgba(255, 255, 255, 0.03);
-  }
-  .tabs__list button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    height: 46px;
-    padding: 0 20px 0 10px;
-    border-radius: 999px;
-    font-weight: 600;
-    color: var(--muted);
     transition:
-      color 0.25s,
-      background 0.25s;
-  }
-  .tabs__list button:hover {
-    color: var(--text);
+      color 0.3s,
+      padding 0.4s var(--ease-out);
   }
   .tabs__list img {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
     object-fit: contain;
+    filter: grayscale(1) opacity(0.55);
+    transition: filter 0.3s;
+  }
+  .tabs__list b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .tabs__list em {
+    display: block;
+    margin-top: 6px;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--dim);
+  }
+  .tabs__list button :global(svg) {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.3s,
+      transform 0.4s var(--ease-out);
+    color: var(--accent-2);
+  }
+  .tabs__list button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s var(--ease-out);
+  }
+  .tabs__list button:hover {
+    color: var(--muted);
   }
   .tabs__list button[aria-selected='true'] {
     color: #fff;
-    background: var(--accent);
+    padding-left: 8px;
   }
-  .tabs__list button.t-rewards[aria-selected='true'],
-  .tabs__list button.t-forge[aria-selected='true'] {
-    color: #1a0e03;
+  .tabs__list button[aria-selected='true'] img {
+    filter: none;
+  }
+  .tabs__list button[aria-selected='true'] em {
+    color: var(--muted);
+  }
+  .tabs__list button[aria-selected='true'] :global(svg) {
+    opacity: 1;
+    transform: none;
+  }
+  .tabs__list button[aria-selected='true']::before {
+    transform: scaleX(1);
   }
   .tabs__panel:not([hidden]) {
-    animation: panel-in 0.6s var(--ease-out);
+    animation: panel-in 0.7s var(--ease-out);
   }
   @keyframes panel-in {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(16px);
     }
   }
   .suite__foot {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 20px 44px;
-    margin-top: clamp(40px, 9vw, 110px);
-    padding-top: 26px;
-    border-top: 1px solid var(--line);
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px 32px;
+    margin-top: 20px;
   }
-  .suite__fact {
-    display: grid;
-    gap: 2px;
-  }
-  .suite__fact b {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    letter-spacing: -0.02em;
-  }
-  .suite__fact span {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  .suite__fact--wide {
+  .suite__foot p {
     flex: 1;
-    min-width: 220px;
-  }
-  .suite__fact--wide b {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--dim);
-  }
-  .suite__fact--wide span {
-    font-size: 1rem;
-    color: var(--text);
+    min-width: 260px;
+    max-width: 56ch;
+    color: var(--muted);
   }
 
   /* ── processing ── */
-  .proc {
-    display: grid;
-    gap: clamp(36px, 5vw, 64px);
-  }
   .proc__head {
-    display: grid;
-    gap: 20px;
-    max-width: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px 40px;
+    margin-bottom: clamp(40px, 6vw, 72px);
   }
-  .proc__grid {
+  .proc__head h2 {
+    max-width: 14ch;
+  }
+  .proc__facts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    border-top: 1px solid var(--paper-line);
   }
-  .proc__grid li {
+  .proc__facts li {
     display: grid;
-    gap: 10px;
+    gap: 12px;
     align-content: start;
+    padding: 28px clamp(18px, 2.6vw, 36px) 4px 0;
   }
-  .proc__grid p {
+  .proc__facts li + li {
+    padding-left: clamp(18px, 2.6vw, 36px);
+    border-left: 1px solid var(--paper-line);
+  }
+  .proc__facts p {
     color: var(--paper-muted);
-    font-size: 0.98rem;
-  }
-  .proc__ic {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    color: var(--blue);
-    background: rgba(21, 73, 255, 0.09);
-  }
-  .proc__grid .link-arrow {
-    margin-top: 4px;
-    font-size: 0.95rem;
   }
 
   /* ── agents ── */
-  .agents {
-    overflow: hidden;
-  }
-  .agents__glow {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: min(1100px, 120vw);
-    height: 520px;
-    translate: -50% -30%;
-    background: radial-gradient(closest-side, rgba(21, 73, 255, 0.4), transparent);
-    filter: blur(20px);
-    pointer-events: none;
-  }
-  .agents .wrap {
-    position: relative;
-  }
-  .agents__points {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 44px);
-    margin-top: clamp(40px, 6vw, 72px);
-  }
-  .agents__points li {
-    display: grid;
-    gap: 10px;
-    align-content: start;
-    padding-top: 18px;
-    border-top: 1px solid var(--line-2);
-  }
-  .agents__points .mono {
-    font-size: 0.76rem;
-    color: var(--blue-3);
-  }
-  .agents__points p {
-    color: var(--muted);
+  .studio {
+    padding: clamp(22px, 4vw, 56px);
+    border-radius: var(--r-lg);
+    background: var(--paper);
   }
   .agents__cta {
-    justify-content: center;
-    margin-top: clamp(36px, 5vw, 56px);
+    margin-top: clamp(28px, 4vw, 44px);
   }
 
   /* ── industries ── */
-  .ind {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+  .ind__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px clamp(18px, 3vw, 40px);
+    margin-top: 26px;
   }
-  .ind a {
+  .ind__list a {
     position: relative;
-    display: grid;
-    gap: 6px;
-    height: 100%;
-    padding: 26px 26px 28px;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    transition: background 0.3s;
-  }
-  .ind a:hover {
-    background: rgba(21, 73, 255, 0.14);
-  }
-  .ind__n {
-    font-size: 0.72rem;
-    color: var(--dim);
-  }
-  .ind__t {
     font-family: var(--font-display);
-    font-size: 1.45rem;
+    font-size: clamp(1.5rem, 3.4vw, 2.7rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .ind__b {
-    font-size: 0.93rem;
-    color: var(--muted);
-  }
-  .ind__go {
-    position: absolute;
-    right: 22px;
-    top: 24px;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
     color: var(--dim);
-    transition:
-      transform 0.35s var(--ease-out),
-      color 0.3s;
+    transition: color 0.3s;
   }
-  .ind a:hover .ind__go {
-    transform: translate(3px, -3px);
-    color: var(--blue-3);
+  .ind__list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.08em;
+    height: 2px;
+    background: var(--cyan);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-out);
+  }
+  .ind__list a:hover {
+    color: #fff;
+  }
+  .ind__list a:hover::after {
+    transform: scaleX(1);
   }
 
   /* ── close ── */
-  .close__grid {
+  .close {
+    position: relative;
+    padding: clamp(90px, 12vw, 170px) 0 clamp(190px, 22vw, 300px);
+    overflow: hidden;
+  }
+  .close__inner {
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 22px;
+    justify-items: center;
+    text-align: center;
   }
-  .close__card {
-    display: grid;
-    gap: 16px;
-    align-content: start;
-    padding: clamp(28px, 4vw, 52px);
-    border-radius: var(--r-lg);
-    border: 1px solid var(--line);
-    background: var(--ink-2);
-  }
-  .close__card p:not(.eyebrow) {
-    color: var(--muted);
-    max-width: 44ch;
-  }
-  .close__card .btn-row {
-    margin-top: 10px;
-  }
-  .close__card--agent {
-    border-color: transparent;
-    background:
-      radial-gradient(120% 120% at 100% 0%, #3d66ff, transparent 60%),
-      var(--blue);
-  }
-  .close__card--agent .eyebrow {
-    color: #fff;
-  }
-  .close__card--agent p:not(.eyebrow) {
-    color: rgba(255, 255, 255, 0.86);
-  }
-  .close__card--agent .btn--ghost {
-    border-color: rgba(255, 255, 255, 0.5);
+  .close .btn-row {
+    justify-content: center;
+    margin-top: 8px;
   }
 
-  @media (max-width: 1000px) {
-    .hero__row {
+  @media (max-width: 980px) {
+    .hero {
+      min-height: 0;
+    }
+    .hero__inner {
       grid-template-columns: 1fr;
     }
-    .strip {
-      grid-template-columns: 1fr 1fr;
+    .orbit {
+      justify-self: center;
+      width: min(84vw, 380px);
+      margin: 12px 0 0;
     }
-    .proc__grid,
-    .ind {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 720px) {
-    .doors,
-    .agents__points,
-    .close__grid {
+    .tabs {
       grid-template-columns: 1fr;
     }
     .tabs__list {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      border-radius: 26px;
-      width: 100%;
+      border-top: 0;
+      gap: 0 16px;
     }
-    .suite__foot .btn-row {
-      width: 100%;
+    .tabs__list button {
+      padding-block: 14px;
+    }
+    .tabs__list b {
+      font-size: 1.5rem;
+    }
+    .tabs__list button :global(svg) {
+      display: none;
+    }
+    .proc__facts {
+      grid-template-columns: 1fr;
+    }
+    .proc__facts li,
+    .proc__facts li + li {
+      padding: 24px 0;
+      border-left: 0;
+      border-bottom: 1px solid var(--paper-line);
     }
   }
-  @media (max-width: 560px) {
-    .strip,
-    .proc__grid,
-    .ind {
-      grid-template-columns: 1fr;
+  @media (max-width: 520px) {
+    .tabs__list img {
+      width: 30px;
+      height: 30px;
+    }
+    .tabs__list em {
+      display: none;
+    }
+    .hero__ticker {
+      font-size: 0.56rem;
+      gap: 14px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .orbit__track,
+    .orbit__sat,
+    .orbit__core {
+      animation: none;
+    }
+    .orbit__track {
+      transform: rotate(calc(var(--t) * 360deg));
+    }
+    .orbit__sat {
+      transform: rotate(calc(var(--t) * -360deg));
     }
   }
 </style>

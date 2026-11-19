@@ -22,7 +22,6 @@ const art: Record<string, { img?: string; icon?: string; tag: string }> = {
   description="The PPD Technology lineup: software we build ourselves (Forge POS, PPD Repair, PPD Merchant, PPD Rewards) and the hardware and partner software we set up and support."
 >
   <section class="phub">
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="phub__glow" aria-hidden="true"></div>
     <div class="wrap phub__inner">
       <p class="eyebrow reveal">The lineup</p>
@@ -70,10 +69,10 @@ const art: Record<string, { img?: string; icon?: string; tag: string }> = {
           </header>
 
           <div class="pblock__demo reveal">
-            {p.key === 'forge' && <ForgeDemo layout="flip" />}
-            {p.key === 'repair' && <RepairDemo />}
-            {p.key === 'merchant' && <MerchantDemo layout="flip" />}
-            {p.key === 'rewards' && <RewardsDemo />}
+            {p.key === 'forge' && <ForgeDemo captions="line" />}
+            {p.key === 'repair' && <RepairDemo captions="line" />}
+            {p.key === 'merchant' && <MerchantDemo captions="line" />}
+            {p.key === 'rewards' && <RewardsDemo captions="line" />}
           </div>
         </div>
       </section>
@@ -128,7 +127,7 @@ const art: Record<string, { img?: string; icon?: string; tag: string }> = {
 <style>
   .phub {
     position: relative;
-    padding: clamp(44px, 5.5vw, 80px) 0 clamp(48px, 6vw, 84px);
+    padding: var(--hero-top) 0 clamp(48px, 6vw, 84px);
     overflow: hidden;
   }
   .phub__glow {
@@ -276,7 +275,8 @@ const art: Record<string, { img?: string; icon?: string; tag: string }> = {
     color: var(--muted);
   }
   .pblock__demo {
-    padding-bottom: clamp(30px, 6vw, 80px);
+    max-width: 1040px;
+    margin-inline: auto;
   }
 
   .lineup {

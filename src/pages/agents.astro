@@ -2,11 +2,10 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
 import LeadForm from '../components/LeadForm.astro';
-import CookieCutter from '../components/agents/CookieCutter.astro';
 import BrandStudio from '../components/agents/BrandStudio.astro';
 import LevelUp from '../components/agents/LevelUp.astro';
 import PitchDuel from '../components/agents/PitchDuel.astro';
-import { products, company } from '../data/site';
+import { company } from '../data/site';
 
 const pills = ['Keep your book', 'Higher agent split', 'Branded niche software', 'Software fees + processing', 'Built for seasoned agents'];
 
@@ -17,12 +16,6 @@ const tools = [
   { icon: 'file-text', title: 'Partner sales assets', body: 'Decks, one-pagers and demo material that carry your name and speak your vertical’s language.' },
   { icon: 'handshake', title: 'Merchant onboarding support', body: 'We work the application, the equipment and the install with you, so a signed deal becomes a live merchant.' },
   { icon: 'chart', title: 'Portfolio growth strategy', body: 'A plan for the next niche, the next product and the next hundred merchants, reviewed with people who build the software.' },
-];
-
-const hardware = [
-  { name: 'Clover', img: '/images/hw/clover.webp', w: 800, h: 380 },
-  { name: 'Valor', img: '/images/hw/valor-vp800.webp', w: 600, h: 600 },
-  { name: 'Dejavoo', img: '/images/hw/dejavoo-p3.webp', w: 600, h: 600 },
 ];
 
 const paths = [
@@ -65,69 +58,37 @@ const faqs = [
 >
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section class="ahero">
-    <div class="grid-bg" aria-hidden="true"></div>
     <div class="ahero__glow" aria-hidden="true"></div>
     <div class="wrap">
       <div class="ahero__copy">
-        <p class="eyebrow reveal">Agent program</p>
-        <h1 class="h-hero reveal" style="--i:1">
-          Not just your ISO.
-          <span class="grad">Your tech and branding partner.</span>
+        <p class="eyebrow fade-up">Agent program</p>
+        <h1 class="h-hero">
+          <span class="rise" style="--i:1"><span>Not just your ISO.</span></span>
+          <span class="rise" style="--i:2"><span class="grad">Your tech and branding partner.</span></span>
         </h1>
-        <p class="lede reveal" style="--i:2">
-          You already know how to sell payments. Every ISO hands you the same terminals and the same rate sheet. PPD builds the software, the brand and the sales system around the niche you know best, and you keep your book.
+        <p class="lede fade-up" style="--i:4">
+          You already know how to sell payments. We build the software, the brand and the sales system around the niche you know best. You keep your book.
         </p>
-        <div class="btn-row reveal" style="--i:3">
-          <a class="btn btn--primary" href="#book">Book an agent strategy call <Icon name="arrow-right" /></a>
+        <div class="btn-row fade-up" style="--i:5">
+          <a class="btn btn--primary" href="#book">Book a strategy call <Icon name="arrow-right" /></a>
           <a class="btn btn--ghost" href="#apply">Apply now</a>
         </div>
-        <ul class="ahero__pills reveal" style="--i:4">
-          {pills.map((p) => <li class="chip"><Icon name="check" size={14} stroke={2.6} /> {p}</li>)}
-        </ul>
+        <p class="ahero__pills fade-up" style="--i:6">{pills.join('  ·  ')}</p>
       </div>
 
-      <div class="ahero__stage reveal" style="--i:3">
-        <CookieCutter />
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WHAT MAKES PPD DIFFERENT ─────────────────────────── -->
-  <section class="section section--paper" id="different">
-    <div class="wrap">
-      <div class="diff">
-        <div class="section-head">
-          <p class="eyebrow reveal">Built for seasoned sales agents</p>
-          <h2 class="h-1 reveal" style="--i:1">What makes PPD different</h2>
-        </div>
-        <div class="diff__body reveal" style="--i:2">
-          <p class="diff__lead">We make you custom payment software for your main niche.</p>
-          <p>
-            You can still sell the Clover, Dejavoo and Valor terminals, the gateways and the processing your merchants are used to. But when every agent has access to the same hardware, you need something that makes your pitch different.
-          </p>
-          <p>
-            So we build it with you, put your name on it, and stand behind it. Try it:
-          </p>
-        </div>
-      </div>
-
-      <div class="studio reveal">
+      <div class="studio section--paper fade-up" style="--i:6">
         <BrandStudio />
       </div>
     </div>
   </section>
 
-  <!-- ── THE PITCH ────────────────────────────────────────── -->
-  <section class="section">
+  <!-- ── WHAT MAKES PPD DIFFERENT ─────────────────────────── -->
+  <section class="section" id="different">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal">The pitch</p>
-        <h2 class="h-1 reveal" style="--i:1">Same doorway.<br />Different conversation.</h2>
-        <p class="lede reveal" style="--i:2">
-          A lower rate is the easiest thing in the world to say no to. Software that fixes the owner’s Tuesday is not.
-        </p>
-      </div>
-      <div class="reveal"><PitchDuel /></div>
+      <p class="eyebrow reveal">What makes PPD different</p>
+      <p class="statement" data-lightup>
+        Keep selling the Clover, Dejavoo and Valor terminals your merchants know. But when every agent carries the same hardware, the pitch needs something else. So we make you custom payment software for your main niche, and put your name on it.
+      </p>
     </div>
   </section>
 
@@ -137,55 +98,19 @@ const faqs = [
       <div class="section-head">
         <p class="eyebrow reveal">Where we take you</p>
         <h2 class="h-1 reveal" style="--i:1">Four levels.<br />Most ISOs stop at the first.</h2>
-        <p class="lede reveal" style="--i:2">
-          A cookie-cutter ISO needs you to stay a rep. We do better when you become a brand, so that is what the program is built to do.
-        </p>
       </div>
       <div class="reveal"><LevelUp /></div>
     </div>
   </section>
 
-  <!-- ── WHAT YOU SELL ────────────────────────────────────── -->
+  <!-- ── THE PITCH ────────────────────────────────────────── -->
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow reveal">Hardware + software</p>
-        <h2 class="h-1 reveal" style="--i:1">Sell the hardware you know. Lead with software that makes you different.</h2>
+        <p class="eyebrow reveal">The pitch</p>
+        <h2 class="h-1 reveal" style="--i:1">Same doorway.<br />Different conversation.</h2>
       </div>
-
-      <ul class="sell">
-        {
-          products.map((p, i) => (
-            <li class:list={['reveal', `t-${p.key}`]} style={`--i:${i}`}>
-              <a class="sell__card" href={p.href}>
-                <img src={p.icon} alt="" width="52" height="52" loading="lazy" />
-                <h3 class="h-3">{p.name}</h3>
-                <p>{p.blurb}</p>
-                <span class="sell__price"><b>{p.price}</b> {p.priceNote}</span>
-                <span class="link-arrow">See {p.short} <Icon name="arrow-right" /></span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-
-      <div class="hw reveal">
-        <div class="hw__copy">
-          <h3 class="h-3">And the devices merchants already ask for.</h3>
-          <p>Keep selling familiar terminals. Add a software layer on top, and earn more from each relationship.</p>
-          <a class="link-arrow" href="/products#lineup">Full hardware lineup <Icon name="arrow-right" /></a>
-        </div>
-        <ul class="hw__list">
-          {
-            hardware.map((h) => (
-              <li>
-                <img src={h.img} alt={`${h.name} payment device`} width={h.w} height={h.h} loading="lazy" />
-                <span>{h.name}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <div class="reveal"><PitchDuel /></div>
     </div>
   </section>
 
@@ -195,17 +120,13 @@ const faqs = [
       <div class="section-head">
         <p class="eyebrow reveal">Enablement</p>
         <h2 class="h-1 reveal" style="--i:1">Tools other ISOs do not give you</h2>
-        <p class="lede reveal" style="--i:2">
-          More than processing: the software, the sales systems and the acquisition engine it takes to grow a stronger book.
-        </p>
       </div>
       <ul class="tools">
         {
           tools.map((t, i) => (
-            <li class="reveal" style={`--i:${i % 3}`}>
+            <li class="reveal" style={`--i:${i % 2}`}>
               <span class="tools__n mono">{String(i + 1).padStart(2, '0')}</span>
-              <span class="tools__ic"><Icon name={t.icon} size={22} /></span>
-              <h3 class="h-3">{t.title}</h3>
+              <h3 class="h-2">{t.title}</h3>
               <p>{t.body}</p>
             </li>
           ))
@@ -365,20 +286,16 @@ const faqs = [
 <style>
   .ahero {
     position: relative;
-    padding: clamp(40px, 4.6vw, 64px) 0 clamp(64px, 8vw, 110px);
+    padding: var(--hero-top) 0 clamp(64px, 8vw, 110px);
     overflow: hidden;
   }
   .ahero__glow {
     position: absolute;
-    left: 50%;
-    top: -34%;
-    width: min(1300px, 130vw);
-    aspect-ratio: 1.6;
-    translate: -50% 0;
+    inset: 0 0 auto 0;
+    height: 900px;
     background:
-      radial-gradient(42% 50% at 30% 45%, rgba(21, 73, 255, 0.55), transparent 70%),
-      radial-gradient(30% 40% at 78% 40%, rgba(124, 77, 255, 0.22), transparent 70%);
-    filter: blur(30px);
+      radial-gradient(60% 60% at 20% 20%, rgba(21, 73, 255, 0.36), transparent 70%),
+      radial-gradient(40% 50% at 85% 30%, rgba(34, 211, 255, 0.12), transparent 70%);
     pointer-events: none;
   }
   .ahero .wrap {
@@ -386,182 +303,56 @@ const faqs = [
   }
   .ahero__copy {
     display: grid;
-    gap: 22px;
-  }
-  .ahero__copy .lede {
-    max-width: 70ch;
+    gap: 24px;
+    justify-items: start;
   }
   .ahero .h-hero {
-    font-size: clamp(2.4rem, 5.5vw, 4.7rem);
-  }
-  .ahero .h-hero .grad {
-    display: block;
-    padding-bottom: 0.08em;
+    font-size: clamp(2.4rem, 5.6vw, 4.9rem);
   }
   .ahero__pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .ahero__pills :global(svg) {
-    color: var(--blue-3);
-  }
-  .ahero__stage {
-    margin-top: clamp(32px, 4vw, 52px);
-  }
-
-  .diff {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: clamp(24px, 5vw, 80px);
-    align-items: end;
-    margin-bottom: clamp(40px, 6vw, 76px);
-  }
-  .diff .section-head {
-    margin-bottom: 0;
-  }
-  .diff__body {
-    display: grid;
-    gap: 14px;
-    color: var(--paper-muted);
-    font-size: 1.08rem;
-  }
-  .diff__lead {
-    font-family: var(--font-display);
-    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.025em;
-    color: var(--paper-text);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    white-space: pre-wrap;
   }
   .studio {
-    padding: clamp(22px, 4vw, 52px);
+    margin-top: clamp(40px, 5vw, 68px);
+    padding: clamp(22px, 4vw, 56px);
     border-radius: var(--r-lg);
-    background: var(--paper-2);
-    border: 1px solid var(--paper-line);
+    background: var(--paper);
   }
 
-  .sell {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-  }
-  .sell__card {
-    display: grid;
-    gap: 12px;
-    align-content: start;
-    height: 100%;
-    padding: 24px;
-    border-radius: var(--r);
-    border: 1px solid var(--line);
-    background:
-      radial-gradient(120% 60% at 50% 115%, rgba(var(--accent-rgb), 0.3), transparent 70%),
-      var(--ink-2);
-    transition:
-      transform 0.45s var(--ease-out),
-      border-color 0.3s;
-  }
-  .sell__card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(var(--accent-rgb), 0.7);
-  }
-  .sell__card img {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    object-fit: contain;
-  }
-  .sell__card p {
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-  .sell__price {
-    font-size: 0.85rem;
-    color: var(--muted);
-    padding-top: 12px;
-    border-top: 1px solid var(--line);
-  }
-  .sell__price b {
-    display: block;
+  .statement {
+    margin-top: 28px;
+    max-width: 1040px;
     font-family: var(--font-display);
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-    color: var(--text);
-  }
-  .sell__card .link-arrow {
-    font-size: 0.95rem;
-  }
-
-  .hw {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(24px, 4vw, 60px);
-    align-items: center;
-    margin-top: 14px;
-    padding: clamp(24px, 3.4vw, 44px);
-    border-radius: var(--r);
-    border: 1px solid var(--line);
-    background: var(--ink-2);
-  }
-  .hw__copy {
-    display: grid;
-    gap: 12px;
-  }
-  .hw__copy p {
-    color: var(--muted);
-  }
-  .hw__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .hw__list li {
-    display: grid;
-    gap: 10px;
-    justify-items: center;
-    padding: 18px 14px 14px;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #f5f3ee, #dcd9cf);
-    color: #0a0e18;
-    font-weight: 650;
-  }
-  .hw__list img {
-    height: 120px;
-    width: auto;
-    object-fit: contain;
+    font-size: clamp(1.7rem, 3.8vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
   }
 
   .tools {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     border-top: 1px solid var(--paper-line);
-    border-left: 1px solid var(--paper-line);
   }
   .tools li {
-    position: relative;
     display: grid;
-    gap: 12px;
-    align-content: start;
-    padding: clamp(24px, 3vw, 36px);
-    border-right: 1px solid var(--paper-line);
+    grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px 32px;
+    align-items: baseline;
+    padding: clamp(22px, 3vw, 34px) 0;
     border-bottom: 1px solid var(--paper-line);
   }
   .tools__n {
-    position: absolute;
-    right: 24px;
-    top: 24px;
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     color: #9aa1b2;
   }
-  .tools__ic {
-    display: grid;
-    place-items: center;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    border-radius: 14px;
-    color: #fff;
-    background: var(--blue);
+  .tools h3 {
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
   }
   .tools p {
     color: var(--paper-muted);
@@ -698,26 +489,14 @@ const faqs = [
   }
 
   @media (max-width: 1000px) {
-    .sell {
-      grid-template-columns: 1fr 1fr;
-    }
-    .diff,
-    .hw,
     .faqwrap,
     .start__grid {
       grid-template-columns: 1fr;
     }
-    .tools {
-      grid-template-columns: 1fr 1fr;
-    }
   }
-  @media (max-width: 600px) {
-    .sell,
-    .tools {
+  @media (max-width: 720px) {
+    .tools li {
       grid-template-columns: 1fr;
-    }
-    .hw__list img {
-      height: 76px;
     }
   }
 </style>

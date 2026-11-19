@@ -2,13 +2,16 @@
 // Forge POS: one sale, replayed. Register screen + customer-facing display.
 // Copy and sample values follow ppdforge.com.
 import DemoSteps from './DemoSteps.astro';
+import DemoTicker from './DemoTicker.astro';
 import Icon from '../Icon.astro';
 
 interface Props {
   layout?: 'split' | 'flip' | 'stack';
-  captions?: boolean;
+  // 'list' = full step list beside the stage; 'line' = one-line caption under it
+  captions?: 'list' | 'line' | 'none';
 }
-const { layout = 'split', captions = true } = Astro.props;
+const { layout: wanted = 'split', captions = 'list' } = Astro.props;
+const layout = captions === 'list' ? wanted : 'stack';
 
 const steps = [
   { title: 'Scan it, search it, or tap it.', body: 'Scan a barcode, type a few letters, or tap a category tile. Items land in the cart at once.' },
@@ -31,7 +34,7 @@ const tiles = [
 
 <div class:list={['demo', `demo--${layout}`, 't-forge', 'fd']} data-stepper data-durations="2600,2600,3400,3400,3000" data-rest="2">
   {
-    captions && (
+    captions === 'list' && (
       <div class="demo__side">
         <slot />
         <DemoSteps steps={steps} label="Steps in a Forge sale" />
@@ -211,6 +214,7 @@ const tiles = [
       </div>
     </div>
   </div>
+  {captions === 'line' && <DemoTicker steps={steps} label="Steps in a Forge sale" />}
 </div>
 
 <style>
