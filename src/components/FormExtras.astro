@@ -1,0 +1,65 @@
+---
+// Optional extra inputs for the landing-page forms. Field names match the
+// ones the old pages posted (city, time, topics, plus one custom select), so
+// lead emails keep the same shape.
+interface Props {
+  id: string;
+  city?: boolean;
+  time?: boolean;
+  topics?: string[];
+  select?: { name: string; label: string; options: string[] };
+}
+const { id, city = false, time = false, topics = [], select } = Astro.props;
+---
+
+{
+  city && (
+    <div class="field">
+      <label for={`${id}-city`}>
+        City and state <span class="opt">optional</span>
+      </label>
+      <input id={`${id}-city`} name="city" type="text" autocomplete="address-level2" />
+    </div>
+  )
+}
+{
+  time && (
+    <div class="field">
+      <label for={`${id}-time`}>
+        Best time to reach you <span class="opt">optional</span>
+      </label>
+      <select id={`${id}-time`} name="time">
+        <option value="">Select</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+      </select>
+    </div>
+  )
+}
+{
+  select && (
+    <div class="field field--full">
+      <label for={`${id}-${select.name}`}>
+        {select.label} <span class="opt">optional</span>
+      </label>
+      <select id={`${id}-${select.name}`} name={select.name}>
+        <option value="">Select</option>
+        {select.options.map((o) => <option>{o}</option>)}
+      </select>
+    </div>
+  )
+}
+{
+  topics.length > 0 && (
+    <fieldset class="checks field--full">
+      <legend>What do you want to see?</legend>
+      {topics.map((t) => (
+        <label>
+          <input type="checkbox" name="topics" value={t} />
+          <span>{t}</span>
+        </label>
+      ))}
+    </fieldset>
+  )
+}

@@ -1,675 +1,279 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { company, logins } from '../data/site';
+
+const topics = ['Account & Billing', 'Terminals & POS', 'E-commerce / API', 'Deposits & Payouts', 'Chargebacks / Disputes', 'Other'];
+const priorities = ['Low - general question', 'Normal - needs attention', 'High - blocking one location', 'Critical - processing outage'];
+const faqs = [
+  { q: 'My terminal will not connect. What should I check?', a: 'Check power and the network (Wi-Fi or Ethernet), then restart the device and the router. If it is still offline, open a ticket with the device serial number and the last four digits of a recent transaction.' },
+  { q: 'When will my deposits arrive?', a: 'Most deposits settle the next business day for batches closed by the cutoff. Holidays and holds can affect timing. Your deposits report shows the details for your account.' },
+  { q: 'How do I respond to a chargeback?', a: 'Gather receipts, order details, proof of shipment and any communication with the customer, and submit the evidence before the deadline shown on the dispute.' },
+  { q: 'Where do I log in?', a: 'Each product has its own portal. Use the Log in menu at the top of the page, or the list on this page.' },
+];
 ---
 
-<BaseLayout title="Customer Support | PPD Technology" description="24/7 customer support for PPD Technology merchants. Get help with POS systems, payment processing, account management, and technical issues.">
-  <div class="cs-page">
-
-    <section class="cs-hero">
-      <div class="cs-container cs-hero-inner">
-        <div class="cs-hero-text">
-          <span class="cs-eyebrow"><i class="fa-solid fa-life-ring"></i> Customer Support</span>
-          <h1>We're here to help, fast.</h1>
-          <p class="cs-hero-sub">
-            Get 24/7 resources and business-hours assistance from our payments specialists. Call us, submit a ticket, or browse the support center.
-          </p>
-          <div class="cs-status-inline">
-            <span class="cs-status-dot"></span>
-            <span>All systems operational</span>
-          </div>
-        </div>
-
-        <div class="cs-hero-cards">
-          <a class="cs-hero-card" href="#support-form">
-            <div class="cs-hero-card-icon cs-icon-ticket"><i class="fa-solid fa-ticket"></i></div>
-            <strong>Open a Support Ticket</strong>
-            <span>Typical reply in under 1 business hour</span>
-            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="cs-hero-card" href="#phone">
-            <div class="cs-hero-card-icon cs-icon-phone"><i class="fa-solid fa-phone"></i></div>
-            <strong>Call Customer Support</strong>
-            <span>Immediate help during business hours</span>
-            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="cs-hero-card" href="#help-topics">
-            <div class="cs-hero-card-icon cs-icon-book"><i class="fa-solid fa-book"></i></div>
-            <strong>Support Center</strong>
-            <span>Guides for setup, terminals, disputes</span>
-            <span class="cs-hero-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-        </div>
+<SiteLayout title="Customer support | PPD Technology" description="Get help from PPD Technology's U.S.-based support team: call merchant support, open a ticket, or find your portal login.">
+  <section class="cs-hero">
+    <div class="cs-hero__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow fade-up">Customer support</p>
+      <h1 class="h-hero">
+        <span class="rise" style="--i:1"><span>We’re here to help,</span></span>
+        <span class="rise" style="--i:2"><span class="grad">fast.</span></span>
+      </h1>
+      <div class="cs-opts fade-up" style="--i:4">
+        <a class="cs-opt" href={`tel:${company.supportTel}`}>
+          <Icon name="phone" size={22} />
+          <b>Call merchant support</b>
+          <span>{company.supportPhone}</span>
+          <em>{company.hours}</em>
+        </a>
+        <a class="cs-opt" href="#ticket">
+          <Icon name="ticket" size={22} />
+          <b>Open a support ticket</b>
+          <span>We route it to the right specialist.</span>
+          <em>Best for anything that is not urgent</em>
+        </a>
+        <a class="cs-opt" href={`mailto:${company.email}`}>
+          <Icon name="mail" size={22} />
+          <b>Email us</b>
+          <span>{company.email}</span>
+          <em>For terminal outages, please call</em>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="cs-section cs-section-alt" id="status">
-      <div class="cs-container">
-        <div class="cs-status-head">
-          <div>
-            <span class="cs-chip"><i class="fa-solid fa-signal"></i> System Status</span>
-            <h2>Service Health</h2>
+  <section class="section section--tight" id="ticket">
+    <div class="wrap cs-grid">
+      <div class="cs-card reveal">
+        <h2 class="h-2">Open a support ticket</h2>
+        <p class="cs-note">Please leave out full card numbers and other sensitive cardholder data.</p>
+        <LeadForm form="customer-support" subject="New Customer Support Ticket" cta="Submit ticket">
+          <div class="field">
+            <label for="cs-name">Your name</label>
+            <input id="cs-name" name="name" type="text" autocomplete="name" required />
           </div>
-          <p class="cs-muted">Real-time status of PPD Technology services. For urgent terminal issues, call <a href="tel:3134667836" class="cs-link">313-466-7836</a>.</p>
-        </div>
-        <div class="cs-status-grid">
-          <div class="cs-status-card">
-            <div class="cs-status-card-top">
-              <div class="cs-status-card-icon"><i class="fa-solid fa-code"></i></div>
-              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
-            </div>
-            <strong>Payments API</strong>
-            <span class="cs-muted">Processing, auth, capture, refunds</span>
+          <div class="field">
+            <label for="cs-email">Work email</label>
+            <input id="cs-email" name="email" type="email" autocomplete="email" required />
           </div>
-          <div class="cs-status-card">
-            <div class="cs-status-card-top">
-              <div class="cs-status-card-icon"><i class="fa-solid fa-gauge-high"></i></div>
-              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
-            </div>
-            <strong>Dashboard</strong>
-            <span class="cs-muted">Reporting, analytics, account management</span>
+          <div class="field">
+            <label for="cs-company">Company</label>
+            <input id="cs-company" name="company" type="text" autocomplete="organization" required />
           </div>
-          <div class="cs-status-card">
-            <div class="cs-status-card-top">
-              <div class="cs-status-card-icon"><i class="fa-solid fa-credit-card"></i></div>
-              <span class="cs-badge-ok"><i class="fa-solid fa-circle-check"></i> Operational</span>
-            </div>
-            <strong>Terminals</strong>
-            <span class="cs-muted">POS devices, connectivity, batching</span>
+          <div class="field">
+            <label for="cs-callback">Callback number <span class="opt">optional</span></label>
+            <input id="cs-callback" name="callback" type="tel" autocomplete="tel" />
           </div>
-        </div>
+          <div class="field">
+            <label for="cs-mid">Merchant ID <span class="opt">if known</span></label>
+            <input id="cs-mid" name="mid" type="text" />
+          </div>
+          <div class="field">
+            <label for="cs-terminal">Terminal or device ID <span class="opt">if known</span></label>
+            <input id="cs-terminal" name="terminal" type="text" />
+          </div>
+          <div class="field">
+            <label for="cs-topic">Issue type</label>
+            <select id="cs-topic" name="topic" required>
+              <option value="">Select</option>
+              {topics.map((t) => <option>{t}</option>)}
+            </select>
+          </div>
+          <div class="field">
+            <label for="cs-severity">Priority</label>
+            <select id="cs-severity" name="severity" required>
+              <option value="">Select</option>
+              {priorities.map((t) => <option>{t}</option>)}
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="cs-subject">Subject</label>
+            <input id="cs-subject" name="subject" type="text" required />
+          </div>
+          <div class="field field--full">
+            <label for="cs-details">Details</label>
+            <textarea id="cs-details" name="details" rows="5" required></textarea>
+          </div>
+        </LeadForm>
       </div>
-    </section>
 
-    <section class="cs-section" id="support-form">
-      <div class="cs-container cs-form-layout">
-        <div class="cs-form-panel">
-          <div class="cs-form-header">
-            <span class="cs-chip"><i class="fa-solid fa-ticket"></i> Support Ticket</span>
-            <h2>Open a Support Ticket</h2>
-            <p class="cs-muted">Provide details so we can route your case to the right specialist.</p>
-          </div>
-
-          <form class="cs-form" id="csTicketForm" action="/api/lead" method="post" novalidate>
-            <input type="hidden" name="_form" value="customer-support" />
-            <input type="hidden" name="_subject" value="New Customer Support Ticket" />
-            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
-            <div class="cs-form-row">
-              <div class="cs-fg">
-                <label for="name">Your name</label>
-                <input id="name" name="name" required />
-              </div>
-              <div class="cs-fg">
-                <label for="email">Work email</label>
-                <input id="email" name="email" type="email" inputmode="email" required />
-              </div>
-            </div>
-
-            <div class="cs-form-row">
-              <div class="cs-fg">
-                <label for="company">Company</label>
-                <input id="company" name="company" required />
-              </div>
-              <div class="cs-fg">
-                <label for="mid">Merchant ID (if known)</label>
-                <input id="mid" name="mid" placeholder="e.g., MID1234" />
-              </div>
-            </div>
-
-            <div class="cs-form-row">
-              <div class="cs-fg">
-                <label for="terminal">Terminal/Device ID</label>
-                <input id="terminal" name="terminal" placeholder="e.g., VP-800 SN" />
-              </div>
-              <div class="cs-fg">
-                <label for="topic">Issue type</label>
-                <select id="topic" name="topic" required>
-                  <option value="">Select...</option>
-                  <option>Account & Billing</option>
-                  <option>Terminals & POS</option>
-                  <option>E-commerce / API</option>
-                  <option>Deposits & Payouts</option>
-                  <option>Chargebacks / Disputes</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="cs-form-row">
-              <div class="cs-fg">
-                <label for="severity">Priority</label>
-                <select id="severity" name="severity" required>
-                  <option value="">Select...</option>
-                  <option>Low - general question</option>
-                  <option>Normal - needs attention</option>
-                  <option>High - blocking one location</option>
-                  <option>Critical - processing outage</option>
-                </select>
-              </div>
-              <div class="cs-fg">
-                <label for="callback">Preferred callback number</label>
-                <input id="callback" name="callback" inputmode="tel" placeholder="(###) ###-####" />
-              </div>
-            </div>
-
-            <div class="cs-fg">
-              <label for="subject">Subject</label>
-              <input id="subject" name="subject" required placeholder="Short summary of the issue" />
-            </div>
-
-            <div class="cs-fg">
-              <label for="details">Details</label>
-              <textarea id="details" name="details" required placeholder="What happened? When did it start? Any error codes or screenshots?"></textarea>
-              <div class="cs-help">Please omit full PANs or sensitive cardholder data.</div>
-            </div>
-
-            <div class="cs-fg">
-              <label for="files">Attachments (optional)</label>
-              <input id="files" name="files" type="file" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.heic,.heif,.pdf,.txt,.log,.csv,.json,.zip,image/*,application/pdf,text/plain,text/csv,application/json,application/zip" />
-              <div class="cs-help">Screenshots, PDFs, or logs (PNG, JPG, PDF, TXT, LOG, CSV, JSON, ZIP). Up to 10 files, 10 MB total.</div>
-              <div id="filesError" class="cs-help" style="color:#dc2626;display:none"></div>
-            </div>
-
-            {turnstileSiteKey && (
-              <div class="cs-fg">
-                <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible"></div>
-              </div>
-            )}
-
-            <div class="cs-form-footer">
-              <button class="cs-btn cs-btn-primary" type="submit">
-                <i class="fa-solid fa-paper-plane"></i> Submit Ticket
-              </button>
-              <div class="cs-form-note">
-                <i class="fa-solid fa-lock"></i>
-                Typical response within 1 business hour. Your data is transmitted securely.
-              </div>
-            </div>
-          </form>
+      <div class="cs-side">
+        <div class="reveal" style="--i:1">
+          <p class="eyebrow">Your portals</p>
+          <ul class="cs-logins">
+            {logins.map((l) => <li><a href={l.href} rel="noopener">{l.name} <Icon name="arrow-up-right" size={15} /></a></li>)}
+          </ul>
         </div>
-
-        <div class="cs-sidebar">
-          <div class="cs-sidebar-card" id="help-topics">
-            <h3><i class="fa-solid fa-compass"></i> Popular Help Topics</h3>
-            <div class="cs-topics-grid">
-              <a class="cs-topic" href="#">
-                <div class="cs-topic-icon"><i class="fa-solid fa-plug"></i></div>
-                <div>
-                  <strong>VP-800 Setup</strong>
-                  <span>First payment walkthrough</span>
-                </div>
-              </a>
-              <a class="cs-topic" href="#">
-                <div class="cs-topic-icon"><i class="fa-solid fa-credit-card"></i></div>
-                <div>
-                  <strong>Refunds & Voids</strong>
-                  <span>Refunds, voids, partial captures</span>
-                </div>
-              </a>
-              <a class="cs-topic" href="#">
-                <div class="cs-topic-icon"><i class="fa-solid fa-sack-dollar"></i></div>
-                <div>
-                  <strong>Payout Timing</strong>
-                  <span>Deposit reports & schedules</span>
-                </div>
-              </a>
-              <a class="cs-topic" href="#">
-                <div class="cs-topic-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div>
-                  <strong>Disputes</strong>
-                  <span>Evidence & best practices</span>
-                </div>
-              </a>
-              <a class="cs-topic" href="#">
-                <div class="cs-topic-icon"><i class="fa-solid fa-code"></i></div>
-                <div>
-                  <strong>API & Webhooks</strong>
-                  <span>Keys, test cards, retries</span>
-                </div>
-              </a>
-            </div>
-            <div class="cs-topics-footer">
-              Can't find it? Browse the full <a href="#" class="cs-link">Support Center</a>.
-            </div>
-          </div>
-
-          <div class="cs-sidebar-card cs-phone-card" id="phone">
-            <h3><i class="fa-solid fa-phone"></i> Call Support</h3>
-            <div class="cs-phone-number">
-              <a href="tel:3134667836">313-466-7836</a>
-            </div>
-            <div class="cs-phone-hours">
-              <span><i class="fa-solid fa-clock"></i> Mon-Thu 8:00a-8:00p ET</span>
-              <span><i class="fa-solid fa-clock"></i> Fri 8:00a-6:00p ET</span>
-              <span><i class="fa-solid fa-clock"></i> Sat 9:00a-2:00p ET</span>
-            </div>
-            <p class="cs-phone-note">
-              U.S.-based team. We troubleshoot terminals, resolve deposit questions, and guide your staff.
-            </p>
-            <a class="cs-btn cs-btn-call" href="tel:3134667836">
-              <i class="fa-solid fa-phone"></i> Call Now
-            </a>
+        <div class="reveal" style="--i:2">
+          <p class="eyebrow">Common questions</p>
+          <div class="cs-faq">
+            {
+              faqs.map((f, i) => (
+                <details open={i === 0}>
+                  <summary>
+                    {f.q}
+                    <Icon name="plus" size={18} />
+                  </summary>
+                  <p>{f.a}</p>
+                </details>
+              ))
+            }
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</SiteLayout>
 
-    <section class="cs-section cs-section-alt" id="faq">
-      <div class="cs-container cs-faq-container">
-        <div class="cs-section-head-center">
-          <span class="cs-chip"><i class="fa-solid fa-circle-question"></i> FAQ</span>
-          <h2>Frequently Asked Questions</h2>
-          <p class="cs-muted">Fast answers to common support topics.</p>
-        </div>
-
-        <div class="cs-faq-grid">
-          <details class="cs-faq-item">
-            <summary>My terminal won't connect. What should I check? <i class="fa-solid fa-plus"></i></summary>
-            <div class="cs-faq-answer">
-              Verify power, network (Wi-Fi/Ethernet), and that required ports are open. Restart the device and router. If still offline, open a ticket with your device serial and last 4 digits of a recent transaction.
-            </div>
-          </details>
-
-          <details class="cs-faq-item">
-            <summary>When will my deposits arrive? <i class="fa-solid fa-plus"></i></summary>
-            <div class="cs-faq-answer">
-              Most deposits settle next business day for batches closed by cutoff. Holidays and holds can affect timing. Check the Deposits report in your dashboard for exact ETAs.
-            </div>
-          </details>
-
-          <details class="cs-faq-item">
-            <summary>How do I respond to a chargeback? <i class="fa-solid fa-plus"></i></summary>
-            <div class="cs-faq-answer">
-              Gather receipts, order details, shipment proof, and communications. Submit evidence before the stated deadline in your dashboard's Disputes section.
-            </div>
-          </details>
-
-          <details class="cs-faq-item">
-            <summary>Where can I find API logs or webhook retries? <i class="fa-solid fa-plus"></i></summary>
-            <div class="cs-faq-answer">
-              Developers can review request/response logs and replay webhooks from the dashboard under Developers, then Logs and Webhooks.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="cs-cta-bar">
-      <div class="cs-container cs-cta-inner">
-        <div>
-          <h2>Still need help?</h2>
-          <p>Our payments specialists are ready to assist you.</p>
-        </div>
-        <div class="cs-cta-btns">
-          <a class="cs-btn cs-btn-primary" href="#support-form"><i class="fa-solid fa-ticket"></i> Open a Ticket</a>
-          <a class="cs-btn cs-btn-outline" href="tel:3134667836"><i class="fa-solid fa-phone"></i> Call Support</a>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <style is:global>
-    .cs-page {
-      --cs-primary: #1549FF;
-      --cs-primary-dark: #0F38CC;
-      --cs-navy: #060E21;
-      --cs-navy-2: #0C1A38;
-      --cs-accent: #00E5A0;
-      --cs-cyan: #00CFFF;
-      --cs-ok: #10b981;
-      --cs-surface: #F5F8FF;
-      --cs-card: #FFFFFF;
-      --cs-text: #060E21;
-      --cs-muted: #5E7A9A;
-      --cs-border: #E2E8F4;
-      --cs-shadow: 0 10px 30px rgba(2, 6, 23, .08);
-      --cs-shadow-lg: 0 20px 50px rgba(2, 6, 23, .12);
-      --cs-radius: 16px;
-      background: var(--cs-surface);
-      color: var(--cs-text);
+<style>
+  .cs-hero {
+    position: relative;
+    padding: var(--hero-top) 0 clamp(40px, 5vw, 64px);
+    overflow: hidden;
+  }
+  .cs-hero__glow {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 700px;
+    background: radial-gradient(55% 60% at 18% 22%, rgba(21, 73, 255, 0.34), transparent 70%);
+    pointer-events: none;
+  }
+  .cs-hero .wrap {
+    position: relative;
+    display: grid;
+    gap: 24px;
+  }
+  .cs-hero .h-hero {
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+  }
+  .cs-opts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .cs-opt {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    padding: 24px;
+    border-radius: var(--r);
+    border: 1px solid var(--line-2);
+    background: rgba(255, 255, 255, 0.03);
+    transition:
+      border-color 0.3s,
+      transform 0.45s var(--ease-out);
+  }
+  .cs-opt:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan);
+  }
+  .cs-opt :global(svg) {
+    color: var(--cyan);
+    margin-bottom: 8px;
+  }
+  .cs-opt b {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+  }
+  .cs-opt span {
+    font-weight: 500;
+  }
+  .cs-opt em {
+    font-style: normal;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .cs-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(24px, 4vw, 60px);
+    align-items: start;
+  }
+  .cs-card {
+    display: grid;
+    gap: 20px;
+    padding: clamp(24px, 3.4vw, 44px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: rgba(8, 13, 31, 0.8);
+  }
+  .cs-note {
+    margin-top: -10px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .cs-card :global(.opt) {
+    font-weight: 400;
+    color: var(--dim);
+  }
+  .cs-side {
+    display: grid;
+    gap: clamp(32px, 4vw, 52px);
+  }
+  .cs-logins {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .cs-logins a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .cs-logins a:hover {
+    color: var(--cyan);
+  }
+  .cs-logins a :global(svg) {
+    opacity: 0.5;
+  }
+  .cs-faq {
+    margin-top: 14px;
+    border-top: 1px solid var(--line-2);
+  }
+  .cs-faq details {
+    border-bottom: 1px solid var(--line-2);
+  }
+  .cs-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  .cs-faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .cs-faq summary :global(svg) {
+    flex-shrink: 0;
+    color: var(--cyan);
+    transition: transform 0.35s var(--ease-out);
+  }
+  .cs-faq details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+  .cs-faq p {
+    padding: 0 30px 18px 0;
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+  @media (max-width: 940px) {
+    .cs-opts,
+    .cs-grid {
+      grid-template-columns: 1fr;
     }
-    .cs-page *{box-sizing:border-box}
-    .cs-page a{color:inherit;text-decoration:none}
-    .cs-container{max-width:1160px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
-    .cs-section{padding:72px 0}
-    .cs-section-alt{background:#fff;border-top:1px solid var(--cs-border);border-bottom:1px solid var(--cs-border)}
-
-    .cs-eyebrow{
-      display:inline-flex;align-items:center;gap:8px;width:fit-content;
-      font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-      color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:999px;
-    }
-    .cs-chip{
-      display:inline-flex;align-items:center;gap:8px;width:fit-content;
-      font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-      color:var(--cs-navy);background:rgba(21,73,255,.08);
-      border:1px solid rgba(21,73,255,.12);padding:7px 14px;border-radius:999px;
-    }
-    .cs-muted{color:var(--cs-muted);font-size:15px}
-    .cs-link{color:var(--cs-primary);font-weight:600}
-    .cs-link:hover{text-decoration:underline}
-
-    .cs-btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:12px 22px;border-radius:999px;font-weight:700;font-size:14px;
-      border:1px solid transparent;cursor:pointer;white-space:nowrap;
-      transition:transform .2s,box-shadow .2s,background .2s;
-      text-decoration:none;
-    }
-    .cs-btn:active{transform:translateY(1px)}
-    .cs-btn-primary{
-      background:linear-gradient(135deg,#2D60FF,var(--cs-primary));color:#fff;
-      box-shadow:0 8px 28px rgba(21,73,255,.35);
-    }
-    .cs-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(21,73,255,.45)}
-    .cs-btn-outline{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
-    .cs-btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-    .cs-btn-call{
-      width:100%;background:linear-gradient(135deg,#2D60FF,var(--cs-primary));color:#fff;
-      box-shadow:0 6px 20px rgba(21,73,255,.3);
-    }
-    .cs-btn-call:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(21,73,255,.4)}
-
-    .cs-hero{
-      background:
-        radial-gradient(900px 480px at 15% 10%,rgba(0,204,150,.12),transparent 55%),
-        radial-gradient(760px 420px at 85% 15%,rgba(21,73,255,.22),transparent 55%),
-        linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 55%,var(--cs-primary-dark) 100%);
-      color:#fff;padding:80px 0 64px;position:relative;overflow:hidden;
-    }
-    .cs-hero::before{
-      content:"";position:absolute;inset:0;
-      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events:none;opacity:.3;
-    }
-    .cs-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
-    .cs-hero-text{max-width:600px}
-    .cs-hero h1{
-      font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.03em;margin:16px 0 12px;
-    }
-    .cs-hero-sub{color:rgba(255,255,255,.8);font-size:clamp(15px,1.2vw,17px);max-width:55ch}
-    .cs-status-inline{
-      display:inline-flex;align-items:center;gap:8px;margin-top:20px;
-      padding:8px 16px;border-radius:999px;
-      background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);
-      font-weight:700;font-size:13px;color:var(--cs-accent);
-    }
-    .cs-status-dot{width:8px;height:8px;border-radius:50%;background:var(--cs-ok);animation:cs-pulse 2s infinite}
-    @keyframes cs-pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
-    .cs-hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .cs-hero-card{
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-      border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;
-      backdrop-filter:blur(10px);transition:transform .2s,border-color .2s,background .2s;
-      position:relative;
-    }
-    .cs-hero-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22)}
-    .cs-hero-card-icon{
-      width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-      font-size:17px;margin-bottom:4px;
-    }
-    .cs-icon-ticket{background:rgba(21,73,255,.25);color:var(--cs-cyan)}
-    .cs-icon-phone{background:rgba(0,229,160,.2);color:var(--cs-accent)}
-    .cs-icon-book{background:rgba(255,255,255,.12);color:#fff}
-    .cs-hero-card strong{font-size:15px;font-weight:800}
-    .cs-hero-card>span:not(.cs-hero-card-arrow){font-size:13px;color:rgba(255,255,255,.6)}
-    .cs-hero-card-arrow{
-      position:absolute;top:20px;right:18px;opacity:.3;transition:opacity .2s,transform .2s;
-    }
-    .cs-hero-card:hover .cs-hero-card-arrow{opacity:.7;transform:translateX(3px)}
-
-    .cs-status-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
-    .cs-status-head>div{display:flex;flex-direction:column;gap:8px}
-    .cs-status-head h2{font-size:clamp(22px,2.5vw,30px);letter-spacing:-.02em}
-    .cs-status-head>p{max-width:400px;text-align:right}
-    .cs-status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .cs-status-card{
-      background:var(--cs-surface);border:1px solid var(--cs-border);border-radius:14px;
-      padding:20px;display:flex;flex-direction:column;gap:6px;
-      transition:transform .2s,box-shadow .2s;
-    }
-    .cs-status-card:hover{transform:translateY(-3px);box-shadow:var(--cs-shadow)}
-    .cs-status-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
-    .cs-status-card-icon{
-      width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);color:var(--cs-primary);font-size:14px;
-    }
-    .cs-badge-ok{
-      display:inline-flex;align-items:center;gap:5px;
-      padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;
-      background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:var(--cs-ok);
-    }
-    .cs-status-card strong{font-size:15px;color:var(--cs-navy)}
-    .cs-status-card .cs-muted{font-size:13px}
-
-    .cs-form-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:start}
-    .cs-form-panel{
-      background:#fff;border:1px solid var(--cs-border);border-radius:var(--cs-radius);
-      box-shadow:var(--cs-shadow);overflow:hidden;
-    }
-    .cs-form-header{
-      padding:24px 28px;border-bottom:1px solid var(--cs-border);
-      display:flex;flex-direction:column;gap:6px;
-    }
-    .cs-form-header h2{font-size:clamp(22px,2.5vw,28px);letter-spacing:-.02em;margin-top:4px}
-    .cs-form{padding:24px 28px;display:flex;flex-direction:column;gap:16px}
-    .cs-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .cs-fg{display:flex;flex-direction:column;gap:5px}
-    .cs-fg label{font-weight:700;font-size:13px;color:var(--cs-navy)}
-    .cs-fg input,.cs-fg select,.cs-fg textarea{
-      width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--cs-border);
-      font-family:inherit;font-size:14px;outline:none;transition:.2s;background:#fff;
-    }
-    .cs-fg input:focus,.cs-fg select:focus,.cs-fg textarea:focus{
-      border-color:rgba(21,73,255,.4);box-shadow:0 0 0 3px rgba(21,73,255,.08);
-    }
-    .cs-fg textarea{min-height:110px;resize:vertical}
-    .cs-fg input[type="file"]{padding:10px 12px;font-size:13px}
-    .cs-help{font-size:12px;color:var(--cs-muted);margin-top:3px}
-    .cs-form-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
-    .cs-form-note{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cs-muted)}
-    .cs-form-note i{color:var(--cs-ok)}
-
-    .cs-sidebar{display:flex;flex-direction:column;gap:18px}
-    .cs-sidebar-card{
-      background:#fff;border:1px solid var(--cs-border);border-radius:var(--cs-radius);
-      box-shadow:var(--cs-shadow);padding:22px;
-    }
-    .cs-sidebar-card h3{
-      font-size:16px;font-weight:800;color:var(--cs-navy);margin-bottom:16px;
-      display:flex;align-items:center;gap:8px;
-    }
-    .cs-sidebar-card h3 i{color:var(--cs-primary)}
-
-    .cs-topics-grid{display:flex;flex-direction:column;gap:8px}
-    .cs-topic{
-      display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;
-      border:1px solid var(--cs-border);transition:transform .2s,box-shadow .2s,border-color .2s;
-    }
-    .cs-topic:hover{transform:translateY(-2px);box-shadow:var(--cs-shadow);border-color:rgba(21,73,255,.15)}
-    .cs-topic-icon{
-      width:36px;height:36px;border-radius:10px;flex-shrink:0;
-      background:rgba(21,73,255,.08);border:1px solid rgba(21,73,255,.12);
-      display:flex;align-items:center;justify-content:center;color:var(--cs-primary);font-size:14px;
-    }
-    .cs-topic div{min-width:0}
-    .cs-topic strong{display:block;font-size:14px;color:var(--cs-navy)}
-    .cs-topic span{font-size:12px;color:var(--cs-muted)}
-    .cs-topics-footer{
-      margin-top:14px;padding-top:12px;border-top:1px solid var(--cs-border);
-      font-size:13px;color:var(--cs-muted);
-    }
-
-    .cs-phone-card{
-      background:linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 100%);
-      color:#fff;border-color:transparent;
-    }
-    .cs-phone-card h3{color:#fff}
-    .cs-phone-card h3 i{color:var(--cs-accent)}
-    .cs-phone-number{margin-bottom:12px}
-    .cs-phone-number a{
-      font-size:28px;font-weight:900;color:var(--cs-accent);
-      text-decoration:none;letter-spacing:-.01em;
-    }
-    .cs-phone-number a:hover{text-decoration:underline}
-    .cs-phone-hours{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
-    .cs-phone-hours span{
-      font-size:13px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px;
-    }
-    .cs-phone-hours i{font-size:11px;opacity:.5}
-    .cs-phone-note{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px;line-height:1.5}
-
-    .cs-section-head-center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:28px}
-    .cs-section-head-center h2{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.02em}
-    .cs-faq-container{max-width:800px}
-    .cs-faq-grid{display:flex;flex-direction:column;gap:10px}
-    .cs-faq-item{
-      background:var(--cs-surface);border:1px solid var(--cs-border);border-radius:14px;
-      padding:0;overflow:hidden;transition:border-color .2s,box-shadow .2s;
-    }
-    .cs-faq-item[open]{border-color:rgba(21,73,255,.18);box-shadow:var(--cs-shadow)}
-    .cs-faq-item summary{
-      list-style:none;cursor:pointer;padding:16px 20px;
-      font-weight:750;font-size:15px;color:var(--cs-navy);
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-    }
-    .cs-faq-item summary::-webkit-details-marker{display:none}
-    .cs-faq-item summary i{color:var(--cs-muted);font-size:13px;flex-shrink:0}
-    .cs-faq-answer{padding:0 20px 18px;color:var(--cs-muted);font-size:14px;line-height:1.7}
-
-    .cs-cta-bar{
-      background:linear-gradient(135deg,var(--cs-navy) 0%,#0A2B74 55%,var(--cs-primary-dark) 100%);
-      color:#fff;padding:48px 0;
-    }
-    .cs-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    .cs-cta-inner h2{font-size:clamp(22px,2.5vw,30px);letter-spacing:-.02em;margin-bottom:4px}
-    .cs-cta-inner p{color:rgba(255,255,255,.7);font-size:15px}
-    .cs-cta-btns{display:flex;gap:10px}
-
-    .cs-reg-bar{
-      background:var(--cs-navy);color:rgba(255,255,255,.5);text-align:center;
-      padding:14px 16px;font-size:12px;
-    }
-
-    @media (min-width:900px){
-      .cs-hero-inner{grid-template-columns:1fr}
-    }
-    @media (max-width:900px){
-      .cs-hero-cards{grid-template-columns:1fr}
-      .cs-status-grid{grid-template-columns:1fr}
-      .cs-form-layout{grid-template-columns:1fr}
-      .cs-form-row{grid-template-columns:1fr}
-      .cs-cta-inner{flex-direction:column;text-align:center}
-      .cs-cta-btns{flex-direction:column;width:100%}
-      .cs-status-head{flex-direction:column}
-      .cs-status-head>p{text-align:left}
-    }
-    @media (min-width:640px) and (max-width:900px){
-      .cs-hero-cards{grid-template-columns:repeat(3,1fr)}
-      .cs-status-grid{grid-template-columns:repeat(3,1fr)}
-    }
-  </style>
-
-  <script is:inline>
-    (() => {
-      const root = document.querySelector('.cs-page');
-      if (!root) return;
-
-      root.querySelectorAll('.cs-faq-item').forEach(d => {
-        d.addEventListener('toggle', () => {
-          const icon = d.querySelector('summary i');
-          if (icon) icon.className = d.open ? 'fa-solid fa-minus' : 'fa-solid fa-plus';
-        });
-      });
-
-      const MAX_TOTAL = 10 * 1024 * 1024;
-      const MAX_FILES = 10;
-      const ALLOWED_EXT = ['png','jpg','jpeg','gif','webp','heic','heif','pdf','txt','log','csv','json','zip'];
-
-      const filesInput = root.querySelector('#files');
-      const filesError = root.querySelector('#filesError');
-
-      function validateFiles(input) {
-        if (!input || !input.files) return { ok: true };
-        const files = Array.from(input.files);
-        if (files.length === 0) return { ok: true };
-        if (files.length > MAX_FILES) {
-          return { ok: false, msg: 'Please attach no more than ' + MAX_FILES + ' files.' };
-        }
-        let total = 0;
-        for (const f of files) {
-          const ext = (f.name.split('.').pop() || '').toLowerCase();
-          if (ALLOWED_EXT.indexOf(ext) === -1) {
-            return { ok: false, msg: '"' + f.name + '" is not an allowed file type.' };
-          }
-          total += f.size;
-        }
-        if (total > MAX_TOTAL) {
-          return { ok: false, msg: 'Attachments total ' + (total / 1048576).toFixed(2) + ' MB; the limit is 10 MB.' };
-        }
-        return { ok: true };
-      }
-
-      function showFilesError(msg) {
-        if (!filesError) return;
-        if (msg) {
-          filesError.textContent = msg;
-          filesError.style.display = 'block';
-        } else {
-          filesError.textContent = '';
-          filesError.style.display = 'none';
-        }
-      }
-
-      filesInput?.addEventListener('change', () => {
-        const r = validateFiles(filesInput);
-        showFilesError(r.ok ? '' : r.msg);
-      });
-
-      const ticketForm = root.querySelector('#csTicketForm');
-      ticketForm?.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        if (this.website && this.website.value) return;
-
-        const v = validateFiles(filesInput);
-        if (!v.ok) {
-          showFilesError(v.msg);
-          filesInput?.focus();
-          return;
-        }
-        showFilesError('');
-
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn ? submitBtn.innerHTML : '';
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
-        }
-        try {
-          const data = new FormData(this);
-          data.append('_page', window.location.pathname);
-          const res = await fetch('/api/lead', { method: 'POST', body: data });
-          if (!res.ok) {
-            let msg = '';
-            try {
-              const body = await res.json();
-              if (body && body.error) msg = body.error;
-            } catch {}
-            throw new Error(msg || 'Network');
-          }
-          window.location.href = '/thank-you';
-        } catch (err) {
-          const detail = err && err.message && err.message !== 'Network' ? '\n\n' + err.message : '';
-          alert("Sorry, something went wrong submitting your ticket." + detail + "\n\nPlease email info@ppdtechnology.com and we'll help right away.");
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-          }
-        }
-      });
-    })();
-  </script>
-</BaseLayout>
+  }
+</style>

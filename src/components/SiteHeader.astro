@@ -1,23 +1,16 @@
 ---
-// Global header (v2): the PPD lockup, four quiet links and one action.
+// Global header: the PPD lockup, four quiet links and one action.
 // Transparent over the hero, it tightens into a floating bar once the page
-// scrolls. Self-contained (own tokens + scoped styles) so it renders the same
-// in SiteLayout and in the legacy BaseLayout, which passes `solid` because
-// several older pages open on a light background.
+// scrolls. Self-contained (own tokens + scoped styles).
 import Icon from './Icon.astro';
 import { products, industries, logins, company } from '../data/site';
-
-interface Props {
-  solid?: boolean;
-}
-const { solid = false } = Astro.props;
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isAgents = ['/agents', '/iso', '/isv-solutions', '/refer'].includes(path);
 const isProducts = ['/products', '/forge', '/repair', '/merchant', '/products/ppd-rewards'].includes(path);
 ---
 
-<header class:list={['sh', { 'sh--solid': solid }]} data-site-header>
+<header class="sh" data-site-header>
   <div class="sh__bar">
     <a class="sh__logo" href="/" aria-label="PPD Technology home">
       <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -238,24 +231,6 @@ const isProducts = ['/products', '/forge', '/repair', '/merchant', '/products/pp
     -webkit-backdrop-filter: blur(18px) saturate(160%);
     backdrop-filter: blur(18px) saturate(160%);
     box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.9);
-  }
-
-  /* legacy pages: always a solid bar */
-  .sh--solid {
-    background: #040714;
-    border-bottom: 1px solid var(--sh-line);
-    pointer-events: auto;
-  }
-  .sh--solid.is-stuck .sh__bar {
-    max-width: 1280px;
-    height: 76px;
-    padding: 0 clamp(20px, 4vw, 40px);
-    transform: none;
-    background: none;
-    border-color: transparent;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    box-shadow: none;
   }
 
   .sh__logo {

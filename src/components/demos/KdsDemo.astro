@@ -1,0 +1,219 @@
+---
+// Kitchen display: three orders from three sources move New -> Prep -> Expo
+// -> Ready. Sample tickets follow the ones on the old restaurants page.
+import DemoTicker from './DemoTicker.astro';
+
+const steps = [
+  { title: 'An order comes in.', body: '' },
+  { title: 'It routes to the right station.', body: '' },
+  { title: 'The line sees what is waiting, and for how long.', body: '' },
+  { title: 'Expo calls it ready.', body: '' },
+  { title: 'Bump it and move on.', body: '' },
+];
+const cols = ['New', 'Prep', 'Expo', 'Ready'];
+const tickets = [
+  { id: '1047', src: 'Online', items: ['Smash Burger x2', 'Fries', 'No onions'] },
+  { id: '1048', src: 'Table 12', items: ['Neapolitan 16"', 'Arugula salad'] },
+  { id: '1049', src: 'Counter', items: ['Oat latte 16oz', 'Blueberry muffin'] },
+];
+---
+
+<div class="demo demo--stack kd" data-stepper data-durations="2200,2200,2400,2400,2800" data-rest="2">
+  <div class="demo__stage">
+    <div class="demo__glow"></div>
+    <div class="kd__win" role="img" aria-label="Animated kitchen display: three orders from online, a table and the counter move across the New, Prep, Expo and Ready columns.">
+      <div class="kd__ui" aria-hidden="true">
+        <div class="kd__bar"><b>Kitchen display</b><span><i></i> Line status · live</span></div>
+        <div class="kd__board">
+          {cols.map((c) => <div class="kd__col"><h4>{c}</h4></div>)}
+          {
+            tickets.map((t, i) => (
+              <div class={`kd__tk kd__tk--${i + 1}`}>
+                <header>
+                  <b>#{t.id}</b>
+                  <em>{t.src}</em>
+                </header>
+                <ul>{t.items.map((it) => <li>{it}</li>)}</ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <DemoTicker steps={steps} label="Steps on the kitchen display" />
+</div>
+
+<style>
+  .kd {
+    --accent: #ff6a00;
+    --accent-2: #ffb057;
+    --accent-rgb: 255, 106, 0;
+  }
+  .kd__win {
+    position: relative;
+    z-index: 1;
+    container-type: inline-size;
+    aspect-ratio: 16 / 8.4;
+    border-radius: clamp(10px, 1.6vw, 18px);
+    overflow: hidden;
+    background: #10141c;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+      0 50px 90px -40px rgba(0, 0, 0, 0.9),
+      0 30px 70px -30px rgba(255, 106, 0, 0.4);
+  }
+  .kd__ui {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #f2f4f8;
+    font-family: var(--font-body);
+    font-size: clamp(7px, 1.7cqw, 15px);
+    line-height: 1.3;
+  }
+  .kd__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8em 1.2em;
+    background: #171c26;
+  }
+  .kd__bar span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.86em;
+    color: #9aa6ba;
+  }
+  .kd__bar i {
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background: #3ddc97;
+  }
+  .kd__board {
+    --gap: 0.8em;
+    position: relative;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    padding: 1em;
+  }
+  .kd__col {
+    border-radius: 0.9em;
+    background: #171c26;
+    padding: 0.7em 0.8em;
+  }
+  .kd__col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.72em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9aa6ba;
+  }
+  .kd__col:last-child {
+    background: rgba(61, 220, 151, 0.08);
+  }
+  .kd__tk {
+    --c: 0;
+    position: absolute;
+    left: calc(1em + 0.6em);
+    width: calc((100% - 2em - var(--gap) * 3) / 4 - 1.2em);
+    transform: translateX(calc(var(--c) * (100% + 1.2em + var(--gap))));
+    padding: 0.65em 0.8em;
+    border-radius: 0.7em;
+    background: #fff;
+    color: #10141c;
+    border-left: 0.3em solid #ff6a00;
+    box-shadow: 0 0.6em 1.4em -0.6em rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition:
+      transform 0.9s var(--ease-out),
+      opacity 0.4s,
+      border-color 0.5s;
+  }
+  .kd__tk header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3em;
+  }
+  .kd__tk b {
+    font-family: var(--font-mono);
+  }
+  .kd__tk em {
+    font-style: normal;
+    font-size: 0.72em;
+    font-weight: 700;
+    padding: 0.1em 0.6em;
+    border-radius: 99em;
+    background: #ffe9d6;
+    color: #a34300;
+  }
+  .kd__tk li {
+    font-size: 0.82em;
+    color: #3a4353;
+  }
+  .kd__tk--1 {
+    top: 21%;
+  }
+  .kd__tk--2 {
+    top: 47%;
+  }
+  .kd__tk--3 {
+    top: 71%;
+  }
+
+  /* where each ticket sits at each step */
+  .kd[data-step='0'] .kd__tk--1 {
+    opacity: 1;
+  }
+  .kd[data-step='1'] .kd__tk--1 {
+    --c: 1;
+    opacity: 1;
+  }
+  .kd[data-step='1'] .kd__tk--2 {
+    opacity: 1;
+  }
+  .kd[data-step='2'] .kd__tk--1 {
+    --c: 2;
+    opacity: 1;
+  }
+  .kd[data-step='2'] .kd__tk--2 {
+    --c: 1;
+    opacity: 1;
+  }
+  .kd[data-step='2'] .kd__tk--3 {
+    opacity: 1;
+  }
+  .kd[data-step='3'] .kd__tk--1 {
+    --c: 3;
+    opacity: 1;
+    border-color: #1fb97a;
+  }
+  .kd[data-step='3'] .kd__tk--2 {
+    --c: 2;
+    opacity: 1;
+  }
+  .kd[data-step='3'] .kd__tk--3 {
+    --c: 1;
+    opacity: 1;
+  }
+  .kd[data-step='4'] .kd__tk--1 {
+    --c: 3;
+    opacity: 0;
+    transform: translateX(calc(3 * (100% + 1.2em + var(--gap)))) translateY(-1.5em);
+  }
+  .kd[data-step='4'] .kd__tk--2 {
+    --c: 3;
+    opacity: 1;
+    border-color: #1fb97a;
+  }
+  .kd[data-step='4'] .kd__tk--3 {
+    --c: 2;
+    opacity: 1;
+  }
+</style>

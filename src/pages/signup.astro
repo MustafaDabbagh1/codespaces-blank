@@ -1,10 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+// The application form (fields, validation, submission) is unchanged from the
+// previous site; only the surrounding layout, fonts and colours were updated.
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<BaseLayout title="PPD Technology — Merchant Processing Application" description="Apply for merchant payment processing in minutes. Secure, streamlined onboarding for POS solutions, online payments, and next-day funding options.">
+<SiteLayout title="PPD Technology — Merchant Processing Application" description="Apply for merchant payment processing in minutes. Secure, streamlined onboarding for POS solutions, online payments, and next-day funding options.">
   <Fragment slot="head">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </Fragment>
 
   <section class="su-page">
@@ -12,9 +14,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="su-hero">
       <div class="su-hero__inner">
         <div class="su-hero__text">
-          <span class="su-badge"><i class="fa-solid fa-shield-halved"></i> Secure Merchant Application</span>
+          <span class="su-badge"><i class="fa-solid fa-file-signature"></i> Merchant Application</span>
           <h1>Apply for Merchant Processing<br/>with <span class="su-grad">PPD Technology</span></h1>
-          <p class="su-hero__sub">Secure, streamlined business onboarding for payment processing, POS solutions, and next-day funding options. Complete your application in minutes.</p>
+          <p class="su-hero__sub">Streamlined business onboarding for payment processing, POS solutions, and next-day funding options. Complete your application in minutes.</p>
           <div class="su-hero__ctas">
             <a href="#application" class="su-btn su-btn--primary"><i class="fa-solid fa-rocket"></i> Start Your Application</a>
             <a href="#faq" class="su-btn su-btn--outline"><i class="fa-solid fa-circle-question"></i> Questions Before Applying?</a>
@@ -51,8 +53,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div class="su-journey__dot"><i class="fa-solid fa-lock"></i></div>
               <div class="su-journey__card su-journey__card--glow">
                 <div class="su-journey__icon"><i class="fa-solid fa-building-columns"></i></div>
-                <strong>Bank Secured</strong>
-                <small>256-bit encrypted</small>
+                <strong>Bank Details Added</strong>
+                <small>Sent over HTTPS</small>
               </div>
             </div>
             <div class="su-journey__node" style="--delay:.6s">
@@ -79,8 +81,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <section class="su-trust">
       <div class="su-trust__inner">
-        <div class="su-trust__item"><i class="fa-solid fa-lock"></i><span>Encrypted Application</span></div>
-        <div class="su-trust__item"><i class="fa-solid fa-building-columns"></i><span>Secure Bank Submission</span></div>
+        <div class="su-trust__item"><i class="fa-solid fa-lock"></i><span>Submitted over HTTPS</span></div>
+        <div class="su-trust__item"><i class="fa-solid fa-building-columns"></i><span>Bank Details for Deposits</span></div>
         <div class="su-trust__item"><i class="fa-solid fa-clock"></i><span>Fast Review Process</span></div>
         <div class="su-trust__item"><i class="fa-solid fa-headset"></i><span>U.S.-Based Support</span></div>
         <div class="su-trust__item"><i class="fa-solid fa-cash-register"></i><span>POS & Terminal Options</span></div>
@@ -106,8 +108,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="su-process__arrow"><i class="fa-solid fa-arrow-right"></i></div>
           <div class="su-process__card">
             <div class="su-process__num">3</div>
-            <h4>Submit Securely for Review</h4>
-            <p>Your encrypted application is reviewed by our team. A specialist follows up within 1-2 business days.</p>
+            <h4>Submit for Review</h4>
+            <p>Your application is reviewed by our team. A specialist follows up within 1-2 business days.</p>
           </div>
         </div>
       </div>
@@ -117,7 +119,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="su-form-section__inner">
         <div class="su-form-section__head">
           <h2>Merchant Processing Application</h2>
-          <p>Complete the form below to apply. All information is securely encrypted and used solely for application review and account setup.</p>
+          <p>Complete the form below to apply. Your information is sent over an encrypted connection and used solely for application review and account setup.</p>
         </div>
 
         <form id="appForm" class="su-form" action="/api/lead" method="POST" novalidate>
@@ -254,7 +256,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <i class="fa-solid fa-user-tie"></i>
               <div>
                 <h3>Owner / Principal Information</h3>
-                <p>Required for underwriting review. Information is encrypted and handled securely.</p>
+                <p>Required for underwriting review, and used only for that.</p>
               </div>
             </div>
             <div class="su-grid-2">
@@ -338,10 +340,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <i class="fa-solid fa-building-columns"></i>
               <div>
                 <h3>Bank &amp; Funding Information</h3>
-                <p>Your bank details are encrypted and used exclusively for deposit setup.</p>
+                <p>Your bank details are used exclusively for deposit setup.</p>
               </div>
             </div>
-            <div class="su-secure-banner"><i class="fa-solid fa-shield-halved"></i><span>This section is protected with 256-bit SSL encryption. Your information is transmitted securely.</span></div>
+            <div class="su-secure-banner"><i class="fa-solid fa-shield-halved"></i><span>This page is served over HTTPS, so your information is encrypted in transit.</span></div>
             <div class="su-grid-2">
               <div class="su-field"><label for="bank_name">Bank Name <span class="su-req">*</span></label><input required id="bank_name" name="bank_name" placeholder="e.g., Chase, Wells Fargo, Bank of America" /></div>
               <div class="su-field"><label for="account_name">Name on Bank Account <span class="su-req">*</span></label><input required id="account_name" name="bank_account_name" placeholder="As it appears on the account" /></div>
@@ -388,7 +390,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h3>Application Submitted Successfully</h3>
           <p>Thank you for applying. Our team will review your application and a specialist will reach out within 1-2 business days.</p>
           <div class="su-success__steps">
-            <div class="su-success__step"><span class="su-success__num">1</span><div><strong>Application Received</strong><small>Your data has been securely transmitted</small></div></div>
+            <div class="su-success__step"><span class="su-success__num">1</span><div><strong>Application Received</strong><small>Your application was sent to our team</small></div></div>
             <div class="su-success__step"><span class="su-success__num">2</span><div><strong>Underwriting Review</strong><small>Our team reviews your business profile</small></div></div>
             <div class="su-success__step"><span class="su-success__num">3</span><div><strong>Specialist Contact</strong><small>A dedicated rep follows up with next steps</small></div></div>
           </div>
@@ -404,7 +406,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="su-why__inner">
         <h2>Why Businesses Apply with PPD Technology</h2>
         <div class="su-why__grid">
-          <div class="su-why__card"><i class="fa-solid fa-shield-halved"></i><h4>Secure Application</h4><p>Bank-grade encryption protects every field from submission to underwriting review.</p></div>
+          <div class="su-why__card"><i class="fa-solid fa-shield-halved"></i><h4>Encrypted in Transit</h4><p>The application is submitted over an encrypted HTTPS connection.</p></div>
           <div class="su-why__card"><i class="fa-solid fa-sliders"></i><h4>Tailored Solutions</h4><p>We match your business with the right POS, terminal, or gateway from day one.</p></div>
           <div class="su-why__card"><i class="fa-solid fa-bolt"></i><h4>Fast Underwriting</h4><p>Most applications are reviewed and approved within 24-48 hours.</p></div>
           <div class="su-why__card"><i class="fa-solid fa-money-bill-transfer"></i><h4>Next-Day Funding</h4><p>Eligible merchants receive deposits as early as the next business day.</p></div>
@@ -419,7 +421,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Frequently Asked Questions</h2>
         <div class="su-faq__list">
           <details class="su-faq__item"><summary>How long does the application take?</summary><p>Most applicants complete the form in 5-10 minutes. Have your EIN, bank details, and owner information ready for the fastest experience.</p></details>
-          <details class="su-faq__item"><summary>Is my information secure?</summary><p>Absolutely. All data is encrypted with 256-bit SSL and transmitted securely. We never store sensitive credentials beyond what is required for account setup.</p></details>
+          <details class="su-faq__item"><summary>Is my information secure?</summary><p>The application is submitted over an encrypted HTTPS connection, and your information is used only for application review and account setup.</p></details>
           <details class="su-faq__item"><summary>What happens after I submit?</summary><p>Our underwriting team reviews your application, typically within 24-48 hours. A dedicated specialist will contact you with approval details and next steps.</p></details>
           <details class="su-faq__item"><summary>Can I change my product selection later?</summary><p>Yes. Your specialist can help you adjust your equipment or solution during the setup process after approval.</p></details>
           <details class="su-faq__item"><summary>Do I need a business bank account?</summary><p>A business checking account is required for deposit setup. If you only have a personal account, contact us to discuss options.</p></details>
@@ -435,8 +437,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <style>
-    :root{--su-navy:#060E21;--su-navy2:#0C1A38;--su-blue:#1549FF;--su-blue-mid:#2D60FF;--su-cyan:#00CFFF;--su-green:#00E5A0;--su-surface:#F5F8FF;--su-radius:12px;--su-font:'Inter',system-ui,sans-serif}
+    :root{--su-navy:#040714;--su-navy2:#080d1f;--su-blue:#1549FF;--su-blue-mid:#2D60FF;--su-cyan:#00CFFF;--su-green:#00E5A0;--su-surface:#F5F8FF;--su-radius:12px;--su-font:'Geist Variable','Geist',system-ui,sans-serif}
     .su-page{font-family:var(--su-font);color:#fff;background:var(--su-navy)}
+    .su-page h1,.su-page h2,.su-page h3,.su-page h4{font-family:'Bricolage Grotesque Variable','Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.03em}
     .su-page *,.su-page *::before,.su-page *::after{box-sizing:border-box}
     .su-grad{background:linear-gradient(135deg,var(--su-cyan),var(--su-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .su-badge{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:6px 16px;border-radius:99px;background:rgba(0,207,255,.08);color:var(--su-cyan);border:1px solid rgba(0,207,255,.2)}
@@ -454,7 +457,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .su-btn--submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,160,.35)}
     .su-btn--full{width:100%;justify-content:center}
 
-    .su-hero{padding:80px 24px 60px;background:linear-gradient(170deg,var(--su-navy) 0%,var(--su-navy2) 100%);overflow:hidden;position:relative}
+    .su-hero{padding:calc(var(--header-h) + 64px) 24px 60px;background:linear-gradient(170deg,var(--su-navy) 0%,var(--su-navy2) 100%);overflow:hidden;position:relative}
     .su-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,207,255,.06) 0%,transparent 70%);pointer-events:none}
     .su-hero__inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
     .su-hero__text h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;margin:16px 0 20px}
@@ -834,4 +837,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     });
   </script>
 
-</BaseLayout>
+</SiteLayout>

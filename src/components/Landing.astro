@@ -1,0 +1,581 @@
+---
+// Shared template for industry pages and for the hardware / partner software
+// pages. Deliberately sparse: a typographic hero, one lit statement, a plain
+// list of what you get, an optional demo, optional pricing and questions, and
+// one form. Slots: "visual" (hero right side), "demo", "extra", "fields"
+// (extra inputs for the standard form) and "form" (replace the form entirely).
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from './Icon.astro';
+import LeadForm from './LeadForm.astro';
+import { company } from '../data/site';
+
+interface Link {
+  label: string;
+  href: string;
+}
+interface Props {
+  title: string;
+  description: string;
+  // per-page accent as "r, g, b" plus two hex values (main, soft)
+  accent?: { rgb: string; main: string; soft: string };
+  eyebrow: string;
+  headline: string[]; // one entry per line; the last line takes the gradient
+  lede: string;
+  cta?: Link[];
+  chips?: string[];
+  statement?: string;
+  featuresHead?: { eyebrow: string; title: string };
+  features?: { title: string; body: string }[];
+  gear?: { eyebrow: string; title: string; items: { name: string; note: string; href?: string; img?: string }[] };
+  pricing?: { label: string; price: string; unit?: string; includes: string[]; note?: string };
+  faqs?: { q: string; a: string }[];
+  form?: { tag: string; subject: string; title: string; lede: string; cta?: string; id?: string };
+}
+const { title, description, accent, eyebrow, headline, lede, cta = [], chips = [], statement, featuresHead, features = [], gear, pricing, faqs = [], form } = Astro.props;
+
+const style = accent ? `--accent:${accent.main};--accent-2:${accent.soft};--accent-rgb:${accent.rgb}` : undefined;
+const hasVisual = Astro.slots.has('visual');
+---
+
+<SiteLayout title={title} description={description}>
+  <div class="lp" style={style}>
+    <!-- hero -->
+    <section class:list={['lp-hero', { 'lp-hero--visual': hasVisual }]}>
+      <div class="lp-hero__glow" aria-hidden="true"></div>
+      <div class="wrap lp-hero__inner">
+        <div class="lp-hero__copy">
+          <p class="eyebrow fade-up">{eyebrow}</p>
+          <h1 class="h-hero">
+            {
+              headline.map((line, i) => (
+                <span class="rise" style={`--i:${i + 1}`}>
+                  <span class:list={{ accentline: i === headline.length - 1 && headline.length > 1 }}>{line}</span>
+                </span>
+              ))
+            }
+          </h1>
+          <p class="lede fade-up" style={`--i:${headline.length + 2}`}>{lede}</p>
+          {
+            cta.length > 0 && (
+              <div class="btn-row fade-up" style={`--i:${headline.length + 3}`}>
+                {cta.map((c, i) => (
+                  <a class:list={['btn', i === 0 ? 'btn--accent' : 'btn--ghost']} href={c.href}>
+                    {c.label} {i === 0 && <Icon name="arrow-right" />}
+                  </a>
+                ))}
+              </div>
+            )
+          }
+        </div>
+        {
+          hasVisual && (
+            <div class="lp-hero__visual fade-up" style="--i:3">
+              <slot name="visual" />
+            </div>
+          )
+        }
+      </div>
+      {
+        chips.length > 0 && (
+          <div class="wrap">
+            <ul class="lp-chips fade-up" style={`--i:${headline.length + 4}`}>
+              {chips.map((c) => <li>{c}</li>)}
+            </ul>
+          </div>
+        )
+      }
+    </section>
+
+    {
+      statement && (
+        <section class="section lp-statement">
+          <div class="wrap">
+            <p data-lightup>{statement}</p>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      features.length > 0 && (
+        <section class="section section--raised">
+          <div class="wrap">
+            {featuresHead && (
+              <div class="section-head">
+                <p class="eyebrow reveal">{featuresHead.eyebrow}</p>
+                <h2 class="h-1 reveal" style="--i:1">{featuresHead.title}</h2>
+              </div>
+            )}
+            <ul class="lp-rows">
+              {features.map((f, i) => (
+                <li class="reveal" style={`--i:${i % 2}`}>
+                  <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{f.title}</h3>
+                  <p>{f.body}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    <slot name="demo" />
+    <slot name="extra" />
+
+    {
+      gear && (
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head">
+              <p class="eyebrow reveal">{gear.eyebrow}</p>
+              <h2 class="h-1 reveal" style="--i:1">{gear.title}</h2>
+            </div>
+            <ul class="lp-gear">
+              {gear.items.map((g, i) => (
+                <li class="reveal" style={`--i:${i % 3}`}>
+                  {g.href ? (
+                    <a href={g.href}>
+                      {g.img && <span class="lp-gear__img"><img src={g.img} alt="" loading="lazy" /></span>}
+                      <b>{g.name}</b>
+                      <em>{g.note}</em>
+                      <span class="link-arrow">Details <Icon name="arrow-right" /></span>
+                    </a>
+                  ) : (
+                    <div>
+                      {g.img && <span class="lp-gear__img"><img src={g.img} alt="" loading="lazy" /></span>}
+                      <b>{g.name}</b>
+                      <em>{g.note}</em>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      (pricing || faqs.length > 0) && (
+        <section class="section section--raised">
+          <div class:list={['wrap', 'lp-pf', { 'lp-pf--single': !(pricing && faqs.length > 0) }]}>
+            {pricing && (
+              <div class="lp-price frame reveal">
+                <p class="eyebrow">{pricing.label}</p>
+                <p class="lp-price__big">
+                  {pricing.price}
+                  {pricing.unit && <span>{pricing.unit}</span>}
+                </p>
+                <ul>
+                  {pricing.includes.map((x) => (
+                    <li>
+                      <Icon name="check" size={17} stroke={2.6} /> {x}
+                    </li>
+                  ))}
+                </ul>
+                {pricing.note && <p class="fine">{pricing.note}</p>}
+              </div>
+            )}
+            {faqs.length > 0 && (
+              <div class="reveal" style="--i:1">
+                <h2 class="h-2 lp-pf__h">Good questions</h2>
+                <div class="lp-faq">
+                  {faqs.map((f, i) => (
+                    <details open={i === 0}>
+                      <summary>
+                        {f.q}
+                        <Icon name="plus" size={20} />
+                      </summary>
+                      <p>{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      form && (
+        <section class="section lp-req" id={form.id ?? 'demo'}>
+          <div class="wrap lp-req__grid">
+            <div class="lp-req__copy">
+              <p class="eyebrow reveal">Next step</p>
+              <h2 class="h-1 reveal" style="--i:1">{form.title}</h2>
+              <p class="lede reveal" style="--i:2">{form.lede}</p>
+              <ul class="lp-req__alt reveal" style="--i:3">
+                <li>
+                  <Icon name="phone" size={16} /> Sales <a href={`tel:${company.salesTel}`}>{company.salesPhone}</a>
+                </li>
+                <li>
+                  <Icon name="mail" size={16} /> <a href={`mailto:${company.email}`}>{company.email}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="lp-req__form reveal" style="--i:1">
+              {Astro.slots.has('form') ? (
+                <slot name="form" />
+              ) : (
+              <LeadForm form={form.tag} subject={form.subject} cta={form.cta ?? 'Request a demo'} note="We reply within one business day.">
+                <div class="field">
+                  <label for={`${form.tag}-name`}>Your name</label>
+                  <input id={`${form.tag}-name`} name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for={`${form.tag}-business`}>Business name</label>
+                  <input id={`${form.tag}-business`} name="business" type="text" autocomplete="organization" required />
+                </div>
+                <div class="field">
+                  <label for={`${form.tag}-email`}>Email</label>
+                  <input id={`${form.tag}-email`} name="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for={`${form.tag}-phone`}>Phone</label>
+                  <input id={`${form.tag}-phone`} name="phone" type="tel" autocomplete="tel" required />
+                </div>
+                <slot name="fields" />
+                <div class="field field--full">
+                  <label for={`${form.tag}-notes`}>
+                    Anything we should know? <span class="opt">optional</span>
+                  </label>
+                  <textarea id={`${form.tag}-notes`} name="notes" rows="3" />
+                </div>
+              </LeadForm>
+              )}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </div>
+</SiteLayout>
+
+<style>
+  .lp-hero {
+    position: relative;
+    padding: var(--hero-top) 0 clamp(56px, 7vw, 96px);
+    overflow: hidden;
+  }
+  .lp-hero__glow {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 820px;
+    background:
+      radial-gradient(55% 60% at 18% 22%, rgba(var(--accent-rgb, 75, 116, 255), 0.3), transparent 70%),
+      radial-gradient(40% 50% at 86% 30%, rgba(21, 73, 255, 0.2), transparent 70%);
+    pointer-events: none;
+  }
+  .lp-hero__inner {
+    position: relative;
+    display: grid;
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+  }
+  .lp-hero--visual .lp-hero__inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+  .lp-hero__copy {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+  }
+  .lp-hero .h-hero {
+    font-size: clamp(2.4rem, 5.8vw, 5rem);
+  }
+  .lp-hero--visual .h-hero {
+    font-size: clamp(2.3rem, 4.8vw, 4.1rem);
+  }
+  .accentline {
+    background: linear-gradient(100deg, #fff 0%, var(--accent-2) 55%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lp-hero .lede {
+    max-width: 54ch;
+  }
+  .lp-hero__visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .lp-hero__visual::before {
+    content: '';
+    position: absolute;
+    inset: 8%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(var(--accent-rgb, 75, 116, 255), 0.42), transparent 70%);
+    filter: blur(30px);
+  }
+  .lp-hero__visual :global(img) {
+    position: relative;
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+  }
+  .lp-chips {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    margin-top: clamp(32px, 4vw, 52px);
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .lp-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lp-chips li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 10px var(--accent-2);
+  }
+
+  .lp-statement p {
+    max-width: 1040px;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.8vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .lp-rows {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+  .lp-rows li {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 8px 32px;
+    align-items: baseline;
+    padding: clamp(20px, 2.6vw, 30px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .lp-rows .mono {
+    font-size: 0.74rem;
+    color: var(--accent-2);
+  }
+  .lp-rows h3 {
+    font-size: clamp(1.3rem, 2.3vw, 1.9rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .lp-rows p {
+    color: var(--muted);
+  }
+
+  .lp-gear {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .lp-gear a,
+  .lp-gear div {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    height: 100%;
+    padding: 20px 22px 22px;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.025);
+    transition:
+      border-color 0.3s,
+      transform 0.45s var(--ease-out);
+  }
+  .lp-gear a:hover {
+    transform: translateY(-4px);
+    border-color: rgba(var(--accent-rgb, 75, 116, 255), 0.7);
+  }
+  .lp-gear__img {
+    display: grid;
+    place-items: center;
+    height: 170px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f5f3ee, #dcd9cf);
+    overflow: hidden;
+  }
+  .lp-gear__img img {
+    max-height: 144px;
+    max-width: 84%;
+    width: auto;
+    object-fit: contain;
+  }
+  .lp-gear b {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+  }
+  .lp-gear em {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .lp-gear .link-arrow {
+    margin-top: 8px;
+    font-size: 0.92rem;
+  }
+
+  .lp-pf {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+  .lp-pf--single {
+    grid-template-columns: minmax(0, 820px);
+  }
+  .lp-price {
+    display: grid;
+    gap: 18px;
+    padding: clamp(26px, 3.6vw, 46px);
+    background: rgba(var(--accent-rgb, 75, 116, 255), 0.08);
+  }
+  .lp-price__big {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+  .lp-price__big span {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+  .lp-price ul {
+    display: grid;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .lp-price li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .lp-price li :global(svg) {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--accent-2);
+  }
+  .lp-pf__h {
+    margin-bottom: 22px;
+  }
+  .lp-faq {
+    border-top: 1px solid var(--line-2);
+  }
+  .lp-faq details {
+    border-bottom: 1px solid var(--line-2);
+  }
+  .lp-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
+  }
+  .lp-faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .lp-faq summary :global(svg) {
+    flex-shrink: 0;
+    color: var(--accent-2);
+    transition: transform 0.35s var(--ease-out);
+  }
+  .lp-faq details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+  .lp-faq p {
+    padding: 0 40px 22px 0;
+    color: var(--muted);
+  }
+
+  .lp-req__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+  .lp-req__copy {
+    display: grid;
+    gap: 20px;
+  }
+  .lp-req__alt {
+    display: grid;
+    gap: 10px;
+    color: var(--muted);
+  }
+  .lp-req__alt li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .lp-req__alt a {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .lp-req__form {
+    padding: clamp(24px, 3.4vw, 44px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: rgba(8, 13, 31, 0.8);
+  }
+  .lp-req__form :global(.opt) {
+    font-weight: 400;
+    color: var(--dim);
+  }
+  .lp-req {
+    scroll-margin-top: 40px;
+  }
+
+  @media (max-width: 980px) {
+    .lp-hero--visual .lp-hero__inner,
+    .lp-pf,
+    .lp-req__grid {
+      grid-template-columns: 1fr;
+    }
+    .lp-hero__visual :global(img) {
+      max-height: 300px;
+    }
+    .lp-gear {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .lp-rows li {
+      grid-template-columns: 1fr;
+    }
+    .lp-gear {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
