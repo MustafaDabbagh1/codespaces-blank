@@ -1,0 +1,350 @@
+---
+// "Taking agents to the next level": four stages an agent's business climbs,
+// with what PPD adds at each one. Stepper-driven; tabs are keyboard operable.
+import Icon from '../Icon.astro';
+
+const levels = [
+  {
+    n: '01',
+    name: 'Rep with a rate sheet',
+    who: 'Where most ISOs leave you',
+    body: 'You sell the same terminals, gateways and processing as every other agent in town. The only lever left is price.',
+    adds: ['Terminals', 'Rate sheet'],
+    icon: 'receipt',
+  },
+  {
+    n: '02',
+    name: 'Agent with a product',
+    who: 'Day one with PPD',
+    body: 'Lead with software merchants actually ask for: Forge POS, PPD Repair, PPD Merchant and PPD Rewards. The hardware you know still comes with you.',
+    adds: ['Forge POS', 'PPD Repair', 'PPD Merchant', 'PPD Rewards'],
+    icon: 'layers',
+  },
+  {
+    n: '03',
+    name: 'Agency with a brand',
+    who: 'Your name starts doing the selling',
+    body: 'Niche websites and landing pages bring merchants to you, a CRM runs your pipeline and onboarding, and your sales assets look like yours.',
+    adds: ['Website and funnels', 'Custom CRM', 'Sales assets'],
+    icon: 'palette',
+  },
+  {
+    n: '04',
+    name: 'Software company in your niche',
+    who: 'The pitch nobody can copy',
+    body: 'Custom branded software built around the vertical you know best. You earn software fees on top of processing, and merchants have a reason to stay.',
+    adds: ['Custom vertical software', 'Software fees + processing'],
+    icon: 'rocket',
+  },
+];
+---
+
+<div class="lu" data-stepper data-durations="3200,3600,3600,4600" data-rest="3">
+  <div class="lu__chart" role="img" aria-label="Animated chart: an agent climbs four levels, from rep with a rate sheet, to agent with a product, to agency with a brand, to software company in a niche, unlocking more tools at each level.">
+    <div class="lu__cols" aria-hidden="true">
+      {
+        levels.map((l, i) => (
+          <div class="lu__col" style={`--h:${28 + i * 22}%`}>
+            <div class="lu__peak">
+              <span class="lu__n">{l.n}</span>
+              <span class="lu__ic"><Icon name={l.icon} size={18} /></span>
+            </div>
+            <div class="lu__bar" data-from={i}>
+              <ul>
+                {l.adds.map((a) => <li>{a}</li>)}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+      <div class="lu__you"><span>You</span></div>
+    </div>
+  </div>
+
+  <div class="lu__tabs" role="tablist" aria-label="Levels">
+    {
+      levels.map((l, i) => (
+        <button type="button" role="tab" data-go={i} id={`lu-tab-${i}`} aria-controls={`lu-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'}>
+          <span class="lu__tab-n">Level {l.n}</span>
+          <span class="lu__tab-t">{l.name}</span>
+          <i aria-hidden="true" />
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="lu__panels">
+    {
+      levels.map((l, i) => (
+        <div class="lu__panel fx-swap" role="tabpanel" id={`lu-panel-${i}`} aria-labelledby={`lu-tab-${i}`} data-from={i} data-to={i}>
+          <p class="lu__who">{l.who}</p>
+          <p class="lu__body">{l.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .lu {
+    display: grid;
+    gap: 0;
+  }
+  .lu__chart {
+    position: relative;
+    height: clamp(300px, 36vw, 440px);
+    padding-top: 56px;
+  }
+  .lu__cols {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    gap: clamp(8px, 1.4vw, 18px);
+    height: 100%;
+  }
+  .lu__col {
+    position: relative;
+    height: var(--h);
+    display: flex;
+    flex-direction: column;
+  }
+  .lu__peak {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 10px;
+    color: var(--dim);
+    transition: color 0.5s;
+  }
+  .lu__n {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+  }
+  .lu__ic {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+  }
+  .lu__bar {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: clamp(10px, 1.4vw, 18px);
+    border-radius: 18px 18px 0 0;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    transition:
+      background 0.7s,
+      border-color 0.7s,
+      box-shadow 0.7s;
+  }
+  .lu__bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .lu__bar li {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: clamp(0.66rem, 1vw, 0.8rem);
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--dim);
+    border: 1px solid var(--line);
+    transition:
+      color 0.5s,
+      background 0.5s,
+      border-color 0.5s;
+  }
+  .lu__bar.on {
+    border-color: rgba(75, 116, 255, 0.55);
+    background: linear-gradient(180deg, rgba(21, 73, 255, 0.55), rgba(21, 73, 255, 0.08));
+    box-shadow: 0 -20px 60px -20px rgba(21, 73, 255, 0.6);
+  }
+  .lu__col:first-child .lu__bar.on {
+    border-color: var(--line-2);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+    box-shadow: none;
+  }
+  .lu__bar.on li {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+  .lu__col:has(.lu__bar.on) .lu__peak {
+    color: var(--blue-3);
+  }
+  .lu__col:has(.lu__bar.on) .lu__ic {
+    opacity: 1;
+  }
+
+  /* the climber */
+  .lu__you {
+    --col: 0;
+    position: absolute;
+    left: 0;
+    bottom: calc(28% + var(--col) * 22%);
+    width: calc((100% - 3 * clamp(8px, 1.4vw, 18px)) / 4);
+    transform: translateX(calc(var(--col) * (100% + clamp(8px, 1.4vw, 18px))));
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    transition:
+      transform 0.9s var(--ease-out),
+      bottom 0.9s var(--spring);
+  }
+  .lu__you span {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 750;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    color: #05070d;
+    background: #fff;
+    box-shadow: 0 10px 30px -6px rgba(255, 255, 255, 0.5);
+  }
+  .lu__you span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 2px;
+    height: 20px;
+    margin-left: -1px;
+    background: linear-gradient(#fff, transparent);
+  }
+  .lu[data-step='1'] .lu__you {
+    --col: 1;
+  }
+  .lu[data-step='2'] .lu__you {
+    --col: 2;
+  }
+  .lu[data-step='3'] .lu__you {
+    --col: 3;
+  }
+
+  .lu__tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(8px, 1.4vw, 18px);
+    border-top: 1px solid var(--line-2);
+  }
+  .lu__tabs button {
+    position: relative;
+    display: grid;
+    gap: 4px;
+    padding: 18px 4px 16px;
+    text-align: left;
+    color: var(--muted);
+    transition: color 0.3s;
+  }
+  .lu__tabs button:hover {
+    color: var(--text);
+  }
+  .lu__tab-n {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .lu__tab-t {
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 1.6vw, 1.3rem);
+    font-weight: 650;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .lu__tabs i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 2px;
+    background: var(--blue-2);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .lu__tabs button.is-active {
+    color: #fff;
+  }
+  .lu__tabs button.is-active .lu__tab-n {
+    color: var(--blue-3);
+  }
+  .lu__tabs button.is-active i {
+    transform: scaleX(1);
+  }
+  :global(.lu.is-playing) .lu__tabs button.is-active i {
+    animation: lu-fill var(--step-dur) linear both;
+  }
+
+  .lu__panels {
+    min-height: 7.5em;
+    padding-top: 10px;
+  }
+  .lu__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+    gap: 10px 40px;
+    align-items: start;
+    animation: lu-in 0.5s var(--ease-out);
+  }
+  .lu__who {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-3);
+    padding-top: 0.5em;
+  }
+  .lu__body {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+
+  @keyframes lu-fill {
+    from {
+      transform: scaleX(0);
+    }
+  }
+  @keyframes lu-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .lu__bar ul {
+      display: none;
+    }
+    .lu__tab-t {
+      font-size: 0.82rem;
+    }
+    .lu__tab-n {
+      font-size: 0.6rem;
+    }
+    .lu__panel {
+      grid-template-columns: 1fr;
+    }
+    .lu__panels {
+      min-height: 13em;
+    }
+    .lu__you span {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+  }
+</style>

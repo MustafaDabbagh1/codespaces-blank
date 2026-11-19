@@ -1,0 +1,129 @@
+---
+// Lead form wrapper. Posts to the existing /api/lead endpoint (Resend email),
+// keeps the honeypot + optional Turnstile contract, then goes to /thank-you.
+// Pass the fields as children; mark required inputs with `required`.
+interface Props {
+  form: string; // _form tag used in the notification email
+  subject: string; // _subject for the notification email
+  cta?: string;
+  note?: string;
+  id?: string;
+}
+const { form, subject, cta = 'Send', note, id = `lf-${form}` } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<form class="lf" id={id} action="/api/lead" method="POST" data-lead-form novalidate>
+  <input type="hidden" name="_form" value={form} />
+  <input type="hidden" name="_subject" value={subject} />
+  <div class="lf__hp" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  <div class="lf__grid">
+    <slot />
+  </div>
+  {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="flexible" />}
+  <p class="lf__error" role="alert" hidden></p>
+  <div class="lf__foot">
+    <button class="btn btn--primary" type="submit">
+      <span>{cta}</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+    </button>
+    {note && <p class="fine">{note}</p>}
+  </div>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
+    const error = form.querySelector<HTMLElement>('.lf__error');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const label = button?.querySelector('span');
+    const original = label?.textContent || 'Send';
+
+    const fail = (msg: string) => {
+      if (error) {
+        error.textContent = msg;
+        error.hidden = false;
+      }
+      if (button) button.disabled = false;
+      if (label) label.textContent = original;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (error) error.hidden = true;
+
+      let firstBad: HTMLElement | null = null;
+      form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]').forEach((el) => {
+        const ok = el.checkValidity();
+        el.setAttribute('aria-invalid', String(!ok));
+        if (!ok && !firstBad) firstBad = el;
+      });
+      if (firstBad) {
+        (firstBad as HTMLElement).focus();
+        fail('Please fill in the highlighted fields.');
+        return;
+      }
+
+      if (button) button.disabled = true;
+      if (label) label.textContent = 'Sending…';
+      const data = new FormData(form);
+      data.append('_page', location.pathname);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        if (!res.ok) throw new Error(String(res.status));
+        location.href = '/thank-you';
+      } catch {
+        fail("Sorry, that didn't go through. Please try again, or email info@ppdtechnology.com and we'll help right away.");
+      }
+    });
+  });
+</script>
+
+<style>
+  .lf {
+    display: grid;
+    gap: 18px;
+  }
+  .lf__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .lf__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .lf__grid :global(.field--full) {
+    grid-column: 1 / -1;
+  }
+  .lf__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px;
+  }
+  .lf__error {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    color: #ffb4b4;
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.35);
+  }
+  :global(.section--paper) .lf__error {
+    color: #b42318;
+  }
+  .lf button[disabled] {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  @media (max-width: 620px) {
+    .lf__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

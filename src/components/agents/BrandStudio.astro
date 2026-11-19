@@ -1,0 +1,575 @@
+---
+// "Your name on it": visitors type their agency name, pick a niche and a
+// colour, and watch it land on the software, the website and the CRM.
+import Icon from '../Icon.astro';
+
+const niches = [
+  {
+    key: 'repair',
+    label: 'Repair shops',
+    plural: 'repair shops',
+    modules: ['Repair tickets', 'Parts inventory', 'Deposits', 'Pickup texts'],
+    merchants: ['Riverside Repair Co.', 'Downtown Devices', 'FixIt Mobile'],
+  },
+  {
+    key: 'restaurants',
+    label: 'Restaurants',
+    plural: 'restaurants',
+    modules: ['Online ordering', 'Pay at the table', 'Kitchen display', 'Tips'],
+    merchants: ['Harbor Grill', 'Midtown Tacos', 'Bella Trattoria'],
+  },
+  {
+    key: 'retail',
+    label: 'Retail',
+    plural: 'retail stores',
+    modules: ['Checkout', 'Inventory', 'Dual pricing', 'Customer rewards'],
+    merchants: ['Main Street Boutique', 'Urban Market', 'Corner Goods'],
+  },
+  {
+    key: 'contractors',
+    label: 'Contractors',
+    plural: 'contractors',
+    modules: ['Estimates', 'Deposits', 'Progress invoices', 'ACH payments'],
+    merchants: ['Apex HVAC', 'Prime Plumbing', 'Summit Builders'],
+  },
+  {
+    key: 'medspa',
+    label: 'Med spas',
+    plural: 'med spas',
+    modules: ['Booking', 'Memberships', 'Packages', 'Card on file'],
+    merchants: ['Glow Aesthetics', 'Luxe Skin Studio', 'Lumiere Spa'],
+  },
+];
+const colors = ['#1549ff', '#f47b20', '#0e9c68', '#7c4dff', '#e11d74', '#0f172a'];
+const first = niches[0];
+const stages = ['Proposal sent', 'Onboarding', 'Live'];
+---
+
+<div class="bs" data-brand-studio style={`--brand:${colors[0]}`}>
+  <div class="bs__controls">
+    <div class="bs__field">
+      <label for="bs-name">Your agency’s name</label>
+      <input id="bs-name" type="text" value="Summit Payments" maxlength="26" autocomplete="off" spellcheck="false" data-bs-name />
+    </div>
+
+    <fieldset class="bs__field">
+      <legend>The niche you win in</legend>
+      <div class="bs__chips">
+        {
+          niches.map((n, i) => (
+            <label>
+              <input type="radio" name="bs-niche" value={n.key} checked={i === 0} />
+              <span>{n.label}</span>
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <fieldset class="bs__field">
+      <legend>Your colour</legend>
+      <div class="bs__swatches">
+        {
+          colors.map((c, i) => (
+            <label style={`--c:${c}`}>
+              <input type="radio" name="bs-color" value={c} checked={i === 0} aria-label={`Brand colour ${i + 1}`} />
+              <span />
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <p class="fine">
+      An illustration with sample data. What gets built, and how it is branded or co-branded, is scoped with you on a strategy call.
+    </p>
+  </div>
+
+  <div class="bs__preview" aria-live="off">
+    <!-- software -->
+    <figure class="bs__app">
+      <figcaption><Icon name="layers" size={14} /> Software your merchants log in to</figcaption>
+      <div class="bs__win">
+        <div class="bs__app-bar">
+          <span class="bs__logo" data-bs-initials>SP</span>
+          <b data-bs-text>Summit Payments</b>
+          <em data-bs-niche-label>{first.label}</em>
+        </div>
+        <div class="bs__app-body">
+          <ul class="bs__mods" data-bs-modules>
+            {first.modules.map((m, i) => <li class:list={{ 'is-on': i === 0 }}>{m}</li>)}
+          </ul>
+          <div class="bs__canvas">
+            <div class="bs__stat"><small>Today</small><b>$4,287</b></div>
+            <div class="bs__stat"><small>Open</small><b>23</b></div>
+            <div class="bs__lines"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- website -->
+    <figure class="bs__web">
+      <figcaption><Icon name="globe" size={14} /> A website that brings them in</figcaption>
+      <div class="bs__win">
+        <div class="bs__url"><i></i><i></i><i></i><span><span data-bs-slug>summitpayments</span>.com</span></div>
+        <div class="bs__hero">
+          <span class="bs__logo bs__logo--sm" data-bs-initials>SP</span>
+          <strong>Payments and software built for <span data-bs-niche-plural>{first.plural}</span>.</strong>
+          <span class="bs__cta">Book a demo</span>
+        </div>
+      </div>
+    </figure>
+
+    <!-- crm -->
+    <figure class="bs__crm">
+      <figcaption><Icon name="users" size={14} /> A CRM for your book</figcaption>
+      <div class="bs__win">
+        <div class="bs__crm-head"><b><span data-bs-text>Summit Payments</span> · Pipeline</b></div>
+        <ul data-bs-merchants>
+          {
+            first.merchants.map((m, i) => (
+              <li>
+                <span>{m}</span>
+                <em class={`s${i}`}>{stages[i]}</em>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </figure>
+  </div>
+
+  <script type="application/json" data-bs-data set:html={JSON.stringify({ niches, stages })} />
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-brand-studio]').forEach((root) => {
+    const data = JSON.parse(root.querySelector('[data-bs-data]')?.textContent || '{}');
+    const input = root.querySelector<HTMLInputElement>('[data-bs-name]');
+    const fallback = 'Your Agency';
+
+    const setName = () => {
+      const name = (input?.value || '').trim() || fallback;
+      const words = name.split(/\s+/).filter(Boolean);
+      const initials = (words.length > 1 ? words[0][0] + words[1][0] : name.slice(0, 2)).toUpperCase();
+      const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '') || 'youragency';
+      root.querySelectorAll('[data-bs-text]').forEach((el) => (el.textContent = name));
+      root.querySelectorAll('[data-bs-initials]').forEach((el) => (el.textContent = initials));
+      root.querySelectorAll('[data-bs-slug]').forEach((el) => (el.textContent = slug.slice(0, 22)));
+    };
+
+    const setNiche = (key: string) => {
+      const n = data.niches.find((x: { key: string }) => x.key === key);
+      if (!n) return;
+      root.querySelectorAll('[data-bs-niche-label]').forEach((el) => (el.textContent = n.label));
+      root.querySelectorAll('[data-bs-niche-plural]').forEach((el) => (el.textContent = n.plural));
+      const mods = root.querySelector('[data-bs-modules]');
+      if (mods) {
+        mods.replaceChildren(
+          ...n.modules.map((m: string, i: number) => {
+            const li = document.createElement('li');
+            li.textContent = m;
+            if (i === 0) li.className = 'is-on';
+            return li;
+          }),
+        );
+      }
+      const list = root.querySelector('[data-bs-merchants]');
+      if (list) {
+        list.replaceChildren(
+          ...n.merchants.map((m: string, i: number) => {
+            const li = document.createElement('li');
+            const name = document.createElement('span');
+            name.textContent = m;
+            const stage = document.createElement('em');
+            stage.className = `s${i}`;
+            stage.textContent = data.stages[i];
+            li.append(name, stage);
+            return li;
+          }),
+        );
+      }
+      root.classList.remove('is-swapping');
+      void root.offsetWidth;
+      root.classList.add('is-swapping');
+    };
+
+    input?.addEventListener('input', setName);
+    root.querySelectorAll<HTMLInputElement>('input[name="bs-niche"]').forEach((r) =>
+      r.addEventListener('change', () => r.checked && setNiche(r.value)),
+    );
+    root.querySelectorAll<HTMLInputElement>('input[name="bs-color"]').forEach((r) =>
+      r.addEventListener('change', () => r.checked && root.style.setProperty('--brand', r.value)),
+    );
+  });
+</script>
+
+<style>
+  .bs {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.5fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+  }
+  .bs__controls {
+    display: grid;
+    gap: 24px;
+  }
+  .bs__field {
+    display: grid;
+    gap: 10px;
+    border: 0;
+    min-width: 0;
+  }
+  .bs__field > label,
+  .bs__field legend {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bs__field legend {
+    margin-bottom: 10px;
+  }
+  .bs__field input[type='text'] {
+    width: 100%;
+    padding: 6px 0 12px;
+    border: 0;
+    border-bottom: 2px solid var(--paper-text);
+    background: none;
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    border-radius: 0;
+  }
+  .bs__field input[type='text']:focus {
+    outline: none;
+    border-bottom-color: var(--brand);
+  }
+  .bs__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .bs__chips input,
+  .bs__swatches input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .bs__chips span {
+    display: block;
+    padding: 9px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+  }
+  .bs__chips input:checked + span {
+    background: var(--paper-text);
+    border-color: var(--paper-text);
+    color: #fff;
+  }
+  .bs__chips input:focus-visible + span,
+  .bs__swatches input:focus-visible + span {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+  }
+  .bs__swatches {
+    display: flex;
+    gap: 10px;
+  }
+  .bs__swatches span {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--c);
+    cursor: pointer;
+    box-shadow: 0 0 0 0 var(--c);
+    transition:
+      box-shadow 0.25s,
+      transform 0.25s var(--spring);
+  }
+  .bs__swatches input:checked + span {
+    transform: scale(0.82);
+    box-shadow:
+      0 0 0 3px var(--paper),
+      0 0 0 5px var(--c);
+  }
+
+  .bs__preview {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 18px;
+    container-type: inline-size;
+  }
+  .bs figure {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    min-width: 0;
+  }
+  .bs figcaption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--paper-muted);
+  }
+  .bs__app {
+    grid-row: span 2;
+  }
+  .bs__win {
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(10, 14, 24, 0.12);
+    box-shadow: 0 30px 60px -34px rgba(10, 14, 24, 0.5);
+    font-size: clamp(10px, 1.55cqw, 14px);
+    color: #0a0e18;
+  }
+  .bs__logo {
+    display: grid;
+    place-items: center;
+    width: 2.4em;
+    height: 2.4em;
+    flex-shrink: 0;
+    border-radius: 0.7em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #fff;
+    background: var(--brand);
+    transition: background 0.4s;
+  }
+  .bs__logo--sm {
+    width: 2em;
+    height: 2em;
+    font-size: 0.9em;
+  }
+  .bs__app-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    padding: 0.9em 1.1em;
+    color: #fff;
+    background: color-mix(in srgb, var(--brand) 88%, #000);
+    transition: background 0.4s;
+  }
+  .bs__app-bar .bs__logo {
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .bs__app-bar b {
+    font-family: var(--font-display);
+    font-size: 1.2em;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bs__app-bar em {
+    margin-left: auto;
+    padding: 0.25em 0.8em;
+    border-radius: 99em;
+    font-style: normal;
+    font-size: 0.78em;
+    font-weight: 600;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .bs__app-body {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 1em;
+    padding: 1.1em;
+    min-height: 17em;
+  }
+  .bs__mods {
+    display: grid;
+    gap: 0.4em;
+    align-content: start;
+  }
+  .bs__mods :global(li) {
+    padding: 0.6em 0.8em;
+    border-radius: 0.6em;
+    font-weight: 600;
+    color: #4d566b;
+    background: #f1f3f8;
+  }
+  .bs__mods :global(li.is-on) {
+    color: #fff;
+    background: var(--brand);
+    transition: background 0.4s;
+  }
+  .bs__canvas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6em;
+    align-content: start;
+  }
+  .bs__stat {
+    padding: 0.7em;
+    border-radius: 0.7em;
+    border: 1px solid #e6e9f0;
+  }
+  .bs__stat small {
+    display: block;
+    font-size: 0.74em;
+    color: #7a8296;
+  }
+  .bs__stat b {
+    font-size: 1.35em;
+    letter-spacing: -0.02em;
+  }
+  .bs__lines {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0.5em;
+    padding: 0.8em;
+    border-radius: 0.7em;
+    border: 1px solid #e6e9f0;
+  }
+  .bs__lines i {
+    height: 0.6em;
+    border-radius: 0.3em;
+    background: #e6e9f0;
+  }
+  .bs__lines i:nth-child(1) {
+    width: 85%;
+    background: color-mix(in srgb, var(--brand) 60%, #fff);
+  }
+  .bs__lines i:nth-child(3) {
+    width: 60%;
+  }
+  .bs__lines i:nth-child(4) {
+    width: 75%;
+  }
+
+  .bs__url {
+    display: flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.6em 0.8em;
+    background: #f1f3f8;
+    font-size: 0.82em;
+    color: #4d566b;
+  }
+  .bs__url i {
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background: #cfd4df;
+  }
+  .bs__url > span {
+    margin-left: 0.5em;
+    padding: 0.2em 0.8em;
+    border-radius: 99em;
+    background: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bs__hero {
+    display: grid;
+    gap: 0.7em;
+    justify-items: start;
+    padding: 1.1em;
+  }
+  .bs__hero strong {
+    font-family: var(--font-display);
+    font-size: 1.3em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+  .bs__cta {
+    padding: 0.5em 1.1em;
+    border-radius: 99em;
+    font-size: 0.86em;
+    font-weight: 700;
+    color: #fff;
+    background: var(--brand);
+    transition: background 0.4s;
+  }
+  .bs__crm-head {
+    padding: 0.8em 1em 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bs__crm ul {
+    padding: 0 1em 0.8em;
+  }
+  .bs__crm :global(li) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8em;
+    padding: 0.5em 0;
+    border-top: 1px solid #edf0f5;
+    font-size: 0.9em;
+  }
+  .bs__crm :global(li span) {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bs__crm :global(li em) {
+    flex-shrink: 0;
+    padding: 0.15em 0.7em;
+    border-radius: 99em;
+    font-style: normal;
+    font-size: 0.82em;
+    font-weight: 650;
+    background: #eef1f6;
+    color: #4d566b;
+  }
+  .bs__crm :global(li em.s2) {
+    background: #d8f5e8;
+    color: #0b6b47;
+  }
+  .bs__crm :global(li em.s1) {
+    background: color-mix(in srgb, var(--brand) 14%, #fff);
+    color: var(--brand);
+  }
+
+  .bs.is-swapping .bs__mods,
+  .bs.is-swapping .bs__crm ul,
+  .bs.is-swapping .bs__hero strong {
+    animation: bs-swap 0.5s var(--ease-out);
+  }
+  @keyframes bs-swap {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  @media (max-width: 940px) {
+    .bs {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .bs__preview {
+      grid-template-columns: 1fr;
+    }
+    .bs__win {
+      font-size: 12px;
+    }
+  }
+</style>

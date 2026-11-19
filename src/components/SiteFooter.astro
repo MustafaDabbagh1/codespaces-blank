@@ -1,0 +1,260 @@
+---
+// Global footer. Self-contained so it works in both layouts.
+import { products, lineup, industries, partnerLinks, company } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="sf">
+  <div class="sf__wrap">
+    <div class="sf__top">
+      <div class="sf__brand">
+        <a class="sf__logo" href="/" aria-label="PPD Technology home">
+          <svg viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="1.2" y="1.2" width="29.6" height="21.6" rx="6"></rect>
+            <path d="M11.1 1.4 15.9 5.7l4.8-4.3M15.9 5.7v.95a1.2 1.2 0 0 1-1.2 1.2H1.3M10.6 7.85v7.25M1.3 15.1h29.4M21.5 15.1V9.05a1.2 1.2 0 0 1 1.2-1.2h8M15.9 15.1v2.1M11.1 22.6l4.8-5.4 4.8 5.4"></path>
+          </svg>
+          <span><b>PPD</b>Technology</span>
+        </a>
+        <p>Payment processing and the software that runs on top of it, built and supported by one team since 2010.</p>
+        <ul class="sf__contact">
+          <li><span>Sales</span><a href={`tel:${company.salesTel}`}>{company.salesPhone}</a></li>
+          <li><span>Merchant support</span><a href={`tel:${company.supportTel}`}>{company.supportPhone}</a></li>
+          <li><span>Email</span><a href={`mailto:${company.email}`}>{company.email}</a></li>
+          <li><span>Hours</span><em>{company.hours}</em></li>
+        </ul>
+      </div>
+
+      <nav class="sf__cols" aria-label="Footer">
+        <div>
+          <h3>Products</h3>
+          <ul>
+            {products.map((p) => <li><a href={p.href}>{p.name}</a></li>)}
+            {lineup.map((l) => <li><a href={l.href}>{l.name}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Industries</h3>
+          <ul>
+            {industries.map((i) => <li><a href={i.href}>{i.name}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Partners</h3>
+          <ul>
+            {partnerLinks.map((l) => <li><a href={l.href}>{l.name}</a></li>)}
+          </ul>
+          <h3 class="sf__h-gap">Get started</h3>
+          <ul>
+            <li><a href="/rate-review">Free rate review</a></li>
+            <li><a href="/signup">Merchant application</a></li>
+            <li><a href="/cash-discount">Cash discount &amp; dual pricing</a></li>
+            <li><a href="/customer-support">Support center</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sf__family">
+      <span>The PPD family</span>
+      <ul>
+        {products.map((p) => (
+          <li>
+            <a href={p.site} rel="noopener" aria-label={`${p.name} website`}>
+              <img src={p.icon} alt="" width="28" height="28" loading="lazy" />
+              {p.siteLabel}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="sf__bottom">
+      <p>&copy; {year} {company.legal}. All rights reserved.</p>
+      <p>{company.isoLine}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .sf {
+    position: relative;
+    font-family: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #a5aec3;
+    background: #05070d;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    padding: clamp(56px, 7vw, 88px) 0 28px;
+    overflow: hidden;
+  }
+  .sf::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: min(900px, 90vw);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, #4b74ff, transparent);
+    opacity: 0.7;
+  }
+  .sf :global(*) {
+    box-sizing: border-box;
+  }
+  .sf a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .sf a:hover {
+    color: #fff;
+  }
+  .sf ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sf p {
+    margin: 0;
+  }
+  .sf__wrap {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+  .sf__top {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) 1.7fr;
+    gap: clamp(36px, 6vw, 96px);
+  }
+  .sf__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 18px;
+    color: #fff !important;
+  }
+  .sf__logo svg {
+    width: 34px;
+    height: 26px;
+  }
+  .sf__logo span {
+    font-family: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: #cfd6e6;
+  }
+  .sf__logo b {
+    font-weight: 800;
+    color: #fff;
+    margin-right: 5px;
+  }
+  .sf__brand > p {
+    max-width: 34ch;
+  }
+  .sf__contact {
+    display: grid;
+    gap: 9px;
+    margin-top: 26px !important;
+  }
+  .sf__contact li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 10px;
+    font-size: 0.93rem;
+  }
+  .sf__contact span {
+    color: #6d7892;
+  }
+  .sf__contact a {
+    color: #eef1f8;
+    font-weight: 500;
+  }
+  .sf__contact em {
+    font-style: normal;
+  }
+  .sf__cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .sf h3 {
+    margin: 0 0 14px;
+    font-family: 'Geist Mono Variable', ui-monospace, monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6d7892;
+  }
+  .sf__h-gap {
+    margin-top: 30px !important;
+  }
+  .sf__cols li {
+    margin-bottom: 9px;
+  }
+  .sf__cols a {
+    font-size: 0.95rem;
+  }
+  .sf__family {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 28px;
+    margin-top: clamp(40px, 6vw, 72px);
+    padding: 22px 0;
+    border-block: 1px solid rgba(255, 255, 255, 0.09);
+  }
+  .sf__family > span {
+    font-family: 'Geist Mono Variable', ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6d7892;
+  }
+  .sf__family ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+  }
+  .sf__family a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #cfd6e6;
+  }
+  .sf__family img {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .sf__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 32px;
+    padding-top: 22px;
+    font-size: 0.8rem;
+    color: #6d7892;
+  }
+  @media (max-width: 900px) {
+    .sf__top {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .sf__cols {
+      grid-template-columns: 1fr 1fr;
+    }
+    .sf__contact li {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+</style>

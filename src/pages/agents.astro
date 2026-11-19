@@ -1,0 +1,723 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import LeadForm from '../components/LeadForm.astro';
+import CookieCutter from '../components/agents/CookieCutter.astro';
+import BrandStudio from '../components/agents/BrandStudio.astro';
+import LevelUp from '../components/agents/LevelUp.astro';
+import PitchDuel from '../components/agents/PitchDuel.astro';
+import { products, company } from '../data/site';
+
+const pills = ['Keep your book', 'Higher agent split', 'Branded niche software', 'Software fees + processing', 'Built for seasoned agents'];
+
+const tools = [
+  { icon: 'layers', title: 'Custom vertical software', body: 'Niche-specific POS or merchant software built around the vertical you know best. Something your competitors cannot easily copy.' },
+  { icon: 'users', title: 'A CRM for your book', body: 'Leads, merchants, follow-ups, onboarding, deal stages and partner activity in one place that is yours.' },
+  { icon: 'globe', title: 'Websites and merchant acquisition', body: 'Landing pages, niche websites and funnels, so merchants come to you instead of the other way round.' },
+  { icon: 'file-text', title: 'Partner sales assets', body: 'Decks, one-pagers and demo material that carry your name and speak your vertical’s language.' },
+  { icon: 'handshake', title: 'Merchant onboarding support', body: 'We work the application, the equipment and the install with you, so a signed deal becomes a live merchant.' },
+  { icon: 'chart', title: 'Portfolio growth strategy', body: 'A plan for the next niche, the next product and the next hundred merchants, reviewed with people who build the software.' },
+];
+
+const hardware = [
+  { name: 'Clover', img: '/images/hw/clover.webp', w: 800, h: 380 },
+  { name: 'Valor', img: '/images/hw/valor-vp800.webp', w: 600, h: 600 },
+  { name: 'Dejavoo', img: '/images/hw/dejavoo-p3.webp', w: 600, h: 600 },
+];
+
+const paths = [
+  { title: 'Running an ISO?', body: 'Proprietary vertical software, a custom ISO CRM and merchant-acquisition sites, engineered for your organization.', href: '/iso', link: 'ISO solutions' },
+  { title: 'Already have software?', body: 'Embed payments and monetize every transaction, or have the platform built so you can focus on selling it.', href: '/isv-solutions', link: 'ISV solutions' },
+  { title: 'Just know a business?', body: 'Send us the lead and we handle the rest. $200 per approved signup.', href: '/refer', link: 'Refer a merchant' },
+];
+
+const faqs = [
+  {
+    q: 'Do I keep my book?',
+    a: 'Yes. The program is built around agent ownership: you bring your relationships with you and keep growing them here.',
+  },
+  {
+    q: 'Can I still sell Clover, Dejavoo and Valor?',
+    a: 'Yes. Keep selling the terminals, gateways and processing your merchants are used to. The difference is that you now lead with software, and the hardware follows.',
+  },
+  {
+    q: 'What does “branded software” actually mean?',
+    a: 'We build niche-specific POS or merchant software around the vertical you know best and put your agency’s brand on it. What gets built, and whether it is branded or co-branded, is scoped with you on a strategy call.',
+  },
+  {
+    q: 'How does compensation work?',
+    a: 'You earn processing residuals, plus software fees on the software your merchants use. Your split depends on your volume, your verticals and the support you need, so we walk through exact numbers on your strategy call rather than publish a one-size sheet.',
+  },
+  {
+    q: 'Is this for new agents?',
+    a: 'It is built for seasoned agents who already know how to sell payments and want to move past generic ISO selling. If you would rather just send us a business, the referral program pays $200 per approved signup.',
+  },
+  {
+    q: 'What should I bring to the strategy call?',
+    a: 'The niche you win in, a rough picture of your book, and the questions merchants ask that you cannot answer today. We will map the software to that.',
+  },
+];
+---
+
+<SiteLayout
+  title="Agent Program | PPD Technology: your tech and branding partner"
+  description="Keep your book, get a higher split, and launch branded payment software built around your niche. PPD Technology is not a cookie-cutter ISO: we are the tech and branding partner behind payment sales agents."
+>
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="ahero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="ahero__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="ahero__copy">
+        <p class="eyebrow reveal">Agent program</p>
+        <h1 class="h-hero reveal" style="--i:1">
+          Not just your ISO.
+          <span class="grad">Your tech and branding partner.</span>
+        </h1>
+        <p class="lede reveal" style="--i:2">
+          You already know how to sell payments. Every ISO hands you the same terminals and the same rate sheet. PPD builds the software, the brand and the sales system around the niche you know best, and you keep your book.
+        </p>
+        <div class="btn-row reveal" style="--i:3">
+          <a class="btn btn--primary" href="#book">Book an agent strategy call <Icon name="arrow-right" /></a>
+          <a class="btn btn--ghost" href="#apply">Apply now</a>
+        </div>
+        <ul class="ahero__pills reveal" style="--i:4">
+          {pills.map((p) => <li class="chip"><Icon name="check" size={14} stroke={2.6} /> {p}</li>)}
+        </ul>
+      </div>
+
+      <div class="ahero__stage reveal" style="--i:3">
+        <CookieCutter />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT MAKES PPD DIFFERENT ─────────────────────────── -->
+  <section class="section section--paper" id="different">
+    <div class="wrap">
+      <div class="diff">
+        <div class="section-head">
+          <p class="eyebrow reveal">Built for seasoned sales agents</p>
+          <h2 class="h-1 reveal" style="--i:1">What makes PPD different</h2>
+        </div>
+        <div class="diff__body reveal" style="--i:2">
+          <p class="diff__lead">We make you custom payment software for your main niche.</p>
+          <p>
+            You can still sell the Clover, Dejavoo and Valor terminals, the gateways and the processing your merchants are used to. But when every agent has access to the same hardware, you need something that makes your pitch different.
+          </p>
+          <p>
+            So we build it with you, put your name on it, and stand behind it. Try it:
+          </p>
+        </div>
+      </div>
+
+      <div class="studio reveal">
+        <BrandStudio />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE PITCH ────────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow reveal">The pitch</p>
+        <h2 class="h-1 reveal" style="--i:1">Same doorway.<br />Different conversation.</h2>
+        <p class="lede reveal" style="--i:2">
+          A lower rate is the easiest thing in the world to say no to. Software that fixes the owner’s Tuesday is not.
+        </p>
+      </div>
+      <div class="reveal"><PitchDuel /></div>
+    </div>
+  </section>
+
+  <!-- ── LEVEL UP ─────────────────────────────────────────── -->
+  <section class="section section--raised" id="levels">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow reveal">Where we take you</p>
+        <h2 class="h-1 reveal" style="--i:1">Four levels.<br />Most ISOs stop at the first.</h2>
+        <p class="lede reveal" style="--i:2">
+          A cookie-cutter ISO needs you to stay a rep. We do better when you become a brand, so that is what the program is built to do.
+        </p>
+      </div>
+      <div class="reveal"><LevelUp /></div>
+    </div>
+  </section>
+
+  <!-- ── WHAT YOU SELL ────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow reveal">Hardware + software</p>
+        <h2 class="h-1 reveal" style="--i:1">Sell the hardware you know. Lead with software that makes you different.</h2>
+      </div>
+
+      <ul class="sell">
+        {
+          products.map((p, i) => (
+            <li class:list={['reveal', `t-${p.key}`]} style={`--i:${i}`}>
+              <a class="sell__card" href={p.href}>
+                <img src={p.icon} alt="" width="52" height="52" loading="lazy" />
+                <h3 class="h-3">{p.name}</h3>
+                <p>{p.blurb}</p>
+                <span class="sell__price"><b>{p.price}</b> {p.priceNote}</span>
+                <span class="link-arrow">See {p.short} <Icon name="arrow-right" /></span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="hw reveal">
+        <div class="hw__copy">
+          <h3 class="h-3">And the devices merchants already ask for.</h3>
+          <p>Keep selling familiar terminals. Add a software layer on top, and earn more from each relationship.</p>
+          <a class="link-arrow" href="/products#lineup">Full hardware lineup <Icon name="arrow-right" /></a>
+        </div>
+        <ul class="hw__list">
+          {
+            hardware.map((h) => (
+              <li>
+                <img src={h.img} alt={`${h.name} payment device`} width={h.w} height={h.h} loading="lazy" />
+                <span>{h.name}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TOOLS ────────────────────────────────────────────── -->
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow reveal">Enablement</p>
+        <h2 class="h-1 reveal" style="--i:1">Tools other ISOs do not give you</h2>
+        <p class="lede reveal" style="--i:2">
+          More than processing: the software, the sales systems and the acquisition engine it takes to grow a stronger book.
+        </p>
+      </div>
+      <ul class="tools">
+        {
+          tools.map((t, i) => (
+            <li class="reveal" style={`--i:${i % 3}`}>
+              <span class="tools__n mono">{String(i + 1).padStart(2, '0')}</span>
+              <span class="tools__ic"><Icon name={t.icon} size={22} /></span>
+              <h3 class="h-3">{t.title}</h3>
+              <p>{t.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── OTHER PATHS + FAQ ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap faqwrap">
+      <div>
+        <div class="section-head">
+          <p class="eyebrow reveal">Good questions</p>
+          <h2 class="h-2 reveal" style="--i:1">Straight answers.</h2>
+        </div>
+        <ul class="paths">
+          {
+            paths.map((p, i) => (
+              <li class="reveal" style={`--i:${i}`}>
+                <a href={p.href}>
+                  <b>{p.title}</b>
+                  <span>{p.body}</span>
+                  <em class="link-arrow">{p.link} <Icon name="arrow-right" /></em>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="faq reveal">
+        {
+          faqs.map((f, i) => (
+            <details open={i === 0}>
+              <summary>
+                {f.q}
+                <Icon name="plus" size={20} />
+              </summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOK + APPLY ─────────────────────────────────────── -->
+  <section class="section section--raised start" id="book">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <p class="eyebrow eyebrow--plain reveal">Next step</p>
+        <h2 class="h-1 reveal" style="--i:1">Tell us the niche you win in.</h2>
+        <p class="lede reveal" style="--i:2">
+          We will map out the software your merchants would actually pay for, what your brand looks like on it, and what the numbers look like for your book.
+        </p>
+      </div>
+
+      <div class="start__grid">
+        <div class="start__card reveal">
+          <h3 class="h-3">Book a strategy call</h3>
+          <p>Pick a time that works. Thirty minutes, no deck, real answers.</p>
+          <div class="cal" data-cal data-src={company.agentCalendar}>
+            <button type="button" class="btn btn--primary" data-cal-open>Show available times <Icon name="arrow-right" /></button>
+            <p class="fine">Opens Google Calendar scheduling in this page.</p>
+          </div>
+          <ul class="start__alt">
+            <li><Icon name="phone" size={16} /> <a href={`tel:${company.salesTel}`}>{company.salesPhone}</a></li>
+            <li><Icon name="mail" size={16} /> <a href={`mailto:${company.email}`}>{company.email}</a></li>
+          </ul>
+        </div>
+
+        <div class="start__card reveal" style="--i:1" id="apply">
+          <h3 class="h-3">Or apply now</h3>
+          <p>Tell us a little about your book and our partnership team will contact you.</p>
+          <LeadForm form="become-a-partner" subject="New Partner Application" cta="Send application" note="We reply within one business day.">
+            <div class="field">
+              <label for="ap-first">First name</label>
+              <input id="ap-first" name="firstName" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="ap-last">Last name</label>
+              <input id="ap-last" name="lastName" type="text" autocomplete="family-name" required />
+            </div>
+            <div class="field">
+              <label for="ap-email">Email</label>
+              <input id="ap-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="ap-phone">Phone</label>
+              <input id="ap-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="ap-company">Company <span class="opt">optional</span></label>
+              <input id="ap-company" name="company" type="text" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="ap-niche">Your main niche <span class="opt">optional</span></label>
+              <input id="ap-niche" name="niche" type="text" placeholder="Restaurants, repair shops, retail…" />
+            </div>
+            <div class="field">
+              <label for="ap-exp">Years selling payments</label>
+              <select id="ap-exp" name="experience" required>
+                <option value="">Select</option>
+                <option>0-1 years</option>
+                <option>1-3 years</option>
+                <option>3-5 years</option>
+                <option>5+ years</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ap-type">You are a</label>
+              <select id="ap-type" name="partnerType" required>
+                <option value="">Select</option>
+                <option>Sales agent</option>
+                <option>Agent office or team</option>
+                <option>ISO</option>
+                <option>ISV or software company</option>
+                <option>Referral partner</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="ap-vol">Monthly volume of your book</label>
+              <select id="ap-vol" name="volume" required>
+                <option value="">Select</option>
+                <option>$0 – $100,000</option>
+                <option>$100,000 – $500,000</option>
+                <option>$500,000 – $5,000,000</option>
+                <option>$5,000,000+</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="ap-msg">Anything we should know? <span class="opt">optional</span></label>
+              <textarea id="ap-msg" name="message" rows="3"></textarea>
+            </div>
+          </LeadForm>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  // Load the scheduling iframe only when asked, so the page stays fast and
+  // nothing third-party loads until the visitor wants it.
+  document.querySelectorAll<HTMLElement>('[data-cal]').forEach((cal) => {
+    cal.querySelector('[data-cal-open]')?.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = cal.dataset.src || '';
+      frame.title = 'Book an agent strategy call';
+      frame.loading = 'lazy';
+      cal.replaceChildren(frame);
+      cal.classList.add('is-open');
+    });
+  });
+</script>
+
+<style>
+  .ahero {
+    position: relative;
+    padding: clamp(40px, 4.6vw, 64px) 0 clamp(64px, 8vw, 110px);
+    overflow: hidden;
+  }
+  .ahero__glow {
+    position: absolute;
+    left: 50%;
+    top: -34%;
+    width: min(1300px, 130vw);
+    aspect-ratio: 1.6;
+    translate: -50% 0;
+    background:
+      radial-gradient(42% 50% at 30% 45%, rgba(21, 73, 255, 0.55), transparent 70%),
+      radial-gradient(30% 40% at 78% 40%, rgba(124, 77, 255, 0.22), transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+  }
+  .ahero .wrap {
+    position: relative;
+  }
+  .ahero__copy {
+    display: grid;
+    gap: 22px;
+  }
+  .ahero__copy .lede {
+    max-width: 70ch;
+  }
+  .ahero .h-hero {
+    font-size: clamp(2.4rem, 5.5vw, 4.7rem);
+  }
+  .ahero .h-hero .grad {
+    display: block;
+    padding-bottom: 0.08em;
+  }
+  .ahero__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ahero__pills :global(svg) {
+    color: var(--blue-3);
+  }
+  .ahero__stage {
+    margin-top: clamp(32px, 4vw, 52px);
+  }
+
+  .diff {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 5vw, 80px);
+    align-items: end;
+    margin-bottom: clamp(40px, 6vw, 76px);
+  }
+  .diff .section-head {
+    margin-bottom: 0;
+  }
+  .diff__body {
+    display: grid;
+    gap: 14px;
+    color: var(--paper-muted);
+    font-size: 1.08rem;
+  }
+  .diff__lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--paper-text);
+  }
+  .studio {
+    padding: clamp(22px, 4vw, 52px);
+    border-radius: var(--r-lg);
+    background: var(--paper-2);
+    border: 1px solid var(--paper-line);
+  }
+
+  .sell {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .sell__card {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    height: 100%;
+    padding: 24px;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(120% 60% at 50% 115%, rgba(var(--accent-rgb), 0.3), transparent 70%),
+      var(--ink-2);
+    transition:
+      transform 0.45s var(--ease-out),
+      border-color 0.3s;
+  }
+  .sell__card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--accent-rgb), 0.7);
+  }
+  .sell__card img {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    object-fit: contain;
+  }
+  .sell__card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .sell__price {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .sell__price b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .sell__card .link-arrow {
+    font-size: 0.95rem;
+  }
+
+  .hw {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(24px, 4vw, 60px);
+    align-items: center;
+    margin-top: 14px;
+    padding: clamp(24px, 3.4vw, 44px);
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    background: var(--ink-2);
+  }
+  .hw__copy {
+    display: grid;
+    gap: 12px;
+  }
+  .hw__copy p {
+    color: var(--muted);
+  }
+  .hw__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .hw__list li {
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    padding: 18px 14px 14px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f5f3ee, #dcd9cf);
+    color: #0a0e18;
+    font-weight: 650;
+  }
+  .hw__list img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--paper-line);
+    border-left: 1px solid var(--paper-line);
+  }
+  .tools li {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    padding: clamp(24px, 3vw, 36px);
+    border-right: 1px solid var(--paper-line);
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .tools__n {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    font-size: 0.74rem;
+    color: #9aa1b2;
+  }
+  .tools__ic {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    color: #fff;
+    background: var(--blue);
+  }
+  .tools p {
+    color: var(--paper-muted);
+  }
+
+  .faqwrap {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+  }
+  .paths {
+    display: grid;
+    gap: 12px;
+  }
+  .paths a {
+    display: grid;
+    gap: 6px;
+    padding: 20px 22px;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    transition:
+      border-color 0.3s,
+      background 0.3s;
+  }
+  .paths a:hover {
+    border-color: var(--blue-2);
+    background: rgba(21, 73, 255, 0.1);
+  }
+  .paths b {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+  .paths span {
+    font-size: 0.94rem;
+    color: var(--muted);
+  }
+  .paths em {
+    font-style: normal;
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+  .faq {
+    border-top: 1px solid var(--line-2);
+  }
+  .faq details {
+    border-bottom: 1px solid var(--line-2);
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq summary :global(svg) {
+    flex-shrink: 0;
+    color: var(--blue-3);
+    transition: transform 0.35s var(--ease-out);
+  }
+  .faq details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+  .faq p {
+    padding: 0 40px 24px 0;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  .start__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .start__card {
+    display: grid;
+    gap: 16px;
+    padding: clamp(24px, 3.4vw, 44px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: var(--ink);
+    scroll-margin-top: 96px;
+  }
+  .start__card > p {
+    color: var(--muted);
+  }
+  .cal {
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+    padding: 22px;
+    border-radius: var(--r);
+    border: 1px dashed var(--line-2);
+  }
+  .cal.is-open {
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  .cal :global(iframe) {
+    width: 100%;
+    height: 620px;
+    border: 0;
+  }
+  .start__alt {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+  }
+  .start__alt li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .start__alt a {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .opt {
+    font-weight: 400;
+    color: var(--dim);
+  }
+
+  @media (max-width: 1000px) {
+    .sell {
+      grid-template-columns: 1fr 1fr;
+    }
+    .diff,
+    .hw,
+    .faqwrap,
+    .start__grid {
+      grid-template-columns: 1fr;
+    }
+    .tools {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .sell,
+    .tools {
+      grid-template-columns: 1fr;
+    }
+    .hw__list img {
+      height: 76px;
+    }
+  }
+</style>

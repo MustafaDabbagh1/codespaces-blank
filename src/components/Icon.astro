@@ -1,0 +1,85 @@
+---
+// Inline stroke icons (Lucide-style geometry) so new pages need no icon font.
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  stroke?: number;
+}
+const { name, size = 20, class: cls, stroke = 1.9 } = Astro.props;
+
+const paths: Record<string, string> = {
+  'arrow-right': '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
+  'arrow-up-right': '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>',
+  'arrow-down': '<path d="M12 5v14"/><path d="m6 13 6 6 6-6"/>',
+  check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  'check-circle': '<circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/>',
+  x: '<path d="M6 6l12 12"/><path d="M18 6 6 18"/>',
+  plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
+  minus: '<path d="M5 12h14"/>',
+  chevron: '<path d="m6 9 6 6 6-6"/>',
+  menu: '<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>',
+  store: '<path d="M4 9.5 5.5 4h13L20 9.5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5"/><path d="M10 20v-4.5h4V20"/>',
+  briefcase: '<rect x="3" y="7.5" width="18" height="12" rx="2.5"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"/><path d="M3 13h18"/>',
+  users: '<circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.4-3.2 2.9-5 6-5s5.600 1.800 6 5"/><path d="M16 5.600a3.200 3.200 0 0 1 0 5.800"/><path d="M18 14.800c1.700.7 2.800 2.300 3 4.700"/>',
+  user: '<circle cx="12" cy="8.500" r="3.500"/><path d="M5 20c.500-3.500 3.300-5.500 7-5.500s6.500 2 7 5.500"/>',
+  card: '<rect x="2.500" y="5.500" width="19" height="13" rx="2.500"/><path d="M2.500 10h19"/><path d="M6.500 15h3.500"/>',
+  receipt: '<path d="M6 3.500h12v17l-2.400-1.600-2.400 1.600-2.400-1.600-2.400 1.600L6 20.500z"/><path d="M9.500 8.500h5"/><path d="M9.500 12h5"/>',
+  barcode: '<path d="M4 6v12"/><path d="M7.500 6v12"/><path d="M10.500 6v9"/><path d="M13.500 6v12"/><path d="M16.500 6v9"/><path d="M20 6v12"/>',
+  ticket: '<path d="M3 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M14 5v2.500"/><path d="M14 11v2"/><path d="M14 16.500V19"/>',
+  wrench: '<path d="M14.700 6.300a4.200 4.200 0 0 0-5.400 5.400L4 17v3h3l5.300-5.300a4.200 4.200 0 0 0 5.400-5.400l-2.700 2.700-2.300-.700-.700-2.300z"/>',
+  box: '<path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4"/><path d="M12 11v10"/>',
+  bell: '<path d="M6 16.500V11a6 6 0 0 1 12 0v5.500l1.500 2h-15z"/><path d="M10 20.500a2.200 2.200 0 0 0 4 0"/>',
+  star: '<path d="m12 3.500 2.600 5.300 5.900.900-4.300 4.100 1 5.800L12 16.900l-5.200 2.700 1-5.800L3.500 9.700l5.900-.900z"/>',
+  'file-text': '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5"/><path d="M10 16h5"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3A4 4 0 0 0 11 18.700l1-1"/>',
+  repeat: '<path d="M4 11V9a3 3 0 0 1 3-3h11"/><path d="m15 3 3 3-3 3"/><path d="M20 13v2a3 3 0 0 1-3 3H6"/><path d="m9 21-3-3 3-3"/>',
+  pen: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.500 6.500 4 4"/>',
+  gift: '<rect x="3.500" y="8.500" width="17" height="4" rx="1"/><path d="M5.500 12.500V20h13v-7.500"/><path d="M12 8.500V20"/><path d="M12 8.500C10.500 5 6.500 5 7.500 7.500 8 8.500 12 8.500 12 8.500z"/><path d="M12 8.500c1.500-3.500 5.500-3.500 4.500-1-.500 1-4.500 1-4.500 1z"/>',
+  wallet: '<path d="M4 7.500A2.500 2.500 0 0 1 6.500 5H18v3"/><rect x="4" y="8" width="16.500" height="11.500" rx="2.500"/><path d="M16 13.500h1.500"/>',
+  chart: '<path d="M4 20V4"/><path d="M4 20h16"/><path d="m7.500 15 3.500-4 3 2.500L19 8"/>',
+  bars: '<path d="M5 20v-6"/><path d="M10 20V9"/><path d="M15 20v-9"/><path d="M20 20V5"/>',
+  cloud: '<path d="M7 18.500h10a4 4 0 0 0 .700-7.900 5.500 5.500 0 0 0-10.600-1.300A4.600 4.600 0 0 0 7 18.500z"/>',
+  wifi: '<path d="M4 9.500a12 12 0 0 1 16 0"/><path d="M7 13a7.500 7.500 0 0 1 10 0"/><path d="M10 16.300a3 3 0 0 1 4 0"/><circle cx="12" cy="19.300" r=".600" fill="currentColor"/>',
+  'wifi-off': '<path d="M4 4l16 16"/><path d="M4 9.500a12 12 0 0 1 3.700-2.300"/><path d="M11.500 6.500a12 12 0 0 1 8.500 3"/><path d="M7 13a7.500 7.500 0 0 1 2.600-1.500"/><path d="M10 16.300a3 3 0 0 1 4 0"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.600 2.600 3.800 5.600 3.800 9s-1.200 6.400-3.800 9c-2.600-2.600-3.800-5.600-3.800-9S9.400 5.600 12 3z"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>',
+  palette: '<path d="M12 3a9 9 0 1 0 0 18c1.500 0 2-.900 2-1.800 0-1.700 1.200-2.700 2.700-2.700H18a3 3 0 0 0 3-3A9 9 0 0 0 12 3z"/><circle cx="7.800" cy="11.500" r="1"/><circle cx="11" cy="7.500" r="1"/><circle cx="15.500" cy="8.500" r="1"/>',
+  rocket: '<path d="M5 15c-1.500 1.200-2 5-2 5s3.800-.500 5-2"/><path d="M9 15l-1-4c2-5 6-8 12-8 0 6-3 10-8 12z"/><circle cx="15" cy="9" r="1.600"/>',
+  handshake: '<path d="m3 11 4-4 4 1.500L14.500 6 21 11"/><path d="m7 15 3 3 2-1.500 2 1.500 3.500-3"/><path d="M3 11v5l3 2"/><path d="M21 11v5l-3 2"/>',
+  phone: '<path d="M6 3.500h3l1.500 4.500-2 1.500a11 11 0 0 0 6 6l1.500-2 4.500 1.500v3a2 2 0 0 1-2 2A16.500 16.500 0 0 1 4 5.500a2 2 0 0 1 2-2z"/>',
+  mail: '<rect x="3" y="5.500" width="18" height="13" rx="2.500"/><path d="m4 7.500 8 6 8-6"/>',
+  lock: '<rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/>',
+  bolt: '<path d="M13 3 5 13.500h6L10 21l8-10.500h-6z"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.500 2"/>',
+  cart: '<path d="M3 4h2.500l2 11h10l2-7.500H6.500"/><circle cx="9" cy="19" r="1.400"/><circle cx="16.500" cy="19" r="1.400"/>',
+  utensils: '<path d="M7 3v8"/><path d="M4.500 3v5a2.500 2.500 0 0 0 5 0V3"/><path d="M7 11v10"/><path d="M17 3c-2 2-3 4.500-3 8h3z"/><path d="M17 3v18"/>',
+  code: '<path d="m8.500 7-5 5 5 5"/><path d="m15.500 7 5 5-5 5"/>',
+  shield: '<path d="M12 3 5 6v5.500c0 4.300 2.900 7.700 7 9.500 4.100-1.800 7-5.200 7-9.500V6z"/><path d="m9 12 2.200 2.200L15 10"/>',
+  sparkle: '<path d="M12 3.500 13.800 9 19 11l-5.200 2L12 18.500 10.200 13 5 11l5.200-2z"/>',
+  monitor: '<rect x="3" y="4.500" width="18" height="12" rx="2"/><path d="M9 20h6"/><path d="M12 16.500V20"/>',
+  bottle: '<path d="M10 3h4v3l1.500 2.500V19a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V8.500L10 6z"/><path d="M8.500 12.500h7"/>',
+  tag: '<path d="M3.500 12.500V4.500h8l9 9-8 8z"/><circle cx="8" cy="9" r="1.300"/>',
+  refresh: '<path d="M20 11a8 8 0 0 0-14.500-4L4 8.500"/><path d="M4 4.500v4h4"/><path d="M4 13a8 8 0 0 0 14.500 4l1.500-1.500"/><path d="M20 19.500v-4h-4"/>',
+  message: '<path d="M4 5.500h16v11H9.500L5 20v-3.500H4z"/>',
+  building: '<rect x="5" y="3.500" width="14" height="17" rx="1.500"/><path d="M9 8h2"/><path d="M13 8h2"/><path d="M9 12h2"/><path d="M13 12h2"/><path d="M10.500 20.500v-4h3v4"/>',
+  play: '<path d="M8 5.500v13l10.500-6.500z"/>',
+  pause: '<path d="M8 5.500v13"/><path d="M16 5.500v13"/>',
+  external: '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v4.500a1.500 1.500 0 0 1-1.500 1.500h-11A1.500 1.500 0 0 1 4 18.500v-11A1.500 1.500 0 0 1 5.500 6H10"/>',
+};
+const body = paths[name] ?? paths['sparkle'];
+---
+
+<svg
+  class={cls}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={stroke}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  set:html={body}
+/>

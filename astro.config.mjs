@@ -9,6 +9,7 @@ export default defineConfig({
   output: 'server',
   adapter: node({ mode: 'standalone' }),
   integrations: [sitemap()],
+  devToolbar: { enabled: false },
   // Disable Astro's built-in cross-origin POST check. Behind Replit's edge
   // proxy the upstream Host header is rewritten to the internal address
   // (e.g. 169.254.8.1:5000), so Astro's same-origin compare always fails

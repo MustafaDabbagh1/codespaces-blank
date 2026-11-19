@@ -1,14 +1,42 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="Page Not Found | PPD Technology" description="The page you're looking for doesn't exist. Return to PPD Technology's homepage for payment processing, POS solutions, and merchant services.">
-  <section class="features">
-    <div class="container">
-      <div class="section-title">
-        <h2>Page Not Found</h2>
-        <p>Sorry, we couldn't find that page.</p>
+<SiteLayout title="Page not found | PPD Technology" description="That page does not exist. Here is where to go next.">
+  <section class="nf">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap nf__inner">
+      <p class="eyebrow eyebrow--plain">Error 404</p>
+      <h1 class="h-hero">Declined.<br /><span class="grad">Page not found.</span></h1>
+      <p class="lede">That address did not go through. Nothing was charged. Try one of these instead.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/">Back to home <Icon name="arrow-right" /></a>
+        <a class="btn btn--ghost" href="/products">Products</a>
+        <a class="btn btn--ghost" href="/agents">Agent program</a>
+        <a class="btn btn--ghost" href="/contact">Contact</a>
       </div>
     </div>
   </section>
-</BaseLayout>
+</SiteLayout>
+
+<style>
+  .nf {
+    position: relative;
+    display: grid;
+    align-items: center;
+    min-height: 70vh;
+    padding: clamp(64px, 10vw, 140px) 0;
+    overflow: hidden;
+  }
+  .nf__inner {
+    position: relative;
+    display: grid;
+    gap: 24px;
+    justify-items: center;
+    text-align: center;
+  }
+  .nf .btn-row {
+    justify-content: center;
+  }
+</style>

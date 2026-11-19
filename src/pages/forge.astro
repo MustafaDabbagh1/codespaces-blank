@@ -1,0 +1,312 @@
+---
+import ProductPage from '../components/ProductPage.astro';
+import ForgeDemo from '../components/demos/ForgeDemo.astro';
+import Icon from '../components/Icon.astro';
+
+const features = [
+  { icon: 'tag', title: 'Dual pricing, done right', body: 'Set it once. Cash and card prices show on every tile, every cart line and the customer screen.' },
+  { icon: 'card', title: 'EBT without the math', body: 'Mark items EBT-eligible once. At checkout EBT covers what it can, and the rest goes on another tender.' },
+  { icon: 'bottle', title: 'Deposits add themselves', body: 'Attach a bottle deposit to an item and Forge adds it to the sale and the totals.' },
+  { icon: 'wifi-off', title: 'Keeps selling offline', body: 'If the internet drops, cash sales keep going on the register and sync when you are back.' },
+  { icon: 'star', title: 'Rewards that bring them back', body: 'Customers earn points on every sale and redeem them at the register. You set the rules in Forge Cloud.' },
+  { icon: 'refresh', title: 'Returns without the hunt', body: 'Look up the sale, refund the item, and the record stays tied to the original receipt.' },
+  { icon: 'cart', title: 'Park a sale, serve the next', body: 'Save a cart mid-sale and pick it back up when the customer returns.' },
+  { icon: 'plus', title: 'Open prices and custom amounts', body: 'Key in a price on the spot for anything that does not have one.' },
+  { icon: 'monitor', title: 'A screen for your customer', body: 'They see every line as it is rung, both totals, their rewards and their choice of credit or debit.' },
+];
+
+const cloud = [
+  { icon: 'box', title: 'Inventory', body: 'Items, barcodes and stock by location, with vendors, purchase orders and receiving.' },
+  { icon: 'users', title: 'Your team', body: 'PIN sign-in, roles and permissions, schedules, and a timeclock with worked-hours reports.' },
+  { icon: 'bars', title: 'Reports', body: 'Sales, tenders, refunds and end-of-day summaries you can export.' },
+  { icon: 'gift', title: 'Customers and rewards', body: 'Customer profiles with purchase history, and points rules you control.' },
+];
+
+const screens = [
+  { src: '/images/forge/register-sell.webp', w: 1600, h: 840, label: 'Sell' },
+  { src: '/images/forge/payment.webp', w: 1280, h: 800, label: 'Payment' },
+  { src: '/images/forge/complete.webp', w: 1280, h: 800, label: 'Paid' },
+  { src: '/images/forge/customer-dark.webp', w: 1200, h: 675, label: 'Customer screen' },
+];
+
+const hardware = [
+  { k: '15.6"', v: 'Full HD cashier touchscreen' },
+  { k: '10.1"', v: 'Customer-facing display' },
+  { k: 'LAN + Wi-Fi', v: 'Gigabit Ethernet, dual-band Wi-Fi, Bluetooth' },
+  { k: 'Drawer-ready', v: 'Cash drawer port built in' },
+];
+
+const restaurant = ['Quick service, table service and takeout modes', 'Kitchen display routed by station', 'Handheld ordering and pay at the table', 'Your own online ordering link', 'Split checks by seat, hold and fire by course'];
+
+const faqs = [
+  { q: 'What is Forge POS?', a: 'Forge POS by PPD Technology pairs an Android point-of-sale register with Forge Cloud, the merchant portal. Use the register for checkout and Forge Cloud to manage your catalog, inventory, team, rewards and reporting.' },
+  { q: 'What hardware does Forge run on?', a: 'The Forge register runs on the SUNMI D3 Pro with a customer-facing display. Card payments run on a paired Dejavoo terminal, and you can add a SUNMI Blink2 scanner, a receipt printer and a cash drawer. The PPD team confirms the exact setup for your counter.' },
+  { q: 'Does Forge support dual pricing and EBT?', a: 'Yes. Forge shows cash and card prices together, tags EBT-eligible items and takes EBT as a tender, including on split sales. Card and EBT acceptance depend on your payment processing setup, which the PPD team will confirm with you.' },
+  { q: 'Can I manage my business away from the register?', a: 'Yes. Log in to Forge Cloud from a browser to work with your catalog, inventory, employees, schedules and reports. Checkout happens on the register.' },
+  { q: 'Can Forge handle more than one location?', a: 'Forge organizes your business by merchant, location and register station. Additional locations and devices can be set up as you grow, each with its own stock and employee permissions.' },
+  { q: 'Will PPD help me get set up?', a: 'Yes. The PPD team reviews your catalog, locations, equipment and onboarding steps with you before your first day.' },
+];
+---
+
+<ProductPage
+  productKey="forge"
+  title="Forge POS | The register for busy retail counters | PPD Technology"
+  description="Forge POS by PPD Technology: dual pricing, EBT, bottle deposits, a customer-facing screen and Forge Cloud back office, running on the SUNMI D3 Pro."
+  badge="New"
+  headline="Built to move the line."
+  lede="Forge is the point of sale for busy retail counters. Ring up in a few taps, show cash and card prices side by side, take EBT, and keep your customer in the loop on their own screen."
+  audiences={['Convenience stores', 'Grocery and markets', 'Delis', 'Bakeries', 'Dollar stores', 'Gift shops', 'Specialty food']}
+  demo={{ eyebrow: 'One sale, start to finish', title: 'Watch a sale happen.' }}
+  featuresHead={{ eyebrow: 'Built for real counters', title: 'The details other registers make you work around.' }}
+  features={features}
+  pricing={{
+    label: 'Pricing',
+    price: 'Custom quote',
+    unit: 'Software, SUNMI D3 Pro hardware and setup are quoted together once we have seen how you sell.',
+    includes: ['Forge register with customer-facing display', 'Forge Cloud back office', 'Dual pricing, EBT and bottle deposits', 'Rewards, returns and saved carts', 'Setup reviewed with the PPD team'],
+    note: 'Card and EBT acceptance depend on your payment processing setup. Hardware selection is confirmed with PPD.',
+  }}
+  faqs={faqs}
+  form={{ tag: 'forge-demo', subject: 'New Forge POS Demo Request', title: 'Better days at the counter.', lede: 'See Forge ring up a sale for your store. Walk us through your counter, catalog and team and we will show you where it fits.', cta: 'Book a Forge demo' }}
+>
+  <ForgeDemo>
+    <p class="eyebrow">One sale, start to finish</p>
+    <h2 class="h-2">Watch a sale happen.</h2>
+  </ForgeDemo>
+
+  <Fragment slot="extra">
+    <!-- real screens -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow reveal">No mockups</p>
+          <h2 class="h-1 reveal" style="--i:1">Real screens from the Forge register.</h2>
+          <p class="lede reveal" style="--i:2">Rendered from the app on the SUNMI D3 Pro layout, with sample data.</p>
+        </div>
+        <ul class="shots">
+          {
+            screens.map((s, i) => (
+              <li class="reveal" style={`--i:${i % 2}`}>
+                <img src={s.src} alt={`Forge ${s.label} screen with sample data`} width={s.w} height={s.h} loading="lazy" />
+                <span>{s.label}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- forge cloud + hardware -->
+    <section class="section section--raised">
+      <div class="wrap fc">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow reveal">Forge Cloud</p>
+            <h2 class="h-1 reveal" style="--i:1">Run the store from anywhere.</h2>
+            <p class="lede reveal" style="--i:2">Your back office in a browser. Items, stock, staff, rewards and reports stay in step with every register.</p>
+          </div>
+          <ul class="fc__list">
+            {
+              cloud.map((c, i) => (
+                <li class="reveal" style={`--i:${i % 2}`}>
+                  <Icon name={c.icon} size={20} />
+                  <div>
+                    <h3 class="h-3">{c.title}</h3>
+                    <p>{c.body}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="hwcard reveal" style="--i:1">
+          <p class="eyebrow">Hardware</p>
+          <h3 class="h-2">Runs on the SUNMI D3 Pro.</h3>
+          <p>A cashier touchscreen and a display facing your customer, in one slim countertop terminal.</p>
+          <dl>
+            {
+              hardware.map((h) => (
+                <div>
+                  <dt>{h.k}</dt>
+                  <dd>{h.v}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <p class="fine">Add a SUNMI Blink2 scanner, a paired Dejavoo card reader, a receipt printer and a cash drawer. SUNMI and Dejavoo are trademarks of their respective owners.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- forge restaurant -->
+    <section class="section section--tight fr">
+      <div class="wrap fr__inner reveal">
+        <div>
+          <p class="chip"><i class="dot"></i> Coming soon · now booking early access</p>
+          <h2 class="h-1">Forge Restaurant</h2>
+          <p class="lede">From first order to last table: one system for the floor, the kitchen, the handheld and online orders.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://ppdforge.com/restaurant" rel="noopener">See the preview <Icon name="arrow-up-right" /></a>
+          </div>
+        </div>
+        <div>
+          <ul>
+            {restaurant.map((r) => <li><Icon name="utensils" size={16} /> {r}</li>)}
+          </ul>
+          <p class="fine">Forge Restaurant is in development. Features shown are planned and may change before release.</p>
+        </div>
+      </div>
+    </section>
+  </Fragment>
+
+  <div class="field field--full" slot="fields">
+    <label for="forge-type">Type of store <span class="opt">optional</span></label>
+    <select id="forge-type" name="type">
+      <option value="">Select</option>
+      <option>Convenience store</option>
+      <option>Grocery or market</option>
+      <option>Deli or bakery</option>
+      <option>Dollar or gift store</option>
+      <option>Restaurant (Forge Restaurant early access)</option>
+      <option>Other</option>
+    </select>
+  </div>
+</ProductPage>
+
+<style>
+  .shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .shots li {
+    display: grid;
+    gap: 12px;
+  }
+  .shots img {
+    width: 100%;
+    border-radius: var(--r);
+    border: 1px solid var(--line-2);
+    box-shadow: 0 30px 60px -36px rgba(244, 123, 32, 0.6);
+  }
+  .shots span {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .fc {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+  .fc__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 32px;
+  }
+  .fc__list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    color: var(--forge-2);
+  }
+  .fc__list h3 {
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .fc__list p {
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+  .hwcard {
+    display: grid;
+    gap: 14px;
+    padding: clamp(26px, 3.4vw, 42px);
+    border-radius: var(--r-lg);
+    border: 1px solid rgba(244, 123, 32, 0.45);
+    background: radial-gradient(120% 70% at 100% 0%, rgba(244, 123, 32, 0.24), transparent 60%), var(--ink);
+  }
+  .hwcard > p:not(.eyebrow):not(.fine) {
+    color: var(--muted);
+  }
+  .hwcard dl {
+    display: grid;
+    margin: 6px 0;
+    border-top: 1px solid var(--line);
+  }
+  .hwcard dl div {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hwcard dt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .hwcard dd {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .fr__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+    padding: clamp(28px, 4.6vw, 64px);
+    border-radius: var(--r-lg);
+    color: #170a0b;
+    background: linear-gradient(135deg, #fff, #fbeeeb);
+    --line-2: rgba(23, 10, 11, 0.2);
+    --muted: #6e5e60;
+    --dim: #8d7d7f;
+    --accent: #e3141e;
+    --accent-rgb: 227, 20, 30;
+  }
+  .fr__inner > div {
+    display: grid;
+    gap: 18px;
+    align-content: start;
+  }
+  .fr__inner .chip {
+    justify-self: start;
+    color: #e3141e;
+    border-color: rgba(227, 20, 30, 0.35);
+    background: rgba(227, 20, 30, 0.06);
+  }
+  .fr__inner .btn {
+    --btn-bg: #e3141e;
+    --btn-fg: #fff;
+  }
+  .fr__inner ul {
+    display: grid;
+    gap: 12px;
+  }
+  .fr__inner li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-weight: 500;
+  }
+  .fr__inner li :global(svg) {
+    color: #e3141e;
+    flex-shrink: 0;
+  }
+  @media (max-width: 900px) {
+    .fc,
+    .fr__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .shots,
+    .fc__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

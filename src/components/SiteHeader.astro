@@ -1,0 +1,677 @@
+---
+// Global header. Self-contained (own tokens + scoped styles) so it renders
+// identically inside the new SiteLayout and the legacy BaseLayout.
+import Icon from './Icon.astro';
+import { products, lineup, industries, partnerLinks, logins, company } from '../data/site';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isPartner = ['/agents', '/iso', '/isv-solutions', '/refer', '/become-a-partner'].includes(path);
+---
+
+<header class="sh" data-site-header>
+  <div class="sh__bar">
+    <a class="sh__logo" href="/" aria-label="PPD Technology home">
+      <svg class="sh__chip" viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="1.2" y="1.2" width="29.6" height="21.6" rx="6"></rect>
+        <path d="M11.1 1.4 15.9 5.7l4.8-4.3M15.9 5.7v.95a1.2 1.2 0 0 1-1.2 1.2H1.3M10.6 7.85v7.25M1.3 15.1h29.4M21.5 15.1V9.05a1.2 1.2 0 0 1 1.2-1.2h8M15.9 15.1v2.1M11.1 22.6l4.8-5.4 4.8 5.4"></path>
+      </svg>
+      <span class="sh__word"><b>PPD</b>Technology</span>
+    </a>
+
+    <nav class="sh__nav" aria-label="Primary">
+      <div class="sh__item" data-menu>
+        <button class="sh__link" type="button" aria-expanded="false" aria-controls="sh-products">
+          Products <Icon name="chevron" size={14} stroke={2.4} />
+        </button>
+        <div class="sh__panel sh__panel--products" id="sh-products">
+          <div class="sh__col">
+            <p class="sh__label">Built by PPD</p>
+            <ul class="sh__prod">
+              {products.map((p) => (
+                <li>
+                  <a href={p.href} class={`sh__prodlink sh--${p.key}`}>
+                    <img src={p.icon} alt="" width="40" height="40" loading="lazy" />
+                    <span>
+                      <strong>{p.name}</strong>
+                      <em>{p.kind}</em>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="sh__col sh__col--alt">
+            <p class="sh__label">Hardware &amp; partner software</p>
+            <ul class="sh__list">
+              {lineup.map((l) => (
+                <li>
+                  <a href={l.href}>
+                    <strong>{l.name}</strong>
+                    <em>{l.note}</em>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a class="sh__all" href="/products">See the whole lineup <Icon name="arrow-right" size={15} /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sh__item" data-menu>
+        <button class="sh__link" type="button" aria-expanded="false" aria-controls="sh-industries">
+          Industries <Icon name="chevron" size={14} stroke={2.4} />
+        </button>
+        <div class="sh__panel sh__panel--industries" id="sh-industries">
+          <ul class="sh__list sh__list--grid">
+            {industries.map((i) => (
+              <li>
+                <a href={i.href}>
+                  <strong>{i.name}</strong>
+                  <em>{i.note}</em>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="sh__item" data-menu>
+        <button class:list={['sh__link', { 'is-current': isPartner }]} type="button" aria-expanded="false" aria-controls="sh-partners">
+          For agents <Icon name="chevron" size={14} stroke={2.4} />
+        </button>
+        <div class="sh__panel sh__panel--partners" id="sh-partners">
+          <ul class="sh__list">
+            {partnerLinks.map((l) => (
+              <li>
+                <a href={l.href}>
+                  <strong>{l.name}</strong>
+                  <em>{l.note}</em>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <a class="sh__link" href="/customer-support">Support</a>
+    </nav>
+
+    <div class="sh__actions">
+      <div class="sh__item sh__item--login" data-menu>
+        <button class="sh__link sh__link--login" type="button" aria-expanded="false" aria-controls="sh-login">
+          Log in <Icon name="chevron" size={14} stroke={2.4} />
+        </button>
+        <div class="sh__panel sh__panel--login" id="sh-login">
+          <p class="sh__label">Customer portals</p>
+          <ul class="sh__logins">
+            {logins.map((l) => (
+              <li><a href={l.href} rel="noopener">{l.name} <Icon name="arrow-up-right" size={14} /></a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <a class="sh__cta" href="/signup">Get started</a>
+      <button class="sh__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sh-mobile">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="sh__mobile" id="sh-mobile" hidden>
+    <div class="sh__mobile-inner">
+      <details>
+        <summary>Products <Icon name="chevron" size={18} stroke={2.2} /></summary>
+        <ul>
+          {products.map((p) => <li><a href={p.href}>{p.name}<em>{p.kind}</em></a></li>)}
+          {lineup.map((l) => <li><a href={l.href}>{l.name}</a></li>)}
+          <li><a href="/products" class="sh__m-all">The whole lineup</a></li>
+        </ul>
+      </details>
+      <details>
+        <summary>Industries <Icon name="chevron" size={18} stroke={2.2} /></summary>
+        <ul>
+          {industries.map((i) => <li><a href={i.href}>{i.name}</a></li>)}
+        </ul>
+      </details>
+      <details open={isPartner}>
+        <summary>For agents <Icon name="chevron" size={18} stroke={2.2} /></summary>
+        <ul>
+          {partnerLinks.map((l) => <li><a href={l.href}>{l.name}<em>{l.note}</em></a></li>)}
+        </ul>
+      </details>
+      <a class="sh__m-link" href="/customer-support">Support</a>
+      <a class="sh__m-link" href="/contact">Contact</a>
+      <details>
+        <summary>Log in <Icon name="chevron" size={18} stroke={2.2} /></summary>
+        <ul>
+          {logins.map((l) => <li><a href={l.href} rel="noopener">{l.name}</a></li>)}
+        </ul>
+      </details>
+      <div class="sh__m-cta">
+        <a class="sh__cta" href="/signup">Get started</a>
+        <a class="sh__m-phone" href={`tel:${company.salesTel}`}>Sales {company.salesPhone}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  if (header) {
+    const menus = Array.from(header.querySelectorAll<HTMLElement>('[data-menu]'));
+    const closeAll = (except?: HTMLElement) =>
+      menus.forEach((m) => {
+        if (m === except) return;
+        m.classList.remove('open');
+        m.querySelector('button')?.setAttribute('aria-expanded', 'false');
+      });
+
+    menus.forEach((m) => {
+      const btn = m.querySelector('button');
+      const set = (open: boolean) => {
+        m.classList.toggle('open', open);
+        btn?.setAttribute('aria-expanded', String(open));
+      };
+      btn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = !m.classList.contains('open');
+        closeAll(m);
+        set(open);
+      });
+      // keyboard: close when focus leaves the menu; mouse: un-pin on leave
+      m.addEventListener('focusout', (e) => {
+        if (!m.contains(e.relatedTarget as Node)) set(false);
+      });
+      m.addEventListener('pointerleave', (e) => {
+        if ((e as PointerEvent).pointerType === 'mouse') set(false);
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!header.contains(e.target as Node)) closeAll();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const open = menus.find((m) => m.classList.contains('open'));
+      closeAll();
+      open?.querySelector('button')?.focus();
+      setMobile(false);
+    });
+
+    const burger = header.querySelector<HTMLButtonElement>('.sh__burger');
+    const sheet = header.querySelector<HTMLElement>('.sh__mobile');
+    const setMobile = (open: boolean) => {
+      if (!burger || !sheet) return;
+      if (open === !sheet.hidden) return;
+      sheet.hidden = !open;
+      header.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+    burger?.addEventListener('click', () => setMobile(!!sheet?.hidden));
+    window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => e.matches && setMobile(false));
+
+    const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>
+
+<style>
+  .sh {
+    --sh-text: #eef1f8;
+    --sh-muted: #a5aec3;
+    --sh-line: rgba(255, 255, 255, 0.1);
+    --sh-blue: #1549ff;
+    --sh-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+    --sh-body: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    font-family: var(--sh-body);
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--sh-text);
+    background: rgba(5, 7, 13, 0.9);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border-bottom: 1px solid transparent;
+    transition:
+      background 0.3s,
+      border-color 0.3s;
+  }
+  .sh.is-stuck,
+  .sh.is-open {
+    background: rgba(5, 7, 13, 0.96);
+    border-bottom-color: var(--sh-line);
+  }
+  .sh :global(*) {
+    box-sizing: border-box;
+  }
+  .sh a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .sh ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sh button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+  }
+  .sh :focus-visible {
+    outline: 2px solid #a9bcff;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  .sh__bar {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 1280px;
+    height: 72px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+
+  .sh__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+  }
+  .sh__chip {
+    width: 34px;
+    height: 26px;
+    color: #fff;
+  }
+  .sh__word {
+    font-family: var(--sh-display);
+    font-size: 1.22rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: #cfd6e6;
+  }
+  .sh__word b {
+    font-weight: 800;
+    color: #fff;
+    margin-right: 5px;
+  }
+
+  .sh__nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-right: auto;
+  }
+  .sh__item {
+    position: relative;
+  }
+  .sh__link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    height: 40px;
+    padding: 0 13px !important;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--sh-muted) !important;
+    transition:
+      color 0.2s,
+      background 0.2s;
+  }
+  .sh__link :global(svg) {
+    opacity: 0.6;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sh__link:hover,
+  .sh__item.open > .sh__link,
+  .sh__link.is-current {
+    color: #fff !important;
+  }
+  .sh__item.open > .sh__link {
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .sh__item.open > .sh__link :global(svg) {
+    transform: rotate(180deg);
+  }
+
+  .sh__panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: -14px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b0f1a;
+    box-shadow:
+      0 30px 70px -20px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.985);
+    transform-origin: 30px 0;
+    transition:
+      opacity 0.2s,
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s 0.2s;
+  }
+  /* hover bridge so the pointer can travel from the button to the panel */
+  .sh__panel::before {
+    content: '';
+    position: absolute;
+    inset: -12px 0 auto 0;
+    height: 12px;
+  }
+  .sh__item.open > .sh__panel {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .sh__item:hover > .sh__panel {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition-delay: 0s;
+    }
+    .sh__item:hover > .sh__link {
+      color: #fff !important;
+    }
+  }
+
+  .sh__panel--products {
+    display: grid;
+    grid-template-columns: 300px 330px;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .sh__col {
+    padding: 22px;
+  }
+  .sh__col--alt {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 1px solid var(--sh-line);
+  }
+  .sh__label {
+    margin: 0 0 12px;
+    font-family: 'Geist Mono Variable', ui-monospace, monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6d7892;
+  }
+  .sh__prodlink {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 9px 10px;
+    margin: 0 -10px;
+    border-radius: 14px;
+    transition: background 0.2s;
+  }
+  .sh__prodlink:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .sh__prodlink img {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    object-fit: contain;
+    background: #131a2b;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+  .sh--repair img,
+  .sh--merchant img {
+    padding: 0;
+  }
+  .sh__prodlink span,
+  .sh__list a {
+    display: grid;
+    gap: 1px;
+  }
+  .sh strong {
+    font-weight: 600;
+    font-size: 0.96rem;
+    color: #fff;
+  }
+  .sh em {
+    font-style: normal;
+    font-size: 0.82rem;
+    color: #8792aa;
+  }
+  .sh__list a {
+    padding: 8px 10px;
+    margin: 0 -10px;
+    border-radius: 12px;
+    transition: background 0.2s;
+  }
+  .sh__list a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .sh__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #a9bcff !important;
+  }
+  .sh__panel--industries {
+    width: 620px;
+  }
+  .sh__list--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 22px;
+  }
+  .sh__panel--partners {
+    width: 340px;
+  }
+  .sh__panel--login {
+    left: auto;
+    right: 0;
+    width: 250px;
+    transform-origin: calc(100% - 30px) 0;
+  }
+  .sh__logins a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin: 0 -10px;
+    border-radius: 10px;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #dfe4f0;
+    transition: background 0.2s;
+  }
+  .sh__logins a :global(svg) {
+    opacity: 0.4;
+  }
+  .sh__logins a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .sh__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .sh__cta {
+    display: inline-flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: #fff !important;
+    background: var(--sh-blue);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+      0 8px 24px -8px rgba(21, 73, 255, 0.8);
+    transition:
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      background 0.2s;
+  }
+  .sh__cta:hover {
+    background: #2b5bff;
+    transform: translateY(-1px);
+  }
+
+  .sh__burger {
+    display: none !important;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--sh-line) !important;
+  }
+  .sh__burger span {
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    height: 1.8px;
+    border-radius: 2px;
+    background: #fff;
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sh__burger span:nth-child(1) {
+    top: 17px;
+  }
+  .sh__burger span:nth-child(2) {
+    top: 25px;
+  }
+  .sh.is-open .sh__burger span:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg);
+  }
+  .sh.is-open .sh__burger span:nth-child(2) {
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+
+  /* absolute, not fixed: the header's backdrop-filter makes it the containing
+     block for fixed descendants, which would collapse a fixed sheet */
+  .sh__mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    background: #05070d;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 1px solid var(--sh-line);
+  }
+  .sh__mobile-inner {
+    padding: 10px clamp(20px, 4vw, 40px) 40px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .sh__mobile details,
+  .sh__m-link {
+    border-bottom: 1px solid var(--sh-line);
+  }
+  .sh__mobile summary,
+  .sh__m-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 2px;
+    font-family: var(--sh-display);
+    font-size: 1.4rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
+  }
+  .sh__mobile summary::-webkit-details-marker {
+    display: none;
+  }
+  .sh__mobile summary :global(svg) {
+    opacity: 0.5;
+    transition: transform 0.3s;
+  }
+  .sh__mobile details[open] summary :global(svg) {
+    transform: rotate(180deg);
+  }
+  .sh__mobile details ul {
+    padding: 0 2px 16px;
+    display: grid;
+    gap: 2px;
+  }
+  .sh__mobile details a {
+    display: grid;
+    gap: 2px;
+    padding: 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #dfe4f0;
+  }
+  .sh__mobile details a em {
+    font-size: 0.84rem;
+  }
+  .sh__m-all {
+    color: #a9bcff !important;
+  }
+  .sh__m-cta {
+    display: grid;
+    gap: 14px;
+    margin-top: 26px;
+  }
+  .sh__m-cta .sh__cta {
+    height: 54px;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+  .sh__m-phone {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--sh-muted) !important;
+  }
+
+  @media (max-width: 1080px) {
+    .sh__nav,
+    .sh__item--login {
+      display: none;
+    }
+    .sh__bar {
+      justify-content: space-between;
+      height: 64px;
+    }
+    .sh__burger {
+      display: block !important;
+    }
+  }
+  @media (max-width: 420px) {
+    .sh__actions > .sh__cta {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sh__panel,
+    .sh__burger span {
+      transition: none;
+    }
+  }
+</style>

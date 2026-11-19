@@ -1,0 +1,368 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import ForgeDemo from '../components/demos/ForgeDemo.astro';
+import RepairDemo from '../components/demos/RepairDemo.astro';
+import MerchantDemo from '../components/demos/MerchantDemo.astro';
+import RewardsDemo from '../components/demos/RewardsDemo.astro';
+import { products, lineup } from '../data/site';
+
+const art: Record<string, { img?: string; icon?: string; tag: string }> = {
+  'KORONA POS': { img: '/images/hw/korona.webp', tag: 'Retail POS' },
+  Clover: { img: '/images/hw/clover.webp', tag: 'POS devices' },
+  'Valor VP800': { img: '/images/hw/valor-vp800.webp', tag: 'Terminal' },
+  'Pays POS': { img: '/images/hw/pays-pos.webp', tag: 'Restaurant POS' },
+  'MX-Build': { img: '/images/hw/mx-build.webp', tag: 'Contractor software' },
+  'Passport Banking': { icon: 'building', tag: 'Banking' },
+};
+---
+
+<SiteLayout
+  title="Products | Forge POS, PPD Repair, PPD Merchant, PPD Rewards | PPD Technology"
+  description="The PPD Technology lineup: software we build ourselves (Forge POS, PPD Repair, PPD Merchant, PPD Rewards) and the hardware and partner software we set up and support."
+>
+  <section class="phub">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="phub__glow" aria-hidden="true"></div>
+    <div class="wrap phub__inner">
+      <p class="eyebrow reveal">The lineup</p>
+      <h1 class="h-hero reveal" style="--i:1">Software we build.<br /><span class="grad">Hardware we back.</span></h1>
+      <p class="lede reveal" style="--i:2">
+        Four products written in-house, each built for a specific kind of business, plus the terminals and partner software we configure, ship and support. Every animation below is the product itself, replayed with sample data.
+      </p>
+      <ul class="phub__jump reveal" style="--i:3">
+        {
+          products.map((p) => (
+            <li class={`t-${p.key}`}>
+              <a href={`#${p.key}`}>
+                <img src={p.icon} alt="" width="36" height="36" />
+                <span><b>{p.name}</b><em>{p.kind}</em></span>
+                <Icon name="arrow-down" size={16} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {
+    products.map((p, i) => (
+      <section class:list={['section', 'pblock', `t-${p.key}`, { 'section--raised': i % 2 === 0 }]} id={p.key}>
+        <div class="pblock__glow" aria-hidden="true" />
+        <div class="wrap">
+          <header class="pblock__head">
+            <div class="pblock__title">
+              <img class:list={['pblock__logo', `pblock__logo--${p.key}`]} src={p.logoDark} alt={p.name} loading="lazy" />
+              <h2 class="h-1 reveal">{p.tagline}</h2>
+            </div>
+            <div class="pblock__meta reveal" style="--i:1">
+              <p>{p.blurb}</p>
+              <dl>
+                <div><dt>{p.price}</dt><dd>{p.priceNote}</dd></div>
+                <div><dt>Built for</dt><dd>{p.audience}</dd></div>
+              </dl>
+              <div class="btn-row">
+                <a class="btn btn--accent" href={p.href}>Explore {p.short} <Icon name="arrow-right" /></a>
+                <a class="btn btn--ghost" href={p.site} rel="noopener">{p.siteLabel} <Icon name="arrow-up-right" /></a>
+              </div>
+            </div>
+          </header>
+
+          <div class="pblock__demo reveal">
+            {p.key === 'forge' && <ForgeDemo layout="flip" />}
+            {p.key === 'repair' && <RepairDemo />}
+            {p.key === 'merchant' && <MerchantDemo layout="flip" />}
+            {p.key === 'rewards' && <RewardsDemo />}
+          </div>
+        </div>
+      </section>
+    ))
+  }
+
+  <!-- hardware + partner software -->
+  <section class="section section--paper" id="lineup">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow reveal">Also in the lineup</p>
+        <h2 class="h-1 reveal" style="--i:1">Hardware and partner software, set up before it ships.</h2>
+        <p class="lede reveal" style="--i:2">
+          Not every counter needs our software. When a Clover, a Valor or a KORONA is the right answer, we sell it, configure it and stay on the phone for it.
+        </p>
+      </div>
+      <ul class="lineup">
+        {
+          lineup.map((l, i) => {
+            const a = art[l.name];
+            return (
+              <li class="reveal" style={`--i:${i % 3}`}>
+                <a href={l.href}>
+                  <span class="lineup__art">
+                    {a?.img ? <img src={a.img} alt="" loading="lazy" /> : <Icon name={a?.icon ?? 'box'} size={54} stroke={1.3} />}
+                  </span>
+                  <span class="lineup__tag">{a?.tag}</span>
+                  <b>{l.name}</b>
+                  <em>{l.note}</em>
+                  <span class="link-arrow">Details <Icon name="arrow-right" /></span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap pclose reveal">
+      <h2 class="h-1">Not sure which one fits?</h2>
+      <p class="lede">Tell us how you take payments today. We will point you at the right product, or tell you honestly if what you have is fine.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/contact">Talk to us <Icon name="arrow-right" /></a>
+        <a class="btn btn--ghost" href="/rate-review">Free rate review</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .phub {
+    position: relative;
+    padding: clamp(44px, 5.5vw, 80px) 0 clamp(48px, 6vw, 84px);
+    overflow: hidden;
+  }
+  .phub__glow {
+    position: absolute;
+    left: 50%;
+    top: -40%;
+    width: min(1300px, 130vw);
+    aspect-ratio: 1.6;
+    translate: -50% 0;
+    background:
+      radial-gradient(30% 40% at 20% 50%, rgba(244, 123, 32, 0.3), transparent 70%),
+      radial-gradient(30% 40% at 44% 40%, rgba(47, 107, 255, 0.4), transparent 70%),
+      radial-gradient(30% 40% at 66% 46%, rgba(124, 77, 255, 0.34), transparent 70%),
+      radial-gradient(26% 36% at 86% 52%, rgba(229, 168, 35, 0.24), transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+  }
+  .phub__inner {
+    position: relative;
+    display: grid;
+    gap: 24px;
+  }
+  .phub .h-hero {
+    font-size: clamp(2.5rem, 6.4vw, 5.4rem);
+  }
+  .phub .grad {
+    display: inline-block;
+    padding-bottom: 0.08em;
+  }
+  .phub__jump {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .phub__jump a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--r);
+    border: 1px solid var(--line-2);
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+      border-color 0.3s,
+      background 0.3s,
+      transform 0.4s var(--ease-out);
+  }
+  .phub__jump a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--accent-rgb), 0.8);
+    background: rgba(var(--accent-rgb), 0.14);
+  }
+  .phub__jump img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  .phub__jump span {
+    flex: 1;
+    display: grid;
+  }
+  .phub__jump b {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  .phub__jump em {
+    font-style: normal;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .phub__jump a :global(svg) {
+    color: var(--accent-2);
+  }
+
+  .pblock {
+    overflow: hidden;
+    scroll-margin-top: 60px;
+  }
+  .pblock__glow {
+    position: absolute;
+    right: -10%;
+    top: -20%;
+    width: 60%;
+    aspect-ratio: 1;
+    background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.22), transparent);
+    pointer-events: none;
+  }
+  .pblock .wrap {
+    position: relative;
+  }
+  .pblock__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 80px);
+    align-items: end;
+    margin-bottom: clamp(40px, 6vw, 72px);
+  }
+  .pblock__title {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+  }
+  .pblock__logo {
+    height: 52px;
+    width: auto;
+  }
+  .pblock__logo--rewards {
+    height: 76px;
+  }
+  .pblock__logo--repair {
+    height: 56px;
+    padding: 8px 14px;
+    border-radius: 14px;
+    background: #fff;
+  }
+  .pblock__meta {
+    display: grid;
+    gap: 20px;
+  }
+  .pblock__meta > p {
+    font-size: 1.1rem;
+    color: var(--muted);
+  }
+  .pblock__meta dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px 32px;
+    padding: 18px 0;
+    border-block: 1px solid var(--line);
+  }
+  .pblock__meta dl div {
+    display: grid;
+    gap: 2px;
+  }
+  .pblock__meta dt {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .pblock__meta dd {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .pblock__demo {
+    padding-bottom: clamp(30px, 6vw, 80px);
+  }
+
+  .lineup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .lineup a {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    height: 100%;
+    padding: 20px 22px 24px;
+    border-radius: var(--r);
+    background: var(--paper-card);
+    border: 1px solid var(--paper-line);
+    transition:
+      transform 0.45s var(--ease-out),
+      box-shadow 0.45s;
+  }
+  .lineup a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px -30px rgba(10, 14, 24, 0.4);
+  }
+  .lineup__art {
+    display: grid;
+    place-items: center;
+    height: 190px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f5f3ee, #e6e3da);
+    color: #9aa1b2;
+    overflow: hidden;
+  }
+  .lineup__art img {
+    max-height: 160px;
+    width: auto;
+    max-width: 86%;
+    object-fit: contain;
+  }
+  .lineup__tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7a8296;
+  }
+  .lineup b {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+  }
+  .lineup em {
+    font-style: normal;
+    color: var(--paper-muted);
+    font-size: 0.95rem;
+  }
+  .lineup .link-arrow {
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+
+  .pclose {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 1000px) {
+    .phub__jump,
+    .lineup {
+      grid-template-columns: 1fr 1fr;
+    }
+    .pblock__head {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+  @media (max-width: 600px) {
+    .phub__jump,
+    .lineup {
+      grid-template-columns: 1fr;
+    }
+    .pblock__meta dl {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

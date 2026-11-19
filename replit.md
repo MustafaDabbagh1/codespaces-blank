@@ -13,89 +13,77 @@ A high-performance marketing website for PPD Technology, a payment processing so
 - **Package Manager:** npm
 - **Node.js:** v22
 
-## Design System
+## Site structure (rebuilt November 2026)
 
-### Color Tokens
-- `--navy: #060E21` (primary background)
-- `--navy-2: #0C1A38` (secondary background)
-- `--blue: #1549FF` (primary brand blue)
-- `--blue-mid: #2D60FF` (lighter blue for gradients)
-- `--cyan: #00CFFF` (accent cyan)
-- `--green: #00E5A0` (accent green)
-- `--surface: #F5F8FF` (light background)
+The site speaks to two audiences: merchants who want PPD's products and processing, and
+payment sales agents PPD wants to recruit ("not just your ISO, your tech and branding partner").
 
-### Button Pattern
-- Primary: `linear-gradient(135deg, #2D60FF, #1549FF)` with `box-shadow: 0 8px 28px rgba(21,73,255,.35)`
-- Hover: lift with stronger shadow
+### Two layouts
 
-### Hero Pattern
-- Dark navy background with radial gradient blue/cyan accents
-- SVG dot grid overlay (`::before` pseudo-element)
-- Consistent across all pages
+- `src/layouts/SiteLayout.astro` + `src/styles/site.css` — the new design system (dark ink, warm
+  paper sections, PPD blue, one accent per product). Fonts are self-hosted via Fontsource
+  (Bricolage Grotesque for display, Geist for text, Geist Mono for labels). New pages use this.
+- `src/layouts/BaseLayout.astro` — the legacy layout, still used by the pages that have not been
+  rebuilt (industry pages, partner hardware pages, signup, contact, support, rate review, cash
+  discount, refer, ISO, ISV). It keeps its old tokens and Font Awesome, but renders the same
+  header and footer as the new layout.
 
-### Industry-Specific Accents
-- **Restaurants/Korona/Pays POS:** Warm orange (`#ff6a00`)
-- **Contractors:** Yellow (`#ffc83a`)
-- **Signup:** Green (`#0BA360`)
-- **Non-profits:** Rose/pink (`#e11d48`)
-- **Higher Education:** Purple (`#5b21b6`)
-- **Healthcare:** Teal/cyan (`#06B6D4`)
+### Shared pieces
 
-## Project Structure
+- `src/data/site.ts` — single source of truth for products, hardware lineup, industries, partner
+  links, login portals and company contact facts. Header, footer and pages read from it.
+- `src/components/SiteHeader.astro`, `SiteFooter.astro` — self-contained global header (mega
+  menus, Log in menu for the customer portals, mobile sheet) and footer.
+- `src/components/Icon.astro` — inline stroke icons for the new pages (no icon font).
+- `src/components/LeadForm.astro` — form wrapper for `/api/lead` (honeypot, optional Turnstile,
+  fetch submit, redirect to `/thank-you`).
+- `src/components/ProductPage.astro` — template for the four PPD-built product pages.
+- `src/scripts/stepper.ts` — the small state machine behind every animation. Markup declares
+  `data-stepper`, `data-durations`, and elements with `data-from` / `data-to`; CSS does the rest.
+  Animations run only while on screen, can be paused, and rest on a static frame when the visitor
+  prefers reduced motion.
 
-```
-src/
-  components/   - Reusable UI components (Header, Footer)
-  layouts/      - Base layout (BaseLayout.astro) with full design system, OG/Twitter social meta tags (title, description, ogImage, ogType props)
-  pages/        - Route pages (.astro files), each with custom title + description for social sharing
-public/
-  images/       - Product and marketing images
-  images/og-default.png - Default Open Graph preview image (1200x630, dark navy brand card)
-```
+### Animated demos
 
-## Pages
+- `src/components/demos/` — `ForgeDemo` (a sale on the register + customer display), `RepairDemo`
+  (one ticket across the command board), `MerchantDemo` (invoice sent, paid, books updated),
+  `RewardsDemo` (volume to reward to redemption). All figures are sample data and labelled so.
+- `src/components/agents/` — `CookieCutter` (identical agent kits vs a kit built up with brand,
+  software, website, CRM and a second revenue line), `BrandStudio` (visitor types their agency
+  name and sees it on software, a website and a CRM), `LevelUp` (the four-level path), and
+  `PitchDuel` (rate-sheet pitch vs software pitch).
 
-### Core Pages
-- `index.astro` - Homepage. Hero headline "Payment processing, POS, and merchant software built for growing businesses" (gradient on "growing businesses"), sub covering in-store/online/on-the-go + next-day funding, real-time reporting, U.S.-based support, industry POS. Hero CTAs: primary "Get a Free Rate Review" → `/rate-review`, secondary "Book a Demo" → `/contact`, plus a de-emphasized tertiary text link "Start Application" → `/signup` (`.hp-hero__tertiary`); trust row (`.hp-hero__trust`): U.S.-based support / Next-day funding options / PCI-focused setup / Real-time reporting. The right-hand "PPD Dashboard" mockup (LIVE badge, Today's Revenue, Transactions, Payment Approved, PCI Level 1, Next-Day Payout, animated counters) is intentionally preserved as-is — do not alter its colors/layout/cards/numbers. Also includes marquee, features, solutions, and a "For Payment Sales Agents" recruitment section (`hp-agent` prefix, `id="agents"`) that drives experienced agents to the Agent Program (`/become-a-partner`, secondary CTA `/contact`): left copy column (badge, gradient headline, sub/body, two CTAs, trust chips), right interactive browser mockup with 5 vanilla-JS niche tabs (Restaurants, Repair Shops, Retail, Contractors, Med Spas — roving tabindex + arrow/Home/End nav) that swap a data-driven panel (branded title, 4 stat cards, module chips, mini Merchant CRM, mini revenue bars), and 3 support cards. Reveal uses the shared `[data-anim]` IntersectionObserver. Dynamically injected children (`.hp-agent__module`, CRM `li`/name/tag, `.hp-agent__bar*`) use Astro `:global()` nested under their static scoped parent so they stay styled after tab clicks; `innerHTML` is escaped via `esc()`.
-- `contact.astro` - Contact form with scheduling. Contact-info panel lists Sales (248) 726-0085, Merchant Support 313-466-7836, and info@ppdtechnology.com. Form + Schedule-a-Call modal submit via `/api/lead` (AJAX → `/thank-you`).
-- `rate-review.astro` - "Get a Free Rate Review" lead page (`rr-` CSS prefix, scoped styles). Dark hero + two-column body: form card (Name, Business name, Phone, Email, Industry, Current processor, Estimated monthly processing volume, Message/notes) with client-side required validation (`aria-invalid`, inline `#rrError`) that submits to `/api/lead` (`_form=rate-review`) via fetch and redirects to `/thank-you` — same behavior as the contact form, no backend changes. Side card: "what we'll look at" checklist + Sales/Merchant Support/email contacts.
-- `cash-discount.astro` - "Cash Discount & Dual Pricing Programs" landing page (`cd-` CSS prefix, scoped styles), replacing the old "coming soon" stub. Dark hero with CTAs (primary "Request a Cash Discount Review" → `/rate-review`, ghost "Talk to Our Team" → `/contact`), intro, "What PPD handles for you" 6-card grid (POS/terminal setup, compliant signage, receipt formatting, customer-facing pricing display, setup review, ongoing support), 3-step "How it works", and final CTA → `/rate-review`.
-- `signup.astro` - Merchant Processing Application (fully redesigned). Premium fintech-style onboarding page with dark navy/blue/cyan design system. Sections: Hero with animated "merchant onboarding journey" visual (6 vertical step nodes: Industry Selected → Product Selected → Business Verified → Bank Secured → Application Submitted → Underwriting Review, with glowing connection lines, checkmark/lock/spinner dot states, staggered CSS animation), trust strip (6 credibility items), "How the Application Works" 3-step process section (numbered cards with arrows), main 6-step multi-step form (Step 1: Industry & Product Selection with category filter buttons [All/POS/Terminals/Software/Gateway] and 14 product cards with images/icons — KORONA POS, Pays POS, NRS POS, Clover POS, VP800, P18, Pinpads P12&P17, PPD Repair, PPD Merchant, MX-Build, Passport Banking, eCommerce Gateway, Virtual Terminal, Mobile Reader — plus selected product summary bar; Step 2: Business Info; Step 3: Owner/Principal with expandable second owner; Step 4: Processing Profile with additional services checkboxes; Step 5: Banking with secure banner and account number match validation; Step 6: Review & Submit with auto-generated summary and consent checkboxes), "Why Businesses Apply" value cards (6 cards), FAQ accordion (6 items), and sticky mobile apply button. Form features: progress bar stepper, field-type-aware validation (text/email/select/checkbox/radio), `aria-invalid` attributes, `aria-pressed` on filter buttons, focus management on step transitions, account number confirmation matching, review summary auto-build, in-house submission via `/api/lead` (`_form=merchant-signup`), success state with 3-step next-steps. Uses `su-` CSS prefix, scoped styles. No `is:global`.
-- `customer-support.astro` - Support center (redesigned, uses `is:global` styles scoped under `.cs-page`). Premium layout: hero with 3 clickable support option cards + "All systems operational" indicator, Service Health status dashboard (3 status cards), ticket form (2-column layout) with Popular Help Topics sidebar (5 clickable topic cards) and Call Support card (dark navy panel with phone/hours), expandable FAQ accordion, and "Still need help?" CTA bar. Uses `cs-*` CSS prefix.
-- `refer.astro` - Referral program
-- `become-a-partner.astro` - Partner program landing page (redesigned). Streamlined 8-section architecture: Hero with dashboard preview panel, interactive Quick Compare table (contenteditable cells), "Why Partners Switch" value cards (dark section), 3-tier Program Tiers (Referral/Sales/ISO with "Most Popular" badge), Tools & Support grid, Testimonials, FAQ (expandable), Partner Kit downloads, Calendar booking embed, and application form. Uses `pp-*` CSS prefix, scoped styles. All sections use `reveal` intersection observer animation. Print styles for compare table.
-- `isv-solutions.astro` - ISV Solutions landing page (`isv-*` CSS prefix, scoped styles). Targets ISVs/SaaS/vertical software companies. Core message: "Already have software? We'll help you monetize payments. Need software built? We can help build it." 11 sections: Hero with interactive 3-tab dashboard mockup (Existing Software / Build My Software / White-Label Launch), Differentiator (4 cards), Two Paths (Path A: integrate payments / Path B: build software — featured), Build-for-You 5-step timeline + Platform Blueprint mockup, Payment Capabilities grid (compliance-safe wording: "PCI-conscious", "tokenization-supported", "where available"), interactive 9-vertical Examples tabs (JS-rendered module chips; child `li`/`i` styles use `:global()` so innerHTML-injected chips stay styled), Monetization (4 cards + front-end revenue estimator calculator), Go-to-Market grid, Onboarding/Security grid, FAQ (`<details>`), Final CTA. Vanilla JS only (roving-tabindex tabs, IntersectionObserver reveal, estimator). All CTAs → /contact. Nav: after ISO Solutions in Header.astro (desktop) and BaseLayout.astro (mobile, `fa-plug` icon).
-- `iso.astro` - ISO Solutions landing page. Premium SaaS/fintech page targeting ISOs who want custom software. 8-section layout: Hero with "ISO Command Center" dashboard mockup (stats, portfolio chart, AI insights panel), "Generic vs Future-Ready ISO" comparison cards, "Three Pillars" product cards (Vertical Software, ISO CRM, Websites) with embedded mini-dashboard previews, 6-tab interactive demo showcase (Repair, Restaurant POS, ISO CRM, Onboarding & Risk, Agent Portal, AI Sales Assistant) with realistic data tables and stats, AI Features grid (8 capabilities), Vertical Domination cards (6 industries), "Why This Matters" numbered benefits grid (8 cards), and final CTA. Scoped `<style>`, `iso-*` CSS prefix, intersection observer animations. Navigation: between Partner Program and Customer Support.
+### Rebuilt pages (SiteLayout)
 
-### Industry Pages
-- `retail.astro` - Retail solutions (redesigned, dark navy/blue/cyan design system). Premium SaaS layout: Hero with "PPD Retail — Dashboard" mockup (revenue/transactions/basket/returns KPIs, sparkline chart, floating POS checkout and Inventory Alert cards), metrics bar (4 stats), 6 feature cards (Omnichannel Checkout, Real-Time Inventory, Loyalty & CRM, BOPIS, Returns, Security), 4-card software showcase section (POS & Smart Checkout with bar chart, Inventory Visibility with status rows, Self-Checkout & Kiosks with mock UI, Online + In-Store Sync with animated arrow), 6 hardware cards with local images (VP800, Pinpads, P18, NRS POS, Pays POS, Korona POS — Clover Duo removed), and CTA with radial glow. Uses `rt-` CSS prefix, scoped styles. All neocities.org links removed, uses `/images/...` local paths. No `is:global`.
-- `restaurants.astro` - Restaurant POS & Online Ordering (redesigned, dark navy/blue/cyan design system). Premium hospitality layout: Hero with large 4-image photo carousel (bright modern restaurant dining room, artisan pizza/wood-fired oven, chef plating in open kitchen, gourmet grilled chicken with roasted vegetables — auto-rotating 4.5s with fade/scale transitions, dot navigation with `aria-selected`), floating glassmorphic feature chips (Online Ordering, QR Pay, KDS, Next-Day Funding) with staggered entrance animation, bottom strip ("Dine-In • Takeout • Delivery • Fast Casual"), gradient overlay. Carousel images in `/images/restaurant/hero-1..4.png`. Metrics bar (4 stat cards), 6 icon-based feature cards, interactive menu experience (3 food items with real-time modifier pricing using semantic `<button>` elements with `aria-pressed`), live KDS simulation (tickets auto-advance New→Prep→Expo→Ready with color-coded columns), 6 hardware cards (icon-based), testimonials, CTA band, and demo modal (in-house `/api/lead`, focus trap, accessible form labels). Uses `rest-` CSS prefix, scoped styles. No neocities.org links.
-- `healthcare.astro` - Healthcare payments
-- `ecommerce.astro` - E-commerce payments (dark theme throughout)
-- `non-profits.astro` - Non-profit solutions (rose accent)
-- `higher-education.astro` - Education payments (purple accent)
-- `contractors.astro` - Contractor solutions (uses `is:global` styles, yellow accent)
-- `repair.astro` - PPD Repair SaaS product landing page (`rp-*` CSS prefix). Branded as "PPD Repair" throughout. Hero with layered dashboard mockup + 4 floating cards (POS, inventory, customer, payment). Industries section placed early (8 repair types). Centerpiece: 6-step guided interactive workflow demo (Check In → Assign Tech → Add Parts → Take Deposit → Notify Customer → Final Payment) with stepper, prev/next nav, animated transitions, and realistic software UI panels. **Core Modules showcase**: interactive 5-tab product demo (POS, Inventory, Team & Stores, Devices, Reporting) with two-column layout (mini demo panel + info/bullets); CSS in `src/styles/repair-modules.css` (imported, unscoped). Side-by-side "Why Switch" comparison, $30/month pricing card, premium CTA, and lead capture modal with PPDrepair logo, focus trap/restore, Esc-to-close (client-side only). Full ARIA tablist + roving tabindex + keyboard nav on both workflow stepper and module tabs. Scoped `<style>` and `<script>` (no `is:global`).
+- `/` — dual-audience homepage: hero with two doors (merchant / agent), product strip, tabbed
+  product demos, processing section, agent section, industries, closing CTAs.
+- `/agents` — the agent program. `/become-a-partner` 301-redirects here. Application form posts
+  `_form=become-a-partner`; the Google Calendar scheduler loads on click.
+- `/products` — the lineup: four product demos plus hardware and partner software (`#lineup`).
+- `/forge` (new), `/repair`, `/merchant`, `/products/ppd-rewards` — product pages. Copy, pricing
+  and sample data follow ppdforge.com, ppdrepair.com, ppdmerchant.com and ppdrewards.com.
+- `/thank-you`, 404.
 
-### Product Pages
-- `merchant.astro` - PPD Merchant product landing page. Modern payments & merchant management platform. 6-section layout: Hero with "PPD Merchant Center" dashboard mockup (volume/transactions/approval stats, 7-day chart, operational panel), "Who It's For" value cards (6 cards: Keyed Payments, ACH/Billing, CRM, Shop Orders, Agreements, SPIn Devices), 5-tab interactive demo showcase (Dashboard, Shop Orders, Recurring Billing, Customers & Agents with CRM sub-tabs, Agreements & E-Sign) with realistic data tables/KPIs/charts, Gateway Infrastructure section (feature checklist + gateway diagram), "Why Choose" benefits grid (6 cards), and CTA. Uses `pm-*` CSS prefix, scoped styles. Intersection observer scroll animations. Navigation: Products dropdown in Header.astro and BaseLayout.astro.
-- `clover.astro` - Clover devices
-- `vp-800.astro` - VP800 POS terminal
-- `pays-pos.astro` - Pays POS restaurant system (warm orange brand)
-- `korona.astro` - Korona POS (warm orange brand)
-- `mx-build.astro` - MX Build for contractors
-- `passport-banking.astro` - Banking/treasury platform
+### Legacy pages (BaseLayout, unchanged content)
+
+`restaurants`, `retail`, `ecommerce`, `healthcare`, `contractors`, `non-profits`,
+`higher-education`, `clover`, `korona`, `vp-800`, `pays-pos`, `pays-purchase`, `mx-build`,
+`passport-banking`, `iso`, `isv-solutions`, `refer`, `signup`, `contact`, `customer-support`,
+`rate-review`, `cash-discount`. Images that used to be hotlinked from neocities now use the local
+copies in `public/images/`.
 
 ## Backend / API
 
 - `src/pages/api/lead.ts` — server endpoint handling all lead form submissions via Resend.
-- `src/lib/rateLimit.ts` — shared per-IP rate limiter (5 hits / 5 min) for `/api/lead`. Uses PostgreSQL (`lead_rate_limit_hits` table) so limits are enforced globally across all server instances; falls back to an in-process map only if `DATABASE_URL` is unavailable or DB queries fail.
 
 ## Important Notes
 
-- `contractors.astro` and `customer-support.astro` use `<style is:global>` which sets `:root` CSS variables — these must stay aligned with the design system to avoid conflicts
-- All hero sections use the consistent dark navy gradient pattern
-- Brand-specific pages (korona, pays-pos) keep their warm orange accents
+- `contractors.astro` and `customer-support.astro` use `<style is:global>`; keep their class
+  names away from the `sh__*` / `sf__*` header and footer classes.
+- Do not put `overflow-x: hidden` on `body` in the new layout: it must stay on `html`, or the
+  sticky header and the mobile-menu scroll lock break.
+- Product facts on the new pages come from the product sites. When a price or feature changes
+  there, update `src/data/site.ts` and the matching product page.
 
 ## Development
 
@@ -107,9 +95,9 @@ npm run preview  # Preview production build
 
 ## Deployment
 
-Configured as a **static** site deployment:
+Server-rendered Astro app (`output: 'server'`, `@astrojs/node` standalone):
 - Build command: `npm run build`
-- Public directory: `dist/`
+- Start command: `node ./dist/server/entry.mjs`
 
 ## Replit Configuration
 
@@ -122,4 +110,4 @@ Configured as a **static** site deployment:
 - `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` — required for `/api/lead` to send emails via Resend.
 - `LEAD_ALLOWED_HOSTS` — optional comma-separated allowlist of Origin/Referer hosts for `/api/lead` (defaults to `ppdtechnology.com`).
 - `PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key (exposed to the browser). When set, BaseLayout loads the Turnstile script and lead forms render the widget.
-- `TURNSTILE_SECRET_KEY` — Cloudflare Turnstile secret key (server-only). When set, `/api/lead` verifies the `cf-turnstile-response` token and rejects requests with a missing/invalid token. If unset, CAPTCHA verification is skipped (useful for local development).
+- `TURNSTILE_SECRET_KEY` — reserved for server-side Turnstile verification. `/api/lead` in this repo does not verify the token yet; the widget only renders when the site key is set.

@@ -1,0 +1,162 @@
+---
+// Same doorway, two pitches. The rate-sheet conversation stalls; the software
+// conversation gets a demo booked. Uses PPD Repair's real $30/month price.
+import Icon from '../Icon.astro';
+
+const left = [
+  { who: 'you', text: 'I can save you about 0.2% on your processing.', at: 0 },
+  { who: 'them', text: 'We switched last year. We’re good, thanks.', at: 1 },
+  { who: 'you', text: 'Can I leave you a rate sheet?', at: 2 },
+  { who: 'them', text: 'Sure. Leave it on the counter.', at: 3 },
+];
+const right = [
+  { who: 'you', text: 'What happens when a customer calls to ask if their phone is ready?', at: 0 },
+  { who: 'them', text: 'Honestly? Someone digs through a notebook.', at: 1 },
+  { who: 'you', text: 'This board texts them the minute it’s done. Tickets, parts, deposits and payments on one screen. $30 a month per location.', at: 2 },
+  { who: 'them', text: 'Show me.', at: 3 },
+];
+---
+
+<div class="pd" data-stepper data-durations="2200,2200,3000,2600,3600" data-rest="4">
+  <div class="pd__grid">
+    <div class="pd__side pd__side--old">
+      <header>
+        <p class="pd__kicker">The rate-sheet pitch</p>
+        <p class="pd__sub">What every other agent walks in with</p>
+      </header>
+      <div class="pd__thread" role="img" aria-label="A conversation where an agent offers a slightly lower rate and the shop owner politely declines.">
+        {
+          left.map((m) => (
+            <p class:list={['pd__msg', `pd__msg--${m.who}`, 'fx', m.who === 'you' ? 'fx-right' : 'fx-left']} data-from={m.at} aria-hidden="true">
+              {m.text}
+            </p>
+          ))
+        }
+      </div>
+      <p class="pd__result fx fx-rise" data-from="4"><Icon name="x" size={16} stroke={2.6} /> Another quote in the drawer.</p>
+    </div>
+
+    <div class="pd__side pd__side--new">
+      <header>
+        <p class="pd__kicker">The PPD pitch</p>
+        <p class="pd__sub">Walking in with PPD Repair</p>
+      </header>
+      <div class="pd__thread" role="img" aria-label="A conversation where an agent asks about a repair shop's daily problem, shows software that solves it for 30 dollars a month, and the owner asks for a demo.">
+        {
+          right.map((m) => (
+            <p class:list={['pd__msg', `pd__msg--${m.who}`, 'fx', m.who === 'you' ? 'fx-right' : 'fx-left']} data-from={m.at} style="--d:350ms" aria-hidden="true">
+              {m.text}
+            </p>
+          ))
+        }
+      </div>
+      <p class="pd__result pd__result--win fx fx-rise" data-from="4" style="--d:300ms"><Icon name="check" size={16} stroke={2.6} /> A demo on the calendar.</p>
+    </div>
+  </div>
+
+  <div class="pd__foot">
+    <button type="button" class="demo__toggle" data-toggle aria-pressed="false" aria-label="Pause animation">
+      <span class="i-pause"><Icon name="pause" size={14} stroke={2.4} /></span>
+      <span class="i-play"><Icon name="play" size={14} stroke={2.4} /></span>
+      <span class="i-pause">Pause</span>
+      <span class="i-play">Play</span>
+    </button>
+    <span class="sample">Illustration</span>
+  </div>
+</div>
+
+<style>
+  .pd__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(14px, 2vw, 26px);
+  }
+  .pd__side {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: clamp(20px, 2.6vw, 32px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    min-height: 430px;
+  }
+  .pd__side--old {
+    background: #0a0d14;
+  }
+  .pd__side--new {
+    border-color: rgba(47, 107, 255, 0.5);
+    background: radial-gradient(120% 80% at 80% 0%, rgba(47, 107, 255, 0.24), transparent 60%), #0a0e18;
+  }
+  .pd__kicker {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .pd__side--old .pd__kicker {
+    color: #8c95a8;
+  }
+  .pd__sub {
+    font-size: 0.9rem;
+    color: var(--dim);
+  }
+  .pd__thread {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pd__msg {
+    max-width: 86%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+  .pd__msg--you {
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+    color: #fff;
+    background: #2a3142;
+  }
+  .pd__side--new .pd__msg--you {
+    background: var(--repair);
+  }
+  .pd__msg--them {
+    align-self: flex-start;
+    border-bottom-left-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+  }
+  .pd__result {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #8c95a8;
+    border: 1px solid var(--line-2);
+  }
+  .pd__result--win {
+    color: #05070d;
+    background: var(--repair-2);
+    border-color: var(--repair-2);
+  }
+  .pd__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  @media (max-width: 760px) {
+    .pd__grid {
+      grid-template-columns: 1fr;
+    }
+    .pd__side {
+      min-height: 380px;
+    }
+  }
+</style>

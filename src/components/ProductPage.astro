@@ -1,0 +1,527 @@
+---
+// Shared template for the four PPD-built product pages.
+// Default slot = the animated demo. Named slots: "extra" (product-specific
+// sections) and "fields" (extra inputs for the demo-request form).
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from './Icon.astro';
+import LeadForm from './LeadForm.astro';
+import { product, products, type ProductKey } from '../data/site';
+
+interface Feature {
+  icon: string;
+  title: string;
+  body: string;
+}
+interface Props {
+  productKey: ProductKey;
+  title: string;
+  description: string;
+  headline: string;
+  lede: string;
+  audiences: string[];
+  demo: { eyebrow: string; title: string; lede?: string };
+  featuresHead: { eyebrow: string; title: string };
+  features: Feature[];
+  pricing: { label: string; price: string; unit?: string; includes: string[]; addons?: string[]; note?: string };
+  faqs?: { q: string; a: string }[];
+  form: { tag: string; subject: string; title: string; lede: string; cta?: string };
+  badge?: string;
+}
+const { productKey, title, description, headline, lede, audiences, demo, featuresHead, features, pricing, faqs = [], form, badge } = Astro.props;
+const p = product(productKey);
+const others = products.filter((x) => x.key !== productKey);
+---
+
+<SiteLayout title={title} description={description}>
+  <div class={`t-${p.key}`}>
+    <!-- hero -->
+    <section class="ph">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="ph__glow" aria-hidden="true"></div>
+      <div class="wrap ph__inner">
+        <div class="ph__copy">
+          <div class="ph__brand reveal">
+            <img class:list={['ph__logo', `ph__logo--${p.key}`]} src={p.logoDark} alt={p.name} loading="eager" />
+            {badge && <span class="chip"><i class="dot" /> {badge}</span>}
+          </div>
+          <h1 class="h-hero reveal" style="--i:1">{headline}</h1>
+          <p class="lede reveal" style="--i:2">{lede}</p>
+          <div class="btn-row reveal" style="--i:3">
+            <a class="btn btn--accent" href="#demo-request">{form.cta ?? 'Book a demo'} <Icon name="arrow-right" /></a>
+            <a class="btn btn--ghost" href={p.site} rel="noopener">{p.siteLabel} <Icon name="arrow-up-right" /></a>
+            <a class="ph__login" href={p.login} rel="noopener">Log in</a>
+          </div>
+        </div>
+        <ul class="ph__aud reveal" style="--i:4" aria-label="Built for">
+          {audiences.map((a) => <li>{a}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- demo -->
+    <section class="section section--tight pdemo" id="how-it-works">
+      <div class="wrap">
+        <slot>
+          <p>{demo.title}</p>
+        </slot>
+      </div>
+    </section>
+
+    <!-- features -->
+    <section class="section section--paper">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow reveal">{featuresHead.eyebrow}</p>
+          <h2 class="h-1 reveal" style="--i:1">{featuresHead.title}</h2>
+        </div>
+        <ul class="feat">
+          {
+            features.map((f, i) => (
+              <li class="reveal" style={`--i:${i % 3}`}>
+                <span class="feat__ic"><Icon name={f.icon} size={22} /></span>
+                <h3 class="h-3">{f.title}</h3>
+                <p>{f.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <slot name="extra" />
+
+    <!-- pricing + faq -->
+    <section class="section section--raised">
+      <div class="wrap pf">
+        <div class="price reveal">
+          <p class="eyebrow">{pricing.label}</p>
+          <p class="price__big">
+            {pricing.price}
+            {pricing.unit && <span>{pricing.unit}</span>}
+          </p>
+          <ul class="price__list">
+            {pricing.includes.map((x) => <li><Icon name="check" size={17} stroke={2.6} /> {x}</li>)}
+          </ul>
+          {
+            pricing.addons && (
+              <div class="price__addons">
+                <p>Optional paid add-ons</p>
+                <ul>{pricing.addons.map((x) => <li class="chip">{x}</li>)}</ul>
+              </div>
+            )
+          }
+          {pricing.note && <p class="fine">{pricing.note}</p>}
+        </div>
+
+        {
+          faqs.length > 0 && (
+            <div class="reveal" style="--i:1">
+              <h2 class="h-2 pf__h">Good questions</h2>
+              <div class="faq">
+                {faqs.map((f, i) => (
+                  <details open={i === 0}>
+                    <summary>
+                      {f.q}
+                      <Icon name="plus" size={20} />
+                    </summary>
+                    <p>{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- demo request -->
+    <section class="section" id="demo-request">
+      <div class="wrap req">
+        <div class="req__copy">
+          <p class="eyebrow reveal">Get started</p>
+          <h2 class="h-1 reveal" style="--i:1">{form.title}</h2>
+          <p class="lede reveal" style="--i:2">{form.lede}</p>
+          <ul class="req__alt reveal" style="--i:3">
+            <li><Icon name="phone" size={16} /> Sales <a href="tel:2487260085">(248) 726-0085</a></li>
+            <li><Icon name="external" size={16} /> Already a customer? <a href={p.login} rel="noopener">Log in to {p.name}</a></li>
+          </ul>
+        </div>
+        <div class="req__form reveal" style="--i:1">
+          <LeadForm form={form.tag} subject={form.subject} cta={form.cta ?? 'Request a demo'} note="We reply within one business day.">
+            <div class="field">
+              <label for={`${p.key}-name`}>Your name</label>
+              <input id={`${p.key}-name`} name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for={`${p.key}-biz`}>Business name</label>
+              <input id={`${p.key}-biz`} name="business" type="text" autocomplete="organization" required />
+            </div>
+            <div class="field">
+              <label for={`${p.key}-email`}>Email</label>
+              <input id={`${p.key}-email`} name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for={`${p.key}-phone`}>Phone</label>
+              <input id={`${p.key}-phone`} name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <slot name="fields" />
+            <div class="field field--full">
+              <label for={`${p.key}-msg`}>What would you like to see? <span class="opt">optional</span></label>
+              <textarea id={`${p.key}-msg`} name="message" rows="3"></textarea>
+            </div>
+          </LeadForm>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- rest of the suite -->
+  <section class="section section--tight section--raised">
+    <div class="wrap">
+      <p class="eyebrow more__eyebrow">More from PPD</p>
+      <ul class="more">
+        {
+          others.map((o) => (
+            <li class={`t-${o.key}`}>
+              <a href={o.href}>
+                <img src={o.icon} alt="" width="44" height="44" loading="lazy" />
+                <span>
+                  <b>{o.name}</b>
+                  <em>{o.tagline}</em>
+                </span>
+                <Icon name="arrow-right" size={18} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .ph {
+    position: relative;
+    padding: clamp(44px, 5.5vw, 80px) 0 clamp(36px, 4vw, 56px);
+    overflow: hidden;
+  }
+  .ph__glow {
+    position: absolute;
+    left: 50%;
+    top: -40%;
+    width: min(1200px, 130vw);
+    aspect-ratio: 1.5;
+    translate: -50% 0;
+    background: radial-gradient(42% 50% at 34% 46%, rgba(var(--accent-rgb), 0.5), transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+  }
+  .ph__inner {
+    position: relative;
+    display: grid;
+    gap: clamp(28px, 4vw, 44px);
+  }
+  .ph__copy {
+    display: grid;
+    gap: 22px;
+    max-width: 960px;
+  }
+  .ph__brand {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+  .ph__logo {
+    height: 54px;
+    width: auto;
+  }
+  .ph__logo--rewards {
+    height: 72px;
+  }
+  .ph__logo--repair {
+    height: 58px;
+    padding: 8px 14px;
+    border-radius: 14px;
+    background: #fff;
+  }
+  .ph .h-hero {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+  }
+  .ph__login {
+    align-self: center;
+    padding: 0 10px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--line-2);
+  }
+  .ph__login:hover {
+    color: var(--text);
+  }
+  .ph__aud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .ph__aud li {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ph__aud li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .pdemo {
+    padding-top: clamp(20px, 3vw, 40px);
+    padding-bottom: clamp(100px, 13vw, 170px);
+  }
+
+  .feat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .feat li {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    padding: clamp(22px, 2.6vw, 32px);
+    border-radius: var(--r);
+    background: var(--paper-card);
+    border: 1px solid var(--paper-line);
+  }
+  .feat__ic {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    border-radius: 13px;
+    color: #fff;
+    background: var(--accent);
+  }
+  :global(.t-rewards) .feat__ic,
+  :global(.t-forge) .feat__ic {
+    color: #1a0e03;
+  }
+  .feat p {
+    color: var(--paper-muted);
+  }
+
+  .pf {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+  .price {
+    display: grid;
+    gap: 18px;
+    padding: clamp(26px, 3.6vw, 46px);
+    border-radius: var(--r-lg);
+    border: 1px solid rgba(var(--accent-rgb), 0.5);
+    background:
+      radial-gradient(120% 70% at 100% 0%, rgba(var(--accent-rgb), 0.3), transparent 60%),
+      var(--ink);
+  }
+  .price__big {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+  .price__big span {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+  .price__list {
+    display: grid;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .price__list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .price__list :global(svg) {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--accent-2);
+  }
+  .price__addons p {
+    margin-bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .price__addons ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .pf__h {
+    margin-bottom: 22px;
+  }
+  .faq {
+    border-top: 1px solid var(--line-2);
+  }
+  .faq details {
+    border-bottom: 1px solid var(--line-2);
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq summary :global(svg) {
+    flex-shrink: 0;
+    color: var(--accent-2);
+    transition: transform 0.35s var(--ease-out);
+  }
+  .faq details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+  .faq p {
+    padding: 0 40px 22px 0;
+    color: var(--muted);
+  }
+
+  .req {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+  .req__copy {
+    display: grid;
+    gap: 20px;
+  }
+  .req__alt {
+    display: grid;
+    gap: 10px;
+    color: var(--muted);
+  }
+  .req__alt li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .req__alt a {
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--line-2);
+  }
+  .req__form {
+    padding: clamp(24px, 3.4vw, 44px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: var(--ink-2);
+  }
+  .req__form :global(.opt) {
+    font-weight: 400;
+    color: var(--dim);
+  }
+
+  .more__eyebrow {
+    margin-bottom: 18px;
+  }
+  .more {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .more a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    transition:
+      border-color 0.3s,
+      background 0.3s;
+  }
+  .more a:hover {
+    border-color: rgba(var(--accent-rgb), 0.7);
+    background: rgba(var(--accent-rgb), 0.1);
+  }
+  .more img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+  .more span {
+    flex: 1;
+    display: grid;
+    gap: 2px;
+  }
+  .more b {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+  }
+  .more em {
+    font-style: normal;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .more a :global(svg) {
+    color: var(--accent-2);
+  }
+
+  @media (max-width: 1000px) {
+    .feat {
+      grid-template-columns: 1fr 1fr;
+    }
+    .pf,
+    .req,
+    .more {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .feat {
+      grid-template-columns: 1fr;
+    }
+    .ph__logo {
+      height: 44px;
+    }
+  }
+</style>

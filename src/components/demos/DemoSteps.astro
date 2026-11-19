@@ -1,0 +1,149 @@
+---
+// Clickable step captions shared by every demo. Lives inside a [data-stepper].
+import Icon from '../Icon.astro';
+interface Step {
+  title: string;
+  body: string;
+  go?: number;
+}
+interface Props {
+  steps: Step[];
+  label: string;
+  toggle?: boolean;
+}
+const { steps, label, toggle = true } = Astro.props;
+---
+
+<div class="ds">
+  <ol class="ds__list" aria-label={label}>
+    {
+      steps.map((s, i) => (
+        <li>
+          <button type="button" class="ds__btn" data-go={s.go ?? i}>
+            <span class="ds__n">{String(i + 1).padStart(2, '0')}</span>
+            <span class="ds__t">{s.title}</span>
+            <span class="ds__b">
+              <span>{s.body}</span>
+            </span>
+            <span class="ds__bar" aria-hidden="true" />
+          </button>
+        </li>
+      ))
+    }
+  </ol>
+  {
+    toggle && (
+      <div class="demo__meta">
+        <button type="button" class="demo__toggle" data-toggle aria-pressed="false" aria-label="Pause animation">
+          <span class="i-pause"><Icon name="pause" size={14} stroke={2.4} /></span>
+          <span class="i-play"><Icon name="play" size={14} stroke={2.4} /></span>
+          <span class="i-pause">Pause replay</span>
+          <span class="i-play">Play replay</span>
+        </button>
+        <span class="sample">Sample data</span>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .ds__list {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+  .ds__btn {
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    column-gap: 4px;
+    width: 100%;
+    padding: 15px 0 15px 2px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    transition: color 0.3s;
+  }
+  .ds__btn:hover {
+    color: var(--text);
+  }
+  :global(.section--paper) .ds__btn:hover {
+    color: var(--paper-text);
+  }
+  .ds__n {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    padding-top: 0.34em;
+    color: var(--dim);
+    transition: color 0.3s;
+  }
+  .ds__t {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  .ds__b {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 0fr;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+    transition: grid-template-rows 0.5s var(--ease-out);
+  }
+  .ds__b > span {
+    min-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+  .ds__btn.is-active {
+    color: var(--text);
+  }
+  :global(.section--paper) .ds__btn.is-active {
+    color: var(--paper-text);
+  }
+  .ds__btn.is-active .ds__n {
+    color: var(--accent-2);
+  }
+  .ds__btn.is-active .ds__b {
+    grid-template-rows: 1fr;
+  }
+  .ds__btn.is-active .ds__b > span {
+    opacity: 1;
+    padding-top: 6px;
+    transition-delay: 0.12s;
+  }
+  .ds__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    overflow: hidden;
+  }
+  .ds__bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .ds__btn.is-active .ds__bar::after {
+    transform: scaleX(1);
+  }
+  :global([data-stepper].is-playing) .ds__btn.is-active .ds__bar::after {
+    animation: ds-fill var(--step-dur, 2400ms) linear both;
+  }
+  @keyframes ds-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+</style>

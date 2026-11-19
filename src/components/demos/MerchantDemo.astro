@@ -1,0 +1,520 @@
+---
+// PPD Merchant: an invoice goes out, gets paid, and the books follow.
+// Sample workspace values follow ppdmerchant.com.
+import DemoSteps from './DemoSteps.astro';
+import Icon from '../Icon.astro';
+
+interface Props {
+  layout?: 'split' | 'flip' | 'stack';
+  captions?: boolean;
+}
+const { layout = 'split', captions = true } = Astro.props;
+
+const steps = [
+  { title: 'Start with the whole picture.', body: 'Volume, approvals and open balances on one dashboard, not five tabs.' },
+  { title: 'Send the invoice.', body: 'Invoice, payment link or virtual terminal. Collect the way the job calls for.' },
+  { title: 'Get paid their way.', body: 'Your customer pays by card or ACH from a link. No phone tag.' },
+  { title: 'The books follow.', body: 'The payment lands on the customer’s account, the balance drops and reporting keeps up.' },
+  { title: 'Keep the work connected.', body: 'Optional add-ons put recurring billing and e-sign agreements beside the payment.' },
+];
+const nav = ['Dashboard', 'POS', 'Shop Orders', 'Payments', 'Accounts', 'Reports', 'E-Sign'];
+const bars = [38, 52, 44, 70, 58, 82, 64];
+---
+
+<div class:list={['demo', `demo--${layout}`, 't-merchant', 'md']} data-stepper data-durations="2600,3000,3200,3000,3200" data-rest="3">
+  {
+    captions && (
+      <div class="demo__side">
+        <slot />
+        <DemoSteps steps={steps} label="Steps in a PPD Merchant payment" />
+      </div>
+    )
+  }
+
+  <div class="demo__stage">
+    <div class="demo__glow"></div>
+    <div class="md__win" role="img" aria-label="Animated replay in PPD Merchant: an invoice for 4,250 dollars is sent to a customer, paid by ACH from a payment link, and the dashboard, customer balance and agreements update.">
+      <div class="md__ui" aria-hidden="true">
+        <aside class="md__nav">
+          <img src="/images/brand/merchant-logo.webp" alt="" width="600" height="136" loading="lazy" />
+          <ul>
+            {nav.map((n, i) => <li class:list={{ 'is-on': i === 0 }}>{n}</li>)}
+          </ul>
+        </aside>
+
+        <div class="md__main">
+          <div class="md__head">
+            <b>Dashboard</b>
+            <span class="md__tag">Sample data</span>
+            <span class="md__btn md__btn--ghost"><Icon name="file-text" size={11} /> Send Invoice</span>
+            <span class="md__btn"><Icon name="bolt" size={11} /> Take Payment</span>
+          </div>
+
+          <div class="md__kpis">
+            <div>
+              <small>Total volume</small>
+              <b><span class="fx-swap on" data-from="0" data-to="2">$118,600</span><span class="fx-swap md__tick" data-from="3">$122,850</span></b>
+              <em>+12.5% vs last week</em>
+            </div>
+            <div>
+              <small>Transactions</small>
+              <b><span class="fx-swap on" data-from="0" data-to="2">412</span><span class="fx-swap md__tick" data-from="3">413</span></b>
+              <em>+8.2% vs last week</em>
+            </div>
+            <div>
+              <small>Approval rate</small>
+              <b>99.2%</b>
+              <em>+0.1% vs last week</em>
+            </div>
+            <div class="md__kpi-warn">
+              <small>Open balance</small>
+              <b><span class="fx-swap on" data-from="0" data-to="2">$14,500</span><span class="fx-swap md__tick" data-from="3">$10,250</span></b>
+              <em><span class="fx-swap on" data-from="0" data-to="2">4 invoices open</span><span class="fx-swap" data-from="3">3 invoices open</span></em>
+            </div>
+          </div>
+
+          <div class="md__lower">
+            <div class="md__chart">
+              <small>Transaction volume</small>
+              <div class="md__bars">
+                {bars.map((h, i) => <i style={`--h:${h}%;--i:${i}`} />)}
+              </div>
+            </div>
+            <div class="md__table">
+              <small>Recent transactions</small>
+              <div class="md__tr md__tr--new fx-row" data-from="3" style="--d:500ms">
+                <div><span>Atlas Commercial Services</span><b>$4,250</b><em class="ok">Approved</em></div>
+              </div>
+              <div class="md__tr"><div><span>Northside Auto Group</span><b>$1,500</b><em>Settled</em></div></div>
+              <div class="md__tr"><div><span>Premier Wholesale Supply</span><b>$3,200</b><em class="wait">Pending</em></div></div>
+              <div class="md__tr"><div><span>Metro Property Maintenance</span><b>$850</b><em class="bad">Failed</em></div></div>
+            </div>
+          </div>
+
+          <!-- invoice composer -->
+          <div class="md__modal fx fx-rise" data-from="1" data-to="2">
+            <b>New invoice</b>
+            <div class="md__f"><small>Customer</small><span>Atlas Commercial Services</span></div>
+            <div class="md__f"><small>For</small><span>Quarterly service agreement</span></div>
+            <div class="md__f md__f--amt"><small>Amount</small><span>$4,250.00</span></div>
+            <div class="md__send">
+              <span class="fx-swap on" data-from="1" data-to="1">Send invoice</span>
+              <span class="fx-swap is-sent" data-from="2"><Icon name="check" size={11} stroke={3} /> Sent · payment link emailed</span>
+            </div>
+          </div>
+
+          <!-- add-ons -->
+          <div class="md__addons">
+            <span class="fx fx-pop" data-from="4" style="--d:300ms"><Icon name="pen" size={11} /> Service agreement signed</span>
+            <span class="fx fx-pop" data-from="4" style="--d:900ms"><Icon name="repeat" size={11} /> Recurring plan active · $4,250 / quarter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- payer's view -->
+    <div class="md__payer fx fx-rise" data-from="2" data-to="3" aria-hidden="true">
+      <div class="md__ui md__ui--payer">
+        <small>Invoice from your business</small>
+        <b>$4,250.00</b>
+        <div class="md__methods">
+          <span>Card</span>
+          <span class="is-picked">ACH</span>
+        </div>
+        <div class="md__paybtn">
+          <span class="md__pay-a">Pay $4,250.00</span>
+          <span class="md__pay-b"><Icon name="check" size={12} stroke={3} /> Paid</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .md__win {
+    position: relative;
+    z-index: 1;
+    container-type: inline-size;
+    aspect-ratio: 16 / 10;
+    border-radius: clamp(10px, 1.6vw, 18px);
+    overflow: hidden;
+    background: #f7f7fb;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.2),
+      0 50px 90px -40px rgba(0, 0, 0, 0.9),
+      0 30px 70px -30px rgba(var(--accent-rgb), 0.55);
+  }
+  .md__ui {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 22% 1fr;
+    color: #14122b;
+    font-family: var(--font-body);
+    font-size: clamp(6.5px, 1.72cqw, 15px);
+    line-height: 1.3;
+  }
+  .md__ui small {
+    display: block;
+    font-size: 0.68em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a7892;
+  }
+  .md__nav {
+    padding: 1.1em 0.9em;
+    background: #fff;
+    border-right: 1px solid #e6e5f0;
+  }
+  .md__nav img {
+    width: 88%;
+    margin-bottom: 1.3em;
+  }
+  .md__nav li {
+    padding: 0.55em 0.8em;
+    border-radius: 0.6em;
+    font-weight: 500;
+    color: #5a5873;
+  }
+  .md__nav li.is-on {
+    background: #efeaff;
+    color: #4a1fd6;
+    font-weight: 650;
+  }
+  .md__main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+    padding: 1.1em 1.2em;
+    min-width: 0;
+    min-height: 0;
+  }
+  .md__head {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+  }
+  .md__head b {
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+  .md__tag {
+    margin-right: auto;
+    padding: 0.2em 0.7em;
+    border-radius: 99em;
+    border: 1px solid #dcdbe8;
+    font-size: 0.7em;
+    color: #7a7892;
+  }
+  .md__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.5em 0.9em;
+    border-radius: 0.6em;
+    font-weight: 650;
+    font-size: 0.86em;
+    color: #fff;
+    background: #5b21f0;
+  }
+  .md__btn--ghost {
+    color: #14122b;
+    background: #fff;
+    border: 1px solid #dcdbe8;
+    transition:
+      box-shadow 0.3s,
+      border-color 0.3s;
+  }
+  .md[data-step='1'] .md__btn--ghost {
+    border-color: #5b21f0;
+    box-shadow: 0 0 0 0.3em rgba(91, 33, 240, 0.2);
+  }
+  .md__kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7em;
+  }
+  .md__kpis > div {
+    padding: 0.8em;
+    border-radius: 0.8em;
+    background: #fff;
+    border: 1px solid #e6e5f0;
+  }
+  .md__kpis b {
+    display: block;
+    margin: 0.2em 0 0.1em;
+    font-size: 1.45em;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    font-feature-settings: 'tnum' 1;
+  }
+  .md__kpis em {
+    font-style: normal;
+    font-size: 0.7em;
+    color: #0e8f5f;
+  }
+  .md__kpi-warn em {
+    color: #b46a00;
+  }
+  .md__tick {
+    animation: md-tick 0.9s var(--ease-out);
+  }
+  .md__lower {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 0.7em;
+    min-height: 0;
+  }
+  .md__chart,
+  .md__table {
+    padding: 0.8em;
+    border-radius: 0.8em;
+    background: #fff;
+    border: 1px solid #e6e5f0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .md__chart {
+    display: flex;
+    flex-direction: column;
+  }
+  .md__bars {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 6%;
+    padding-top: 0.6em;
+  }
+  .md__bars i {
+    flex: 1;
+    height: var(--h);
+    border-radius: 0.3em 0.3em 0 0;
+    background: linear-gradient(#8f6bff, #5b21f0);
+    transform-origin: bottom;
+    animation: md-grow 0.9s var(--ease-out) calc(var(--i) * 70ms) both;
+  }
+  .md[data-step='3'] .md__bars i:last-child,
+  .md[data-step='4'] .md__bars i:last-child {
+    height: 96%;
+    transition: height 0.9s var(--ease-out) 0.3s;
+  }
+  .md__tr > div {
+    display: grid;
+    grid-template-columns: 1fr auto 5.2em;
+    gap: 0.6em;
+    align-items: center;
+    padding: 0.42em 0;
+    border-bottom: 1px solid #efeef6;
+    font-size: 0.82em;
+  }
+  .md__tr span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .md__tr b {
+    font-feature-settings: 'tnum' 1;
+  }
+  .md__tr em {
+    font-style: normal;
+    font-size: 0.86em;
+    font-weight: 650;
+    text-align: center;
+    padding: 0.12em 0;
+    border-radius: 99em;
+    background: #eeedf5;
+    color: #5a5873;
+  }
+  .md__tr em.ok {
+    background: #d8f5e8;
+    color: #0b6b47;
+  }
+  .md__tr em.wait {
+    background: #fff1cc;
+    color: #7a5600;
+  }
+  .md__tr em.bad {
+    background: #ffe0e0;
+    color: #a11b1b;
+  }
+  .md__tr--new.on > div {
+    background: #f3eeff;
+    margin: 0 -0.5em;
+    padding-inline: 0.5em;
+    border-radius: 0.4em;
+  }
+
+  .md__modal {
+    position: absolute;
+    left: 12%;
+    top: 20%;
+    width: 52%;
+    display: grid;
+    gap: 0.6em;
+    padding: 1.1em;
+    border-radius: 1em;
+    background: #fff;
+    border: 1px solid #dcdbe8;
+    box-shadow: 0 2em 4em -1em rgba(20, 18, 43, 0.45);
+    pointer-events: none;
+  }
+  .md__modal > b {
+    font-size: 1.15em;
+  }
+  .md__f {
+    padding: 0.5em 0.7em;
+    border-radius: 0.55em;
+    border: 1px solid #e6e5f0;
+  }
+  .md__f span {
+    font-weight: 600;
+  }
+  .md__f--amt span {
+    font-size: 1.3em;
+    font-weight: 750;
+  }
+  .md__send {
+    padding: 0.65em;
+    border-radius: 0.6em;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    background: #5b21f0;
+  }
+  .md[data-step='2'] .md__send {
+    background: #0e9c68;
+  }
+  .md__send .is-sent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+  .md__addons {
+    position: absolute;
+    left: 1.2em;
+    right: 1.2em;
+    bottom: 1.1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5em;
+    pointer-events: none;
+  }
+  .md__addons span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.55em 0.95em;
+    border-radius: 99em;
+    font-weight: 650;
+    font-size: 0.86em;
+    color: #fff;
+    background: #14122b;
+    box-shadow: 0 0.8em 1.6em -0.6em rgba(20, 18, 43, 0.7);
+  }
+
+  .md__payer {
+    position: absolute;
+    z-index: 2;
+    right: -3%;
+    bottom: -10%;
+    width: 31%;
+    container-type: inline-size;
+    border-radius: clamp(10px, 1.8vw, 22px);
+    padding: clamp(3px, 0.5vw, 6px);
+    background: #0b0d13;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+      0 30px 50px -20px rgba(0, 0, 0, 0.9);
+  }
+  .md__ui--payer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7em;
+    padding: 1.2em 1em;
+    text-align: center;
+    font-size: clamp(6px, 5.2cqw, 13px);
+    border-radius: clamp(7px, 1.4vw, 17px);
+    background: #fff;
+  }
+  .md__ui--payer > b {
+    font-family: var(--font-display);
+    font-size: 2em;
+    letter-spacing: -0.03em;
+  }
+  .md__methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4em;
+  }
+  .md__methods span {
+    padding: 0.5em;
+    border-radius: 0.6em;
+    border: 1px solid #dcdbe8;
+    font-weight: 600;
+  }
+  .md__payer.on .md__methods .is-picked {
+    animation: md-pick 0.4s var(--ease-out) 0.9s both;
+  }
+  .md__paybtn {
+    position: relative;
+    padding: 0.7em;
+    border-radius: 0.6em;
+    font-weight: 700;
+    color: #fff;
+    background: #5b21f0;
+  }
+  .md__pay-b {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    border-radius: inherit;
+    background: #0e9c68;
+    opacity: 0;
+  }
+  .md__payer.on .md__pay-b {
+    animation: md-paid 0.4s var(--ease-out) 1.9s both;
+  }
+
+  @keyframes md-grow {
+    from {
+      transform: scaleY(0);
+    }
+  }
+  @keyframes md-tick {
+    0% {
+      color: #0e9c68;
+      transform: translateY(0.5em);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+      transform: none;
+    }
+    100% {
+      color: inherit;
+    }
+  }
+  @keyframes md-pick {
+    to {
+      border-color: #5b21f0;
+      background: #efeaff;
+      color: #4a1fd6;
+    }
+  }
+  @keyframes md-paid {
+    to {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 940px) {
+    .md .demo__stage {
+      margin-bottom: 9%;
+    }
+  }
+</style>

@@ -1,0 +1,469 @@
+---
+// PPD Repair: one ticket, intake to five-star review, on the command board.
+// Steps and sample ticket follow ppdrepair.com.
+import DemoSteps from './DemoSteps.astro';
+import Icon from '../Icon.astro';
+
+interface Props {
+  layout?: 'split' | 'flip' | 'stack';
+  captions?: boolean;
+}
+const { layout = 'split', captions = true } = Astro.props;
+
+const steps = [
+  { title: 'Create the ticket.', body: 'Customer, device, issue, estimate and intake notes in one place.' },
+  { title: 'Assign a technician.', body: 'Route the job to the right bench and keep ownership clear.' },
+  { title: 'Add parts and labor.', body: 'Parts come out of serialized inventory and pricing is set before the repair begins.' },
+  { title: 'Collect a deposit.', body: 'Take an upfront payment on a Dejavoo terminal and keep the remaining balance visible.' },
+  { title: 'Mark it ready for pickup.', body: 'One status change moves the ticket across the board.' },
+  { title: 'The customer hears about it.', body: 'Automatic text or email updates, so nobody has to call to ask.' },
+  { title: 'Ask for the Google review.', body: 'After pickup, a review request goes out by text or email.' },
+];
+---
+
+<div class:list={['demo', `demo--${layout}`, 't-repair', 'rd']} data-stepper data-durations="2600,2300,2800,2800,2400,3000,3200" data-rest="4">
+  {
+    captions && (
+      <div class="demo__side">
+        <slot />
+        <DemoSteps steps={steps} label="Steps in a PPD Repair ticket" />
+      </div>
+    )
+  }
+
+  <div class="demo__stage">
+    <div class="demo__glow"></div>
+    <div class="rd__win" role="img" aria-label="Animated replay of a repair ticket in PPD Repair: the ticket is created, assigned to a technician, parts and labor are added, a deposit is collected, it is marked ready for pickup, the customer is notified, and a Google review request is sent.">
+      <div class="rd__ui" aria-hidden="true">
+        <div class="rd__bar">
+          <img src="/images/brand/repair-logo.webp" alt="" width="600" height="201" loading="lazy" />
+          <span class="rd__live"><i></i> Live repair workflow · Downtown Device Repair</span>
+        </div>
+
+        <div class="rd__body">
+          <div class="rd__board">
+            <div class="rd__col">
+              <h4>Checked in <b>2</b></h4>
+              <div class="rd__slot"></div>
+              <div class="rd__tk"><b>TKT-1051</b><span>Galaxy S24 · charge port</span></div>
+            </div>
+            <div class="rd__col">
+              <h4>Repairing <b>3</b></h4>
+              <div class="rd__slot"></div>
+              <div class="rd__tk"><b>TKT-1044</b><span>MacBook Air · battery</span></div>
+              <div class="rd__tk rd__tk--wait"><b>TKT-1043</b><span>Pixel 8 · waiting for part</span></div>
+            </div>
+            <div class="rd__col">
+              <h4>Ready <b>1</b></h4>
+              <div class="rd__slot"></div>
+              <div class="rd__tk"><b>TKT-1039</b><span>iPad Air · glass</span></div>
+            </div>
+
+            <div class="rd__mover">
+              <div class="rd__tk rd__tk--hero">
+                <b>TKT-1042</b>
+                <span>iPhone 14 Pro · screen</span>
+                <div class="rd__tk-foot">
+                  <em class="fx-swap on" data-from="0" data-to="0">New</em>
+                  <em class="fx-swap is-work" data-from="1" data-to="3">In progress</em>
+                  <em class="fx-swap is-ready" data-from="4">Ready</em>
+                  <i class="fx fx-pop" data-from="1" style="--d:300ms">JP</i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rd__panel">
+            <div class="rd__panel-head">
+              <b>TKT-1042</b>
+              <span>Maya Rodriguez · (248) 555-0142</span>
+            </div>
+            <div class="rd__rows">
+              <div class="rd__row on fx-row" data-from="0" style="--d:300ms"><div><span>Device</span><b>iPhone 14 Pro · 256GB</b></div></div>
+              <div class="rd__row fx-row" data-from="0" style="--d:650ms"><div><span>Issue</span><b>Cracked screen replacement</b></div></div>
+              <div class="rd__row fx-row" data-from="1" style="--d:250ms"><div><span>Technician</span><b>James Park</b></div></div>
+              <div class="rd__row fx-row" data-from="2" style="--d:250ms"><div><span>iPhone 14 Pro OLED</span><b>$84.00</b></div></div>
+              <div class="rd__row fx-row" data-from="2" style="--d:750ms"><div><span>Screen replacement labor</span><b>$89.99</b></div></div>
+              <div class="rd__row rd__row--sum fx-row" data-from="2" style="--d:1250ms"><div><span>Estimate</span><b>$173.99</b></div></div>
+              <div class="rd__row rd__row--paid fx-row" data-from="3" style="--d:500ms">
+                <div><span><Icon name="check-circle" size={12} /> Deposit · Dejavoo terminal</span><b>−$50.00</b></div>
+              </div>
+              <div class="rd__row rd__row--sum fx-row" data-from="3" style="--d:1100ms"><div><span>Balance at pickup</span><b>$123.99</b></div></div>
+            </div>
+            <div class="rd__action">
+              <span class="fx-swap on" data-from="0" data-to="0">Create ticket</span>
+              <span class="fx-swap" data-from="1" data-to="1">Assign &amp; start job</span>
+              <span class="fx-swap" data-from="2" data-to="2">Save estimate</span>
+              <span class="fx-swap" data-from="3" data-to="3">Collect $50.00 deposit</span>
+              <span class="fx-swap is-ready" data-from="4" data-to="4">Mark ready for pickup</span>
+              <span class="fx-swap is-ready" data-from="5" data-to="5">Customer notified</span>
+              <span class="fx-swap is-ready" data-from="6">Review request sent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rd__phone fx fx-rise" data-from="5" aria-hidden="true">
+      <div class="rd__ui rd__ui--phone">
+        <small>Messages · Downtown Device Repair</small>
+        <p class="fx fx-left" data-from="5" style="--d:500ms">Hi Maya, your iPhone 14 Pro is ready for pickup. Balance due: $123.99.</p>
+        <span class="rd__delivered fx" data-from="5" style="--d:1300ms">Delivered</span>
+        <p class="fx fx-left" data-from="6" style="--d:400ms">
+          Thanks for choosing us. If you were happy with your service, we’d appreciate a quick Google review.
+          <span class="rd__stars">
+            {[0, 1, 2, 3, 4].map((i) => <i style={`--s:${i}`}><Icon name="star" size={11} /></i>)}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .rd__win {
+    position: relative;
+    z-index: 1;
+    container-type: inline-size;
+    aspect-ratio: 16 / 10;
+    border-radius: clamp(10px, 1.6vw, 18px);
+    overflow: hidden;
+    background: #f3f6fc;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.2),
+      0 50px 90px -40px rgba(0, 0, 0, 0.9),
+      0 30px 70px -30px rgba(var(--accent-rgb), 0.5);
+  }
+  .rd__ui {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #0f1b33;
+    font-family: var(--font-body);
+    font-size: clamp(6.5px, 1.72cqw, 15px);
+    line-height: 1.3;
+  }
+  .rd__bar {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    padding: 0.7em 1.2em;
+    background: #fff;
+    border-bottom: 1px solid #dfe6f3;
+  }
+  .rd__bar img {
+    height: 2.2em;
+    width: auto;
+  }
+  .rd__live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 600;
+    color: #42526e;
+  }
+  .rd__live i {
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background: #19b37d;
+    animation: rd-pulse 1.8s ease-out infinite;
+  }
+  .rd__body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 1em;
+    padding: 1em;
+    min-height: 0;
+  }
+  .rd__board {
+    --gap: 0.7em;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    min-height: 0;
+  }
+  .rd__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55em;
+    padding: 0.7em;
+    border-radius: 0.9em;
+    background: #e7edf8;
+  }
+  .rd__col h4 {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-size: 0.86em;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #42526e;
+  }
+  .rd__col h4 b {
+    font-weight: 600;
+    opacity: 0.6;
+  }
+  .rd__slot {
+    height: 5.1em;
+    border-radius: 0.7em;
+    border: 1px dashed #b9c6de;
+  }
+  .rd__tk {
+    display: grid;
+    gap: 0.15em;
+    padding: 0.6em 0.7em;
+    border-radius: 0.7em;
+    background: #fff;
+    border: 1px solid #dbe3f1;
+    box-shadow: 0 0.15em 0.4em rgba(15, 27, 51, 0.06);
+  }
+  .rd__tk b {
+    font-size: 0.82em;
+    font-family: var(--font-mono);
+    color: #0b4fd9;
+  }
+  .rd__tk span {
+    font-size: 0.8em;
+    color: #42526e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .rd__tk--wait {
+    border-left: 0.25em solid #f0a400;
+  }
+  .rd__mover {
+    --col: 0;
+    position: absolute;
+    top: calc(0.7em + 0.86em * 1.3 + 0.55em);
+    left: 0.7em;
+    width: calc((100% - var(--gap) * 2) / 3 - 1.4em);
+    transform: translateX(calc(var(--col) * (100% + 1.4em + var(--gap))));
+    transition: transform 0.9s var(--ease-out);
+  }
+  .rd[data-step='1'] .rd__mover,
+  .rd[data-step='2'] .rd__mover,
+  .rd[data-step='3'] .rd__mover {
+    --col: 1;
+  }
+  .rd[data-step='4'] .rd__mover,
+  .rd[data-step='5'] .rd__mover,
+  .rd[data-step='6'] .rd__mover {
+    --col: 2;
+  }
+  .rd__tk--hero {
+    height: 5.1em;
+    border: 0.12em solid #0b4fd9;
+    box-shadow: 0 0.8em 1.6em -0.6em rgba(11, 79, 217, 0.55);
+    animation: rd-drop 0.6s var(--spring) both;
+  }
+  .rd__tk-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.2em;
+  }
+  .rd__tk-foot em {
+    font-style: normal;
+    font-size: 0.72em;
+    font-weight: 700;
+    padding: 0.15em 0.6em;
+    border-radius: 99em;
+    background: #e3ebfb;
+    color: #0b4fd9;
+  }
+  .rd__tk-foot em.is-work {
+    background: #fff3c9;
+    color: #7a5600;
+  }
+  .rd__tk-foot em.is-ready {
+    background: #d6f5e7;
+    color: #0b6b47;
+  }
+  .rd__tk-foot i {
+    display: grid;
+    place-items: center;
+    width: 1.9em;
+    height: 1.9em;
+    border-radius: 50%;
+    background: #0b4fd9;
+    color: #fff;
+    font-style: normal;
+    font-size: 0.7em;
+    font-weight: 700;
+  }
+
+  .rd__panel {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.9em;
+    background: #fff;
+    border: 1px solid #dbe3f1;
+    padding: 0.9em;
+    min-height: 0;
+  }
+  .rd__panel-head {
+    display: grid;
+    gap: 0.1em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid #e6ecf6;
+  }
+  .rd__panel-head b {
+    font-family: var(--font-mono);
+    color: #0b4fd9;
+  }
+  .rd__panel-head span {
+    font-size: 0.86em;
+    color: #42526e;
+  }
+  .rd__rows {
+    flex: 1;
+    min-height: 0;
+    padding-top: 0.3em;
+  }
+  .rd__row > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8em;
+    font-size: 0.86em;
+  }
+  .rd__row.on > div {
+    padding: 0.32em 0;
+  }
+  .rd__row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    color: #5b6b86;
+  }
+  .rd__row b {
+    font-weight: 650;
+    text-align: right;
+    font-feature-settings: 'tnum' 1;
+  }
+  .rd__row--sum b {
+    font-size: 1.12em;
+  }
+  .rd__row--sum > div {
+    border-top: 1px solid #e6ecf6;
+  }
+  .rd__row--paid span,
+  .rd__row--paid b {
+    color: #0b7a52;
+  }
+  .rd__action {
+    margin-top: 0.5em;
+    padding: 0.7em;
+    border-radius: 0.7em;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    background: #0b4fd9;
+    transition: background 0.4s;
+  }
+  .rd[data-step='4'] .rd__action,
+  .rd[data-step='5'] .rd__action,
+  .rd[data-step='6'] .rd__action {
+    background: #0e9c68;
+  }
+  .rd__action span {
+    animation: rd-in 0.4s var(--ease-out);
+  }
+
+  .rd__phone {
+    position: absolute;
+    z-index: 2;
+    right: -3%;
+    bottom: -12%;
+    width: 34%;
+    container-type: inline-size;
+    border-radius: clamp(10px, 1.8vw, 22px);
+    padding: clamp(3px, 0.5vw, 6px);
+    background: #0b0d13;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+      0 30px 50px -20px rgba(0, 0, 0, 0.9);
+  }
+  .rd__ui--phone {
+    font-size: clamp(6px, 4.6cqw, 13px);
+    gap: 0.6em;
+    padding: 1em;
+    min-height: 14em;
+    border-radius: clamp(7px, 1.4vw, 17px);
+    background: #f3f6fc;
+  }
+  .rd__ui--phone small {
+    font-size: 0.72em;
+    font-weight: 600;
+    color: #5b6b86;
+    text-align: center;
+  }
+  .rd__ui--phone p {
+    padding: 0.7em 0.85em;
+    border-radius: 1.1em 1.1em 1.1em 0.3em;
+    background: #fff;
+    border: 1px solid #dbe3f1;
+    font-size: 0.86em;
+    line-height: 1.35;
+    max-width: 92%;
+  }
+  .rd__delivered {
+    font-size: 0.66em;
+    color: #5b6b86;
+    margin-top: -0.4em;
+  }
+  .rd__stars {
+    display: flex;
+    gap: 0.15em;
+    margin-top: 0.4em;
+    color: #f0a400;
+  }
+  .rd__stars i {
+    opacity: 0;
+  }
+  .rd__stars :global(svg) {
+    fill: currentColor;
+  }
+  .rd[data-step='6'] .rd__stars i {
+    animation: rd-star 0.4s var(--spring) calc(1000ms + var(--s) * 140ms) both;
+  }
+
+  @keyframes rd-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(25, 179, 125, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 0 0.6em rgba(25, 179, 125, 0);
+    }
+  }
+  @keyframes rd-drop {
+    from {
+      opacity: 0;
+      scale: 0.8;
+    }
+  }
+  @keyframes rd-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.4em);
+    }
+  }
+  @keyframes rd-star {
+    from {
+      opacity: 0;
+      transform: scale(0.2) rotate(-40deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (max-width: 940px) {
+    .rd .demo__stage {
+      margin-bottom: 10%;
+    }
+  }
+</style>
